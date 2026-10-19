@@ -79,9 +79,9 @@ class FeedbackTests(unittest.TestCase):
 
     def test_prompt_excludes_oracle_and_other_tasks(self):
         task = copy.deepcopy(build_dataset()["tasks"][0])
-        task["oracle"]["secret_marker"] = "DO_NOT_REVEAL_739"
+        task["oracle"]["private_fixture"] = "oracle fixture excluded from prompts"
         prompt = prompt_for(task, [])
-        self.assertNotIn("DO_NOT_REVEAL_739", prompt)
+        self.assertNotIn("oracle fixture excluded from prompts", prompt)
         self.assertNotIn('"oracle"', prompt)
         self.assertNotIn('"split"', prompt)
         self.assertNotIn('"answer_class"', prompt)

@@ -548,3 +548,9 @@ functions. It confirmed all 12 repair answers and all 12 impossibility answers
 across both arms, distinct conversation IDs, matched prompts except for the
 assigned witness, and the four source hashes against the frozen Git objects.
 No blocking publication issue was found. This remains AI-assisted review.
+
+The first GitHub scan flagged a deliberately fake oracle-leakage test marker
+as a generic high-entropy secret. It was a literal dummy phrase, with no
+authentication use. Renamed the fixture and replaced it with descriptive text;
+the test still checks exclusion from the model prompt. Frozen benchmark sources
+and recorded model evidence are unchanged by this test-only correction.
