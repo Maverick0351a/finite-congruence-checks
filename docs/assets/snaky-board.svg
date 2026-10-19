@@ -1,0 +1,361 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="690" viewBox="0 0 1000 690" role="img" aria-labelledby="title description">
+<title id="title">The 251-cell Snaky certificate support inside a 17 by 17 board</title>
+<desc id="description">Coordinates run from 0 to 16 on both axes. Blue cells form the 251-cell support of card 727. P marks the root pivot at (8,8). Six green cells labelled S1 through S6 illustrate one Snaky target; they are not occupied starting cells or an execution trace. Before Maker move 21, at most 40 cells are occupied, leaving at least 211 support cells free.</desc>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#17324d}.heading{font-size:25px;font-weight:700}.sub{font-size:15px;fill:#526679}.tick{font-size:11px;fill:#526679}.label{font-size:16px}.small{font-size:14px}.cell-label{font-size:10px;font-weight:700;fill:white;text-anchor:middle;dominant-baseline:middle}.number{font-size:30px;font-weight:700}</style>
+<rect width="1000" height="690" rx="18" fill="#f8fafc"/>
+<text x="42" y="45" class="heading">A finite board with room for every required move</text>
+<text x="42" y="72" class="sub">Exact certificate: 728 cards · final support: 251 cells · height: 21 Maker moves</text>
+<rect x="64" y="550" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(0,0): square cell outside the support</title></rect>
+<rect x="91" y="550" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(1,0): square cell outside the support</title></rect>
+<rect x="118" y="550" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(2,0): square cell outside the support</title></rect>
+<rect x="145" y="550" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(3,0): square cell outside the support</title></rect>
+<rect x="172" y="550" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(4,0): certificate support</title></rect>
+<rect x="199" y="550" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(5,0): certificate support</title></rect>
+<rect x="226" y="550" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(6,0): certificate support</title></rect>
+<rect x="253" y="550" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(7,0): certificate support</title></rect>
+<rect x="280" y="550" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(8,0): certificate support</title></rect>
+<rect x="307" y="550" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(9,0): certificate support</title></rect>
+<rect x="334" y="550" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(10,0): certificate support</title></rect>
+<rect x="361" y="550" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(11,0): certificate support</title></rect>
+<rect x="388" y="550" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(12,0): square cell outside the support</title></rect>
+<rect x="415" y="550" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(13,0): square cell outside the support</title></rect>
+<rect x="442" y="550" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(14,0): square cell outside the support</title></rect>
+<rect x="469" y="550" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(15,0): square cell outside the support</title></rect>
+<rect x="496" y="550" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(16,0): square cell outside the support</title></rect>
+<rect x="64" y="523" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(0,1): square cell outside the support</title></rect>
+<rect x="91" y="523" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(1,1): square cell outside the support</title></rect>
+<rect x="118" y="523" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(2,1): certificate support</title></rect>
+<rect x="145" y="523" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(3,1): certificate support</title></rect>
+<rect x="172" y="523" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(4,1): certificate support</title></rect>
+<rect x="199" y="523" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(5,1): certificate support</title></rect>
+<rect x="226" y="523" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(6,1): certificate support</title></rect>
+<rect x="253" y="523" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(7,1): certificate support</title></rect>
+<rect x="280" y="523" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(8,1): certificate support</title></rect>
+<rect x="307" y="523" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(9,1): certificate support</title></rect>
+<rect x="334" y="523" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(10,1): certificate support</title></rect>
+<rect x="361" y="523" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(11,1): certificate support</title></rect>
+<rect x="388" y="523" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(12,1): certificate support</title></rect>
+<rect x="415" y="523" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(13,1): certificate support</title></rect>
+<rect x="442" y="523" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(14,1): certificate support</title></rect>
+<rect x="469" y="523" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(15,1): square cell outside the support</title></rect>
+<rect x="496" y="523" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(16,1): square cell outside the support</title></rect>
+<rect x="64" y="496" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(0,2): square cell outside the support</title></rect>
+<rect x="91" y="496" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(1,2): certificate support</title></rect>
+<rect x="118" y="496" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(2,2): certificate support</title></rect>
+<rect x="145" y="496" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(3,2): certificate support</title></rect>
+<rect x="172" y="496" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(4,2): certificate support</title></rect>
+<rect x="199" y="496" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(5,2): certificate support</title></rect>
+<rect x="226" y="496" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(6,2): certificate support</title></rect>
+<rect x="253" y="496" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(7,2): certificate support</title></rect>
+<rect x="280" y="496" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(8,2): certificate support</title></rect>
+<rect x="307" y="496" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(9,2): certificate support</title></rect>
+<rect x="334" y="496" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(10,2): certificate support</title></rect>
+<rect x="361" y="496" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(11,2): certificate support</title></rect>
+<rect x="388" y="496" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(12,2): certificate support</title></rect>
+<rect x="415" y="496" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(13,2): certificate support</title></rect>
+<rect x="442" y="496" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(14,2): certificate support</title></rect>
+<rect x="469" y="496" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(15,2): square cell outside the support</title></rect>
+<rect x="496" y="496" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(16,2): square cell outside the support</title></rect>
+<rect x="64" y="469" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(0,3): square cell outside the support</title></rect>
+<rect x="91" y="469" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(1,3): certificate support</title></rect>
+<rect x="118" y="469" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(2,3): certificate support</title></rect>
+<rect x="145" y="469" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(3,3): certificate support</title></rect>
+<rect x="172" y="469" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(4,3): certificate support</title></rect>
+<rect x="199" y="469" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(5,3): certificate support</title></rect>
+<rect x="226" y="469" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(6,3): certificate support</title></rect>
+<rect x="253" y="469" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(7,3): certificate support</title></rect>
+<rect x="280" y="469" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(8,3): certificate support</title></rect>
+<rect x="307" y="469" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(9,3): certificate support</title></rect>
+<rect x="334" y="469" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(10,3): certificate support</title></rect>
+<rect x="361" y="469" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(11,3): certificate support</title></rect>
+<rect x="388" y="469" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(12,3): certificate support</title></rect>
+<rect x="415" y="469" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(13,3): certificate support</title></rect>
+<rect x="442" y="469" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(14,3): certificate support</title></rect>
+<rect x="469" y="469" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(15,3): certificate support</title></rect>
+<rect x="496" y="469" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(16,3): square cell outside the support</title></rect>
+<rect x="64" y="442" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(0,4): certificate support</title></rect>
+<rect x="91" y="442" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(1,4): certificate support</title></rect>
+<rect x="118" y="442" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(2,4): certificate support</title></rect>
+<rect x="145" y="442" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(3,4): certificate support</title></rect>
+<rect x="172" y="442" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(4,4): certificate support</title></rect>
+<rect x="199" y="442" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(5,4): certificate support</title></rect>
+<rect x="226" y="442" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(6,4): certificate support</title></rect>
+<rect x="253" y="442" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(7,4): certificate support</title></rect>
+<rect x="280" y="442" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(8,4): certificate support</title></rect>
+<rect x="307" y="442" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(9,4): certificate support</title></rect>
+<rect x="334" y="442" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(10,4): certificate support</title></rect>
+<rect x="361" y="442" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(11,4): certificate support</title></rect>
+<rect x="388" y="442" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(12,4): certificate support</title></rect>
+<rect x="415" y="442" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(13,4): certificate support</title></rect>
+<rect x="442" y="442" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(14,4): certificate support</title></rect>
+<rect x="469" y="442" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(15,4): certificate support</title></rect>
+<rect x="496" y="442" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(16,4): certificate support</title></rect>
+<rect x="64" y="415" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(0,5): certificate support</title></rect>
+<rect x="91" y="415" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(1,5): certificate support</title></rect>
+<rect x="118" y="415" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(2,5): certificate support</title></rect>
+<rect x="145" y="415" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(3,5): certificate support</title></rect>
+<rect x="172" y="415" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(4,5): certificate support</title></rect>
+<rect x="199" y="415" width="25" height="25" rx="3" fill="#146d62" stroke="#0b4f49"><title>(5,5): certificate support; illustrative target cell S1</title></rect>
+<text x="211.5" y="428" class="cell-label">S1</text>
+<rect x="226" y="415" width="25" height="25" rx="3" fill="#146d62" stroke="#0b4f49"><title>(6,5): certificate support; illustrative target cell S2</title></rect>
+<text x="238.5" y="428" class="cell-label">S2</text>
+<rect x="253" y="415" width="25" height="25" rx="3" fill="#146d62" stroke="#0b4f49"><title>(7,5): certificate support; illustrative target cell S3</title></rect>
+<text x="265.5" y="428" class="cell-label">S3</text>
+<rect x="280" y="415" width="25" height="25" rx="3" fill="#146d62" stroke="#0b4f49"><title>(8,5): certificate support; illustrative target cell S4</title></rect>
+<text x="292.5" y="428" class="cell-label">S4</text>
+<rect x="307" y="415" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(9,5): certificate support</title></rect>
+<rect x="334" y="415" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(10,5): certificate support</title></rect>
+<rect x="361" y="415" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(11,5): certificate support</title></rect>
+<rect x="388" y="415" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(12,5): certificate support</title></rect>
+<rect x="415" y="415" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(13,5): certificate support</title></rect>
+<rect x="442" y="415" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(14,5): certificate support</title></rect>
+<rect x="469" y="415" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(15,5): certificate support</title></rect>
+<rect x="496" y="415" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(16,5): certificate support</title></rect>
+<rect x="64" y="388" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(0,6): certificate support</title></rect>
+<rect x="91" y="388" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(1,6): certificate support</title></rect>
+<rect x="118" y="388" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(2,6): certificate support</title></rect>
+<rect x="145" y="388" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(3,6): certificate support</title></rect>
+<rect x="172" y="388" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(4,6): certificate support</title></rect>
+<rect x="199" y="388" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(5,6): certificate support</title></rect>
+<rect x="226" y="388" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(6,6): certificate support</title></rect>
+<rect x="253" y="388" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(7,6): certificate support</title></rect>
+<rect x="280" y="388" width="25" height="25" rx="3" fill="#146d62" stroke="#0b4f49"><title>(8,6): certificate support; illustrative target cell S5</title></rect>
+<text x="292.5" y="401" class="cell-label">S5</text>
+<rect x="307" y="388" width="25" height="25" rx="3" fill="#146d62" stroke="#0b4f49"><title>(9,6): certificate support; illustrative target cell S6</title></rect>
+<text x="319.5" y="401" class="cell-label">S6</text>
+<rect x="334" y="388" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(10,6): certificate support</title></rect>
+<rect x="361" y="388" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(11,6): certificate support</title></rect>
+<rect x="388" y="388" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(12,6): certificate support</title></rect>
+<rect x="415" y="388" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(13,6): certificate support</title></rect>
+<rect x="442" y="388" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(14,6): certificate support</title></rect>
+<rect x="469" y="388" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(15,6): certificate support</title></rect>
+<rect x="496" y="388" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(16,6): certificate support</title></rect>
+<rect x="64" y="361" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(0,7): certificate support</title></rect>
+<rect x="91" y="361" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(1,7): certificate support</title></rect>
+<rect x="118" y="361" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(2,7): certificate support</title></rect>
+<rect x="145" y="361" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(3,7): certificate support</title></rect>
+<rect x="172" y="361" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(4,7): certificate support</title></rect>
+<rect x="199" y="361" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(5,7): certificate support</title></rect>
+<rect x="226" y="361" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(6,7): certificate support</title></rect>
+<rect x="253" y="361" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(7,7): certificate support</title></rect>
+<rect x="280" y="361" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(8,7): certificate support</title></rect>
+<rect x="307" y="361" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(9,7): certificate support</title></rect>
+<rect x="334" y="361" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(10,7): certificate support</title></rect>
+<rect x="361" y="361" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(11,7): certificate support</title></rect>
+<rect x="388" y="361" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(12,7): certificate support</title></rect>
+<rect x="415" y="361" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(13,7): certificate support</title></rect>
+<rect x="442" y="361" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(14,7): certificate support</title></rect>
+<rect x="469" y="361" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(15,7): certificate support</title></rect>
+<rect x="496" y="361" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(16,7): certificate support</title></rect>
+<rect x="64" y="334" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(0,8): certificate support</title></rect>
+<rect x="91" y="334" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(1,8): certificate support</title></rect>
+<rect x="118" y="334" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(2,8): certificate support</title></rect>
+<rect x="145" y="334" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(3,8): certificate support</title></rect>
+<rect x="172" y="334" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(4,8): certificate support</title></rect>
+<rect x="199" y="334" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(5,8): certificate support</title></rect>
+<rect x="226" y="334" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(6,8): certificate support</title></rect>
+<rect x="253" y="334" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(7,8): certificate support</title></rect>
+<rect x="280" y="334" width="25" height="25" rx="3" fill="#a95f00" stroke="#774200"><title>(8,8): certificate support; root pivot P</title></rect>
+<text x="292.5" y="347" class="cell-label">P</text>
+<rect x="307" y="334" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(9,8): certificate support</title></rect>
+<rect x="334" y="334" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(10,8): certificate support</title></rect>
+<rect x="361" y="334" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(11,8): certificate support</title></rect>
+<rect x="388" y="334" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(12,8): certificate support</title></rect>
+<rect x="415" y="334" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(13,8): certificate support</title></rect>
+<rect x="442" y="334" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(14,8): certificate support</title></rect>
+<rect x="469" y="334" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(15,8): certificate support</title></rect>
+<rect x="496" y="334" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(16,8): certificate support</title></rect>
+<rect x="64" y="307" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(0,9): certificate support</title></rect>
+<rect x="91" y="307" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(1,9): certificate support</title></rect>
+<rect x="118" y="307" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(2,9): certificate support</title></rect>
+<rect x="145" y="307" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(3,9): certificate support</title></rect>
+<rect x="172" y="307" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(4,9): certificate support</title></rect>
+<rect x="199" y="307" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(5,9): certificate support</title></rect>
+<rect x="226" y="307" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(6,9): certificate support</title></rect>
+<rect x="253" y="307" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(7,9): certificate support</title></rect>
+<rect x="280" y="307" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(8,9): certificate support</title></rect>
+<rect x="307" y="307" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(9,9): certificate support</title></rect>
+<rect x="334" y="307" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(10,9): certificate support</title></rect>
+<rect x="361" y="307" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(11,9): certificate support</title></rect>
+<rect x="388" y="307" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(12,9): certificate support</title></rect>
+<rect x="415" y="307" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(13,9): certificate support</title></rect>
+<rect x="442" y="307" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(14,9): certificate support</title></rect>
+<rect x="469" y="307" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(15,9): certificate support</title></rect>
+<rect x="496" y="307" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(16,9): certificate support</title></rect>
+<rect x="64" y="280" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(0,10): certificate support</title></rect>
+<rect x="91" y="280" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(1,10): certificate support</title></rect>
+<rect x="118" y="280" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(2,10): certificate support</title></rect>
+<rect x="145" y="280" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(3,10): certificate support</title></rect>
+<rect x="172" y="280" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(4,10): certificate support</title></rect>
+<rect x="199" y="280" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(5,10): certificate support</title></rect>
+<rect x="226" y="280" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(6,10): certificate support</title></rect>
+<rect x="253" y="280" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(7,10): certificate support</title></rect>
+<rect x="280" y="280" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(8,10): certificate support</title></rect>
+<rect x="307" y="280" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(9,10): certificate support</title></rect>
+<rect x="334" y="280" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(10,10): certificate support</title></rect>
+<rect x="361" y="280" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(11,10): certificate support</title></rect>
+<rect x="388" y="280" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(12,10): certificate support</title></rect>
+<rect x="415" y="280" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(13,10): certificate support</title></rect>
+<rect x="442" y="280" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(14,10): certificate support</title></rect>
+<rect x="469" y="280" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(15,10): certificate support</title></rect>
+<rect x="496" y="280" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(16,10): certificate support</title></rect>
+<rect x="64" y="253" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(0,11): certificate support</title></rect>
+<rect x="91" y="253" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(1,11): certificate support</title></rect>
+<rect x="118" y="253" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(2,11): certificate support</title></rect>
+<rect x="145" y="253" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(3,11): certificate support</title></rect>
+<rect x="172" y="253" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(4,11): certificate support</title></rect>
+<rect x="199" y="253" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(5,11): certificate support</title></rect>
+<rect x="226" y="253" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(6,11): certificate support</title></rect>
+<rect x="253" y="253" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(7,11): certificate support</title></rect>
+<rect x="280" y="253" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(8,11): certificate support</title></rect>
+<rect x="307" y="253" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(9,11): certificate support</title></rect>
+<rect x="334" y="253" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(10,11): certificate support</title></rect>
+<rect x="361" y="253" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(11,11): certificate support</title></rect>
+<rect x="388" y="253" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(12,11): certificate support</title></rect>
+<rect x="415" y="253" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(13,11): certificate support</title></rect>
+<rect x="442" y="253" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(14,11): certificate support</title></rect>
+<rect x="469" y="253" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(15,11): certificate support</title></rect>
+<rect x="496" y="253" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(16,11): certificate support</title></rect>
+<rect x="64" y="226" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(0,12): certificate support</title></rect>
+<rect x="91" y="226" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(1,12): certificate support</title></rect>
+<rect x="118" y="226" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(2,12): certificate support</title></rect>
+<rect x="145" y="226" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(3,12): certificate support</title></rect>
+<rect x="172" y="226" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(4,12): certificate support</title></rect>
+<rect x="199" y="226" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(5,12): certificate support</title></rect>
+<rect x="226" y="226" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(6,12): certificate support</title></rect>
+<rect x="253" y="226" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(7,12): certificate support</title></rect>
+<rect x="280" y="226" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(8,12): certificate support</title></rect>
+<rect x="307" y="226" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(9,12): certificate support</title></rect>
+<rect x="334" y="226" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(10,12): certificate support</title></rect>
+<rect x="361" y="226" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(11,12): certificate support</title></rect>
+<rect x="388" y="226" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(12,12): certificate support</title></rect>
+<rect x="415" y="226" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(13,12): certificate support</title></rect>
+<rect x="442" y="226" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(14,12): certificate support</title></rect>
+<rect x="469" y="226" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(15,12): certificate support</title></rect>
+<rect x="496" y="226" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(16,12): square cell outside the support</title></rect>
+<rect x="64" y="199" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(0,13): square cell outside the support</title></rect>
+<rect x="91" y="199" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(1,13): certificate support</title></rect>
+<rect x="118" y="199" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(2,13): certificate support</title></rect>
+<rect x="145" y="199" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(3,13): certificate support</title></rect>
+<rect x="172" y="199" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(4,13): certificate support</title></rect>
+<rect x="199" y="199" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(5,13): certificate support</title></rect>
+<rect x="226" y="199" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(6,13): certificate support</title></rect>
+<rect x="253" y="199" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(7,13): certificate support</title></rect>
+<rect x="280" y="199" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(8,13): certificate support</title></rect>
+<rect x="307" y="199" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(9,13): certificate support</title></rect>
+<rect x="334" y="199" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(10,13): certificate support</title></rect>
+<rect x="361" y="199" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(11,13): certificate support</title></rect>
+<rect x="388" y="199" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(12,13): certificate support</title></rect>
+<rect x="415" y="199" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(13,13): certificate support</title></rect>
+<rect x="442" y="199" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(14,13): certificate support</title></rect>
+<rect x="469" y="199" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(15,13): certificate support</title></rect>
+<rect x="496" y="199" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(16,13): square cell outside the support</title></rect>
+<rect x="64" y="172" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(0,14): square cell outside the support</title></rect>
+<rect x="91" y="172" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(1,14): square cell outside the support</title></rect>
+<rect x="118" y="172" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(2,14): certificate support</title></rect>
+<rect x="145" y="172" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(3,14): certificate support</title></rect>
+<rect x="172" y="172" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(4,14): certificate support</title></rect>
+<rect x="199" y="172" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(5,14): certificate support</title></rect>
+<rect x="226" y="172" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(6,14): certificate support</title></rect>
+<rect x="253" y="172" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(7,14): certificate support</title></rect>
+<rect x="280" y="172" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(8,14): certificate support</title></rect>
+<rect x="307" y="172" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(9,14): certificate support</title></rect>
+<rect x="334" y="172" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(10,14): certificate support</title></rect>
+<rect x="361" y="172" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(11,14): certificate support</title></rect>
+<rect x="388" y="172" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(12,14): certificate support</title></rect>
+<rect x="415" y="172" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(13,14): certificate support</title></rect>
+<rect x="442" y="172" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(14,14): certificate support</title></rect>
+<rect x="469" y="172" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(15,14): certificate support</title></rect>
+<rect x="496" y="172" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(16,14): square cell outside the support</title></rect>
+<rect x="64" y="145" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(0,15): square cell outside the support</title></rect>
+<rect x="91" y="145" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(1,15): square cell outside the support</title></rect>
+<rect x="118" y="145" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(2,15): certificate support</title></rect>
+<rect x="145" y="145" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(3,15): certificate support</title></rect>
+<rect x="172" y="145" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(4,15): certificate support</title></rect>
+<rect x="199" y="145" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(5,15): certificate support</title></rect>
+<rect x="226" y="145" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(6,15): certificate support</title></rect>
+<rect x="253" y="145" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(7,15): certificate support</title></rect>
+<rect x="280" y="145" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(8,15): certificate support</title></rect>
+<rect x="307" y="145" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(9,15): certificate support</title></rect>
+<rect x="334" y="145" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(10,15): certificate support</title></rect>
+<rect x="361" y="145" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(11,15): certificate support</title></rect>
+<rect x="388" y="145" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(12,15): certificate support</title></rect>
+<rect x="415" y="145" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(13,15): certificate support</title></rect>
+<rect x="442" y="145" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(14,15): square cell outside the support</title></rect>
+<rect x="469" y="145" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(15,15): square cell outside the support</title></rect>
+<rect x="496" y="145" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(16,15): square cell outside the support</title></rect>
+<rect x="64" y="118" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(0,16): square cell outside the support</title></rect>
+<rect x="91" y="118" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(1,16): square cell outside the support</title></rect>
+<rect x="118" y="118" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(2,16): square cell outside the support</title></rect>
+<rect x="145" y="118" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(3,16): square cell outside the support</title></rect>
+<rect x="172" y="118" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(4,16): square cell outside the support</title></rect>
+<rect x="199" y="118" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(5,16): certificate support</title></rect>
+<rect x="226" y="118" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(6,16): certificate support</title></rect>
+<rect x="253" y="118" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(7,16): certificate support</title></rect>
+<rect x="280" y="118" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(8,16): certificate support</title></rect>
+<rect x="307" y="118" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(9,16): certificate support</title></rect>
+<rect x="334" y="118" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(10,16): certificate support</title></rect>
+<rect x="361" y="118" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(11,16): certificate support</title></rect>
+<rect x="388" y="118" width="25" height="25" rx="3" fill="#d8e9f6" stroke="#91b5d1"><title>(12,16): certificate support</title></rect>
+<rect x="415" y="118" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(13,16): square cell outside the support</title></rect>
+<rect x="442" y="118" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(14,16): square cell outside the support</title></rect>
+<rect x="469" y="118" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(15,16): square cell outside the support</title></rect>
+<rect x="496" y="118" width="25" height="25" rx="3" fill="#ffffff" stroke="#d5dce4"><title>(16,16): square cell outside the support</title></rect>
+<text x="76.5" y="594" class="tick" text-anchor="middle">0</text>
+<text x="52" y="567" class="tick" text-anchor="end">0</text>
+<text x="103.5" y="594" class="tick" text-anchor="middle">1</text>
+<text x="52" y="540" class="tick" text-anchor="end">1</text>
+<text x="130.5" y="594" class="tick" text-anchor="middle">2</text>
+<text x="52" y="513" class="tick" text-anchor="end">2</text>
+<text x="157.5" y="594" class="tick" text-anchor="middle">3</text>
+<text x="52" y="486" class="tick" text-anchor="end">3</text>
+<text x="184.5" y="594" class="tick" text-anchor="middle">4</text>
+<text x="52" y="459" class="tick" text-anchor="end">4</text>
+<text x="211.5" y="594" class="tick" text-anchor="middle">5</text>
+<text x="52" y="432" class="tick" text-anchor="end">5</text>
+<text x="238.5" y="594" class="tick" text-anchor="middle">6</text>
+<text x="52" y="405" class="tick" text-anchor="end">6</text>
+<text x="265.5" y="594" class="tick" text-anchor="middle">7</text>
+<text x="52" y="378" class="tick" text-anchor="end">7</text>
+<text x="292.5" y="594" class="tick" text-anchor="middle">8</text>
+<text x="52" y="351" class="tick" text-anchor="end">8</text>
+<text x="319.5" y="594" class="tick" text-anchor="middle">9</text>
+<text x="52" y="324" class="tick" text-anchor="end">9</text>
+<text x="346.5" y="594" class="tick" text-anchor="middle">10</text>
+<text x="52" y="297" class="tick" text-anchor="end">10</text>
+<text x="373.5" y="594" class="tick" text-anchor="middle">11</text>
+<text x="52" y="270" class="tick" text-anchor="end">11</text>
+<text x="400.5" y="594" class="tick" text-anchor="middle">12</text>
+<text x="52" y="243" class="tick" text-anchor="end">12</text>
+<text x="427.5" y="594" class="tick" text-anchor="middle">13</text>
+<text x="52" y="216" class="tick" text-anchor="end">13</text>
+<text x="454.5" y="594" class="tick" text-anchor="middle">14</text>
+<text x="52" y="189" class="tick" text-anchor="end">14</text>
+<text x="481.5" y="594" class="tick" text-anchor="middle">15</text>
+<text x="52" y="162" class="tick" text-anchor="end">15</text>
+<text x="508.5" y="594" class="tick" text-anchor="middle">16</text>
+<text x="52" y="135" class="tick" text-anchor="end">16</text>
+<text x="286" y="620" class="small" text-anchor="middle">x coordinate</text>
+<text x="23" y="350" class="small" text-anchor="middle" transform="rotate(-90 23 350)">y coordinate</text>
+<text x="565" y="133" class="label" font-weight="700">How to read the board</text>
+<rect x="565" y="153" width="19" height="19" rx="3" fill="#d8e9f6" stroke="#91b5d1"/>
+<text x="595" y="168" class="small">251 cells in the final support</text>
+<rect x="565" y="184" width="19" height="19" rx="3" fill="white" stroke="#d5dce4"/>
+<text x="595" y="199" class="small">38 other cells of the square board</text>
+<rect x="565" y="215" width="19" height="19" rx="3" fill="#a95f00"/>
+<text x="595" y="230" class="small">P: first prescribed pivot, (8,8)</text>
+<rect x="565" y="246" width="19" height="19" rx="3" fill="#146d62"/>
+<text x="595" y="261" class="small">S1–S6: one illustrative Snaky target</text>
+<rect x="552" y="296" width="402" height="203" rx="12" fill="#e9f2f8"/>
+<text x="573" y="327" class="label" font-weight="700">Why a replacement cell is available</text>
+<text x="573" y="354" class="small">If play reaches Maker move 21:</text>
+<text x="573" y="381" class="small">20 Maker claims + 20 Breaker claims</text>
+<text x="573" y="409" class="small">occupy at most 40 cells.</text>
+<text x="573" y="454" class="number">251 − 40 = 211</text>
+<text x="573" y="481" class="small">At least 211 support cells are still free.</text>
+<text x="565" y="537" class="small">All cells start unclaimed. The highlighted</text>
+<text x="565" y="559" class="small">target is an illustration; no play trace is shown.</text>
+<text x="565" y="592" class="small">The diagram shows a fixed support. The proof</text>
+<text x="565" y="614" class="small">also handles every legal Breaker reply.</text>
+<text x="42" y="661" class="sub">Generated from the pinned certificate and independent audit · finite-congruence-checks</text>
+</svg>

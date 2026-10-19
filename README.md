@@ -33,6 +33,7 @@ classifies all representable grouping families through four objects, yielding
 **[Agent repair experiment](docs/REPAIR_BENCHMARK.md)** ·
 **[TM translation checks](docs/TM_TRANSLATION_CHECKS.md)** ·
 **[Compare Turing examples](docs/TM_ATLAS.md)** ·
+**[Snaky on finite boards](docs/SNAKY_FINITE_BOARD.md)** ·
 **[Changelog](CHANGELOG.md)** · **[Support](SUPPORT.md)**
 
 | Candidate colorings | Full witnesses | Vertex classes | Saved examples |
@@ -120,10 +121,16 @@ python scripts/five_object_proof.py run --out runs/five-object-fresh
 python scripts/query_context.py explain context:family-206:five-object:operation-minima:v1
 ```
 
+The next [Snaky walkthrough](docs/SNAKY_FINITE_BOARD.md) asks whether a strategy
+proved on an infinite grid also works when both players must stay on a finite
+board. It shows the paper's exact 251-cell envelope inside a 17 by 17 square and
+explains why replacement moves still have room. The independent certificate
+audit has passed; the finite-board Lean proof and its receipt are in preparation.
+
 Read the [query contract](docs/ATLAS_QUERY.md),
 [agent retrieval evaluation](docs/ATLAS_QUERY_EVALUATION.md), and
 [infrastructure direction](docs/INFRASTRUCTURE.md). These interfaces are an
-early foundation for reliable evidence retrieval in a bounded mathematical domain.
+early foundation for reliable evidence retrieval across these selected mathematical examples.
 
 ## Propose a grouping, get a checked counterexample
 

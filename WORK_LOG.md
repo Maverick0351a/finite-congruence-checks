@@ -1,5 +1,75 @@
 # Finite graph search work log
 
+## 2026-10-19 — Finite Snaky core compiles
+
+The native Lean 4.34.1 build now accepts `SnakySemantics`, including the
+finite-cell budget, composition, coordinate transport, impossible-target and
+zero-budget lemmas. The initial build caught two proof-script errors: the
+composition proof supplied obligations in the wrong order, and a transport
+induction case referred to outer sets instead of its case-local sets. Both were
+repaired and independently reviewed. The statements and game rules were not
+weakened to make them compile.
+
+The pinned Mathlib cache is complete; compilation of the individual strategy
+cards is still running. Full theorem verification, kernel replay, axiom audit
+and the seven deliberate claim changes remain pending at this stage. Hosted CI
+uses one heavy Lean compilation at a time, with a 60-minute job limit. The
+planned local receipt will reuse the development dependency/build cache and
+will be identified accordingly; hosted CI supplies a separate checkout run.
+
+A `leanchecker --help` probe unexpectedly began checking all modules on its
+search path. The exact probe process was stopped; it produced no proof receipt.
+Inspection of the pinned checker source showed that unknown flags are ignored
+and an empty module list selects a default prefix. The runner already passes
+the explicit 179-module local closure. It now also sets and records
+`LEAN_NUM_THREADS=1` and `MATHLIB_NO_CACHE_ON_UPDATE=1`, validates those settings
+on receipt replay, and includes a changed-environment rejection test.
+
+## 2026-10-19 — Snaky audit and exact-binding preparation
+
+The independent Python checker reconstructs all 728 cards from the pinned
+38,367-byte certificate, with 24 focused tests passing. A separate review parser
+compared all 728 required sets, envelopes and heights with the upstream Lean
+literals: 2,184 exact comparisons and zero discrepancies. The chart shows the
+251-cell support, the 17 by 17 square, a labeled illustrative target and the
+replacement-cell bound. It is not a play trace.
+
+The new finite strategy-tree semantics includes fresh board-contained moves,
+explicit availability of a legal Breaker response, immediate victory, and lemmas
+excluding success for an impossible target or an unwon zero-budget position.
+These are written proof obligations pending the Lean build. The exact claim
+binding includes the complete board sets, six-cell target, empty starting sets,
+card identity and move bound. Four runner-input tests pass. The independent
+reviewer is withholding final approval until the actual proof receipt and seven
+rejected-binding logs are inspected.
+
+The existing 11 context-query tests and 13 five-object proof tests pass. Saved
+five-object, both N5 transfer, and Turing pair receipts still replay successfully.
+The first Snaky Lean build is preparing its pinned Mathlib dependency cache in
+WSL; native Git was installed there as an ordinary build dependency. No benchmark
+answering sessions, new credentials or security-setting changes were made.
+
+## 2026-10-19 — Snaky finite-board extension started
+
+PR #16 merged through protected main at `557a718`; both nine-job pre-merge
+CI runs and the subsequent main run passed. Started `codex/snaky-finite-board`
+from that clean revision, following the user's selected mathematical order.
+
+The target is the paper's existing 21-Maker-move corollary on the final
+251-cell envelope and the containing 17 by 17 square. The selected upstream
+Lean theorem at `1581d4cbdd69a0faf34b2089614fe2a814316a6a` concerns the infinite
+grid. Its replacement-move lemma uses infinitude. The finite extension must
+justify spare cells with a move-count invariant and keep all moves on the
+board; it cannot assert fresh moves on arbitrary exhausted finite states.
+
+The 728-card certificate, including six bases, is separate from the older
+616-card reconstruction. Independent certificate reconstruction, Lean proof,
+and independent implementation review are assigned separately. The intended
+claim has stable ID `context:family-187:snaky:finite-board-21:v1`. Until its
+proof and checks complete, this is a development target rather than verified
+atlas evidence. No smaller move bound, smaller board, novelty, or agent
+performance gain is claimed. Model benchmarks and training remain paused.
+
 ## 2026-10-19 — Five-object operation minimum proof started
 
 Following the user's research order, started a separate branch from merged
