@@ -1,4 +1,4 @@
-"""Read exact N5 claims and check exported records against their curated bindings.
+"""Read exact N5 and one TM claim; check exports against their curated bindings.
 
 Local deterministic interface; no model calls, network, or Lean execution.
 `check` validates a registered record, not an arbitrary mathematical conjecture.
@@ -10,13 +10,16 @@ import copy
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 import sys
 
 import build_n5_context as context
 import query_atlas
+import tm_context
 
 ROOT = context.ROOT
-CLAIM_IDS = (context.SAVED_CLAIM_ID, context.ATLAS_CLAIM_ID)
+N5_CLAIM_IDS = (context.SAVED_CLAIM_ID, context.ATLAS_CLAIM_ID)
+CLAIM_IDS = (*N5_CLAIM_IDS, tm_context.CLAIM_ID)
 NAMESPACE = "finite-congruence-context/query-v1"
 CHECK_LIMIT = ("Exact registered context matching only. This does not elaborate Lean, "
                "infer theorem applicability, verify arbitrary claims, or establish that an agent preserved meaning.")
@@ -63,8 +66,12 @@ def source_record(root, data):
             "hash_encoding": data["hash_encoding"]}
 
 
-def explain_claim(identifier, data, root=ROOT):
+def explain_claim(identifier, data=None, root=ROOT):
     context.require(identifier in CLAIM_IDS, f"unknown claim id: {identifier}")
+    if identifier == tm_context.CLAIM_ID:
+        source, claim = tm_context.explain(root)
+        return explanation(source, claim)
+    data = load_context(root) if data is None else data
     if identifier == context.SAVED_CLAIM_ID:
         claim = copy.deepcopy(data["claims"][0])
     else:
@@ -77,16 +84,21 @@ def explain_claim(identifier, data, root=ROOT):
                       "predicate": "For every equivalence relation on {0,1,2,3}, it is preserved by both displayed operations if and only if it equals one of the displayed groupings.",
                       "applicable_lemmas": [],
                       "proof_status": "No Lean proof for these displayed operation tables is attached by this interface."})
+    return explanation(source_record(root, data), claim)
+
+
+def explanation(source, claim):
     return {"schema_version": 1, "namespace": NAMESPACE, "status": "ok", "command": "explain",
-            "context": source_record(root, data), "claim": claim,
+            "context": source, "claim": claim,
             "binding_method": "curated_exact_binding", "validation_limit": CHECK_LIMIT}
 
 
-def compare(data, root=ROOT):
+def compare(data=None, root=ROOT):
     # Each side retains its own complete evidence status and exact input tables.
+    data = load_context(root) if data is None else data
     return {"schema_version": 1, "namespace": NAMESPACE, "status": "ok", "command": "compare",
             "context": source_record(root, data), "comparison": copy.deepcopy(data["atlas_relation"]),
-            "claims": [explain_claim(identifier, data, root)["claim"] for identifier in CLAIM_IDS],
+            "claims": [explain_claim(identifier, data, root)["claim"] for identifier in N5_CLAIM_IDS],
             "validation_limit": CHECK_LIMIT}
 
 
@@ -108,7 +120,7 @@ def mismatch_paths(expected, actual, path=""):
     return [] if expected == actual else [path or "/"]
 
 
-def check_record(candidate, data, root=ROOT):
+def check_record(candidate, data=None, root=ROOT):
     identifier = candidate.get("claim", {}).get("id") if isinstance(candidate, dict) and isinstance(candidate.get("claim"), dict) else None
     known = isinstance(identifier, str) and identifier in CLAIM_IDS
     differences = mismatch_paths(explain_claim(identifier, data, root), candidate) if known else ["/claim/id"]
@@ -128,7 +140,7 @@ class JsonParser(argparse.ArgumentParser):
 def main(argv=None):
     parser = JsonParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True, parser_class=JsonParser)
-    explaining = sub.add_parser("explain", help="Explain one of the two exact N5 claims")
+    explaining = sub.add_parser("explain", help="Explain a registered N5 claim or tm:tiny-stay:tape:v1")
     explaining.add_argument("claim_id")
     explaining.add_argument("--out", type=Path, help="Save UTF-8 JSON directly (avoids shell encoding changes)")
     sub.add_parser("compare", help="Compare saved N5 with atlas n4-E16709 under the recorded bijection")
@@ -136,18 +148,17 @@ def main(argv=None):
     checking.add_argument("record", type=Path)
     try:
         args = parser.parse_args(argv)
-        data = load_context()
         if args.command == "explain":
-            output = explain_claim(args.claim_id, data)
+            output = explain_claim(args.claim_id)
             if args.out:
                 args.out.write_bytes(encode(output))
         elif args.command == "compare":
-            output = compare(data)
+            output = compare()
         else:
-            output = check_record(read_json(args.record), data)
+            output = check_record(read_json(args.record))
         sys.stdout.buffer.write(encode(output))
         return 1 if output["status"] == "unsupported" else 0
-    except (OSError, ValueError, KeyError, TypeError, IndexError) as error:
+    except (OSError, ValueError, KeyError, TypeError, IndexError, subprocess.SubprocessError) as error:
         sys.stderr.write(json.dumps({"schema_version": 1, "status": "error", "error": str(error)}) + "\n")
         return 2
 

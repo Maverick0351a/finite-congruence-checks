@@ -58,6 +58,13 @@ wording and values being read.
 The Turing query has its own evidence status, assumptions, and limits. It does
 not inherit the grouping catalog's exhaustive-classification status.
 
+The [source-context interface](CONTEXT_QUERY.md#one-turing-machine-claim) also
+supports one existing claim, `tm:tiny-stay:tape:v1`. Its `explain` export bundles
+the exact input, machine tables, traces, and qualified lemma references; its
+`check` command detects differences from that registered binding. This tests
+the same interface used for N5 without changing the atlas registry or running
+the paused model benchmark.
+
 ## Follow a claim to evidence
 
 - [Pair registry](../evidence/tm-atlas-v1.json): exact machines, blank input,

@@ -82,12 +82,13 @@ python scripts/query_atlas.py show n4-E16403
 python scripts/query_atlas.py claims --entry n4-E16403
 ```
 
-Explain an exact N5 claim or compare its two constructions with the
+Explain an exact N5 claim or one Turing tape claim, or compare the two N5 constructions with the
 [source-context interface](docs/CONTEXT_QUERY.md):
 
 ```sh
 python scripts/query_context.py explain context:family-206:saved-n5:classification:v1
 python scripts/query_context.py compare
+python scripts/query_context.py explain tm:tiny-stay:tape:v1
 ```
 
 Read the [query contract](docs/ATLAS_QUERY.md),

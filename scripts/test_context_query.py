@@ -53,7 +53,7 @@ class QueryTests(unittest.TestCase):
             self.assertEqual(lemma["construction_id"], context.SAVED_CONSTRUCTION_ID)
 
     def test_both_exports_round_trip_including_utf8_file(self):
-        for identifier in query.CLAIM_IDS:
+        for identifier in query.N5_CLAIM_IDS:
             with self.subTest(identifier=identifier), tempfile.TemporaryDirectory() as folder:
                 file = Path(folder) / "claim.json"
                 result, exported = self.cli("explain", identifier, "--out", file)
