@@ -50,6 +50,25 @@ class SnakyInputTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 proof.audit_axioms(log)
 
+    def test_kernel_prefixes_cover_the_exact_closure(self):
+        selectors = proof.kernel_selectors()
+        self.assertEqual(len(selectors), 9)
+        self.assertEqual(len(proof.module_names()), 179)
+        self.assertEqual(next(c for n, c in proof.plan(proof.expected_claim()) if n == "kernel"),
+                         ["lake", "env", "leanchecker", "-v", *selectors])
+
+    def test_kernel_inventory_rejects_omissions_duplicates_and_extras(self):
+        names = proof.module_names()
+        clean = "".join(f"replaying {n}\n" for n in names)
+        self.assertEqual(proof.audit_kernel(clean), names)
+        for bad in (clean.replace(f"replaying {names[0]}\n", "", 1),
+                    clean + f"replaying {names[0]}\n", clean + "replaying Unexpected\n",
+                    clean + "replaying FiniteCards.Extra'\n", clean + "replaying FiniteCards.α\n",
+                    clean + "replaying FiniteCards.Bad suffix\n",
+                    clean.replace(names[0], names[0] + "Extra", 1)):
+            with self.subTest(log=bad[-100:]), self.assertRaises(ValueError):
+                proof.audit_kernel(bad)
+
     def test_changed_vendor_and_dependency_sources_fail(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
@@ -132,6 +151,14 @@ class SnakyProofTests(unittest.TestCase):
 
     def test_changed_log_fails(self):
         self.mutated_receipt(lambda r, out: (out / "kernel.log").write_text("replacement", encoding="utf-8"))
+
+    def test_incomplete_kernel_inventory_fails_even_with_matching_hash(self):
+        def edit(receipt, out):
+            path = out / "kernel.log"
+            lines = path.read_text(encoding="utf-8").splitlines(keepends=True)
+            path.write_text("".join(line for line in lines if line != "replaying SnakyBinding\n"), encoding="utf-8")
+            receipt["artifacts"][path.name] = proof.digest(path)
+        self.mutated_receipt(edit)
 
     def test_missing_artifact_fails(self):
         self.mutated_receipt(lambda r, out: (out / "Audit.lean").unlink())

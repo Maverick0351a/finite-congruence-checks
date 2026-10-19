@@ -120,12 +120,29 @@ The runner records `LEAN_NUM_THREADS=1` to reduce concurrent compilation work.
 This setting is not a strict memory or concurrency limit for `leanchecker`:
 the pinned runtime may start another worker when a task waits on dependencies.
 The initial local bulk replay reached roughly 14.3 GiB RSS. Allow substantial
-memory and disk space; hosted CI has a 120-minute job allowance. Compilation
-has a 60-minute stage allowance; the other stages each allow 40 minutes. A
+memory and disk space; hosted CI has a 210-minute job allowance. Compilation
+has a 60-minute stage allowance, kernel replay allows 120 minutes, and the
+other stages each allow 40 minutes. A
 timeout fails verification and preserves the partial stage log and receipt.
 The first fresh hosted attempt reached the former 40-minute compilation limit;
-it did not reach kernel replay or the negative controls. Its resource behavior
-is assessed separately from the warmed local run.
+it did not reach kernel replay or the negative controls. After compilation's
+allowance increased, both hosted builds passed in 33–36 minutes, but their
+kernel replay reached its former 40-minute limit. Neither failed run completed
+kernel replay or the negative controls. The longer kernel allowance retains all
+179 modules and records host capacity plus GNU time resource measurements as
+separate CI diagnostics. Hosted resource behavior is assessed separately from
+the warmed local run; a timeout never counts as proof success.
+
+The pinned [Lean checker implementation](https://github.com/leanprover/lean4/blob/5045d0056413266e57c625dcd7c365b10e377c52/src/LeanChecker.lean)
+rescans its entire module search path for each command-line selector. The
+runner uses nine exact names or namespace prefixes to select the same 179
+local modules, avoiding 170 redundant discovery scans. It checks that these
+selectors match the source import closure. Verbose replay output must name
+every expected module exactly once, including during saved-receipt replay;
+missing or extra compiled modules fail the inventory check. Each `replaying`
+line announces a task wait, so the complete inventory must be accompanied by
+a successful process exit. A partial log is not a completed proof. The earlier
+empty logs do not tell us how much time was spent on discovery versus replay.
 
 The runner first checks the independent certificate reconstruction and exact
 upstream bytes. It then builds the Lean proof, audits the theorem dependencies'

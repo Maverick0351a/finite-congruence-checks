@@ -117,7 +117,7 @@ jobs:
   lean:
     name: Concrete Lean certificates
     runs-on: ubuntu-latest
-    timeout-minutes: 120 # Up to 60 minutes for fresh Snaky compilation, then complete kernel replay.
+    timeout-minutes: 210 # Build 60m + kernel 120m + setup, controls, other proofs and artifact upload.
     env:
       LEAN_NUM_THREADS: '1'
       MATHLIB_NO_CACHE_ON_UPDATE: '1'
@@ -148,15 +148,19 @@ jobs:
           retention-days: 90
       - name: Prove Snaky on both finite boards and reject mismatched claims
         run: |
-          df -h .
-          python scripts/snaky_proof.py run --out runs/snaky-proof
+          mkdir -p runs
+          { nproc; free -h; df -h .; } | tee runs/snaky-host-resources.txt
+          /usr/bin/time -v -o runs/snaky-host-timing.txt python scripts/snaky_proof.py run --out runs/snaky-proof
           python scripts/snaky_proof.py replay --out runs/snaky-proof
       - name: Preserve Snaky finite-board proof and binding evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: snaky-finite-proof
-          path: runs/snaky-proof/
+          path: |
+            runs/snaky-proof/
+            runs/snaky-host-resources.txt
+            runs/snaky-host-timing.txt
           retention-days: 90
 
   grouping-checker:

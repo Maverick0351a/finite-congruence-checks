@@ -1,5 +1,32 @@
 # Finite graph search work log
 
+## 2026-10-19 — Hosted Snaky kernel replay exceeds its stage allowance
+
+Both runs of PR #18 head `22fdfd061fc69c29553297ecb073c7200d3b8912`
+completed compilation and the axiom-report command. The PR run's build took
+1,980.924 seconds; the push run took 2,147.996 seconds. Independent inspection
+of each downloaded axiom log passes all 19 declaration reports. Both kernel
+stages then reached the 2,400-second limit. Their receipts correctly record
+`failure_kind=timeout`; exit -9 resulted from the runner's cleanup. No negative
+controls ran, and neither receipt is accepted as a completed verification.
+
+The repair assigns kernel replay a 7,200-second bound, keeps compilation at
+3,600 seconds and the remaining stages at 2,400 seconds, and gives the job
+210 minutes for both long stages plus other proofs, setup, controls and uploads.
+Host capacity and GNU time measurements will be retained separately from proof
+artifacts. The complete module list, mathematical sources, axiom policy and
+negative controls remain required. This is not evidence of an out-of-memory
+failure or a mathematical counterexample. The modified runner requires a new
+actual receipt and reviewed presentation anchor; those gates are pending.
+Inspection of the pinned Lean checker also found a full search-path scan per
+selector. Nine selectors match exactly the same 179 modules in both the source
+tree and local compiled cache, avoiding 170 redundant scans. The runner now
+requests verbose output and validates its complete module inventory alongside
+exit zero in both actual execution and saved replay. An announced module is
+not reported as complete before the process succeeds. The speed effect remains
+unmeasured; the older empty kernel logs cannot attribute the timeout's cost.
+Model benchmarks, reserved tasks and training remain paused.
+
 ## 2026-10-19 — Renewed Snaky verification passes with complete stage records
 
 The revised runner completed all 12 actual proof stages from committed source

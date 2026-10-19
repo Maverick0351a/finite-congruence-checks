@@ -55,9 +55,10 @@ class SnakyRunnerTests(unittest.TestCase):
                 self.fail("spawned child survived its failed process group")
             time.sleep(0.05)
 
-    def test_only_build_gets_longer_limit(self):
+    def test_only_build_and_kernel_get_longer_limits(self):
         self.assertEqual(proof.stage_timeout("build"), 3600)
-        for name in ("version", "dependencies", "axioms", "kernel", "changed-target"):
+        self.assertEqual(proof.stage_timeout("kernel"), 7200)
+        for name in ("version", "dependencies", "axioms", "changed-target"):
             self.assertEqual(proof.stage_timeout(name), 2400)
 
     def test_child_sees_running_checkpoint_and_output_is_retained(self):
@@ -97,6 +98,24 @@ class SnakyRunnerTests(unittest.TestCase):
         self.assertEqual(stage["exit_code"], 1)
         self.assertIsNone(stage["failure_kind"])
         self.assertEqual(self.saved()["stages"], [stage])
+
+    def test_kernel_inventory_and_successful_exit_are_both_required(self):
+        for code, names, passes in ((0, ["Demo"], True), (1, ["Demo"], False),
+                                    (0, [], False), (0, ["Demo", "Demo"], False),
+                                    (0, ["Demo", "Unexpected"], False)):
+            source = "import sys\n" + "".join(f"print('replaying {name}')\n" for name in names)
+            source += f"sys.exit({code})\n"
+            with self.subTest(code=code, names=names), \
+                    mock.patch.object(proof, "module_names", return_value=["Demo"]):
+                if passes:
+                    stage = proof.run_stage("kernel", self.command(source), root=self.root,
+                                            out=self.out, receipt=self.receipt)
+                    self.assertEqual(stage["status"], "passed")
+                else:
+                    with self.assertRaises(ValueError):
+                        proof.run_stage("kernel", self.command(source), root=self.root,
+                                        out=self.out, receipt=self.receipt)
+                    self.assertEqual(self.saved()["stages"][-1]["status"], "failed")
 
     def test_launch_failure_preserves_failed_stage_and_empty_log(self):
         with self.assertRaises(OSError):
@@ -209,7 +228,8 @@ class SnakyRunnerTests(unittest.TestCase):
         # hash comparison to reach the new stage checks; this is no proof run.
         shutil.copytree(proof.ROOT / proof.RECEIPT, self.out, dirs_exist_ok=True)
         baseline = proof.read(self.out / "summary.json")
-        for stage in baseline["stages"]:
+        for stage, (_, command) in zip(baseline["stages"], proof.plan(baseline["claim"])):
+            stage["command"] = command
             stage.update(status="passed", failure_kind=None,
                          timeout_seconds=proof.stage_timeout(stage["name"]))
         for change in ({"status": "running"}, {"status": "failed"},
@@ -219,7 +239,8 @@ class SnakyRunnerTests(unittest.TestCase):
             candidate["stages"][-1].update(change)
             (self.out / "summary.json").write_bytes(proof.encode(candidate))
             with self.subTest(change=change), \
-                    mock.patch.object(proof, "source_hashes", return_value=baseline["source_hashes"]):
+                    mock.patch.object(proof, "source_hashes", return_value=baseline["source_hashes"]), \
+                    mock.patch.object(proof, "audit_kernel"):
                 with self.assertRaisesRegex(ValueError, "stage did not complete|wrong stage timeout"):
                     proof.replay(self.out)
 

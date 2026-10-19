@@ -34,6 +34,7 @@ ALLOWED_AXIOMS = {"propext", "Quot.sound", "Classical.choice"}
 ENVIRONMENT = {"LEAN_NUM_THREADS": "1", "MATHLIB_NO_CACHE_ON_UPDATE": "1"}
 DEFAULT_STAGE_TIMEOUT = 2400
 BUILD_TIMEOUT = 3600
+KERNEL_TIMEOUT = 7200
 BINDING_NAMES = ["target_exact", "envelope_exact", "square_exact", "inputs_exact",
                  "counts_exact", "checked_envelope", "checked_square"]
 DECLARATIONS = [PREFIX + name for name in (
@@ -215,6 +216,31 @@ def source_hashes(root=ROOT):
     return {path: digest(root / path) for path in paths}
 
 
+def kernel_selectors(root=ROOT):
+    # Pinned leanchecker rescans the complete search path for every selector.
+    # Prefixes reduce that discovery work, not the set of modules replayed.
+    base = "OAI.GameTheory.SnakyTwentyOne."
+    selectors = [base + name for name in (
+        "Model", "Semantics.Game", "Semantics.Geometry", "Certificate.Operations", "Cards")]
+    selectors += ["FiniteCards", "SnakySemantics", "SnakyFinite", "SnakyBinding"]
+    project = root / PROJECT
+    sources = [p for folder in ("OAI", "FiniteCards") for p in (project / folder).rglob("*.lean")]
+    sources += [project / (name + ".lean") for name in selectors[-3:]]
+    available = {p.relative_to(project).with_suffix("").as_posix().replace("/", ".") for p in sources}
+    selected = {name for name in available if any(
+        name == prefix or name.startswith(prefix + ".") for prefix in selectors)}
+    require(selected == set(module_names(root)), "kernel selectors differ from proof import closure")
+    return selectors
+
+
+def audit_kernel(log, root=ROOT):
+    # These lines announce task waits, not completion. The caller must also
+    # require exit zero; only then does the exact inventory describe a replay.
+    modules = [line.removeprefix("replaying ") for line in log.splitlines() if line.startswith("replaying ")]
+    require(sorted(modules) == sorted(module_names(root)), "missing, duplicate or unexpected kernel module")
+    return modules
+
+
 def controls(claim):
     changed = {}
     for name, mutate in (
@@ -262,12 +288,16 @@ def plan(claim, root=ROOT):
             ("dependencies", ["lake", "exe", "cache", "get"]),
             ("build", ["lake", "build", "SnakyBinding"]),
             ("axioms", ["lake", "env", "lean", "{out}/Audit.lean"]),
-            ("kernel", ["lake", "env", "leanchecker", *module_names(root)])
+            ("kernel", ["lake", "env", "leanchecker", "-v", *kernel_selectors(root)])
             ] + [(name, ["lake", "env", "lean", "{out}/" + name + ".lean"]) for name in controls(claim)]
 
 
 def stage_timeout(name):
-    return BUILD_TIMEOUT if name == "build" else DEFAULT_STAGE_TIMEOUT
+    if name == "build":
+        return BUILD_TIMEOUT
+    if name == "kernel":
+        return KERNEL_TIMEOUT
+    return DEFAULT_STAGE_TIMEOUT
 
 
 def checkpoint(out, receipt):
@@ -317,6 +347,8 @@ def run_stage(name, command, *, root, out, receipt, negative=False):
         text = (out / (name + ".log")).read_text(encoding="utf-8", errors="replace")
         require(negative_rejected(stage["exit_code"], text) if negative else stage["exit_code"] == 0,
                 "stage failed: " + name + "; see " + str(out))
+        if name == "kernel":
+            audit_kernel(text, root)
         stage["status"] = "passed"
     except BaseException as error:
         stage["status"] = "failed"
@@ -363,6 +395,8 @@ def replay(out=None, root=ROOT):
         require(type(code) is int, "wrong exit code type")
         log = (out / (name + ".log")).read_text(encoding="utf-8")
         require(negative_rejected(code, log) if name in negative else code == 0, "stage failed: " + name)
+        if name == "kernel":
+            audit_kernel(log, root)
     required = {"Audit.lean", *[name + ".log" for name, _ in expected], *[name + ".lean" for name in negative]}
     require(set(receipt["artifacts"]) == required, "artifact set differs")
     for name, sha in receipt["artifacts"].items():
