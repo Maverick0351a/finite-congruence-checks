@@ -1,0 +1,26 @@
+test_byte_limit_is_enforced_before_return (test_semantic_preflight.BrokerTests.test_byte_limit_is_enforced_before_return) ... ok
+test_failed_calls_count_and_ninth_call_stops (test_semantic_preflight.BrokerTests.test_failed_calls_count_and_ninth_call_stops) ... ok
+test_forbidden_reference_classes (test_semantic_preflight.BrokerTests.test_forbidden_reference_classes) ... ok
+test_new_broker_has_no_prior_context_or_other_view (test_semantic_preflight.BrokerTests.test_new_broker_has_no_prior_context_or_other_view) ... ok
+test_only_exact_arguments_allowed (test_semantic_preflight.BrokerTests.test_only_exact_arguments_allowed) ... ok
+test_search_has_identical_order_and_no_content_hints (test_semantic_preflight.BrokerTests.test_search_has_identical_order_and_no_content_hints) ... ok
+test_utf8_paging_round_trip (test_semantic_preflight.BrokerTests.test_utf8_paging_round_trip) ... ok
+test_wall_limit_is_enforced (test_semantic_preflight.BrokerTests.test_wall_limit_is_enforced) ... ok
+test_failed_or_incomplete_discovery_is_not_absence (test_semantic_preflight.NativeTelemetryTests.test_failed_or_incomplete_discovery_is_not_absence) ... ok
+test_missing_mcp_fields_are_never_empty (test_semantic_preflight.NativeTelemetryTests.test_missing_mcp_fields_are_never_empty) ... ok
+test_missing_turn_inventory_is_never_empty (test_semantic_preflight.NativeTelemetryTests.test_missing_turn_inventory_is_never_empty) ... ok
+test_generic_pair_discovery_in_both_arms (test_semantic_preflight.PacketTests.test_generic_pair_discovery_in_both_arms) ... ok
+test_inventory_excludes_answers_tasks_protocol (test_semantic_preflight.PacketTests.test_inventory_excludes_answers_tasks_protocol) ... ok
+test_pair_registry_reconstruction_and_input_identity (test_semantic_preflight.PacketTests.test_pair_registry_reconstruction_and_input_identity) ... ok
+test_provenance_expansion_negative_control (test_semantic_preflight.PacketTests.test_provenance_expansion_negative_control) ... ok
+test_raw_bytes_equal_and_fact_map_spans_present (test_semantic_preflight.PacketTests.test_raw_bytes_equal_and_fact_map_spans_present) ... ok
+test_source_identity_keys_survive_documentation (test_semantic_preflight.PacketTests.test_source_identity_keys_survive_documentation) ... ok
+test_corrupted_and_foreign_usage_rejected (test_semantic_preflight.UsageTests.test_corrupted_and_foreign_usage_rejected) ... ok
+test_cumulative_not_summed_and_subsets_not_added (test_semantic_preflight.UsageTests.test_cumulative_not_summed_and_subsets_not_added) ... ok
+test_decreasing_usage_rejected (test_semantic_preflight.UsageTests.test_decreasing_usage_rejected) ... ok
+test_no_telemetry_is_unknown (test_semantic_preflight.UsageTests.test_no_telemetry_is_unknown) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 1.350s
+
+OK

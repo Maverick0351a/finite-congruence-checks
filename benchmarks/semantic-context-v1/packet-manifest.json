@@ -1,0 +1,141 @@
+{
+  "status": "prepared_pending_independent_review_and_runner_preflight",
+  "atlas_commit": "cddf9cf1c2d06df36bc516fb0b461daf6365920e",
+  "units": 5912,
+  "shared_raw_units": 5744,
+  "inputs": {
+    "evidence/atlas.json": {
+      "sha256": "9bd8976488b269a86468dfcdb9f9ebbf246cfe8e0ffe4960f86941369919c82a",
+      "bytes": 77798
+    },
+    "evidence/atlas-claims.json": {
+      "sha256": "8095af25879e84e4fec119300ae7ff309cfd4888332c028c11b5635c77aaac76",
+      "bytes": 301955
+    },
+    "evidence/tm-atlas-v1.json": {
+      "sha256": "abd5fa917bbe2e1c5b62d928ef1d40b0ec46a08236e6e5ccf99b8731ebd51787",
+      "bytes": 743087
+    },
+    "evidence/tm-atlas-traces-v1.json": {
+      "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55",
+      "bytes": 540283
+    },
+    "evidence/atlas-review.json": {
+      "sha256": "f702ebcfd8addcb12aa8cf0434c074c8869a71ae738cd996727819d8f165cd26",
+      "bytes": 11996
+    },
+    "evidence/grouping-checker-v1/summary.json": {
+      "sha256": "a60865e6d45e7adb50146ada7f74cd91a93f790105c896e011e734975483b4fc",
+      "bytes": 34876
+    },
+    "evidence/tm-port-v1/summary.json": {
+      "sha256": "f298f712377d3a1123f709ac26891bc9376262ce9c93aa80c6adfb235cfac8a8",
+      "bytes": 4417
+    },
+    "evidence/tm-port-v1/build/axioms.log": {
+      "sha256": "cd34ffbe22243b1a5414b7fcd7a611200eda88096f95e6c68400f2b476164b64",
+      "bytes": 398
+    },
+    "evidence/N5-witness.json": {
+      "sha256": "2b6648c6842bf0742c3029c6c0ad7c906fbdb8d281d8e830a85c51c047ef2685",
+      "bytes": 1588
+    },
+    "evidence/minimized-algebras.json": {
+      "sha256": "76671ae20ad76bc2507b9e0c822bb78862abf2ff507f1a3ab7ba8b40efe85cea",
+      "bytes": 47767
+    },
+    "evidence/search-results.json": {
+      "sha256": "d25ee157a0be410cd681f02b6792ecada5a2564b76cc01daf4e274fadf818472",
+      "bytes": 41080
+    },
+    "lean/evidence/bridge-run/result.json": {
+      "sha256": "29666ea7b9c28a6a643dcaeef3666f692c0e062e775d5a5eda9b5986f04883a8",
+      "bytes": 7511
+    },
+    "lean/CertificateData.lean": {
+      "sha256": "1db35c8b640f0ea0d73ea12cd14e5e1b4b3eef588d3eb5ed66fbec0be37258f3",
+      "bytes": 6133
+    },
+    "lean/FiniteCongruenceChecks.lean": {
+      "sha256": "845615fe7be190dc733762a1b95828cffb4e09b6d3b6b0e334211000d93422e8",
+      "bytes": 8783
+    },
+    "lean/GroupingChecker.lean": {
+      "sha256": "057fc24fe3b7af8ed903b0d1711cc7c1bd086f7738e258cea60ee8c26093bddd",
+      "bytes": 6833
+    },
+    "lean/upstream/ConcreteBridge.lean": {
+      "sha256": "8a7c9d8bc83b511026efb3b6949c6265d8ba00d85ca41ef0cc7c060cc3f1b1f6",
+      "bytes": 9910
+    },
+    "lean/upstream/OAI/Algebra/Universal/Congruence.lean": {
+      "sha256": "30e9201344dcf4069ca9ace276c76dc3b1507d09f0f6bfbf5a7c5d693ac9716c",
+      "bytes": 7699
+    },
+    "lean/upstream/OAI/Algebra/Universal/GraphCriterion.lean": {
+      "sha256": "bd80c2bea95ee1b4f7118fc8dc272aebac7b23038ba93cdafd386dc1b688fb50",
+      "bytes": 15007
+    },
+    "lean/tm/MachineExtract.lean": {
+      "sha256": "d841b79735f7aef28dbf95e771f9b7931c918067cb48ad1e8da57513cd8e6de9",
+      "bytes": 1977
+    },
+    "lean/tm/MachineChecks.lean": {
+      "sha256": "e4e3e86fad42f0dedc1f6017795e406094f7190641ea4ebd1b9329e61da1e43c",
+      "bytes": 1682
+    },
+    "lean/tm/source/manifest.json": {
+      "sha256": "c5900aa1e3ab59a745ca2f68e1b749897d7de26a9de70b0fb0b7ecd55a397973",
+      "bytes": 1649
+    },
+    "lean/tm/source/Machine.definitions.txt": {
+      "sha256": "d7dc1d5a9525847e379c7951a885b7f929409d2215e5197c7eb8780adce8225f",
+      "bytes": 1703
+    },
+    "lean/tm/source/NavierStokesAlternating.lean": {
+      "sha256": "0166c40c57bd9eb6ede9e25bda09650b859c81c0d801de9faa3875f195e003fc",
+      "bytes": 9233
+    },
+    "lean/tm/lean-toolchain": {
+      "sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+      "bytes": 25
+    },
+    "lean/tm/lake-manifest.json": {
+      "sha256": "7590938a658deb95878a502af9d02133543b5e06b4fa9bb41607b451e3172be1",
+      "bytes": 3553
+    },
+    "specs/unary-grouping-v1.json": {
+      "sha256": "2a25406831cccfd3c520cfd1b2b2bde6b7bbad50c7f5f771ab5f0e7f96c21b01",
+      "bytes": 5883
+    },
+    "evidence/tm-port-v1/inputs.jsonl": {
+      "sha256": "3a9c31df1b264250126a40067f6e3db49d06be11b4ef52617bdacfaf4fee2891",
+      "bytes": 519212
+    },
+    "evidence/tm-port-v1/lean.jsonl": {
+      "sha256": "f009d43cf40e26af81d62ab20b238bac60ffff2c1f98e71b3e1176372396d9be",
+      "bytes": 259149
+    }
+  },
+  "files": {
+    "inventory.json": {
+      "sha256": "ef6a9f85509fc5e27aa605341386b4ebdf58bf545ab50c766b5455c80ce42348",
+      "bytes": 5306744
+    },
+    "documentation.json": {
+      "sha256": "98d26865386e8b8e78545211eb38a1fa018fcae59dac46eede1eb455a78880cb",
+      "bytes": 2205299
+    },
+    "atlas.json": {
+      "sha256": "740531561ebf1577a1e0b6173b25c52284b9121c94111fed0812573cadbb037e",
+      "bytes": 2093580
+    },
+    "fact-map.json": {
+      "sha256": "b86fc55df480839f0547245c2940f6240ffda37e91cc8fdc72c1747128412b1e",
+      "bytes": 7633499
+    }
+  },
+  "renderer_sha256": "14dae4197e4dc793fe6ce12c3e77d048c5ef1aaad79f01bfbae5ba56e8d7b634",
+  "excluded": "All tasks, keys, old answers, retrieval reviews, protocol and preparation files.",
+  "limits": "Mechanical value/span parity and lossless factoring do not establish semantic preservation."
+}

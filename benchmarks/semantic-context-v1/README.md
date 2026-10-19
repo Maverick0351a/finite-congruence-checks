@@ -6,14 +6,20 @@ Read the [pre-run proposal](../../docs/SEMANTIC_CONTEXT_PILOT.md) first.
 * `tasks.json` contains six proposed task families and role-delivery rules.
 * `rubric.json` defines eight separately reported scoring dimensions.
 * `preparation.json` records completed checks and pending execution gates.
+* `packet-manifest.json` pins both generated presentations and the author fact map.
+* `preflight-result.json` and `preflight-records/` preserve checks, usage and failures.
+* `preflight-launch-plan.json` records the approved dummy-only restrictions.
 
 These are controller/author artifacts. **Do not expose this directory to an
 answering agent.** The prompt dispatcher must extract only that agent's task
 and common instructions. The key, task coverage tags, other roles' prompts,
 smoke answers, and prior outputs are outside its capabilities.
 
-The answer key, two matched presentations, and enforced runner are pending
-review and execution preflight. No comparison has run. The two-task first pilot
+The two matched presentations are prepared and reviewed. The
+[preflight report](../../docs/SEMANTIC_CONTEXT_PREFLIGHT.md) records 21 passing
+offline tests and failed native startup; live isolation and usage remain
+unverified. The key and enforced answering runner remain pending.
+No comparison has run. The two-task first pilot
 uses direct answers only: four fresh answering sessions and four blind reviews.
 The estimate is 66,000–190,000 tokens and 10–35 minutes, excluding preparation,
 preflight, and additional ambiguity adjudication. Handoffs and repeated trials

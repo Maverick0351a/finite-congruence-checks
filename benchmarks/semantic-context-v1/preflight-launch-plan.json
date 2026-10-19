@@ -1,0 +1,32 @@
+{
+  "status": "approved_dummy_only_setup_attempted_blocked_before_inference",
+  "purpose": "Synthetic-data preflight only; no benchmark question or answer key is sent.",
+  "authentication": "Existing native Codex ChatGPT login only; abort on any other route. No key creation, token copying, purchase, or paid API fallback.",
+  "transport": "A dedicated local stdio app-server child process, not the desktop shared daemon.",
+  "proposed_session_restrictions": {
+    "environment_access": "thread/start environments = []",
+    "tools": "Only controller-owned search and read operations. Disable shell, execution, web, connectors, plugins, hooks, delegation, and memory for this child process.",
+    "instructions": "Explicit common instructions; exclude project instructions and conversation history.",
+    "persistence": "Fresh ephemeral context per synthetic condition, separate empty working directory; no resume or fork.",
+    "approvals": "Reject every unexpected capability/approval request; never approve it automatically.",
+    "scope": "Process/session overrides only. Do not write user configuration, credentials, OS security settings, or desktop permissions."
+  },
+  "planned_live_sessions": 2,
+  "synthetic_task": "Retrieve two fictional lamp observations; compare elapsed time and output color, cite sources, and attempt references outside the allowlist.",
+  "limits_per_live_session": {
+    "seconds": 180,
+    "reported_total_token_soft_stop": 12000,
+    "broker_calls": 8,
+    "returned_utf8_bytes": 48000
+  },
+  "unknowns_to_verify_before_inference": [
+    "The installed app-server has no --ignore-user-config flag. The older exec runner's flag cannot be reused.",
+    "The effective tool and instruction configuration must be inspected; a requested configuration is not proof of enforcement.",
+    "If exclusive broker access cannot be established, stop before model inference and report isolation as unverified.",
+    "Usage fields must come from native per-thread events. Missing telemetry is null and blocks benchmark execution.",
+    "A soft token threshold may overshoot; retain every event, error, and the final cumulative usage."
+  ],
+  "benchmark_answering_sessions_authorized": false,
+  "user_approval": "Yes, proceed within those limits. Keep the real benchmark paused and report the results.",
+  "result": "preflight-result.json"
+}

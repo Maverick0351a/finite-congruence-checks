@@ -1,0 +1,38 @@
+[
+  {
+    "kind": "packet_review_finding",
+    "finding": "Documentation renderer changed underscore/case in source filename keys.",
+    "resolution": "Preserve exact keys; validated in v2/v3."
+  },
+  {
+    "kind": "packet_review_finding",
+    "finding": "Repeated context and raw rows buried machine pair discovery.",
+    "resolution": "Common own-record index and deterministic title/record/IDF ranking."
+  },
+  {
+    "kind": "offline_regression",
+    "test": "test_generic_pair_discovery_in_both_arms",
+    "tests": 18,
+    "failures": 1,
+    "elapsed_seconds": 47.947,
+    "observed": "First returned tm-claim-0 instead of tm-pair-0.",
+    "resolution": "Restored title/Counter ranking and rechecked.",
+    "raw_log_available": false,
+    "record_scope": "Transcribed observation from development tool output; not an answering-model result."
+  },
+  {
+    "kind": "prospective_native_report_bug",
+    "finding": "Missing turns/data/tools fields defaulted to empty.",
+    "resolution": "Require explicit typed fields; negative controls."
+  },
+  {
+    "kind": "prospective_native_report_bug",
+    "finding": "Failed MCP discovery with an empty tools map could appear absent.",
+    "resolution": "Preserve runtime status and discovery error digest; absent/error/incomplete catalog stays unverified."
+  },
+  {
+    "kind": "scripted_timing_resolution",
+    "finding": "Initial monotonic timer reported 0.0 for sub-millisecond broker blocks.",
+    "resolution": "Retained initial record; reran using perf_counter. No model involved."
+  }
+]

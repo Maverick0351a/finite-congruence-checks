@@ -1,6 +1,9 @@
 # Does the atlas help preserve a claim's meaning?
 
 **Status: revised pre-run proposal, draft 2. No comparison answers or scores exist.**
+The [packet and dummy-preflight addendum](SEMANTIC_CONTEXT_PREFLIGHT.md) records
+completed packet preparation, offline checks, and native setup failures.
+Live isolation and usage remain unverified; benchmark execution is paused.
 The first pilot is a direct-answer feasibility check using two task families,
 two conditions, and one attempt per task/condition: **four fresh answering
 sessions**. Handoffs and repeated trials are deferred; their larger design is
@@ -231,7 +234,7 @@ The direct column governs this pilot; the other roles remain deferred.
 | Limit per fresh answering session | Direct (also future A) | Future B |
 | --- | ---: | ---: |
 | Broker calls, including failed calls | 8 | 8 |
-| Total returned reference text (UTF-8 bytes) | 48,000 | 48,000 |
+| Total returned reference content and metadata (UTF-8 bytes) | 48,000 | 48,000 |
 | Search results per call | 5 | Search unavailable |
 | Wall time, including tool waits | 300 seconds | 300 seconds |
 | Soft interrupt threshold: total reported input + output tokens | 40,000 | 40,000 |
@@ -243,7 +246,9 @@ asynchronous: the token threshold is a soft stop, and any overshoot must be
 reported. Record cumulative usage at every update and interrupt at the first
 update crossing the threshold. For each logical read, return at most 12,000
 UTF-8 bytes with a continuation page; search returns neutral titles/IDs and at
-most 4,000 bytes total. Both count against the session byte budget. No submit
+most 4,000 bytes total. Content, source provenance, control metadata and denied
+responses count against the session byte budget; JSON escaping of content is
+recorded separately as transport bytes. No submit
 tool is required: final text can be returned after all read calls are spent.
 Direct and B have equal ceilings; their access to uncited material differs by
 design. Run no comparison if the runner cannot enforce the broker limits,
@@ -391,9 +396,7 @@ direct/B resource ceilings, required capability isolation and packet-budget
 preflight, and retained refusals and budget exhaustion as comparison outcomes.
 This was design review, without running or grading answering agents. No evidence
 schema changes, API calls, new mathematical
-proofs, or comparison results are part of this milestone. Matched rendered
-corpora, private answer key, enforcement runner, and blind result scoring are
-execution work after review of this proposal.
+proofs, or comparison results are part of that design milestone.
 
 Draft 2: narrowed the initial pilot to SC01 and SC05 direct answers under both
 conditions (four answering and four blind review sessions). Retained the larger
@@ -403,3 +406,9 @@ isolation/live telemetry as mandatory gates. No comparison answers were run.
 
 The [preparation record](../benchmarks/semantic-context-v1/preparation.json)
 lists completed checks, artifact hashes, and the gates still pending.
+
+Preflight addendum: matched rendered corpora and their independent parity review
+are complete. Offline controls pass; native setup failed before initialization.
+Live isolation, usage and interruption remain unverified. Private key/scorer
+finalization and per-task budget checks remain pending. The four real answering
+sessions remain paused, with the original task/rubric/freeze bytes unchanged.

@@ -1,0 +1,179 @@
+{
+  "status": "blocked_before_inference",
+  "recorded_at_utc": "2026-10-19T06:26:54.423749+00:00",
+  "scope": "Matched packet preparation, offline dummy controls and native setup attempts only.",
+  "preparation_base_commit": "0536f9418f3471b19a232835935b0312fa19637c",
+  "atlas_commit": "cddf9cf1c2d06df36bc516fb0b461daf6365920e",
+  "approval": {
+    "temporary_dummy_process_restrictions": true,
+    "max_dummy_inference_sessions": 2,
+    "seconds_per_session": 180,
+    "reported_token_soft_limit_per_session": 12000,
+    "real_benchmark_approved": false,
+    "paid_api_or_new_credentials_approved": false,
+    "persistent_security_changes_approved": false
+  },
+  "checks": {
+    "atlas_freeze": {
+      "status": "passed",
+      "anchors": 46,
+      "git_and_worktree": true
+    },
+    "packet_parity": {
+      "status": "passed_mechanical_and_independent_AI_preparation_review",
+      "references": 5912,
+      "shared_raw_units": 5744,
+      "pinned_inputs": 28,
+      "source_keys_exact": true,
+      "all_four_machine_pairs_reconstruct": true,
+      "largest_page_with_metadata_bytes": 11474,
+      "semantic_preservation_demonstrated": false
+    },
+    "offline_controls": {
+      "status": "passed",
+      "tests": 21,
+      "elapsed_seconds": 1.35,
+      "log": "preflight-records/offline-tests-21.log"
+    },
+    "native_setup": {
+      "status": "failed",
+      "process_attempts": 3,
+      "diagnostic": "Error: invalid transport",
+      "initialization_completed": false
+    },
+    "native_context_isolation": {
+      "status": "unverified",
+      "blocks_inference": true
+    },
+    "exclusive_native_tools": {
+      "status": "unverified",
+      "blocks_inference": true,
+      "reason": "Dynamic tools are additional; disabledPluginIds does not itself filter; exhaustive runtime tool/prompt surface not established."
+    },
+    "native_usage_capture": {
+      "status": "unverified",
+      "blocks_inference": true
+    },
+    "live_wall_and_token_interrupt": {
+      "status": "unverified",
+      "blocks_inference": true,
+      "reason": "Broker checks limits at invocation; no live controller watchdog or token interrupt demonstrated."
+    },
+    "saved_config_integrity": {
+      "status": "passed",
+      "unchanged_in_all_attempts": true
+    },
+    "task_and_rubric_preservation": [
+      {
+        "path": "benchmarks/semantic-context-v1/tasks.json",
+        "unchanged_from_preparation_head": true,
+        "sha256_lf": "5f9b92768b3bd007e7798d9ece286fa1989541542859338958e3da33f63eca03"
+      },
+      {
+        "path": "benchmarks/semantic-context-v1/rubric.json",
+        "unchanged_from_preparation_head": true,
+        "sha256_lf": "d9235986f801610be4a08e1bb9aa7dae7cf2c001bce1d4469b62f4843d9a1772"
+      },
+      {
+        "path": "benchmarks/semantic-context-v1/freeze.json",
+        "unchanged_from_preparation_head": true,
+        "sha256_lf": "e5cb91784e8c0770c63254170d8da9f107eff1bb808781eb81ec30ad73c2f76c"
+      }
+    ]
+  },
+  "actual_usage": {
+    "dummy_inference_turns": 0,
+    "benchmark_answering_sessions": 0,
+    "paid_api_calls": 0,
+    "native_model_token_usage": null,
+    "new_credentials": false,
+    "native_initialize_requests": 3,
+    "native_probe_elapsed_seconds": 0.094,
+    "native_time_scope": "Probe blocks only; excludes version/login, packet build, tests, preparation and review.",
+    "preparation_and_review_model_usage": null,
+    "scripted_broker_exercises": [
+      {
+        "condition": "documentation",
+        "kind": "scripted_broker_exercise_no_model",
+        "attempted_calls": 9,
+        "returned_responses": 8,
+        "denied_responses": 5,
+        "limit_blocked_calls": 1,
+        "returned_reference_and_metadata_bytes": 649,
+        "transport_bytes": 689,
+        "elapsed_seconds": 0.000174,
+        "clock": "time.perf_counter",
+        "native_model_token_usage": null
+      },
+      {
+        "condition": "atlas",
+        "kind": "scripted_broker_exercise_no_model",
+        "attempted_calls": 9,
+        "returned_responses": 8,
+        "denied_responses": 5,
+        "limit_blocked_calls": 1,
+        "returned_reference_and_metadata_bytes": 623,
+        "transport_bytes": 671,
+        "elapsed_seconds": 0.000114,
+        "clock": "time.perf_counter",
+        "native_model_token_usage": null
+      }
+    ],
+    "scripted_activity_is_model_usage": false
+  },
+  "usage_estimate": {
+    "answering_tokens": [
+      44000,
+      136000
+    ],
+    "blind_review_tokens": [
+      22000,
+      54000
+    ],
+    "total_tokens": [
+      66000,
+      190000
+    ],
+    "calibrated": false,
+    "bill_or_price_quote": false,
+    "excludes": [
+      "preparation",
+      "preflight",
+      "additional adjudication"
+    ],
+    "reason": "No live model telemetry was captured."
+  },
+  "preparation_review": {
+    "kind": "separate_AI_preparation_review",
+    "blind_outcome_review": false,
+    "benchmark_agent": false,
+    "external_peer_review": false,
+    "scope": "Packet parity, source pointers and every page byte count; strict missing/discovery telemetry cases."
+  },
+  "gates_before_benchmark": [
+    "Establish enforceable exclusive search/read and fresh-context boundary.",
+    "Complete dummy live telemetry and asynchronous interruption preflight.",
+    "Pin and observe actual same model/settings with no fallback.",
+    "Finalize private key/scorer/reviewer package outside answering capabilities.",
+    "Verify complete per-task reference/citation budgets in both conditions.",
+    "Show updated usage estimate, then obtain approval for the four benchmark sessions."
+  ],
+  "reserved_task_status": {
+    "definitions_unchanged": true,
+    "answering_trials": 0,
+    "future_prefix_budget_concern_bytes": 49743,
+    "current_reference_budget_bytes": 48000,
+    "no_silent_budget_revision": true
+  },
+  "artifact_hashes": {
+    "preflight-records/development-findings.json": "d35aadd973240c6cd8ec5f5999e0893374f4dbca1d812c4872519cac1ce9195f",
+    "preflight-records/dummy-broker-coarse-clock.json": "aec1725d24213a42eb0f55731dfcdab1d4ad84d74bd4268afe63cbdc1807082a",
+    "preflight-records/dummy-broker.json": "002644a89c9183983fb8d1b4622017ccccc14836d70bef5cd49e9806b2198883",
+    "preflight-records/native-probe-01.json": "016c341c0b6a4a0c0f5e75fb6ce8cb28401107b097ecfcaa06a90e1fa67500b6",
+    "preflight-records/native-probe-02.json": "45c3954b53940918d2833ced7a3deefc23c9399830c718d3a4a14e808063666e",
+    "preflight-records/native-probe-03.json": "4112fbd853f0e2d162abbf481bc522e87900bc97bb964b7ba3fd0b021d47eeb1",
+    "preflight-records/offline-tests-20.log": "28228fbcf8d8a9f6ff4635c52fbf6916cb3a232e94f9c9e3834211890ea91096",
+    "preflight-records/offline-tests-21.log": "808aabb913295bc3716a351c1e55c7a16d9734516fd0ea8da91243b432ddc4d2"
+  },
+  "packet_manifest_sha256": "e5b98cebe17d7d868c183b4df1b5c6ccb2fc0164d6f127968412181ecc0af39f"
+}
