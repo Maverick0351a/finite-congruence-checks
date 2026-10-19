@@ -118,8 +118,12 @@ The runner records `LEAN_NUM_THREADS=1` to reduce concurrent compilation work.
 This setting is not a strict memory or concurrency limit for `leanchecker`:
 the pinned runtime may start another worker when a task waits on dependencies.
 The initial local bulk replay reached roughly 14.3 GiB RSS. Allow substantial
-memory and disk space; hosted CI has a 90-minute job allowance. Its resource
-behavior is assessed separately from this warmed local run.
+memory and disk space; hosted CI has a 120-minute job allowance. Compilation
+has a 60-minute stage allowance; the other stages each allow 40 minutes. A
+timeout fails verification and preserves the partial stage log and receipt.
+The first fresh hosted attempt reached the former 40-minute compilation limit;
+it did not reach kernel replay or the negative controls. Its resource behavior
+is assessed separately from the warmed local run.
 
 The runner first checks the independent certificate reconstruction and exact
 upstream bytes. It then builds the Lean proof, audits the theorem dependencies'

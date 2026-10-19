@@ -13,6 +13,7 @@ import json
 import os
 from pathlib import Path
 import re
+import signal
 import subprocess
 import time
 
@@ -31,6 +32,8 @@ VENDOR_MANIFEST_SHA256 = "ca09b16a386355c5aa5a46c91fa87b6979cfc809ddc01b55743d61
 DEPENDENCY_MANIFEST_SHA256 = "5dda7eda39168cec70584a4b94d61681a7838d3daf43d093f31f4c4aaddf8e68"
 ALLOWED_AXIOMS = {"propext", "Quot.sound", "Classical.choice"}
 ENVIRONMENT = {"LEAN_NUM_THREADS": "1", "MATHLIB_NO_CACHE_ON_UPDATE": "1"}
+DEFAULT_STAGE_TIMEOUT = 2400
+BUILD_TIMEOUT = 3600
 BINDING_NAMES = ["target_exact", "envelope_exact", "square_exact", "inputs_exact",
                  "counts_exact", "checked_envelope", "checked_square"]
 DECLARATIONS = [PREFIX + name for name in (
@@ -249,7 +252,7 @@ def negative_rejected(code, log):
     setup_errors = ("unknown module", "unknown namespace", "unknown constant", "unknown identifier",
                     "object file", "does not exist", "no such file", "invalid import", "failed to synthesize",
                     "maximum recursion", "maximum number of heartbeats", "timeout", "stack overflow")
-    return (type(code) is int and code != 0 and "error:" in log and
+    return (type(code) is int and code > 0 and "error:" in log and
             not any(s in log.lower() for s in setup_errors) and
             any(s in log.lower() for s in ("type mismatch", "evaluated to false", "decide", "unsolved goals")))
 
@@ -261,6 +264,79 @@ def plan(claim, root=ROOT):
             ("axioms", ["lake", "env", "lean", "{out}/Audit.lean"]),
             ("kernel", ["lake", "env", "leanchecker", *module_names(root)])
             ] + [(name, ["lake", "env", "lean", "{out}/" + name + ".lean"]) for name in controls(claim)]
+
+
+def stage_timeout(name):
+    return BUILD_TIMEOUT if name == "build" else DEFAULT_STAGE_TIMEOUT
+
+
+def checkpoint(out, receipt):
+    # A running receipt is diagnostic evidence, never a successful verification.
+    # Exclude the receipt and its temporary file to avoid a self-referential hash.
+    receipt["artifacts"] = {p.name: digest(p) for p in sorted(out.iterdir())
+                            if p.is_file() and p.name not in {"summary.json", "summary.json.tmp"}}
+    temporary = out / "summary.json.tmp"
+    temporary.write_bytes(encode(receipt))
+    os.replace(temporary, out / "summary.json")
+
+
+def stop_process(proc):
+    if os.name == "posix":
+        # Popen below creates this process's own session/group. Never signal the
+        # runner's group or discover unrelated processes by name.
+        try:
+            os.killpg(proc.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
+    elif proc.poll() is None:
+        proc.kill()
+    try:
+        return proc.wait(timeout=10)
+    except subprocess.TimeoutExpired:
+        return None
+
+
+def run_stage(name, command, *, root, out, receipt, negative=False):
+    started = time.perf_counter()
+    stage = {"name": name, "command": command, "cwd": PROJECT,
+             "status": "running", "failure_kind": None, "exit_code": None,
+             "timeout_seconds": stage_timeout(name), "duration_seconds": 0,
+             "started_utc": datetime.now(timezone.utc).isoformat()}
+    receipt["stages"].append(stage)
+    checkpoint(out, receipt)
+    proc = None
+    try:
+        # Streaming to a real file preserves output even if the runner or job is
+        # interrupted, and avoids retaining a large compiler log in memory.
+        with (out / (name + ".log")).open("wb") as log:
+            proc = subprocess.Popen([arg.replace("{out}", str(out)) for arg in command],
+                                    cwd=root / PROJECT, env={**os.environ, **ENVIRONMENT},
+                                    stdout=log, stderr=subprocess.STDOUT,
+                                    start_new_session=os.name == "posix")
+            stage["exit_code"] = proc.wait(timeout=stage["timeout_seconds"])
+        text = (out / (name + ".log")).read_text(encoding="utf-8", errors="replace")
+        require(negative_rejected(stage["exit_code"], text) if negative else stage["exit_code"] == 0,
+                "stage failed: " + name + "; see " + str(out))
+        stage["status"] = "passed"
+    except BaseException as error:
+        stage["status"] = "failed"
+        stage["failure_kind"] = ("timeout" if isinstance(error, subprocess.TimeoutExpired) else
+                                 "interrupted" if isinstance(error, (KeyboardInterrupt, SystemExit)) or
+                                 (type(stage["exit_code"]) is int and stage["exit_code"] < 0) else
+                                 "verification" if isinstance(error, ValueError) else "execution")
+        stage["error"] = str(error)
+        if proc is not None:
+            # A failed parent may already have exited while its helpers remain.
+            # Clean up the owned group, retaining the parent's original result.
+            stopped_code = stop_process(proc)
+            if stage["exit_code"] is None:
+                stage["exit_code"] = stopped_code
+        raise
+    finally:
+        stage["duration_seconds"] = round(time.perf_counter() - started, 3)
+        stage["finished_utc"] = datetime.now(timezone.utc).isoformat()
+        checkpoint(out, receipt)
+    return stage
 
 
 def replay(out=None, root=ROOT):
@@ -280,6 +356,9 @@ def replay(out=None, root=ROOT):
     require(len(receipt["stages"]) == len(expected), "missing stages")
     for actual, (name, command) in zip(receipt["stages"], expected):
         require(actual["name"] == name and actual["command"] == command and actual["cwd"] == PROJECT, "wrong verification command")
+        require(actual["status"] == "passed" and actual["failure_kind"] is None, "stage did not complete: " + name)
+        require(type(actual["timeout_seconds"]) is int and actual["timeout_seconds"] == stage_timeout(name),
+                "wrong stage timeout: " + name)
         code = actual["exit_code"]
         require(type(code) is int, "wrong exit code type")
         log = (out / (name + ".log")).read_text(encoding="utf-8")
@@ -312,28 +391,21 @@ def run(out, root=ROOT):
                "environment_overrides": ENVIRONMENT,
                "computational_evidence": {"path": finite.OUTPUT, "sha256": digest(root / finite.OUTPUT)},
                "stages": [], "artifacts": {}, "started_utc": datetime.now(timezone.utc).isoformat()}
+    checkpoint(out, receipt)
     try:
         for name, command in plan(claim, root):
             print("Checking " + name, flush=True)
-            started = time.perf_counter()
-            proc = subprocess.run([arg.replace("{out}", str(out)) for arg in command], cwd=root / PROJECT,
-                                  env={**os.environ, **ENVIRONMENT},
-                                  stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=2400)
-            (out / (name + ".log")).write_bytes(proc.stdout)
-            receipt["stages"].append({"name": name, "command": command, "cwd": PROJECT, "exit_code": proc.returncode,
-                                      "duration_seconds": round(time.perf_counter() - started, 3)})
-            require(negative_rejected(proc.returncode, proc.stdout.decode("utf-8", errors="replace")) if name in negative
-                    else proc.returncode == 0, "stage failed: " + name + "; see " + str(out))
+            run_stage(name, command, root=root, out=out, receipt=receipt, negative=name in negative)
         require(before == source_hashes(root), "source changed during proof run")
         receipt["axioms"] = audit_axioms((out / "axioms.log").read_text(encoding="utf-8"))
         receipt["finished_utc"] = datetime.now(timezone.utc).isoformat()
-        receipt["artifacts"] = {p.name: digest(p) for p in sorted(out.iterdir()) if p.is_file()}
         receipt["status"] = "passed"
-        (out / "summary.json").write_bytes(encode(receipt))
+        checkpoint(out, receipt)
         replay(out, root)
     except BaseException:
         receipt["status"] = "failed"
-        (out / "summary.json").write_bytes(encode(receipt))
+        receipt["finished_utc"] = datetime.now(timezone.utc).isoformat()
+        checkpoint(out, receipt)
         raise
     return receipt
 

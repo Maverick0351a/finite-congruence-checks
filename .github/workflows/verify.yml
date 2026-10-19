@@ -117,7 +117,7 @@ jobs:
   lean:
     name: Concrete Lean certificates
     runs-on: ubuntu-latest
-    timeout-minutes: 90 # Fresh Snaky compilation and complete local-module kernel replay.
+    timeout-minutes: 120 # Up to 60 minutes for fresh Snaky compilation, then complete kernel replay.
     env:
       LEAN_NUM_THREADS: '1'
       MATHLIB_NO_CACHE_ON_UPDATE: '1'

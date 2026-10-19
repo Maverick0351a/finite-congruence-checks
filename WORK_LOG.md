@@ -1,5 +1,25 @@
 # Finite graph search work log
 
+## 2026-10-19 — Fresh hosted Snaky compilation exceeded its stage allowance
+
+PR #18 run `39267847727` passed eight of nine required jobs. The Concrete Lean
+certificates job reproduced the five-object proof, then the Snaky compilation
+hit its 2,400-second stage limit. The failed Snaky step ran from 14:26:00 to
+15:07:55 UTC; version and dependency setup succeeded before compilation began
+at 14:27:55. The initial disk check reported 83 GB free. This is a compilation
+timeout, not a mathematical counterexample or a completed hosted proof run.
+
+The downloaded failure receipt contains only version/dependency stages because
+the original runner buffered compiler output and did not save a timed-out
+stage. The repair extends compilation to 3,600 seconds, retains 2,400 seconds
+for other stages, and gives the CI job 120 minutes. It will preserve stage logs
+and checkpoint running/failed stage information. All 179 kernel modules, 19
+axiom reports and seven mathematical rejection controls remain required.
+The changed runner requires a new actual proof receipt and updated source
+anchor before publication. The earlier successful local receipt remains in
+Git history; it is not relabeled as a fresh hosted run. Benchmark/model work
+remains paused.
+
 ## 2026-10-19 — Snaky proof and complete branch viewer pass local review
 
 The committed-source proof run completed all 12 stages. Lean built both finite
