@@ -584,3 +584,42 @@ git diff whitespace checks pass, and all four frozen benchmark blob hashes
 still match cda3ac79a481c5631c1480471e46f665c8bde288. The handoff package is
 checked against the three original upload hashes and a complete payload manifest.
 This is documentation validation and AI-assisted review, not a new Lean proof.
+
+## 2026-10-18 — Full TM bundle, repairs, and compiled comparison
+
+Located the supplied complete bundle and preserved its original bytes and
+SHA-256 (4ec4960fcac8c6901a68cfa66c4b3690d80831c1528f80793c05cafff578005d).
+Independent reruns reproduced the original fuel-zero off-by-one, invalid domain
+acceptance, and full-configuration differences in the benchmark encodings.
+The earlier local repaired package already fixed fuel and basic domains; its
+sources and historical receipts were preserved. The maintained scripts/tm_port.py
+builds on those repairs with immutable snapshots of caller-owned containers.
+
+Added a separate lean/tm project so the grouping foundation and frozen repair
+experiment remain unchanged. It preserves the complete pinned upstream source
+and Apache-2.0 license and verifies exact extraction of lines 10–66. Five generic
+source step lemmas compile and pass leanchecker; elaborated axiom reports contain
+only propext and Quot.sound. The executable observation adapter is outside those
+proofs and observes complete finite tape support for finite initial words.
+
+Review found and corrected executable/source binding, unintentional blank lines
+in corruption controls, bool/int equality in replayed inputs, and crash exits
+being counted as validation rejections. The runner now owns the build, derives
+the binary path, retains its compressed bytes and hash, captures build/proof logs,
+and checks input/output identities and unchanged sources. Independent tests
+also reject stale receipts, altered artifacts, incomplete proof reports, and
+unapproved axioms. Test fixtures are explicitly synthetic admission controls.
+
+Recorded native run: 2,857/2,857 complete configurations agree; zero disagreements;
+34 malformed inputs rejected with the expected adapter diagnostic; seven output
+corruptions rejected. The 1,960 exhaustive snapshots cover only the explicitly
+stated one-state/two-symbol domain. The other 897 snapshots are named or sampled.
+All 45 TM unit tests pass. Saved native evidence replays on Windows. The prior
+finite-experiment evidence check and constrained-repair replay still pass;
+the original grouping and frozen benchmark files have no diff.
+
+Updated the claim ledger, roadmap, and plain-language explanation with the
+exact evidence boundary. Full configuration comparison validates the tested
+translation cases; no general Python/Lean equivalence, binary refinement, or PDE
+verification is inferred. Pair-specific theorem records and agent retrieval
+remain the next steps. New CI repeats the native build and preserves its evidence.

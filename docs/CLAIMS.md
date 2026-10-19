@@ -21,6 +21,8 @@ for one row does not establish a stronger claim from another row.
 | A proposal can be rejected, repaired, and checked again with claim evidence | [Saved protocol demo](../evidence/grouping-checker-v1/demo.json) | Fixed example and deterministic repair policy; actual native checks; no LLM capability or repair-minimality claim |
 | A live Codex repair pilot answered all selected test tasks correctly in both feedback arms | [Run receipt](../evidence/repair-pilot-v1/run.json), [method and result](REPAIR_BENCHMARK.md) | Twelve paired four-object tasks from six locally held-out operation families; six repairable and six impossible; 12/12 first decisions per arm, one repetition and one requested model setting; no demonstrated feedback advantage |
 | The constrained impossibility oracle agrees with a different algorithm | [Oracle tests](../scripts/test_repair_tasks.py), [task census](../benchmarks/repair-v1/tasks.json) | Exhaustive 15-partition enumeration compared with independent forced-merge closure on all 8,832 eligible tasks; tested Python, separate from the Lean preservation proof |
+| Five step properties hold for the extracted upstream Turing-machine definition | [Source lemmas](../lean/tm/MachineChecks.lean), [axiom reports](../evidence/tm-port-v1/build/axioms.log), [build and kernel receipt](../evidence/tm-port-v1/summary.json) | Halted configurations are fixed; a missing instruction changes only state; a present instruction has the defined write/move/target effect and preserves other cells; exact pinned fragment with narrower imports |
+| The maintained Python TM port agrees with one compiled Lean oracle on complete configurations | [Native comparison receipt](../evidence/tm-port-v1/summary.json), [method and limits](TM_TRANSLATION_CHECKS.md) | 2,857 specified snapshots: 297 named, 1,960 exhaustive within a stated small domain, 600 sampled; full nonzero tape support, state, head and halting status; 34 decoder rejection probes and seven output-corruption controls; no general port-equivalence proof |
 
 No claim of a new mathematical theorem or classification is made. These small
 lattices are control examples. The negative M4 result is bounded. The project
@@ -37,8 +39,9 @@ AI-assisted review and multiple independent algorithms provide useful assurance.
 They do not establish Python implementation correctness by formal proof or count
 as outside peer review. Novelty would require a separate literature investigation.
 
-The [archive review](ARCHIVE_REVIEW.md) and [TM halt pilot](TM_HALT_PILOT.md)
-are source inspection and planning records, not additional verified rows in this
-ledger. Lexical dependency counts cannot support proof-dependency claims;
+The [archive review](ARCHIVE_REVIEW.md) preserves the original inspection scope.
+The subsequent [TM checks](TM_TRANSLATION_CHECKS.md) support only the two scoped
+rows above; the [TM halt pilot](TM_HALT_PILOT.md) still has pair-specific proof
+records and agent retrieval work remaining. Lexical dependency counts cannot support proof-dependency claims;
 those require elaborated declarations. Evidence does not transfer between
 different constructions or certificates merely because they share a name.

@@ -50,19 +50,23 @@ tracks described in the [second-domain pilot proposal](TM_HALT_PILOT.md):
    separation, and exactly two final groups; include multiple-conflict and
    impossible cases. Extend checker assurance to the new interface, independently
    validate the oracle, then freeze a fair feedback comparison before running it.
-2. **Two Turing-machine halt behaviors.** Pin the source definitions, construct
-   a tiny missing-instruction/write-and-halt pair, and connect traces and an
-   English explanation to Lean proofs of exact observations. Agreement on
-   halting must not be presented as agreement on the final tape.
+2. **Two Turing-machine halt behaviors.** The maintained port, exact source
+   extraction, five Lean step lemmas, and bounded native comparison are now
+   implemented in [TM translation checks](TM_TRANSLATION_CHECKS.md). Next, add
+   pair-specific theorem records and test agent retrieval of the exact traces
+   and proofs. Agreement on halting must not be presented as agreement on the
+   final tape.
 
 The [archive review](ARCHIVE_REVIEW.md) sets evidence-admission requirements.
 Treat `formal-audit` as lexical screening: dependencies supporting proof claims
 must come from elaborated Lean declarations. Keep the older 616-row Snaky
 comparator certificate separate from the 728-card theorem certificate. Every
 record must identify its exact source, object, certificate, and claim.
-The TM Python benchmark was not rerun in this archive review; older local run
-logs are separate historical evidence. Neither those logs nor the proposal
-establish general translation correctness. No general Lean translator,
+The TM Python benchmark was not rerun in the original archive review. A
+[subsequent full-bundle rerun](../evidence/tm-original-review.json) now records
+the helper bug and benchmark differences; older local logs remain historical
+evidence. The new native comparison has its own bounded scope and build receipt.
+None of these establishes general translation correctness. No general Lean translator,
 universal verification, or verified fluid simulation is claimed.
 
 ## Continuing the finite atlas

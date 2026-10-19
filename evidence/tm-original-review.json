@@ -1,0 +1,1108 @@
+{
+  "kind": "local_empirical_baseline_review",
+  "schema_version": 1,
+  "limits": [
+    "No Lean proof or general port-equivalence claim.",
+    "Existing historical validation is preserved; this receipt records only the named new reproductions.",
+    "BB2/BB3 explicit completion uses the stated write-1/right convention, not a newly checked external source.",
+    "Configuration tape comparison removes zero entries, so it compares complete finite-support tapes extensionally."
+  ],
+  "archive_members": {
+    "pkg/oai-tm/busybeaver.py": {
+      "bytes": 2142,
+      "existing_extracted_original_matches": true,
+      "repaired_sha256": "22f698602aebe3a1fa5afbf3367b565dce8b32aa2939ec68e19b99b0c980de3f",
+      "sha256": "3e01dc69edd62cdb882beb0f1a4578b38aac48b2b19b147efc68a0da7cf21d6c"
+    },
+    "pkg/oai-tm/halt_write.py": {
+      "bytes": 1816,
+      "existing_extracted_original_matches": true,
+      "repaired_sha256": "99124f29c2fd6251dedb64a9d175a9f9ac82ab1858ceb7107c6f604cf1b662b7",
+      "sha256": "99124f29c2fd6251dedb64a9d175a9f9ac82ab1858ceb7107c6f604cf1b662b7"
+    },
+    "pkg/oai-tm/probe.py": {
+      "bytes": 2421,
+      "existing_extracted_original_matches": true,
+      "repaired_sha256": "274dd544ca751f2954d1fa10494ce00357b09f1c5d40c4b5bb345115f6e49d33",
+      "sha256": "274dd544ca751f2954d1fa10494ce00357b09f1c5d40c4b5bb345115f6e49d33"
+    },
+    "pkg/oai-tm/probe2.py": {
+      "bytes": 2464,
+      "existing_extracted_original_matches": true,
+      "repaired_sha256": "dfef8f7c2c3ffb5d2fb991d52c98e0be7f474bc70021fab63281ecc6670e7ced",
+      "sha256": "dfef8f7c2c3ffb5d2fb991d52c98e0be7f474bc70021fab63281ecc6670e7ced"
+    },
+    "pkg/oai-tm/tm.py": {
+      "bytes": 5402,
+      "existing_extracted_original_matches": true,
+      "repaired_sha256": "d5fe7212ae6e4d8de05620d7f43c4ff879ae4ca83444a3accfebb45ac6c889b8",
+      "sha256": "be5d7fae033590a2105773605aa8a513192b0e8e254856b0e74028195ed872f9"
+    }
+  },
+  "versions": {
+    "original": {
+      "boundary_checks": {
+        "boolean_initial_state": {
+          "returned": true
+        },
+        "boolean_input": {
+          "returned": {
+            "initial": {
+              "head": 0,
+              "nonzero_tape": [],
+              "state": 0
+            },
+            "valid_input": true
+          }
+        },
+        "boolean_move": {
+          "returned": {
+            "after_one_step": {
+              "head": 0,
+              "nonzero_tape": [],
+              "state": 0
+            },
+            "well_formed": true
+          }
+        },
+        "loop_fuel_one": {
+          "returned": {
+            "configuration": {
+              "head": 2,
+              "nonzero_tape": [],
+              "state": 0
+            },
+            "equals_run_at_reported_steps": false,
+            "halted": false,
+            "reported_steps": 1,
+            "returned_configuration_is_halting": false
+          }
+        },
+        "loop_fuel_zero": {
+          "returned": {
+            "configuration": {
+              "head": 1,
+              "nonzero_tape": [],
+              "state": 0
+            },
+            "equals_run_at_reported_steps": false,
+            "halted": false,
+            "reported_steps": 0,
+            "returned_configuration_is_halting": false
+          }
+        },
+        "missing_rule_fuel_zero": {
+          "returned": {
+            "configuration": {
+              "head": 0,
+              "nonzero_tape": [],
+              "state": 1
+            },
+            "equals_run_at_reported_steps": false,
+            "halted": false,
+            "reported_steps": 0,
+            "returned_configuration_is_halting": true
+          }
+        },
+        "move_three": {
+          "returned": {
+            "after_one_step": {
+              "head": 2,
+              "nonzero_tape": [],
+              "state": 0
+            },
+            "well_formed": true
+          }
+        },
+        "negative_fuel": {
+          "returned": {
+            "configuration": {
+              "head": 0,
+              "nonzero_tape": [],
+              "state": 0
+            },
+            "equals_run_at_reported_steps": true,
+            "halted": false,
+            "reported_steps": -1,
+            "returned_configuration_is_halting": false
+          }
+        },
+        "negative_halting_state": {
+          "returned": true
+        },
+        "negative_initial_state": {
+          "returned": true
+        },
+        "negative_input": {
+          "returned": {
+            "initial": {
+              "head": 0,
+              "nonzero_tape": [
+                [
+                  0,
+                  -1
+                ]
+              ],
+              "state": 0
+            },
+            "valid_input": true
+          }
+        },
+        "negative_next_state": {
+          "returned": {
+            "after_one_step": {
+              "head": 0,
+              "nonzero_tape": [],
+              "state": -1
+            },
+            "well_formed": true
+          }
+        },
+        "negative_run_steps": {
+          "returned": {
+            "head": 0,
+            "nonzero_tape": [],
+            "state": 0
+          }
+        },
+        "negative_trace_limit": {
+          "returned": []
+        },
+        "negative_write": {
+          "returned": {
+            "after_one_step": {
+              "head": 0,
+              "nonzero_tape": [
+                [
+                  0,
+                  -1
+                ]
+              ],
+              "state": 0
+            },
+            "well_formed": true
+          }
+        }
+      },
+      "busy_beaver_comparisons": {
+        "BB2": {
+          "explicit": {
+            "configuration": {
+              "head": 0,
+              "nonzero_tape": [
+                [
+                  -2,
+                  1
+                ],
+                [
+                  -1,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1
+                ]
+              ],
+              "state": 2
+            },
+            "first_halting_time": 6,
+            "halting_kind": "designated",
+            "ones": 4,
+            "well_formed": true
+          },
+          "explicit_terminal_rule": [
+            2,
+            1,
+            2
+          ],
+          "same_full_configuration": false,
+          "same_steps_and_ones": true,
+          "sentinel": {
+            "configuration": {
+              "head": -1,
+              "nonzero_tape": [
+                [
+                  -2,
+                  1
+                ],
+                [
+                  -1,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1
+                ]
+              ],
+              "state": 2
+            },
+            "first_halting_time": 6,
+            "halting_kind": "sentinel",
+            "ones": 4,
+            "well_formed": true
+          },
+          "terminal_instruction_key": [
+            1,
+            1
+          ]
+        },
+        "BB3": {
+          "explicit": {
+            "configuration": {
+              "head": 2,
+              "nonzero_tape": [
+                [
+                  -1,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  1
+                ],
+                [
+                  4,
+                  1
+                ]
+              ],
+              "state": 3
+            },
+            "first_halting_time": 14,
+            "halting_kind": "designated",
+            "ones": 6,
+            "well_formed": true
+          },
+          "explicit_terminal_rule": [
+            3,
+            1,
+            2
+          ],
+          "same_full_configuration": false,
+          "same_steps_and_ones": true,
+          "sentinel": {
+            "configuration": {
+              "head": 1,
+              "nonzero_tape": [
+                [
+                  -1,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  1
+                ],
+                [
+                  4,
+                  1
+                ]
+              ],
+              "state": 3
+            },
+            "first_halting_time": 14,
+            "halting_kind": "sentinel",
+            "ones": 6,
+            "well_formed": true
+          },
+          "terminal_instruction_key": [
+            0,
+            1
+          ]
+        },
+        "BB4": {
+          "explicit": {
+            "configuration": {
+              "head": -9,
+              "nonzero_tape": [
+                [
+                  -10,
+                  1
+                ],
+                [
+                  -8,
+                  1
+                ],
+                [
+                  -7,
+                  1
+                ],
+                [
+                  -6,
+                  1
+                ],
+                [
+                  -5,
+                  1
+                ],
+                [
+                  -4,
+                  1
+                ],
+                [
+                  -3,
+                  1
+                ],
+                [
+                  -2,
+                  1
+                ],
+                [
+                  -1,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  1
+                ]
+              ],
+              "state": 4
+            },
+            "first_halting_time": 107,
+            "halting_kind": "designated",
+            "ones": 13,
+            "well_formed": true
+          },
+          "explicit_terminal_rule": [
+            4,
+            1,
+            2
+          ],
+          "same_full_configuration": false,
+          "same_steps_and_ones": false,
+          "sentinel": {
+            "configuration": {
+              "head": -10,
+              "nonzero_tape": [
+                [
+                  -8,
+                  1
+                ],
+                [
+                  -7,
+                  1
+                ],
+                [
+                  -6,
+                  1
+                ],
+                [
+                  -5,
+                  1
+                ],
+                [
+                  -4,
+                  1
+                ],
+                [
+                  -3,
+                  1
+                ],
+                [
+                  -2,
+                  1
+                ],
+                [
+                  -1,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  1
+                ]
+              ],
+              "state": 4
+            },
+            "first_halting_time": 107,
+            "halting_kind": "sentinel",
+            "ones": 12,
+            "well_formed": true
+          },
+          "terminal_instruction_key": [
+            2,
+            0
+          ]
+        }
+      },
+      "container_checks": {
+        "configuration_caller_tape_alias": {
+          "returned": {
+            "after": {
+              "head": 0,
+              "nonzero_tape": [
+                [
+                  0,
+                  2
+                ]
+              ],
+              "state": 0
+            },
+            "before": {
+              "head": 0,
+              "nonzero_tape": [
+                [
+                  0,
+                  1
+                ]
+              ],
+              "state": 0
+            },
+            "caller_container_is_tape": true
+          }
+        },
+        "halting_states_iterator": {
+          "returned": {
+            "first_is_halting": true,
+            "second_is_halting": false
+          }
+        },
+        "invalid_mutated_halted_configuration": {
+          "returned": {
+            "configuration": {
+              "head": 0.5,
+              "nonzero_tape": [
+                [
+                  0,
+                  -1
+                ]
+              ],
+              "state": 0
+            },
+            "same_object": true
+          }
+        },
+        "machine_halting_states_alias": {
+          "returned": {
+            "after": true,
+            "before": false
+          }
+        },
+        "machine_table_alias": {
+          "returned": {
+            "after": {
+              "head": 1,
+              "nonzero_tape": [],
+              "state": 0
+            },
+            "before": {
+              "head": 0,
+              "nonzero_tape": [],
+              "state": 1
+            },
+            "caller_container_is_machine_table": true
+          }
+        },
+        "missing_rule_configuration_alias": {
+          "returned": {
+            "after_now": {
+              "head": 0,
+              "nonzero_tape": [
+                [
+                  0,
+                  2
+                ]
+              ],
+              "state": 1
+            },
+            "before_now": {
+              "head": 0,
+              "nonzero_tape": [
+                [
+                  0,
+                  2
+                ]
+              ],
+              "state": 0
+            },
+            "before_saved": {
+              "head": 0,
+              "nonzero_tape": [
+                [
+                  0,
+                  1
+                ]
+              ],
+              "state": 0
+            },
+            "same_tape_object": true
+          }
+        },
+        "table_iterator": {
+          "exception": "TypeError",
+          "message": "object of type 'generator' has no len()"
+        },
+        "zero_padding_extensional_equality": {
+          "returned": {
+            "dataclass_equality": false,
+            "state_head_sparse_tape_equality": true
+          }
+        }
+      }
+    },
+    "repaired": {
+      "boundary_checks": {
+        "boolean_initial_state": {
+          "exception": "ValueError",
+          "message": "initial_state must be a nonnegative integer"
+        },
+        "boolean_input": {
+          "exception": "ValueError",
+          "message": "tape symbol must be a nonnegative integer"
+        },
+        "boolean_move": {
+          "exception": "ValueError",
+          "message": "move must be 0, 1 or 2 (Lean Fin 3)"
+        },
+        "loop_fuel_one": {
+          "returned": {
+            "configuration": {
+              "head": 1,
+              "nonzero_tape": [],
+              "state": 0
+            },
+            "equals_run_at_reported_steps": true,
+            "halted": false,
+            "reported_steps": 1,
+            "returned_configuration_is_halting": false
+          }
+        },
+        "loop_fuel_zero": {
+          "returned": {
+            "configuration": {
+              "head": 0,
+              "nonzero_tape": [],
+              "state": 0
+            },
+            "equals_run_at_reported_steps": true,
+            "halted": false,
+            "reported_steps": 0,
+            "returned_configuration_is_halting": false
+          }
+        },
+        "missing_rule_fuel_zero": {
+          "returned": {
+            "configuration": {
+              "head": 0,
+              "nonzero_tape": [],
+              "state": 0
+            },
+            "equals_run_at_reported_steps": true,
+            "halted": false,
+            "reported_steps": 0,
+            "returned_configuration_is_halting": false
+          }
+        },
+        "move_three": {
+          "exception": "ValueError",
+          "message": "move must be 0, 1 or 2 (Lean Fin 3)"
+        },
+        "negative_fuel": {
+          "exception": "ValueError",
+          "message": "fuel must be a nonnegative integer"
+        },
+        "negative_halting_state": {
+          "exception": "ValueError",
+          "message": "halting state must be a nonnegative integer"
+        },
+        "negative_initial_state": {
+          "exception": "ValueError",
+          "message": "initial_state must be a nonnegative integer"
+        },
+        "negative_input": {
+          "exception": "ValueError",
+          "message": "tape symbol must be a nonnegative integer"
+        },
+        "negative_next_state": {
+          "exception": "ValueError",
+          "message": "next_state must be a nonnegative integer"
+        },
+        "negative_run_steps": {
+          "exception": "ValueError",
+          "message": "steps must be a nonnegative integer"
+        },
+        "negative_trace_limit": {
+          "exception": "ValueError",
+          "message": "limit must be a nonnegative integer"
+        },
+        "negative_write": {
+          "exception": "ValueError",
+          "message": "write must be a nonnegative integer"
+        }
+      },
+      "busy_beaver_comparisons": {
+        "BB2": {
+          "explicit": {
+            "configuration": {
+              "head": 0,
+              "nonzero_tape": [
+                [
+                  -2,
+                  1
+                ],
+                [
+                  -1,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1
+                ]
+              ],
+              "state": 2
+            },
+            "first_halting_time": 6,
+            "halting_kind": "designated",
+            "ones": 4,
+            "well_formed": true
+          },
+          "explicit_terminal_rule": [
+            2,
+            1,
+            2
+          ],
+          "same_full_configuration": false,
+          "same_steps_and_ones": true,
+          "sentinel": {
+            "configuration": {
+              "head": -1,
+              "nonzero_tape": [
+                [
+                  -2,
+                  1
+                ],
+                [
+                  -1,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1
+                ]
+              ],
+              "state": 2
+            },
+            "first_halting_time": 6,
+            "halting_kind": "sentinel",
+            "ones": 4,
+            "well_formed": true
+          },
+          "terminal_instruction_key": [
+            1,
+            1
+          ]
+        },
+        "BB3": {
+          "explicit": {
+            "configuration": {
+              "head": 2,
+              "nonzero_tape": [
+                [
+                  -1,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  1
+                ],
+                [
+                  4,
+                  1
+                ]
+              ],
+              "state": 3
+            },
+            "first_halting_time": 14,
+            "halting_kind": "designated",
+            "ones": 6,
+            "well_formed": true
+          },
+          "explicit_terminal_rule": [
+            3,
+            1,
+            2
+          ],
+          "same_full_configuration": false,
+          "same_steps_and_ones": true,
+          "sentinel": {
+            "configuration": {
+              "head": 1,
+              "nonzero_tape": [
+                [
+                  -1,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  1
+                ],
+                [
+                  4,
+                  1
+                ]
+              ],
+              "state": 3
+            },
+            "first_halting_time": 14,
+            "halting_kind": "sentinel",
+            "ones": 6,
+            "well_formed": true
+          },
+          "terminal_instruction_key": [
+            0,
+            1
+          ]
+        },
+        "BB4": {
+          "explicit": {
+            "configuration": {
+              "head": -9,
+              "nonzero_tape": [
+                [
+                  -10,
+                  1
+                ],
+                [
+                  -8,
+                  1
+                ],
+                [
+                  -7,
+                  1
+                ],
+                [
+                  -6,
+                  1
+                ],
+                [
+                  -5,
+                  1
+                ],
+                [
+                  -4,
+                  1
+                ],
+                [
+                  -3,
+                  1
+                ],
+                [
+                  -2,
+                  1
+                ],
+                [
+                  -1,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  1
+                ]
+              ],
+              "state": 4
+            },
+            "first_halting_time": 107,
+            "halting_kind": "designated",
+            "ones": 13,
+            "well_formed": true
+          },
+          "explicit_terminal_rule": [
+            4,
+            1,
+            2
+          ],
+          "same_full_configuration": false,
+          "same_steps_and_ones": false,
+          "sentinel": {
+            "configuration": {
+              "head": -10,
+              "nonzero_tape": [
+                [
+                  -8,
+                  1
+                ],
+                [
+                  -7,
+                  1
+                ],
+                [
+                  -6,
+                  1
+                ],
+                [
+                  -5,
+                  1
+                ],
+                [
+                  -4,
+                  1
+                ],
+                [
+                  -3,
+                  1
+                ],
+                [
+                  -2,
+                  1
+                ],
+                [
+                  -1,
+                  1
+                ],
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1
+                ],
+                [
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  1
+                ]
+              ],
+              "state": 4
+            },
+            "first_halting_time": 107,
+            "halting_kind": "sentinel",
+            "ones": 12,
+            "well_formed": true
+          },
+          "terminal_instruction_key": [
+            2,
+            0
+          ]
+        }
+      },
+      "container_checks": {
+        "configuration_caller_tape_alias": {
+          "returned": {
+            "after": {
+              "head": 0,
+              "nonzero_tape": [
+                [
+                  0,
+                  2
+                ]
+              ],
+              "state": 0
+            },
+            "before": {
+              "head": 0,
+              "nonzero_tape": [
+                [
+                  0,
+                  1
+                ]
+              ],
+              "state": 0
+            },
+            "caller_container_is_tape": true
+          }
+        },
+        "halting_states_iterator": {
+          "returned": {
+            "first_is_halting": false,
+            "second_is_halting": false
+          }
+        },
+        "invalid_mutated_halted_configuration": {
+          "returned": {
+            "configuration": {
+              "head": 0.5,
+              "nonzero_tape": [
+                [
+                  0,
+                  -1
+                ]
+              ],
+              "state": 0
+            },
+            "same_object": true
+          }
+        },
+        "machine_halting_states_alias": {
+          "returned": {
+            "after": true,
+            "before": false
+          }
+        },
+        "machine_table_alias": {
+          "returned": {
+            "after": {
+              "head": 1,
+              "nonzero_tape": [],
+              "state": 0
+            },
+            "before": {
+              "head": 0,
+              "nonzero_tape": [],
+              "state": 1
+            },
+            "caller_container_is_machine_table": true
+          }
+        },
+        "missing_rule_configuration_alias": {
+          "returned": {
+            "after_now": {
+              "head": 0,
+              "nonzero_tape": [
+                [
+                  0,
+                  2
+                ]
+              ],
+              "state": 1
+            },
+            "before_now": {
+              "head": 0,
+              "nonzero_tape": [
+                [
+                  0,
+                  2
+                ]
+              ],
+              "state": 0
+            },
+            "before_saved": {
+              "head": 0,
+              "nonzero_tape": [
+                [
+                  0,
+                  1
+                ]
+              ],
+              "state": 0
+            },
+            "same_tape_object": true
+          }
+        },
+        "table_iterator": {
+          "exception": "TypeError",
+          "message": "object of type 'generator' has no len()"
+        },
+        "zero_padding_extensional_equality": {
+          "returned": {
+            "dataclass_equality": false,
+            "state_head_sparse_tape_equality": true
+          }
+        }
+      }
+    }
+  },
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "all_originals_and_historical_records_unchanged": true,
+  "archive": {
+    "bytes": 173387,
+    "sha256": "4ec4960fcac8c6901a68cfa66c4b3690d80831c1528f80793c05cafff578005d"
+  },
+  "upstream_source": {
+    "path": "lean/ComparatorChallenges/NavierStokesAlternating.lean",
+    "revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "sha256": "0166c40c57bd9eb6ede9e25bda09650b859c81c0d801de9faa3875f195e003fc"
+  },
+  "origin": "Independent agent executed copies of the identified uploaded Python sources; local raw logs retained. This record is a projection of that baseline receipt, not a Lean comparison.",
+  "raw_receipt_sha256": "cbe0681c5903bac5c0fa657fabd2fcbcdaa8bcfe3672fd60322e1af112143c82"
+}

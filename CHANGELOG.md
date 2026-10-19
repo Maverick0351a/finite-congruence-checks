@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Maintained Turing-machine port with bounded-step consistency, strict input
+  domains, immutable snapshots, and exact upstream Lean machine extraction.
+  Five source step lemmas pass kernel replay; a captured native build agrees
+  with Python on all 2,857 complete configuration snapshots. Retained build,
+  binary, input/output, malformed-input, and corruption-control evidence;
+  45 Python tests and a fresh native CI job. This is bounded translation testing.
+
 - Archive-review boundaries and a proposed Turing-machine halt pilot, linking
   exact source semantics to property-specific evidence alongside harder repair
   feedback experiments; no new verification claim.

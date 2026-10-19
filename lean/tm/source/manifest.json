@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "upstream_repository": "https://github.com/openai/math",
+  "upstream_commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "upstream_path": "lean/ComparatorChallenges/NavierStokesAlternating.lean",
+  "upstream_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/ComparatorChallenges/NavierStokesAlternating.lean",
+  "full_source_path": "source/NavierStokesAlternating.lean",
+  "full_source_sha256": "0166c40c57bd9eb6ede9e25bda09650b859c81c0d801de9faa3875f195e003fc",
+  "extraction": {
+    "path": "source/Machine.definitions.txt",
+    "first_line_inclusive": 10,
+    "last_line_inclusive": 66,
+    "byte_start": 127,
+    "byte_end_exclusive": 1830,
+    "sha256": "d7dc1d5a9525847e379c7951a885b7f929409d2215e5197c7eb8780adce8225f"
+  },
+  "generated_module": {
+    "path": "MachineExtract.lean",
+    "sha256": "d841b79735f7aef28dbf95e771f9b7931c918067cb48ad1e8da57513cd8e6de9",
+    "imports": [
+      "Mathlib.Logic.Function.Iterate",
+      "Mathlib.Data.Int.Basic"
+    ],
+    "prefix_utf8": "/- Extracted from pinned openai/math; see source/manifest.json.\n   Changes: narrow imports and namespace wrapper only. Machine definitions unchanged. -/\nimport Mathlib.Logic.Function.Iterate\nimport Mathlib.Data.Int.Basic\n\nnamespace OAI.AlternatingNS\n\n",
+    "suffix_utf8": "\nend OAI.AlternatingNS\n"
+  },
+  "license": "Apache-2.0",
+  "license_path": "source/LICENSE",
+  "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+  "scope": "Only the extracted machine definitions are compiled; the PDE source is preserved as provenance, not checked here."
+}

@@ -1,0 +1,10 @@
+ℹ [299/303] Replayed MachineChecks
+info: MachineChecks.lean:41:0: 'TMOracle.Checks.halted_fixed' depends on axioms: [propext, Quot.sound]
+info: MachineChecks.lean:42:0: 'TMOracle.Checks.missing_instruction' depends on axioms: [propext, Quot.sound]
+info: MachineChecks.lean:43:0: 'TMOracle.Checks.instruction_step' depends on axioms: [propext, Quot.sound]
+info: MachineChecks.lean:44:0: 'TMOracle.Checks.instruction_writes' depends on axioms: [propext, Quot.sound]
+info: MachineChecks.lean:45:0: 'TMOracle.Checks.instruction_preserves_other_cells' depends on axioms: [propext, Quot.sound]
+✔ [301/303] Built Main (1.1s)
+✔ [302/303] Built Main:c.o (339ms)
+✔ [303/303] Built tmOracle:exe (1.1s)
+Build completed successfully (303 jobs).

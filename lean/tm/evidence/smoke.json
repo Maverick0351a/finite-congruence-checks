@@ -1,0 +1,246 @@
+{
+  "valid_cases": [
+    {
+      "id": "left-write",
+      "machine": {
+        "n_states_minus_one": 0,
+        "n_alphabet_minus_one": 0,
+        "initial_state": 0,
+        "halting_states": [],
+        "table": [
+          [
+            0,
+            5,
+            0
+          ]
+        ]
+      },
+      "input": [],
+      "steps": 2
+    },
+    {
+      "id": "sentinel",
+      "machine": {
+        "n_states_minus_one": 0,
+        "n_alphabet_minus_one": 0,
+        "initial_state": 1,
+        "halting_states": [],
+        "table": [
+          [
+            0,
+            5,
+            0
+          ]
+        ]
+      },
+      "input": [
+        0,
+        7
+      ],
+      "steps": 5
+    },
+    {
+      "id": "oversized-read",
+      "machine": {
+        "n_states_minus_one": 0,
+        "n_alphabet_minus_one": 0,
+        "initial_state": 0,
+        "halting_states": [],
+        "table": [
+          null,
+          null,
+          null,
+          [
+            7,
+            9,
+            2
+          ]
+        ]
+      },
+      "input": [
+        3
+      ],
+      "steps": 1
+    },
+    {
+      "id": "big-nat",
+      "machine": {
+        "n_states_minus_one": 340282366920938463463374607431768211456,
+        "n_alphabet_minus_one": 0,
+        "initial_state": 0,
+        "halting_states": [],
+        "table": []
+      },
+      "input": [
+        340282366920938463463374607431768211456
+      ],
+      "steps": 1
+    }
+  ],
+  "expected": [
+    {
+      "id": "left-write",
+      "steps": 2,
+      "state": 0,
+      "head": -2,
+      "halted": false,
+      "tape": [
+        [
+          -1,
+          5
+        ],
+        [
+          0,
+          5
+        ]
+      ]
+    },
+    {
+      "id": "sentinel",
+      "steps": 5,
+      "state": 1,
+      "head": 0,
+      "halted": true,
+      "tape": [
+        [
+          1,
+          7
+        ]
+      ]
+    },
+    {
+      "id": "oversized-read",
+      "steps": 1,
+      "state": 7,
+      "head": 1,
+      "halted": false,
+      "tape": [
+        [
+          0,
+          9
+        ]
+      ]
+    },
+    {
+      "id": "big-nat",
+      "steps": 1,
+      "state": 340282366920938463463374607431768211457,
+      "head": 0,
+      "halted": true,
+      "tape": [
+        [
+          0,
+          340282366920938463463374607431768211456
+        ]
+      ]
+    }
+  ],
+  "actual": [
+    {
+      "halted": false,
+      "head": -2,
+      "id": "left-write",
+      "state": 0,
+      "steps": 2,
+      "tape": [
+        [
+          -1,
+          5
+        ],
+        [
+          0,
+          5
+        ]
+      ]
+    },
+    {
+      "halted": true,
+      "head": 0,
+      "id": "sentinel",
+      "state": 1,
+      "steps": 5,
+      "tape": [
+        [
+          1,
+          7
+        ]
+      ]
+    },
+    {
+      "halted": false,
+      "head": 1,
+      "id": "oversized-read",
+      "state": 7,
+      "steps": 1,
+      "tape": [
+        [
+          0,
+          9
+        ]
+      ]
+    },
+    {
+      "halted": true,
+      "head": 0,
+      "id": "big-nat",
+      "state": 340282366920938463463374607431768211457,
+      "steps": 1,
+      "tape": [
+        [
+          0,
+          340282366920938463463374607431768211456
+        ]
+      ]
+    }
+  ],
+  "negative_controls": [
+    {
+      "name": "malformed-json",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "tmOracle: line 1: offset 1: expected \"\n"
+    },
+    {
+      "name": "negative",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "tmOracle: line 1: expected a nonnegative integer JSON number\n"
+    },
+    {
+      "name": "bool",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "tmOracle: line 1: expected a nonnegative integer JSON number\n"
+    },
+    {
+      "name": "fraction",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "tmOracle: line 1: decimal and exponent number tokens are not integer JSON inputs\n"
+    },
+    {
+      "name": "decimal-integer",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "tmOracle: line 1: decimal and exponent number tokens are not integer JSON inputs\n"
+    },
+    {
+      "name": "exponent-integer",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "tmOracle: line 1: decimal and exponent number tokens are not integer JSON inputs\n"
+    },
+    {
+      "name": "bad-move",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "tmOracle: line 1: move must be 0, 1, or 2\n"
+    },
+    {
+      "name": "blank",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "tmOracle: line 1: offset 2: unexpected end of input\n"
+    }
+  ]
+}

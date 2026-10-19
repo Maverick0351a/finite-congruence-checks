@@ -97,6 +97,13 @@ from a separate repaired package do record benchmark runs; this statement must
 not erase that historical evidence. Neither the older logs nor this inspection
 prove a general equivalence between the Python port and Lean definitions.
 
+**Subsequent full-bundle follow-up:** the missing TM code later arrived in
+`openai-math-audit-bundle.tar.gz`. The [new rerun record](../evidence/tm-original-review.json)
+reproduces its helper and domain bugs and compares complete benchmark configurations.
+The [maintained translation check](TM_TRANSLATION_CHECKS.md) documents the repairs,
+pinned Lean extraction, source lemmas, and native differential test. These are
+new evidence records; the preceding paragraph describes the earlier review's scope.
+
 The filename's reference to Navier–Stokes does not make the proposed pilot a
 fluid simulation or a verification of the surrounding PDE claims. The pilot
 uses only the small machine definitions and explicitly stated observations.

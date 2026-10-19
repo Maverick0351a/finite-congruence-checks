@@ -1,0 +1,5 @@
+'TMOracle.Checks.halted_fixed' depends on axioms: [propext, Quot.sound]
+'TMOracle.Checks.missing_instruction' depends on axioms: [propext, Quot.sound]
+'TMOracle.Checks.instruction_step' depends on axioms: [propext, Quot.sound]
+'TMOracle.Checks.instruction_writes' depends on axioms: [propext, Quot.sound]
+'TMOracle.Checks.instruction_preserves_other_cells' depends on axioms: [propext, Quot.sound]

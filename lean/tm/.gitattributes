@@ -1,0 +1,9 @@
+*.lean text eol=lf
+*.py text eol=lf
+*.toml text eol=lf
+*.json text eol=lf
+lean-toolchain text eol=lf
+source/NavierStokesAlternating.lean -text
+source/Machine.definitions.txt -text
+source/LICENSE -text
+MachineExtract.lean -text

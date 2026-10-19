@@ -1,0 +1,4 @@
+info: tmTranslationOracle: no previous manifest, creating one from scratch
+info: stderr:
+fatal: early EOF
+error: external command 'git' exited with code 143
