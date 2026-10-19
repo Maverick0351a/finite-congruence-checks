@@ -39,10 +39,11 @@ changed source inputs, or modified dependency checkouts fail the run. Logs,
 exit codes, input hashes and log hashes are retained in the requested directory.
 The hosted workflow runs this same command in its upstream bridge job.
 
-The recorded local run passed all 11 stages with `--skip-cache`, using fresh
-build directories for our modules and the existing dependency packages/cache.
-All nine dependency source trees were clean at their pinned revisions. The
-compiled source hashes match the repository. See
+The checked-in record is the [successful GitHub run](https://github.com/Maverick0351a/finite-congruence-checks/actions/runs/39187428882)
+at commit `4961f296c7c01b37424627cb155d5ad4e4551855`. It passed all 12 stages,
+including dependency/cache preparation on a fresh hosted runner. All nine
+dependency source trees were clean at their pinned revisions. All 25 source
+hashes match the bytes stored in Git, and all 12 log hashes were checked. See
 [`lean/evidence/bridge-run/`](../lean/evidence/bridge-run/) for all logs.
 
 ## From JSON to the exact upstream predicate
@@ -222,7 +223,11 @@ external peer review is claimed here.
 - 2026-10-19 UTC: Fresh bridge reproduction passed all 11 stages, including 13
   targeted Python checks, kernel replay, 21 axiom reports and actual dependency
   revision/cleanliness checks. The official comparator also passed independently,
-  with both intended rejection controls. Historical entries below describe the
+  with both intended rejection controls. The checked-in bridge evidence was
+  subsequently replaced by the passing 12-stage hosted run, including cache
+  preparation. The final hash audit normalized two local toolchain files from
+  CRLF to Git's LF bytes; their Lean version was unchanged. The comparator was
+  rerun against those published bytes. Historical entries below describe the
   earlier verification state and are retained as an audit trail.
 
 - 2026-10-19 UTC: Read the actual pinned solution and its one local dependency.

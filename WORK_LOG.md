@@ -255,3 +255,20 @@ source hashes, 11 log hashes, comparator input/runner hashes, and changed-docume
 links were checked. Local verification is complete at this entry; hosted validation and
 final review are the remaining publication checks. The original v0.1.0 release
 tag, archive, and finite-search evidence are unchanged.
+
+Final read-only AI review at `4961f29` found no actionable issues. It independently
+matched the bridge's source/log hashes, 21 axiom reports, nine dependency pins,
+and comparator inputs/results, and checked the final claim boundaries.
+GitHub branch run [39187428882](https://github.com/Maverick0351a/finite-congruence-checks/actions/runs/39187428882)
+and pull-request run [39187462100](https://github.com/Maverick0351a/finite-congruence-checks/actions/runs/39187462100)
+each passed all five jobs, including the new 12-stage upstream bridge command.
+
+Downloading and checking the hosted artifact found two local toolchain files
+still used CRLF while Git stored LF. Their contents selected the same Lean
+version, but byte hashes differed. Normalized the local copies to Git's existing
+bytes and replaced the checked-in bridge receipt/logs with the successful hosted
+artifact. All 25 source hashes now match Git's stored bytes, and all 12 hosted
+log hashes match. Reran the official comparator and both controls against the
+normalized toolchain input. Proof sources and pinned dependency revisions did
+not change. The change and hosted checks are tracked in
+[pull request #1](https://github.com/Maverick0351a/finite-congruence-checks/pull/1).

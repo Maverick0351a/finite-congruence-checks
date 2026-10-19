@@ -11,12 +11,12 @@ test_out_of_carrier_operation_rejected (test_export_data.ExportDataTests.test_ou
 test_changed_sources_cannot_produce_passing_record (test_run_checks.CheckRunnerTests.test_changed_sources_cannot_produce_passing_record) ... Checking proof...
 ok
 test_existing_evidence_is_not_overwritten (test_run_checks.CheckRunnerTests.test_existing_evidence_is_not_overwritten) ... ok
-test_failed_child_is_recorded_and_stops_run (test_run_checks.CheckRunnerTests.test_failed_child_is_recorded_and_stops_run) ... Sources changed during checks: /tmp/tmpu3g6nj0d/result.json
+test_failed_child_is_recorded_and_stops_run (test_run_checks.CheckRunnerTests.test_failed_child_is_recorded_and_stops_run) ... Sources changed during checks: /tmp/tmpwsn68wsd/result.json
 Checking bad-proof...
-Failed bad-proof; see /tmp/tmp5vc2ycks/bad-proof.log
+Failed bad-proof; see /tmp/tmpievyjovl/bad-proof.log
 ok
 
 ----------------------------------------------------------------------
-Ran 13 tests in 0.032s
+Ran 13 tests in 0.041s
 
 OK

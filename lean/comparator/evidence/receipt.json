@@ -1,5 +1,5 @@
 {
-  "started_at_utc": "2026-10-19T01:43:45.703876+00:00",
+  "started_at_utc": "2026-10-19T01:57:48.481053+00:00",
   "upstream_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
   "lean_version": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
   "lake_version": "Lake version 5.0.0-src+5045d00 (Lean version 4.34.1)",
@@ -72,7 +72,7 @@
     "ComparatorChallenges/FiniteCongruenceGraph.lean": "2ee495def2e1228bf13df520f6c66699ec22b2cd3bc1ae7383a30957aae9f967",
     "ComparatorChallenges/FiniteCongruenceGraph.json": "4527a9b96cf508c538af6e5c40654257f25bab583ac40fa5e88cb963ee56e66a",
     "lake-manifest.json": "43889c850f1896ed2ee994cf1a218f0c2343487d387a4267b780ffee3a081c48",
-    "lean-toolchain": "8152090414016dd5dc871752f8ce4ecdbd604d9845758e9b9047cb80101280b5",
+    "lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
     "lakefile.toml": "20044e4eedeb8cc2eeca2bd195d2021812f9b6a05b70cb2c2202a424cc0bcaca"
   },
   "scope": "Original upstream graph_criterion supporting theorem only; no Nanoda or full-corpus check.",
@@ -100,6 +100,6 @@
     }
   ],
   "source_bytes_unchanged_after_checks": true,
-  "completed_at_utc": "2026-10-19T01:44:05.518643+00:00",
+  "completed_at_utc": "2026-10-19T01:58:11.695684+00:00",
   "passed": true
 }

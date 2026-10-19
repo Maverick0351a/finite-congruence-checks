@@ -7,15 +7,15 @@ info: FiniteCongruenceChecks.lean:233:0: 'FiniteCongruenceChecks.B3.finite_class
 info: FiniteCongruenceChecks.lean:234:0: 'FiniteCongruenceChecks.B3.all_congruences' depends on axioms: [propext, Quot.sound]
 info: FiniteCongruenceChecks.lean:235:0: 'FiniteCongruenceChecks.B3.representation' depends on axioms: [propext, Quot.sound]
 info: FiniteCongruenceChecks.lean:236:0: 'FiniteCongruenceChecks.B3.all_relations' depends on axioms: [propext, Classical.choice, Quot.sound]
-✔ [742/747] Built OAI.Algebra.Universal.Congruence (883ms)
-✔ [743/747] Built OAI.Algebra.Universal.GraphCriterion (884ms)
-ℹ [744/747] Built UpstreamAudit (706ms)
+✔ [742/747] Built OAI.Algebra.Universal.Congruence (1.1s)
+✔ [743/747] Built OAI.Algebra.Universal.GraphCriterion (1.3s)
+ℹ [744/747] Built UpstreamAudit (1.0s)
 info: UpstreamAudit.lean:4:0: OAI.FiniteCongruence.graph_criterion (Lat : Type) [Fintype Lat] [Lattice Lat] [OrderBot Lat] :
   OAI.FiniteCongruence.Representable Lat ↔ OAI.FiniteCongruence.HasGraphWitness Lat
 info: UpstreamAudit.lean:5:0: 'OAI.FiniteCongruence.graph_criterion' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: UpstreamAudit.lean:6:0: 'OAI.FiniteCongruence.graphOrderIso' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: UpstreamAudit.lean:7:0: 'OAI.FiniteCongruence.principalColor_isGraphWitness' depends on axioms: [propext, Classical.choice, Quot.sound]
-ℹ [746/747] Built ConcreteBridge (1.6s)
+ℹ [746/747] Built ConcreteBridge (2.5s)
 info: ConcreteBridge.lean:149:0: FiniteCongruenceChecks.UpstreamBridge.N5.isGraphWitness : IsGraphWitness color
 info: ConcreteBridge.lean:150:0: 'FiniteCongruenceChecks.UpstreamBridge.N5.congruenceOrderIso' depends on axioms: [propext, Classical.choice, Quot.sound]
 info: ConcreteBridge.lean:151:0: 'FiniteCongruenceChecks.UpstreamBridge.N5.principalColor_eq' depends on axioms: [propext, Classical.choice, Quot.sound]

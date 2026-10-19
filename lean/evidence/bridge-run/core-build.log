@@ -1,5 +1,5 @@
-✔ [2/4] Built CertificateData (424ms)
-ℹ [3/4] Built FiniteCongruenceChecks (4.8s)
+✔ [2/4] Built CertificateData (640ms)
+ℹ [3/4] Built FiniteCongruenceChecks (7.6s)
 info: FiniteCongruenceChecks.lean:182:0: 'FiniteCongruenceChecks.N5.finite_classification' depends on axioms: [propext, Quot.sound]
 info: FiniteCongruenceChecks.lean:183:0: 'FiniteCongruenceChecks.N5.all_congruences' depends on axioms: [propext, Quot.sound]
 info: FiniteCongruenceChecks.lean:184:0: 'FiniteCongruenceChecks.N5.representation' depends on axioms: [propext, Quot.sound]

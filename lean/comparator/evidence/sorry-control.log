@@ -1,4 +1,4 @@
-Running as unit: run-u7.service; invocation ID: 9ccfc565c9ee45f59d5380af102c8ec3
+Running as unit: run-u10.service; invocation ID: f00dbe1a92e0419483f6d4fa3171bcd0
 Building ComparatorChallenges.FiniteCongruenceGraph
 ⚠ [672/672] Replayed ComparatorChallenges.FiniteCongruenceGraph
 warning: ComparatorChallenges/FiniteCongruenceGraph.lean:57:8: declaration uses `sorry`
@@ -12,7 +12,7 @@ Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.FiniteCongruence.graph_crite
 uncaught exception: Illegal axiom detected: 'sorryAx'
 Finished with result: exit-code
 Main processes terminated with: code=exited/status=1
-Service runtime: 4.172s
-CPU time consumed: 4.702s
-Memory peak: 312.0K
+Service runtime: 3.926s
+CPU time consumed: 4.654s
+Memory peak: 256.0K
 Memory swap peak: 0B
