@@ -22,7 +22,7 @@ criticism of the definitions, certificates, and verification boundary.
 
 Repository: https://github.com/Maverick0351a/finite-congruence-checks
 
-Before sharing, make the repository public intentionally, link the successful
-release checks, and check that this wording still matches the verified scope in
+Before sharing this announcement, link the successful release checks and check
+that this wording still matches the verified scope in
 LEAN_VERIFICATION.md. Share where such posts are welcome;
 start with a focused question or reproducible example relevant to the audience.

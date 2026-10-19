@@ -168,3 +168,8 @@ These are local SVGs so they work for authorized viewers of a private repository
 The existing CI badge remains live. Badges provide navigation to evidence, not
 external certification. This presentation update does not alter the frozen
 v0.1.0 archive or tag.
+
+On 18 October 2026 (Pacific time), the user explicitly authorized public release.
+Changed repository visibility to public and verified GitHub reports PUBLIC.
+Removed the obsolete private-access note and updated the sharing roadmap.
+The v0.1.0 tag, archive, checksum, and mathematical evidence remain unchanged.

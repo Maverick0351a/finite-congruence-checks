@@ -27,12 +27,12 @@ The exact delivered verification boundary is in LEAN_VERIFICATION.md.
 
 ## Release and visibility
 
-This repository starts private. A public release should include a successful CI
-run, tagged source, checked archive, a short walkthrough, and the precise claims
-in CLAIMS.md. The prepared announcement is a draft; no outreach is automated.
+The repository became public on 18 October 2026 after successful CI runs and
+preparation of tagged source, a checked archive, a short walkthrough, and precise
+claims in CLAIMS.md. The prepared announcement remains a draft; no outreach is automated.
 An upstream contribution depends on the maintainers' process and acceptance.
 
-After a public release, an optional static Hugging Face Space could let readers
+An optional static Hugging Face Space could let readers
 select a saved lattice, inspect its colored graph and unary operations, and open
 the corresponding certificate. GitHub would remain the source of record for
 code, proofs, and versioned evidence. A demo should display precomputed results

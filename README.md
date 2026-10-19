@@ -40,7 +40,7 @@ cd finite-congruence-checks
 python verify_witness.py evidence/N5-witness.json --output runs/N5-check.json
 ```
 
-Private repository access is required while this project remains private.
+You can also download the [tagged release](https://github.com/Maverick0351a/finite-congruence-checks/releases/tag/v0.1.0), including the evidence and checksum.
 The command checks all five witness conditions, including every nonempty set
 of ordered seed pairs. A successful run returns exit status 0.
 
