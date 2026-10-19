@@ -1,7 +1,7 @@
 window.SNAKY_PLAY_DATA = {
   "schema_version": 1,
   "id": "context:family-187:snaky:illustrative-play:v1",
-  "source_revision": "f516abb4e98696cc61003de55518961245416a40",
+  "source_revision": "3bd96caa445c459371128e882fe420479084924e",
   "play": {
     "schema_version": 1,
     "id": "example:family-187:snaky:eight-claim-branch:v1",
@@ -6720,7 +6720,7 @@ window.SNAKY_PLAY_DATA = {
       },
       "proof_evidence": {
         "path": "evidence/snaky-finite-v1/proof/summary.json",
-        "sha256": "f7548e47de85f73ff2b88ce6da23b007d531030cd979d1a285f0c7287b5ff581",
+        "sha256": "9e2f9fafa6882ca21a89775671fe58bb21850faecf96f3c4916f8a7957e2079d",
         "axioms": {
           "FiniteCongruenceChecks.SnakyFinite.FiniteWins.false_impossible": [
             "Classical.choice",
@@ -6833,22 +6833,22 @@ window.SNAKY_PLAY_DATA = {
       "title": "The exact recorded execution",
       "description": "All chosen moves, complete ownership sets, certificate placements and the six-cell winning witness. The independent checker replays this one branch.",
       "path": "evidence/snaky-play-v1/example.json",
-      "url": "https://github.com/Maverick0351a/finite-congruence-checks/blob/f516abb4e98696cc61003de55518961245416a40/evidence/snaky-play-v1/example.json",
+      "url": "https://github.com/Maverick0351a/finite-congruence-checks/blob/3bd96caa445c459371128e882fe420479084924e/evidence/snaky-play-v1/example.json",
       "sha256": "052bfce71d1bf36ce8e109f6da41cbfcbeccbb93021a4d59bd6807b771b2ed10"
     },
     {
       "title": "The formal strategy guarantee",
       "description": "The Lean theorem covers every legal reply on the exact finite board, within 21 Maker claims. The source paper already states this finite-board result.",
       "path": "lean/snaky/SnakyFinite.lean",
-      "url": "https://github.com/Maverick0351a/finite-congruence-checks/blob/f516abb4e98696cc61003de55518961245416a40/lean/snaky/SnakyFinite.lean",
+      "url": "https://github.com/Maverick0351a/finite-congruence-checks/blob/3bd96caa445c459371128e882fe420479084924e/lean/snaky/SnakyFinite.lean",
       "sha256": "4481d384a4f7920d98088bd2cc10796d330e5ae9da11aeff718e0d949c27d3ff"
     },
     {
       "title": "The claim and its verification",
       "description": "The receipt records the build, kernel replay, allowed axioms and deliberate mismatched-claim rejections. Offline receipt replay is not a new proof execution.",
       "path": "evidence/snaky-finite-v1/proof/summary.json",
-      "url": "https://github.com/Maverick0351a/finite-congruence-checks/blob/f516abb4e98696cc61003de55518961245416a40/evidence/snaky-finite-v1/proof/summary.json",
-      "sha256": "f7548e47de85f73ff2b88ce6da23b007d531030cd979d1a285f0c7287b5ff581"
+      "url": "https://github.com/Maverick0351a/finite-congruence-checks/blob/3bd96caa445c459371128e882fe420479084924e/evidence/snaky-finite-v1/proof/summary.json",
+      "sha256": "9e2f9fafa6882ca21a89775671fe58bb21850faecf96f3c4916f8a7957e2079d"
     }
   ],
   "commands": [

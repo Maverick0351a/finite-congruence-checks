@@ -312,3 +312,42 @@ its original runner identity and command list. This updated runner requires a
 new actual completed receipt, exact verbose inventory, and renewed publication
 anchor before full evidence approval. Those gates and hosted reproduction are
 pending. No benchmark or training was resumed.
+
+## Final recovery receipt and publication review
+
+**Approved** after independent inspection of the completed replacement receipt
+and publication anchor. This closes the pending local evidence gates in the
+preceding section. The run used frozen source commit
+`c3af350005f413554aea03db8cbf2c4c2d09e31b`; its receipt is committed at
+`3bd96caa445c459371128e882fe420479084924e`. This reviewer matched all 194 source
+hashes to the frozen commit's Git blobs and confirmed that the Lean project,
+exact claim, certificate, computational record, saved play, independent
+checkers and query implementation remain unchanged from the prior approval.
+
+All 12 recorded stages passed with no failure classification and the reviewed
+timeout policy. The kernel stage completed with exit code 0 in 1,303.713 seconds;
+its verbose log contains each of the required 179 modules exactly once and no
+additional module. The 19 declaration reports use only the allowed standard
+axioms. All seven negative bindings completed with exit code 1, with diagnostics
+for the expected false propositions or mathematical type mismatches. The 20
+artifact hashes exclude the receipt itself. Its normalized SHA-256 is
+`9e2f9fafa6882ca21a89775671fe58bb21850faecf96f3c4916f8a7957e2079d`.
+The measured kernel duration describes this warmed-cache run; it is not a
+controlled measurement of the discovery optimization's speed benefit.
+
+This reviewer independently ran saved-receipt replay and the complete focused
+`test_snaky*.py` suite on WSL/Linux. All **88 tests passed in 105.372 seconds**,
+with no skips. This includes the exact kernel-inventory controls, failed-stage
+and process-cleanup fixtures, actual receipt replay, theorem/claim mutations,
+and checks of the generated presentation against its 219-input Git anchor at
+`3bd96caa445c459371128e882fe420479084924e`. The implementation agent separately
+reported passing presentation-freshness and full-renderer checks. This review
+started no new Lean execution and did not repeat the earlier browser review;
+the mathematical and viewer sources are unchanged by this recovery.
+
+No additional actionable finding remains for the local candidate. Successful
+fresh hosted CI is still required before merge. HTTP checks of the new immutable
+evidence links follow pushing the anchor commit, and the public demo requires
+its deployment check. The locally warmed build and receipt inspection do not
+establish completion of those release gates. Model benchmarks, reserved tasks
+and training remain paused.

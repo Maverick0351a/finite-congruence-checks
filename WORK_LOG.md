@@ -17,8 +17,13 @@ the completed receipt. The 21 receipt files were copied without rewriting
 their contents into the evidence directory, where saved replay also passes.
 The full run took 1,451.334 seconds; its cached build took 11.8 seconds. These
 measurements do not establish fresh hosted performance or isolate a speedup
-from the discovery change. Publication-anchor renewal, full focused tests and
-hosted CI remain the next gates. Earlier successful and failed runs retain
+from the discovery change. The receipt is committed at
+`3bd96caa445c459371128e882fe420479084924e`; the renewed presentation binds all
+219 inputs to that commit. Independent review passed all 88 focused Linux
+tests in 105.372 seconds without skips and approved the receipt and anchor.
+Presentation freshness and full renderer checks pass; the refreshed browser
+page displays the new receipt hash and immutable references. Fresh hosted CI,
+HTTP link checks and deployment remain release gates. Earlier runs retain
 their original outcomes. Benchmarks and training remain paused.
 
 ## 2026-10-19 — Hosted Snaky kernel replay exceeds its stage allowance
