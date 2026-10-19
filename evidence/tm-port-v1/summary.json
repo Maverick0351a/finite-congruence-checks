@@ -1,0 +1,111 @@
+{
+  "format": "tm-differential-v1",
+  "passed": true,
+  "started_utc": "2026-10-19T05:10:17.051045+00:00",
+  "scope": "bounded configuration agreement, not general Python/Lean equivalence",
+  "source_sha256": {
+    "lean/tm/MachineChecks.lean": "e4e3e86fad42f0dedc1f6017795e406094f7190641ea4ebd1b9329e61da1e43c",
+    "lean/tm/MachineExtract.lean": "d841b79735f7aef28dbf95e771f9b7931c918067cb48ad1e8da57513cd8e6de9",
+    "lean/tm/Main.lean": "1bd5eab005fd1d8235b9864b961cb0d9f9776335c2480109973a0915e452717e",
+    "lean/tm/check_source.py": "c7686d3cc96ed19e820d2bddbf7d38229adc37711be0e7719fddaba92f03e8fa",
+    "lean/tm/lake-manifest.json": "7590938a658deb95878a502af9d02133543b5e06b4fa9bb41607b451e3172be1",
+    "lean/tm/lakefile.toml": "8aeef81242c25d131f871c54ca6139f2b39e88a68a235d012e5c4c146b7dd18c",
+    "lean/tm/lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "lean/tm/source/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "lean/tm/source/NavierStokesAlternating.lean": "0166c40c57bd9eb6ede9e25bda09650b859c81c0d801de9faa3875f195e003fc",
+    "lean/tm/source/manifest.json": "c5900aa1e3ab59a745ca2f68e1b749897d7de26a9de70b0fb0b7ecd55a397973",
+    "scripts/run_tm_checks.py": "d4567db3fb53635838d3af7f8e29967f64fd3961362b5776ce5a2df18bd83ab9",
+    "scripts/test_tm_checks.py": "ffd61361922eab50fc5ce4722d8b8b82ec6775e06c33035f54ac3c34b4ae2374",
+    "scripts/test_tm_port.py": "cbb2ad08b7a093b7a1f07b1f2bf97cec6c7467b2e753538355577791a7873fce",
+    "scripts/tm_cases.py": "3e2a22cb6dcc50f89980e4976f471ffcf0fd3564daf2fd1a4c706557824f3263",
+    "scripts/tm_port.py": "49fb1184d7031a9f98c0645be14ec152d8e463881e2a542648c2bf913971b9ce"
+  },
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "toolchain": "leanprover/lean4:v4.34.1",
+  "build_project": "lean/tm",
+  "build_commands": [
+    {
+      "name": "lean-version",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "build/lean-version.log"
+    },
+    {
+      "name": "build",
+      "argv": [
+        "lake",
+        "build",
+        "tmOracle",
+        "MachineChecks"
+      ],
+      "exit_code": 0,
+      "log": "build/build.log"
+    },
+    {
+      "name": "axioms",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "MachineChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "build/axioms.log"
+    },
+    {
+      "name": "kernel",
+      "argv": [
+        "lake",
+        "env",
+        "leanchecker",
+        "MachineExtract",
+        "MachineChecks"
+      ],
+      "exit_code": 0,
+      "log": "build/kernel.log"
+    }
+  ],
+  "resolved_lake": "/home/shannonlab/fcc-tm-20261019/lean-4.34.1-linux/bin/lake",
+  "binary_sha256": "f447cf22eb8f5fce2367dd080b7427ade176a9021c4d14cec61544e07a8ff019",
+  "command": [
+    "lean/tm/.lake/build/bin/tmOracle"
+  ],
+  "exit_code": 0,
+  "comparison": {
+    "passed": true,
+    "expected_records": 2857,
+    "seen_records": 2857,
+    "disagreements": []
+  },
+  "input_rejection_cases": 34,
+  "rejection_controls": {
+    "altered-state": true,
+    "altered-head": true,
+    "altered-tape": true,
+    "altered-steps": true,
+    "missing-record": true,
+    "duplicate-record": true,
+    "malformed-json": true
+  },
+  "helper_cases": 2857,
+  "sources_unchanged": true,
+  "artifacts": {
+    "inputs.jsonl": "3a9c31df1b264250126a40067f6e3db49d06be11b4ef52617bdacfaf4fee2891",
+    "lean.jsonl": "f009d43cf40e26af81d62ab20b238bac60ffff2c1f98e71b3e1176372396d9be",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "comparison.json": "7e602ccccfd436d995f982f50f80229cbd14e245f85a3d9a11743d35654c6792",
+    "binary.gz": "56e51d7770a028f15a6ac2effc8c65b63b3254173ae82de320447354e809e5cf",
+    "input-rejections.json": "32b195e7574bd8574916053e8fc8fc30cb092cb0cafbe14b7a2e1e9567f29a0f",
+    "build/lean-version.log": "355a9a028f81641782d75d6e6b58dec70f29d2f61238a9e271690259d9bf5680",
+    "build/build.log": "facb58d4b1491afbc0647fd73055139757eaa00b28ca0adab415bb3b9d830fdd",
+    "build/axioms.log": "cd34ffbe22243b1a5414b7fcd7a611200eda88096f95e6c68400f2b476164b64",
+    "build/kernel.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "finished_utc": "2026-10-19T05:10:31.328479+00:00"
+}

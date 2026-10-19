@@ -5,6 +5,7 @@ __pycache__/
 runs/
 dist/
 build/
+!evidence/tm-port-v1/build/
 *.egg-info/
 .DS_Store
 .lake/

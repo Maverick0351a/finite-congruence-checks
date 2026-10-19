@@ -1,6 +1,9 @@
 # Proposed second-domain pilot: two ways to halt
 
-**Status: proposal; no new implementation or Lean proof is claimed here.**
+**Status: the executable foundation and five source step lemmas are implemented;
+the pair-specific theorem records and agent retrieval demonstration remain proposed.**
+See [TM translation checks](TM_TRANSLATION_CHECKS.md) for the maintained port,
+exact source extraction, test domain, and reproduction commands.
 This follows the [archive review](ARCHIVE_REVIEW.md). Keep the completed
 [grouping checker](GROUPING_CHECKER.md) and its evidence intact while testing
 whether the atlas can explain a precise semantic difference in another domain.
@@ -52,7 +55,8 @@ actual tables as data with stable IDs; English names do not identify a machine.
 | Symbol at position 0 | 0 | 1 |
 | Further steps | Same halted configuration | Same halted configuration |
 
-This table states the intended proof obligations, not completed proof results.
+This table states the pair-specific proof obligations. The native comparison
+includes these two cases; it does not replace those remaining theorem obligations.
 Matching the numeric final state alone would also be misleading: state 1 is a
 sentinel in the first encoding and an ordinary declared halt state in the second.
 

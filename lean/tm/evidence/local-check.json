@@ -1,0 +1,46 @@
+{
+  "timestamp_utc": "2026-10-19T05:07:48.173696+00:00",
+  "environment": "Ubuntu-Shannon WSL, Linux x86_64",
+  "toolchain": "leanprover/lean4:v4.34.1",
+  "commands": [
+    {
+      "command": "lake build tmOracle MachineChecks",
+      "exit_code": 0,
+      "log": "build.log"
+    },
+    {
+      "command": "lake env lean MachineChecks.lean",
+      "exit_code": 0,
+      "log": "axioms.log"
+    },
+    {
+      "command": "lake env leanchecker MachineExtract MachineChecks",
+      "exit_code": 0,
+      "log": "leanchecker.log"
+    },
+    {
+      "command": "python3 check_source.py",
+      "exit_code": 0,
+      "log": "source-check.log"
+    }
+  ],
+  "smoke": {
+    "manual_expected_cases": 4,
+    "rejected_malformed_cases": 8,
+    "log": "smoke.json"
+  },
+  "source_sha256": {
+    "Main.lean": "1bd5eab005fd1d8235b9864b961cb0d9f9776335c2480109973a0915e452717e",
+    "MachineExtract.lean": "d841b79735f7aef28dbf95e771f9b7931c918067cb48ad1e8da57513cd8e6de9",
+    "MachineChecks.lean": "e4e3e86fad42f0dedc1f6017795e406094f7190641ea4ebd1b9329e61da1e43c",
+    "lakefile.toml": "8aeef81242c25d131f871c54ca6139f2b39e88a68a235d012e5c4c146b7dd18c",
+    "lake-manifest.json": "7590938a658deb95878a502af9d02133543b5e06b4fa9bb41607b451e3172be1",
+    "lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "check_source.py": "c7686d3cc96ed19e820d2bddbf7d38229adc37711be0e7719fddaba92f03e8fa",
+    "source/manifest.json": "c5900aa1e3ab59a745ca2f68e1b749897d7de26a9de70b0fb0b7ecd55a397973",
+    "source/NavierStokesAlternating.lean": "0166c40c57bd9eb6ede9e25bda09650b859c81c0d801de9faa3875f195e003fc",
+    "source/Machine.definitions.txt": "d7dc1d5a9525847e379c7951a885b7f929409d2215e5197c7eb8780adce8225f",
+    "source/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "scope": "Verbatim machine fragment, five generic step lemmas, compiled JSON adapter. No general Python equivalence or full PDE proof."
+}
