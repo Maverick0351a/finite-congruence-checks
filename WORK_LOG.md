@@ -1,5 +1,45 @@
 # Finite graph search work log
 
+## 2026-10-19 — Five-object operation minimum proof started
+
+Following the user's research order, started a separate branch from merged
+main at `5c0e954`. The target is the saved pair of eight-relation families:
+three unary rules are necessary for A, while two suffice and are necessary
+for B, despite their isomorphic inclusion orders. Historical exploration
+files and existing proof receipts remain preserved.
+
+Independent finite enumeration found a compact lower-bound certificate: four
+unwanted groupings and five possible preservation patterns. The Lean proof
+must cover every total unary map and every equivalence relation, including
+empty signatures and repeated rules. Computational checking, formal proof,
+and record binding have separate evidence. Independent review is in progress.
+No novelty, full five-object census, or agent benefit is inferred. Snaky follows
+this milestone; model benchmarks, reserved tasks, and training remain paused.
+
+The complete Lean classification and lower bounds now build. A monolithic
+finite certificate used excessive memory during development; splitting it into
+small proved declarations retained the same final statements and reduced the
+observed per-module peak to about 0.6 GB. Every generated declaration is checked
+by Lean; the Python certificate generator is outside the trusted proof.
+
+A clean Linux source copy passed all 12 runner stages in 178.44 seconds with
+Lean 4.34.1: all six project modules replayed, 29 declarations passed the
+allowed-axiom audit, and eight deliberately wrong bindings were rejected.
+All 14 pinned source hashes matched the checkout. An earlier run using the
+Windows-mounted runtime was interrupted during slow filesystem reads; its
+incomplete receipt is retained under ignored `runs/five-object-interrupted-mount`.
+That interruption is not a mathematical counterexample.
+
+All 26 focused Python tests pass, the exact claim exports and checks as
+supported, and the original nine-stage N5 transfer receipt still replays.
+The diagram and finite-certificate generators pass freshness checks. The
+walkthrough explains the four-obstruction lower bound and keeps formal proof,
+finite enumeration, exact record binding, and model evaluation distinct.
+The independent subagent approved the implementation after inspecting every
+negative log and rerunning all 26 focused tests and the receipt replay. Six
+development findings and their fixes are documented in `docs/FIVE_OBJECT_REVIEW.md`.
+Protected-branch CI remains the delivery gate.
+
 ## 2026-10-19 — N5 proof reuse
 
 Merged the separately reviewed governance documentation PR #14 after all 19

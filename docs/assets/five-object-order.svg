@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="932" viewBox="0 0 840 932" role="img" aria-labelledby="title description">
+  <title id="title">One inclusion order. Two rule costs.</title>
+  <desc id="description">Eight valid groupings in each of two five-object constructions have isomorphic inclusion orders. Construction A needs exactly three unary rules for its exact relation family; construction B needs exactly two. The bottom is the grouping with all objects separate and the top puts all objects together. Each node pairs A&#x27;s grouping index with B&#x27;s corresponding index and shows both block-label strings. This is an illustration of checked records, not a proof or an object-relabeling claim.</desc>
+  <style>
+    text{font-family:Inter,"Segoe UI",Arial,sans-serif;fill:#162442}
+    .muted{fill:#53647e}.mono{font-family:"Cascadia Code",Consolas,monospace}
+    .edge{stroke:#8493ab;stroke-width:2.3;fill:none}
+    .node{fill:#fff;stroke:#9aaec8;stroke-width:1.6}
+  </style>
+  <rect width="840" height="932" rx="20" fill="#f2f5fc"/>
+  <text x="44" y="41" font-size="12" font-weight="700" letter-spacing="1.8" class="muted">FIVE-OBJECT COMPARISON</text>
+  <text x="44" y="82" font-size="30" font-weight="700">One inclusion order. Two rule costs.</text>
+  <text x="44" y="112" font-size="17" class="muted">The same arrangement of valid groupings can require different rules.</text>
+  <rect x="44" y="137" width="364" height="68" rx="10" fill="#e7f6f3" stroke="#a4d6cf"/>
+  <rect x="432" y="137" width="364" height="68" rx="10" fill="#eee8fa" stroke="#cabce4"/>
+  <text x="63" y="165" font-size="18" font-weight="700">A: exactly 3 rules minimum</text>
+  <text x="63" y="189" font-size="14" class="muted">For A’s exact eight grouping relations</text>
+  <text x="451" y="165" font-size="18" font-weight="700">B: exactly 2 rules minimum</text>
+  <text x="451" y="189" font-size="14" class="muted">For B’s exact eight grouping relations</text>
+  <text x="420" y="224" text-anchor="middle" font-size="14" class="muted">All together</text>
+  <path d="M 65 647 V 311 M 59 319 L 65 311 L 71 319" stroke="#53647e" stroke-width="1.7" fill="none"/>
+  <text x="51" y="485" transform="rotate(-90 51 485)" text-anchor="middle" font-size="13" class="muted">Moving up merges groups</text>
+  <g aria-label="Immediate inclusion edges">
+    <path class="edge" d="M 310 340 L 420 298"><title>A1 / B2 is immediately finer than A0 / B0</title></path>
+    <path class="edge" d="M 200 450 L 310 408"><title>A2 / B4 is immediately finer than A1 / B2</title></path>
+    <path class="edge" d="M 640 340 L 420 298"><title>A3 / B1 is immediately finer than A0 / B0</title></path>
+    <path class="edge" d="M 640 450 L 310 408"><title>A4 / B3 is immediately finer than A1 / B2</title></path>
+    <path class="edge" d="M 640 450 L 640 408"><title>A4 / B3 is immediately finer than A3 / B1</title></path>
+    <path class="edge" d="M 420 450 L 310 408"><title>A5 / B5 is immediately finer than A1 / B2</title></path>
+    <path class="edge" d="M 420 560 L 200 518"><title>A6 / B6 is immediately finer than A2 / B4</title></path>
+    <path class="edge" d="M 420 560 L 640 518"><title>A6 / B6 is immediately finer than A4 / B3</title></path>
+    <path class="edge" d="M 420 560 L 420 518"><title>A6 / B6 is immediately finer than A5 / B5</title></path>
+    <path class="edge" d="M 420 670 L 420 628"><title>A7 / B7 is immediately finer than A6 / B6</title></path>
+  </g>
+  <g aria-label="Paired grouping nodes">
+    <g id="grouping-0" aria-label="A0: 00000; corresponding B0: 00000">
+      <rect class="node" x="331" y="230" width="178" height="68" rx="11"/>
+      <text x="420" y="259" text-anchor="middle" font-size="21" font-weight="650">A0 ↔ B0</text>
+      <text x="420" y="284" text-anchor="middle" font-size="14" class="mono muted">00000 ↔ 00000</text>
+    </g>
+    <g id="grouping-1" aria-label="A1: 00100; corresponding B2: 01111">
+      <rect class="node" x="221" y="340" width="178" height="68" rx="11"/>
+      <text x="310" y="369" text-anchor="middle" font-size="21" font-weight="650">A1 ↔ B2</text>
+      <text x="310" y="394" text-anchor="middle" font-size="14" class="mono muted">00100 ↔ 01111</text>
+    </g>
+    <g id="grouping-2" aria-label="A2: 00102; corresponding B4: 01221">
+      <rect class="node" x="111" y="450" width="178" height="68" rx="11"/>
+      <text x="200" y="479" text-anchor="middle" font-size="21" font-weight="650">A2 ↔ B4</text>
+      <text x="200" y="504" text-anchor="middle" font-size="14" class="mono muted">00102 ↔ 01221</text>
+    </g>
+    <g id="grouping-3" aria-label="A3: 01110; corresponding B1: 01110">
+      <rect class="node" x="551" y="340" width="178" height="68" rx="11"/>
+      <text x="640" y="369" text-anchor="middle" font-size="21" font-weight="650">A3 ↔ B1</text>
+      <text x="640" y="394" text-anchor="middle" font-size="14" class="mono muted">01110 ↔ 01110</text>
+    </g>
+    <g id="grouping-4" aria-label="A4: 01210; corresponding B3: 01112">
+      <rect class="node" x="551" y="450" width="178" height="68" rx="11"/>
+      <text x="640" y="479" text-anchor="middle" font-size="21" font-weight="650">A4 ↔ B3</text>
+      <text x="640" y="504" text-anchor="middle" font-size="14" class="mono muted">01210 ↔ 01112</text>
+    </g>
+    <g id="grouping-5" aria-label="A5: 01211; corresponding B5: 01222">
+      <rect class="node" x="331" y="450" width="178" height="68" rx="11"/>
+      <text x="420" y="479" text-anchor="middle" font-size="21" font-weight="650">A5 ↔ B5</text>
+      <text x="420" y="504" text-anchor="middle" font-size="14" class="mono muted">01211 ↔ 01222</text>
+    </g>
+    <g id="grouping-6" aria-label="A6: 01213; corresponding B6: 01223">
+      <rect class="node" x="331" y="560" width="178" height="68" rx="11"/>
+      <text x="420" y="589" text-anchor="middle" font-size="21" font-weight="650">A6 ↔ B6</text>
+      <text x="420" y="614" text-anchor="middle" font-size="14" class="mono muted">01213 ↔ 01223</text>
+    </g>
+    <g id="grouping-7" aria-label="A7: 01234; corresponding B7: 01234">
+      <rect class="node" x="331" y="670" width="178" height="68" rx="11"/>
+      <text x="420" y="699" text-anchor="middle" font-size="21" font-weight="650">A7 ↔ B7</text>
+      <text x="420" y="724" text-anchor="middle" font-size="14" class="mono muted">01234 ↔ 01234</text>
+    </g>
+  </g>
+  <text x="420" y="762" text-anchor="middle" font-size="14" class="muted">All separate</text>
+  <path d="M 44 788 H 796" stroke="#d4ddeb"/>
+  <text x="44" y="815" font-size="15">Each node pairs corresponding groupings; lines show immediate inclusion.</text>
+  <text x="44" y="840" font-size="15">Equal digits mean the same group: 00100 = {0,1,3,4} | {2}.</text>
+  <text x="44" y="865" font-size="15">The correspondence concerns grouping order, not a renaming of objects.</text>
+  <text x="44" y="900" font-size="13" class="muted">Fixed five-object carrier · unary rules · exact families</text>
+  <text x="44" y="919" font-size="12" class="muted">Documentation illustration from computational.json; the formal proof is linked separately.</text>
+</svg>

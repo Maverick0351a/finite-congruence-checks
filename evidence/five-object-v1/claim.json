@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "namespace": "finite-congruence-atlas/five-object-v1",
+  "id": "context:family-206:five-object:operation-minima:v1",
+  "kind": "exact_family_minima",
+  "evidence_status": "lean_proof_with_recorded_kernel_replay",
+  "statement": "These two five-object constructions each have eight congruences with isomorphic inclusion orders, but their exact families require respectively three and two unary rules.",
+  "scope": "Two particular unary algebras on the fixed carrier {0,1,2,3,4}.",
+  "assumptions": [
+    "A grouping is an equivalence relation represented by canonical block labels.",
+    "A unary rule is a total map from this carrier to itself.",
+    "Minimum counts range over arbitrary finite lists of unary rules realizing the exact relation family.",
+    "Lean's kernel and only the standard axioms reported by the receipt are trusted."
+  ],
+  "limits": [
+    "Minima concern each exact relation family on the fixed five-object carrier and total unary operations.",
+    "The order correspondence matches groupings; it is not asserted to relabel the five objects or the rules.",
+    "No minimum over all embeddings, larger carriers, or higher-arity operations is established.",
+    "The Python enumeration and exporter are not formally verified implementations. Their checks are separate from the Lean proof.",
+    "Offline receipt replay checks recorded bindings and hashes; it is not a new kernel check or an authenticated attestation.",
+    "This formalizes an existing saved example. No mathematical novelty, complete five-object census, or agent-performance gain is claimed."
+  ],
+  "values": {
+    "carrier": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "A": {
+      "id": "saved:family-206:five-object:three-rule:v1",
+      "operations": [
+        [
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          1,
+          1,
+          4
+        ],
+        [
+          1,
+          1,
+          3,
+          3,
+          3
+        ]
+      ],
+      "groupings": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          1,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      ],
+      "minimum_unary_operations": 3
+    },
+    "B": {
+      "id": "saved:family-206:five-object:two-rule:v1",
+      "operations": [
+        [
+          4,
+          1,
+          3,
+          2,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          3,
+          3
+        ]
+      ],
+      "groupings": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      ],
+      "minimum_unary_operations": 2
+    },
+    "A_to_B": [
+      0,
+      2,
+      4,
+      1,
+      3,
+      5,
+      6,
+      7
+    ]
+  },
+  "conclusion": {
+    "predicate": "For every relation on Fin 5, it is an equivalence relation preserved by the displayed rules iff it equals one of the eight displayed equivalence relations; the exact families have the stated minimum unary signature sizes and isomorphic inclusion orders.",
+    "distinct_groupings_A": 8,
+    "distinct_groupings_B": 8,
+    "minimum_A": 3,
+    "minimum_B": 2,
+    "inclusion_order_isomorphic": true
+  },
+  "theorems": {
+    "classification_A": "FiniteCongruenceChecks.FiveObject.A.all_relations",
+    "classification_B": "FiniteCongruenceChecks.FiveObject.B.all_relations",
+    "lower_A": "FiniteCongruenceChecks.FiveObject.A.no_small_signature",
+    "lower_B": "FiniteCongruenceChecks.FiveObject.B.no_small_signature",
+    "order": "FiniteCongruenceChecks.FiveObject.same_order"
+  },
+  "applicable_lemmas": [
+    {
+      "theorem": "FiniteCongruenceChecks.FiveObject.A.all_relations",
+      "role": "complete exact A family"
+    },
+    {
+      "theorem": "FiniteCongruenceChecks.FiveObject.B.all_relations",
+      "role": "complete exact B family"
+    },
+    {
+      "theorem": "FiniteCongruenceChecks.FiveObject.A.no_small_signature",
+      "role": "exclude any signature of at most two rules"
+    },
+    {
+      "theorem": "FiniteCongruenceChecks.FiveObject.B.no_small_signature",
+      "role": "exclude any signature of at most one rule"
+    },
+    {
+      "theorem": "FiniteCongruenceChecks.FiveObject.A.theta_injective",
+      "role": "eight distinct A relations"
+    },
+    {
+      "theorem": "FiniteCongruenceChecks.FiveObject.B.theta_injective",
+      "role": "eight distinct B relations"
+    },
+    {
+      "theorem": "FiniteCongruenceChecks.FiveObject.same_order",
+      "role": "inclusion equivalence"
+    },
+    {
+      "theorem": "FiniteCongruenceChecks.FiveObject.correspondence_inverse",
+      "role": "bijective grouping correspondence"
+    }
+  ],
+  "citations": [
+    {
+      "path": "evidence/five-object-v1/constructions.json",
+      "sha256": "faa04412cff2951eb8a3b138ae60cb15893d25f83c703838f3b903b20c58fd62"
+    },
+    {
+      "path": "lean/five_object/FiveObjectBase.lean",
+      "sha256": "ed2d46797b5beaaffe405dcc74fa7e6863d9e2e05d400945351fd037a446c1f8"
+    },
+    {
+      "path": "lean/five_object/FiveObjectData.lean",
+      "sha256": "206013a44cd7d8099e800cde43a375ba97a9b547402f8ee4acf44e91ab0cab30"
+    },
+    {
+      "path": "lean/five_object/FiveObjectClassification.lean",
+      "sha256": "d3ef1f1630f5e342d610f6be39b2b233e47c8d630625ea1c1c668eb9c744ea4f"
+    },
+    {
+      "path": "lean/five_object/FiveObjectObstructions.lean",
+      "sha256": "dccdccbd88942f1f4b4a854bad700d1b45734fe609df587ab4d4e5a51af300ec"
+    },
+    {
+      "path": "lean/five_object/FiveObjectMinimum.lean",
+      "sha256": "4837b3ae8bd5eb40371cc1968a2bfeb42e8a52b1f0890379eeeb417e8c937944"
+    },
+    {
+      "path": "lean/five_object/FiveObjectBinding.lean",
+      "sha256": "cce839c8e91d82a199000f946aed3b62c1a460f7513799a871ab7fca1d6eee16"
+    }
+  ],
+  "upstream_context": {
+    "family": "206",
+    "revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "scope_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/206.md",
+    "role": "Research context for finite congruence representation; this new proof does not import or prove the full upstream theorem."
+  }
+}

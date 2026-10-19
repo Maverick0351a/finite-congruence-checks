@@ -1,0 +1,22 @@
+name = "fiveObjectMinimum"
+version = "0.1.0"
+moreLeanArgs = ["-j1"]
+defaultTargets = ["FiveObjectMinimum", "FiveObjectBinding"]
+
+[[lean_lib]]
+name = "FiveObjectBase"
+
+[[lean_lib]]
+name = "FiveObjectData"
+
+[[lean_lib]]
+name = "FiveObjectClassification"
+
+[[lean_lib]]
+name = "FiveObjectObstructions"
+
+[[lean_lib]]
+name = "FiveObjectMinimum"
+
+[[lean_lib]]
+name = "FiveObjectBinding"

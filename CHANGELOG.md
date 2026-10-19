@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Exact five-object comparison: two eight-congruence families with isomorphic
+  inclusion orders and respective minimum unary rule counts of three and two.
+  Standalone Lean classification and lower bounds, exact theorem bindings,
+  separate exhaustive Python audit, illustrated explanation, and claim queries.
+  This adds formal coverage of a saved example, without claiming novelty or a
+  complete five-object classification.
+
 - Four Turing-machine pairs in the atlas, with separate halting-time, full-tape,
   and head-position claim records, exact trace citations, qualified Lean lemma
   links, and a small agent evidence-selection exercise.

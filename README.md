@@ -109,6 +109,17 @@ python scripts/query_context.py explain context:family-206:saved-n5:renaming:v1
 python scripts/query_context.py explain context:family-206:saved-n5:reverse-labels:v1
 ```
 
+The [five-object walkthrough](docs/FIVE_OBJECT_MINIMUM.md) asks a different
+question: can the same grouping diagram require different numbers of rules?
+Its two exact families have the same eight-element inclusion order, while A
+requires three unary rules and B requires two. The page explains the compact
+lower-bound argument and links the separate formal and computational checks.
+
+```sh
+python scripts/five_object_proof.py run --out runs/five-object-fresh
+python scripts/query_context.py explain context:family-206:five-object:operation-minima:v1
+```
+
 Read the [query contract](docs/ATLAS_QUERY.md),
 [agent retrieval evaluation](docs/ATLAS_QUERY_EVALUATION.md), and
 [infrastructure direction](docs/INFRASTRUCTURE.md). These interfaces are an

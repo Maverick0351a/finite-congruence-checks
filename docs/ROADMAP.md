@@ -1,6 +1,6 @@
 # Research and engineering roadmap
 
-## Current priority: make justified proof reuse inspectable
+## Current milestone: five-object minima; next, Snaky
 
 [PR #11](https://github.com/Maverick0351a/finite-congruence-checks/pull/11) and
 [PR #12](https://github.com/Maverick0351a/finite-congruence-checks/pull/12) are merged.
@@ -13,7 +13,19 @@ and transported groupings, follow the applicable theorem, and distinguish a
 failed grouping from a failed correspondence or an unsupported proof reference.
 It reuses the existing generic theorem and retains the first example's evidence.
 
-After this milestone is reviewed and reproducible, resolve the dummy runner's
+The proof-reuse milestone was merged in PR #15. The user has now selected this
+mathematical order: first formalize the [saved five-object example](FIVE_OBJECT_MINIMUM.md),
+then investigate one exact Snaky certificate and its board assumptions, then
+consider a directed-graph example. The first task compares two exact families
+with the same eight-element order but different minimum unary rule counts.
+The five-object proof now supplies complete classifications, arbitrary-unary-map
+lower bounds, exact theorem bindings, and a separate exhaustive Python audit.
+It adds formal coverage to a saved finding; it does not assert novelty or a
+complete five-object classification. Once this delivery passes protected-branch
+review and CI, the next task is a narrowly scoped Snaky source-and-certificate
+review, keeping the 616-row comparator and 728-card theorem data separate.
+
+Before any resumed model evaluation, resolve the dummy runner's
 [isolation and usage gates](NATIVE_PREFLIGHT_STATUS.md). Report actual preflight
 usage and a revised estimate before seeking approval for the original four
 direct-answer sessions. The matched benchmark packets and four reserved task
