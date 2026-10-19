@@ -56,8 +56,14 @@ tracks described in the [second-domain pilot proposal](TM_HALT_PILOT.md):
    [TM atlas collection](TM_ATLAS.md) now attaches separate halting-time, tape,
    and head-position claims to four exact pairs, with trace citations and
    qualified source-lemma links. A small agent retrieval exercise tests those
-   distinctions and the evidence boundary. Next, expand the retrieval evaluation
-   across independent runs before adding more domains; pair-specific Lean
+   distinctions and the evidence boundary. Next, review the
+   [controlled semantic-context pilot](SEMANTIC_CONTEXT_PILOT.md): freeze matched
+   documentation/atlas information, enforce isolated reference access, compare
+   direct answers, and score meaning and evidence separately. The first pilot
+   uses two tasks under both conditions: four fresh direct-answer sessions and
+   four blind reviews. A-to-B handoffs and repetitions remain in the deferred
+   design; four further task families are untouched and reserved. Isolation and
+   actual usage capture must pass preflight; no comparison has run yet. Pair-specific Lean
    preservation theorems remain separate future work.
 
 The [archive review](ARCHIVE_REVIEW.md) sets evidence-admission requirements.

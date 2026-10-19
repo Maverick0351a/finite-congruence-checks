@@ -1,0 +1,69 @@
+{
+  "kind": "non_inference_native_dummy_setup_preflight",
+  "started_utc": "2026-10-19T06:19:55.270430+00:00",
+  "client_version": "codex-cli 0.163.0-alpha.10.2",
+  "command_sha256": "a7a15c55edbb25fbb7d52fe7bff74bf8ad21dca8f587a42d2fc46f1d4f33a390",
+  "requested_disabled_features": [
+    "shell_tool",
+    "unified_exec",
+    "apps",
+    "plugins",
+    "remote_plugin",
+    "hooks",
+    "memories",
+    "external_agent_memory_import",
+    "multi_agent",
+    "multi_agent_v2",
+    "agent_message_board",
+    "code_mode",
+    "code_mode_host"
+  ],
+  "requested_overrides": {
+    "web_search": "disabled",
+    "project_doc_max_bytes": 0,
+    "model_provider": "openai",
+    "model_reasoning_effort": "medium",
+    "developer_instructions": "",
+    "forced_login_method": "chatgpt"
+  },
+  "configured_mcp_server_count": 2,
+  "new_credentials": false,
+  "paid_api_calls": 0,
+  "benchmark_answering_sessions": 0,
+  "dummy_inference_turns": 0,
+  "native_token_usage": null,
+  "usage_note": "No turn/start is implemented or sent. Native token usage is unavailable, not a measured zero. Offline fixtures are not model usage.",
+  "checks": {
+    "native_setup": "failed"
+  },
+  "probe_error": {
+    "type": "RuntimeError",
+    "message": "app-server closed stdout"
+  },
+  "rpc_calls": [
+    {
+      "method": "initialize",
+      "id": 1
+    }
+  ],
+  "notifications": [],
+  "stderr_line_digests": [
+    {
+      "bytes": 25,
+      "sha256": "023e82882653a6aa0cc11662ad844ff8dc3c867e62c7004e9febb876cfacf43e",
+      "diagnostic": "Error: invalid transport"
+    },
+    {
+      "bytes": 29,
+      "sha256": "4b4dd6d3cebd5334e33c6e336ad8e5c00bc574790bf81a023fbfc1b7c1228a70"
+    },
+    {
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    }
+  ],
+  "saved_config_unchanged": true,
+  "elapsed_seconds": 0.032,
+  "status": "blocked_before_inference",
+  "finished_utc": "2026-10-19T06:19:55.313663+00:00"
+}

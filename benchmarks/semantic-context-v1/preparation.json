@@ -1,0 +1,260 @@
+{
+  "protocol_version": "semantic-context-v1-draft2",
+  "status": "matched_packets_prepared_live_preflight_blocked_benchmark_paused",
+  "prepared_at_utc": "2026-10-19T06:03:10.994977+00:00",
+  "atlas_commit": "cddf9cf1c2d06df36bc516fb0b461daf6365920e",
+  "new_answering_sessions": 0,
+  "new_result_review_sessions": 0,
+  "measurement_usage": null,
+  "usage_note": "No pilot inference has run. Preparation and methodology review are separate from benchmark usage; exact preparation model usage is not available in this record.",
+  "checks": {
+    "freeze": {
+      "status": "passed",
+      "files": 46,
+      "worktree": true
+    },
+    "negative_controls": [
+      {
+        "case": "tree",
+        "status": "rejected",
+        "message": "Git tree mismatch"
+      },
+      {
+        "case": "hash",
+        "status": "rejected",
+        "message": "frozen byte mismatch: benchmarks/tm-evidence-v1/tasks.json"
+      },
+      {
+        "case": "duplicate",
+        "status": "rejected",
+        "message": "unsafe or duplicate path: benchmarks/tm-evidence-v1/tasks.json"
+      },
+      {
+        "case": "traversal",
+        "status": "rejected",
+        "message": "unsafe or duplicate path: ../outside"
+      }
+    ],
+    "task_rubric_structure": {
+      "status": "passed",
+      "distinct_families": 6,
+      "initial_pilot_families": 2,
+      "answering_sessions": 4,
+      "rubric_dimensions": 8,
+      "initial_answering_stages": [
+        "direct"
+      ],
+      "all_six_task_objects_unchanged": true,
+      "reserved_task_ids_unchanged": true,
+      "rubric_and_freeze_bytes_unchanged": true
+    },
+    "matched_packets": {
+      "status": "passed_mechanical_and_independent_AI_preparation_review",
+      "references": 5912,
+      "shared_raw_units": 5744,
+      "pinned_inputs": 28,
+      "source_keys_exact": true,
+      "all_four_machine_pairs_reconstruct": true,
+      "largest_page_with_metadata_bytes": 11474,
+      "semantic_preservation_demonstrated": false
+    }
+  },
+  "historical_smoke_regrade": {
+    "passed": true,
+    "correct": 6,
+    "total": 6,
+    "answers_sha256": "65ad45a451de697155d5a9224ce129721073fbd497bd11aa661282bf54160170",
+    "fresh_agent_run": false,
+    "comparison_evidence": false
+  },
+  "task_source_feasibility": {
+    "SC06": {
+      "collection": "evidence/tm-port-v1/inputs.jsonl",
+      "exact_machine_matches": {
+        "bb3_left": 16,
+        "bb3_right": 16
+      },
+      "inputs_in_matching_records": [
+        []
+      ],
+      "records_for_input_0_1": 0,
+      "scope": "Only this frozen collection; not a claim about all evidence or machine behavior."
+    }
+  },
+  "methodology_review": {
+    "status": "completed_and_revisions_applied",
+    "kind": "separate_AI_design_review",
+    "benchmark_result_review": false,
+    "external_peer_review": false,
+    "changes": [
+      "Use the exact same question for direct and receiving agents.",
+      "Predeclare overlapping units requested from A and B.",
+      "Distinguish prose retention from citation-assisted recovery.",
+      "Control search ranking and logical chunks across presentations.",
+      "Require capability isolation, not instruction-only reading boundaries.",
+      "Give direct and B the same resource ceilings.",
+      "Keep ordinary refusals, empty answers, and enforced-budget exhaustion as outcomes.",
+      "Check evidence fits the common resource and citation limits before inference.",
+      "Capture final text without a submit tool that could consume the last call.",
+      "Preserve prose during review and collect arm guesses after locking scores."
+    ]
+  },
+  "runner_inspection": {
+    "cli_version": "codex-cli 0.163.0-alpha.10.2",
+    "inspected_without_inference": [
+      "version/help",
+      "app-server experimental JSON schema generation"
+    ],
+    "usage_schema_fields": [
+      "inputTokens",
+      "cachedInputTokens",
+      "outputTokens",
+      "reasoningOutputTokens",
+      "totalTokens",
+      "cacheWriteInputTokens"
+    ],
+    "capability_isolation_verified": false,
+    "authenticated_inference_verified": false,
+    "budget_interrupt_verified": false,
+    "actual_usage_capture_verified": false,
+    "auth_material_read_or_copied": false,
+    "schema_reinspection": {
+      "scope": "Read local generated schemas; no live preflight inference.",
+      "ThreadStartParams.environments": "Schema documents an empty list as disabling environment access for turns without an override; not proof that every tool and inherited context is inaccessible.",
+      "ThreadTokenUsageUpdatedNotification": "Schema exposes cumulative counters; no live notification has been captured for this runner.",
+      "enforcement_test_status": "offline_broker_controls_pass_native_setup_failed_no_inference",
+      "usage_event_capture_status": "unverified_no_native_events",
+      "execution_gate": "Do not collect pilot answers until capability isolation and actual usage reporting pass. If either cannot be enforced, report the limitation and pause.",
+      "schema_hashes": {
+        "ThreadStartParams.json": "80a40a7fac15b4bf70efb7f893fb353acc0a0d30c68f54aee4f01923deca85de",
+        "ThreadTokenUsageUpdatedNotification.json": "aba4f6c7e4a19b2b842c08ee793b57000c07dafd57b922ad0d8e7c76609108c2"
+      }
+    }
+  },
+  "pending_before_any_answering_run": [
+    "Establish enforceable exclusive search/read and fresh-context boundary.",
+    "Complete dummy live telemetry and asynchronous interruption preflight.",
+    "Pin and observe actual same model/settings with no fallback.",
+    "Finalize private key/scorer/reviewer package outside answering capabilities.",
+    "Verify complete per-task reference/citation budgets in both conditions.",
+    "Show updated usage estimate, then obtain approval for the four benchmark sessions."
+  ],
+  "initial_plan": {
+    "distinct_task_families": 2,
+    "task_ids": [
+      "SC01",
+      "SC05"
+    ],
+    "repetitions": 1,
+    "answering_sessions": 4,
+    "blind_result_review_sessions": 4,
+    "estimated_total_tokens": [
+      66000,
+      190000
+    ],
+    "estimated_minutes": [
+      10,
+      35
+    ],
+    "estimate_excludes": [
+      "preparation",
+      "preflight",
+      "additional ambiguity adjudication"
+    ],
+    "reserved_task_families": 4,
+    "answering_stages": [
+      "direct"
+    ],
+    "estimated_answering_tokens": [
+      44000,
+      136000
+    ],
+    "estimated_review_tokens": [
+      22000,
+      54000
+    ],
+    "handoffs": "deferred",
+    "repeated_trials": "deferred",
+    "purpose": "Feasibility, failure inspection, and task difficulty; not a reliable performance advantage estimate."
+  },
+  "artifact_hash_policy": "SHA-256 of UTF-8 bytes with CRLF normalized to LF. The freeze manifest separately records exact Git blob hashes for the atlas. Preparation record is excluded from its own hash list.",
+  "artifact_hashes": {
+    "docs/SEMANTIC_CONTEXT_PILOT.md": "abe89ea7cc5de6d1e0ec4643d2b7597c14b294f12f51fc1efec42b84d6c474c9",
+    "benchmarks/semantic-context-v1/tasks.json": "5f9b92768b3bd007e7798d9ece286fa1989541542859338958e3da33f63eca03",
+    "benchmarks/semantic-context-v1/rubric.json": "d9235986f801610be4a08e1bb9aa7dae7cf2c001bce1d4469b62f4843d9a1772",
+    "benchmarks/semantic-context-v1/freeze.json": "e5cb91784e8c0770c63254170d8da9f107eff1bb808781eb81ec30ad73c2f76c",
+    "scripts/check_semantic_freeze.py": "b5d3ab8329cf1f7a058dca176100cfeb31cf75e13773c2c9dae5c1128186ecfb",
+    "docs/SEMANTIC_CONTEXT_PREFLIGHT.md": "312e0c052949029ee1facf10f842d1a9df31bf0dd64b3d6e00a241f586081076",
+    "benchmarks/semantic-context-v1/preflight-result.json": "da26c4b4d03c4f9ddbd078f75fbdef8052c200b11ce3ae2692828090a6e4c295",
+    "benchmarks/semantic-context-v1/preflight-launch-plan.json": "efb5d9844ad968993170250bd1f92df914e8f4a325e79495357d5327c26d85c6",
+    "benchmarks/semantic-context-v1/packet-manifest.json": "e5b98cebe17d7d868c183b4df1b5c6ccb2fc0164d6f127968412181ecc0af39f",
+    "scripts/semantic_packets.py": "14dae4197e4dc793fe6ce12c3e77d048c5ef1aaad79f01bfbae5ba56e8d7b634",
+    "scripts/semantic_broker.py": "38b1e2ffbc7a6bc84f82fa91897b2c20812f7b2d36d7ef174d9466a1863f5823",
+    "scripts/preflight_semantic_runner.py": "fbde76ea27753338e0144f52f4368179bdd393d324c7dcb83ea3d1484897e692",
+    "scripts/semantic_dummy_preflight.py": "5492dac5d46eebd81e6d5660d94d1a43207786c2085e9b025f0baedc16a419cb",
+    "scripts/test_semantic_preflight.py": "8a5e76673ccfda87f28c12c8387549856370e3a49c300e1f5bd009bea937b88d",
+    ".gitattributes": "ca7416f09eb98e94cf546db4e784f321624348751c7440393b142948a649e64e",
+    ".github/workflows/verify.yml": "346a42beaad5e8cb379df7fbc56fa2cd6489df798499db08a4adbfd29281bb5d"
+  },
+  "limits": [
+    "Snapshot integrity is not semantic preservation.",
+    "The old six saved answers are smoke evidence only.",
+    "No new evidence schema or mathematical proof was introduced.",
+    "No comparison improvement, tie, regression, or score has been measured."
+  ],
+  "repository_validation": [
+    {
+      "command": "python -m unittest discover -v",
+      "result": "passed",
+      "tests": 33
+    },
+    {
+      "command": "python run_experiment.py --out runs/semantic-context-design/reproduction",
+      "result": "passed"
+    },
+    {
+      "command": "python scripts/check_evidence.py --evidence runs/semantic-context-design/reproduction --compare evidence",
+      "result": "passed",
+      "candidates": 143685,
+      "witnesses": 217,
+      "classes": 22,
+      "difference_from_recorded_evidence": false
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed"
+    }
+  ],
+  "updated_at_utc": "2026-10-19T06:26:54.423749+00:00",
+  "rubric_version_reused": "semantic-context-v1-draft1",
+  "deferred_plan": {
+    "answering_stages": [
+      "author",
+      "receiver"
+    ],
+    "additional_handoff_sessions_for_initial_two_families": 8,
+    "four_reserved_families_full_design_sessions": 24,
+    "additional_full_six_family_repetition_sessions": 36,
+    "scheduled": false
+  },
+  "revision_validation": {
+    "status": "passed",
+    "checks": [
+      "All six task objects exactly match the prior draft.",
+      "Four reserved IDs unchanged.",
+      "Rubric and freeze manifest bytes unchanged.",
+      "Four fresh direct answers and four blind reviews; no handoff or repeat in the initial plan.",
+      "Token estimate arithmetic: 4*(10000+1000) to 4*(30000+4000), plus 4*(5000+500) to 4*(12000+1500)."
+    ]
+  },
+  "repository_validation_note": "The full repository tests and reproduction listed below passed on draft 1. Draft 2 changes protocol documentation/metadata only; its focused consistency and freeze checks are recorded separately.",
+  "preflight_result": "preflight-result.json",
+  "preflight_summary": {
+    "offline_tests_passed": 21,
+    "native_setup_attempts": 3,
+    "native_initialization_completed": false,
+    "dummy_inference_turns": 0,
+    "native_token_usage": null,
+    "estimate_calibrated": false
+  }
+}

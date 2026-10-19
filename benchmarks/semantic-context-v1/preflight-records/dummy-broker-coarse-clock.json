@@ -1,0 +1,344 @@
+{
+  "kind": "offline_scripted_dummy_preflight",
+  "recorded_utc": "2026-10-19T06:24:13.293427+00:00",
+  "sessions": [
+    {
+      "condition": "documentation",
+      "kind": "scripted_broker_exercise_no_model",
+      "attempted_calls": 9,
+      "returned_responses": 8,
+      "denied_responses": 5,
+      "limit_blocked_calls": 1,
+      "returned_reference_and_metadata_bytes": 649,
+      "transport_bytes": 689,
+      "elapsed_seconds": 0.0,
+      "native_model_token_usage": null,
+      "log": [
+        {
+          "number": 1,
+          "tool": "search",
+          "arguments": {
+            "query": "lamp"
+          },
+          "elapsed_seconds": 0.0,
+          "status": "ok",
+          "returned_bytes": 127,
+          "transport_bytes": 127,
+          "response": {
+            "results": [
+              {
+                "reference": "lamp-a",
+                "title": "Lamp observation lamp-a"
+              },
+              {
+                "reference": "lamp-b",
+                "title": "Lamp observation lamp-b"
+              }
+            ]
+          }
+        },
+        {
+          "number": 2,
+          "tool": "read",
+          "arguments": {
+            "reference": "lamp-a",
+            "page": 0
+          },
+          "elapsed_seconds": 0.0,
+          "status": "ok",
+          "returned_bytes": 188,
+          "transport_bytes": 208,
+          "response": {
+            "reference": "lamp-a",
+            "page": 0,
+            "pages": 1,
+            "next_page": null,
+            "text": "## Record\n\n**id:** lamp-a\n\n**elapsed_seconds:** 7\n\n**color:** amber\n\n**scope:** one recorded trial\n\n",
+            "source": {
+              "fixture": "lamp-a"
+            }
+          }
+        },
+        {
+          "number": 3,
+          "tool": "read",
+          "arguments": {
+            "reference": "lamp-b",
+            "page": 0
+          },
+          "elapsed_seconds": 0.0,
+          "status": "ok",
+          "returned_bytes": 189,
+          "transport_bytes": 209,
+          "response": {
+            "reference": "lamp-b",
+            "page": 0,
+            "pages": 1,
+            "next_page": null,
+            "text": "## Record\n\n**id:** lamp-b\n\n**elapsed_seconds:** 7\n\n**color:** violet\n\n**scope:** one recorded trial\n\n",
+            "source": {
+              "fixture": "lamp-b"
+            }
+          }
+        },
+        {
+          "number": 4,
+          "tool": "read",
+          "arguments": {
+            "reference": "key.json",
+            "page": 0
+          },
+          "elapsed_seconds": 0.0,
+          "status": "denied",
+          "returned_bytes": 29,
+          "transport_bytes": 29,
+          "response": {
+            "error": "unknown reference"
+          }
+        },
+        {
+          "number": 5,
+          "tool": "read",
+          "arguments": {
+            "reference": "other-arm/atlas.json",
+            "page": 0
+          },
+          "elapsed_seconds": 0.0,
+          "status": "denied",
+          "returned_bytes": 29,
+          "transport_bytes": 29,
+          "response": {
+            "error": "unknown reference"
+          }
+        },
+        {
+          "number": 6,
+          "tool": "read",
+          "arguments": {
+            "reference": "prior-answer.txt",
+            "page": 0
+          },
+          "elapsed_seconds": 0.0,
+          "status": "denied",
+          "returned_bytes": 29,
+          "transport_bytes": 29,
+          "response": {
+            "error": "unknown reference"
+          }
+        },
+        {
+          "number": 7,
+          "tool": "read",
+          "arguments": {
+            "reference": "../outside",
+            "page": 0
+          },
+          "elapsed_seconds": 0.0,
+          "status": "denied",
+          "returned_bytes": 29,
+          "transport_bytes": 29,
+          "response": {
+            "error": "unknown reference"
+          }
+        },
+        {
+          "number": 8,
+          "tool": "read",
+          "arguments": {
+            "reference": "https://example.org",
+            "page": 0
+          },
+          "elapsed_seconds": 0.0,
+          "status": "denied",
+          "returned_bytes": 29,
+          "transport_bytes": 29,
+          "response": {
+            "error": "unknown reference"
+          }
+        },
+        {
+          "number": 9,
+          "tool": "read",
+          "arguments": {
+            "reference": "lamp-a",
+            "page": 0
+          },
+          "elapsed_seconds": 0.0,
+          "status": "limit",
+          "returned_bytes": 0
+        }
+      ]
+    },
+    {
+      "condition": "atlas",
+      "kind": "scripted_broker_exercise_no_model",
+      "attempted_calls": 9,
+      "returned_responses": 8,
+      "denied_responses": 5,
+      "limit_blocked_calls": 1,
+      "returned_reference_and_metadata_bytes": 623,
+      "transport_bytes": 671,
+      "elapsed_seconds": 0.0,
+      "native_model_token_usage": null,
+      "log": [
+        {
+          "number": 1,
+          "tool": "search",
+          "arguments": {
+            "query": "lamp"
+          },
+          "elapsed_seconds": 0.0,
+          "status": "ok",
+          "returned_bytes": 127,
+          "transport_bytes": 127,
+          "response": {
+            "results": [
+              {
+                "reference": "lamp-a",
+                "title": "Lamp observation lamp-a"
+              },
+              {
+                "reference": "lamp-b",
+                "title": "Lamp observation lamp-b"
+              }
+            ]
+          }
+        },
+        {
+          "number": 2,
+          "tool": "read",
+          "arguments": {
+            "reference": "lamp-a",
+            "page": 0
+          },
+          "elapsed_seconds": 0.0,
+          "status": "ok",
+          "returned_bytes": 175,
+          "transport_bytes": 199,
+          "response": {
+            "reference": "lamp-a",
+            "page": 0,
+            "pages": 1,
+            "next_page": null,
+            "text": "{\"id\": \"lamp-a\", \"elapsed_seconds\": 7, \"color\": \"amber\", \"scope\": \"one recorded trial\"}",
+            "source": {
+              "fixture": "lamp-a"
+            }
+          }
+        },
+        {
+          "number": 3,
+          "tool": "read",
+          "arguments": {
+            "reference": "lamp-b",
+            "page": 0
+          },
+          "elapsed_seconds": 0.0,
+          "status": "ok",
+          "returned_bytes": 176,
+          "transport_bytes": 200,
+          "response": {
+            "reference": "lamp-b",
+            "page": 0,
+            "pages": 1,
+            "next_page": null,
+            "text": "{\"id\": \"lamp-b\", \"elapsed_seconds\": 7, \"color\": \"violet\", \"scope\": \"one recorded trial\"}",
+            "source": {
+              "fixture": "lamp-b"
+            }
+          }
+        },
+        {
+          "number": 4,
+          "tool": "read",
+          "arguments": {
+            "reference": "key.json",
+            "page": 0
+          },
+          "elapsed_seconds": 0.0,
+          "status": "denied",
+          "returned_bytes": 29,
+          "transport_bytes": 29,
+          "response": {
+            "error": "unknown reference"
+          }
+        },
+        {
+          "number": 5,
+          "tool": "read",
+          "arguments": {
+            "reference": "other-arm/atlas.json",
+            "page": 0
+          },
+          "elapsed_seconds": 0.0,
+          "status": "denied",
+          "returned_bytes": 29,
+          "transport_bytes": 29,
+          "response": {
+            "error": "unknown reference"
+          }
+        },
+        {
+          "number": 6,
+          "tool": "read",
+          "arguments": {
+            "reference": "prior-answer.txt",
+            "page": 0
+          },
+          "elapsed_seconds": 0.0,
+          "status": "denied",
+          "returned_bytes": 29,
+          "transport_bytes": 29,
+          "response": {
+            "error": "unknown reference"
+          }
+        },
+        {
+          "number": 7,
+          "tool": "read",
+          "arguments": {
+            "reference": "../outside",
+            "page": 0
+          },
+          "elapsed_seconds": 0.0,
+          "status": "denied",
+          "returned_bytes": 29,
+          "transport_bytes": 29,
+          "response": {
+            "error": "unknown reference"
+          }
+        },
+        {
+          "number": 8,
+          "tool": "read",
+          "arguments": {
+            "reference": "https://example.org",
+            "page": 0
+          },
+          "elapsed_seconds": 0.0,
+          "status": "denied",
+          "returned_bytes": 29,
+          "transport_bytes": 29,
+          "response": {
+            "error": "unknown reference"
+          }
+        },
+        {
+          "number": 9,
+          "tool": "read",
+          "arguments": {
+            "reference": "lamp-a",
+            "page": 0
+          },
+          "elapsed_seconds": 0.0,
+          "status": "limit",
+          "returned_bytes": 0
+        }
+      ]
+    }
+  ],
+  "dummy_model_turns": 0,
+  "benchmark_answering_sessions": 0,
+  "native_model_token_usage": null,
+  "limits": "Python broker exercise only; does not test model behavior, native context isolation, token telemetry, or asynchronous interruption."
+}

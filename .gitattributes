@@ -8,6 +8,8 @@ evidence/** linguist-generated=true
 evidence/grouping-checker-v1/** -text
 evidence/repair-pilot-v1/** -text
 evidence/tm-port-v1/** -text
+benchmarks/semantic-context-v1/preflight-records/** -text
+benchmarks/semantic-context-v1/preflight-records/*.log whitespace=cr-at-eol
 reference/** -text
 lean/upstream/OAI/** -text
 lean/comparator/ComparatorChallenges/** -text

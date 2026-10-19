@@ -13,6 +13,23 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  semantic-preflight-offline:
+    name: Semantic packet and dummy broker controls (no model calls)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0 # Packet construction reads the explicitly frozen Git commit.
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - name: Check frozen references and offline rejection controls
+        run: |
+          python scripts/check_semantic_freeze.py --worktree
+          python -m unittest discover -s scripts -p 'test_semantic_preflight.py' -v
+          python scripts/semantic_dummy_preflight.py --out runs/semantic-dummy-ci.json
+
   python:
     name: Python ${{ matrix.python }} / ${{ matrix.os }}
     strategy:

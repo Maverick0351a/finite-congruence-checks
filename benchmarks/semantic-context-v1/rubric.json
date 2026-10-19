@@ -1,0 +1,47 @@
+{
+  "protocol_version": "semantic-context-v1-draft1",
+  "status": "proposed_not_run",
+  "scale": {
+    "0": "Absent, materially wrong, or contradicted in this dimension.",
+    "1": "Correct but incomplete; no material false assertion in this dimension.",
+    "2": "All required semantic units in this dimension are correct, explicit enough to identify, and justified where needed."
+  },
+  "dimensions": [
+    {"id": "objects_inputs", "full_credit": "Exact construction or pair, carrier/input, side and step where required.", "deterministic_candidates": ["entry/pair IDs", "input arrays", "carrier sizes", "step indices"], "review_required": "Identity is used consistently in prose; no evidence transfers to another object."},
+    {"id": "property", "full_credit": "Every requested property is identified and distinguished from nearby properties.", "deterministic_candidates": ["explicit property labels"], "review_required": "Distinguish operation minimum, shape, preservation, time, tape, head, and the predicate actually proved."},
+    {"id": "assumptions", "full_credit": "All necessary assumptions and applicable lemma hypotheses are stated and satisfied.", "deterministic_candidates": ["explicit input convention", "explicit operation class"], "review_required": "Empty signatures, fixed relation families, active/halting status, none/some instruction lookup, and changed assumptions are handled correctly."},
+    {"id": "scope_quantifiers", "full_credit": "Bounds and quantifiers match the evidence; valid quantified source theorems remain available.", "deterministic_candidates": [], "review_required": "No unsupported extension from a specified execution to all inputs or from a construction minimum to all realizations. Do not penalize a genuinely applicable quantified theorem."},
+    {"id": "conclusion", "full_credit": "All requested conclusions and values are correct; no additional materially false assertion.", "deterministic_candidates": ["operation arrays and counts", "halting times", "complete tape supports", "head positions", "explicit verdicts"], "review_required": "Judge the actual proposition, not whether a convenient keyword appears."},
+    {"id": "evidence_status", "full_credit": "Accurate distinction among saved execution, independently checked computation, source theorem, fresh derivation, and missing proof.", "deterministic_candidates": ["explicit evidence-status identifiers"], "review_required": "A hash, JSON record, or AI explanation is never promoted to proof of meaning or implementation correctness."},
+    {"id": "citations", "full_credit": "References identify the correct version and object and entail the attached claims under applicable hypotheses.", "deterministic_candidates": ["reference allowlist membership", "source commit/hash", "JSON pointers or line bounds", "complete first-halt prefix coverage"], "review_required": "Resolution alone is insufficient; confirm entailment, lemma applicability, and that no requested claim lacks support."},
+    {"id": "sufficiency", "full_credit": "Accept supported claims and appropriately identify insufficiency for unsupported claims without inferring falsity from absence.", "deterministic_candidates": ["explicit supported/refuted/insufficient classifications when present"], "review_required": "Check both overclaiming and unjustified abstention. For partial evidence, state precisely which subclaim is unresolved."}
+  ],
+  "aggregation": {
+    "per_response": "Publish all eight scores and the 0-to-16 sum. Full credit requires every dimension to equal 2.",
+    "wrong_justification": "A correct conclusion can retain its conclusion score; defective assumptions, scope, evidence status, or citations lose their own credit, preventing full credit.",
+    "failures": "Retain and score available original content; absent content earns 0. Report technical/protocol failures separately. Invalid paired runs yield no arm comparison, not a tie.",
+    "arm_comparison": "Paired per task, stage, repetition, and dimension: delta positive=improvement, zero=tie, negative=regression. Classify ties as both-correct/both-partial/both-wrong.",
+    "handoff": "B full-key correctness plus predeclared A/B shared-unit retained-correct/lost/recovered/inherited-wrong/newly-wrong transitions. Citation-assisted recovery is distinguished from prose preservation.",
+    "independence": "Task family is the sampling unit. Repetitions, A/B stages, and overlapping mathematical examples are not new independent tasks."
+  },
+  "private_key_required_before_inference": [
+    "Per-task/stage required semantic units and their source bindings",
+    "Expected values, allowed verdicts, acceptable derivations and unsupported assertions",
+    "Explicit overlapping units requested from both A and B",
+    "Scoring examples for omissions, false justifications and alternative wording",
+    "Hashed key, extraction rules, scorer and reviewer prompt"
+  ],
+  "blind_review": {
+    "unit": "One original response per fresh reviewer context",
+    "visible": ["assigned prompt", "private key", "original answer text", "canonical source references", "deterministic extraction with exact spans"],
+    "hidden": ["condition label", "model identity", "order", "costs", "other answers", "condition-specific reference rendering"],
+    "masking": "Random response IDs and a retained mapping from original citations to canonical source IDs. Preserve prose. Record reviewer arm guess/confidence after scoring.",
+    "adjudication": "Flag ambiguity, retain initial scores and reasons, use a separate blinded reviewer for flagged cases, and report extra usage. Never send corrections to answering agents."
+  },
+  "guardrails": [
+    "No repaired or rewritten answers before scoring",
+    "No semantic full-credit decision based only on valid JSON, matching hashes, or AI-written explanation",
+    "No dropping refusals, timeouts, empty answers, wrong citations, or regressions",
+    "No hidden answer key or scorer in the answering tool/filesystem/network scope"
+  ]
+}
