@@ -24,6 +24,10 @@ tags:
 
 # Finite Congruence Checks
 
+**Independent checks and formal extensions of selected results from
+[OpenAI's math corpus](https://github.com/openai/math).**
+Explore concrete examples, Lean proofs, and [evidence for each exact claim](https://github.com/Maverick0351a/finite-congruence-checks/blob/main/docs/CLAIMS.md).
+
 An interactive companion to [the research repository](https://github.com/Maverick0351a/finite-congruence-checks).
 Maintained by [Travis Johnson](https://www.linkedin.com/in/travis-johnson-606207379).
 Explore independent validation of the **finite congruence graph criterion** from
