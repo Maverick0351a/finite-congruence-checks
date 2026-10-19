@@ -58,6 +58,19 @@ wording and values being read.
 The Turing query has its own evidence status, assumptions, and limits. It does
 not inherit the grouping catalog's exhaustive-classification status.
 
+The [source-context interface](CONTEXT_QUERY.md#one-turing-machine-claim) also
+supports one existing claim, `tm:tiny-stay:tape:v1`. Its `explain` export bundles
+the exact input, machine tables, traces, and qualified lemma references; its
+`check` command detects differences from that registered binding. This tests
+the same interface used for N5 without changing the atlas registry or running
+the paused model benchmark.
+
+This export also carries a separately identified [exact-pair Lean proof](TM_PAIR_PROOF.md).
+It proves first halt at step one, head positions, and the complete tapes for
+the `tiny-stay` pair on `[]`. The original atlas's evidence status and limits
+remain those of its execution snapshot; the proof supplement has its own
+claim, source binding, receipt, and trust boundary.
+
 ## Follow a claim to evidence
 
 - [Pair registry](../evidence/tm-atlas-v1.json): exact machines, blank input,

@@ -1,0 +1,5 @@
+'TMOracle.TinyPair.exact_result' depends on axioms: [propext, Quot.sound]
+'TMOracle.TinyPairBinding.left_definition' does not depend on any axioms
+'TMOracle.TinyPairBinding.right_definition' depends on axioms: [propext]
+'TMOracle.TinyPairBinding.input_definition' does not depend on any axioms
+'TMOracle.TinyPairBinding.checked_result' depends on axioms: [propext, Quot.sound]

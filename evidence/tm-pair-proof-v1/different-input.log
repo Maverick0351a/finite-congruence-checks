@@ -1,0 +1,33 @@
+/home/shannonlab/fcc-tm-pair/repo/runs/tm-pair-final/different-input.lean:10:0: error: Not a definitional equality: the left-hand side
+  TinyPair.blankInput
+is not definitionally equal to the right-hand side
+  inputExpected
+/home/shannonlab/fcc-tm-pair/repo/runs/tm-pair-final/different-input.lean:10:75: error: Type mismatch
+  rfl
+has type
+  ?m.3 = ?m.3
+but is expected to have type
+  TinyPair.blankInput = inputExpected
+/home/shannonlab/fcc-tm-pair/repo/runs/tm-pair-final/different-input.lean:21:2: error: Type mismatch
+  TinyPair.exact_result
+has type
+  TinyPair.leftMachine.isHalting (TinyPair.leftMachine.run TinyPair.blankInput 0) = false ∧
+    TinyPair.rightMachine.isHalting (TinyPair.rightMachine.run TinyPair.blankInput 0) = false ∧
+      TinyPair.leftMachine.isHalting (TinyPair.leftMachine.run TinyPair.blankInput 1) = true ∧
+        TinyPair.rightMachine.isHalting (TinyPair.rightMachine.run TinyPair.blankInput 1) = true ∧
+          (TinyPair.leftMachine.run TinyPair.blankInput 1).head = 0 ∧
+            (TinyPair.rightMachine.run TinyPair.blankInput 1).head = 0 ∧
+              (∀ (i : ℤ), (TinyPair.leftMachine.run TinyPair.blankInput 1).tape i = 0) ∧
+                (∀ (i : ℤ), (TinyPair.rightMachine.run TinyPair.blankInput 1).tape i = if i = 0 then 1 else 0) ∧
+                  (TinyPair.leftMachine.run TinyPair.blankInput 1).tape ≠
+                    (TinyPair.rightMachine.run TinyPair.blankInput 1).tape
+but is expected to have type
+  leftExpected.isHalting (leftExpected.run inputExpected 0) = false ∧
+    rightExpected.isHalting (rightExpected.run inputExpected 0) = false ∧
+      leftExpected.isHalting (leftExpected.run inputExpected 1) = true ∧
+        rightExpected.isHalting (rightExpected.run inputExpected 1) = true ∧
+          (leftExpected.run inputExpected 1).head = 0 ∧
+            (rightExpected.run inputExpected 1).head = 0 ∧
+              (∀ (i : ℤ), (leftExpected.run inputExpected 1).tape i = 0) ∧
+                (∀ (i : ℤ), (rightExpected.run inputExpected 1).tape i = if i = 0 then 1 else 0) ∧
+                  (leftExpected.run inputExpected 1).tape ≠ (rightExpected.run inputExpected 1).tape

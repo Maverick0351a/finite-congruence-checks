@@ -26,6 +26,7 @@ classifies all representable grouping families through four objects, yielding
 
 **[Interactive demo](https://huggingface.co/spaces/Maverick03511/finite-congruence-checks)** ·
 **[Understand the math](docs/PLAIN_LANGUAGE_GUIDE.md)** ·
+**[Why the saved N5 rules work](docs/N5_SOURCE_CONTEXT.md)** ·
 **[Readable atlas](https://maverick03511-finite-congruence-checks.static.hf.space/atlas.html)** ·
 **[Quick start](#quick-start)** · **[Evidence gallery](docs/index.html)** ·
 **[Exact claims](docs/CLAIMS.md)** · **[Lean status](docs/LEAN_VERIFICATION.md)** ·
@@ -58,6 +59,14 @@ entry's evidence. [How to read the map](docs/ATLAS_MAP.md).
 These counts describe congruence families and are separate from the original
 colored-graph search totals above. [Scope and independent checks](docs/ATLAS.md).
 
+For one complete source-linked example, open `space/context-n5.html` or read
+the [N5 walkthrough](docs/N5_SOURCE_CONTEXT.md). Try all 15 groupings, see why
+exactly five survive, and follow the source map from the original question to
+the exact Lean classification and graph-witness bridge. The comparator target
+with `sorry`, completed upstream proof, and local verification record have
+separate links. The atlas's N5 entry uses different rule tables; the page shows
+the checked renaming of its grouping family without transferring the proof.
+
 Download the repo and open `space/atlas.html` for an offline copy. For a text
 walkthrough or presentation script, use the [illustrated introduction](docs/PLAIN_LANGUAGE_GUIDE.md).
 
@@ -72,6 +81,21 @@ python scripts/query_atlas.py compare --shape C4
 python scripts/query_atlas.py show n4-E16403
 python scripts/query_atlas.py claims --entry n4-E16403
 ```
+
+Explain an exact N5 claim or one Turing tape claim, or compare the two N5 constructions with the
+[source-context interface](docs/CONTEXT_QUERY.md):
+
+```sh
+python scripts/query_context.py explain context:family-206:saved-n5:classification:v1
+python scripts/query_context.py compare
+python scripts/query_context.py explain tm:tiny-stay:tape:v1
+```
+
+The Turing export includes a [proof for the exact pair](docs/TM_PAIR_PROOF.md):
+both machines first halt after one step, both heads stay at zero, and their
+complete tapes differ. Reproduce the Lean proof and its atlas binding with
+`python scripts/tm_pair_proof.py run --out runs/tm-pair-fresh` in an environment
+with the pinned Lean toolchain. Python/native agreement remains separate.
 
 Read the [query contract](docs/ATLAS_QUERY.md),
 [agent retrieval evaluation](docs/ATLAS_QUERY_EVALUATION.md), and
