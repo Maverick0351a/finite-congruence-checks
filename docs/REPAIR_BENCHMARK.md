@@ -6,9 +6,65 @@ exists, and receives checked feedback. We compare plain pass/fail feedback
 with feedback that also identifies a violating pair.
 
 The [versioned protocol](../benchmarks/repair-v1/protocol.json) and
-[dataset](../benchmarks/repair-v1/tasks.json) are fixed before the held-out run.
-Results will be reported here after execution. Creating a dataset does not
-establish that either feedback style helps.
+[dataset](../benchmarks/repair-v1/tasks.json) were fixed before the held-out run.
+**Both feedback methods answered all twelve test cases correctly on their first
+decision.** The connection and scoring workflow worked; this small pilot
+demonstrated no accuracy advantage from showing the counterexample.
+
+## Recorded result
+
+The [complete run receipt](../evidence/repair-pilot-v1/run.json) identifies the
+frozen source commit `cda3ac79a481c5631c1480471e46f665c8bde288`, native binary,
+checker receipt, source hashes, requested model settings, and every saved file.
+The run started on 19 October 2026 at 04:25 UTC (18 October in Pacific time),
+using Codex CLI 0.163.0-alpha.10.2 with requested model `gpt-6-astra` and effort
+`ultra`. There were 24 live calls in 24 distinct conversations, no recorded tool
+activity, no retries, and one decision per trial.
+
+| Outcome | Pass/fail | Counterexample |
+|:--|--:|--:|
+| Correct first decision | 12 / 12 | 12 / 12 |
+| Correct repair on solvable cases | 6 / 6 | 6 / 6 |
+| Correct impossibility answer | 6 / 6 | 6 / 6 |
+| Correct within three-decision limit | 12 / 12 | 12 / 12 |
+| Constraint violations | 0 | 0 |
+| Model calls | 12 | 12 |
+
+All twelve paired outcomes were correct in both arms: the observed accuracy
+difference is **zero percentage points**. This is a ceiling result on a very
+small local holdout. It supports the functioning of the agent/checker interface
+on these inputs, with the limits described below. It does not establish that
+the feedback methods perform equally on harder tasks.
+
+The CLI reported 1,439,638 input tokens and 1,062 output tokens in the pass/fail
+arm, and 1,439,782 input tokens and 1,034 output tokens in the counterexample
+arm. These reports include substantial inherited global context and are not
+dollar billing measurements. Cached-input and reasoning-token fields remain
+in the receipt; they are not added again to the input/output totals.
+
+For one concrete [saved repair](../evidence/repair-pilot-v1/trial-01/trial.json),
+the rule is A → B → C → D → A and A must remain apart from B:
+
+```text
+Rejected starting grouping: {A,C} | {B} | {D}
+Agent's accepted repair:    {A,C} | {B,D}
+```
+
+A and C stay together. Their outputs B and D are merged. The repaired rule now
+maps each whole group into the other whole group, and the required separation
+survives. In the records, A,B,C,D are objects 0,1,2,3.
+
+```mermaid
+flowchart LR
+  ac["Group {A,C}"] -->|"rule maps A→B, C→D"| bd["Group {B,D}"]
+  bd -->|"rule maps B→C, D→A"| ac
+```
+
+Check the complete saved result locally without a model login or model call:
+
+```console
+python scripts/run_repair_benchmark.py replay evidence/repair-pilot-v1
+```
 
 ## What counts as a repair?
 
@@ -82,6 +138,9 @@ of its individual evidence record. The additional constraints are checked
 separately. For impossibility, the oracle enumerates all fifteen partitions.
 An independently implemented forced-merge closure agrees with that oracle on
 all **8,832** eligible tasks: **2,112 solvable** and **6,720 impossible**.
+Here a task is a labeled operation, a canonical grouping, and an unordered
+initially separated pair. This task census differs from the checker's 65,536
+raw encoded inputs, which include multiple labelings of the same grouping.
 
 ## Why this is a small pilot
 
@@ -96,11 +155,17 @@ that pair as a counterexample. This pilot measures the benefit of **explicitly
 highlighting inferable information**. It does not test the value of revealing
 an otherwise unidentified conflict among many possibilities.
 
-Both arms may therefore score perfectly. That would show the end-to-end repair
-and scoring interface works on these cases, while leaving feedback benefit
-unestablished. A useful next experiment would increase the carrier size and
+Both arms did score perfectly. The end-to-end repair and scoring interface
+worked on these cases, while feedback benefit remains unestablished. A useful
+next experiment would increase the carrier size and
 number of possible conflicts, extending the checker assurance to match. The
 current proof must not be silently attributed to a larger implementation.
+
+One concrete follow-up is six objects with four initial groups of sizes
+2,2,1,1, a required separation, and exactly two final groups. There can then be
+more than one candidate conflict pair and more than one acceptable repair.
+That proposed variant needs a new specification, matching checker assurance,
+and an oracle that also enforces the final group count. It is outside this run.
 
 Twelve paired tasks from six families, one repetition, and one model setting
 support descriptive results. The tasks are clustered by operation family, and
@@ -149,8 +214,15 @@ local configuration. A timeout or transport failure retains the partial logs
 and aborts the run. It is an execution failure, not an incorrect mathematical
 answer; retries are not silently substituted.
 
+Commit any protocol, dataset, or runner changes before using `--split test`;
+the runner requires a clean working tree at the start of a test run. A saved
+run binds those four source files by hash. Changing them later intentionally
+invalidates replay against the changed version; retain the recorded source
+revision when extending the experiment.
+
 Each completed run retains every supplied prompt, CLI event transcript, answer,
 native claim record, process result, and usage report. Offline `replay` checks
-hashes, prompt construction, feedback, native evidence bindings, grades,
-paired coverage, and aggregate results without calling a model. Hashes provide
+complete artifact manifests, hashes, unique conversation IDs, prompt construction,
+feedback, native evidence bindings, grades, prescribed paired trial order, and
+aggregate results without calling a model. Hashes provide
 reproducibility checks; they do not authenticate a claim of model authorship.

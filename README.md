@@ -29,6 +29,7 @@ classifies all representable grouping families through four objects, yielding
 **[Readable atlas](https://maverick03511-finite-congruence-checks.static.hf.space/atlas.html)** ·
 **[Quick start](#quick-start)** · **[Evidence gallery](docs/index.html)** ·
 **[Exact claims](docs/CLAIMS.md)** · **[Lean status](docs/LEAN_VERIFICATION.md)** ·
+**[Agent repair experiment](docs/REPAIR_BENCHMARK.md)** ·
 **[Changelog](CHANGELOG.md)** · **[Support](SUPPORT.md)**
 
 | Candidate colorings | Full witnesses | Vertex classes | Saved examples |
@@ -92,6 +93,16 @@ The [recorded demo](evidence/grouping-checker-v1/demo.json) links each outcome t
 its exact input, source proof, and bounded executable evidence. Read the
 [walkthrough and reproduction commands](docs/GROUPING_CHECKER.md). This pilot
 checks one rule and grouping; a machine-code refinement proof remains future work.
+
+The [constrained agent repair experiment](docs/REPAIR_BENCHMARK.md) connects a
+real Codex model to this checker. It asks the agent to merge existing groups,
+preserve a required separation, and recognize when a repair is impossible.
+The local runner uses an existing Codex ChatGPT sign-in and saves each prompt,
+answer, checked outcome, and evidence record for offline replay.
+In the first paired pilot, both pass/fail and counterexample feedback produced
+**12/12 correct first decisions**, including six impossible cases. This small
+test demonstrated the working connection and scoring process; it did not show
+an accuracy advantage for counterexample feedback.
 
 ## Quick start
 

@@ -6,6 +6,7 @@ charts/*.svg linguist-generated=true -whitespace
 docs/index.html linguist-generated=true
 evidence/** linguist-generated=true
 evidence/grouping-checker-v1/** -text
+evidence/repair-pilot-v1/** -text
 reference/** -text
 lean/upstream/OAI/** -text
 lean/comparator/ComparatorChallenges/** -text

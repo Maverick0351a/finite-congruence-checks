@@ -1,0 +1,345 @@
+{
+  "artifacts": {
+    "trial-00/decision-0/events.jsonl": "cd449f84dfb6c880407d8bc32a640613148cd40299f25a78addc6e6281fe7619",
+    "trial-00/decision-0/process.json": "3801b4f78fb37e6b7e62c51267038fdbbdd275de6b8937ffc44d7515da441467",
+    "trial-00/decision-0/prompt.txt": "9f9c4bb7105137732821068c3d545a870e6f9de8ec98d8787d38b946c0f751b8",
+    "trial-00/decision-0/stderr.txt": "d24614a33874b8e9625bbbcf620a6d775b603a3b53da0ec068476c82837e4899",
+    "trial-00/trial.json": "824712b16de140f98b01b6bf1e4114a77c9dd440157de4fbea1e8352ae1e316f",
+    "trial-01/decision-0/events.jsonl": "53833738193f58566f119991ffe58f52e024c086c1b108e6d9ea67cb7e544443",
+    "trial-01/decision-0/process.json": "b4cd173af8eda77f07c493a89ef39e060249764b1ee2fdd8d58a7639e49ab74b",
+    "trial-01/decision-0/prompt.txt": "766152230560902c2c3898903280010939a2c87170622f075cbd694bd9fd43c9",
+    "trial-01/decision-0/stderr.txt": "8ced91e4c4c032baedeb23e90fd37e1f0b9adc7a25eb96ea886585d8a7f7a8cb",
+    "trial-01/trial.json": "359fb5998810d5356ab930ba5f29bfffa3bdc6994555f4a89adc1ca5b71d8a62",
+    "trial-02/decision-0/events.jsonl": "3783183b682fb8f666b47e38c8e0aaa840d386989bec4494761f68dcfd126bd0",
+    "trial-02/decision-0/process.json": "8573ccfddcfa3feacef0d87ddd1ebf06f70da50eb9544c93d0c01a3579562948",
+    "trial-02/decision-0/prompt.txt": "3b453ee5b378b93845050c95b2a4c6a7a59cc2b27dc7b89251a439ef16854ac9",
+    "trial-02/decision-0/stderr.txt": "a567813b5ea1bd0a5db0f64b245e58d6383ef838918eb6e995ba69a334e46550",
+    "trial-02/trial.json": "442edacb61c59ac9aeb38ad4c83b4fc8f25a12e257a94e4f502cf1acc2a33c1e",
+    "trial-03/decision-0/events.jsonl": "37291d1d240db8bc957de808c131913e5f1d53c8a7a7126ac75234b4204ce218",
+    "trial-03/decision-0/process.json": "3857a2f6acca0222de211effad721499f38a1cbbec1dbb6879bc529e76752453",
+    "trial-03/decision-0/prompt.txt": "f56ae5bda99e7fe1fe195c22ca7fe66770c3dbca0757cc59a09b8aaf746111a4",
+    "trial-03/decision-0/stderr.txt": "3a1681c363255ce766def41c029802f3941330dccb93729ff8961aaef2e5d17b",
+    "trial-03/trial.json": "4a409a3c697f9ce394f24b40968051e46aecabf10ec60e0bea24fcbb93a35d0b",
+    "trial-04/decision-0/events.jsonl": "1b8302512e9f628b093b5f1c454a5c97ae6d0160cea7529d27fc1b1dd038f266",
+    "trial-04/decision-0/process.json": "c4b040e194e49473d6b9b263440d8781ef63d56468b11e895645fb9ecf69e8ec",
+    "trial-04/decision-0/prompt.txt": "475d137e63007cbe212bbe3e4b596cbf32d80913291ddc592670bf6b4d1f19ee",
+    "trial-04/decision-0/stderr.txt": "d60986b957bb03b927297703db7ee78ca537aa0e9975ba38f42f979d46ab29d5",
+    "trial-04/trial.json": "3c39765ce37ba7647231870ce06074fb2d28aa89d88525c0cde0ff2aa3f204d3",
+    "trial-05/decision-0/events.jsonl": "c6197ce74e8372685837b28be95788d436058358e6570ece2ba606cbf7d9bfc9",
+    "trial-05/decision-0/process.json": "454c9e4944d97df842b41c348bddbebc8713cc8370e6dacf7a1d61a47add4b17",
+    "trial-05/decision-0/prompt.txt": "c207da614212c40502cda085f4b1da133f5e1ba86281d8c21cd2b9100e21e2f8",
+    "trial-05/decision-0/stderr.txt": "94bd3231dc2f4d1955346a81bf0fef46f1fbc521f5ff858f50b50d5c965c6f97",
+    "trial-05/trial.json": "d0a147c6dbcac498b6c006d14136d646e4ff061fe204a02e43364ccf12ee2b3d",
+    "trial-06/decision-0/events.jsonl": "27e6dd075f61c66946917b6901ac94f30ca2bbbf63c710b5580c19ebb1bb047a",
+    "trial-06/decision-0/process.json": "cb787a9cef427694cdef1d3c29a337ba47ed1efcf60796b155c8299a52c6d687",
+    "trial-06/decision-0/prompt.txt": "ec27b48a1056e06c650e05efed7c3b3d8d76943818c532dd362adf1afae6aaec",
+    "trial-06/decision-0/stderr.txt": "b3afed5daf2b18373c152c6e23a13731a6154155c0d08dba77c6178202f59875",
+    "trial-06/trial.json": "b97e7e00958084db5d5b937263c529fc13cddf2e37fcee94caca1c33d75edf3f",
+    "trial-07/decision-0/events.jsonl": "8d800923c9df37b3cd8b9f90518dbcc3fb0b67494d68d0db765b41190a4d7f07",
+    "trial-07/decision-0/process.json": "41f8bb09efd52b54efcd67a5c285f6000af72fa3f35252eac87dd9d1963e0be0",
+    "trial-07/decision-0/prompt.txt": "6e0a13fc64c1d2a4b1e048b086ad02b50706eb7f9b9f6c931d35efc920bbbc0e",
+    "trial-07/decision-0/stderr.txt": "71241138d367cee7330dcc01a27e13f9bb7f185593ef32124c3f98d1934dc4e2",
+    "trial-07/trial.json": "879f64a827611d5540bc04c30e132dfac07130aa9a4f713fdf62fbdfc868be5b",
+    "trial-08/decision-0/events.jsonl": "32969422cd6e190d4cb6b1c4846495e4e59a8e9e1954238e48abeac70968661d",
+    "trial-08/decision-0/process.json": "95213180297620634d5bf569360b8d0fcb7459180956bd27f1dc8855c1b6a5a6",
+    "trial-08/decision-0/prompt.txt": "a5f5e7c8240d8cac8ccaf89f6870106c04ea6e564c6e2400e28f9e31eb4b11dc",
+    "trial-08/decision-0/stderr.txt": "49e2b8fabc53b7b788fc021241dead5c53106e0895c9c6d8c559a8c1716894d1",
+    "trial-08/trial.json": "827b7bc0ca3e85c68701b01d173089805508fda29e2723f98c3a21192a266c3f",
+    "trial-09/decision-0/events.jsonl": "c78739495e1236c59efd08ded5cfdd4202e4bf61b232802106e859c1a388bc0f",
+    "trial-09/decision-0/process.json": "8165382458ee9129ed83ba634d2ca9596d12be958402faa9bcfbf8538a5ac525",
+    "trial-09/decision-0/prompt.txt": "a06ac114d606568a1a6e589bb18e9d8a64e82886c40df6f29be599a0c7327bbf",
+    "trial-09/decision-0/stderr.txt": "9f5c90202aed6209381f2e04887591523b9199512756e46cbc45f500fee58d86",
+    "trial-09/trial.json": "2e3bd3d12b72ff400fd32778c473d5b9041854c967ea9f329440641e05a9e15a",
+    "trial-10/decision-0/events.jsonl": "884eba2bad7030cae4f1bbe5a62753084682d5c4506adf830d44b10415094d22",
+    "trial-10/decision-0/process.json": "d665111b9374a8da546d9b383de699d9e1dedd9da7b8688ce81475239647942f",
+    "trial-10/decision-0/prompt.txt": "8d9374b4fd78d77519778223f905626778beffe41968feabb6a5cc31185bcaa1",
+    "trial-10/decision-0/stderr.txt": "4eecabd9aabc639923015ea054c5c69aac594fc2ee1d0ea933d114a6e2d4474b",
+    "trial-10/trial.json": "6627161074dfc0ebc495c07957f0fd42b02602eaac82d7f157792e402f8cd76a",
+    "trial-11/decision-0/events.jsonl": "f76c83549ebcbbf908898ee48191976e203ed6aa0b20c762411cdc3bfc187b91",
+    "trial-11/decision-0/process.json": "a8c5187bb023e96e23f2d271ffff30c1b1dc675252ca599815a4cf2a6e911674",
+    "trial-11/decision-0/prompt.txt": "c71f85fe8c3f86152db9fd5d9bb4fac6b13eca1e1f6625f5d0fd856ff17ea7fd",
+    "trial-11/decision-0/stderr.txt": "d65b9498b7bd22d8cb187316ffb27a5fb06b59fc2122ec3f8290a55062f264ff",
+    "trial-11/trial.json": "e773b573d220d719be40cc2a4e998cf4815a9842d258a2f4032473c66240a3b0",
+    "trial-12/decision-0/events.jsonl": "c3bc7a7117f809b4cbd23d05b78cfc96b23e8032838ffafda2afcf11231be888",
+    "trial-12/decision-0/process.json": "0a1e98a22947b9f2f0bd2f48fc02d7b12d68c6fd33b4938b3f84100b344b8cf7",
+    "trial-12/decision-0/prompt.txt": "ee50683d2c3b6cd8388d0f1ad90d76484b10da0c9b9bc5c04eceb1e27fbc77cf",
+    "trial-12/decision-0/stderr.txt": "ea69d6ca89bdee36769cc59f873dd9b8537b9020bd4011c4918b3621c9317232",
+    "trial-12/trial.json": "a666da5a965162b0c614ff515676e76d0971d7033fcdae6ea29703bd3c2edf64",
+    "trial-13/decision-0/events.jsonl": "e88fafca7b8c4e4ade0efa641168fe7fc83425d7501f119bd576b958e754eb4d",
+    "trial-13/decision-0/process.json": "ea865c30efefb6bde825512ff3146f6e7029c1550e0befd298067f3fe88ea820",
+    "trial-13/decision-0/prompt.txt": "eef68e6836fb1ab10d7500f7bbe945432f353d8caa09506afa100dc0209a8dda",
+    "trial-13/decision-0/stderr.txt": "08039fa9ed51ad83e02fb1669d63f45276f41cd6431ad82258a83da2ae5d0bc4",
+    "trial-13/trial.json": "f3bb2ce810c097e1404e9208e1bc7207127f2075c23ca01c5e5c104c103a64bc",
+    "trial-14/decision-0/events.jsonl": "501198efe24ff57e19286f2858ba7b25553480ec51d354367e46a145274e49d0",
+    "trial-14/decision-0/process.json": "2c8698e6d2ec5a7b0c85f08a01dc1d4575e9157f350251bced55bd109e92b735",
+    "trial-14/decision-0/prompt.txt": "55fb62da2d912302959bc376781fcc0cec7b1c105fea29e89c3b799ca352ab70",
+    "trial-14/decision-0/stderr.txt": "3e28e331d0c59cb428553606f88e5ea7037c6d9b98a5339dbd4f0851cfc47fcf",
+    "trial-14/trial.json": "6853da8dca177abb8d36955365eba3c707f5bef713865c1df18ef0a52f579468",
+    "trial-15/decision-0/events.jsonl": "8545be0c3abb6b6421d1ffac73a13126ddcfe105b749981c802b0dc380e14c53",
+    "trial-15/decision-0/process.json": "6c6005332ec271e390e0eef894a1ca3239c0956639504640a413b522986e4ac2",
+    "trial-15/decision-0/prompt.txt": "1bb61e316d1460819f249c62133dbbc40a7c757af3b534706962386165e139b7",
+    "trial-15/decision-0/stderr.txt": "5fcb408e92709fd5e1face5e4dd30d91c73327b4f48cedab2cc56a7b1161e142",
+    "trial-15/trial.json": "a099f125656be7b60dd679ea3704f0bcc1a67daefb31d5c4ce8eea12e9b1fd05",
+    "trial-16/decision-0/events.jsonl": "a7466046eb994f7d3ff90f89970dc14d40dbaf9149fcece31479cd437202aace",
+    "trial-16/decision-0/process.json": "e87361cafcb1d8200619928753333ec2755429de2cf0f678c2ebd5542fe1a881",
+    "trial-16/decision-0/prompt.txt": "3b82322c7d388d151f05bb753823f9d01c45a1e6bb3e1e73c5618d86ae247fbc",
+    "trial-16/decision-0/stderr.txt": "5c8281c15b2dc946c8d30f25e011eaba226db5bfb177cbeea9e96e8d847f60bb",
+    "trial-16/trial.json": "94d112920a1d5d1ef6d23e45325891177de4ff852daebfc853ba178ac92cf12f",
+    "trial-17/decision-0/events.jsonl": "4049d4f80acec06a3187fe2171d6f2756f58d32b93b6093eb9a250080c86a1c5",
+    "trial-17/decision-0/process.json": "56dc0332db9e32a08083d49f491ea55418d93cead4418c8908a7d9c0bde5b230",
+    "trial-17/decision-0/prompt.txt": "2325c27dccb3c471c7c767193fb3d7d0fd72b68d85ea9718c1ba337e6f142c7c",
+    "trial-17/decision-0/stderr.txt": "26ee0394631308785e847ab56883187a55e862f431674059ec1c6bd392a5a104",
+    "trial-17/trial.json": "7d245d7accadcfc01cb4ccd1b678e0543cf360580cfa2e9f3b6d75cd7e5a3052",
+    "trial-18/decision-0/events.jsonl": "ccfb54e80b82e5f00aef1e7a2b8301f6a4a51046453c9849e3ccf8adfbfcceba",
+    "trial-18/decision-0/process.json": "93b6154fd0d675c5016bed319d6e0c5ceb9f017ca3bcd93f59687e214e841f6c",
+    "trial-18/decision-0/prompt.txt": "1d767600ca0394f63553267ddd32e4c80162389e023e0abab637090b52dc5224",
+    "trial-18/decision-0/stderr.txt": "bce064f9ee0ef9d6d64ab1c9a93f90957087b88686963a204ba2970e4bd2e2c5",
+    "trial-18/trial.json": "9e5c053689e76cd92af1a46bc916f548ccda59af5adee80e20a68174099e8325",
+    "trial-19/decision-0/events.jsonl": "234c60efbc5663499be7f669b6bb178c29a047ec09175a0ff7f38704d742177f",
+    "trial-19/decision-0/process.json": "3c5a8774c99337fd630b58db27440ed6112d1f73e11dd1608372cfff141ee9b4",
+    "trial-19/decision-0/prompt.txt": "4e2ace1c30fdfaf1ca67c6c536ec30ac7d87662f9da476b2d6806357485d7dea",
+    "trial-19/decision-0/stderr.txt": "a71b1919fcf9d1bd815ffdc1b3bae42e9f9de4aa4ab098deaee4f25724aa3dc4",
+    "trial-19/trial.json": "7c2ac28b157116a899623cde10033885f4bfdf9fdfe8ec19eeb21ecfd9c3445d",
+    "trial-20/decision-0/events.jsonl": "8dbae2a177eeeb2f50d8cbf428bf9b3ccdeadf8851e9437a99454dd8801e752d",
+    "trial-20/decision-0/process.json": "9d070bcb93790edceb576dec4d696a94d4e98435b9fdf16f5a8ede3c24e17560",
+    "trial-20/decision-0/prompt.txt": "b0db31915116d34280876d969c0aa30b6d1175905edb5f00d12d71a685c5a9d8",
+    "trial-20/decision-0/stderr.txt": "273258574fbe17ddd331b62bd1a1529b4cffb2d34700b03ec956e04fcf32f388",
+    "trial-20/trial.json": "5260e2da7570741c608c15e03a63f83cf6100e97df054c90c9b21b42c00fa7c8",
+    "trial-21/decision-0/events.jsonl": "5314a657b049cdd9b9ed86677dd4c589894bfcbb10e04e491d10b2a8b9f37d0f",
+    "trial-21/decision-0/process.json": "b4325be249cf6d920e295bef31472067d26960042a62592d061b3948f05129aa",
+    "trial-21/decision-0/prompt.txt": "0d1d68465e02fc9cde349822a11c5fae0feb234ea1befd68e875cd8bf3beb023",
+    "trial-21/decision-0/stderr.txt": "3231a155f5902982c6bcf7219b88809f9cf0ae34219ea920dbd5aaddd6e701b4",
+    "trial-21/trial.json": "a93c740039869db013fa5d6d976cff09c19fc8fde8be1b533fa00707a4595ecf",
+    "trial-22/decision-0/events.jsonl": "60e86d4effc32850c8cdfe5c329eeef21539f1deaf45d6677c79f385a6449134",
+    "trial-22/decision-0/process.json": "9ec5683692cb813a56a7c49147c7c7946dd0fa3fe2da9e65040634c00f44860d",
+    "trial-22/decision-0/prompt.txt": "419fe8e7ebb8dc0501bb4cebf60502c9753b423ead5028684ec1ae5c10cf40f3",
+    "trial-22/decision-0/stderr.txt": "0d092bfcae7b7fb9b6c6814331dc5abc7ce0a250f9a10ae380535ec9d3a757ec",
+    "trial-22/trial.json": "1924148193c3387614563dd3f9fdf1d34f1fafdf7e4b5920a4b7cb18209e4023",
+    "trial-23/decision-0/events.jsonl": "18c8b6d075dac11a3790a4823ddcb57459ad9e8653fff0fd4b3372fbd63d31f6",
+    "trial-23/decision-0/process.json": "d0f3c45b298166eba0a811741d4a49a56317a45efaebfdd3aa506ff2ac78cbf7",
+    "trial-23/decision-0/prompt.txt": "dc829759995d8d2da14cdbd5bb8f8fcef3a1c053eb2a25d7107b46e3019beb0f",
+    "trial-23/decision-0/stderr.txt": "a8d94da8fc9b1cbb4b27ae3d75ed032641db1c7bd634da00e027bb005e436127",
+    "trial-23/trial.json": "9c47028ff31a01c03950806da53997538b31cef1ca586d4f22c78da4a10800af"
+  },
+  "auth_mode": "ChatGPT",
+  "binary_sha256": "af15b1331866d4a3a0f8d8956d1629769d269e5e24ba9fc6534ae3bf46f985a6",
+  "codex_version": "codex-cli 0.163.0-alpha.10.2",
+  "command_template": [
+    "C:\\Users\\Maverick\\AppData\\Local\\OpenAI\\Codex\\bin\\896a0166b774037a\\codex.EXE",
+    "exec",
+    "--ignore-user-config",
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "--sandbox",
+    "read-only",
+    "-C",
+    "<isolated-cwd>",
+    "-c",
+    "model=\"gpt-6-astra\"",
+    "-c",
+    "model_reasoning_effort=\"ultra\"",
+    "-c",
+    "project_doc_max_bytes=0",
+    "-c",
+    "web_search=\"disabled\"",
+    "--disable",
+    "shell_tool",
+    "--disable",
+    "unified_exec",
+    "--disable",
+    "multi_agent",
+    "--disable",
+    "plugins",
+    "--disable",
+    "apps",
+    "--output-schema",
+    "<isolated-cwd>\\answer.schema.json",
+    "--json",
+    "-"
+  ],
+  "experiment_id": "merge-repair-v1",
+  "global_instructions": {
+    "bytes": 479812,
+    "present": true,
+    "sha256": "9e87185d9921afcc1dc24918dded11cc1d8417ea414b68a4d07991ce17cde8c2"
+  },
+  "limits": [
+    "One model/configuration, one repetition, twelve small paired test tasks; descriptive pilot only.",
+    "The four-object task has very few legal repairs, so ceiling effects can hide any feedback benefit.",
+    "Every selected initial grouping has exactly one distinct same-group pair. Knowing it fails already determines that pair; the witness explicitly highlights information inferable from the task.",
+    "Codex CLI settings and inherited global instructions are part of the tested harness; requested settings are not proof of a server model snapshot.",
+    "The Lean proof covers preservation and returned witnesses. Merge constraints and impossibility scoring are separately tested Python code.",
+    "Equal decision budgets do not imply equal tokens or computation; counterexample feedback contains additional explicit feedback text."
+  ],
+  "passed_integrity": true,
+  "receipt_sha256": "a60865e6d45e7adb50146ada7f74cd91a93f790105c896e011e734975483b4fc",
+  "requested_model": "gpt-6-astra",
+  "requested_reasoning_effort": "ultra",
+  "schema_version": 1,
+  "source_manifest": {
+    "benchmarks/repair-v1/protocol.json": "f74a1142e0ada56082f5953f16f83cae2e69fd9fd09014947419124295462410",
+    "benchmarks/repair-v1/tasks.json": "4d09333a449b37d194c9a8501d56daf749dc5e981d82df515d30cbd6caf16d51",
+    "scripts/repair_tasks.py": "4c48e300d76156c4d1171c21f89e41a5299dc671522653ea1e946e93645ad978",
+    "scripts/run_repair_benchmark.py": "3899dba2c1966d6438a1f9e7a06dddb7adfaac7d3faabeecf9d37f7d96df698f"
+  },
+  "source_revision": "cda3ac79a481c5631c1480471e46f665c8bde288",
+  "source_tree_dirty": false,
+  "split": "test",
+  "started_utc": "2026-10-19T04:25:46.212652+00:00",
+  "summary": {
+    "counterexample": {
+      "by_satisfiability": {
+        "sat": {
+          "final_correct": 6,
+          "first_correct": 6,
+          "trials": 6
+        },
+        "unsat": {
+          "final_correct": 6,
+          "first_correct": 6,
+          "trials": 6
+        }
+      },
+      "constraint_violations": 0,
+      "false_impossibility_claims": 0,
+      "final_correct": 12,
+      "first_correct": 12,
+      "model_calls": 12,
+      "reported_usage": {
+        "cached_input_tokens": 250368,
+        "input_tokens": 1439782,
+        "output_tokens": 1034,
+        "reasoning_output_tokens": 728
+      },
+      "trials": 12
+    },
+    "paired_first_decision": {
+      "both_correct": 12
+    },
+    "pass_fail": {
+      "by_satisfiability": {
+        "sat": {
+          "final_correct": 6,
+          "first_correct": 6,
+          "trials": 6
+        },
+        "unsat": {
+          "final_correct": 6,
+          "first_correct": 6,
+          "trials": 6
+        }
+      },
+      "constraint_violations": 0,
+      "false_impossibility_claims": 0,
+      "final_correct": 12,
+      "first_correct": 12,
+      "model_calls": 12,
+      "reported_usage": {
+        "cached_input_tokens": 261888,
+        "input_tokens": 1439638,
+        "output_tokens": 1062,
+        "reasoning_output_tokens": 756
+      },
+      "trials": 12
+    }
+  },
+  "timeout_seconds_per_decision": 180,
+  "trial_order": [
+    [
+      "repair-v1:d4c9cf0cd4d1c8d3c8591970a14b4c9fe9b408bf4344502b6a7a66877eacae4f",
+      "counterexample"
+    ],
+    [
+      "repair-v1:2a11c7baff788f2280bf6aa27205e56501ee7c30fc70c1fb2419a0ddcac1f27b",
+      "pass_fail"
+    ],
+    [
+      "repair-v1:30b04cef2f0b3be7083c6939514e22460fff07db6c97fa4aa9c50e772ae5558b",
+      "pass_fail"
+    ],
+    [
+      "repair-v1:e727ac8a4fb2892c22663a5ea6d8090d257efe5126b60d27a5faccb29707b709",
+      "counterexample"
+    ],
+    [
+      "repair-v1:419a3226e4333b2417881b98e06d81f77496f1c6fcee6e3fb58b909b1c390782",
+      "counterexample"
+    ],
+    [
+      "repair-v1:039c7cb407ac0537afdf4c12cf9eb80d7238c0cb662bdfeeeb51b44ff731676c",
+      "pass_fail"
+    ],
+    [
+      "repair-v1:039c7cb407ac0537afdf4c12cf9eb80d7238c0cb662bdfeeeb51b44ff731676c",
+      "counterexample"
+    ],
+    [
+      "repair-v1:e727ac8a4fb2892c22663a5ea6d8090d257efe5126b60d27a5faccb29707b709",
+      "pass_fail"
+    ],
+    [
+      "repair-v1:ad9530b50e6a290303536bb8e819da5c4b8f5fd49861480f534bf060ebdd7d99",
+      "pass_fail"
+    ],
+    [
+      "repair-v1:2a11c7baff788f2280bf6aa27205e56501ee7c30fc70c1fb2419a0ddcac1f27b",
+      "counterexample"
+    ],
+    [
+      "repair-v1:d9c88efd5f9aa8c7495674531905722e40ac8c96758963c25c8346bb43ec60ab",
+      "pass_fail"
+    ],
+    [
+      "repair-v1:1b60325ef2dcae3ba9fe1352529ba16c23de1d99309634fdb2d0a747cdde613b",
+      "pass_fail"
+    ],
+    [
+      "repair-v1:ff08e349021241335a922ddf5bd08f5075fac22baece913e94d45f5b155d9515",
+      "pass_fail"
+    ],
+    [
+      "repair-v1:ad9530b50e6a290303536bb8e819da5c4b8f5fd49861480f534bf060ebdd7d99",
+      "counterexample"
+    ],
+    [
+      "repair-v1:25f4d5b8818f39e6b264597684a6225541f018c8d1f030d0c8b7604dc8e307f0",
+      "pass_fail"
+    ],
+    [
+      "repair-v1:d4c9cf0cd4d1c8d3c8591970a14b4c9fe9b408bf4344502b6a7a66877eacae4f",
+      "pass_fail"
+    ],
+    [
+      "repair-v1:ff08e349021241335a922ddf5bd08f5075fac22baece913e94d45f5b155d9515",
+      "counterexample"
+    ],
+    [
+      "repair-v1:30b04cef2f0b3be7083c6939514e22460fff07db6c97fa4aa9c50e772ae5558b",
+      "counterexample"
+    ],
+    [
+      "repair-v1:d9c88efd5f9aa8c7495674531905722e40ac8c96758963c25c8346bb43ec60ab",
+      "counterexample"
+    ],
+    [
+      "repair-v1:1b60325ef2dcae3ba9fe1352529ba16c23de1d99309634fdb2d0a747cdde613b",
+      "counterexample"
+    ],
+    [
+      "repair-v1:e6014505e96552feda3c3110ec179ea3e40f67d7e60dd14f638855ec7b8cb679",
+      "counterexample"
+    ],
+    [
+      "repair-v1:e6014505e96552feda3c3110ec179ea3e40f67d7e60dd14f638855ec7b8cb679",
+      "pass_fail"
+    ],
+    [
+      "repair-v1:25f4d5b8818f39e6b264597684a6225541f018c8d1f030d0c8b7604dc8e307f0",
+      "counterexample"
+    ],
+    [
+      "repair-v1:419a3226e4333b2417881b98e06d81f77496f1c6fcee6e3fb58b909b1c390782",
+      "pass_fail"
+    ]
+  ]
+}

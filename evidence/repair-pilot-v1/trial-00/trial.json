@@ -1,0 +1,101 @@
+{
+  "arm": "counterexample",
+  "correct": true,
+  "decisions": [
+    {
+      "answer": {
+        "group_labels": null,
+        "status": "impossible"
+      },
+      "feedback": {
+        "terminal": true
+      },
+      "grade": {
+        "correct": true,
+        "reason": "certified_impossible: all 15 partitions were checked"
+      },
+      "native_record": null,
+      "process": {
+        "elapsed_seconds": 8.422,
+        "returncode": 0
+      },
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 119988,
+        "output_tokens": 64,
+        "reasoning_output_tokens": 41
+      }
+    }
+  ],
+  "first_correct": true,
+  "initial_record": {
+    "assumptions": [
+      "Four objects, one total unary operation, and equality of the four group labels.",
+      "Lean 4.34.1 kernel replay and the recorded standard-axiom audit support the source theorem.",
+      "The native receipt relies on the recorded compiler, runtime, operating environment, and independent test harness."
+    ],
+    "checker": {
+      "binary_sha256": "af15b1331866d4a3a0f8d8956d1629769d269e5e24ba9fc6534ae3bf46f985a6",
+      "source_revision": "5f3a65f3b9ad29c13a822e3a781476fcc5867be0",
+      "source_sha256": "057fc24fe3b7af8ed903b0d1711cc7c1bd086f7738e258cea60ee8c26093bddd",
+      "theorem_declaration": "GroupingChecker.check_iff",
+      "version": "1"
+    },
+    "claim_id": "preservation:ug4-v1:8401",
+    "claim_kind": "unary_grouping_preservation",
+    "evidence": [
+      {
+        "artifact_path": "evidence/grouping-checker-v1/summary.json",
+        "artifact_sha256": "a60865e6d45e7adb50146ada7f74cd91a93f790105c896e011e734975483b4fc",
+        "case_pointer": "/proof_status",
+        "kind": "source_proof"
+      },
+      {
+        "artifact_path": "evidence/grouping-checker-v1/native.jsonl.gz",
+        "artifact_sha256": "f8c6dfcbca6e49657374565730d61bc169141670017fcd0fad1732c75ac4d630",
+        "case_pointer": "jsonl:word=33793",
+        "kind": "bounded_executable_agreement"
+      }
+    ],
+    "input": {
+      "group_labels": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "hex": "8401",
+      "operation": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "word": 33793
+    },
+    "input_id": "ug4-v1:8401",
+    "limits": [
+      "Executable agreement covers this binary and all 65536 encoded words in the recorded environment; it is not a machine-code refinement proof.",
+      "The claim concerns this exact operation and grouping; it does not identify the whole congruence family or prove search completeness or minimality.",
+      "Artifact hashes identify bytes and detect changes; they do not authenticate an author's claims. Reproduce the run to check those claims."
+    ],
+    "outcome": {
+      "preserves": false,
+      "violating_pair": [
+        0,
+        2
+      ]
+    },
+    "schema_version": 1,
+    "specification": {
+      "artifact_path": "specs/unary-grouping-v1.json",
+      "artifact_sha256": "2a25406831cccfd3c520cfd1b2b2bde6b7bbad50c7f5f771ab5f0e7f96c21b01",
+      "contract_id": "unary-grouping-v1",
+      "version": 1
+    },
+    "status": "evidenced_result"
+  },
+  "satisfiable": false,
+  "task_id": "repair-v1:d4c9cf0cd4d1c8d3c8591970a14b4c9fe9b408bf4344502b6a7a66877eacae4f"
+}

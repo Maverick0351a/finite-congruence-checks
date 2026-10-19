@@ -526,3 +526,25 @@ All 24 repair tests and all 31 existing grouping tests pass. Synthetic replay
 controls reject altered grades, feedback, prompts, token reports, native inputs,
 and reused threads even when artifact hashes are recomputed. Independent agent
 review found no blocking defect; this is AI-assisted review, not external review.
+
+Committed the frozen implementation and protocol as
+`cda3ac79a481c5631c1480471e46f665c8bde288` before running the test split. The
+24 live held-out trials completed with distinct conversation IDs, one decision
+each, no retries, and no recorded tool activity. Both arms scored 12/12, split
+6/6 on repairable tasks and 6/6 on impossible tasks. There were no constraint
+violations or false impossibility claims. The observed paired accuracy
+difference is zero; these results do not demonstrate a counterexample benefit.
+
+Offline replay passed before copying the exact run bytes into
+`evidence/repair-pilot-v1/`. Added CI replay without live model calls, a readable
+results table, an actual repaired-group diagram, and precise claim-ledger rows.
+The existing 65,536-input checker evidence remains bound to its original source
+and binary. A larger task domain needs a matching specification and checker
+assurance; no six-object verification is claimed by this milestone.
+
+Final independent agent review replayed the saved run and separately enumerated
+all 256 label assignments per task without importing the benchmark's mathematical
+functions. It confirmed all 12 repair answers and all 12 impossibility answers
+across both arms, distinct conversation IDs, matched prompts except for the
+assigned witness, and the four source hashes against the frozen Git objects.
+No blocking publication issue was found. This remains AI-assisted review.

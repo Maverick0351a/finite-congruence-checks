@@ -1,0 +1,15 @@
+Solve this finite grouping repair task. Objects are 0,1,2,3.
+operation[x] is the fixed output of object x. Equal group labels mean together.
+A grouping g respects the rule exactly when, for every x,y, g[x]=g[y] implies
+g[operation[x]]=g[operation[y]]. The initial grouping fails this condition.
+You may merge whole original groups, but you may never split an original group:
+initial_labels[x]=initial_labels[y] must imply new_labels[x]=new_labels[y].
+The two objects in separate MUST remain in different groups. The rule cannot change.
+Return {"status":"repair","group_labels":[four integers 0..3]} if a valid repair
+exists, or {"status":"impossible","group_labels":null} if no permitted repair
+exists. Impossibility is a final answer, not an oracle query. Labels need not be
+consecutive. You have at most three decisions; a rejected repair receives feedback.
+Use only the task and feedback below. Do not use tools, files, network, or other
+agents. Return only the JSON answer, without a rationale or Markdown.
+
+{"history": [{"initial_feedback": {"accepted": false, "preserves": false, "violating_pair": [0, 2]}}], "task": {"id": "repair-v1:d9c88efd5f9aa8c7495674531905722e40ac8c96758963c25c8346bb43ec60ab", "initial_labels": [0, 1, 0, 2], "operation": [1, 0, 0, 0], "separate": [2, 3]}}
