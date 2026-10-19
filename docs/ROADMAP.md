@@ -37,6 +37,36 @@ checker assurance to match before running it. Machine-code refinement remains
 a separate research direction. Extend to exact congruence families only with
 explicit completeness obligations.
 
+## Next milestones: feedback and translation evidence
+
+[PR #6](https://github.com/Maverick0351a/finite-congruence-checks/pull/6) is merged.
+Its scanner incident was a dummy test marker, classified as “Not a secret” in
+GitGuardian; the rerun passed before merging. No scanner bypass was required.
+
+Keep the completed grouping checker as the foundation and pursue two bounded
+tracks described in the [second-domain pilot proposal](TM_HALT_PILOT.md):
+
+1. **Harder repair feedback.** Specify six objects, merges only, a required
+   separation, and exactly two final groups; include multiple-conflict and
+   impossible cases. Extend checker assurance to the new interface, independently
+   validate the oracle, then freeze a fair feedback comparison before running it.
+2. **Two Turing-machine halt behaviors.** Pin the source definitions, construct
+   a tiny missing-instruction/write-and-halt pair, and connect traces and an
+   English explanation to Lean proofs of exact observations. Agreement on
+   halting must not be presented as agreement on the final tape.
+
+The [archive review](ARCHIVE_REVIEW.md) sets evidence-admission requirements.
+Treat `formal-audit` as lexical screening: dependencies supporting proof claims
+must come from elaborated Lean declarations. Keep the older 616-row Snaky
+comparator certificate separate from the 728-card theorem certificate. Every
+record must identify its exact source, object, certificate, and claim.
+The TM Python benchmark was not rerun in this archive review; older local run
+logs are separate historical evidence. Neither those logs nor the proposal
+establish general translation correctness. No general Lean translator,
+universal verification, or verified fluid simulation is claimed.
+
+## Continuing the finite atlas
+
 The [readable atlas](ATLAS.md) now develops the classification direction through
 four objects, with complete relation-family coverage, minimum operations for
 each representative, and a C4 comparison. This extends the exploration beyond

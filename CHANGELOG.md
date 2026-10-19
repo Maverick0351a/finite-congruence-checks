@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Archive-review boundaries and a proposed Turing-machine halt pilot, linking
+  exact source semantics to property-specific evidence alongside harder repair
+  feedback experiments; no new verification claim.
+
 - Constrained repair benchmark with merges only, a retained separation, and an
   independent impossibility oracle checked on 8,832 tasks; disjoint development
   and test operation families, local Codex runner, and offline result replay.
