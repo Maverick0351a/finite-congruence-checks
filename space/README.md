@@ -4,7 +4,7 @@ emoji: 🔬
 colorFrom: blue
 colorTo: green
 sdk: static
-app_file: index.html
+app_file: atlas.html
 pinned: true
 license: apache-2.0
 short_description: Explore independent graph-criterion checks from OpenAI math
@@ -28,6 +28,16 @@ Maintained by [Travis Johnson](https://www.linkedin.com/in/travis-johnson-606207
 Explore independent validation of the **finite congruence graph criterion** from
 OpenAI's math corpus, family 206.
 
+Start with the readable atlas: a three-object lesson, 39 grouping-family
+representatives through four objects, and 22 abstract lattice shapes. Explore
+objects, rules, consistent groupings, and a comparison of two C4 constructions.
+The catalog has its own complete classification and independent checker.
+See [the atlas method](https://github.com/Maverick0351a/finite-congruence-checks/blob/main/docs/ATLAS.md).
+Technical entry details expose individual claim records with assumptions and
+limits. A [local query tool](https://github.com/Maverick0351a/finite-congruence-checks/blob/main/docs/ATLAS_QUERY.md)
+reads the same versioned records for research applications and agents.
+
+The original graph explorer remains available at `index.html`.
 Choose one of eight lattices, inspect colored graphs and equivalence classes,
 compare passing and failing examples, and download the exact certificates.
 The recorded bounded experiment examined **143,685 candidate colorings** on
@@ -43,11 +53,13 @@ carriers of **one through four points**, finding **217 full witnesses** in
 
 This static interface displays precomputed evidence. Changing controls does not
 rerun the exhaustive search or check Lean proofs. Its small browser computation
-filters graph edges and groups connected points for display.
+checks whether rules preserve a selected grouping. The original graph explorer
+also filters edges and groups connected points for display.
 
 Concrete N5/B3 proofs and targeted upstream Lean modules compiled and passed
-bundled kernel replay. The full corpus and official comparator workflow were not
-run. A formal correspondence between the Python connectivity implementation and
+bundled kernel replay. The original upstream theorem passed its official
+comparator, including two rejection controls. The full corpus was not verified.
+A formal correspondence between the Python connectivity implementation and
 the upstream Lean predicate remains unproved.
 
 M4 has no witness on at most four points in this search; larger carriers are
@@ -62,7 +74,11 @@ external peer review, or mathematical novelty.
 
 The canonical sources live in `space/` in the GitHub research repository.
 Run `python scripts/build_space_data.py` there to regenerate the data, or add
-`--check` to confirm freshness. The downloadable `data.json` lists source hashes
+`--check` to confirm freshness. For the atlas, also run
+`python scripts/build_atlas_data.py --check`,
+`python scripts/check_atlas.py --check-receipt evidence/atlas-review.json`, and
+`python scripts/query_atlas.py build-claims --check`, followed by
+`node scripts/check_atlas_ui.cjs`. The downloadable `data.json` lists source hashes
 and the pinned upstream revision. Publish only the contents of `space/`.
 
 The app uses native HTML, CSS, JavaScript, and SVG. It has no runtime package,

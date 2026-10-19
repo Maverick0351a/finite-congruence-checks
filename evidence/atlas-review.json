@@ -1,0 +1,363 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "hash_encoding": "SHA-256 of UTF-8 file bytes with CRLF normalized to LF; no other byte changes.",
+  "checker_sha256": "16bdad6164075c33394f1f2cf4e7da7c523fb6eb3713c1b18c1bd868112862d7",
+  "method": "Independent assignment partitions, Con(End(E)) subset exhaustion, literal pair preservation, exhaustive map-pair minima, all relabelings, and exhaustive invariant-class poset labeling.",
+  "limitations": "Finite Python cross-check; not a Lean proof and no novelty claim.",
+  "carrier_summary": [
+    {
+      "carrier_size": 1,
+      "labeled_relation_families": 1,
+      "embedding_orbits": 1,
+      "abstract_types": 1
+    },
+    {
+      "carrier_size": 2,
+      "labeled_relation_families": 1,
+      "embedding_orbits": 1,
+      "abstract_types": 1
+    },
+    {
+      "carrier_size": 3,
+      "labeled_relation_families": 8,
+      "embedding_orbits": 4,
+      "abstract_types": 4
+    },
+    {
+      "carrier_size": 4,
+      "labeled_relation_families": 303,
+      "embedding_orbits": 33,
+      "abstract_types": 21
+    }
+  ],
+  "candidate_subsets_by_carrier": {
+    "1": 1,
+    "2": 1,
+    "3": 8,
+    "4": 8192
+  },
+  "all_unary_maps_by_carrier": {
+    "1": 1,
+    "2": 4,
+    "3": 27,
+    "4": 256
+  },
+  "total_embedding_orbits": 39,
+  "abstract_types_across_carriers": 22,
+  "entries": [
+    {
+      "id": "n1-E1",
+      "carrier_size": 1,
+      "orbit_size": 1,
+      "minimum_unary_operations": 0,
+      "poset_canonical_sha256": "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n2-E3",
+      "carrier_size": 2,
+      "orbit_size": 1,
+      "minimum_unary_operations": 0,
+      "poset_canonical_sha256": "252c0b6b080fa045acfcd1437f693f3be2be2ac8223ea525d492fa19ab028942",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n3-E17",
+      "carrier_size": 3,
+      "orbit_size": 1,
+      "minimum_unary_operations": 1,
+      "poset_canonical_sha256": "252c0b6b080fa045acfcd1437f693f3be2be2ac8223ea525d492fa19ab028942",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n3-E19",
+      "carrier_size": 3,
+      "orbit_size": 3,
+      "minimum_unary_operations": 1,
+      "poset_canonical_sha256": "67bd219891fa4a5f395eec9ed593b4188188a4641f006c4560719d4847ce0ec7",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n3-E23",
+      "carrier_size": 3,
+      "orbit_size": 3,
+      "minimum_unary_operations": 1,
+      "poset_canonical_sha256": "02b5b9bfeecb1178c0dc54ac88b371ff0a62d4f31de97407bdfdfee69f9a271d",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n3-E31",
+      "carrier_size": 3,
+      "orbit_size": 1,
+      "minimum_unary_operations": 0,
+      "poset_canonical_sha256": "d2245cccf2d34f6f40df257ed95b46cea98e8ed1ee9900bdc585f1647dc1e774",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16385",
+      "carrier_size": 4,
+      "orbit_size": 1,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "252c0b6b080fa045acfcd1437f693f3be2be2ac8223ea525d492fa19ab028942",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16387",
+      "carrier_size": 4,
+      "orbit_size": 6,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "67bd219891fa4a5f395eec9ed593b4188188a4641f006c4560719d4847ce0ec7",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16401",
+      "carrier_size": 4,
+      "orbit_size": 4,
+      "minimum_unary_operations": 1,
+      "poset_canonical_sha256": "67bd219891fa4a5f395eec9ed593b4188188a4641f006c4560719d4847ce0ec7",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16403",
+      "carrier_size": 4,
+      "orbit_size": 12,
+      "minimum_unary_operations": 1,
+      "poset_canonical_sha256": "7d47898dc8a13484bdf81afc384143309b9e9b1aa1298f6495a0ae26e203cd19",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16407",
+      "carrier_size": 4,
+      "orbit_size": 12,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "900a24050542e2bbad6d94b53f60681f0e3f8d2892b4bccc4fb6bd3bfe96971d",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16415",
+      "carrier_size": 4,
+      "orbit_size": 4,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "10eb03f8a39831bcdb4020966e581cce0b60f411d12b5786f1ed84add9726edc",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16433",
+      "carrier_size": 4,
+      "orbit_size": 12,
+      "minimum_unary_operations": 1,
+      "poset_canonical_sha256": "02b5b9bfeecb1178c0dc54ac88b371ff0a62d4f31de97407bdfdfee69f9a271d",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16449",
+      "carrier_size": 4,
+      "orbit_size": 3,
+      "minimum_unary_operations": 1,
+      "poset_canonical_sha256": "67bd219891fa4a5f395eec9ed593b4188188a4641f006c4560719d4847ce0ec7",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16451",
+      "carrier_size": 4,
+      "orbit_size": 12,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "02b5b9bfeecb1178c0dc54ac88b371ff0a62d4f31de97407bdfdfee69f9a271d",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16457",
+      "carrier_size": 4,
+      "orbit_size": 6,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "7d47898dc8a13484bdf81afc384143309b9e9b1aa1298f6495a0ae26e203cd19",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16473",
+      "carrier_size": 4,
+      "orbit_size": 12,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "4fa9da425da786c22a4bfec6d0f472ad9d338710bb5aa27de82de4c396bcf976",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16475",
+      "carrier_size": 4,
+      "orbit_size": 24,
+      "minimum_unary_operations": 1,
+      "poset_canonical_sha256": "d80201eb1a1b120ea9518a2308c2a260bc48f31c19979bd1789222016715f7f0",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16479",
+      "carrier_size": 4,
+      "orbit_size": 12,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "9e055616f6a54c04878f1d49f6abaaa974d07a5c93e3bc82a24ccdde8153da53",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16489",
+      "carrier_size": 4,
+      "orbit_size": 3,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "900a24050542e2bbad6d94b53f60681f0e3f8d2892b4bccc4fb6bd3bfe96971d",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16505",
+      "carrier_size": 4,
+      "orbit_size": 12,
+      "minimum_unary_operations": 1,
+      "poset_canonical_sha256": "d80201eb1a1b120ea9518a2308c2a260bc48f31c19979bd1789222016715f7f0",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16705",
+      "carrier_size": 4,
+      "orbit_size": 3,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "02b5b9bfeecb1178c0dc54ac88b371ff0a62d4f31de97407bdfdfee69f9a271d",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16709",
+      "carrier_size": 4,
+      "orbit_size": 12,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "e2c621a1935f50296d420b11a0a0aecf54dadc7f18f03dc6a9407bbf21777344",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16733",
+      "carrier_size": 4,
+      "orbit_size": 12,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "f2e9083c49edcb68d427be53ac411f94cd8670baf0b4e9c287f28d806b7bf2f8",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16745",
+      "carrier_size": 4,
+      "orbit_size": 6,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "45b941ef93a5d3ee8f404415b4703d2dc2299dfd9a26a70074ddb8de9415f025",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16915",
+      "carrier_size": 4,
+      "orbit_size": 6,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "4fa9da425da786c22a4bfec6d0f472ad9d338710bb5aa27de82de4c396bcf976",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16919",
+      "carrier_size": 4,
+      "orbit_size": 24,
+      "minimum_unary_operations": 1,
+      "poset_canonical_sha256": "d80201eb1a1b120ea9518a2308c2a260bc48f31c19979bd1789222016715f7f0",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E16927",
+      "carrier_size": 4,
+      "orbit_size": 12,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "9e055616f6a54c04878f1d49f6abaaa974d07a5c93e3bc82a24ccdde8153da53",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E17019",
+      "carrier_size": 4,
+      "orbit_size": 12,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "7f5e4b09d68ac152a93caf78d843c768e147718fca713e5c8dc72fec29e68481",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E18753",
+      "carrier_size": 4,
+      "orbit_size": 1,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "d2245cccf2d34f6f40df257ed95b46cea98e8ed1ee9900bdc585f1647dc1e774",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E18793",
+      "carrier_size": 4,
+      "orbit_size": 3,
+      "minimum_unary_operations": 1,
+      "poset_canonical_sha256": "0c222cbd9caeccef5cbe58e168abc9fa5f38cc86cb819e4d45f29d35d7ce2ac2",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E18963",
+      "carrier_size": 4,
+      "orbit_size": 6,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "c0223e795018e77f39a2c3952c4fefe06ab117ba70856692485025f1b38d7c7a",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E18967",
+      "carrier_size": 4,
+      "orbit_size": 24,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "97ea0812270f8cde47870aba8f1a1965ce32fb8a7523cea40ab997b6e3173d83",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E18975",
+      "carrier_size": 4,
+      "orbit_size": 12,
+      "minimum_unary_operations": 1,
+      "poset_canonical_sha256": "cf604149b456c43810877930be991ec12992931ca777466f594840cc62751f66",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E19067",
+      "carrier_size": 4,
+      "orbit_size": 12,
+      "minimum_unary_operations": 1,
+      "poset_canonical_sha256": "8d793e4e9ea6b7096031aa6c14ad5adcf7e187db2641cb7339c3c6966144b4f1",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E19987",
+      "carrier_size": 4,
+      "orbit_size": 6,
+      "minimum_unary_operations": 1,
+      "poset_canonical_sha256": "97ea0812270f8cde47870aba8f1a1965ce32fb8a7523cea40ab997b6e3173d83",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E21047",
+      "carrier_size": 4,
+      "orbit_size": 4,
+      "minimum_unary_operations": 2,
+      "poset_canonical_sha256": "7f5e4b09d68ac152a93caf78d843c768e147718fca713e5c8dc72fec29e68481",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E21119",
+      "carrier_size": 4,
+      "orbit_size": 12,
+      "minimum_unary_operations": 1,
+      "poset_canonical_sha256": "ab9798583e361e0e49ea2e71c7c76934ea1e896d1260e671148de404fa6f7d4a",
+      "exact_operations_order_and_covers": true
+    },
+    {
+      "id": "n4-E32767",
+      "carrier_size": 4,
+      "orbit_size": 1,
+      "minimum_unary_operations": 0,
+      "poset_canonical_sha256": "cbf10145a44e0ca2b3e628f7e54f21e160bdfd737ee103d51ca9f4a4b774f9c3",
+      "exact_operations_order_and_covers": true
+    }
+  ],
+  "atlas_sha256": "9bd8976488b269a86468dfcdb9f9ebbf246cfe8e0ffe4960f86941369919c82a"
+}
