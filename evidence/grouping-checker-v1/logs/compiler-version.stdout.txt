@@ -1,0 +1,4 @@
+clang version 22.1.4 (https://github.com/llvm/llvm-project 35990504507d79e0b9deb809c8ee5e1b34ceef20)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+InstalledDir: /tmp/grouping-checker-toolchain/lean-4.34.1-linux/bin

@@ -1,0 +1,18 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs": "89a834c4cf5ae5dc.o",
+ "log":
+ [{"message":
+   ".> /tmp/grouping-checker-toolchain/lean-4.34.1-linux/bin/clang -c -o /tmp/grouping-wrapper-fault-ac42fcyk/.lake/build/ir/GroupingMain.c.o.export /tmp/grouping-wrapper-fault-ac42fcyk/.lake/build/ir/GroupingMain.c -I /tmp/grouping-checker-toolchain/lean-4.34.1-linux/include -fstack-clash-protection -ffp-contract=off -fdata-sections -ffunction-sections -fPIC -fvisibility=hidden -Wno-unused-command-line-argument --sysroot /tmp/grouping-checker-toolchain/lean-4.34.1-linux -nostdinc -isystem /tmp/grouping-checker-toolchain/lean-4.34.1-linux/include/clang -O3 -DNDEBUG -DLEAN_EXPORTING",
+   "level": "trace"}],
+ "inputs":
+ [["GroupingMain:c",
+   [["/tmp/grouping-wrapper-fault-ac42fcyk/.lake/build/ir/GroupingMain.c",
+     "0cb3d90c7ffa078d"],
+    ["Lean 4.34.1, commit 5045d0056413266e57c625dcd7c365b10e377c52",
+     "e9f3658beb070375"]]],
+  ["Lean 4.34.1, commit 5045d0056413266e57c625dcd7c365b10e377c52",
+   "e9f3658beb070375"],
+  ["traceArgs: #[-O3, -DNDEBUG, -DLEAN_EXPORTING]", "c1efb66122fb2b9a"],
+  ["x86_64-unknown-linux-gnu", "53a0e8937c307c28"]],
+ "depHash": "ce923c5c34cebc1e"}

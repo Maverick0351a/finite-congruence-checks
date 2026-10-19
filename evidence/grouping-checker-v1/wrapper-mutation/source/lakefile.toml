@@ -1,0 +1,9 @@
+name = "groupingWrapperFault"
+version = "0.1.0"
+
+[[lean_lib]]
+name = "GroupingChecker"
+
+[[lean_exe]]
+name = "grouping_checker"
+root = "GroupingMain"

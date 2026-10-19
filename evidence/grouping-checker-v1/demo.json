@@ -1,0 +1,181 @@
+{
+  "accepted_input_id": "ug4-v1:80e8",
+  "demo_kind": "deterministic_propose_counterexample_repair_recheck",
+  "description": "An agent can use this protocol; this saved replay uses a fixed proposal and deterministic repair, with no LLM benchmark claim.",
+  "schema_version": 1,
+  "steps": [
+    {
+      "action": "propose",
+      "proposal": {
+        "group_labels": [
+          0,
+          0,
+          1,
+          2
+        ],
+        "operation": [
+          0,
+          2,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "action": "check",
+      "result": {
+        "assumptions": [
+          "Four objects, one total unary operation, and equality of the four group labels.",
+          "Lean 4.34.1 kernel replay and the recorded standard-axiom audit support the source theorem.",
+          "The native receipt relies on the recorded compiler, runtime, operating environment, and independent test harness."
+        ],
+        "checker": {
+          "binary_sha256": "af15b1331866d4a3a0f8d8956d1629769d269e5e24ba9fc6534ae3bf46f985a6",
+          "source_revision": "5f3a65f3b9ad29c13a822e3a781476fcc5867be0",
+          "source_sha256": "057fc24fe3b7af8ed903b0d1711cc7c1bd086f7738e258cea60ee8c26093bddd",
+          "theorem_declaration": "GroupingChecker.check_iff",
+          "version": "1"
+        },
+        "claim_id": "preservation:ug4-v1:90e8",
+        "claim_kind": "unary_grouping_preservation",
+        "evidence": [
+          {
+            "artifact_path": "evidence/grouping-checker-v1/summary.json",
+            "artifact_sha256": "a60865e6d45e7adb50146ada7f74cd91a93f790105c896e011e734975483b4fc",
+            "case_pointer": "/proof_status",
+            "kind": "source_proof"
+          },
+          {
+            "artifact_path": "evidence/grouping-checker-v1/native.jsonl.gz",
+            "artifact_sha256": "f8c6dfcbca6e49657374565730d61bc169141670017fcd0fad1732c75ac4d630",
+            "case_pointer": "jsonl:word=37096",
+            "kind": "bounded_executable_agreement"
+          }
+        ],
+        "input": {
+          "group_labels": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "hex": "90e8",
+          "operation": [
+            0,
+            2,
+            2,
+            3
+          ],
+          "word": 37096
+        },
+        "input_id": "ug4-v1:90e8",
+        "limits": [
+          "Executable agreement covers this binary and all 65536 encoded words in the recorded environment; it is not a machine-code refinement proof.",
+          "The claim concerns this exact operation and grouping; it does not identify the whole congruence family or prove search completeness or minimality.",
+          "Artifact hashes identify bytes and detect changes; they do not authenticate an author's claims. Reproduce the run to check those claims."
+        ],
+        "outcome": {
+          "preserves": false,
+          "violating_pair": [
+            0,
+            1
+          ]
+        },
+        "schema_version": 1,
+        "specification": {
+          "artifact_path": "specs/unary-grouping-v1.json",
+          "artifact_sha256": "2a25406831cccfd3c520cfd1b2b2bde6b7bbad50c7f5f771ab5f0e7f96c21b01",
+          "contract_id": "unary-grouping-v1",
+          "version": 1
+        },
+        "status": "evidenced_result"
+      }
+    },
+    {
+      "action": "repair",
+      "explanation": "0 and 1 start together. Their outputs 0 and 2 are apart. Merge the blocks containing 0 and 2, leaving 3 separate.",
+      "method": "merge conflicting output blocks using grouping_reference.repair_grouping; repair logic is not formally proved",
+      "proposal": {
+        "group_labels": [
+          0,
+          0,
+          0,
+          2
+        ],
+        "operation": [
+          0,
+          2,
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "action": "recheck",
+      "result": {
+        "assumptions": [
+          "Four objects, one total unary operation, and equality of the four group labels.",
+          "Lean 4.34.1 kernel replay and the recorded standard-axiom audit support the source theorem.",
+          "The native receipt relies on the recorded compiler, runtime, operating environment, and independent test harness."
+        ],
+        "checker": {
+          "binary_sha256": "af15b1331866d4a3a0f8d8956d1629769d269e5e24ba9fc6534ae3bf46f985a6",
+          "source_revision": "5f3a65f3b9ad29c13a822e3a781476fcc5867be0",
+          "source_sha256": "057fc24fe3b7af8ed903b0d1711cc7c1bd086f7738e258cea60ee8c26093bddd",
+          "theorem_declaration": "GroupingChecker.check_iff",
+          "version": "1"
+        },
+        "claim_id": "preservation:ug4-v1:80e8",
+        "claim_kind": "unary_grouping_preservation",
+        "evidence": [
+          {
+            "artifact_path": "evidence/grouping-checker-v1/summary.json",
+            "artifact_sha256": "a60865e6d45e7adb50146ada7f74cd91a93f790105c896e011e734975483b4fc",
+            "case_pointer": "/proof_status",
+            "kind": "source_proof"
+          },
+          {
+            "artifact_path": "evidence/grouping-checker-v1/native.jsonl.gz",
+            "artifact_sha256": "f8c6dfcbca6e49657374565730d61bc169141670017fcd0fad1732c75ac4d630",
+            "case_pointer": "jsonl:word=33000",
+            "kind": "bounded_executable_agreement"
+          }
+        ],
+        "input": {
+          "group_labels": [
+            0,
+            0,
+            0,
+            2
+          ],
+          "hex": "80e8",
+          "operation": [
+            0,
+            2,
+            2,
+            3
+          ],
+          "word": 33000
+        },
+        "input_id": "ug4-v1:80e8",
+        "limits": [
+          "Executable agreement covers this binary and all 65536 encoded words in the recorded environment; it is not a machine-code refinement proof.",
+          "The claim concerns this exact operation and grouping; it does not identify the whole congruence family or prove search completeness or minimality.",
+          "Artifact hashes identify bytes and detect changes; they do not authenticate an author's claims. Reproduce the run to check those claims."
+        ],
+        "outcome": {
+          "preserves": true,
+          "violating_pair": null
+        },
+        "schema_version": 1,
+        "specification": {
+          "artifact_path": "specs/unary-grouping-v1.json",
+          "artifact_sha256": "2a25406831cccfd3c520cfd1b2b2bde6b7bbad50c7f5f771ab5f0e7f96c21b01",
+          "contract_id": "unary-grouping-v1",
+          "version": 1
+        },
+        "status": "evidenced_result"
+      }
+    }
+  ]
+}

@@ -7,6 +7,12 @@ trips, and proves that a returned pair really witnesses failure. The native
 comparison and demo are reproduced by the commands below; their exact saved
 build and outcomes are in the [run receipt](../evidence/grouping-checker-v1/summary.json).
 
+The recorded run checked all **65,536 distinct inputs with zero disagreements**:
+28,672 preserved groupings and 36,864 failures with valid witnesses. The source
+build, kernel replay, all eleven axiom reports, and adapter probes passed. The
+compiled output fault was detected on every input. All 31 Python controls passed
+on Linux and Windows, including exact-evidence rejection cases.
+
 ## What the math means
 
 A **rule** tells each object where to go. A **grouping** tells us which objects

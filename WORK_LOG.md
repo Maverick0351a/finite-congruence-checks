@@ -466,3 +466,24 @@ The demonstration uses rule [0,2,2,3]. It rejects grouping [0,0,1,2] with pair
 is deterministic and unproved; acceptance requires another native invocation.
 The saved replay is an agent-usable protocol demonstration, not an LLM benchmark.
 Full run results and publication details are recorded below after execution.
+
+The first native pilot had zero mathematical disagreements but remained failed
+because WSL could not locate Git for source provenance. Added and tested a
+Windows Git fallback with explicit path conversion. The final run from committed
+source `5f3a65f3b9ad29c13a822e3a781476fcc5867be0` passed with complete coverage,
+zero disagreements, 28,672 preserved cases, and 36,864 rejected cases. The isolated
+compiled output mutation produced exactly 65,536 detected Boolean mismatches.
+
+Evidence admission review identified two consistency improvements: compare all
+recorded binary digests and verify archive bytes when present, and fail when an
+explicitly configured receipt is missing. Also tied source revision/clean-tree
+flags back to retained Git logs. Applied the corrections and regression controls;
+the reviewer reported no remaining blocking issues. All 31 grouping tests passed
+on Linux and Windows, with no skipped receipt tests. Existing evidence integrity,
+Lean table correspondence/export, and all 13 bridge controls also passed.
+
+Saved the final receipt, full compressed native transcript, compiler traces,
+logs, mutation evidence, and actual two-call repair demonstration under
+`evidence/grouping-checker-v1/`. Exact-byte Git attributes preserve log hashes.
+Executable archives remain separate release assets, and offline validation
+explicitly reports whether those bytes were available.

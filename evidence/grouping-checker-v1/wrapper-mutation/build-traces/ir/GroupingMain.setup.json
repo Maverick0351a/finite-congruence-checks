@@ -1,0 +1,9 @@
+{"plugins": [],
+ "package": "groupingWrapperFault",
+ "options": {},
+ "name": "GroupingMain",
+ "isModule": false,
+ "importArts":
+ {"GroupingChecker":
+  [["/tmp/grouping-wrapper-fault-ac42fcyk/.lake/build/lib/lean/GroupingChecker.olean"]]},
+ "dynlibs": []}
