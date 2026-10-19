@@ -20,7 +20,7 @@ def require(condition: bool, message: str) -> None:
 
 
 def main() -> None:
-    source = (ROOT / "lean/FiniteCongruenceChecks.lean").read_text(encoding="utf-8")
+    source = (ROOT / "lean/CertificateData.lean").read_text(encoding="utf-8")
     minimized = json.loads((ROOT / "evidence/minimized-algebras.json").read_text(encoding="utf-8"))
     operations = {item["certificate"]: item["selected_unary_operations"]
                   for item in minimized["certificates"]}
@@ -29,13 +29,27 @@ def main() -> None:
         certificate = ROOT / "evidence" / f"{name}-witness.json"
         data = json.loads(certificate.read_text(encoding="utf-8"))
         section = source.split(f"namespace {name}\n", 1)[1].split(f"end {name}\n", 1)[0]
-        for table_name, matrix in (("le", data["lattice"]["leq"]), ("color", data["color"])):
+        leq = data["lattice"]["leq"]
+        levels = range(len(leq))
+        meet = []
+        for a in levels:
+            row = []
+            for b in levels:
+                lower = [x for x in levels if leq[x][a] and leq[x][b]]
+                greatest = [x for x in lower if all(leq[y][x] for y in lower)]
+                require(len(greatest) == 1, f"{name}: no unique meet")
+                row.append(greatest[0])
+            meet.append(row)
+        for table_name, matrix in (("le", leq), ("color", data["color"]),
+                                   ("join", data["lattice"]["join"]), ("meet", meet)):
             body = section.split(f"def {table_name} ", 1)[1].split("\n\n", 1)[0]
             rows = re.findall(r"^  \| (\d+), (\d+) => (true|false|\d+)$", body, re.M)
             actual = {(int(i), int(j)): {"true": True, "false": False}.get(v, int(v) if v.isdigit() else None)
                       for i, j, v in rows}
             expected = {(i, j): v for i, row in enumerate(matrix) for j, v in enumerate(row)}
             require(len(rows) == len(expected) and actual == expected, f"{name}: {table_name} table differs")
+        require(f"def bottom : Fin {len(leq)} := {data['lattice']['bottom']}\n" in section,
+                f"{name}: bottom differs")
         require(len(operations[certificate.name]) == 2, f"{name}: expected exactly two operations")
         for index, expected in enumerate(operations[certificate.name], 1):
             body = section.split(f"def op{index} ", 1)[1].split("\n\n", 1)[0]

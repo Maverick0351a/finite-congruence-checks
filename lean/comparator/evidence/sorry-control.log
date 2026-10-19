@@ -1,0 +1,18 @@
+Running as unit: run-u10.service; invocation ID: f00dbe1a92e0419483f6d4fa3171bcd0
+Building ComparatorChallenges.FiniteCongruenceGraph
+⚠ [672/672] Replayed ComparatorChallenges.FiniteCongruenceGraph
+warning: ComparatorChallenges/FiniteCongruenceGraph.lean:57:8: declaration uses `sorry`
+Build completed successfully (672 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.FiniteCongruence.graph_criterion, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ComparatorChallenges.FiniteCongruenceGraph
+Building ComparatorChallenges.FiniteCongruenceGraph
+⚠ [672/672] Replayed ComparatorChallenges.FiniteCongruenceGraph
+warning: ComparatorChallenges/FiniteCongruenceGraph.lean:57:8: declaration uses `sorry`
+Build completed successfully (672 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.FiniteCongruence.graph_criterion, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ComparatorChallenges.FiniteCongruenceGraph
+uncaught exception: Illegal axiom detected: 'sorryAx'
+Finished with result: exit-code
+Main processes terminated with: code=exited/status=1
+Service runtime: 3.926s
+CPU time consumed: 4.654s
+Memory peak: 256.0K
+Memory swap peak: 0B

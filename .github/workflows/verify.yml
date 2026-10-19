@@ -44,6 +44,10 @@ jobs:
         run: python scripts/build_charts.py --check
       - name: Check Lean table correspondence
         run: python lean/check_data.py
+      - name: Check Lean export freshness and failure controls
+        run: |
+          python lean/export_data.py --check
+          python -m unittest discover -s lean -p 'test_*.py' -v
       - name: Replay and check explorer data
         run: python scripts/build_space_data.py --check
       - name: Check browser relation logic against verified certificates
@@ -71,3 +75,33 @@ jobs:
           lint: 'false'
           use-mathlib-cache: 'false'
           leanchecker: 'true'
+
+  upstream-bridge:
+    name: Upstream N5/B3 witness bridge
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      MATHLIB_NO_CACHE_ON_UPDATE: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.12'
+      - uses: leanprover/lean-action@24581d74d674803a25a81b10b059c5c0cdd344c6 # v1
+        with:
+          lake-package-directory: lean/upstream
+          auto-config: 'false'
+          build: 'false'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'false'
+          leanchecker: 'false'
+      - name: Reproduce the complete concrete witness bridge
+        run: python lean/run_checks.py --out runs/formal-bridge
+      - name: Preserve formal verification evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: formal-bridge
+          path: runs/formal-bridge/
+          retention-days: 14

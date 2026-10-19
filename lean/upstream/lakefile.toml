@@ -1,6 +1,10 @@
 name = "upstreamGraphCriterionCheck"
 version = "0.1.0"
-defaultTargets = ["UpstreamAudit"]
+defaultTargets = ["UpstreamAudit", "ConcreteBridge"]
+
+[[require]]
+name = "finiteCongruenceChecks"
+path = ".."
 
 [[require]]
 name = "mathlib"
@@ -12,3 +16,6 @@ name = "OAI"
 
 [[lean_lib]]
 name = "UpstreamAudit"
+
+[[lean_lib]]
+name = "ConcreteBridge"

@@ -199,3 +199,76 @@ Added the user-supplied LinkedIn URL for Travis Johnson to the root README,
 Space README, and demo footer. Created the public static Space
 Maverick03511/finite-congruence-checks. Its publication is documented in
 docs/HUGGING_FACE_DEMO.md. The original v0.1.0 archive and tag are unchanged.
+
+## Concrete upstream witness bridge — 19 October 2026 UTC
+
+Started branch `codex/lean-witness-bridge` for the next formal verification
+milestone. The selected scope is the exact saved N5/B3 constructions and the
+pinned upstream graph criterion. A separate agent is implementing the Lean
+connection; another is checking the official comparator procedure in an isolated
+environment. Proof compilation and comparator success are pending at this entry.
+
+Extracted the existing Lean data into `CertificateData.lean`, generated from the
+two saved JSON witnesses and recorded operation selections. The existing core
+proof bodies are unchanged. The exporter also supplies join and meet tables for
+the upstream lattice instances; meets are derived from the JSON order. The
+independent table reader checks all four matrices, the bottom elements, and both
+unary operations. Six exporter checks passed, including rejection of changed
+certificate hashes, failed operation evidence, invalid joins, invalid operations,
+and duplicate operation records. Exporting data does not itself establish a
+formal theorem or prove the Python implementation correct.
+
+Completed the concrete bridge through the upstream two-operation algebra and
+its full congruence order. Kernel-checked lattice instances use the generated
+join/meet/order tables. Principal-color equality identifies the exact saved
+coloring, so the existing upstream theorem yields `IsGraphWitness` for each
+saved graph, including all nonempty finite ordered seed sets. This uses the
+general upstream theorem and does not independently reprove it or formally
+verify the Python algorithms.
+
+A separate AI reviewer found no mathematical bridge defect. The review caught
+two automation gaps: compilation success alone did not reject unexpected proof
+axioms, and the source manifest omitted the imported root Python validator.
+Added a strict 21-declaration axiom allowlist and the missing source hash, plus
+checks of the actual Lean version and clean, pinned dependency checkouts.
+
+A fresh native Linux reproduction passed all 11 stages with `--skip-cache`:
+fresh builds of our modules, bundled kernel replay, 13 targeted Python tests,
+fresh axiom reports, and actual environment verification. The prepared Mathlib
+dependency cache was reused. Only `propext`, `Classical.choice`, and `Quot.sound`
+were reported. Source hashes matched before/after and against the working
+repository. The complete record is in `lean/evidence/bridge-run/`.
+
+Separately ran the official comparator on the unchanged pinned upstream
+`graph_criterion` using real Landrun, an unprivileged Linux account, and the
+recommended systemd address-family restriction. The original solution passed;
+a placeholder solution failed for `sorryAx`, and an altered challenge failed
+for statement mismatch. Retained the original challenge/configuration, pinned
+runner, tool/dependency hashes, and all three logs under `lean/comparator/`.
+Nanoda is disabled by the original configuration; no external kernel is claimed.
+
+Added the same formal runner to hosted CI and updated the claim ledger and
+roadmap. The 33 existing Python tests and all 13 new formal-runner/export tests
+passed. A fresh complete bounded experiment reproduced all 143,685 candidates,
+217 witnesses, and 22 classes, with matching mathematical results. All 25 formal
+source hashes, 11 log hashes, comparator input/runner hashes, and changed-document
+links were checked. Local verification is complete at this entry; hosted validation and
+final review are the remaining publication checks. The original v0.1.0 release
+tag, archive, and finite-search evidence are unchanged.
+
+Final read-only AI review at `4961f29` found no actionable issues. It independently
+matched the bridge's source/log hashes, 21 axiom reports, nine dependency pins,
+and comparator inputs/results, and checked the final claim boundaries.
+GitHub branch run [39187428882](https://github.com/Maverick0351a/finite-congruence-checks/actions/runs/39187428882)
+and pull-request run [39187462100](https://github.com/Maverick0351a/finite-congruence-checks/actions/runs/39187462100)
+each passed all five jobs, including the new 12-stage upstream bridge command.
+
+Downloading and checking the hosted artifact found two local toolchain files
+still used CRLF while Git stored LF. Their contents selected the same Lean
+version, but byte hashes differed. Normalized the local copies to Git's existing
+bytes and replaced the checked-in bridge receipt/logs with the successful hosted
+artifact. All 25 source hashes now match Git's stored bytes, and all 12 hosted
+log hashes match. Reran the official comparator and both controls against the
+normalized toolchain input. Proof sources and pinned dependency revisions did
+not change. The change and hosted checks are tracked in
+[pull request #1](https://github.com/Maverick0351a/finite-congruence-checks/pull/1).

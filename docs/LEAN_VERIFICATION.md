@@ -1,20 +1,91 @@
 # Lean verification
 
-This component connects the finite experiment to explicit formal statements in
-Lean. Its scope is two concrete algebras on four elements, for N5 and B3, and a
-separate check of the actual upstream graph-criterion source.
+The exact saved N5 and B3 colorings now satisfy the pinned upstream
+`OAI.FiniteCongruence.IsGraphWitness` predicate in Lean. This includes its
+`Relation.EqvGen` connectivity condition for every nonempty finite set of ordered
+seed pairs. The concrete bridge compiled with Lean 4.34.1 and passed bundled
+kernel replay. Separately, the original upstream theorem passed its official
+comparator, including two rejection controls.
 
-**All four local checks passed with Lean 4.34.1:** the concrete N5/B3 build,
-its bundled `leanchecker` kernel replay, the targeted upstream graph-criterion
-build, and replay of the two upstream source modules. Every command returned 0.
-The full upstream corpus has not been built.
+| Check | Scope | Evidence |
+| --- | --- | --- |
+| Concrete congruence proofs | Full congruence orders of the saved N5/B3 two-operation algebras | `lean/FiniteCongruenceChecks.lean` |
+| Concrete upstream bridge | Exact saved color tables satisfy all five upstream conditions | [Fresh reproduction record](../lean/evidence/bridge-run/result.json) |
+| Official comparator | Original upstream `graph_criterion` matches its challenge | [Comparator record](../lean/comparator/README.md) |
+
+The full upstream corpus and general correctness of the Python programs remain
+outside these claims. The official comparator checks the upstream theorem;
+the concrete witness bridge has its own compilation, replay, and axiom checks.
+
+## Reproduce the concrete bridge
+
+With Python 3.10+, Git, and the pinned Lean/Lake toolchain on `PATH`, run from
+the repository root:
+
+```sh
+python lean/run_checks.py --out runs/formal-bridge
+```
+
+Choose a new or empty output directory. The first run needs network access to
+fetch pinned dependencies and the targeted Mathlib cache. A prepared environment
+can use `--skip-cache`. The runner checks generated-data freshness and independent
+table correspondence, runs the exporter/failure controls, builds both projects,
+replays their target modules, obtains a fresh axiom report for 21 declarations,
+and checks the installed toolchain and dependency checkouts against their pins.
+
+Only `propext`, `Classical.choice`, and `Quot.sound` are allowed. Missing or
+duplicate axiom reports, `sorryAx`, native evaluation axioms, failed commands,
+changed source inputs, or modified dependency checkouts fail the run. Logs,
+exit codes, input hashes and log hashes are retained in the requested directory.
+The hosted workflow runs this same command in its upstream bridge job.
+
+The checked-in record is the [successful GitHub run](https://github.com/Maverick0351a/finite-congruence-checks/actions/runs/39187428882)
+at commit `4961f296c7c01b37424627cb155d5ad4e4551855`. It passed all 12 stages,
+including dependency/cache preparation on a fresh hosted runner. All nine
+dependency source trees were clean at their pinned revisions. All 25 source
+hashes match the bytes stored in Git, and all 12 log hashes were checked. See
+[`lean/evidence/bridge-run/`](../lean/evidence/bridge-run/) for all logs.
+
+## From JSON to the exact upstream predicate
+
+```mermaid
+flowchart TD
+  A[Saved JSON witnesses and operation selections] --> B[Generated CertificateData.lean]
+  B --> C[Complete congruence classification in Lean]
+  B --> D[Kernel-checked lattice order, joins and meets]
+  C --> E[Order isomorphism to upstream Congruence]
+  D --> E
+  E --> F[Prove principalColor equals the saved color]
+  F --> G[Apply upstream principalColor_isGraphWitness]
+  G --> H[Exact N5 and B3 IsGraphWitness proofs]
+```
+
+`lean/export_data.py` deterministically exports the order, color, join, meet,
+bottom, and operation tables. It binds the selected operations to the exact
+certificate hashes and rejects failed or malformed input records. Regenerate
+with `python lean/export_data.py`; check without writing with `--check`.
+`lean/check_data.py` separately reads the generated tables back and compares
+them with the evidence. The generated module imports only Std.
+
+`ConcreteBridge.lean` uses separate label types so the saved lattice order is
+not confused with the numeric order on `Fin`. Lean checks every lattice law
+against the explicit tables. The two displayed operations define an actual
+upstream `Algebra`; the complete classification yields an order isomorphism
+to its full upstream `Congruence` type. Equality between its principal colors
+and the saved color table is then proved, rather than assumed.
+
+For both `FiniteCongruenceChecks.UpstreamBridge.N5` and `.B3`, Lean proves
+`principalColor_eq`, `isGraphWitness`, `hasGraphWitness`, and `representable`.
+Their axiom reports contain only the three standard axioms listed above.
+The proof uses the existing general upstream theorem, so it is a checked
+instantiation of that theorem, not an independent proof of the general theorem.
 
 ## Concrete certificates
 
-`lean/FiniteCongruenceChecks.lean` displays the complete color and order tables
-from the saved N5/B3 JSON witnesses and the two unary operations selected by the
-operation minimizer. It proves that their full congruence orders are the specified
-N5 and B3 orders:
+`lean/FiniteCongruenceChecks.lean` imports the complete generated tables from
+`CertificateData.lean`, including the two unary operations selected by the
+operation minimizer. It proves that their full congruence orders are the
+specified N5 and B3 orders:
 
 1. A symmetric reflexive Boolean relation on four points is determined by its
    six unordered off-diagonal pairs. There are exactly 64 such assignments.
@@ -47,9 +118,10 @@ Run from the repository root:
 
 ```text
 python lean/check_data.py
+python lean/export_data.py --check
 cd lean
 lake build
-lake env leanchecker FiniteCongruenceChecks
+lake env leanchecker CertificateData FiniteCongruenceChecks
 ```
 
 The project pins `leanprover/lean4:v4.34.1`. The concrete certificate project has
@@ -57,8 +129,8 @@ no Mathlib or other external package dependencies. `check_data.py` checks the
 explicit Lean tables against the JSON evidence and verifies the exact bytes of
 the two vendored upstream source files.
 
-The successful build log is in `lean/evidence/core-build.log`; the separate
-replay result is in `lean/evidence/core-leanchecker.log`. Lean's bundled checker
+The initial release build log is in `lean/evidence/core-build.log`; the separate
+initial replay result is in `lean/evidence/core-leanchecker.log`. Lean's bundled checker
 replays the module's declarations through its kernel to detect environment
 manipulation. It is not an external verifier with an independent implementation.
 
@@ -85,7 +157,7 @@ The upstream toolchain is Lean 4.34.1 and its Mathlib revision is
 It avoids fetching unrelated packages from the full corpus build. This is a
 targeted build environment, not a build of the full upstream repository.
 
-The successful targeted build compiled `Congruence.lean`, `GraphCriterion.lean`,
+The initial targeted build compiled `Congruence.lean`, `GraphCriterion.lean`,
 and `UpstreamAudit.lean` after retrieving the 723-module Mathlib dependency cache.
 The compiled source bytes match the vendored repository files, and all nine
 dependency checkouts match `lean/upstream/lake-manifest.json` with clean working
@@ -93,20 +165,18 @@ trees. This provenance is recorded in `lean/evidence/upstream-environment.json`.
 
 ```text
 cd lean/upstream
-lake update
 lake exe cache get Mathlib.Data.Fin.Tuple.Basic Mathlib.Data.Setoid.Basic Mathlib.Order.Hom.Basic Mathlib.Data.Finset.Lattice.Fold Mathlib.Data.Fintype.EquivFin Mathlib.Data.Fintype.Pi Mathlib.Data.Fintype.Prod
 lake build
-lake env leanchecker -v OAI.Algebra.Universal UpstreamAudit
+lake env leanchecker -v OAI.Algebra.Universal UpstreamAudit ConcreteBridge
 ```
 
 `UpstreamAudit.lean` imports the actual theorem and prints its type and axiom
 dependencies. This is distinct from the official comparator workflow: the
 comparator file intentionally ends with a placeholder proof, while the solution
-module contains the proof to be checked. A source review shows the same key
-definitions and theorem statement; this repository does not present that review
-as an official comparator run.
+module contains the proof to be checked. The subsequent official comparator
+run is recorded separately under `lean/comparator/`.
 
-The build and replay logs are `lean/evidence/upstream-build.log` and
+The initial build and replay logs are `lean/evidence/upstream-build.log` and
 `lean/evidence/upstream-leanchecker.log`. The actual axiom report is:
 
 | Upstream declaration | Axioms reported by Lean |
@@ -117,17 +187,25 @@ The build and replay logs are `lean/evidence/upstream-build.log` and
 
 No `sorryAx` or native evaluation axiom is reported. The dependency cache and
 official Lean distribution are part of the build's trust boundary; the replay
-checks the two OAI modules and audit module against their imported environment.
+checks the two OAI modules, audit module and concrete bridge against their imported environment.
 It does not freshly replay every imported Mathlib declaration.
 
 ## Relationship and limits
 
-The concrete certificates formalize congruence classification for the saved
-N5/B3 constructions. The Boolean threshold relation is exactly the table test
-`color(x,y) ≤ bound`. They do not yet instantiate the upstream `IsGraphWitness`
-predicate or prove a formal equivalence between the Python graph-connectivity
-implementation and its `Relation.EqvGen` definition. That graph condition has
-separate exhaustive Python evidence in this repository.
+The concrete bridge now instantiates upstream `IsGraphWitness` for the saved
+N5/B3 color tables. The Boolean threshold relation is exactly the table test
+`color(x,y) ≤ bound`. This proves those instances of the upstream mathematical
+predicate. It does not prove a general equivalence between the Python BFS
+implementation and `Relation.EqvGen`, formally verify the exporter or search,
+or prove minimum carrier/operation claims. Those computational claims retain
+their separate finite evidence and scopes.
+
+The official comparator accepted the unchanged upstream solution, rejected the
+placeholder solution for `sorryAx`, and rejected an altered theorem statement.
+It ran with real Landrun under an unprivileged Linux user and the recommended
+systemd address-family restriction. The original configuration disables Nanoda.
+Exact tool pins, commands, logs, and the dependency trust boundary are in the
+[comparator reproduction instructions](../lean/comparator/README.md).
 
 The upstream theorem is a supporting graph characterization. As stated in the
 corpus scope note, it does not establish the associated manuscript's
@@ -135,6 +213,22 @@ undecidability or subgroup-interval conclusions. No new mathematical result or
 external peer review is claimed here.
 
 ## Work log
+
+- 2026-10-19 UTC: Generated Lean data from the saved JSON evidence, preserved all
+  existing core proof bodies, and proved exact N5/B3 upstream graph witnesses
+  through congruence order isomorphisms and principal-color equality. Separate
+  AI review found no mathematical bridge defect. It identified two runner
+  improvements: enforce allowed axioms and include the imported Python validator
+  in the source manifest. Both were implemented before the fresh passing run.
+- 2026-10-19 UTC: Fresh bridge reproduction passed all 11 stages, including 13
+  targeted Python checks, kernel replay, 21 axiom reports and actual dependency
+  revision/cleanliness checks. The official comparator also passed independently,
+  with both intended rejection controls. The checked-in bridge evidence was
+  subsequently replaced by the passing 12-stage hosted run, including cache
+  preparation. The final hash audit normalized two local toolchain files from
+  CRLF to Git's LF bytes; their Lean version was unchanged. The comparator was
+  rerun against those published bytes. Historical entries below describe the
+  earlier verification state and are retained as an audit trail.
 
 - 2026-10-19 UTC: Read the actual pinned solution and its one local dependency.
   Confirmed the upstream toolchain and Mathlib pins from the source files.
