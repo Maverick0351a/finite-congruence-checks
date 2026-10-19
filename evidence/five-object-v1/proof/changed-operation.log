@@ -1,0 +1,3 @@
+/tmp/five-object-native-7ypsal/runs/five-object-proof/changed-operation.lean:6:57: error: Tactic `decide` proved that the proposition
+  ∀ (i : Fin 3) (x : V), A.ops i x = aOps i x
+is false

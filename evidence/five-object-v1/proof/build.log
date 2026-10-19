@@ -1,0 +1,7 @@
+✔ [2/8] Built FiveObjectBase (3.3s)
+✔ [3/8] Built FiveObjectData (249ms)
+✔ [4/8] Built FiveObjectClassification (68s)
+✔ [5/8] Built FiveObjectObstructions (127s)
+✔ [6/8] Built FiveObjectMinimum (1.8s)
+✔ [7/8] Built FiveObjectBinding (445ms)
+Build completed successfully (8 jobs).

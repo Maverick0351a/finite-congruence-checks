@@ -1,7 +1,8 @@
 # Query exact claims and their evidence
 
 The context interface supports two exact N5 construction claims, their
-comparison, two proved N5 renamings, and one existing Turing-machine tape claim.
+comparison, two proved N5 renamings, a pair of exact five-object operation
+minima, and one existing Turing-machine tape claim.
 It reads the website's records and separately identified proof supplements,
 validates the relevant saved evidence, and returns JSON.
 It runs locally using the Python standard library. No model, credentials,
@@ -14,6 +15,7 @@ python scripts/query_context.py compare
 python scripts/query_context.py explain tm:tiny-stay:tape:v1
 python scripts/query_context.py explain context:family-206:saved-n5:renaming:v1
 python scripts/query_context.py explain context:family-206:saved-n5:reverse-labels:v1
+python scripts/query_context.py explain context:family-206:five-object:operation-minima:v1
 ```
 
 | Claim ID | Construction ID | Evidence attached here |
@@ -23,10 +25,17 @@ python scripts/query_context.py explain context:family-206:saved-n5:reverse-labe
 | `tm:tiny-stay:tape:v1` | `tm-pair:tiny-stay:v1` | Original execution evidence plus a separately identified exact-pair Lean proof |
 | `context:family-206:saved-n5:renaming:v1` | `saved:family-206:n5:rotate-and-swap:v1` | Complete classification, inclusion order, and distinctness transported through a proved carrier bijection and rule permutation |
 | `context:family-206:saved-n5:reverse-labels:v1` | `saved:family-206:n5:reverse-labels:v1` | The same three properties transported by reversing object labels while preserving rule order |
+| `context:family-206:five-object:operation-minima:v1` | `saved:family-206:five-object:three-rule:v1` and `saved:family-206:five-object:two-rule:v1` | Exact eight-grouping classifications, respective unary minima three and two, and an explicit isomorphism of their inclusion orders |
 
 `n4-E16709` identifies a relation-family atlas entry. Its construction ID above
 specifically names the displayed operation tables at this version. A lattice
 shape name such as `N5` is not an accepted claim ID.
+
+The [five-object record](FIVE_OBJECT_MINIMUM.md) links a standalone Lean proof
+receipt and a separate exhaustive Python audit. Its `explain` call replays the
+saved receipt and recomputes the 52-partition/3,125-map audit. The correspondence
+is between grouping indices, with no asserted carrier relabeling. The command
+format and evidence schema are unchanged.
 
 An N5 `explain` result includes:
 

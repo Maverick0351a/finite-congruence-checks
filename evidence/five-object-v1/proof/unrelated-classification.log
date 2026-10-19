@@ -1,0 +1,6 @@
+/tmp/five-object-native-7ypsal/runs/five-object-proof/unrelated-classification.lean:12:2: error: Type mismatch
+  B.all_relations r
+has type
+  IsPropCongruence B.ops r ↔ ∃ a, ∀ (x y : V), r x y ↔ B.theta a x y = true
+but is expected to have type
+  IsPropCongruence A.ops r ↔ ∃ i, ∀ (x y : V), r x y ↔ A.theta i x y = true

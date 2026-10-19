@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "claim": {
+    "schema_version": 1,
+    "namespace": "finite-congruence-atlas/five-object-v1",
+    "id": "context:family-206:five-object:operation-minima:v1",
+    "kind": "exact_family_minima",
+    "evidence_status": "lean_proof_with_recorded_kernel_replay",
+    "statement": "These two five-object constructions each have eight congruences with isomorphic inclusion orders, but their exact families require respectively three and two unary rules.",
+    "scope": "Two particular unary algebras on the fixed carrier {0,1,2,3,4}.",
+    "assumptions": [
+      "A grouping is an equivalence relation represented by canonical block labels.",
+      "A unary rule is a total map from this carrier to itself.",
+      "Minimum counts range over arbitrary finite lists of unary rules realizing the exact relation family.",
+      "Lean's kernel and only the standard axioms reported by the receipt are trusted."
+    ],
+    "limits": [
+      "Minima concern each exact relation family on the fixed five-object carrier and total unary operations.",
+      "The order correspondence matches groupings; it is not asserted to relabel the five objects or the rules.",
+      "No minimum over all embeddings, larger carriers, or higher-arity operations is established.",
+      "The Python enumeration and exporter are not formally verified implementations. Their checks are separate from the Lean proof.",
+      "Offline receipt replay checks recorded bindings and hashes; it is not a new kernel check or an authenticated attestation.",
+      "This formalizes an existing saved example. No mathematical novelty, complete five-object census, or agent-performance gain is claimed."
+    ],
+    "values": {
+      "carrier": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "A": {
+        "id": "saved:family-206:five-object:three-rule:v1",
+        "operations": [
+          [
+            0,
+            0,
+            4,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            1,
+            1,
+            4
+          ],
+          [
+            1,
+            1,
+            3,
+            3,
+            3
+          ]
+        ],
+        "groupings": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            2
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            2,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            2,
+            1,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "minimum_unary_operations": 3
+      },
+      "B": {
+        "id": "saved:family-206:five-object:two-rule:v1",
+        "operations": [
+          [
+            4,
+            1,
+            3,
+            2,
+            4
+          ],
+          [
+            1,
+            2,
+            3,
+            3,
+            3
+          ]
+        ],
+        "groupings": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            2,
+            2,
+            1
+          ],
+          [
+            0,
+            1,
+            2,
+            2,
+            2
+          ],
+          [
+            0,
+            1,
+            2,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "minimum_unary_operations": 2
+      },
+      "A_to_B": [
+        0,
+        2,
+        4,
+        1,
+        3,
+        5,
+        6,
+        7
+      ]
+    },
+    "conclusion": {
+      "predicate": "For every relation on Fin 5, it is an equivalence relation preserved by the displayed rules iff it equals one of the eight displayed equivalence relations; the exact families have the stated minimum unary signature sizes and isomorphic inclusion orders.",
+      "distinct_groupings_A": 8,
+      "distinct_groupings_B": 8,
+      "minimum_A": 3,
+      "minimum_B": 2,
+      "inclusion_order_isomorphic": true
+    },
+    "theorems": {
+      "classification_A": "FiniteCongruenceChecks.FiveObject.A.all_relations",
+      "classification_B": "FiniteCongruenceChecks.FiveObject.B.all_relations",
+      "lower_A": "FiniteCongruenceChecks.FiveObject.A.no_small_signature",
+      "lower_B": "FiniteCongruenceChecks.FiveObject.B.no_small_signature",
+      "order": "FiniteCongruenceChecks.FiveObject.same_order"
+    },
+    "applicable_lemmas": [
+      {
+        "theorem": "FiniteCongruenceChecks.FiveObject.A.all_relations",
+        "role": "complete exact A family"
+      },
+      {
+        "theorem": "FiniteCongruenceChecks.FiveObject.B.all_relations",
+        "role": "complete exact B family"
+      },
+      {
+        "theorem": "FiniteCongruenceChecks.FiveObject.A.no_small_signature",
+        "role": "exclude any signature of at most two rules"
+      },
+      {
+        "theorem": "FiniteCongruenceChecks.FiveObject.B.no_small_signature",
+        "role": "exclude any signature of at most one rule"
+      },
+      {
+        "theorem": "FiniteCongruenceChecks.FiveObject.A.theta_injective",
+        "role": "eight distinct A relations"
+      },
+      {
+        "theorem": "FiniteCongruenceChecks.FiveObject.B.theta_injective",
+        "role": "eight distinct B relations"
+      },
+      {
+        "theorem": "FiniteCongruenceChecks.FiveObject.same_order",
+        "role": "inclusion equivalence"
+      },
+      {
+        "theorem": "FiniteCongruenceChecks.FiveObject.correspondence_inverse",
+        "role": "bijective grouping correspondence"
+      }
+    ],
+    "citations": [
+      {
+        "path": "evidence/five-object-v1/constructions.json",
+        "sha256": "faa04412cff2951eb8a3b138ae60cb15893d25f83c703838f3b903b20c58fd62"
+      },
+      {
+        "path": "lean/five_object/FiveObjectBase.lean",
+        "sha256": "ed2d46797b5beaaffe405dcc74fa7e6863d9e2e05d400945351fd037a446c1f8"
+      },
+      {
+        "path": "lean/five_object/FiveObjectData.lean",
+        "sha256": "206013a44cd7d8099e800cde43a375ba97a9b547402f8ee4acf44e91ab0cab30"
+      },
+      {
+        "path": "lean/five_object/FiveObjectClassification.lean",
+        "sha256": "d3ef1f1630f5e342d610f6be39b2b233e47c8d630625ea1c1c668eb9c744ea4f"
+      },
+      {
+        "path": "lean/five_object/FiveObjectObstructions.lean",
+        "sha256": "dccdccbd88942f1f4b4a854bad700d1b45734fe609df587ab4d4e5a51af300ec"
+      },
+      {
+        "path": "lean/five_object/FiveObjectMinimum.lean",
+        "sha256": "4837b3ae8bd5eb40371cc1968a2bfeb42e8a52b1f0890379eeeb417e8c937944"
+      },
+      {
+        "path": "lean/five_object/FiveObjectBinding.lean",
+        "sha256": "cce839c8e91d82a199000f946aed3b62c1a460f7513799a871ab7fca1d6eee16"
+      }
+    ],
+    "upstream_context": {
+      "family": "206",
+      "revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+      "scope_url": "https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/206.md",
+      "role": "Research context for finite congruence representation; this new proof does not import or prove the full upstream theorem."
+    }
+  },
+  "limits": [
+    "Minima concern each exact relation family on the fixed five-object carrier and total unary operations.",
+    "The order correspondence matches groupings; it is not asserted to relabel the five objects or the rules.",
+    "No minimum over all embeddings, larger carriers, or higher-arity operations is established.",
+    "The Python enumeration and exporter are not formally verified implementations. Their checks are separate from the Lean proof.",
+    "Offline receipt replay checks recorded bindings and hashes; it is not a new kernel check or an authenticated attestation.",
+    "This formalizes an existing saved example. No mathematical novelty, complete five-object census, or agent-performance gain is claimed."
+  ],
+  "hash_encoding": "SHA-256 of UTF-8 file bytes with CRLF normalized to LF; no other byte changes.",
+  "source_hashes": {
+    "scripts/five_object_proof.py": "d66823f40e858130634201600650d2c4ac9e5933cc39827b78743f4f14f25608",
+    "scripts/check_five_object.py": "d838bde67c2905d6661f75f07e06e3a97004da2ffc00d80e60ea665e4229be79",
+    "evidence/five-object-v1/constructions.json": "faa04412cff2951eb8a3b138ae60cb15893d25f83c703838f3b903b20c58fd62",
+    "evidence/five-object-v1/claim.json": "f28d4ab8599e6f432d651878bfa71439c3d8d0daedbd0b2d79ad91d203025b88",
+    "lean/five_object/lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "lean/five_object/lakefile.toml": "fec5c613f92e93335add5aae8291e812fa215368d85af2b8713a479679050472",
+    "lean/five_object/lake-manifest.json": "a81acf125df8885995dbe480b052ec8d7faa314a22351755edf1f76d261120dc",
+    "lean/five_object/generate_certificates.py": "355a61038739eca80c9a4d2ab783b372f9f7f6c92229bc521a5cb1d8018a10bd",
+    "lean/five_object/FiveObjectBase.lean": "ed2d46797b5beaaffe405dcc74fa7e6863d9e2e05d400945351fd037a446c1f8",
+    "lean/five_object/FiveObjectData.lean": "206013a44cd7d8099e800cde43a375ba97a9b547402f8ee4acf44e91ab0cab30",
+    "lean/five_object/FiveObjectClassification.lean": "d3ef1f1630f5e342d610f6be39b2b233e47c8d630625ea1c1c668eb9c744ea4f",
+    "lean/five_object/FiveObjectObstructions.lean": "dccdccbd88942f1f4b4a854bad700d1b45734fe609df587ab4d4e5a51af300ec",
+    "lean/five_object/FiveObjectMinimum.lean": "4837b3ae8bd5eb40371cc1968a2bfeb42e8a52b1f0890379eeeb417e8c937944",
+    "lean/five_object/FiveObjectBinding.lean": "cce839c8e91d82a199000f946aed3b62c1a460f7513799a871ab7fca1d6eee16"
+  },
+  "computational_evidence": {
+    "path": "evidence/five-object-v1/computational.json",
+    "sha256": "a8034611b54f873b8440830a2f17436cc7dd953943e4e12c92e0c4f9ce54a488"
+  },
+  "stages": [
+    {
+      "name": "version",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "cwd": "lean/five_object",
+      "exit_code": 0,
+      "duration_seconds": 0.073
+    },
+    {
+      "name": "build",
+      "command": [
+        "lake",
+        "build",
+        "FiveObjectBinding"
+      ],
+      "cwd": "lean/five_object",
+      "exit_code": 0,
+      "duration_seconds": 133.349
+    },
+    {
+      "name": "axioms",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/Audit.lean"
+      ],
+      "cwd": "lean/five_object",
+      "exit_code": 0,
+      "duration_seconds": 0.166
+    },
+    {
+      "name": "kernel",
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "FiveObjectBase",
+        "FiveObjectData",
+        "FiveObjectClassification",
+        "FiveObjectObstructions",
+        "FiveObjectMinimum",
+        "FiveObjectBinding"
+      ],
+      "cwd": "lean/five_object",
+      "exit_code": 0,
+      "duration_seconds": 42.027
+    },
+    {
+      "name": "changed-operation",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/changed-operation.lean"
+      ],
+      "cwd": "lean/five_object",
+      "exit_code": 1,
+      "duration_seconds": 0.365
+    },
+    {
+      "name": "changed-grouping",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/changed-grouping.lean"
+      ],
+      "cwd": "lean/five_object",
+      "exit_code": 1,
+      "duration_seconds": 0.312
+    },
+    {
+      "name": "changed-map",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/changed-map.lean"
+      ],
+      "cwd": "lean/five_object",
+      "exit_code": 1,
+      "duration_seconds": 0.352
+    },
+    {
+      "name": "wrong-count",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/wrong-count.lean"
+      ],
+      "cwd": "lean/five_object",
+      "exit_code": 1,
+      "duration_seconds": 0.413
+    },
+    {
+      "name": "wrong-order",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/wrong-order.lean"
+      ],
+      "cwd": "lean/five_object",
+      "exit_code": 1,
+      "duration_seconds": 0.347
+    },
+    {
+      "name": "unrelated-classification",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/unrelated-classification.lean"
+      ],
+      "cwd": "lean/five_object",
+      "exit_code": 1,
+      "duration_seconds": 0.344
+    },
+    {
+      "name": "unrelated-lower-bound",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/unrelated-lower-bound.lean"
+      ],
+      "cwd": "lean/five_object",
+      "exit_code": 1,
+      "duration_seconds": 0.345
+    },
+    {
+      "name": "wrong-minimum",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/wrong-minimum.lean"
+      ],
+      "cwd": "lean/five_object",
+      "exit_code": 1,
+      "duration_seconds": 0.347
+    }
+  ],
+  "artifacts": {
+    "Audit.lean": "d215d0042f7aa5c9ad1d69a1d28476d4f4b48be9bfb6a2bc4b266333f5e01e4d",
+    "axioms.log": "57bc87609df48170b06085e51d0382904aa13d144ee1988e3063538127815fb1",
+    "build.log": "bf558626419f469f76e98218c72742a3557dc692ef8676fe2d18f747c2d6bf22",
+    "changed-grouping.lean": "d2fb1eefb3e551d35c56926eb417bed0881d5fba2a58b3c6a5216e64ad4bfa88",
+    "changed-grouping.log": "5c87dbaaea348f85c06226798548b5728b12de4d7d9e9f72129364b619e7d330",
+    "changed-map.lean": "d506071b4c3181f7e28a700b8e4450a326cef7dc423bddc59ee726a495a241c6",
+    "changed-map.log": "76b579f87b1136571bbdaffe01e8ee9f2271c19b8d4cbee39c33b27091588350",
+    "changed-operation.lean": "7ed5f5f2dd56de1cd8a5f50794d098c38de9c18b12a87e52275d5b691a0c8547",
+    "changed-operation.log": "7b083a46c38a186d2a6aac828650114d2865ca73a0a21d974a2256ec77c3c6db",
+    "kernel.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unrelated-classification.lean": "48271cfd2220e7c78115e52242ac08e1426ab6f4d0f979d99ea5325a327e037f",
+    "unrelated-classification.log": "ddbf67f6f8495c680af2af4a6c2d3d961dfe9de3953909c8abaeb230b81d3129",
+    "unrelated-lower-bound.lean": "5b0379a9b43c07c3cd3b287cd2a5e9b01ef95d39344ceabae936b095937fc8c3",
+    "unrelated-lower-bound.log": "090ca5314b621a7182703eba8d0866d1176d3b6299b2e9d050bee62954b1dc5d",
+    "version.log": "355a9a028f81641782d75d6e6b58dec70f29d2f61238a9e271690259d9bf5680",
+    "wrong-count.lean": "33437e8d6f24f4b352d2a478f0fcd5523756d32ed6bb1b69e0a415a2594c412a",
+    "wrong-count.log": "48a5b8837e61644c0d65d4f6deade386ef701052bac35266ac93b559432ac606",
+    "wrong-minimum.lean": "67639f513e4b69e85540d8af964572d9903e92ecbbc54cae8eb95e44a1345018",
+    "wrong-minimum.log": "014f7bfb02e8623476f1638e8ab7c8f68386aacc8aa6febb238948046663105c",
+    "wrong-order.lean": "d779880db75c930741790f39b84814add1d0d85a4929f1fa011bcafd81a231aa",
+    "wrong-order.log": "90e6cd97a3a87067ca2465448bb4a4046f08cda0bdbbcfcc74ecc7ab528b80fb"
+  },
+  "started_utc": "2026-10-19T10:27:59.471044+00:00",
+  "axioms": {
+    "FiniteCongruenceChecks.FiveObject.table_complete": [
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.relation_complete": [
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.A.all_relations": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.B.all_relations": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.A.order_exact": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.B.order_exact": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.A.theta_injective": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.B.theta_injective": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.A.no_two_operations": [
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.B.no_one_operation": [
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.A.no_small_signature": [
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.B.no_small_signature": [
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.same_order": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.correspondence_inverse": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.le_is_partial_order": [],
+    "FiniteCongruenceChecks.FiveObject.Binding.a_operations": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.Binding.b_operations": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.Binding.a_groupings": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.Binding.b_groupings": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.Binding.mapping_exact": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.Binding.conclusion_counts": [],
+    "FiniteCongruenceChecks.FiveObject.Binding.checked_a": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.Binding.checked_b": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.Binding.checked_a_lower": [
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.Binding.checked_b_lower": [
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.Binding.checked_a_distinct": [
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.Binding.checked_b_distinct": [
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.Binding.checked_order": [
+      "Quot.sound",
+      "propext"
+    ],
+    "FiniteCongruenceChecks.FiveObject.Binding.checked_bijection": [
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "finished_utc": "2026-10-19T10:30:57.912556+00:00"
+}
