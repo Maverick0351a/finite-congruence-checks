@@ -1,0 +1,460 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "claim": {
+    "schema_version": 1,
+    "namespace": "finite-congruence-atlas/n5-renaming-v1",
+    "id": "context:family-206:saved-n5:renaming:v1",
+    "kind": "proved_transport",
+    "construction_id": "saved:family-206:n5:rotate-and-swap:v1",
+    "source_claim_id": "context:family-206:saved-n5:classification:v1",
+    "source_construction_id": "saved:family-206:n5:v1",
+    "evidence_status": "lean_proof_with_recorded_kernel_replay",
+    "statement": "Rotating the four object labels and swapping the two rule symbols transports precisely the saved N5 congruences, preserving their inclusion order and distinctness.",
+    "scope": "One recorded carrier bijection and rule permutation of the exact saved N5 algebra.",
+    "assumptions": [
+      "The maps forward and backward are inverse bijections on Fin 4.",
+      "For every target rule j and source object x, target[j](forward(x)) = forward(source[target_to_source[j]](x)).",
+      "Groupings are equivalence relations; compatibility uses the existing IsPropCongruence definition.",
+      "Lean's kernel and the standard axioms listed in the receipt are trusted."
+    ],
+    "limits": [
+      "This record instantiates a proved bijection on Fin 4 and a permutation of the two unary rule symbols. It is not a fixed-signature isomorphism that preserves each original rule name.",
+      "The result covers all equivalence relations for the exact displayed source and target operations; it does not transfer operation minimality, a graph certificate, or a claim about a different atlas construction.",
+      "The Python exporter and offline record comparison are not proved implementations. Rerun Lean to check the generated mathematical type; saved hashes and receipts alone are not proofs or authenticated attestations.",
+      "No agent performance benefit is established; the model benchmark remains paused."
+    ],
+    "values": {
+      "carrier": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "source": {
+        "operations": [
+          [
+            1,
+            0,
+            3,
+            2
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "groupings": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      },
+      "target": {
+        "operations": [
+          [
+            2,
+            1,
+            2,
+            1
+          ],
+          [
+            3,
+            2,
+            1,
+            0
+          ]
+        ],
+        "groupings": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            0,
+            1,
+            1,
+            2
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "mapping": {
+      "object_forward_source_to_target": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "object_backward_target_to_source": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "rule_target_to_source": [
+        1,
+        0
+      ],
+      "grouping_source_to_target": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    "conclusion": {
+      "quantifier": "every r : Fin 4 -> Fin 4 -> Prop",
+      "predicate": "IsPropCongruence target[0] target[1] r iff r is one of the five displayed target groupings",
+      "distinct_groupings": 5,
+      "inclusion_order_preserved": true
+    },
+    "theorem": "FiniteCongruenceChecks.N5Renaming.all_relations",
+    "applicable_lemmas": [
+      {
+        "theorem": "FiniteCongruenceChecks.Renaming.congruence_iff",
+        "role": "compatibility_transport"
+      },
+      {
+        "theorem": "FiniteCongruenceChecks.Renaming.swap_rules",
+        "role": "signature_permutation"
+      },
+      {
+        "theorem": "FiniteCongruenceChecks.N5.all_relations",
+        "role": "source_classification"
+      },
+      {
+        "theorem": "FiniteCongruenceChecks.N5Renaming.all_relations",
+        "role": "target_classification"
+      },
+      {
+        "theorem": "FiniteCongruenceChecks.N5Renaming.order_exact",
+        "role": "inclusion_order"
+      },
+      {
+        "theorem": "FiniteCongruenceChecks.N5Renaming.theta_injective",
+        "role": "distinctness"
+      }
+    ],
+    "citations": [
+      {
+        "path": "lean/CertificateData.lean",
+        "sha256": "1db35c8b640f0ea0d73ea12cd14e5e1b4b3eef588d3eb5ed66fbec0be37258f3"
+      },
+      {
+        "path": "lean/FiniteCongruenceChecks.lean",
+        "sha256": "845615fe7be190dc733762a1b95828cffb4e09b6d3b6b0e334211000d93422e8"
+      },
+      {
+        "path": "lean/renaming/Renaming.lean",
+        "sha256": "ca69ad8d431eb1855eb83d20f523f6148e61216bfec5008aa3af336aba85a200"
+      },
+      {
+        "path": "lean/renaming/N5Renaming.lean",
+        "sha256": "3b3142ec9d9d9147b797449dc1fcaa4a74ebd2372b97c26d4f770474259378e7"
+      },
+      {
+        "path": "lean/renaming/N5RenamingBinding.lean",
+        "sha256": "fef7fff2f619d90b1a5cd13ecfda5a8ab020141ffee147f293c9c0f831e61c61"
+      }
+    ],
+    "source_evidence": {
+      "path": "lean/evidence/bridge-run/result.json",
+      "sha256": "29666ea7b9c28a6a643dcaeef3666f692c0e062e775d5a5eda9b5986f04883a8",
+      "role": "separate saved source proof receipt"
+    }
+  },
+  "limits": [
+    "This record instantiates a proved bijection on Fin 4 and a permutation of the two unary rule symbols. It is not a fixed-signature isomorphism that preserves each original rule name.",
+    "The result covers all equivalence relations for the exact displayed source and target operations; it does not transfer operation minimality, a graph certificate, or a claim about a different atlas construction.",
+    "The Python exporter and offline record comparison are not proved implementations. Rerun Lean to check the generated mathematical type; saved hashes and receipts alone are not proofs or authenticated attestations.",
+    "No agent performance benefit is established; the model benchmark remains paused."
+  ],
+  "hash_encoding": "SHA-256 with CRLF normalized to LF",
+  "source_hashes": {
+    "evidence/N5-witness.json": "2b6648c6842bf0742c3029c6c0ad7c906fbdb8d281d8e830a85c51c047ef2685",
+    "evidence/atlas-review.json": "f702ebcfd8addcb12aa8cf0434c074c8869a71ae738cd996727819d8f165cd26",
+    "evidence/atlas.json": "9bd8976488b269a86468dfcdb9f9ebbf246cfe8e0ffe4960f86941369919c82a",
+    "evidence/minimized-algebras.json": "76671ae20ad76bc2507b9e0c822bb78862abf2ff507f1a3ab7ba8b40efe85cea",
+    "evidence/n5-renaming-v1/claim.json": "5f0b37d4605e7541aaa8ff4e9c8c443e7f1919be83fc12c048e9369bd6218313",
+    "lean/CertificateData.lean": "1db35c8b640f0ea0d73ea12cd14e5e1b4b3eef588d3eb5ed66fbec0be37258f3",
+    "lean/FiniteCongruenceChecks.lean": "845615fe7be190dc733762a1b95828cffb4e09b6d3b6b0e334211000d93422e8",
+    "lean/comparator/evidence/receipt.json": "e4321a3aeed7c2c4117569959d33ad0d26abb92f1d938902f0b88423845fbb28",
+    "lean/evidence/bridge-run/result.json": "29666ea7b9c28a6a643dcaeef3666f692c0e062e775d5a5eda9b5986f04883a8",
+    "lean/lake-manifest.json": "551234699a109abdedcafa7e96ee5d2bb2b8eca988b698bcb45dd232f360f1b9",
+    "lean/lakefile.toml": "cff02746b410fb58fedffefe7d0ab2906ccddb30c1e0ec021686fad0bb3e37b0",
+    "lean/lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "lean/renaming/N5Renaming.lean": "3b3142ec9d9d9147b797449dc1fcaa4a74ebd2372b97c26d4f770474259378e7",
+    "lean/renaming/N5RenamingBinding.lean": "fef7fff2f619d90b1a5cd13ecfda5a8ab020141ffee147f293c9c0f831e61c61",
+    "lean/renaming/Renaming.lean": "ca69ad8d431eb1855eb83d20f523f6148e61216bfec5008aa3af336aba85a200",
+    "lean/renaming/lake-manifest.json": "0f911ade0ce628f896f84736fb9b5b7e4c3a7534f2158971ab9e6c0532de4a02",
+    "lean/renaming/lakefile.toml": "17a52fb83f3478aafb731352289d381367d2f1d9223dada68cb0250f58253652",
+    "lean/renaming/lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "lean/upstream/ConcreteBridge.lean": "8a7c9d8bc83b511026efb3b6949c6265d8ba00d85ca41ef0cc7c060cc3f1b1f6",
+    "lean/upstream/OAI/Algebra/Universal/Congruence.lean": "30e9201344dcf4069ca9ace276c76dc3b1507d09f0f6bfbf5a7c5d693ac9716c",
+    "lean/upstream/OAI/Algebra/Universal/GraphCriterion.lean": "bd80c2bea95ee1b4f7118fc8dc272aebac7b23038ba93cdafd386dc1b688fb50",
+    "scripts/build_n5_context.py": "fa39153bb09f99497ee4f0610afe15d26fff2289d67ca19db7aa1143f8308fa9",
+    "scripts/n5_transfer.py": "2d07c5ccfbe1c3f26058d01a754d93f6e3102bbca18488a29d0a670552fc7fda",
+    "scripts/run_tm_checks.py": "d4567db3fb53635838d3af7f8e29967f64fd3961362b5776ce5a2df18bd83ab9",
+    "scripts/tm_atlas.py": "fc2ec1430fe218263cf047165963e161ea1f17e02fc997628dccbaf34cea4cdc",
+    "scripts/tm_pair_proof.py": "c8b788220f992b55c2ebf5a0181c5a2603667f51248f92c1e0bfa195020fe914",
+    "space/atlas-data.json": "9bd8976488b269a86468dfcdb9f9ebbf246cfe8e0ffe4960f86941369919c82a"
+  },
+  "stages": [
+    {
+      "name": "version",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "cwd": "lean/renaming",
+      "exit_code": 0,
+      "duration_seconds": 0.166
+    },
+    {
+      "name": "build",
+      "command": [
+        "lake",
+        "build",
+        "N5RenamingBinding"
+      ],
+      "cwd": "lean/renaming",
+      "exit_code": 0,
+      "duration_seconds": 0.132
+    },
+    {
+      "name": "axioms",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/Audit.lean"
+      ],
+      "cwd": "lean/renaming",
+      "exit_code": 0,
+      "duration_seconds": 1.969
+    },
+    {
+      "name": "kernel",
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "CertificateData",
+        "FiniteCongruenceChecks",
+        "Renaming",
+        "N5Renaming",
+        "N5RenamingBinding"
+      ],
+      "cwd": "lean/renaming",
+      "exit_code": 0,
+      "duration_seconds": 3.585
+    },
+    {
+      "name": "inconsistent-rule",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/inconsistent-rule.lean"
+      ],
+      "cwd": "lean/renaming",
+      "exit_code": 1,
+      "duration_seconds": 0.412
+    },
+    {
+      "name": "inconsistent-grouping",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/inconsistent-grouping.lean"
+      ],
+      "cwd": "lean/renaming",
+      "exit_code": 1,
+      "duration_seconds": 0.362
+    },
+    {
+      "name": "inconsistent-object-map",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/inconsistent-object-map.lean"
+      ],
+      "cwd": "lean/renaming",
+      "exit_code": 1,
+      "duration_seconds": 0.377
+    },
+    {
+      "name": "unswapped-rule-map",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/unswapped-rule-map.lean"
+      ],
+      "cwd": "lean/renaming",
+      "exit_code": 1,
+      "duration_seconds": 0.403
+    },
+    {
+      "name": "unrelated-theorem",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/unrelated-theorem.lean"
+      ],
+      "cwd": "lean/renaming",
+      "exit_code": 1,
+      "duration_seconds": 0.377
+    }
+  ],
+  "artifacts": {
+    "Audit.lean": "8aa854e6b06828eb45302b45bbf4249e592be3e0c2a959bf3604438a151db9c6",
+    "axioms.log": "99666bfd93945f0ba9353f64152f98fc2c572bf5324eeecec023d087fa6c352d",
+    "build.log": "da7f362a0e3f25bf0e04e04f92c9e9726752a700e9cc4cc6fdf8fe9be71c4c14",
+    "inconsistent-grouping.lean": "e252449008db1e64324cdbeb5447b3a975683a97fafd77bbdd079c517c713f12",
+    "inconsistent-grouping.log": "c50709f3695160c384bee34fe23304eaedc9c13fa3070524b421776576251e3b",
+    "inconsistent-object-map.lean": "b0b0f3e68ca319ae2667d9cf5585bc3e2e0a00978fa028a6f57501384dbd3d2f",
+    "inconsistent-object-map.log": "efe3467359b323f437c029582d90374f42d4e8734ed18f15d9087490018e5ff9",
+    "inconsistent-rule.lean": "223b3ccaf2cc50d20ac5f0ce858df7f287f00233f9aa323fec510e6b8826a4dc",
+    "inconsistent-rule.log": "74a2dc1766dd65bf0aee44fe407ab9dc79604f7561a26e3a7f2a834144d1e7db",
+    "kernel.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unrelated-theorem.lean": "cd8b133dc6f7ec66a9502b520d1acda578083eb480f540067d93dbcaef7d314c",
+    "unrelated-theorem.log": "5f3ffd197c82bada4297d377c66d0e09d1cf26c5df6a19a42caa3b7d9a8f5bd1",
+    "unswapped-rule-map.lean": "780551ef87ae8a1d605846f74d9d7750581c301dd588db91c85e903951c38db8",
+    "unswapped-rule-map.log": "eb265db63c538f60163a2929ca4414b9df0c9b33ac835025a9530ae7235668c9",
+    "version.log": "355a9a028f81641782d75d6e6b58dec70f29d2f61238a9e271690259d9bf5680"
+  },
+  "started_utc": "2026-10-19T07:53:07.421138+00:00",
+  "axioms": {
+    "FiniteCongruenceChecks.Renaming.congruence_iff": [],
+    "FiniteCongruenceChecks.Renaming.round_trip": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.Renaming.inclusion_iff": [],
+    "FiniteCongruenceChecks.Renaming.swap_rules": [],
+    "FiniteCongruenceChecks.N5Renaming.transferred_congruence": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.N5Renaming.all_relations": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.N5Renaming.order_exact": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.N5Renaming.theta_injective": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.N5RenamingBinding.forward_exact": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.N5RenamingBinding.backward_exact": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.N5RenamingBinding.inverse_laws": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.N5RenamingBinding.source_op1": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.N5RenamingBinding.source_op2": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.N5RenamingBinding.target_op1": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.N5RenamingBinding.target_op2": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.N5RenamingBinding.source_groups": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.N5RenamingBinding.target_groups": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.N5RenamingBinding.rule_correspondence": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.N5RenamingBinding.grouping_correspondence": [
+      "propext"
+    ],
+    "FiniteCongruenceChecks.N5RenamingBinding.checked_classification": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.N5RenamingBinding.checked_order": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.N5RenamingBinding.checked_distinct": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "finished_utc": "2026-10-19T07:53:15.209852+00:00"
+}

@@ -1,4 +1,4 @@
-"""Read exact N5 and one TM claim; check exports against their curated bindings.
+"""Read exact N5, a proved N5 renaming, and one TM claim with curated bindings.
 
 Local deterministic interface; no model calls, network, or Lean execution.
 `check` validates a registered record, not an arbitrary mathematical conjecture.
@@ -16,10 +16,11 @@ import sys
 import build_n5_context as context
 import query_atlas
 import tm_context
+import n5_transfer
 
 ROOT = context.ROOT
 N5_CLAIM_IDS = (context.SAVED_CLAIM_ID, context.ATLAS_CLAIM_ID)
-CLAIM_IDS = (*N5_CLAIM_IDS, tm_context.CLAIM_ID)
+CLAIM_IDS = (*N5_CLAIM_IDS, tm_context.CLAIM_ID, n5_transfer.CLAIM_ID)
 NAMESPACE = "finite-congruence-context/query-v1"
 CHECK_LIMIT = ("Exact registered context matching only. This does not elaborate Lean, "
                "infer theorem applicability, verify arbitrary claims, or establish that an agent preserved meaning.")
@@ -70,6 +71,9 @@ def explain_claim(identifier, data=None, root=ROOT):
     context.require(identifier in CLAIM_IDS, f"unknown claim id: {identifier}")
     if identifier == tm_context.CLAIM_ID:
         source, claim = tm_context.explain(root)
+        return explanation(source, claim)
+    if identifier == n5_transfer.CLAIM_ID:
+        source, claim = n5_transfer.explain(root)
         return explanation(source, claim)
     data = load_context(root) if data is None else data
     if identifier == context.SAVED_CLAIM_ID:
@@ -140,7 +144,7 @@ class JsonParser(argparse.ArgumentParser):
 def main(argv=None):
     parser = JsonParser(description=__doc__)
     sub = parser.add_subparsers(dest="command", required=True, parser_class=JsonParser)
-    explaining = sub.add_parser("explain", help="Explain a registered N5 claim or tm:tiny-stay:tape:v1")
+    explaining = sub.add_parser("explain", help="Explain a registered N5, N5 renaming, or Turing claim")
     explaining.add_argument("claim_id")
     explaining.add_argument("--out", type=Path, help="Save UTF-8 JSON directly (avoids shell encoding changes)")
     sub.add_parser("compare", help="Compare saved N5 with atlas n4-E16709 under the recorded bijection")

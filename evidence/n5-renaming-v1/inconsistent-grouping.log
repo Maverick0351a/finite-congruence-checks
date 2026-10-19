@@ -1,0 +1,8 @@
+/home/shannonlab/fcc-n5-renaming/repo/runs/n5-transfer-reviewed/inconsistent-grouping.lean:33:2: error: Tactic `decide` proved that the proposition
+  ∀ (a : Fin 5) (x y : V),
+    (fun x y => N5.theta a x y = true) (N5Renaming.labels.backward x) (N5Renaming.labels.backward y) ↔
+      dstGroup a x = dstGroup a y
+is false
+/home/shannonlab/fcc-n5-renaming/repo/runs/n5-transfer-reviewed/inconsistent-grouping.lean:35:141: error: Tactic `decide` proved that the proposition
+  ∀ (a : Fin 5) (x y : V), dstGroup (groupMap a) (p x) = dstGroup (groupMap a) (p y) ↔ srcGroup a x = srcGroup a y
+is false

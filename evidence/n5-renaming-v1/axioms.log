@@ -1,0 +1,24 @@
+'FiniteCongruenceChecks.Renaming.congruence_iff' does not depend on any axioms
+'FiniteCongruenceChecks.Renaming.round_trip' depends on axioms: [propext, Quot.sound]
+'FiniteCongruenceChecks.Renaming.inclusion_iff' does not depend on any axioms
+'FiniteCongruenceChecks.Renaming.swap_rules' does not depend on any axioms
+'FiniteCongruenceChecks.N5Renaming.transferred_congruence' depends on axioms: [propext]
+'FiniteCongruenceChecks.N5Renaming.all_relations' depends on axioms: [propext, Classical.choice, Quot.sound]
+'FiniteCongruenceChecks.N5Renaming.order_exact' depends on axioms: [propext]
+'FiniteCongruenceChecks.N5Renaming.theta_injective' depends on axioms: [propext]
+'FiniteCongruenceChecks.N5RenamingBinding.forward_exact' depends on axioms: [propext, Quot.sound]
+'FiniteCongruenceChecks.N5RenamingBinding.backward_exact' depends on axioms: [propext, Quot.sound]
+'FiniteCongruenceChecks.N5RenamingBinding.inverse_laws' depends on axioms: [propext]
+'FiniteCongruenceChecks.N5RenamingBinding.source_op1' depends on axioms: [propext, Quot.sound]
+'FiniteCongruenceChecks.N5RenamingBinding.source_op2' depends on axioms: [propext, Quot.sound]
+'FiniteCongruenceChecks.N5RenamingBinding.target_op1' depends on axioms: [propext, Quot.sound]
+'FiniteCongruenceChecks.N5RenamingBinding.target_op2' depends on axioms: [propext, Quot.sound]
+'FiniteCongruenceChecks.N5RenamingBinding.source_groups' depends on axioms: [propext]
+'FiniteCongruenceChecks.N5RenamingBinding.target_groups' depends on axioms: [propext]
+'FiniteCongruenceChecks.N5RenamingBinding.rule_correspondence' depends on axioms: [propext]
+'FiniteCongruenceChecks.N5RenamingBinding.grouping_correspondence' depends on axioms: [propext]
+'FiniteCongruenceChecks.N5RenamingBinding.checked_classification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'FiniteCongruenceChecks.N5RenamingBinding.checked_order' depends on axioms: [propext, Quot.sound]
+'FiniteCongruenceChecks.N5RenamingBinding.checked_distinct' depends on axioms: [propext, Quot.sound]
