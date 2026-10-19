@@ -1,0 +1,14 @@
+Command: cd lean && lake build
+Toolchain: leanprover/lean4:v4.34.1
+Exit code: 0
+
+ℹ [2/3] Built FiniteCongruenceChecks (17s)
+info: FiniteCongruenceChecks.lean:246:0: 'FiniteCongruenceChecks.N5.finite_classification' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:247:0: 'FiniteCongruenceChecks.N5.all_congruences' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:248:0: 'FiniteCongruenceChecks.N5.representation' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:249:0: 'FiniteCongruenceChecks.N5.all_relations' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteCongruenceChecks.lean:399:0: 'FiniteCongruenceChecks.B3.finite_classification' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:400:0: 'FiniteCongruenceChecks.B3.all_congruences' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:401:0: 'FiniteCongruenceChecks.B3.representation' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:402:0: 'FiniteCongruenceChecks.B3.all_relations' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3 jobs).

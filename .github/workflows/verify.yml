@@ -1,0 +1,69 @@
+name: Reproduce and verify
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python:
+    name: Python ${{ matrix.python }} / ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: '3.10'
+          - os: ubuntu-latest
+            python: '3.12'
+          - os: windows-latest
+            python: '3.12'
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Check recorded evidence against source
+        run: python scripts/check_evidence.py
+      - name: Reproduce the entire bounded experiment
+        run: python run_experiment.py --out runs/ci
+      - name: Check mathematical agreement with recorded evidence
+        run: python scripts/check_evidence.py --evidence runs/ci --compare evidence
+      - name: Independently audit every small representable congruence family
+        run: python scripts/audit_operation_minima.py --out runs/operation-audit.json
+      - name: Check chart data and offline gallery freshness
+        run: python scripts/build_charts.py --check
+      - name: Check Lean table correspondence
+        run: python lean/check_data.py
+      - name: Preserve reproduction evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: evidence-${{ matrix.os }}-${{ matrix.python }}
+          path: runs/
+          retention-days: 14
+
+  lean:
+    name: Concrete Lean certificates
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: leanprover/lean-action@24581d74d674803a25a81b10b059c5c0cdd344c6 # v1
+        with:
+          lake-package-directory: lean
+          auto-config: 'false'
+          build: 'true'
+          test: 'false'
+          lint: 'false'
+          use-mathlib-cache: 'false'
+          leanchecker: 'true'

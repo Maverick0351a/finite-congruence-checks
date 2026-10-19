@@ -1,0 +1,6 @@
+name = "finiteCongruenceChecks"
+version = "0.1.0"
+defaultTargets = ["FiniteCongruenceChecks"]
+
+[[lean_lib]]
+name = "FiniteCongruenceChecks"

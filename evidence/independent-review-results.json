@@ -1,0 +1,3137 @@
+{
+  "generated_utc": "2026-10-19T00:17:43.534777+00:00",
+  "source": {
+    "repository": "https://github.com/openai/math",
+    "revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "path": "lean/ComparatorChallenges/FiniteCongruenceGraph.lean",
+    "sha256": "2ee495def2e1228bf13df520f6c66699ec22b2cd3bc1ae7383a30957aae9f967",
+    "family": "206"
+  },
+  "verifier_sha256": "b742ab0d010e34cab0e9e24391fb30a8ad607830324250270d527dae0b321fba",
+  "search_record_content_sha256": "b168de1ea97ffd36d3554020f18d1ad27dede716c78705ee93153cc44fa2da61",
+  "method": "Independent exhaustive coloring enumeration, literal ordered seeds, BFS closure, full-matrix permutation classes",
+  "all_expected_outcomes": true,
+  "minimum_vertices": {
+    "C2": {
+      "independent_minimum_vertices_found": 2,
+      "matches_primary_record": true,
+      "all_positive_sizes_through": 4
+    },
+    "C3": {
+      "independent_minimum_vertices_found": 3,
+      "matches_primary_record": true,
+      "all_positive_sizes_through": 4
+    },
+    "C4": {
+      "independent_minimum_vertices_found": 4,
+      "matches_primary_record": true,
+      "all_positive_sizes_through": 4
+    },
+    "B2": {
+      "independent_minimum_vertices_found": 3,
+      "matches_primary_record": true,
+      "all_positive_sizes_through": 4
+    },
+    "M3": {
+      "independent_minimum_vertices_found": 3,
+      "matches_primary_record": true,
+      "all_positive_sizes_through": 4
+    },
+    "N5": {
+      "independent_minimum_vertices_found": 4,
+      "matches_primary_record": true,
+      "all_positive_sizes_through": 4
+    },
+    "M4": {
+      "independent_minimum_vertices_found": null,
+      "matches_primary_record": true,
+      "all_positive_sizes_through": 4
+    },
+    "B3": {
+      "independent_minimum_vertices_found": 4,
+      "matches_primary_record": true,
+      "all_positive_sizes_through": 4
+    }
+  },
+  "rows": [
+    {
+      "lattice": "C2",
+      "vertices": 1,
+      "labeled_candidates_checked": 1,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 1
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "C2",
+      "vertices": 2,
+      "labeled_candidates_checked": 1,
+      "structural_survivors_checked": 1,
+      "structural_rejection_counts": {},
+      "witnesses": 1,
+      "vertex_isomorphism_classes": 1,
+      "ordered_seed_subsets_enumerated_across_survivors": 15,
+      "first_connectivity_failure": null,
+      "reported_representatives": [
+        {
+          "color": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 2,
+              "derived_meet": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ]
+            },
+            "carrier_size": 2,
+            "candidate_self_maps": 4,
+            "admissible_self_maps": 4,
+            "ordered_seed_pairs": 4,
+            "nonempty_ordered_seed_subsets_enumerated": 15,
+            "distinct_connectivity_cases": 2,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        }
+      ],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "C2",
+      "vertices": 3,
+      "labeled_candidates_checked": 1,
+      "structural_survivors_checked": 1,
+      "structural_rejection_counts": {},
+      "witnesses": 1,
+      "vertex_isomorphism_classes": 1,
+      "ordered_seed_subsets_enumerated_across_survivors": 511,
+      "first_connectivity_failure": null,
+      "reported_representatives": [
+        {
+          "color": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 2,
+              "derived_meet": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ]
+            },
+            "carrier_size": 3,
+            "candidate_self_maps": 27,
+            "admissible_self_maps": 27,
+            "ordered_seed_pairs": 9,
+            "nonempty_ordered_seed_subsets_enumerated": 511,
+            "distinct_connectivity_cases": 2,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        }
+      ],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "C2",
+      "vertices": 4,
+      "labeled_candidates_checked": 1,
+      "structural_survivors_checked": 1,
+      "structural_rejection_counts": {},
+      "witnesses": 1,
+      "vertex_isomorphism_classes": 1,
+      "ordered_seed_subsets_enumerated_across_survivors": 65535,
+      "first_connectivity_failure": null,
+      "reported_representatives": [
+        {
+          "color": [
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              0,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 2,
+              "derived_meet": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1
+                ]
+              ]
+            },
+            "carrier_size": 4,
+            "candidate_self_maps": 256,
+            "admissible_self_maps": 256,
+            "ordered_seed_pairs": 16,
+            "nonempty_ordered_seed_subsets_enumerated": 65535,
+            "distinct_connectivity_cases": 2,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        }
+      ],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "C3",
+      "vertices": 1,
+      "labeled_candidates_checked": 1,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 1
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "C3",
+      "vertices": 2,
+      "labeled_candidates_checked": 2,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 2
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "C3",
+      "vertices": 3,
+      "labeled_candidates_checked": 8,
+      "structural_survivors_checked": 3,
+      "structural_rejection_counts": {
+        "order_separation": 2,
+        "triangle": 3
+      },
+      "witnesses": 3,
+      "vertex_isomorphism_classes": 1,
+      "ordered_seed_subsets_enumerated_across_survivors": 1533,
+      "first_connectivity_failure": null,
+      "reported_representatives": [
+        {
+          "color": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              2
+            ],
+            [
+              2,
+              2,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 3,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  2
+                ]
+              ]
+            },
+            "carrier_size": 3,
+            "candidate_self_maps": 27,
+            "admissible_self_maps": 15,
+            "ordered_seed_pairs": 9,
+            "nonempty_ordered_seed_subsets_enumerated": 511,
+            "distinct_connectivity_cases": 3,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        }
+      ],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "C3",
+      "vertices": 4,
+      "labeled_candidates_checked": 64,
+      "structural_survivors_checked": 13,
+      "structural_rejection_counts": {
+        "order_separation": 2,
+        "triangle": 49
+      },
+      "witnesses": 13,
+      "vertex_isomorphism_classes": 3,
+      "ordered_seed_subsets_enumerated_across_survivors": 851955,
+      "first_connectivity_failure": null,
+      "reported_representatives": [
+        {
+          "color": [
+            [
+              0,
+              1,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              1,
+              0,
+              2
+            ],
+            [
+              2,
+              2,
+              2,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 3,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  2
+                ]
+              ]
+            },
+            "carrier_size": 4,
+            "candidate_self_maps": 256,
+            "admissible_self_maps": 112,
+            "ordered_seed_pairs": 16,
+            "nonempty_ordered_seed_subsets_enumerated": 65535,
+            "distinct_connectivity_cases": 3,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        },
+        {
+          "color": [
+            [
+              0,
+              1,
+              2,
+              2
+            ],
+            [
+              1,
+              0,
+              2,
+              2
+            ],
+            [
+              2,
+              2,
+              0,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 3,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  2
+                ]
+              ]
+            },
+            "carrier_size": 4,
+            "candidate_self_maps": 256,
+            "admissible_self_maps": 64,
+            "ordered_seed_pairs": 16,
+            "nonempty_ordered_seed_subsets_enumerated": 65535,
+            "distinct_connectivity_cases": 3,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        },
+        {
+          "color": [
+            [
+              0,
+              1,
+              2,
+              2
+            ],
+            [
+              1,
+              0,
+              2,
+              2
+            ],
+            [
+              2,
+              2,
+              0,
+              2
+            ],
+            [
+              2,
+              2,
+              2,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 3,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  2
+                ]
+              ]
+            },
+            "carrier_size": 4,
+            "candidate_self_maps": 256,
+            "admissible_self_maps": 96,
+            "ordered_seed_pairs": 16,
+            "nonempty_ordered_seed_subsets_enumerated": 65535,
+            "distinct_connectivity_cases": 3,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        }
+      ],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "C4",
+      "vertices": 1,
+      "labeled_candidates_checked": 1,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 1
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "C4",
+      "vertices": 2,
+      "labeled_candidates_checked": 3,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 3
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "C4",
+      "vertices": 3,
+      "labeled_candidates_checked": 27,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 12,
+        "triangle": 15
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "C4",
+      "vertices": 4,
+      "labeled_candidates_checked": 729,
+      "structural_survivors_checked": 18,
+      "structural_rejection_counts": {
+        "order_separation": 42,
+        "triangle": 669
+      },
+      "witnesses": 18,
+      "vertex_isomorphism_classes": 2,
+      "ordered_seed_subsets_enumerated_across_survivors": 1179630,
+      "first_connectivity_failure": null,
+      "reported_representatives": [
+        {
+          "color": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              1,
+              0,
+              2,
+              3
+            ],
+            [
+              2,
+              2,
+              0,
+              3
+            ],
+            [
+              3,
+              3,
+              3,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 4,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ]
+            },
+            "carrier_size": 4,
+            "candidate_self_maps": 256,
+            "admissible_self_maps": 64,
+            "ordered_seed_pairs": 16,
+            "nonempty_ordered_seed_subsets_enumerated": 65535,
+            "distinct_connectivity_cases": 4,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        },
+        {
+          "color": [
+            [
+              0,
+              1,
+              3,
+              3
+            ],
+            [
+              1,
+              0,
+              3,
+              3
+            ],
+            [
+              3,
+              3,
+              0,
+              2
+            ],
+            [
+              3,
+              3,
+              2,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 4,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ]
+            },
+            "carrier_size": 4,
+            "candidate_self_maps": 256,
+            "admissible_self_maps": 48,
+            "ordered_seed_pairs": 16,
+            "nonempty_ordered_seed_subsets_enumerated": 65535,
+            "distinct_connectivity_cases": 4,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        }
+      ],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "B2",
+      "vertices": 1,
+      "labeled_candidates_checked": 1,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 1
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "B2",
+      "vertices": 2,
+      "labeled_candidates_checked": 3,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 3
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "B2",
+      "vertices": 3,
+      "labeled_candidates_checked": 27,
+      "structural_survivors_checked": 6,
+      "structural_rejection_counts": {
+        "order_separation": 9,
+        "triangle": 12
+      },
+      "witnesses": 6,
+      "vertex_isomorphism_classes": 1,
+      "ordered_seed_subsets_enumerated_across_survivors": 3066,
+      "first_connectivity_failure": null,
+      "reported_representatives": [
+        {
+          "color": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              3
+            ],
+            [
+              2,
+              3,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 4,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ]
+            },
+            "carrier_size": 3,
+            "candidate_self_maps": 27,
+            "admissible_self_maps": 8,
+            "ordered_seed_pairs": 9,
+            "nonempty_ordered_seed_subsets_enumerated": 511,
+            "distinct_connectivity_cases": 7,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        }
+      ],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "B2",
+      "vertices": 4,
+      "labeled_candidates_checked": 729,
+      "structural_survivors_checked": 84,
+      "structural_rejection_counts": {
+        "order_separation": 29,
+        "triangle": 616
+      },
+      "witnesses": 54,
+      "vertex_isomorphism_classes": 5,
+      "ordered_seed_subsets_enumerated_across_survivors": 5504940,
+      "first_connectivity_failure": {
+        "color": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            0,
+            3,
+            3
+          ],
+          [
+            2,
+            3,
+            0,
+            3
+          ],
+          [
+            3,
+            3,
+            3,
+            0
+          ]
+        ],
+        "verification": {
+          "passed": false,
+          "valid_input": true,
+          "verification_completed": true,
+          "lattice_validation": {
+            "passed": true,
+            "element_count": 4,
+            "derived_meet": [
+              [
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                2,
+                2
+              ],
+              [
+                0,
+                1,
+                2,
+                3
+              ]
+            ]
+          },
+          "carrier_size": 4,
+          "candidate_self_maps": 256,
+          "admissible_self_maps": 36,
+          "ordered_seed_pairs": 16,
+          "nonempty_ordered_seed_subsets_enumerated": 65535,
+          "distinct_connectivity_cases": 8,
+          "failed_seed_subsets": 912,
+          "first_connectivity_failure": {
+            "seed_mask": 6,
+            "ordered_seeds": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            "join_bound": 3,
+            "disconnected_pair_below_bound": [
+              0,
+              3
+            ]
+          },
+          "checks": {
+            "symmetric": true,
+            "bottom_iff_diagonal": true,
+            "triangle_join": true,
+            "order_separation": true,
+            "seed_connectivity": false
+          }
+        }
+      },
+      "reported_representatives": [
+        {
+          "color": [
+            [
+              0,
+              1,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              1,
+              3
+            ],
+            [
+              1,
+              1,
+              0,
+              3
+            ],
+            [
+              2,
+              3,
+              3,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 4,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ]
+            },
+            "carrier_size": 4,
+            "candidate_self_maps": 256,
+            "admissible_self_maps": 38,
+            "ordered_seed_pairs": 16,
+            "nonempty_ordered_seed_subsets_enumerated": 65535,
+            "distinct_connectivity_cases": 7,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        },
+        {
+          "color": [
+            [
+              0,
+              1,
+              2,
+              2
+            ],
+            [
+              1,
+              0,
+              3,
+              3
+            ],
+            [
+              2,
+              3,
+              0,
+              2
+            ],
+            [
+              2,
+              3,
+              2,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 4,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ]
+            },
+            "carrier_size": 4,
+            "candidate_self_maps": 256,
+            "admissible_self_maps": 38,
+            "ordered_seed_pairs": 16,
+            "nonempty_ordered_seed_subsets_enumerated": 65535,
+            "distinct_connectivity_cases": 7,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        },
+        {
+          "color": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              1,
+              0,
+              3,
+              2
+            ],
+            [
+              2,
+              3,
+              0,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 4,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ]
+            },
+            "carrier_size": 4,
+            "candidate_self_maps": 256,
+            "admissible_self_maps": 16,
+            "ordered_seed_pairs": 16,
+            "nonempty_ordered_seed_subsets_enumerated": 65535,
+            "distinct_connectivity_cases": 5,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        },
+        {
+          "color": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              1,
+              0,
+              3,
+              2
+            ],
+            [
+              2,
+              3,
+              0,
+              3
+            ],
+            [
+              3,
+              2,
+              3,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 4,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ]
+            },
+            "carrier_size": 4,
+            "candidate_self_maps": 256,
+            "admissible_self_maps": 24,
+            "ordered_seed_pairs": 16,
+            "nonempty_ordered_seed_subsets_enumerated": 65535,
+            "distinct_connectivity_cases": 8,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        },
+        {
+          "color": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              1,
+              0,
+              3,
+              3
+            ],
+            [
+              2,
+              3,
+              0,
+              1
+            ],
+            [
+              3,
+              3,
+              1,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 4,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ]
+              ]
+            },
+            "carrier_size": 4,
+            "candidate_self_maps": 256,
+            "admissible_self_maps": 24,
+            "ordered_seed_pairs": 16,
+            "nonempty_ordered_seed_subsets_enumerated": 65535,
+            "distinct_connectivity_cases": 8,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        }
+      ],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "M3",
+      "vertices": 1,
+      "labeled_candidates_checked": 1,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 1
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "M3",
+      "vertices": 2,
+      "labeled_candidates_checked": 4,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 4
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "M3",
+      "vertices": 3,
+      "labeled_candidates_checked": 64,
+      "structural_survivors_checked": 6,
+      "structural_rejection_counts": {
+        "order_separation": 31,
+        "triangle": 27
+      },
+      "witnesses": 6,
+      "vertex_isomorphism_classes": 1,
+      "ordered_seed_subsets_enumerated_across_survivors": 3066,
+      "first_connectivity_failure": null,
+      "reported_representatives": [
+        {
+          "color": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              0,
+              3
+            ],
+            [
+              2,
+              3,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 5,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  3,
+                  3
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              ]
+            },
+            "carrier_size": 3,
+            "candidate_self_maps": 27,
+            "admissible_self_maps": 4,
+            "ordered_seed_pairs": 9,
+            "nonempty_ordered_seed_subsets_enumerated": 511,
+            "distinct_connectivity_cases": 64,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        }
+      ],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "M3",
+      "vertices": 4,
+      "labeled_candidates_checked": 4096,
+      "structural_survivors_checked": 342,
+      "structural_rejection_counts": {
+        "order_separation": 295,
+        "triangle": 3459
+      },
+      "witnesses": 6,
+      "vertex_isomorphism_classes": 1,
+      "ordered_seed_subsets_enumerated_across_survivors": 22412970,
+      "first_connectivity_failure": {
+        "color": [
+          [
+            0,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            0,
+            1,
+            3
+          ],
+          [
+            1,
+            1,
+            0,
+            4
+          ],
+          [
+            2,
+            3,
+            4,
+            0
+          ]
+        ],
+        "verification": {
+          "passed": false,
+          "valid_input": true,
+          "verification_completed": true,
+          "lattice_validation": {
+            "passed": true,
+            "element_count": 5,
+            "derived_meet": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                0,
+                3,
+                3
+              ],
+              [
+                0,
+                1,
+                2,
+                3,
+                4
+              ]
+            ]
+          },
+          "carrier_size": 4,
+          "candidate_self_maps": 256,
+          "admissible_self_maps": 13,
+          "ordered_seed_pairs": 16,
+          "nonempty_ordered_seed_subsets_enumerated": 65535,
+          "distinct_connectivity_cases": 89,
+          "failed_seed_subsets": 912,
+          "first_connectivity_failure": {
+            "seed_mask": 2,
+            "ordered_seeds": [
+              [
+                0,
+                1
+              ]
+            ],
+            "join_bound": 1,
+            "disconnected_pair_below_bound": [
+              0,
+              2
+            ]
+          },
+          "checks": {
+            "symmetric": true,
+            "bottom_iff_diagonal": true,
+            "triangle_join": true,
+            "order_separation": true,
+            "seed_connectivity": false
+          }
+        }
+      },
+      "reported_representatives": [
+        {
+          "color": [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              1,
+              0,
+              3,
+              2
+            ],
+            [
+              2,
+              3,
+              0,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 5,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  3,
+                  3
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              ]
+            },
+            "carrier_size": 4,
+            "candidate_self_maps": 256,
+            "admissible_self_maps": 8,
+            "ordered_seed_pairs": 16,
+            "nonempty_ordered_seed_subsets_enumerated": 65535,
+            "distinct_connectivity_cases": 8,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        }
+      ],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "N5",
+      "vertices": 1,
+      "labeled_candidates_checked": 1,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 1
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "N5",
+      "vertices": 2,
+      "labeled_candidates_checked": 4,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 4
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "N5",
+      "vertices": 3,
+      "labeled_candidates_checked": 64,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 28,
+        "triangle": 36
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "N5",
+      "vertices": 4,
+      "labeled_candidates_checked": 4096,
+      "structural_survivors_checked": 72,
+      "structural_rejection_counts": {
+        "order_separation": 242,
+        "triangle": 3782
+      },
+      "witnesses": 12,
+      "vertex_isomorphism_classes": 1,
+      "ordered_seed_subsets_enumerated_across_survivors": 4718520,
+      "first_connectivity_failure": {
+        "color": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            0,
+            2,
+            4
+          ],
+          [
+            2,
+            2,
+            0,
+            4
+          ],
+          [
+            3,
+            4,
+            4,
+            0
+          ]
+        ],
+        "verification": {
+          "passed": false,
+          "valid_input": true,
+          "verification_completed": true,
+          "lattice_validation": {
+            "passed": true,
+            "element_count": 5,
+            "derived_meet": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                1,
+                0,
+                1
+              ],
+              [
+                0,
+                1,
+                2,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                0,
+                3,
+                3
+              ],
+              [
+                0,
+                1,
+                2,
+                3,
+                4
+              ]
+            ]
+          },
+          "carrier_size": 4,
+          "candidate_self_maps": 256,
+          "admissible_self_maps": 23,
+          "ordered_seed_pairs": 16,
+          "nonempty_ordered_seed_subsets_enumerated": 65535,
+          "distinct_connectivity_cases": 17,
+          "failed_seed_subsets": 912,
+          "first_connectivity_failure": {
+            "seed_mask": 10,
+            "ordered_seeds": [
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            "join_bound": 4,
+            "disconnected_pair_below_bound": [
+              0,
+              2
+            ]
+          },
+          "checks": {
+            "symmetric": true,
+            "bottom_iff_diagonal": true,
+            "triangle_join": true,
+            "order_separation": true,
+            "seed_connectivity": false
+          }
+        }
+      },
+      "reported_representatives": [
+        {
+          "color": [
+            [
+              0,
+              1,
+              3,
+              4
+            ],
+            [
+              1,
+              0,
+              4,
+              3
+            ],
+            [
+              3,
+              4,
+              0,
+              2
+            ],
+            [
+              4,
+              3,
+              2,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 5,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  3,
+                  3
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              ]
+            },
+            "carrier_size": 4,
+            "candidate_self_maps": 256,
+            "admissible_self_maps": 12,
+            "ordered_seed_pairs": 16,
+            "nonempty_ordered_seed_subsets_enumerated": 65535,
+            "distinct_connectivity_cases": 12,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        }
+      ],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "M4",
+      "vertices": 1,
+      "labeled_candidates_checked": 1,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 1
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "M4",
+      "vertices": 2,
+      "labeled_candidates_checked": 5,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 5
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "M4",
+      "vertices": 3,
+      "labeled_candidates_checked": 125,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 77,
+        "triangle": 48
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "M4",
+      "vertices": 4,
+      "labeled_candidates_checked": 15625,
+      "structural_survivors_checked": 816,
+      "structural_rejection_counts": {
+        "order_separation": 1929,
+        "triangle": 12880
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 53476560,
+      "first_connectivity_failure": {
+        "color": [
+          [
+            0,
+            1,
+            1,
+            2
+          ],
+          [
+            1,
+            0,
+            1,
+            3
+          ],
+          [
+            1,
+            1,
+            0,
+            4
+          ],
+          [
+            2,
+            3,
+            4,
+            0
+          ]
+        ],
+        "verification": {
+          "passed": false,
+          "valid_input": true,
+          "verification_completed": true,
+          "lattice_validation": {
+            "passed": true,
+            "element_count": 6,
+            "derived_meet": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                2,
+                0,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                0,
+                3,
+                0,
+                3
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                4,
+                4
+              ],
+              [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+              ]
+            ]
+          },
+          "carrier_size": 4,
+          "candidate_self_maps": 256,
+          "admissible_self_maps": 5,
+          "ordered_seed_pairs": 16,
+          "nonempty_ordered_seed_subsets_enumerated": 65535,
+          "distinct_connectivity_cases": 4096,
+          "failed_seed_subsets": 3168,
+          "first_connectivity_failure": {
+            "seed_mask": 2,
+            "ordered_seeds": [
+              [
+                0,
+                1
+              ]
+            ],
+            "join_bound": 1,
+            "disconnected_pair_below_bound": [
+              0,
+              2
+            ]
+          },
+          "checks": {
+            "symmetric": true,
+            "bottom_iff_diagonal": true,
+            "triangle_join": true,
+            "order_separation": true,
+            "seed_connectivity": false
+          }
+        }
+      },
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "B3",
+      "vertices": 1,
+      "labeled_candidates_checked": 1,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 1
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "B3",
+      "vertices": 2,
+      "labeled_candidates_checked": 7,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 7
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "B3",
+      "vertices": 3,
+      "labeled_candidates_checked": 343,
+      "structural_survivors_checked": 0,
+      "structural_rejection_counts": {
+        "order_separation": 103,
+        "triangle": 240
+      },
+      "witnesses": 0,
+      "vertex_isomorphism_classes": 0,
+      "ordered_seed_subsets_enumerated_across_survivors": 0,
+      "first_connectivity_failure": null,
+      "reported_representatives": [],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    },
+    {
+      "lattice": "B3",
+      "vertices": 4,
+      "labeled_candidates_checked": 117649,
+      "structural_survivors_checked": 96,
+      "structural_rejection_counts": {
+        "order_separation": 2611,
+        "triangle": 114942
+      },
+      "witnesses": 96,
+      "vertex_isomorphism_classes": 4,
+      "ordered_seed_subsets_enumerated_across_survivors": 6291360,
+      "first_connectivity_failure": null,
+      "reported_representatives": [
+        {
+          "color": [
+            [
+              0,
+              1,
+              2,
+              4
+            ],
+            [
+              1,
+              0,
+              3,
+              5
+            ],
+            [
+              2,
+              3,
+              0,
+              6
+            ],
+            [
+              4,
+              5,
+              6,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 8,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1,
+                  0,
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  2,
+                  0,
+                  0,
+                  2,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3,
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  4,
+                  4,
+                  4,
+                  4
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1,
+                  4,
+                  5,
+                  4,
+                  5
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  2,
+                  4,
+                  4,
+                  6,
+                  6
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7
+                ]
+              ]
+            },
+            "carrier_size": 4,
+            "candidate_self_maps": 256,
+            "admissible_self_maps": 14,
+            "ordered_seed_pairs": 16,
+            "nonempty_ordered_seed_subsets_enumerated": 65535,
+            "distinct_connectivity_cases": 80,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        },
+        {
+          "color": [
+            [
+              0,
+              1,
+              2,
+              5
+            ],
+            [
+              1,
+              0,
+              3,
+              4
+            ],
+            [
+              2,
+              3,
+              0,
+              7
+            ],
+            [
+              5,
+              4,
+              7,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 8,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1,
+                  0,
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  2,
+                  0,
+                  0,
+                  2,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3,
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  4,
+                  4,
+                  4,
+                  4
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1,
+                  4,
+                  5,
+                  4,
+                  5
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  2,
+                  4,
+                  4,
+                  6,
+                  6
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7
+                ]
+              ]
+            },
+            "carrier_size": 4,
+            "candidate_self_maps": 256,
+            "admissible_self_maps": 13,
+            "ordered_seed_pairs": 16,
+            "nonempty_ordered_seed_subsets_enumerated": 65535,
+            "distinct_connectivity_cases": 38,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        },
+        {
+          "color": [
+            [
+              0,
+              1,
+              2,
+              6
+            ],
+            [
+              1,
+              0,
+              3,
+              7
+            ],
+            [
+              2,
+              3,
+              0,
+              4
+            ],
+            [
+              6,
+              7,
+              4,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 8,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1,
+                  0,
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  2,
+                  0,
+                  0,
+                  2,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3,
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  4,
+                  4,
+                  4,
+                  4
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1,
+                  4,
+                  5,
+                  4,
+                  5
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  2,
+                  4,
+                  4,
+                  6,
+                  6
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7
+                ]
+              ]
+            },
+            "carrier_size": 4,
+            "candidate_self_maps": 256,
+            "admissible_self_maps": 13,
+            "ordered_seed_pairs": 16,
+            "nonempty_ordered_seed_subsets_enumerated": 65535,
+            "distinct_connectivity_cases": 38,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        },
+        {
+          "color": [
+            [
+              0,
+              1,
+              4,
+              6
+            ],
+            [
+              1,
+              0,
+              5,
+              7
+            ],
+            [
+              4,
+              5,
+              0,
+              2
+            ],
+            [
+              6,
+              7,
+              2,
+              0
+            ]
+          ],
+          "verification": {
+            "passed": true,
+            "valid_input": true,
+            "verification_completed": true,
+            "lattice_validation": {
+              "passed": true,
+              "element_count": 8,
+              "derived_meet": [
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1,
+                  0,
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  2,
+                  0,
+                  0,
+                  2,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3,
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  4,
+                  4,
+                  4,
+                  4
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1,
+                  4,
+                  5,
+                  4,
+                  5
+                ],
+                [
+                  0,
+                  0,
+                  2,
+                  2,
+                  4,
+                  4,
+                  6,
+                  6
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7
+                ]
+              ]
+            },
+            "carrier_size": 4,
+            "candidate_self_maps": 256,
+            "admissible_self_maps": 13,
+            "ordered_seed_pairs": 16,
+            "nonempty_ordered_seed_subsets_enumerated": 65535,
+            "distinct_connectivity_cases": 38,
+            "failed_seed_subsets": 0,
+            "first_connectivity_failure": null,
+            "checks": {
+              "symmetric": true,
+              "bottom_iff_diagonal": true,
+              "triangle_join": true,
+              "order_separation": true,
+              "seed_connectivity": true
+            }
+          }
+        }
+      ],
+      "matches_primary_record": {
+        "candidate_count": true,
+        "expected_candidate_count": true,
+        "structural_survivor_count": true,
+        "structural_rejection_counts": true,
+        "witness_count": true,
+        "connectivity_failure_count": true,
+        "vertex_class_count": true,
+        "class_members_and_multiplicities": true,
+        "all_reported_representatives_pass": true
+      }
+    }
+  ],
+  "seconds": 26.154499,
+  "limitations": [
+    "Finite computation in Python; no Lean compilation or mechanized equivalence proof.",
+    "Minimality applies only to the specified lattice and graph-witness predicate.",
+    "No witness through the bound is not a nonexistence conclusion above the bound.",
+    "No novelty conclusion or verification of the general graph criterion theorem."
+  ],
+  "search_record_file_sha256": "1173e51c3f794ecc1612290f9a71b0a7fddd2ca11fc0b37a9e8b43f964c4e215"
+}

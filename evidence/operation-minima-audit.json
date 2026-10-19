@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "method": "all binary equivalence tables; breadth-first intersections of congruence families of all unary maps",
+  "scope": "all representable exact relation families on labeled carriers of sizes 1..4; all impossible families for n<=3 and 32 n=4 impossible families containing equality and universal",
+  "limitations": "same-session AI implementation review, same Python runtime; no formal proof or mathematical novelty claim; no higher-arity minimization",
+  "minimizer_sha256": "8979a6a9b7b53e069318b74633b3211f13af149e3aab2b9a7760eaa072c80f9b",
+  "audit_script_sha256": "62a29dd46a940e6313551558f5020c88baaf0b440dd58df9437e336b45628819",
+  "rows": [
+    {
+      "carrier_size": 1,
+      "equivalence_relations": 1,
+      "total_unary_maps": 1,
+      "all_representable_families_checked": 1,
+      "minimum_operation_histogram": {
+        "0": 1
+      },
+      "unrepresentable_families_rejected": 1
+    },
+    {
+      "carrier_size": 2,
+      "equivalence_relations": 2,
+      "total_unary_maps": 4,
+      "all_representable_families_checked": 1,
+      "minimum_operation_histogram": {
+        "0": 1
+      },
+      "unrepresentable_families_rejected": 3
+    },
+    {
+      "carrier_size": 3,
+      "equivalence_relations": 5,
+      "total_unary_maps": 27,
+      "all_representable_families_checked": 8,
+      "minimum_operation_histogram": {
+        "0": 1,
+        "1": 7
+      },
+      "unrepresentable_families_rejected": 24
+    },
+    {
+      "carrier_size": 4,
+      "equivalence_relations": 15,
+      "total_unary_maps": 256,
+      "all_representable_families_checked": 303,
+      "minimum_operation_histogram": {
+        "0": 1,
+        "1": 136,
+        "2": 166
+      },
+      "unrepresentable_families_rejected": 32
+    }
+  ],
+  "seconds": 0.316937
+}

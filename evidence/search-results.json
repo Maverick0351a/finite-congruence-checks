@@ -1,0 +1,1983 @@
+{
+  "generated_utc": "2026-10-19T00:17:15.695356+00:00",
+  "source": {
+    "repository": "https://github.com/openai/math",
+    "revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "path": "lean/ComparatorChallenges/FiniteCongruenceGraph.lean",
+    "sha256": "2ee495def2e1228bf13df520f6c66699ec22b2cd3bc1ae7383a30957aae9f967"
+  },
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "max_vertices": 4,
+  "search": "Every labeled symmetric coloring, bottom iff diagonal; all selected sizes exhausted.",
+  "isomorphism": "Vertex relabeling only; lattice colors are fixed.",
+  "source_sha256": "7804bbcf6d8271ab8286a2660da2a30e35cd4bc2079516e1098ef0145151f1a7",
+  "certificates": [
+    {
+      "path": "C2-witness.json",
+      "sha256": "92444e62d4fecdef2eaf5c165746867cb366945466236fe3f676f8b28735e9c8"
+    },
+    {
+      "path": "C3-witness.json",
+      "sha256": "1d2f6869dbaeb8262a68188319f4b07690f7338c78750e92f53d37342c2890a8"
+    },
+    {
+      "path": "C4-witness.json",
+      "sha256": "410b2327417eb6538c0c05a153ab3fb810ca413fad1a4b51115be13476f41503"
+    },
+    {
+      "path": "B2-witness.json",
+      "sha256": "6f37a835112a5ea5c1be9f6ee5793ad8fe031139b0c0b493b077b3b0deaac221"
+    },
+    {
+      "path": "M3-witness.json",
+      "sha256": "d9fe6733f6f3c73a1a3c5d8577fc79d5d981d4fe4c407fbb753fc6ebf0f33db8"
+    },
+    {
+      "path": "N5-witness.json",
+      "sha256": "2b6648c6842bf0742c3029c6c0ad7c906fbdb8d281d8e830a85c51c047ef2685"
+    },
+    {
+      "path": "B3-witness.json",
+      "sha256": "82c34bc3eba493827249de64f1c1ef6b1d719e5c568fa030ab138769a1cc6c9d"
+    }
+  ],
+  "lattices": {
+    "C2": {
+      "lattice": {
+        "name": "C2",
+        "elements": [
+          "0",
+          "1"
+        ],
+        "bottom": 0,
+        "leq": [
+          [
+            true,
+            true
+          ],
+          [
+            false,
+            true
+          ]
+        ],
+        "join": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "sizes": [
+        {
+          "vertices": 1,
+          "complete": true,
+          "expected_candidates": 1,
+          "counts": {
+            "candidates": 1,
+            "order_separation": 1
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 2.9e-05
+        },
+        {
+          "vertices": 2,
+          "complete": true,
+          "expected_candidates": 1,
+          "counts": {
+            "candidates": 1,
+            "structurally_valid": 1,
+            "witnesses": 1
+          },
+          "vertex_isomorphism_classes": 1,
+          "representatives": [
+            {
+              "color": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0
+                ]
+              ],
+              "labeled_count": 1
+            }
+          ],
+          "first_connectivity_failure": null,
+          "seconds": 4.3e-05
+        },
+        {
+          "vertices": 3,
+          "complete": true,
+          "expected_candidates": 1,
+          "counts": {
+            "candidates": 1,
+            "structurally_valid": 1,
+            "witnesses": 1
+          },
+          "vertex_isomorphism_classes": 1,
+          "representatives": [
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0
+                ]
+              ],
+              "labeled_count": 1
+            }
+          ],
+          "first_connectivity_failure": null,
+          "seconds": 5.5e-05
+        },
+        {
+          "vertices": 4,
+          "complete": true,
+          "expected_candidates": 1,
+          "counts": {
+            "candidates": 1,
+            "structurally_valid": 1,
+            "witnesses": 1
+          },
+          "vertex_isomorphism_classes": 1,
+          "representatives": [
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  1,
+                  1,
+                  0
+                ]
+              ],
+              "labeled_count": 1
+            }
+          ],
+          "first_connectivity_failure": null,
+          "seconds": 0.000308
+        }
+      ],
+      "minimum_vertices_found": 2,
+      "smaller_sizes_exhausted": true
+    },
+    "C3": {
+      "lattice": {
+        "name": "C3",
+        "elements": [
+          "0",
+          "1",
+          "2"
+        ],
+        "bottom": 0,
+        "leq": [
+          [
+            true,
+            true,
+            true
+          ],
+          [
+            false,
+            true,
+            true
+          ],
+          [
+            false,
+            false,
+            true
+          ]
+        ],
+        "join": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            1,
+            1,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ]
+      },
+      "sizes": [
+        {
+          "vertices": 1,
+          "complete": true,
+          "expected_candidates": 1,
+          "counts": {
+            "candidates": 1,
+            "order_separation": 1
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 3.4e-05
+        },
+        {
+          "vertices": 2,
+          "complete": true,
+          "expected_candidates": 2,
+          "counts": {
+            "candidates": 2,
+            "order_separation": 2
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 1.8e-05
+        },
+        {
+          "vertices": 3,
+          "complete": true,
+          "expected_candidates": 8,
+          "counts": {
+            "candidates": 8,
+            "order_separation": 2,
+            "triangle": 3,
+            "structurally_valid": 3,
+            "witnesses": 3
+          },
+          "vertex_isomorphism_classes": 1,
+          "representatives": [
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  0,
+                  2
+                ],
+                [
+                  2,
+                  2,
+                  0
+                ]
+              ],
+              "labeled_count": 3
+            }
+          ],
+          "first_connectivity_failure": null,
+          "seconds": 0.000149
+        },
+        {
+          "vertices": 4,
+          "complete": true,
+          "expected_candidates": 64,
+          "counts": {
+            "candidates": 64,
+            "order_separation": 2,
+            "triangle": 49,
+            "structurally_valid": 13,
+            "witnesses": 13
+          },
+          "vertex_isomorphism_classes": 3,
+          "representatives": [
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  1,
+                  0,
+                  2
+                ],
+                [
+                  2,
+                  2,
+                  2,
+                  0
+                ]
+              ],
+              "labeled_count": 4
+            },
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  2,
+                  2
+                ],
+                [
+                  1,
+                  0,
+                  2,
+                  2
+                ],
+                [
+                  2,
+                  2,
+                  0,
+                  1
+                ],
+                [
+                  2,
+                  2,
+                  1,
+                  0
+                ]
+              ],
+              "labeled_count": 3
+            },
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  2,
+                  2
+                ],
+                [
+                  1,
+                  0,
+                  2,
+                  2
+                ],
+                [
+                  2,
+                  2,
+                  0,
+                  2
+                ],
+                [
+                  2,
+                  2,
+                  2,
+                  0
+                ]
+              ],
+              "labeled_count": 6
+            }
+          ],
+          "first_connectivity_failure": null,
+          "seconds": 0.003006
+        }
+      ],
+      "minimum_vertices_found": 3,
+      "smaller_sizes_exhausted": true
+    },
+    "C4": {
+      "lattice": {
+        "name": "C4",
+        "elements": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
+        "bottom": 0,
+        "leq": [
+          [
+            true,
+            true,
+            true,
+            true
+          ],
+          [
+            false,
+            true,
+            true,
+            true
+          ],
+          [
+            false,
+            false,
+            true,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            true
+          ]
+        ],
+        "join": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            1,
+            2,
+            3
+          ],
+          [
+            2,
+            2,
+            2,
+            3
+          ],
+          [
+            3,
+            3,
+            3,
+            3
+          ]
+        ]
+      },
+      "sizes": [
+        {
+          "vertices": 1,
+          "complete": true,
+          "expected_candidates": 1,
+          "counts": {
+            "candidates": 1,
+            "order_separation": 1
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 1.6e-05
+        },
+        {
+          "vertices": 2,
+          "complete": true,
+          "expected_candidates": 3,
+          "counts": {
+            "candidates": 3,
+            "order_separation": 3
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 2.3e-05
+        },
+        {
+          "vertices": 3,
+          "complete": true,
+          "expected_candidates": 27,
+          "counts": {
+            "candidates": 27,
+            "order_separation": 12,
+            "triangle": 15
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 0.000156
+        },
+        {
+          "vertices": 4,
+          "complete": true,
+          "expected_candidates": 729,
+          "counts": {
+            "candidates": 729,
+            "order_separation": 42,
+            "triangle": 669,
+            "structurally_valid": 18,
+            "witnesses": 18
+          },
+          "vertex_isomorphism_classes": 2,
+          "representatives": [
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                [
+                  1,
+                  0,
+                  2,
+                  3
+                ],
+                [
+                  2,
+                  2,
+                  0,
+                  3
+                ],
+                [
+                  3,
+                  3,
+                  3,
+                  0
+                ]
+              ],
+              "labeled_count": 12
+            },
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  3,
+                  3
+                ],
+                [
+                  1,
+                  0,
+                  3,
+                  3
+                ],
+                [
+                  3,
+                  3,
+                  0,
+                  2
+                ],
+                [
+                  3,
+                  3,
+                  2,
+                  0
+                ]
+              ],
+              "labeled_count": 6
+            }
+          ],
+          "first_connectivity_failure": null,
+          "seconds": 0.006698
+        }
+      ],
+      "minimum_vertices_found": 4,
+      "smaller_sizes_exhausted": true
+    },
+    "B2": {
+      "lattice": {
+        "name": "B2",
+        "elements": [
+          "0",
+          "a",
+          "b",
+          "1"
+        ],
+        "bottom": 0,
+        "leq": [
+          [
+            true,
+            true,
+            true,
+            true
+          ],
+          [
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            true,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            true
+          ]
+        ],
+        "join": [
+          [
+            0,
+            1,
+            2,
+            3
+          ],
+          [
+            1,
+            1,
+            3,
+            3
+          ],
+          [
+            2,
+            3,
+            2,
+            3
+          ],
+          [
+            3,
+            3,
+            3,
+            3
+          ]
+        ]
+      },
+      "sizes": [
+        {
+          "vertices": 1,
+          "complete": true,
+          "expected_candidates": 1,
+          "counts": {
+            "candidates": 1,
+            "order_separation": 1
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 3.1e-05
+        },
+        {
+          "vertices": 2,
+          "complete": true,
+          "expected_candidates": 3,
+          "counts": {
+            "candidates": 3,
+            "order_separation": 3
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 2.3e-05
+        },
+        {
+          "vertices": 3,
+          "complete": true,
+          "expected_candidates": 27,
+          "counts": {
+            "candidates": 27,
+            "order_separation": 9,
+            "triangle": 12,
+            "structurally_valid": 6,
+            "witnesses": 6
+          },
+          "vertex_isomorphism_classes": 1,
+          "representatives": [
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  0,
+                  3
+                ],
+                [
+                  2,
+                  3,
+                  0
+                ]
+              ],
+              "labeled_count": 6
+            }
+          ],
+          "first_connectivity_failure": null,
+          "seconds": 0.000309
+        },
+        {
+          "vertices": 4,
+          "complete": true,
+          "expected_candidates": 729,
+          "counts": {
+            "candidates": 729,
+            "order_separation": 29,
+            "triangle": 616,
+            "structurally_valid": 84,
+            "witnesses": 54,
+            "seed_connectivity": 30
+          },
+          "vertex_isomorphism_classes": 5,
+          "representatives": [
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  0,
+                  1,
+                  3
+                ],
+                [
+                  1,
+                  1,
+                  0,
+                  3
+                ],
+                [
+                  2,
+                  3,
+                  3,
+                  0
+                ]
+              ],
+              "labeled_count": 12
+            },
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  2,
+                  2
+                ],
+                [
+                  1,
+                  0,
+                  3,
+                  3
+                ],
+                [
+                  2,
+                  3,
+                  0,
+                  2
+                ],
+                [
+                  2,
+                  3,
+                  2,
+                  0
+                ]
+              ],
+              "labeled_count": 12
+            },
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                [
+                  1,
+                  0,
+                  3,
+                  2
+                ],
+                [
+                  2,
+                  3,
+                  0,
+                  1
+                ],
+                [
+                  3,
+                  2,
+                  1,
+                  0
+                ]
+              ],
+              "labeled_count": 6
+            },
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                [
+                  1,
+                  0,
+                  3,
+                  2
+                ],
+                [
+                  2,
+                  3,
+                  0,
+                  3
+                ],
+                [
+                  3,
+                  2,
+                  3,
+                  0
+                ]
+              ],
+              "labeled_count": 12
+            },
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                [
+                  1,
+                  0,
+                  3,
+                  3
+                ],
+                [
+                  2,
+                  3,
+                  0,
+                  1
+                ],
+                [
+                  3,
+                  3,
+                  1,
+                  0
+                ]
+              ],
+              "labeled_count": 12
+            }
+          ],
+          "first_connectivity_failure": {
+            "color": [
+              [
+                0,
+                1,
+                2,
+                3
+              ],
+              [
+                1,
+                0,
+                3,
+                3
+              ],
+              [
+                2,
+                3,
+                0,
+                3
+              ],
+              [
+                3,
+                3,
+                3,
+                0
+              ]
+            ],
+            "result": {
+              "passed": false,
+              "admissible_maps": 36,
+              "seed_classes_checked": 3,
+              "failing_seeds": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  2
+                ]
+              ],
+              "failing_pair": [
+                0,
+                3
+              ],
+              "bound": 3
+            }
+          },
+          "seconds": 0.016613
+        }
+      ],
+      "minimum_vertices_found": 3,
+      "smaller_sizes_exhausted": true
+    },
+    "M3": {
+      "lattice": {
+        "name": "M3",
+        "elements": [
+          "0",
+          "a",
+          "b",
+          "c",
+          "1"
+        ],
+        "bottom": 0,
+        "leq": [
+          [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          [
+            false,
+            true,
+            false,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            true,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            false,
+            true
+          ]
+        ],
+        "join": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            1,
+            1,
+            4,
+            4,
+            4
+          ],
+          [
+            2,
+            4,
+            2,
+            4,
+            4
+          ],
+          [
+            3,
+            4,
+            4,
+            3,
+            4
+          ],
+          [
+            4,
+            4,
+            4,
+            4,
+            4
+          ]
+        ]
+      },
+      "sizes": [
+        {
+          "vertices": 1,
+          "complete": true,
+          "expected_candidates": 1,
+          "counts": {
+            "candidates": 1,
+            "order_separation": 1
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 2.6e-05
+        },
+        {
+          "vertices": 2,
+          "complete": true,
+          "expected_candidates": 4,
+          "counts": {
+            "candidates": 4,
+            "order_separation": 4
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 2.5e-05
+        },
+        {
+          "vertices": 3,
+          "complete": true,
+          "expected_candidates": 64,
+          "counts": {
+            "candidates": 64,
+            "order_separation": 31,
+            "triangle": 27,
+            "structurally_valid": 6,
+            "witnesses": 6
+          },
+          "vertex_isomorphism_classes": 1,
+          "representatives": [
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  1,
+                  0,
+                  3
+                ],
+                [
+                  2,
+                  3,
+                  0
+                ]
+              ],
+              "labeled_count": 6
+            }
+          ],
+          "first_connectivity_failure": null,
+          "seconds": 0.000613
+        },
+        {
+          "vertices": 4,
+          "complete": true,
+          "expected_candidates": 4096,
+          "counts": {
+            "candidates": 4096,
+            "order_separation": 295,
+            "triangle": 3459,
+            "structurally_valid": 342,
+            "seed_connectivity": 336,
+            "witnesses": 6
+          },
+          "vertex_isomorphism_classes": 1,
+          "representatives": [
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                [
+                  1,
+                  0,
+                  3,
+                  2
+                ],
+                [
+                  2,
+                  3,
+                  0,
+                  1
+                ],
+                [
+                  3,
+                  2,
+                  1,
+                  0
+                ]
+              ],
+              "labeled_count": 6
+            }
+          ],
+          "first_connectivity_failure": {
+            "color": [
+              [
+                0,
+                1,
+                1,
+                2
+              ],
+              [
+                1,
+                0,
+                1,
+                3
+              ],
+              [
+                1,
+                1,
+                0,
+                4
+              ],
+              [
+                2,
+                3,
+                4,
+                0
+              ]
+            ],
+            "result": {
+              "passed": false,
+              "admissible_maps": 13,
+              "seed_classes_checked": 1,
+              "failing_seeds": [
+                [
+                  0,
+                  1
+                ]
+              ],
+              "failing_pair": [
+                0,
+                2
+              ],
+              "bound": 1
+            }
+          },
+          "seconds": 0.065424
+        }
+      ],
+      "minimum_vertices_found": 3,
+      "smaller_sizes_exhausted": true
+    },
+    "N5": {
+      "lattice": {
+        "name": "N5",
+        "elements": [
+          "0",
+          "a",
+          "b",
+          "c",
+          "1"
+        ],
+        "bottom": 0,
+        "leq": [
+          [
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          [
+            false,
+            true,
+            true,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            true,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            false,
+            true
+          ]
+        ],
+        "join": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          [
+            1,
+            1,
+            2,
+            4,
+            4
+          ],
+          [
+            2,
+            2,
+            2,
+            4,
+            4
+          ],
+          [
+            3,
+            4,
+            4,
+            3,
+            4
+          ],
+          [
+            4,
+            4,
+            4,
+            4,
+            4
+          ]
+        ]
+      },
+      "sizes": [
+        {
+          "vertices": 1,
+          "complete": true,
+          "expected_candidates": 1,
+          "counts": {
+            "candidates": 1,
+            "order_separation": 1
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 2.9e-05
+        },
+        {
+          "vertices": 2,
+          "complete": true,
+          "expected_candidates": 4,
+          "counts": {
+            "candidates": 4,
+            "order_separation": 4
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 2.4e-05
+        },
+        {
+          "vertices": 3,
+          "complete": true,
+          "expected_candidates": 64,
+          "counts": {
+            "candidates": 64,
+            "order_separation": 28,
+            "triangle": 36
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 0.00032
+        },
+        {
+          "vertices": 4,
+          "complete": true,
+          "expected_candidates": 4096,
+          "counts": {
+            "candidates": 4096,
+            "order_separation": 242,
+            "triangle": 3782,
+            "structurally_valid": 72,
+            "seed_connectivity": 60,
+            "witnesses": 12
+          },
+          "vertex_isomorphism_classes": 1,
+          "representatives": [
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  3,
+                  4
+                ],
+                [
+                  1,
+                  0,
+                  4,
+                  3
+                ],
+                [
+                  3,
+                  4,
+                  0,
+                  2
+                ],
+                [
+                  4,
+                  3,
+                  2,
+                  0
+                ]
+              ],
+              "labeled_count": 12
+            }
+          ],
+          "first_connectivity_failure": {
+            "color": [
+              [
+                0,
+                1,
+                2,
+                3
+              ],
+              [
+                1,
+                0,
+                2,
+                4
+              ],
+              [
+                2,
+                2,
+                0,
+                4
+              ],
+              [
+                3,
+                4,
+                4,
+                0
+              ]
+            ],
+            "result": {
+              "passed": false,
+              "admissible_maps": 23,
+              "seed_classes_checked": 5,
+              "failing_seeds": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  3
+                ]
+              ],
+              "failing_pair": [
+                0,
+                2
+              ],
+              "bound": 4
+            }
+          },
+          "seconds": 0.028546
+        }
+      ],
+      "minimum_vertices_found": 4,
+      "smaller_sizes_exhausted": true
+    },
+    "M4": {
+      "lattice": {
+        "name": "M4",
+        "elements": [
+          "0",
+          "a",
+          "b",
+          "c",
+          "d",
+          "1"
+        ],
+        "bottom": 0,
+        "leq": [
+          [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          [
+            false,
+            true,
+            false,
+            false,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            true,
+            false,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            false,
+            true,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            false,
+            false,
+            true
+          ]
+        ],
+        "join": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          [
+            1,
+            1,
+            5,
+            5,
+            5,
+            5
+          ],
+          [
+            2,
+            5,
+            2,
+            5,
+            5,
+            5
+          ],
+          [
+            3,
+            5,
+            5,
+            3,
+            5,
+            5
+          ],
+          [
+            4,
+            5,
+            5,
+            5,
+            4,
+            5
+          ],
+          [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+          ]
+        ]
+      },
+      "sizes": [
+        {
+          "vertices": 1,
+          "complete": true,
+          "expected_candidates": 1,
+          "counts": {
+            "candidates": 1,
+            "order_separation": 1
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 3.1e-05
+        },
+        {
+          "vertices": 2,
+          "complete": true,
+          "expected_candidates": 5,
+          "counts": {
+            "candidates": 5,
+            "order_separation": 5
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 3e-05
+        },
+        {
+          "vertices": 3,
+          "complete": true,
+          "expected_candidates": 125,
+          "counts": {
+            "candidates": 125,
+            "order_separation": 77,
+            "triangle": 48
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 0.0007
+        },
+        {
+          "vertices": 4,
+          "complete": true,
+          "expected_candidates": 15625,
+          "counts": {
+            "candidates": 15625,
+            "order_separation": 1929,
+            "triangle": 12880,
+            "structurally_valid": 816,
+            "seed_connectivity": 816
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": {
+            "color": [
+              [
+                0,
+                1,
+                1,
+                2
+              ],
+              [
+                1,
+                0,
+                1,
+                3
+              ],
+              [
+                1,
+                1,
+                0,
+                4
+              ],
+              [
+                2,
+                3,
+                4,
+                0
+              ]
+            ],
+            "result": {
+              "passed": false,
+              "admissible_maps": 5,
+              "seed_classes_checked": 1,
+              "failing_seeds": [
+                [
+                  0,
+                  1
+                ]
+              ],
+              "failing_pair": [
+                0,
+                2
+              ],
+              "bound": 1
+            }
+          },
+          "seconds": 0.174227
+        }
+      ],
+      "minimum_vertices_found": null,
+      "smaller_sizes_exhausted": false
+    },
+    "B3": {
+      "lattice": {
+        "name": "B3",
+        "elements": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "bottom": 0,
+        "leq": [
+          [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          [
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            true,
+            true,
+            false,
+            false,
+            true,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            false,
+            true,
+            true,
+            true,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            true
+          ],
+          [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true
+          ]
+        ],
+        "join": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            1,
+            1,
+            3,
+            3,
+            5,
+            5,
+            7,
+            7
+          ],
+          [
+            2,
+            3,
+            2,
+            3,
+            6,
+            7,
+            6,
+            7
+          ],
+          [
+            3,
+            3,
+            3,
+            3,
+            7,
+            7,
+            7,
+            7
+          ],
+          [
+            4,
+            5,
+            6,
+            7,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            5,
+            5,
+            7,
+            7,
+            5,
+            5,
+            7,
+            7
+          ],
+          [
+            6,
+            7,
+            6,
+            7,
+            6,
+            7,
+            6,
+            7
+          ],
+          [
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7,
+            7
+          ]
+        ]
+      },
+      "sizes": [
+        {
+          "vertices": 1,
+          "complete": true,
+          "expected_candidates": 1,
+          "counts": {
+            "candidates": 1,
+            "order_separation": 1
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 2e-05
+        },
+        {
+          "vertices": 2,
+          "complete": true,
+          "expected_candidates": 7,
+          "counts": {
+            "candidates": 7,
+            "order_separation": 7
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 4.1e-05
+        },
+        {
+          "vertices": 3,
+          "complete": true,
+          "expected_candidates": 343,
+          "counts": {
+            "candidates": 343,
+            "order_separation": 103,
+            "triangle": 240
+          },
+          "vertex_isomorphism_classes": 0,
+          "representatives": [],
+          "first_connectivity_failure": null,
+          "seconds": 0.001464
+        },
+        {
+          "vertices": 4,
+          "complete": true,
+          "expected_candidates": 117649,
+          "counts": {
+            "candidates": 117649,
+            "order_separation": 2611,
+            "triangle": 114942,
+            "structurally_valid": 96,
+            "witnesses": 96
+          },
+          "vertex_isomorphism_classes": 4,
+          "representatives": [
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  2,
+                  4
+                ],
+                [
+                  1,
+                  0,
+                  3,
+                  5
+                ],
+                [
+                  2,
+                  3,
+                  0,
+                  6
+                ],
+                [
+                  4,
+                  5,
+                  6,
+                  0
+                ]
+              ],
+              "labeled_count": 24
+            },
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  2,
+                  5
+                ],
+                [
+                  1,
+                  0,
+                  3,
+                  4
+                ],
+                [
+                  2,
+                  3,
+                  0,
+                  7
+                ],
+                [
+                  5,
+                  4,
+                  7,
+                  0
+                ]
+              ],
+              "labeled_count": 24
+            },
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  2,
+                  6
+                ],
+                [
+                  1,
+                  0,
+                  3,
+                  7
+                ],
+                [
+                  2,
+                  3,
+                  0,
+                  4
+                ],
+                [
+                  6,
+                  7,
+                  4,
+                  0
+                ]
+              ],
+              "labeled_count": 24
+            },
+            {
+              "color": [
+                [
+                  0,
+                  1,
+                  4,
+                  6
+                ],
+                [
+                  1,
+                  0,
+                  5,
+                  7
+                ],
+                [
+                  4,
+                  5,
+                  0,
+                  2
+                ],
+                [
+                  6,
+                  7,
+                  2,
+                  0
+                ]
+              ],
+              "labeled_count": 24
+            }
+          ],
+          "first_connectivity_failure": null,
+          "seconds": 0.549686
+        }
+      ],
+      "minimum_vertices_found": 4,
+      "smaller_sizes_exhausted": true
+    }
+  }
+}

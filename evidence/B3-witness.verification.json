@@ -1,0 +1,124 @@
+{
+  "passed": true,
+  "valid_input": true,
+  "verification_completed": true,
+  "lattice_validation": {
+    "passed": true,
+    "element_count": 8,
+    "derived_meet": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        2,
+        2,
+        0,
+        0,
+        2,
+        2
+      ],
+      [
+        0,
+        1,
+        2,
+        3,
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        4,
+        4,
+        4,
+        4
+      ],
+      [
+        0,
+        1,
+        0,
+        1,
+        4,
+        5,
+        4,
+        5
+      ],
+      [
+        0,
+        0,
+        2,
+        2,
+        4,
+        4,
+        6,
+        6
+      ],
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    ]
+  },
+  "carrier_size": 4,
+  "candidate_self_maps": 256,
+  "admissible_self_maps": 14,
+  "ordered_seed_pairs": 16,
+  "nonempty_ordered_seed_subsets_enumerated": 65535,
+  "distinct_connectivity_cases": 80,
+  "failed_seed_subsets": 0,
+  "first_connectivity_failure": null,
+  "checks": {
+    "symmetric": true,
+    "bottom_iff_diagonal": true,
+    "triangle_join": true,
+    "order_separation": true,
+    "seed_connectivity": true
+  },
+  "generated_utc": "2026-10-19T00:17:17.369653+00:00",
+  "seconds": 0.011833,
+  "source": {
+    "repository": "https://github.com/openai/math",
+    "revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "path": "lean/ComparatorChallenges/FiniteCongruenceGraph.lean",
+    "sha256": "2ee495def2e1228bf13df520f6c66699ec22b2cd3bc1ae7383a30957aae9f967",
+    "family": "206"
+  },
+  "certificate": "B3-witness.json",
+  "certificate_sha256": "82c34bc3eba493827249de64f1c1ef6b1d719e5c568fa030ab138769a1cc6c9d",
+  "verifier_sha256": "b742ab0d010e34cab0e9e24391fb30a8ad607830324250270d527dae0b321fba",
+  "method": "Literal ordered seed-subset enumeration; all self-maps; bitset BFS equivalence closure",
+  "limitations": [
+    "Checks the supplied finite witness; no search, minimality or novelty conclusion.",
+    "No Lean compilation or mechanically proved Python/Lean equivalence.",
+    "The general graph criterion theorem and its proof are not verified."
+  ]
+}

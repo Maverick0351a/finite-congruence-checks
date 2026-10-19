@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "valid_input": true,
+  "verification_completed": true,
+  "lattice_validation": {
+    "passed": true,
+    "element_count": 2,
+    "derived_meet": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ]
+  },
+  "carrier_size": 2,
+  "candidate_self_maps": 4,
+  "admissible_self_maps": 4,
+  "ordered_seed_pairs": 4,
+  "nonempty_ordered_seed_subsets_enumerated": 15,
+  "distinct_connectivity_cases": 2,
+  "failed_seed_subsets": 0,
+  "first_connectivity_failure": null,
+  "checks": {
+    "symmetric": true,
+    "bottom_iff_diagonal": true,
+    "triangle_join": true,
+    "order_separation": true,
+    "seed_connectivity": true
+  },
+  "generated_utc": "2026-10-19T00:17:16.706753+00:00",
+  "seconds": 0.000203,
+  "source": {
+    "repository": "https://github.com/openai/math",
+    "revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "path": "lean/ComparatorChallenges/FiniteCongruenceGraph.lean",
+    "sha256": "2ee495def2e1228bf13df520f6c66699ec22b2cd3bc1ae7383a30957aae9f967",
+    "family": "206"
+  },
+  "certificate": "C2-witness.json",
+  "certificate_sha256": "92444e62d4fecdef2eaf5c165746867cb366945466236fe3f676f8b28735e9c8",
+  "verifier_sha256": "b742ab0d010e34cab0e9e24391fb30a8ad607830324250270d527dae0b321fba",
+  "method": "Literal ordered seed-subset enumeration; all self-maps; bitset BFS equivalence closure",
+  "limitations": [
+    "Checks the supplied finite witness; no search, minimality or novelty conclusion.",
+    "No Lean compilation or mechanically proved Python/Lean equivalence.",
+    "The general graph criterion theorem and its proof are not verified."
+  ]
+}

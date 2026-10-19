@@ -1,0 +1,38 @@
+test_changed_output_bytes_are_rejected (test_evidence.EvidenceTests.test_changed_output_bytes_are_rejected) ... ok
+test_duplicate_stage_cannot_replace_missing_stage (test_evidence.EvidenceTests.test_duplicate_stage_cannot_replace_missing_stage) ... ok
+test_evidence_member_cannot_escape_directory (test_evidence.EvidenceTests.test_evidence_member_cannot_escape_directory) ... ok
+test_incomplete_hash_registry_is_rejected (test_evidence.EvidenceTests.test_incomplete_hash_registry_is_rejected) ... ok
+test_runner_records_failed_child_without_success (test_evidence.EvidenceTests.test_runner_records_failed_child_without_success) ... ok
+test_runner_rejects_nonempty_directory_without_modifying_it (test_evidence.EvidenceTests.test_runner_rejects_nonempty_directory_without_modifying_it) ... ok
+test_certificates_must_be_explicit (test_minimize_operations.OperationMinimizerTests.test_certificates_must_be_explicit) ... ok
+test_invalid_lattice_name_cannot_leave_success_evidence (test_minimize_operations.OperationMinimizerTests.test_invalid_lattice_name_cannot_leave_success_evidence) ... ok
+test_missing_unavoidable_relations_is_impossible (test_minimize_operations.OperationMinimizerTests.test_missing_unavoidable_relations_is_impossible) ... ok
+test_mixed_good_missing_and_invalid_inputs_preserve_failure_evidence (test_minimize_operations.OperationMinimizerTests.test_mixed_good_missing_and_invalid_inputs_preserve_failure_evidence) ... ok
+test_output_cannot_overwrite_input_certificate (test_minimize_operations.OperationMinimizerTests.test_output_cannot_overwrite_input_certificate) ... ok
+test_self_check_detects_broken_partition_enumerator_under_optimization (test_minimize_operations.OperationMinimizerTests.test_self_check_detects_broken_partition_enumerator_under_optimization) ... ok
+test_zero_operations_means_all_equivalence_relations (test_minimize_operations.OperationMinimizerTests.test_zero_operations_means_all_equivalence_relations) ... ok
+test_carrier_bounds_are_explicit (test_search.SearchTests.test_carrier_bounds_are_explicit) ... ok
+test_connectivity_is_necessary (test_search.SearchTests.test_connectivity_is_necessary) ... ok
+test_incomparable_colors_join_to_top (test_search.SearchTests.test_incomparable_colors_join_to_top) ... ok
+test_invalid_lattice_join_is_rejected (test_search.SearchTests.test_invalid_lattice_join_is_rejected) ... ok
+test_manifest_does_not_reuse_a_stale_certificate (test_search.SearchTests.test_manifest_does_not_reuse_a_stale_certificate) ... ok
+test_no_witness_smaller_than_three_for_three_element_chain (test_search.SearchTests.test_no_witness_smaller_than_three_for_three_element_chain) ... ok
+test_nonzero_bottom_is_supported (test_search.SearchTests.test_nonzero_bottom_is_supported) ... ok
+test_vertex_relabeling_does_not_relabel_lattice_colors (test_search.SearchTests.test_vertex_relabeling_does_not_relabel_lattice_colors) ... ok
+test_labels_must_be_a_list_and_name_must_be_text (test_verify_algebra.AlgebraVerifierTests.test_labels_must_be_a_list_and_name_must_be_text) ... ok
+test_missing_input_replaces_stale_success_with_failure_report (test_verify_algebra.AlgebraVerifierTests.test_missing_input_replaces_stale_success_with_failure_report) ... ok
+test_self_check_detects_broken_partition_enumerator_under_optimization (test_verify_algebra.AlgebraVerifierTests.test_self_check_detects_broken_partition_enumerator_under_optimization) ... ok
+test_bfs_adds_reflexivity_symmetry_and_transitivity (test_verify_witness.VerifierTests.test_bfs_adds_reflexivity_symmetry_and_transitivity) ... ok
+test_bottom_index_is_not_assumed_to_be_zero (test_verify_witness.VerifierTests.test_bottom_index_is_not_assumed_to_be_zero) ... ok
+test_chain_and_literal_ordered_seed_count (test_verify_witness.VerifierTests.test_chain_and_literal_ordered_seed_count) ... ok
+test_cli_exit_status_and_json_evidence (test_verify_witness.VerifierTests.test_cli_exit_status_and_json_evidence) ... ok
+test_connectivity_can_fail_after_all_structural_conjuncts_pass (test_verify_witness.VerifierTests.test_connectivity_can_fail_after_all_structural_conjuncts_pass) ... ok
+test_limit_is_incomplete_verification (test_verify_witness.VerifierTests.test_limit_is_incomplete_verification) ... ok
+test_malformed_inputs_and_lattice_laws (test_verify_witness.VerifierTests.test_malformed_inputs_and_lattice_laws) ... ok
+test_nonchain_join_uses_lattice_table (test_verify_witness.VerifierTests.test_nonchain_join_uses_lattice_table) ... ok
+test_trivial_lattice_and_single_vertex (test_verify_witness.VerifierTests.test_trivial_lattice_and_single_vertex) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 1.521s
+
+OK

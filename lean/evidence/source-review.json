@@ -1,0 +1,18 @@
+{
+  "upstream_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "method": "Remove block comments and normalize whitespace; compare ten declaration bodies or theorem statement.",
+  "scope": "Text comparison only; not the official comparator run or a kernel check of statement correspondence.",
+  "declarations_equal": {
+    "Algebra": true,
+    "Compatible": true,
+    "Congruence": true,
+    "Representable": true,
+    "Admissible": true,
+    "Marked": true,
+    "Connected": true,
+    "IsGraphWitness": true,
+    "HasGraphWitness": true,
+    "graph_criterion": true
+  },
+  "solution_contains_sorry_token": false
+}

@@ -1,0 +1,9 @@
+* text=auto eol=lf
+*.png binary
+*.pdf binary
+*.zip binary
+charts/*.svg linguist-generated=true -whitespace
+docs/index.html linguist-generated=true
+evidence/** linguist-generated=true
+reference/** -text
+lean/upstream/OAI/** -text

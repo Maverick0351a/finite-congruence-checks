@@ -1,0 +1,44 @@
+name: Reproduction or correctness problem
+description: Report a failed check, inconsistent result, or mathematical discrepancy.
+title: "[Reproduction] "
+labels: [reproduction]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Include the smallest example that shows the problem. Please remove secrets and personal paths from logs. Read docs/CLAIMS.md for the tested scope.
+  - type: input
+    id: revision
+    attributes:
+      label: Repository version or commit
+      placeholder: "v0.1.0 or a full commit SHA"
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, Python version, and Lean version if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Command and minimal input
+      description: Exact command, certificate or relevant input, and any output directory settings.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and observed behavior
+      description: Identify the precise claim or result that differs and explain why.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs and evidence
+      description: Include the exit code, error text, and relevant JSON fields or hashes.
+      render: text

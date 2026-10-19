@@ -1,0 +1,203 @@
+{
+  "started_utc": "2026-10-19T00:17:13.630801+00:00",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "commands": [
+    {
+      "argv": [
+        "{python}",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "{repo}",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 1.791592,
+      "log": "unit-tests.log"
+    },
+    {
+      "argv": [
+        "{python}",
+        "{repo}\\search.py",
+        "--max-vertices",
+        "4",
+        "--out",
+        "{out}"
+      ],
+      "exit_code": 0,
+      "seconds": 1.016421,
+      "log": "search.log"
+    },
+    {
+      "argv": [
+        "{python}",
+        "{repo}\\verify_witness.py",
+        "{out}\\C2-witness.json",
+        "--output",
+        "{out}\\C2-witness.verification.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.097507,
+      "log": "C2-witness-verification.log"
+    },
+    {
+      "argv": [
+        "{python}",
+        "{repo}\\verify_witness.py",
+        "{out}\\C3-witness.json",
+        "--output",
+        "{out}\\C3-witness.verification.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.109287,
+      "log": "C3-witness-verification.log"
+    },
+    {
+      "argv": [
+        "{python}",
+        "{repo}\\verify_witness.py",
+        "{out}\\C4-witness.json",
+        "--output",
+        "{out}\\C4-witness.verification.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.115163,
+      "log": "C4-witness-verification.log"
+    },
+    {
+      "argv": [
+        "{python}",
+        "{repo}\\verify_witness.py",
+        "{out}\\B2-witness.json",
+        "--output",
+        "{out}\\B2-witness.verification.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.10149,
+      "log": "B2-witness-verification.log"
+    },
+    {
+      "argv": [
+        "{python}",
+        "{repo}\\verify_witness.py",
+        "{out}\\M3-witness.json",
+        "--output",
+        "{out}\\M3-witness.verification.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.100964,
+      "log": "M3-witness-verification.log"
+    },
+    {
+      "argv": [
+        "{python}",
+        "{repo}\\verify_witness.py",
+        "{out}\\N5-witness.json",
+        "--output",
+        "{out}\\N5-witness.verification.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.117757,
+      "log": "N5-witness-verification.log"
+    },
+    {
+      "argv": [
+        "{python}",
+        "{repo}\\verify_witness.py",
+        "{out}\\B3-witness.json",
+        "--output",
+        "{out}\\B3-witness.verification.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.117915,
+      "log": "B3-witness-verification.log"
+    },
+    {
+      "argv": [
+        "{python}",
+        "{repo}\\verify_algebra.py",
+        "{out}\\C2-witness.json",
+        "{out}\\C3-witness.json",
+        "{out}\\C4-witness.json",
+        "{out}\\B2-witness.json",
+        "{out}\\M3-witness.json",
+        "{out}\\N5-witness.json",
+        "{out}\\B3-witness.json",
+        "--out",
+        "{out}\\verified-algebras.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.104771,
+      "log": "algebra-verification.log"
+    },
+    {
+      "argv": [
+        "{python}",
+        "{repo}\\minimize_operations.py",
+        "{out}\\C2-witness.json",
+        "{out}\\C3-witness.json",
+        "{out}\\C4-witness.json",
+        "{out}\\B2-witness.json",
+        "{out}\\M3-witness.json",
+        "{out}\\N5-witness.json",
+        "{out}\\B3-witness.json",
+        "--out",
+        "{out}\\minimized-algebras.json"
+      ],
+      "exit_code": 0,
+      "seconds": 0.111158,
+      "log": "operation-minimization.log"
+    }
+  ],
+  "passed": true,
+  "path_convention": "Machine-specific paths in commands/logs are replaced by {python}, {out}, {repo}.",
+  "code_sha256": {
+    "minimize_operations.py": "8979a6a9b7b53e069318b74633b3211f13af149e3aab2b9a7760eaa072c80f9b",
+    "run_experiment.py": "e48a04d42be8679e7ab12b597c24b6ff493610e865318a6ef2eaf926d20b5abb",
+    "search.py": "7804bbcf6d8271ab8286a2660da2a30e35cd4bc2079516e1098ef0145151f1a7",
+    "test_evidence.py": "ab7702b15a419fff7e36a539d75626720a211950ed7fc12df18904c532f0a447",
+    "test_minimize_operations.py": "aa95884aa5c9f6fde9ee231f44390e12842746119d993ae39be857c06ab76170",
+    "test_search.py": "70e0299a7ba164db87fa2146e486521aaa63c2b1485505ab2c316083d3eb48e0",
+    "test_verify_algebra.py": "d4f283c12df8414d536c71adff5b0f8e85eb16eb07ef6ce1ee32d26658b12890",
+    "test_verify_witness.py": "eef6c04b48fb2a7971340de025d1ef11a98335493d08e19f1cf550e78a69bd0b",
+    "verify_algebra.py": "bcab840ad603c20ebd3e1c3dfaf7b871d6ce2d158409af475dac7e4fe87921db",
+    "verify_witness.py": "b742ab0d010e34cab0e9e24391fb30a8ad607830324250270d527dae0b321fba"
+  },
+  "finished_utc": "2026-10-19T00:17:43.754131+00:00",
+  "seconds": 30.123383,
+  "output_sha256": {
+    "algebra-verification.log": "ae9619561f23fce7161f00d0eadd630bde9d4f52ca6ad30f00934df21cb16aeb",
+    "B2-witness-verification.log": "6b7f1552016018ecd42c1fc64cd8f80b52f5a5537ce4d88991b410532447fe86",
+    "B2-witness.json": "6f37a835112a5ea5c1be9f6ee5793ad8fe031139b0c0b493b077b3b0deaac221",
+    "B2-witness.verification.json": "db98bf439587b9e37a6a466dccd3a7d40f9bc3d4b4dbc807594664817d04a18c",
+    "B3-witness-verification.log": "88c74feb4b5739644a83ba04d560b7487517810c4e2f64f8309ce8552e5b717d",
+    "B3-witness.json": "82c34bc3eba493827249de64f1c1ef6b1d719e5c568fa030ab138769a1cc6c9d",
+    "B3-witness.verification.json": "2ce2985384c78b6872774ed7a46c348d5134230694b1dfbad8a8f68a15789339",
+    "C2-witness-verification.log": "eb53862c2ddc546d7c628795b905430551447f9e1a4d501a4cca8efe30932ca5",
+    "C2-witness.json": "92444e62d4fecdef2eaf5c165746867cb366945466236fe3f676f8b28735e9c8",
+    "C2-witness.verification.json": "f198ed05153096306a865235f67f6d38b5e8ec370acf033b00708dbcaf071048",
+    "C3-witness-verification.log": "60f78a36f450bc40325fdfd771976531b1646bf89eb79d044eef6ee45a2ff25c",
+    "C3-witness.json": "1d2f6869dbaeb8262a68188319f4b07690f7338c78750e92f53d37342c2890a8",
+    "C3-witness.verification.json": "c35cf33e8bd2464c6ba249ca2858387d87d0c77577a70c1acd92419428fc925b",
+    "C4-witness-verification.log": "93648b6b6feee542849b2fcf4d946e7719daa76830cd16703e032051f33e9a3f",
+    "C4-witness.json": "410b2327417eb6538c0c05a153ab3fb810ca413fad1a4b51115be13476f41503",
+    "C4-witness.verification.json": "82cd58101c9ea02504ff96b3f4e7d9c8d30575eb7920060234b0296c122af139",
+    "independent-review-results.json": "659717fbcfcfdf1db52ee06831561fa85b2631d7320561c3bc1c2e976410b3be",
+    "M3-witness-verification.log": "d76a940a062deb5a13fe12a3ad8aca3c878b5db67f3f3fc006cf1a696de7f194",
+    "M3-witness.json": "d9fe6733f6f3c73a1a3c5d8577fc79d5d981d4fe4c407fbb753fc6ebf0f33db8",
+    "M3-witness.verification.json": "d561d1bd7032d79be38814b84152e31a7289c5326849405745341232db273a22",
+    "minimized-algebras.json": "76671ae20ad76bc2507b9e0c822bb78862abf2ff507f1a3ab7ba8b40efe85cea",
+    "N5-witness-verification.log": "968b84a2316c880e027b6bca8e3969fb0522af2194336990b393e190ad66cef9",
+    "N5-witness.json": "2b6648c6842bf0742c3029c6c0ad7c906fbdb8d281d8e830a85c51c047ef2685",
+    "N5-witness.verification.json": "8c29b1a21b9a576191fc22aa42c213c05e9b8f8265abcf774952827af0e2016a",
+    "operation-minimization.log": "98bcac743f30f0ce10fab49836b82ba7fba28e59d8d6057b753ccf3a778739ee",
+    "search-results.json": "1173e51c3f794ecc1612290f9a71b0a7fddd2ca11fc0b37a9e8b43f964c4e215",
+    "search.log": "c3f590306a72fc189bf069d4343b41631f68f26728fa1c0cf6670fc58a16f526",
+    "unit-tests.log": "3544646f96d771ddbed174ca2e2142c291a2a0efe0e44601664f2adb173d3ab0",
+    "verified-algebras.json": "5fcdbfee2dde1ee573b696be37b7c2324aa5e80b717c52bb4286c80c24088566"
+  }
+}

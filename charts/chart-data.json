@@ -1,0 +1,703 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "https://github.com/openai/math",
+    "revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "path": "lean/ComparatorChallenges/FiniteCongruenceGraph.lean",
+    "sha256": "2ee495def2e1228bf13df520f6c66699ec22b2cd3bc1ae7383a30957aae9f967"
+  },
+  "max_vertices": 4,
+  "totals": {
+    "candidates": 143685,
+    "structural": 1459,
+    "witnesses": 217,
+    "connectivity_failures": 1242,
+    "classes": 22,
+    "ordered_seed_subsets": 94509661,
+    "lattices": 8,
+    "positive_lattices": 7
+  },
+  "lattices": [
+    {
+      "lattice": "C2",
+      "lattice_elements": 2,
+      "minimum_vertices": 2,
+      "candidates": 4,
+      "structural": 3,
+      "witnesses": 3,
+      "connectivity_failures": 0,
+      "classes": 3
+    },
+    {
+      "lattice": "C3",
+      "lattice_elements": 3,
+      "minimum_vertices": 3,
+      "candidates": 75,
+      "structural": 16,
+      "witnesses": 16,
+      "connectivity_failures": 0,
+      "classes": 4
+    },
+    {
+      "lattice": "C4",
+      "lattice_elements": 4,
+      "minimum_vertices": 4,
+      "candidates": 760,
+      "structural": 18,
+      "witnesses": 18,
+      "connectivity_failures": 0,
+      "classes": 2
+    },
+    {
+      "lattice": "B2",
+      "lattice_elements": 4,
+      "minimum_vertices": 3,
+      "candidates": 760,
+      "structural": 90,
+      "witnesses": 60,
+      "connectivity_failures": 30,
+      "classes": 6
+    },
+    {
+      "lattice": "M3",
+      "lattice_elements": 5,
+      "minimum_vertices": 3,
+      "candidates": 4165,
+      "structural": 348,
+      "witnesses": 12,
+      "connectivity_failures": 336,
+      "classes": 2
+    },
+    {
+      "lattice": "N5",
+      "lattice_elements": 5,
+      "minimum_vertices": 4,
+      "candidates": 4165,
+      "structural": 72,
+      "witnesses": 12,
+      "connectivity_failures": 60,
+      "classes": 1
+    },
+    {
+      "lattice": "M4",
+      "lattice_elements": 6,
+      "minimum_vertices": null,
+      "candidates": 15756,
+      "structural": 816,
+      "witnesses": 0,
+      "connectivity_failures": 816,
+      "classes": 0
+    },
+    {
+      "lattice": "B3",
+      "lattice_elements": 8,
+      "minimum_vertices": 4,
+      "candidates": 118000,
+      "structural": 96,
+      "witnesses": 96,
+      "connectivity_failures": 0,
+      "classes": 4
+    }
+  ],
+  "size_rows": [
+    {
+      "lattice": "C2",
+      "vertices": 1,
+      "candidates": 1,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "C2",
+      "vertices": 2,
+      "candidates": 1,
+      "structural": 1,
+      "witnesses": 1,
+      "connectivity_failures": 0,
+      "classes": 1
+    },
+    {
+      "lattice": "C2",
+      "vertices": 3,
+      "candidates": 1,
+      "structural": 1,
+      "witnesses": 1,
+      "connectivity_failures": 0,
+      "classes": 1
+    },
+    {
+      "lattice": "C2",
+      "vertices": 4,
+      "candidates": 1,
+      "structural": 1,
+      "witnesses": 1,
+      "connectivity_failures": 0,
+      "classes": 1
+    },
+    {
+      "lattice": "C3",
+      "vertices": 1,
+      "candidates": 1,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "C3",
+      "vertices": 2,
+      "candidates": 2,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "C3",
+      "vertices": 3,
+      "candidates": 8,
+      "structural": 3,
+      "witnesses": 3,
+      "connectivity_failures": 0,
+      "classes": 1
+    },
+    {
+      "lattice": "C3",
+      "vertices": 4,
+      "candidates": 64,
+      "structural": 13,
+      "witnesses": 13,
+      "connectivity_failures": 0,
+      "classes": 3
+    },
+    {
+      "lattice": "C4",
+      "vertices": 1,
+      "candidates": 1,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "C4",
+      "vertices": 2,
+      "candidates": 3,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "C4",
+      "vertices": 3,
+      "candidates": 27,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "C4",
+      "vertices": 4,
+      "candidates": 729,
+      "structural": 18,
+      "witnesses": 18,
+      "connectivity_failures": 0,
+      "classes": 2
+    },
+    {
+      "lattice": "B2",
+      "vertices": 1,
+      "candidates": 1,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "B2",
+      "vertices": 2,
+      "candidates": 3,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "B2",
+      "vertices": 3,
+      "candidates": 27,
+      "structural": 6,
+      "witnesses": 6,
+      "connectivity_failures": 0,
+      "classes": 1
+    },
+    {
+      "lattice": "B2",
+      "vertices": 4,
+      "candidates": 729,
+      "structural": 84,
+      "witnesses": 54,
+      "connectivity_failures": 30,
+      "classes": 5
+    },
+    {
+      "lattice": "M3",
+      "vertices": 1,
+      "candidates": 1,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "M3",
+      "vertices": 2,
+      "candidates": 4,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "M3",
+      "vertices": 3,
+      "candidates": 64,
+      "structural": 6,
+      "witnesses": 6,
+      "connectivity_failures": 0,
+      "classes": 1
+    },
+    {
+      "lattice": "M3",
+      "vertices": 4,
+      "candidates": 4096,
+      "structural": 342,
+      "witnesses": 6,
+      "connectivity_failures": 336,
+      "classes": 1
+    },
+    {
+      "lattice": "N5",
+      "vertices": 1,
+      "candidates": 1,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "N5",
+      "vertices": 2,
+      "candidates": 4,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "N5",
+      "vertices": 3,
+      "candidates": 64,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "N5",
+      "vertices": 4,
+      "candidates": 4096,
+      "structural": 72,
+      "witnesses": 12,
+      "connectivity_failures": 60,
+      "classes": 1
+    },
+    {
+      "lattice": "M4",
+      "vertices": 1,
+      "candidates": 1,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "M4",
+      "vertices": 2,
+      "candidates": 5,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "M4",
+      "vertices": 3,
+      "candidates": 125,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "M4",
+      "vertices": 4,
+      "candidates": 15625,
+      "structural": 816,
+      "witnesses": 0,
+      "connectivity_failures": 816,
+      "classes": 0
+    },
+    {
+      "lattice": "B3",
+      "vertices": 1,
+      "candidates": 1,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "B3",
+      "vertices": 2,
+      "candidates": 7,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "B3",
+      "vertices": 3,
+      "candidates": 343,
+      "structural": 0,
+      "witnesses": 0,
+      "connectivity_failures": 0,
+      "classes": 0
+    },
+    {
+      "lattice": "B3",
+      "vertices": 4,
+      "candidates": 117649,
+      "structural": 96,
+      "witnesses": 96,
+      "connectivity_failures": 0,
+      "classes": 4
+    }
+  ],
+  "operation_rows": [
+    {
+      "lattice": "C2",
+      "carrier_size": 2,
+      "admissible": 4,
+      "minimum": 0,
+      "congruences": 2,
+      "selected_unary_operations": []
+    },
+    {
+      "lattice": "C3",
+      "carrier_size": 3,
+      "admissible": 15,
+      "minimum": 1,
+      "congruences": 3,
+      "selected_unary_operations": [
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "lattice": "C4",
+      "carrier_size": 4,
+      "admissible": 64,
+      "minimum": 1,
+      "congruences": 4,
+      "selected_unary_operations": [
+        [
+          0,
+          0,
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "lattice": "B2",
+      "carrier_size": 3,
+      "admissible": 8,
+      "minimum": 1,
+      "congruences": 4,
+      "selected_unary_operations": [
+        [
+          0,
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "lattice": "M3",
+      "carrier_size": 3,
+      "admissible": 4,
+      "minimum": 0,
+      "congruences": 5,
+      "selected_unary_operations": []
+    },
+    {
+      "lattice": "N5",
+      "carrier_size": 4,
+      "admissible": 12,
+      "minimum": 2,
+      "congruences": 5,
+      "selected_unary_operations": [
+        [
+          1,
+          0,
+          3,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "lattice": "B3",
+      "carrier_size": 4,
+      "admissible": 14,
+      "minimum": 2,
+      "congruences": 8,
+      "selected_unary_operations": [
+        [
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          0,
+          2,
+          0
+        ]
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "lattice": "N5",
+      "elements": [
+        "0",
+        "a",
+        "b",
+        "c",
+        "1"
+      ],
+      "covers": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "color": [
+        [
+          0,
+          1,
+          3,
+          4
+        ],
+        [
+          1,
+          0,
+          4,
+          3
+        ],
+        [
+          3,
+          4,
+          0,
+          2
+        ],
+        [
+          4,
+          3,
+          2,
+          0
+        ]
+      ],
+      "operations": [
+        [
+          1,
+          0,
+          3,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "congruences": 5,
+      "carrier_size": 4
+    },
+    {
+      "lattice": "B3",
+      "elements": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "covers": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "color": [
+        [
+          0,
+          1,
+          2,
+          4
+        ],
+        [
+          1,
+          0,
+          3,
+          5
+        ],
+        [
+          2,
+          3,
+          0,
+          6
+        ],
+        [
+          4,
+          5,
+          6,
+          0
+        ]
+      ],
+      "operations": [
+        [
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          0,
+          2,
+          0
+        ]
+      ],
+      "congruences": 8,
+      "carrier_size": 4
+    }
+  ],
+  "sources": {
+    "evidence/B2-witness.json": "6f37a835112a5ea5c1be9f6ee5793ad8fe031139b0c0b493b077b3b0deaac221",
+    "evidence/B3-witness.json": "82c34bc3eba493827249de64f1c1ef6b1d719e5c568fa030ab138769a1cc6c9d",
+    "evidence/C2-witness.json": "92444e62d4fecdef2eaf5c165746867cb366945466236fe3f676f8b28735e9c8",
+    "evidence/C3-witness.json": "1d2f6869dbaeb8262a68188319f4b07690f7338c78750e92f53d37342c2890a8",
+    "evidence/C4-witness.json": "410b2327417eb6538c0c05a153ab3fb810ca413fad1a4b51115be13476f41503",
+    "evidence/M3-witness.json": "d9fe6733f6f3c73a1a3c5d8577fc79d5d981d4fe4c407fbb753fc6ebf0f33db8",
+    "evidence/N5-witness.json": "2b6648c6842bf0742c3029c6c0ad7c906fbdb8d281d8e830a85c51c047ef2685",
+    "evidence/independent-review-results.json": "659717fbcfcfdf1db52ee06831561fa85b2631d7320561c3bc1c2e976410b3be",
+    "evidence/minimized-algebras.json": "76671ae20ad76bc2507b9e0c822bb78862abf2ff507f1a3ab7ba8b40efe85cea",
+    "evidence/search-results.json": "1173e51c3f794ecc1612290f9a71b0a7fddd2ca11fc0b37a9e8b43f964c4e215",
+    "evidence/verified-algebras.json": "5fcdbfee2dde1ee573b696be37b7c2324aa5e80b717c52bb4286c80c24088566"
+  },
+  "scopes": {
+    "search": "All labeled symmetric colorings with bottom exactly on the diagonal, for the selected lattices and carrier sizes.",
+    "classes": "Vertex permutations only; lattice colors are fixed. Classes from different carrier sizes are distinct.",
+    "minima": "minimum basic unary operation count on each fixed carrier with its exact saved threshold relations; other embeddings and higher-arity signatures excluded",
+    "negative": "A zero witness count is a bounded search result, not global nonrepresentability."
+  },
+  "checks": {
+    "candidate_space_reconciled": true,
+    "attrition_reconciled": true,
+    "independent_replay_agrees": true,
+    "certificate_hashes_agree": true,
+    "exact_congruence_counts_agree": true,
+    "operation_counts_agree": true
+  }
+}

@@ -1,0 +1,7 @@
+Command: lean --version
+Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)
+Exit code: 0
+
+Command: lake --version
+Lake version 5.0.0-src+5045d00 (Lean version 4.34.1)
+Exit code: 0

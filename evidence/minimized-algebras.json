@@ -1,0 +1,2923 @@
+{
+  "schema_version": 1,
+  "scope": "minimum basic unary operation count on each fixed carrier with its exact saved threshold relations; other embeddings and higher-arity signatures excluded",
+  "method": "0/1 set-cover dynamic programming, checked by increasing-cardinality enumeration of distinct destruction sets",
+  "completeness_argument": "Every operation in a unary representation of these exact relations must preserve each target relation. All such total unary maps are enumerated. Each unwanted partition must be broken by at least one chosen map. Equal destruction masks are interchangeable; zero masks cannot help. Therefore minimum set cover equals minimum operation count for this fixed representation.",
+  "limits": "exhaustive Python computation; no machine-checked proof of the implementation or novelty claim",
+  "minimizer_sha256": "8979a6a9b7b53e069318b74633b3211f13af149e3aab2b9a7760eaa072c80f9b",
+  "self_check": {
+    "passed": true,
+    "positive_controls": [
+      "Bell counts",
+      "cover optima 0, 1 and 2",
+      "C3 one operation",
+      "Eq(3) zero operations"
+    ],
+    "negative_controls": [
+      "uncoverable partition",
+      "duplicate target relation",
+      "target missing equality",
+      "C3 operation removal adds two congruences",
+      "invalid lattice element names",
+      "carrier beyond four vertices"
+    ]
+  },
+  "certificates": [
+    {
+      "certificate": "C2-witness.json",
+      "certificate_sha256": "92444e62d4fecdef2eaf5c165746867cb366945466236fe3f676f8b28735e9c8",
+      "carrier_size": 2,
+      "all_functions_enumerated": 4,
+      "all_partitions_enumerated": 2,
+      "admissible_operation_count": 4,
+      "admissible_operation_tables": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "target_partitions": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "unwanted_partitions": [],
+      "unique_nonempty_destruction_masks": 0,
+      "mask_representatives": [],
+      "minimum_unary_operation_count": 0,
+      "selected_unary_operations": [],
+      "recovered_congruence_partitions": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "dynamic_programming": {
+        "optimum": 0,
+        "selected_indices": [],
+        "coverage_states": 1
+      },
+      "independent_subset_enumeration": {
+        "optimum": 0,
+        "selected_indices": [],
+        "subsets_examined_by_cardinality": {
+          "0": 1
+        },
+        "all_smaller_cardinalities_exhausted": true,
+        "destruction_sets": []
+      },
+      "checks": {
+        "independent_operation_pool_agrees": true,
+        "independent_destruction_sets_agree": true,
+        "optimization_methods_agree": true,
+        "all_smaller_cardinalities_exhausted": true,
+        "selected_operations_preserve_targets": true,
+        "exact_target_congruences_recovered": true,
+        "valid_lattice_and_threshold_order_embedding": true
+      },
+      "passed": true,
+      "lattice": "C2",
+      "threshold_partitions": [
+        {
+          "element": "0",
+          "partition": [
+            0,
+            1
+          ]
+        },
+        {
+          "element": "1",
+          "partition": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "certificate": "C3-witness.json",
+      "certificate_sha256": "1d2f6869dbaeb8262a68188319f4b07690f7338c78750e92f53d37342c2890a8",
+      "carrier_size": 3,
+      "all_functions_enumerated": 27,
+      "all_partitions_enumerated": 5,
+      "admissible_operation_count": 15,
+      "admissible_operation_tables": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "target_partitions": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "unwanted_partitions": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "unique_nonempty_destruction_masks": 3,
+      "mask_representatives": [
+        {
+          "mask": 1,
+          "operation": [
+            0,
+            1,
+            1
+          ],
+          "breaks_unwanted_partition_indices": [
+            0
+          ]
+        },
+        {
+          "mask": 2,
+          "operation": [
+            0,
+            0,
+            2
+          ],
+          "breaks_unwanted_partition_indices": [
+            1
+          ]
+        },
+        {
+          "mask": 3,
+          "operation": [
+            0,
+            0,
+            1
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            1
+          ]
+        }
+      ],
+      "minimum_unary_operation_count": 1,
+      "selected_unary_operations": [
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "recovered_congruence_partitions": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "dynamic_programming": {
+        "optimum": 1,
+        "selected_indices": [
+          2
+        ],
+        "coverage_states": 4
+      },
+      "independent_subset_enumeration": {
+        "optimum": 1,
+        "selected_indices": [
+          1
+        ],
+        "subsets_examined_by_cardinality": {
+          "0": 1,
+          "1": 2
+        },
+        "all_smaller_cardinalities_exhausted": true,
+        "destruction_sets": [
+          [
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1
+          ]
+        ]
+      },
+      "checks": {
+        "independent_operation_pool_agrees": true,
+        "independent_destruction_sets_agree": true,
+        "optimization_methods_agree": true,
+        "all_smaller_cardinalities_exhausted": true,
+        "selected_operations_preserve_targets": true,
+        "exact_target_congruences_recovered": true,
+        "valid_lattice_and_threshold_order_embedding": true
+      },
+      "passed": true,
+      "lattice": "C3",
+      "threshold_partitions": [
+        {
+          "element": "0",
+          "partition": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "element": "1",
+          "partition": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "element": "2",
+          "partition": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "certificate": "C4-witness.json",
+      "certificate_sha256": "410b2327417eb6538c0c05a153ab3fb810ca413fad1a4b51115be13476f41503",
+      "carrier_size": 4,
+      "all_functions_enumerated": 256,
+      "all_partitions_enumerated": 15,
+      "admissible_operation_count": 64,
+      "admissible_operation_tables": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          3
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          1,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          0,
+          3
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          0,
+          1,
+          3
+        ],
+        [
+          1,
+          0,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          2,
+          1
+        ],
+        [
+          1,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          2
+        ],
+        [
+          1,
+          1,
+          0,
+          3
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          3
+        ],
+        [
+          1,
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          0,
+          1
+        ],
+        [
+          2,
+          2,
+          0,
+          2
+        ],
+        [
+          2,
+          2,
+          0,
+          3
+        ],
+        [
+          2,
+          2,
+          1,
+          0
+        ],
+        [
+          2,
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1,
+          3
+        ],
+        [
+          2,
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          3
+        ],
+        [
+          3,
+          3,
+          3,
+          0
+        ],
+        [
+          3,
+          3,
+          3,
+          1
+        ],
+        [
+          3,
+          3,
+          3,
+          2
+        ],
+        [
+          3,
+          3,
+          3,
+          3
+        ]
+      ],
+      "target_partitions": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "unwanted_partitions": [
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          2
+        ]
+      ],
+      "unique_nonempty_destruction_masks": 28,
+      "mask_representatives": [
+        {
+          "mask": 316,
+          "operation": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "breaks_unwanted_partition_indices": [
+            2,
+            3,
+            4,
+            5,
+            8
+          ]
+        },
+        {
+          "mask": 744,
+          "operation": [
+            0,
+            0,
+            2,
+            3
+          ],
+          "breaks_unwanted_partition_indices": [
+            3,
+            5,
+            6,
+            7,
+            9
+          ]
+        },
+        {
+          "mask": 797,
+          "operation": [
+            1,
+            1,
+            2,
+            2
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            2,
+            3,
+            4,
+            8,
+            9
+          ]
+        },
+        {
+          "mask": 809,
+          "operation": [
+            0,
+            1,
+            2,
+            2
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            3,
+            5,
+            8,
+            9
+          ]
+        },
+        {
+          "mask": 993,
+          "operation": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "mask": 1020,
+          "operation": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "breaks_unwanted_partition_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "mask": 1021,
+          "operation": [
+            1,
+            0,
+            2,
+            2
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "mask": 1054,
+          "operation": [
+            0,
+            1,
+            1,
+            3
+          ],
+          "breaks_unwanted_partition_indices": [
+            1,
+            2,
+            3,
+            4,
+            10
+          ]
+        },
+        {
+          "mask": 1250,
+          "operation": [
+            0,
+            0,
+            2,
+            0
+          ],
+          "breaks_unwanted_partition_indices": [
+            1,
+            5,
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "mask": 1276,
+          "operation": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "breaks_unwanted_partition_indices": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "mask": 1318,
+          "operation": [
+            0,
+            1,
+            2,
+            1
+          ],
+          "breaks_unwanted_partition_indices": [
+            1,
+            2,
+            5,
+            8,
+            10
+          ]
+        },
+        {
+          "mask": 1508,
+          "operation": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "breaks_unwanted_partition_indices": [
+            2,
+            5,
+            6,
+            7,
+            8,
+            10
+          ]
+        },
+        {
+          "mask": 1534,
+          "operation": [
+            1,
+            0,
+            2,
+            0
+          ],
+          "breaks_unwanted_partition_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            10
+          ]
+        },
+        {
+          "mask": 1610,
+          "operation": [
+            0,
+            0,
+            0,
+            3
+          ],
+          "breaks_unwanted_partition_indices": [
+            1,
+            3,
+            6,
+            9,
+            10
+          ]
+        },
+        {
+          "mask": 1628,
+          "operation": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "breaks_unwanted_partition_indices": [
+            2,
+            3,
+            4,
+            6,
+            9,
+            10
+          ]
+        },
+        {
+          "mask": 1790,
+          "operation": [
+            0,
+            0,
+            1,
+            3
+          ],
+          "breaks_unwanted_partition_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            9,
+            10
+          ]
+        },
+        {
+          "mask": 1807,
+          "operation": [
+            1,
+            1,
+            1,
+            2
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            1,
+            2,
+            3,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "mask": 1855,
+          "operation": [
+            0,
+            1,
+            1,
+            2
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "mask": 1887,
+          "operation": [
+            1,
+            0,
+            0,
+            2
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "mask": 1891,
+          "operation": [
+            0,
+            0,
+            0,
+            2
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            1,
+            5,
+            6,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "mask": 1900,
+          "operation": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "breaks_unwanted_partition_indices": [
+            2,
+            3,
+            5,
+            6,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "mask": 1917,
+          "operation": [
+            2,
+            2,
+            1,
+            0
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "mask": 1918,
+          "operation": [
+            1,
+            0,
+            0,
+            3
+          ],
+          "breaks_unwanted_partition_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "mask": 2023,
+          "operation": [
+            1,
+            0,
+            1,
+            2
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "mask": 2027,
+          "operation": [
+            0,
+            1,
+            0,
+            2
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            1,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "mask": 2029,
+          "operation": [
+            2,
+            2,
+            0,
+            1
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "mask": 2030,
+          "operation": [
+            0,
+            0,
+            2,
+            1
+          ],
+          "breaks_unwanted_partition_indices": [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "mask": 2047,
+          "operation": [
+            0,
+            0,
+            1,
+            2
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        }
+      ],
+      "minimum_unary_operation_count": 1,
+      "selected_unary_operations": [
+        [
+          0,
+          0,
+          1,
+          2
+        ]
+      ],
+      "recovered_congruence_partitions": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "dynamic_programming": {
+        "optimum": 1,
+        "selected_indices": [
+          27
+        ],
+        "coverage_states": 56
+      },
+      "independent_subset_enumeration": {
+        "optimum": 1,
+        "selected_indices": [
+          0
+        ],
+        "subsets_examined_by_cardinality": {
+          "0": 1,
+          "1": 1
+        },
+        "all_smaller_cardinalities_exhausted": true,
+        "destruction_sets": [
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            8,
+            9,
+            10
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            8,
+            9,
+            10
+          ],
+          [
+            0,
+            1,
+            2,
+            3,
+            8,
+            9,
+            10
+          ],
+          [
+            0,
+            1,
+            2,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          [
+            0,
+            1,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          [
+            0,
+            1,
+            5,
+            6,
+            8,
+            9,
+            10
+          ],
+          [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9,
+            10
+          ],
+          [
+            0,
+            2,
+            3,
+            4,
+            8,
+            9
+          ],
+          [
+            0,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          [
+            0,
+            3,
+            5,
+            8,
+            9
+          ],
+          [
+            0,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            10
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            9,
+            10
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            8,
+            9,
+            10
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            10
+          ],
+          [
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          [
+            1,
+            2,
+            5,
+            8,
+            10
+          ],
+          [
+            1,
+            3,
+            6,
+            9,
+            10
+          ],
+          [
+            1,
+            5,
+            6,
+            7,
+            10
+          ],
+          [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            10
+          ],
+          [
+            2,
+            3,
+            4,
+            5,
+            8
+          ],
+          [
+            2,
+            3,
+            4,
+            6,
+            9,
+            10
+          ],
+          [
+            2,
+            3,
+            5,
+            6,
+            8,
+            9,
+            10
+          ],
+          [
+            2,
+            5,
+            6,
+            7,
+            8,
+            10
+          ],
+          [
+            3,
+            5,
+            6,
+            7,
+            9
+          ]
+        ]
+      },
+      "checks": {
+        "independent_operation_pool_agrees": true,
+        "independent_destruction_sets_agree": true,
+        "optimization_methods_agree": true,
+        "all_smaller_cardinalities_exhausted": true,
+        "selected_operations_preserve_targets": true,
+        "exact_target_congruences_recovered": true,
+        "valid_lattice_and_threshold_order_embedding": true
+      },
+      "passed": true,
+      "lattice": "C4",
+      "threshold_partitions": [
+        {
+          "element": "0",
+          "partition": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "element": "1",
+          "partition": [
+            0,
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "element": "2",
+          "partition": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "element": "3",
+          "partition": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "certificate": "B2-witness.json",
+      "certificate_sha256": "6f37a835112a5ea5c1be9f6ee5793ad8fe031139b0c0b493b077b3b0deaac221",
+      "carrier_size": 3,
+      "all_functions_enumerated": 27,
+      "all_partitions_enumerated": 5,
+      "admissible_operation_count": 8,
+      "admissible_operation_tables": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          0
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "target_partitions": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "unwanted_partitions": [
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "unique_nonempty_destruction_masks": 1,
+      "mask_representatives": [
+        {
+          "mask": 1,
+          "operation": [
+            0,
+            0,
+            2
+          ],
+          "breaks_unwanted_partition_indices": [
+            0
+          ]
+        }
+      ],
+      "minimum_unary_operation_count": 1,
+      "selected_unary_operations": [
+        [
+          0,
+          0,
+          2
+        ]
+      ],
+      "recovered_congruence_partitions": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "dynamic_programming": {
+        "optimum": 1,
+        "selected_indices": [
+          0
+        ],
+        "coverage_states": 2
+      },
+      "independent_subset_enumeration": {
+        "optimum": 1,
+        "selected_indices": [
+          0
+        ],
+        "subsets_examined_by_cardinality": {
+          "0": 1,
+          "1": 1
+        },
+        "all_smaller_cardinalities_exhausted": true,
+        "destruction_sets": [
+          [
+            0
+          ]
+        ]
+      },
+      "checks": {
+        "independent_operation_pool_agrees": true,
+        "independent_destruction_sets_agree": true,
+        "optimization_methods_agree": true,
+        "all_smaller_cardinalities_exhausted": true,
+        "selected_operations_preserve_targets": true,
+        "exact_target_congruences_recovered": true,
+        "valid_lattice_and_threshold_order_embedding": true
+      },
+      "passed": true,
+      "lattice": "B2",
+      "threshold_partitions": [
+        {
+          "element": "0",
+          "partition": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "element": "a",
+          "partition": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "element": "b",
+          "partition": [
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "element": "1",
+          "partition": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "certificate": "M3-witness.json",
+      "certificate_sha256": "d9fe6733f6f3c73a1a3c5d8577fc79d5d981d4fe4c407fbb753fc6ebf0f33db8",
+      "carrier_size": 3,
+      "all_functions_enumerated": 27,
+      "all_partitions_enumerated": 5,
+      "admissible_operation_count": 4,
+      "admissible_operation_tables": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          2
+        ]
+      ],
+      "target_partitions": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "unwanted_partitions": [],
+      "unique_nonempty_destruction_masks": 0,
+      "mask_representatives": [],
+      "minimum_unary_operation_count": 0,
+      "selected_unary_operations": [],
+      "recovered_congruence_partitions": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "dynamic_programming": {
+        "optimum": 0,
+        "selected_indices": [],
+        "coverage_states": 1
+      },
+      "independent_subset_enumeration": {
+        "optimum": 0,
+        "selected_indices": [],
+        "subsets_examined_by_cardinality": {
+          "0": 1
+        },
+        "all_smaller_cardinalities_exhausted": true,
+        "destruction_sets": []
+      },
+      "checks": {
+        "independent_operation_pool_agrees": true,
+        "independent_destruction_sets_agree": true,
+        "optimization_methods_agree": true,
+        "all_smaller_cardinalities_exhausted": true,
+        "selected_operations_preserve_targets": true,
+        "exact_target_congruences_recovered": true,
+        "valid_lattice_and_threshold_order_embedding": true
+      },
+      "passed": true,
+      "lattice": "M3",
+      "threshold_partitions": [
+        {
+          "element": "0",
+          "partition": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "element": "a",
+          "partition": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "element": "b",
+          "partition": [
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "element": "c",
+          "partition": [
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "element": "1",
+          "partition": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "certificate": "N5-witness.json",
+      "certificate_sha256": "2b6648c6842bf0742c3029c6c0ad7c906fbdb8d281d8e830a85c51c047ef2685",
+      "carrier_size": 4,
+      "all_functions_enumerated": 256,
+      "all_partitions_enumerated": 15,
+      "admissible_operation_count": 12,
+      "admissible_operation_tables": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          3,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          3,
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          3,
+          3,
+          3
+        ]
+      ],
+      "target_partitions": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "unwanted_partitions": [
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          2
+        ]
+      ],
+      "unique_nonempty_destruction_masks": 4,
+      "mask_representatives": [
+        {
+          "mask": 221,
+          "operation": [
+            1,
+            1,
+            3,
+            3
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            2,
+            3,
+            4,
+            6,
+            7
+          ]
+        },
+        {
+          "mask": 495,
+          "operation": [
+            1,
+            0,
+            3,
+            2
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "mask": 498,
+          "operation": [
+            0,
+            0,
+            2,
+            2
+          ],
+          "breaks_unwanted_partition_indices": [
+            1,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "mask": 756,
+          "operation": [
+            0,
+            1,
+            0,
+            1
+          ],
+          "breaks_unwanted_partition_indices": [
+            2,
+            4,
+            5,
+            6,
+            7,
+            9
+          ]
+        }
+      ],
+      "minimum_unary_operation_count": 2,
+      "selected_unary_operations": [
+        [
+          1,
+          0,
+          3,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "recovered_congruence_partitions": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "dynamic_programming": {
+        "optimum": 2,
+        "selected_indices": [
+          1,
+          3
+        ],
+        "coverage_states": 9
+      },
+      "independent_subset_enumeration": {
+        "optimum": 2,
+        "selected_indices": [
+          0,
+          3
+        ],
+        "subsets_examined_by_cardinality": {
+          "0": 1,
+          "1": 4,
+          "2": 3
+        },
+        "all_smaller_cardinalities_exhausted": true,
+        "destruction_sets": [
+          [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8
+          ],
+          [
+            0,
+            2,
+            3,
+            4,
+            6,
+            7
+          ],
+          [
+            1,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          [
+            2,
+            4,
+            5,
+            6,
+            7,
+            9
+          ]
+        ]
+      },
+      "checks": {
+        "independent_operation_pool_agrees": true,
+        "independent_destruction_sets_agree": true,
+        "optimization_methods_agree": true,
+        "all_smaller_cardinalities_exhausted": true,
+        "selected_operations_preserve_targets": true,
+        "exact_target_congruences_recovered": true,
+        "valid_lattice_and_threshold_order_embedding": true
+      },
+      "passed": true,
+      "lattice": "N5",
+      "threshold_partitions": [
+        {
+          "element": "0",
+          "partition": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "element": "a",
+          "partition": [
+            0,
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "element": "b",
+          "partition": [
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "element": "c",
+          "partition": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "element": "1",
+          "partition": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "certificate": "B3-witness.json",
+      "certificate_sha256": "82c34bc3eba493827249de64f1c1ef6b1d719e5c568fa030ab138769a1cc6c9d",
+      "carrier_size": 4,
+      "all_functions_enumerated": 256,
+      "all_partitions_enumerated": 15,
+      "admissible_operation_count": 14,
+      "admissible_operation_tables": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          3
+        ],
+        [
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          3
+        ],
+        [
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          0,
+          2
+        ],
+        [
+          2,
+          2,
+          2,
+          2
+        ],
+        [
+          3,
+          3,
+          3,
+          0
+        ],
+        [
+          3,
+          3,
+          3,
+          3
+        ]
+      ],
+      "target_partitions": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "unwanted_partitions": [
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          2
+        ]
+      ],
+      "unique_nonempty_destruction_masks": 3,
+      "mask_representatives": [
+        {
+          "mask": 62,
+          "operation": [
+            0,
+            0,
+            2,
+            3
+          ],
+          "breaks_unwanted_partition_indices": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "mask": 93,
+          "operation": [
+            0,
+            0,
+            2,
+            0
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            2,
+            3,
+            4,
+            6
+          ]
+        },
+        {
+          "mask": 107,
+          "operation": [
+            0,
+            0,
+            0,
+            3
+          ],
+          "breaks_unwanted_partition_indices": [
+            0,
+            1,
+            3,
+            5,
+            6
+          ]
+        }
+      ],
+      "minimum_unary_operation_count": 2,
+      "selected_unary_operations": [
+        [
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          0,
+          0,
+          2,
+          0
+        ]
+      ],
+      "recovered_congruence_partitions": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "dynamic_programming": {
+        "optimum": 2,
+        "selected_indices": [
+          0,
+          1
+        ],
+        "coverage_states": 5
+      },
+      "independent_subset_enumeration": {
+        "optimum": 2,
+        "selected_indices": [
+          0,
+          1
+        ],
+        "subsets_examined_by_cardinality": {
+          "0": 1,
+          "1": 3,
+          "2": 1
+        },
+        "all_smaller_cardinalities_exhausted": true,
+        "destruction_sets": [
+          [
+            0,
+            1,
+            3,
+            5,
+            6
+          ],
+          [
+            0,
+            2,
+            3,
+            4,
+            6
+          ],
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ]
+      },
+      "checks": {
+        "independent_operation_pool_agrees": true,
+        "independent_destruction_sets_agree": true,
+        "optimization_methods_agree": true,
+        "all_smaller_cardinalities_exhausted": true,
+        "selected_operations_preserve_targets": true,
+        "exact_target_congruences_recovered": true,
+        "valid_lattice_and_threshold_order_embedding": true
+      },
+      "passed": true,
+      "lattice": "B3",
+      "threshold_partitions": [
+        {
+          "element": "0",
+          "partition": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "element": "1",
+          "partition": [
+            0,
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "element": "2",
+          "partition": [
+            0,
+            1,
+            0,
+            2
+          ]
+        },
+        {
+          "element": "3",
+          "partition": [
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "element": "4",
+          "partition": [
+            0,
+            1,
+            2,
+            0
+          ]
+        },
+        {
+          "element": "5",
+          "partition": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "element": "6",
+          "partition": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "element": "7",
+          "partition": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

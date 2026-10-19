@@ -1,0 +1,29 @@
+name: Research extension or new example
+description: Propose a new target, certificate, verification method, or replication.
+title: "[Research] "
+labels: [research]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Mathematical question
+      description: Define the target lattice, representation, or exact claim you want to investigate.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and success criterion
+      description: State the carrier bound, arity, fixed embedding assumptions, and what would count as a successful check.
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: Proposed method and resource estimate
+      description: Explain the search or verification method and expected runtime or memory needs.
+  - type: textarea
+    id: literature
+    attributes:
+      label: Related literature or existing evidence
+      description: Link primary sources, prior results, certificates, or a replication record. Distinguish an established result from a conjecture.

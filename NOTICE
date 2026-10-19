@@ -1,0 +1,11 @@
+Finite Congruence Checks
+Copyright 2026 the Finite Congruence Checks contributors.
+
+Developed with AI assistance (Claude and OpenAI Codex). Implementation and review
+provenance are documented in WORK_LOG.md and docs/RELEASE_REVIEW.md.
+
+reference/ contains files from openai/math, distributed under Apache-2.0.
+See reference/README.md and reference/LICENSE for provenance and terms.
+Any additional upstream source copies identify their origin in the Lean docs.
+
+This independent project is not an official OpenAI product or endorsement.

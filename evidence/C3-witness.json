@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "https://github.com/openai/math",
+    "revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "path": "lean/ComparatorChallenges/FiniteCongruenceGraph.lean",
+    "sha256": "2ee495def2e1228bf13df520f6c66699ec22b2cd3bc1ae7383a30957aae9f967"
+  },
+  "lattice": {
+    "name": "C3",
+    "elements": [
+      "0",
+      "1",
+      "2"
+    ],
+    "bottom": 0,
+    "leq": [
+      [
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        true
+      ]
+    ],
+    "join": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        1,
+        2
+      ],
+      [
+        2,
+        2,
+        2
+      ]
+    ]
+  },
+  "color": [
+    [
+      0,
+      1,
+      2
+    ],
+    [
+      1,
+      0,
+      2
+    ],
+    [
+      2,
+      2,
+      0
+    ]
+  ],
+  "primary_check": {
+    "passed": true,
+    "admissible_maps": 15,
+    "seed_classes_checked": 7
+  }
+}
