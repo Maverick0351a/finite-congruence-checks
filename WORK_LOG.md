@@ -402,3 +402,11 @@ identities, explicit minimum-rule scope, keyboard alternatives, and claim
 freshness, with no remaining substantive findings. The 23 atlas/query unit tests,
 existing atlas UI and explorer checks, recorded evidence check, map checks, and
 `git diff --check` pass. Publication follows the repository CI checks.
+
+The maintainer supplied a proposed progression from certificate checking to
+executable testing and binary verification. Compared it with the existing Lean
+definitions and concrete proofs, checked the Lean trust FAQ and primary seL4
+and Alive2 sources, and recorded a scoped next milestone in
+`docs/CHECKER_FOUNDATION.md`. The plan distinguishes preservation of one grouping
+from exact-family verification and search completeness. Its proposed 16-bit
+pilot is not an implemented checker or a completed binary-verification result.
