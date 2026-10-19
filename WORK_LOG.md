@@ -139,4 +139,20 @@ platform metadata probe uses subprocess.run, which the failed-child regression
 test was mocking globally. Isolated that metadata call in the test. Production
 algorithms were unchanged. All six evidence tests then passed in local WSL, and
 the complete 33-test experiment was rerun successfully with fresh recorded hashes.
-Hosted verification of the correction is recorded with the release checks.
+Hosted run 39180991754 passed all four jobs at commit
+dd86efafcb16a0b84fd6a44afedf2b33624f17cb: Ubuntu Python 3.10 and 3.12, Windows
+Python 3.12, and concrete Lean compilation with bundled kernel replay.
+
+The targeted upstream project then compiled the unchanged pinned Congruence and
+GraphCriterion solution modules, and bundled leanchecker replay passed for those
+modules and the audit module. Recorded matching source hashes, all nine pinned
+dependency revisions with clean checkouts, and the printed axiom dependencies.
+The full upstream corpus, official comparator workflow, and formal connection
+from Python connectivity code to the upstream predicate remain outside this run.
+
+Updated the GitHub description to identify validation of the finite congruence
+graph criterion from OpenAI's math corpus, with exhaustive small-case experiments,
+independent checkers, and Lean proof checks. This names the selected scope rather
+than implying validation of the whole corpus. Added an optional future static
+Hugging Face demonstration to the roadmap. A final separate subagent review found
+no actionable problems in release packaging, manifest coverage, or checksums.

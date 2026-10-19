@@ -1,0 +1,7 @@
+Command: cd lean/upstream && lake env leanchecker -v OAI.Algebra.Universal UpstreamAudit
+Toolchain: leanprover/lean4:v4.34.1
+Exit code: 0
+
+replaying UpstreamAudit
+replaying OAI.Algebra.Universal.Congruence
+replaying OAI.Algebra.Universal.GraphCriterion

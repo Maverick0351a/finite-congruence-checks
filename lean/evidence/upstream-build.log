@@ -1,0 +1,13 @@
+Command: cd lean/upstream && lake build
+Toolchain: leanprover/lean4:v4.34.1
+Exit code: 0
+
+✔ [739/742] Built OAI.Algebra.Universal.Congruence (2.0s)
+✔ [740/742] Built OAI.Algebra.Universal.GraphCriterion (1.0s)
+ℹ [741/742] Built UpstreamAudit (738ms)
+info: UpstreamAudit.lean:4:0: OAI.FiniteCongruence.graph_criterion (Lat : Type) [Fintype Lat] [Lattice Lat] [OrderBot Lat] :
+  OAI.FiniteCongruence.Representable Lat ↔ OAI.FiniteCongruence.HasGraphWitness Lat
+info: UpstreamAudit.lean:5:0: 'OAI.FiniteCongruence.graph_criterion' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: UpstreamAudit.lean:6:0: 'OAI.FiniteCongruence.graphOrderIso' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: UpstreamAudit.lean:7:0: 'OAI.FiniteCongruence.principalColor_isGraphWitness' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (742 jobs).

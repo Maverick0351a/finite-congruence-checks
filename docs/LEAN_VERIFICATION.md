@@ -4,8 +4,9 @@ This component connects the finite experiment to explicit formal statements in
 Lean. Its scope is two concrete algebras on four elements, for N5 and B3, and a
 separate check of the actual upstream graph-criterion source.
 
-**Concrete N5/B3 build and bundled `leanchecker` kernel replay: passed locally
-with Lean 4.34.1 (both exit 0).** The targeted upstream build is in progress.
+**All four local checks passed with Lean 4.34.1:** the concrete N5/B3 build,
+its bundled `leanchecker` kernel replay, the targeted upstream graph-criterion
+build, and replay of the two upstream source modules. Every command returned 0.
 The full upstream corpus has not been built.
 
 ## Concrete certificates
@@ -84,11 +85,18 @@ The upstream toolchain is Lean 4.34.1 and its Mathlib revision is
 It avoids fetching unrelated packages from the full corpus build. This is a
 targeted build environment, not a build of the full upstream repository.
 
+The successful targeted build compiled `Congruence.lean`, `GraphCriterion.lean`,
+and `UpstreamAudit.lean` after retrieving the 723-module Mathlib dependency cache.
+The compiled source bytes match the vendored repository files, and all nine
+dependency checkouts match `lean/upstream/lake-manifest.json` with clean working
+trees. This provenance is recorded in `lean/evidence/upstream-environment.json`.
+
 ```text
 cd lean/upstream
 lake update
-lake exe cache get Mathlib/Data/Fin/Tuple/Basic.lean Mathlib/Data/Setoid/Basic.lean Mathlib/Order/Hom/Basic.lean Mathlib/Data/Finset/Lattice/Fold.lean Mathlib/Data/Fintype/EquivFin.lean Mathlib/Data/Fintype/Pi.lean Mathlib/Data/Fintype/Prod.lean
+lake exe cache get Mathlib.Data.Fin.Tuple.Basic Mathlib.Data.Setoid.Basic Mathlib.Order.Hom.Basic Mathlib.Data.Finset.Lattice.Fold Mathlib.Data.Fintype.EquivFin Mathlib.Data.Fintype.Pi Mathlib.Data.Fintype.Prod
 lake build
+lake env leanchecker -v OAI.Algebra.Universal UpstreamAudit
 ```
 
 `UpstreamAudit.lean` imports the actual theorem and prints its type and axiom
@@ -97,6 +105,20 @@ comparator file intentionally ends with a placeholder proof, while the solution
 module contains the proof to be checked. A source review shows the same key
 definitions and theorem statement; this repository does not present that review
 as an official comparator run.
+
+The build and replay logs are `lean/evidence/upstream-build.log` and
+`lean/evidence/upstream-leanchecker.log`. The actual axiom report is:
+
+| Upstream declaration | Axioms reported by Lean |
+| --- | --- |
+| `graph_criterion` | `propext`, `Classical.choice`, `Quot.sound` |
+| `graphOrderIso` | `propext`, `Classical.choice`, `Quot.sound` |
+| `principalColor_isGraphWitness` | `propext`, `Classical.choice`, `Quot.sound` |
+
+No `sorryAx` or native evaluation axiom is reported. The dependency cache and
+official Lean distribution are part of the build's trust boundary; the replay
+checks the two OAI modules and audit module against their imported environment.
+It does not freshly replay every imported Mathlib declaration.
 
 ## Relationship and limits
 
@@ -129,3 +151,13 @@ external peer review is claimed here.
   recorded above. Upstream dependency preparation and kernel replay continue.
 - 2026-10-19 00:26 UTC: `lake env leanchecker FiniteCongruenceChecks` completed
   successfully with exit 0 and no diagnostic output.
+- 2026-10-19 00:39 UTC: The targeted upstream build and bundled kernel replay
+  both passed. The initial cache command required module names because Mathlib
+  is installed as a dependency. A slow source-hashing attempt on WSL's mounted
+  Windows filesystem was stopped and moved to a native WSL scratch directory.
+  The archive copy flattened three documentation/benchmark symlinks; their
+  pinned Git versions were restored before compilation. All dependency trees
+  were then verified clean, all pinned revisions matched, and the compiled
+  project source bytes matched the repository. The theorem files were unchanged.
+  This remains a targeted check; no official comparator or full corpus run was
+  performed.

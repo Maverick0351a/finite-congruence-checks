@@ -7,7 +7,10 @@ The release exhausts 143,685 labeled colorings across eight specified lattices
 and carrier sizes 1–4. A separate verifier reproduces the search, and a direct
 algebra calculation recovers the intended congruence lattices for seven saved
 witnesses. The repo includes compact unary operations, inspectable certificates,
-charts, an offline evidence gallery, and documented Lean verification work.
+charts, and an offline evidence gallery. Lean 4.34.1 compiled the concrete N5/B3
+congruence certificates and the actual pinned upstream graph-criterion proof;
+both projects passed bundled kernel replay for their target modules. The Lean
+record documents the imported-dependency trust boundary and remaining work.
 
 One useful regression result: 1,242 candidates pass the four structural
 conditions but fail the required connectivity condition. These cases help test
@@ -20,6 +23,6 @@ criticism of the definitions, certificates, and verification boundary.
 Repository: https://github.com/Maverick0351a/finite-congruence-checks
 
 Before sharing, make the repository public intentionally, link the successful
-release checks, and replace the general Lean sentence with the exact final
-verified scope from LEAN_VERIFICATION.md. Share where such posts are welcome;
+release checks, and check that this wording still matches the verified scope in
+LEAN_VERIFICATION.md. Share where such posts are welcome;
 start with a focused question or reproducible example relevant to the audience.

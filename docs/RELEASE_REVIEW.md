@@ -58,8 +58,10 @@ The focused regression passes locally. Production algorithms are unchanged.
 The primary agent reran the full experiment and all 33 tests, and this reviewer
 confirmed that the regenerated evidence passes the source/output integrity
 check. The primary agent also reports all six evidence tests passing in WSL
-Linux. The repaired source still requires a successful hosted rerun before
-claiming that it has passed the complete hosted release workflow.
+Linux. The [corrected hosted run](https://github.com/Maverick0351a/finite-congruence-checks/actions/runs/39180991754)
+then passed all four jobs at commit
+`dd86efafcb16a0b84fd6a44afedf2b33624f17cb`: Python 3.10 and 3.12 on Ubuntu,
+Python 3.12 on Windows, and concrete Lean compilation with bundled kernel replay.
 
 ## Independent operation-minimum audit
 

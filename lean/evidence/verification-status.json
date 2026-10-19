@@ -1,5 +1,5 @@
 {
-  "recorded_at_utc": "2026-10-19T00:26:33.685445+00:00",
+  "recorded_at_utc": "2026-10-19T00:40:09.095504+00:00",
   "toolchain": "leanprover/lean4:v4.34.1",
   "lean_commit": "5045d0056413266e57c625dcd7c365b10e377c52",
   "platform": "x86_64-unknown-linux-gnu (WSL Ubuntu-Shannon)",
@@ -29,7 +29,28 @@
   "upstream": {
     "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
     "mathlib_commit": "d13f23b723b8a846827a245b89c10fc7d3f11612",
-    "build_status": "pending"
+    "build_status": "passed",
+    "build_exit_code": 0,
+    "leanchecker_exit_code": 0,
+    "cached_dependency_modules": 723,
+    "compiled_sources_match_repository": true,
+    "all_dependency_checkouts_clean": true,
+    "graph_criterion_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "graphOrderIso_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "principalColor_isGraphWitness_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "fresh_replay_of_all_mathlib_dependencies": false
   },
   "official_comparator_run": false,
   "full_upstream_corpus_build": false,
