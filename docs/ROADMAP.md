@@ -50,9 +50,12 @@ comparison runner; and a proposal/repair demo with individual evidence records.
 The first [constrained agent repair pilot](REPAIR_BENCHMARK.md) permits merges
 only, retains a required separation, and includes impossible cases. Both feedback
 arms scored 12/12 on the locally held-out tasks, so this pilot demonstrated the
-connection and scoring process without establishing a feedback advantage. Next,
-specify a six-object experiment with more possible conflicts and extend the
-checker assurance to match before running it. Machine-code refinement remains
+connection and scoring process without establishing a feedback advantage. The
+next preparation is a small [evidence-applicability task set](EVIDENCE_APPLICABILITY.md)
+covering exact claims and justified transfers. Its reference packets and private
+scoring key do not resume the paused model benchmark. A six-object repair design
+with more possible conflicts remains a later step, requiring matching checker
+assurance before it runs. Machine-code refinement remains
 a separate research direction. Extend to exact congruence families only with
 explicit completeness obligations.
 

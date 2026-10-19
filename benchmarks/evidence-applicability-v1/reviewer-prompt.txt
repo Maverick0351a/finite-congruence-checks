@@ -1,0 +1,9 @@
+Review one original response against its assigned task, the private key, and the canonical source collection.
+
+This is an evidence-applicability review. Never infer correctness from JSON formatting, a matching hash, or a familiar theorem name. Determine whether each cited theorem has the required mathematical subject, hypotheses, conclusion, and quantifiers. Preserve any valid independent deduction as a deduction; do not turn it into a recorded Lean proof or saved execution.
+
+Return the eight rubric scores individually, a total out of 16, the exact answer spans supporting each score, and source references for each material judgment. A correct conclusion with the wrong justification cannot receive full credit. Score missing content as missing; never rewrite or repair the answer. Do not require the key's preferred phrasing or reference ID if another supplied source supports the claim. Flag ambiguous interpretations or valid alternative derivations for adjudication instead of silently rejecting them.
+
+Record supported claims incorrectly rejected, unsupported claims accepted, false correspondences accepted, and correct uses of proved transfer separately. For missing evidence, check whether the answer specifies the supplied collection rather than claiming global nonexistence. A partially supported multi-part question must not be collapsed into a single misleading verdict.
+
+Do not read condition labels, model settings, usage, order, other answers, or the author's task-selection notes. Lock scores before recording a guess about the condition and confidence in that guess. The controller must record masking failures. This review is not an external human approval and does not prove general semantic preservation.

@@ -1,0 +1,38 @@
+name: Evidence applicability preparation
+
+on:
+  push:
+    paths:
+      - 'scripts/applicability_packets.py'
+      - 'scripts/test_applicability_packets.py'
+      - 'benchmarks/evidence-applicability-v1/**'
+      - 'docs/EVIDENCE_APPLICABILITY.md'
+      - '.github/workflows/applicability-preparation.yml'
+  pull_request:
+    paths:
+      - 'scripts/applicability_packets.py'
+      - 'scripts/test_applicability_packets.py'
+      - 'benchmarks/evidence-applicability-v1/**'
+      - 'docs/EVIDENCE_APPLICABILITY.md'
+      - '.github/workflows/applicability-preparation.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  offline-preparation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Check frozen packet data and denial controls without inference
+        run: |
+          python scripts/applicability_packets.py check
+          python -m unittest discover -s scripts -p test_applicability_packets.py -v
+      - name: Build both reference packets without the private controller key
+        run: python scripts/applicability_packets.py build --out runs/applicability-ci-packets
