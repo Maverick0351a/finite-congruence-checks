@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "experiment_id": "merge-repair-v1",
+  "arms": ["pass_fail", "counterexample"],
+  "primary_metric": "correct_first_decision_after_initial_feedback",
+  "secondary_metrics": ["correct_within_budget", "model_calls", "reported_tokens", "constraint_violations", "false_impossibility_claims"],
+  "max_decisions": 3,
+  "trial_order_seed": "merge-repair-v1-order",
+  "repetitions": 1,
+  "impossibility_is_terminal": true,
+  "model_context": "Fresh Codex exec process for every decision; only that trial's public task, initial feedback, previous answers and feedback are replayed.",
+  "feedback_difference": "Only the counterexample arm receives the native checker's violating_pair for a failed preservation test. Constraint errors are identical in both arms.",
+  "scoring": "Repairs must preserve all original equivalences, retain the required separation, and pass the identified native preservation checker. Impossible answers are scored by independent exhaustive enumeration of all 15 partitions.",
+  "held_out_meaning": "Test tasks use operation conjugacy families absent from development tasks. No claim that the underlying mathematics or tasks were absent from model training.",
+  "limits": [
+    "One model/configuration, one repetition, twelve small paired test tasks; descriptive pilot only.",
+    "The four-object task has very few legal repairs, so ceiling effects can hide any feedback benefit.",
+    "Every selected initial grouping has exactly one distinct same-group pair. Knowing it fails already determines that pair; the witness explicitly highlights information inferable from the task.",
+    "Codex CLI settings and inherited global instructions are part of the tested harness; requested settings are not proof of a server model snapshot.",
+    "The Lean proof covers preservation and returned witnesses. Merge constraints and impossibility scoring are separately tested Python code.",
+    "Equal decision budgets do not imply equal tokens or computation; counterexample feedback contains additional explicit feedback text."
+  ]
+}

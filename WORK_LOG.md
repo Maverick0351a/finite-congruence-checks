@@ -487,3 +487,70 @@ logs, mutation evidence, and actual two-call repair demonstration under
 `evidence/grouping-checker-v1/`. Exact-byte Git attributes preserve log hashes.
 Executable archives remain separate release assets, and offline validation
 explicitly reports whether those bytes were available.
+
+## 2026-10-18 — Constrained repair benchmark and local Codex connection
+
+The user refined the next experiment to allow merges only, require a designated
+pair to stay separated, and include impossible tasks. This excludes both the
+universal-grouping and singleton-grouping shortcuts. The independent oracle
+enumerates all 15 partitions instead of trusting a model's impossibility claim.
+Development and test tasks use disjoint operation conjugacy families, and the
+main test set uses three-block inputs in both classes to avoid a block-count
+shortcut. On four objects, every solvable rejected input under these constraints
+has just one valid repaired partition; this makes ceiling effects likely.
+
+The user prefers existing Codex access to separately funded API calls. Verified
+local `codex login status` reports ChatGPT authentication and a real ephemeral
+`codex exec` call succeeded. The runner uses this supported local interface,
+without copying credentials. Model calls consume the user's Codex allowance and
+are excluded from repository CI. The chosen model and effort match the user's
+local configured values (gpt-6-astra, ultra).
+
+Connection probes revealed that global AGENTS.md instructions still enter the
+CLI context despite ignoring user configuration and disabling project docs.
+Record their hash and size, retain requested settings, reject any tool activity
+in the event log, and describe this as a controlled local harness pilot rather
+than a completely isolated model evaluation. Fresh conversations receive only
+one trial's public task and feedback from this experiment. Test prompts, model
+answers, native claim records, process status, and usage will be retained; results
+are pending execution and independent review.
+
+The development pilot completed eight live calls: both arms answered all four
+development cases correctly on their first decision. These development results
+were used to check the harness, not counted as held-out results. Review found
+the initial counterexample is inferable from every sampled task, because there
+is exactly one distinct same-group pair. Added that limitation to the protocol.
+Before freezing, added checks for unique conversation IDs, complete artifact
+manifests, seeded trial order, binary identity, and a clean test source tree.
+All 24 repair tests and all 31 existing grouping tests pass. Synthetic replay
+controls reject altered grades, feedback, prompts, token reports, native inputs,
+and reused threads even when artifact hashes are recomputed. Independent agent
+review found no blocking defect; this is AI-assisted review, not external review.
+
+Committed the frozen implementation and protocol as
+`cda3ac79a481c5631c1480471e46f665c8bde288` before running the test split. The
+24 live held-out trials completed with distinct conversation IDs, one decision
+each, no retries, and no recorded tool activity. Both arms scored 12/12, split
+6/6 on repairable tasks and 6/6 on impossible tasks. There were no constraint
+violations or false impossibility claims. The observed paired accuracy
+difference is zero; these results do not demonstrate a counterexample benefit.
+
+Offline replay passed before copying the exact run bytes into
+`evidence/repair-pilot-v1/`. Added CI replay without live model calls, a readable
+results table, an actual repaired-group diagram, and precise claim-ledger rows.
+The existing 65,536-input checker evidence remains bound to its original source
+and binary. A larger task domain needs a matching specification and checker
+assurance; no six-object verification is claimed by this milestone.
+
+Final independent agent review replayed the saved run and separately enumerated
+all 256 label assignments per task without importing the benchmark's mathematical
+functions. It confirmed all 12 repair answers and all 12 impossibility answers
+across both arms, distinct conversation IDs, matched prompts except for the
+assigned witness, and the four source hashes against the frozen Git objects.
+No blocking publication issue was found. This remains AI-assisted review.
+
+The first GitHub scan flagged a deliberately fake oracle-leakage test marker
+as a generic high-entropy secret. It was a literal dummy phrase, with no
+authentication use. Renamed the fixture and replaced it with descriptive text;
+the test still checks exclusion from the model prompt. Frozen benchmark sources
+and recorded model evidence are unchanged by this test-only correction.
