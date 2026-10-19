@@ -44,6 +44,10 @@ jobs:
         run: python scripts/build_charts.py --check
       - name: Check Lean table correspondence
         run: python lean/check_data.py
+      - name: Replay and check explorer data
+        run: python scripts/build_space_data.py --check
+      - name: Check browser relation logic against verified certificates
+        run: node scripts/check_space.cjs
       - name: Preserve reproduction evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#112c3c">
+  <meta name="description" content="Explore independent finite congruence graph checks from OpenAI's math corpus: eight lattices, explicit witnesses, and reproducible evidence.">
+  <title>Finite Congruence Checks · Interactive Explorer</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#explorer">Skip to explorer</a>
+  <header class="topbar"><a class="brand" href="#"><img src="icon.svg" alt="" width="30" height="30">Finite Congruence Checks</a><nav aria-label="Main navigation"><a href="#results">Results</a><a href="#evidence">Evidence</a><a href="https://github.com/Maverick0351a/finite-congruence-checks" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav></header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div><p class="eyebrow"><span class="dot"></span> An independent research companion</p><h1 id="hero-title">Small structures.<br><span>Inspectable evidence.</span></h1><p class="intro">Explore the finite congruence graph criterion from <strong>OpenAI’s math corpus</strong>. Follow a lattice to a colored graph, inspect its relations, and open the evidence behind each result.</p><a class="primary" href="#explorer">Explore the mathematics <span aria-hidden="true">↓</span></a></div>
+      <aside class="hero-note"><span class="note-index">FIELD NOTES / 001</span><p>A mathematical claim becomes easier to examine when you can see the objects it describes.</p><div class="note-rule"></div><span>Eight lattices · Carriers of 1–4 points<br>Recorded experiments + targeted Lean checks</span></aside>
+    </section>
+    <section class="metrics" aria-label="Recorded experiment totals"><div><strong id="total-candidates">143,685</strong><span>candidate colorings</span></div><div><strong id="total-witnesses">217</strong><span>full witnesses</span></div><div><strong id="total-classes">22</strong><span>classes under vertex relabeling</span></div><div><strong>1–4</strong><span>carrier points searched</span></div></section>
+    <section id="explorer" class="explorer" aria-labelledby="explorer-title" tabindex="-1">
+      <div class="section-heading"><div><p class="eyebrow">01 / Explore a construction</p><h2 id="explorer-title">From order to a colored graph</h2></div><span class="tag">Precomputed evidence</span></div>
+      <p class="section-intro">Choose a lattice. Each color names one of its elements; the graph’s vertices are the points on which the recovered algebra acts.</p>
+      <div id="loading" role="status">Loading the recorded evidence…</div>
+      <div id="app" hidden>
+        <div id="lattice-picker" class="lattice-picker" role="group" aria-label="Choose a lattice"></div>
+        <div class="workspace">
+          <aside class="selection-panel"><p class="eyebrow">Selected lattice</p><h3 id="lattice-name"></h3><p id="lattice-description"></p><dl id="lattice-facts"></dl><div class="case-controls" role="group" aria-label="Choose an example"><button id="passing" type="button" aria-pressed="true">Passing witness</button><button id="failing" type="button" aria-pressed="false">Failing example</button></div><p id="case-help" class="small"></p><a id="download" class="download" download>Download certificate ↓</a><a id="source-link" class="quiet-link" target="_blank" rel="noopener noreferrer">View source evidence ↗</a></aside>
+          <div class="construction">
+            <div class="construction-heading"><h3 id="case-title"></h3><span id="case-status" class="status"></span></div>
+            <p id="case-summary" class="small"></p>
+            <div class="diagram-grid">
+              <figure><figcaption><strong>The lattice</strong><span>Upward paths show the order</span></figcaption><div id="lattice-diagram" class="diagram"></div></figure>
+              <figure><figcaption><strong>The carrier graph</strong><span>Edge labels are lattice elements</span></figcaption><div id="carrier-diagram" class="diagram"></div></figure>
+            </div>
+            <div class="relation-explorer"><div><label for="relation">Inspect a relation</label><p class="small" id="relation-hint">Solid edges have colors at or below this element. Dashed edges are excluded.</p></div><select id="relation" aria-describedby="relation-hint"></select></div>
+            <div id="relation-result" class="relation-result" aria-live="polite"></div>
+            <div id="color-key" class="color-key" aria-label="Edge color key"></div>
+            <details><summary>Inspect the full color matrix</summary><div id="matrix" class="table-scroll"></div></details>
+            <div id="failure" class="failure" hidden></div>
+            <div id="operations" class="operations"></div>
+          </div>
+        </div>
+        <p class="record-note">Changing controls explores recorded data. It does not rerun the exhaustive search or check a Lean proof in your browser.</p>
+      </div>
+      <noscript><p>This explorer needs JavaScript. All results and certificates are also available in the <a href="https://github.com/Maverick0351a/finite-congruence-checks">GitHub repository</a>.</p></noscript>
+    </section>
+    <section id="results" aria-labelledby="results-title"><div class="section-heading"><div><p class="eyebrow">02 / The bounded experiment</p><h2 id="results-title">Every target, including the negative result</h2></div></div><p class="section-intro">Exact counts from the recorded search. A witness satisfies all five conditions of the finite graph criterion.</p><div id="results-table" class="table-scroll"></div><p class="record-note">M4 has no witness within the tested bound of four points. Larger carriers remain outside this experiment. Operation minima fix the saved carrier and exact relations.</p></section>
+    <section id="evidence" aria-labelledby="evidence-title"><div class="section-heading"><div><p class="eyebrow">03 / Follow the evidence</p><h2 id="evidence-title">A clear trail back to the checks</h2></div></div><div class="evidence-grid"><article><span class="card-number">01</span><h3>Reproduce the experiment</h3><p>Run the bounded search and the independent Python checkers, then compare the mathematical results with the recorded evidence.</p><a href="https://github.com/Maverick0351a/finite-congruence-checks#quick-start" target="_blank" rel="noopener noreferrer">Get the commands ↗</a></article><article><span class="card-number">02</span><h3>Inspect the Lean checks</h3><p>Concrete N5/B3 proofs and targeted upstream modules compiled and passed bundled kernel replay. Read the exact versions, axioms, and scope.</p><a href="https://github.com/Maverick0351a/finite-congruence-checks/blob/main/docs/LEAN_VERIFICATION.md" target="_blank" rel="noopener noreferrer">Read the verification record ↗</a></article><article><span class="card-number">03</span><h3>Understand the boundary</h3><p>Eight specified lattices, at most four carrier points. The full OpenAI math corpus and official comparator workflow are outside this validation.</p><a href="https://github.com/Maverick0351a/finite-congruence-checks/blob/main/docs/CLAIMS.md" target="_blank" rel="noopener noreferrer">Read the claim ledger ↗</a></article></div><details class="provenance"><summary>Data provenance and reproducibility</summary><div id="provenance"></div><p>The formal correspondence between the Python connectivity implementation and the upstream Lean predicate remains unproved. This is an independent companion project, with no affiliation or endorsement implied.</p><a href="data.json" download>Download explorer data and source hashes ↓</a></details></section>
+  </main>
+  <footer><span>Finite Congruence Checks <span class="footer-divider">/</span> By <a href="https://www.linkedin.com/in/travis-johnson-606207379" target="_blank" rel="noopener noreferrer">Travis Johnson · LinkedIn ↗</a></span><a href="https://github.com/Maverick0351a/finite-congruence-checks/releases/tag/v0.1.0" target="_blank" rel="noopener noreferrer">Research release v0.1.0 ↗</a></footer>
+</body>
+</html>

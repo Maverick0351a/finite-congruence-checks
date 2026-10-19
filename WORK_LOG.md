@@ -173,3 +173,29 @@ On 18 October 2026 (Pacific time), the user explicitly authorized public release
 Changed repository visibility to public and verified GitHub reports PUBLIC.
 Removed the obsolete private-access note and updated the sharing roadmap.
 The v0.1.0 tag, archive, checksum, and mathematical evidence remain unchanged.
+
+## Interactive explorer and maintainer links — 18 October 2026
+
+Built a static Hugging Face companion under `space/`, with eight selectable
+lattices, seven passing examples, four replayed connectivity obstructions,
+relation controls, operation tables, result totals, source provenance, and
+downloadable certificates. The deterministic exporter binds 23 source inputs
+to commit 355f6d3f0eba56969f3d2a2de2467706a5493db7 and replays the displayed
+examples without modifying the original evidence. Added exporter freshness and
+browser relation checks to the Linux/Windows CI matrix.
+
+A separate AI-assisted review checked 51 threshold views, 708 point-pair
+comparisons, four failure graphs, and UI state transitions. Addressed four
+presentation findings: order is described by upward paths, absent generated
+edges are omitted from obstruction diagrams, edge labels use dark text, and
+diagrams stack on narrow screens. Local checks passed for all exported data,
+31 recorded positive relations, four obstructions, and 11 certificate hashes.
+
+Investigated the reported GitHub failure. The only failed workflow was historical
+run 39180794258, caused by the Linux metadata mock interaction already fixed in
+dd86efa. Current main at 355f6d3 passed all four jobs in run 39182517480.
+
+Added the user-supplied LinkedIn URL for Travis Johnson to the root README,
+Space README, and demo footer. Created the public static Space
+Maverick03511/finite-congruence-checks. Its publication is documented in
+docs/HUGGING_FACE_DEMO.md. The original v0.1.0 archive and tag are unchanged.

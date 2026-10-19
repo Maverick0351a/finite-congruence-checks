@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Interactive static explorer for eight lattices, seven passing certificates, and four replayed connectivity obstructions, with downloadable evidence and source hashes.
+- Deterministic data export and CI checks for browser relation calculations and certificate integrity.
+- Maintainer links to Travis Johnson's LinkedIn profile in the repository and demo.
+
 ## 0.1.0 — 2026-10-18
 
 Initial release of the finite congruence experiment as an independent repository.

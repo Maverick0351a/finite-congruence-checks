@@ -18,6 +18,7 @@ The starting specification is the graph-witness criterion in
 This is an independent companion project. Its results cover eight specified
 lattices and carriers of size **one through four**.
 
+**[Interactive demo](https://huggingface.co/spaces/Maverick03511/finite-congruence-checks)** ·
 **[Quick start](#quick-start)** · **[Evidence gallery](docs/index.html)** ·
 **[Exact claims](docs/CLAIMS.md)** · **[Lean status](docs/LEAN_VERIFICATION.md)** ·
 **[Changelog](CHANGELOG.md)** · **[Support](SUPPORT.md)**
@@ -125,6 +126,12 @@ in [the claim ledger](docs/CLAIMS.md).
 
 ## Explore an example
 
+**[Open the interactive explorer on Hugging Face](https://huggingface.co/spaces/Maverick03511/finite-congruence-checks).**
+Choose a lattice, inspect its relations and unary operations, compare passing
+and failing examples, and download the exact certificates. The demo displays
+precomputed evidence; its controls do not rerun the exhaustive search or check
+Lean proofs. [Rebuild the demo and inspect its scope](docs/HUGGING_FACE_DEMO.md).
+
 ![N5 and B3 lattice and witness diagrams](charts/witness-examples.png)
 
 ```sh
@@ -170,6 +177,7 @@ library. [Evidence and file formats](docs/EVIDENCE.md).
 | [evidence/](evidence/) | Certificates, complete results, stage logs, and integrity hashes |
 | [lean/](lean/) | Concrete formal checks and pinned upstream source context |
 | [charts/](charts/), [docs/index.html](docs/index.html) | Downloadable research figures and offline gallery |
+| [space/](space/) | Interactive static explorer and downloadable certificates |
 | [scripts/](scripts/) | Evidence integrity, independent minima audit, figure generation |
 | [.github/workflows/](.github/workflows/) | Automated replication on Linux and Windows |
 
@@ -178,3 +186,5 @@ and [development record](WORK_LOG.md). To cite the software, use [CITATION.cff](
 and identify both this project's version and the upstream corpus commit.
 
 Apache-2.0. Upstream source notices are retained in [NOTICE](NOTICE) and `reference/`.
+
+Maintained by **Travis Johnson** · [LinkedIn](https://www.linkedin.com/in/travis-johnson-606207379) · [GitHub](https://github.com/Maverick0351a).

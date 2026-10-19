@@ -1,0 +1,12 @@
+Finite Congruence Checks
+Copyright 2026 the Finite Congruence Checks contributors.
+
+Developed with AI assistance (Claude and OpenAI Codex). Implementation and review
+provenance are documented in the canonical research repository:
+https://github.com/Maverick0351a/finite-congruence-checks
+
+The research repository's reference/ directory contains files from openai/math,
+distributed under Apache-2.0. The Space displays derived finite graph data;
+data.json records the pinned upstream source and the research input hashes.
+
+This independent project is not an official OpenAI product or endorsement.

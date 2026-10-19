@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "https://github.com/openai/math",
+    "revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "path": "lean/ComparatorChallenges/FiniteCongruenceGraph.lean",
+    "sha256": "2ee495def2e1228bf13df520f6c66699ec22b2cd3bc1ae7383a30957aae9f967"
+  },
+  "lattice": {
+    "name": "B2",
+    "elements": [
+      "0",
+      "a",
+      "b",
+      "1"
+    ],
+    "bottom": 0,
+    "leq": [
+      [
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        true,
+        false,
+        true
+      ],
+      [
+        false,
+        false,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        false,
+        true
+      ]
+    ],
+    "join": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        1,
+        3,
+        3
+      ],
+      [
+        2,
+        3,
+        2,
+        3
+      ],
+      [
+        3,
+        3,
+        3,
+        3
+      ]
+    ]
+  },
+  "color": [
+    [
+      0,
+      1,
+      2,
+      3
+    ],
+    [
+      1,
+      0,
+      3,
+      3
+    ],
+    [
+      2,
+      3,
+      0,
+      3
+    ],
+    [
+      3,
+      3,
+      3,
+      0
+    ]
+  ],
+  "primary_check": {
+    "passed": false,
+    "admissible_maps": 36,
+    "seed_classes_checked": 3,
+    "failing_seeds": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "failing_pair": [
+      0,
+      3
+    ],
+    "bound": 3,
+    "failure": "seed_connectivity"
+  },
+  "demo": {
+    "kind": "recorded-connectivity-failure",
+    "origin": "Demo-generated negative certificate wrapping the first connectivity-failing matrix already recorded in the pinned bounded search. It is structurally valid and is not a passing witness.",
+    "source_commit": "355f6d3f0eba56969f3d2a2de2467706a5493db7",
+    "search_record": "evidence/search-results.json",
+    "search_record_sha256": "d25ee157a0be410cd681f02b6792ecada5a2564b76cc01daf4e274fadf818472",
+    "source_json_pointer": "/lattices/B2/sizes/3/first_connectivity_failure"
+  },
+  "verification": {
+    "passed": false,
+    "valid_input": true,
+    "verification_completed": true,
+    "lattice_validation": {
+      "passed": true,
+      "element_count": 4,
+      "derived_meet": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ]
+    },
+    "carrier_size": 4,
+    "candidate_self_maps": 256,
+    "admissible_self_maps": 36,
+    "ordered_seed_pairs": 16,
+    "nonempty_ordered_seed_subsets_enumerated": 65535,
+    "distinct_connectivity_cases": 8,
+    "failed_seed_subsets": 912,
+    "first_connectivity_failure": {
+      "seed_mask": 6,
+      "ordered_seeds": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ]
+      ],
+      "join_bound": 3,
+      "disconnected_pair_below_bound": [
+        0,
+        3
+      ]
+    },
+    "checks": {
+      "symmetric": true,
+      "bottom_iff_diagonal": true,
+      "triangle_join": true,
+      "order_separation": true,
+      "seed_connectivity": false
+    }
+  },
+  "failure": {
+    "ordered_seeds": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "join_bound": 3,
+    "endpoints": [
+      0,
+      3
+    ],
+    "endpoint_color": 3,
+    "marked_pairs": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "reachable_pairs": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "reachable_from_start": [
+      0,
+      1,
+      2
+    ],
+    "target_below_bound": true,
+    "unreachable": true,
+    "explanation": "The endpoint color lies below the join of the seed colors, but the endpoints are in different components of the reflexive, symmetric, transitive closure of all admissible images of these seeds."
+  }
+}

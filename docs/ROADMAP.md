@@ -32,9 +32,10 @@ preparation of tagged source, a checked archive, a short walkthrough, and precis
 claims in CLAIMS.md. The prepared announcement remains a draft; no outreach is automated.
 An upstream contribution depends on the maintainers' process and acceptance.
 
-An optional static Hugging Face Space could let readers
-select a saved lattice, inspect its colored graph and unary operations, and open
-the corresponding certificate. GitHub would remain the source of record for
-code, proofs, and versioned evidence. A demo should display precomputed results
-with their exact scope and link to reproduction commands; it should not imply
-that browsing the visualization reruns the search or checks a Lean proof.
+The [static Hugging Face explorer](https://huggingface.co/spaces/Maverick03511/finite-congruence-checks)
+lets readers select a lattice, inspect its colored graph and unary operations,
+compare passing and failing examples, and download the corresponding certificate.
+GitHub remains the source of record for code, proofs, and versioned evidence.
+The demo displays precomputed results with their exact scope and reproduction
+commands. Browsing it does not rerun the search or check a Lean proof.
+See [the demo maintenance record](HUGGING_FACE_DEMO.md).

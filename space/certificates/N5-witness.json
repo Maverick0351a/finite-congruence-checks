@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "source": {
+    "repository": "https://github.com/openai/math",
+    "revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+    "path": "lean/ComparatorChallenges/FiniteCongruenceGraph.lean",
+    "sha256": "2ee495def2e1228bf13df520f6c66699ec22b2cd3bc1ae7383a30957aae9f967"
+  },
+  "lattice": {
+    "name": "N5",
+    "elements": [
+      "0",
+      "a",
+      "b",
+      "c",
+      "1"
+    ],
+    "bottom": 0,
+    "leq": [
+      [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      [
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      [
+        false,
+        false,
+        true,
+        false,
+        true
+      ],
+      [
+        false,
+        false,
+        false,
+        true,
+        true
+      ],
+      [
+        false,
+        false,
+        false,
+        false,
+        true
+      ]
+    ],
+    "join": [
+      [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        1,
+        1,
+        2,
+        4,
+        4
+      ],
+      [
+        2,
+        2,
+        2,
+        4,
+        4
+      ],
+      [
+        3,
+        4,
+        4,
+        3,
+        4
+      ],
+      [
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    ]
+  },
+  "color": [
+    [
+      0,
+      1,
+      3,
+      4
+    ],
+    [
+      1,
+      0,
+      4,
+      3
+    ],
+    [
+      3,
+      4,
+      0,
+      2
+    ],
+    [
+      4,
+      3,
+      2,
+      0
+    ]
+  ],
+  "primary_check": {
+    "passed": true,
+    "admissible_maps": 12,
+    "seed_classes_checked": 63
+  }
+}
