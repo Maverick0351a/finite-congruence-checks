@@ -1,0 +1,11 @@
+{
+  "name": "cytoscape",
+  "version": "3.34.4",
+  "license": "MIT",
+  "source": "https://registry.npmjs.org/cytoscape/-/cytoscape-3.34.4.tgz",
+  "integrity": "sha512-msY99tMY8iWTg+sIPGfSqDcPNOt4xcj+v/K/7qUFaCUxxlqnMkUYLBjRUzn9W5CU/R2hrmtJa5+UtovrEM2ctg==",
+  "sha256": {
+    "cytoscape-3.34.4.min.js": "081591ab735b2b6a3b31a3c60f8f3a3e2fee8c92939e0c7820ad1208571b6cd8",
+    "cytoscape-LICENSE.txt": "eb319c6e6f233607f71e8e2f450391751883cfc0eeb3ca7ef574c13d1d9c2203"
+  }
+}

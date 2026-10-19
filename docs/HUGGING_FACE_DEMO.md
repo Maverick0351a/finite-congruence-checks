@@ -12,6 +12,9 @@ with a three-object lesson. The original graph explorer remains at `index.html`.
 The atlas catalog covers all representable congruence families through four
 objects and groups them by object renaming and abstract lattice shape. It has
 separate generated data, exhaustive verification, and browser checks.
+The [Cytoscape construction map](ATLAS_MAP.md) connects entries to their abstract
+shapes and opens the same claim records. Its pinned library and license are
+included locally; retain the complete `space/vendor/` directory when publishing.
 
 ## Run and check locally
 
@@ -28,6 +31,7 @@ python scripts/check_atlas.py --check-receipt evidence/atlas-review.json
 python scripts/query_atlas.py build-claims --check
 python -m unittest discover -s scripts -p 'test_atlas*.py' -v
 node scripts/check_atlas_ui.cjs
+node scripts/check_atlas_map.cjs
 python -m http.server 8765 --bind 127.0.0.1 --directory space
 ```
 

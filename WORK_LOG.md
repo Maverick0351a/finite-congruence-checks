@@ -359,3 +359,57 @@ blockers. It resolved citations for all 106 claims, checked every claim link for
 integration. A test-harness import defect affecting direct invocation was fixed;
 both the documented direct command (10 query tests) and discovery (23 combined
 tests) pass. The hash-bound query implementation did not change during that fix.
+
+## 2026-10-18 — Cytoscape map and atlas palette
+
+The maintainer requested Cytoscape and an improved color scheme. Implemented a
+construction-to-abstract-shape map backed by the existing atlas and claim
+registry. The default C4/four-object view makes the one-rule versus two-rule
+comparison explicit. Shape nodes use the existing versioned canonical keys;
+construction nodes and links retain their individual claim IDs. The inspector
+opens the matching catalog entry, including its rules and evidence. Graph
+layout is presentation only; no mathematical data or proof scope changes.
+
+Vendored Cytoscape.js 3.34.4 from the official npm package, checked archive
+SHA-512 integrity, and retained its unmodified build, MIT license, and per-file
+SHA-256 manifest. The map needs no CDN or package-install step. Added ordinary
+selectors and buttons as a keyboard alternative to the canvas, graceful library
+failure handling, and explicit empty-filter and cross-carrier scope messages.
+
+Applied midnight blue, tidal teal, and violet across the atlas, including local
+SVG diagrams and graph colors. Added dark preference support and forced-color
+fallbacks. Modern web guidance informed non-color labels, control contrast,
+and preservation of ordinary keyboard navigation. The contrast check exposed
+a teal-on-tinted-surface pairing below 4.5:1; darkened it before proceeding.
+
+Initial local checks pass for the actual vendored Cytoscape engine: 115 filter
+combinations, 156 construction appearances linked to independent evidence,
+22 shape components, the C4 comparison, seven rejection controls, library
+hashes, and selected light/dark text pairings at or above 5.15:1. Browser
+interaction checks and independent review follow before publication.
+
+Completed browser checks at 1280 px, 390 px, and 344 px widths. Canvas selection
+and shape taps, zoom/fit/reset buttons, keyboard selection, empty filters, and
+entry focus transfer work. Narrow layouts have no document overflow. Dark-mode
+review found two trailing CSS overrides on claim cards and focus outlines;
+replaced them with theme tokens and checked the computed browser colors. A
+deliberately blocked library request leaves the native selector and evidence
+navigation usable, with the unavailable visual controls disabled. Restored the
+library after the test.
+
+Independent AI review confirmed the corrected styles, graph meanings, stable
+identities, explicit minimum-rule scope, keyboard alternatives, and claim
+freshness, with no remaining substantive findings. The 23 atlas/query unit tests,
+existing atlas UI and explorer checks, recorded evidence check, map checks, and
+`git diff --check` pass. Publication follows the repository CI checks.
+
+The maintainer supplied a proposed progression from certificate checking to
+executable testing and binary verification. Compared it with the existing Lean
+definitions and concrete proofs, checked the Lean trust FAQ and primary seL4
+and Alive2 sources, and recorded a scoped next milestone in
+`docs/CHECKER_FOUNDATION.md`. The plan distinguishes preservation of one grouping
+from exact-family verification and search completeness. Its proposed 16-bit
+pilot is not an implemented checker or a completed binary-verification result.
+Independent review of this plan confirmed its encoding and assurance boundaries;
+clarified that existing N5/B3 graph proofs do not transfer to atlas entries merely
+because they share a shape name.

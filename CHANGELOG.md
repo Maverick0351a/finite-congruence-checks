@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+- Interactive Cytoscape construction map with stable shape keys, claim-linked
+  inspection, keyboard alternatives, and a pinned offline library with its license.
+- Refreshed atlas palette in midnight blue, teal, and violet, with light/dark
+  themes and contrast checks; graph projection and rejection controls added to CI.
+
 - Add a versioned local query interface and individual claim records with
   evidence citations, assumptions, limits, and a documented agent retrieval test.
 
