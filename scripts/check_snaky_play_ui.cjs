@@ -102,13 +102,14 @@ for (let index = 0; index < 8; index++) {
   select.value = String(index);
   select.listeners.change();
   const step = play.steps[index], view = app.viewOf(data, index);
-  assert.equal(view.step, step);
+  assert.equal(view.step, data.play.steps[index], 'The view selects the requested packet step');
+  assert.deepEqual(plain(view.step), plain(step), 'The rendered step equals the independently saved mathematical record');
   assert.deepEqual([...view.makerTurns.keys()].sort(), sorted(step.maker_after));
   assert.deepEqual([...view.breakerTurns.keys()].sort(), sorted(step.breaker_after));
   assert.equal(view.makerTurns.size, index + 1);
   assert.equal(view.breakerTurns.size, Math.min(index + 1, 7));
-  assert.deepEqual(view.envelope, index < 7 ? play.steps[index + 1].active.envelope : [], 'Outline is the surviving next envelope after this reply');
-  assert.deepEqual(view.winner, index === 7 ? finalCells : []);
+  assert.deepEqual(plain(view.envelope), index < 7 ? play.steps[index + 1].active.envelope : [], 'Outline is the surviving next envelope after this reply');
+  assert.deepEqual(plain(view.winner), index === 7 ? finalCells : []);
   assert.equal(live.get('snaky-prev').disabled, index === 0);
   assert.equal(live.get('snaky-next').disabled, index === 7);
   assert.equal(live.get('snaky-card-source').href, step.active.certificate_ref.url);

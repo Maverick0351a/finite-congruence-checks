@@ -2,9 +2,8 @@
 
 The context interface supports two exact N5 construction claims, their
 comparison, two proved N5 renamings, a pair of exact five-object operation
-minima, and one existing Turing-machine tape claim. The finite-board Snaky
-registration is in preparation; its query fails closed until its proof receipt
-is present and valid.
+minima, one existing Turing-machine tape claim, and the exact finite-board Snaky
+guarantee. Each query fails closed if its required evidence is missing or invalid.
 It reads the website's records and separately identified proof supplements,
 validates the relevant saved evidence, and returns JSON.
 It runs locally using the Python standard library. No model, credentials,
@@ -54,7 +53,7 @@ Receipt replay checks these records without executing Lean; it cannot certify
 an arbitrary changed board or strategy. The older 616-card comparator record
 is not evidence for this claim.
 
-Once the proof receipt is available, use the existing commands:
+Use the existing commands:
 
 ```sh
 python scripts/query_context.py explain context:family-187:snaky:finite-board-21:v1 --out snaky.json

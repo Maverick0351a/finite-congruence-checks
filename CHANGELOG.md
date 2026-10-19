@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+- Finite-board Snaky formalization for the exact 251-cell envelope and its
+  containing 17 by 17 square, with fresh-move accounting, a nonvacuous continuing
+  case, complete local kernel replay, axiom audit and seven changed-claim controls.
+  Independent reconstruction of all 728 cards, exact atlas binding, and a readable
+  branch viewer with one separately checked execution and immutable evidence links.
+  The paper already states the finite-board result; no stronger move bound is claimed.
+
+- Prominent OpenAI math source-and-scope banner at the top of the public atlas.
+
 - Exact five-object comparison: two eight-congruence families with isomorphic
   inclusion orders and respective minimum unary rule counts of three and two.
   Standalone Lean classification and lower bounds, exact theorem bindings,

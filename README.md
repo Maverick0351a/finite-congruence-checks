@@ -121,11 +121,13 @@ python scripts/five_object_proof.py run --out runs/five-object-fresh
 python scripts/query_context.py explain context:family-206:five-object:operation-minima:v1
 ```
 
-The next [Snaky walkthrough](docs/SNAKY_FINITE_BOARD.md) asks whether a strategy
-proved on an infinite grid also works when both players must stay on a finite
-board. It shows the paper's exact 251-cell envelope inside a 17 by 17 square and
-explains why replacement moves still have room. The independent certificate
-audit has passed; the finite-board Lean proof and its receipt are in preparation.
+The [Snaky walkthrough](docs/SNAKY_FINITE_BOARD.md) formalizes the paper's
+21-Maker-claim guarantee on its exact 251-cell envelope and containing 17 by 17
+square. The Lean proof, kernel replay, axiom audit and seven changed-claim
+rejections pass, alongside an independent certificate audit. Follow
+[one complete example play](docs/SNAKY_PLAY.md) to see each move, a surviving
+continuation, the remaining bound and its evidence. The example's eight-claim
+win is distinct from the theorem's guarantee against every legal reply.
 
 Read the [query contract](docs/ATLAS_QUERY.md),
 [agent retrieval evaluation](docs/ATLAS_QUERY_EVALUATION.md), and

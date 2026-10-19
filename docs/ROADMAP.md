@@ -24,16 +24,17 @@ It adds formal coverage to a saved finding; it does not assert novelty or a
 complete five-object classification. PR #16 merged through protected main and
 its main CI run passed.
 
-The [Snaky finite-board extension](SNAKY_FINITE_BOARD.md) now targets the paper's
+The [Snaky finite-board extension](SNAKY_FINITE_BOARD.md) now formalizes the paper's
 existing 21-Maker-claim guarantee on its exact 251-cell envelope and containing
 17 by 17 square. Independent reconstruction of the 728-card certificate passes;
-the new finite-board Lean semantics, exact claim binding and proof receipt are
-under review. The 616-card comparator reconstruction remains a different result.
-Finish this proof and its evidence checks first. The next presentation step is
-one complete illustrated strategy branch, showing each Maker move, the chosen
-Breaker reply, the remaining budget and the supporting certificate step. Mark
-it as an example play, distinct from the theorem covering every legal reply.
-Only then inspect one directed-graph example's exact source statement and
+the finite-board Lean proof, full local kernel replay, axiom audit and seven
+changed-claim checks pass. The 616-card comparator reconstruction remains a
+different result. The [branch walkthrough](SNAKY_PLAY.md) shows one complete
+independently replayed example, including each Maker move, chosen Breaker reply,
+remaining budget and supporting certificate step. It distinguishes that chosen
+eight-claim play from the theorem covering every legal reply within 21 claims.
+Complete hosted reproduction and publication review before closing this milestone.
+Then inspect one directed-graph example's exact source statement and
 assumptions before selecting its proof target.
 
 Before any resumed model evaluation, resolve the dummy runner's

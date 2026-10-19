@@ -1,8 +1,9 @@
 # Snaky on a finite board
 
-Development record: the certificate reconstruction has passed. The finite-board
-Lean extension and its proof receipt are being prepared; this page does not yet
-report a completed formal verification.
+The finite-board Lean extension, complete local-module kernel replay,
+allowed-axiom audit and seven altered-claim rejections pass. The separate Python
+checker reconstructs all 728 certificate cards. The [saved receipt](../evidence/snaky-finite-v1/proof/summary.json)
+records exactly which sources and commands were checked.
 
 Two players take turns claiming an empty square. Maker moves first and tries to
 own a copy of this six-cell shape. Breaker tries to prevent that. Rotations,
@@ -20,9 +21,9 @@ definition is the pinned upstream [`snaky` and `HasSnaky`](https://github.com/op
 The paper already gives a strategy that wins within 21 Maker claims on a
 particular set of 251 squares, and therefore on the containing 17 by 17 square.
 Its [finite-board argument](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Snaky-in-21-Maker-moves-September-25-2026/build/strategy.tex)
-is the result this extension aims to formalize. The upstream Lean
+is the result this extension formalizes. The pinned upstream Lean
 [scope note](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/lean/docs/187.md)
-currently selects the infinite-grid strategy. This project is adding formal
+selects the infinite-grid strategy. This project adds formal
 coverage of that finite-board corollary, without asserting a new move bound or
 mathematical novelty.
 
@@ -74,25 +75,35 @@ At the empty starting position, this budget asks for at least `2 × 21 = 42`
 cells. The theorem also requires the board to contain the entire 251-cell
 envelope, so it does not assert that a 42-cell board suffices.
 
-The intended theorem covers every legal Breaker reply on the selected board.
+The theorem covers every legal Breaker reply on the selected board.
 In the square version, Breaker may also play outside the 251-cell envelope.
-The finite game definition must require both players' moves to stay on the
-board and use fresh cells. It must not treat a position as won merely because
-Breaker has no legal reply.
+The finite game definition requires both players' moves to stay on the
+board and use fresh cells. Its continuing case requires a legal Breaker reply
+to exist, excluding a vacuous win from an exhausted board.
 
 ## Evidence and limits
 
 The [independent reconstruction](../evidence/snaky-finite-v1/computational.json)
 checks the certificate's finite sets, placements, heights and local combination
 conditions. Its Python implementation does not itself prove the game theorem.
-The forthcoming Lean proof, typed record binding and receipt will be recorded
-separately here when they pass.
+The [Lean theorem](../lean/snaky/SnakyFinite.lean),
+[literal typed binding](../lean/snaky/SnakyBinding.lean) and
+[proof receipt](../evidence/snaky-finite-v1/proof/summary.json) provide separate
+formal evidence. Both `envelope_wins` and `square_wins` establish `FiniteWins`
+for the stated target, empty initial ownership and bound 21.
+
+The receipt records 194 source hashes, 179 explicitly replayed local modules,
+19 declaration axiom reports, and all seven rejected bindings. Only
+`propext`, `Classical.choice` and `Quot.sound` occur in the audited dependencies.
+The local run used a committed-source export with a warmed build/dependency
+cache. Its kernel stage took 1,631.946 seconds; the full 12-stage run took about
+30 minutes. These are local measurements, not fresh hosted-build timings.
 
 Stable claim ID: `context:family-187:snaky:finite-board-21:v1`.
 
 ## Reproduce the result
 
-The command being prepared for the completed milestone is:
+To run the complete verification from a fresh checkout:
 
 ```sh
 python scripts/snaky_proof.py run --out runs/snaky-fresh
@@ -106,7 +117,9 @@ own logs. CI runs the same command on Linux; Windows users can use WSL.
 The runner records `LEAN_NUM_THREADS=1` to reduce concurrent compilation work.
 This setting is not a strict memory or concurrency limit for `leanchecker`:
 the pinned runtime may start another worker when a task waits on dependencies.
-The initial replay's observed memory peak is being assessed before hosted CI.
+The initial local bulk replay reached roughly 14.3 GiB RSS. Allow substantial
+memory and disk space; hosted CI has a 90-minute job allowance. Its resource
+behavior is assessed separately from this warmed local run.
 
 The runner first checks the independent certificate reconstruction and exact
 upstream bytes. It then builds the Lean proof, audits the theorem dependencies'
@@ -120,8 +133,8 @@ literal six-cell target, empty initial sets and move bound 21. It does not rely
 only on a filename, theorem name or hash. The original upstream files remain
 byte-for-byte copies; sibling modules supply the finite-board argument.
 
-Once the saved proof receipt is available, the existing local query interface
-uses it alongside the independent computational record:
+The existing local query interface uses the saved proof receipt alongside
+the independent computational record:
 
 ```sh
 python scripts/query_context.py explain context:family-187:snaky:finite-board-21:v1 --out snaky.json
@@ -147,7 +160,12 @@ proof modules and audits their transitive axiom dependencies; it does not attest
 every cached Mathlib artifact in the build environment. The hosted CI build
 provides a separate reproduction from a fresh repository checkout.
 
-This milestone supplies a formal strategy guarantee. It does not extract or
-benchmark a playable policy, prove that 21 is optimal, find a smallest board,
+The [interactive branch walkthrough](SNAKY_PLAY.md) adds one independently
+checked execution, with eight Maker claims and a complete winning placement.
+It shares the exact claim with the query interface. That chosen execution is
+not a formally verified extraction of the strategy, nor an eight-move guarantee.
+
+This milestone supplies a formal strategy guarantee. It does not formally extract
+or benchmark a playable policy, prove that 21 is optimal, find a smallest board,
 verify a general translator, or measure whether an AI reasons better. The model
 benchmark and training remain paused.

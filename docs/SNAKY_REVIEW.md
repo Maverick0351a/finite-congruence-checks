@@ -1,9 +1,10 @@
 # Independent review of the finite-board Snaky proof
 
-Review started 19 October 2026. Status: **in progress**. This is an independent
-AI-assisted review within the implementation chat, not external peer review.
-No approval is implied before the completed proof, bindings, and recorded
-verification have been inspected. Protected-branch CI is a separate merge gate.
+Review completed 19 October 2026. Verdict: **approve the reviewed implementation**.
+This is an independent AI-assisted review within the implementation chat, not
+external peer review. The completed proof, exact bindings, recorded verification,
+illustrated execution, and presentation have been inspected. Protected-branch
+CI and public-link availability remain separate release gates.
 
 ## Source and claim boundary
 
@@ -92,8 +93,15 @@ part of the certificate's identity.
   `f205fe504af726f57a3fc52e84c0b7fa962137f6` for the recorded verification run.
 - Read the actual axiom log from that run. All 19 requested declarations have
   reports, using only `propext`, `Classical.choice`, and `Quot.sound`; no missing
-  proof or extra axiom appears. The complete kernel/negative-control receipt
-  remains a separate pending gate.
+  proof or extra axiom appears.
+- Inspected the completed 12-stage receipt and all seven actual negative
+  logs. The 179-module kernel command exited successfully in 1,631.946 seconds.
+  Changed target, envelope, square, move bound, card number, initial ownership,
+  and theorem substitutions failed on false propositions or incompatible
+  mathematical types, not unavailable imports or resource exhaustion. The
+  copied receipt replays against all 194 source hashes. All 15 proof/query
+  tests passed independently, including altered logs, forged controls,
+  missing stages, wrong kernel commands, and wrong execution settings.
 - Reviewed the Hugging Face corpus banner's wording and source changes. Its
   reference to independent checks and formal extensions of selected corpus
   results is appropriately scoped. Visual browser checks were performed by
@@ -124,17 +132,68 @@ part of the certificate's identity.
   browser layout and native keyboard behavior require separate inspection.
   Full publication tests intentionally require the actual proof receipt,
   source anchor, and generated packet instead of skipping missing inputs.
+- Reviewed the stable viewer and presentation exporter sources. The export
+  requires a supported exact claim and independently validated execution,
+  checks their common board and claim ID, and binds published evidence links
+  to committed bytes. The page separates the eight-claim illustration, the
+  21-claim strategy guarantee, and the absence of a verified policy extraction.
+  It displays actual claims and both remaining bounds separately, with a
+  complete textual move list alongside the diagram.
+- Reviewed the completed illustrated-play walkthrough against the saved
+  execution: all eight Maker cells, seven Breaker replies, card bounds, and
+  six final target cells match. The prose explains child survival, replacement
+  accounting, and the distinction between an execution checker and a verified
+  policy. Reviewed the final atlas navigation, CI publication gates, and
+  corrections to stale N5/Turing claim summaries; no correctness issue was
+  found in those changes.
+- Re-ran the complete focused suite with the real receipt and presentation:
+  all 73 tests passed (24 certificate, 23 play, 11 presentation, and 15
+  proof/query tests). The presentation freshness command and the default full
+  renderer check both pass. The source anchor binds 219 inputs to commit
+  `767294d63b5cf0c3a4c664aa62c46d8dcbe3b65a`; the JSON download, browser script,
+  exact query record, and immutable evidence links agree. These tests include
+  actual temporary Git history and rejection of changed claims, proofs,
+  execution states, and incomplete winning targets.
+- Reviewed the completed-status documentation against the actual receipt.
+  It correctly reports the local warmed-cache run and does not describe it as
+  a fresh hosted build. The final mobile styling preserves board-label size
+  through a keyboard-focusable horizontal scrolling region, while retaining
+  the full move table as a textual alternative.
+- Reviewed the mobile overflow correction (`min-width: 0` and a constrained
+  grid column) and independently inspected the resulting 390-pixel screenshot.
+  The board remains inside the page with readable controls and a visible focus
+  outline. The implementation agent reports equal page scroll/client widths,
+  a 321-pixel board viewport over 468-pixel content, native ArrowRight scrolling,
+  Enter advancing to move two, and End selecting the eighth and final move
+  with Next disabled. Those interaction checks are reported browser evidence,
+  separate from this reviewer's screenshot and source inspection.
+- Independently inspected the final desktop screenshot: all six winning cells,
+  both additional Maker cells, the seven Breaker cells, and the separately
+  labeled claim counts match the record. The implementation agent also reports
+  native Space activation of Previous, expansion of all eight text-table rows
+  using Enter, no page overflow with the table open, and an empty browser
+  warning/error log. This reviewer did not independently repeat those browser
+  actions.
 
-No correctness finding is open in the source reviewed so far. The finite game
+No correctness finding remains open in the reviewed implementation. The finite game
 constructors permit immediate victory; they do not require every strategy-tree
 derivation to syntactically stop at its first winning position. A winning
 position can use `done`, and a winning fresh move can use `finish`. Explanations
 should preserve this distinction from an extracted executable policy.
 
-## Pending review
+## Approval scope and release gates
 
-Kernel replay, actual negative-control logs, saved receipt validation, full
-query tests, and the final user-facing explanation remain to be assessed as
-they become available. The recorded run uses Git-archived committed sources
-with an existing dependency/build cache; it must not be described as a clean
-build. Source changes made after the checks above will receive a final review.
+The approval covers the mathematical source, exact claim binding, completed
+local verification receipt, finite replay checks, and reviewed presentation.
+The proof source is fixed at `f205fe504af726f57a3fc52e84c0b7fa962137f6`;
+the proof-and-play evidence links use
+`767294d63b5cf0c3a4c664aa62c46d8dcbe3b65a`. The recorded proof run uses
+Git-archived committed sources with an existing dependency/build cache. It
+does not constitute a clean build or an attestation of every cached dependency.
+
+Hosted CI must pass before merge. Public HTTP evidence links must be checked
+after the referenced commit is pushed, and the published demo must be checked
+after deployment. Their local source bytes and URLs have passed the anchor
+checks; this review does not claim that those later release actions are complete.
+Subsequent mathematical or evidence changes require renewed review. No model
+benchmark, reserved task, API session, or training job was run for this review.

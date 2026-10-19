@@ -1,5 +1,37 @@
 # Finite graph search work log
 
+## 2026-10-19 — Snaky proof and complete branch viewer pass local review
+
+The committed-source proof run completed all 12 stages. Lean built both finite
+board theorems, audited 19 declarations against the allowed-axiom policy,
+replayed 179 local modules, and rejected all seven deliberately changed claims.
+The 194 proof input hashes still match. The actual receipt is saved under
+`evidence/snaky-finite-v1/proof/`; this run reused the dependency/build cache.
+Kernel replay took 1,631.946 seconds; the full run took about 30 minutes.
+
+All 73 focused tests pass with the real proof receipt and generated presentation.
+The exporter binds 219 inputs to source commit
+`767294d63b5cf0c3a4c664aa62c46d8dcbe3b65a`. Its JSON download, offline browser
+script, query record and evidence references agree. The renderer check initially
+compared separately decoded objects by identity; it now checks object identity
+within the packet and normalized content across the JSON/JS boundary. The full
+renderer check passes all eight states and the complete six-cell winning target.
+
+Actual browser review caught and fixed a mobile grid overflow. The board now
+scrolls within a focusable panel; the page and expanded eight-row move table fit
+375/390-pixel layouts without horizontal page overflow. Enter, Space and End
+operate the controls, and ArrowRight scrolls the board. Desktop and mobile
+screenshots are retained in `runs/snaky-ui-review/`; no browser warning or error
+was observed. Independent review covers the mathematical explanation, generated
+records, rejection controls and final presentation changes.
+
+An isolated replay of the highest card module passed in 168.195 seconds with
+13.82 GiB peak RSS, close to the bulk run's observed 14.30 GiB peak. Splitting the
+replay into single modules would not remove this dominant memory requirement.
+The existing runner and successful receipt remain unchanged. Hosted CI has a
+90-minute limit and is the remaining fresh-checkout resource/reproduction gate.
+No model benchmark, reserved task or training run was started.
+
 ## 2026-10-19 — Snaky presentation prepared behind the proof gate
 
 The page, offline-script exporter and download share one generated packet.
