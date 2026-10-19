@@ -554,3 +554,33 @@ as a generic high-entropy secret. It was a literal dummy phrase, with no
 authentication use. Renamed the fixture and replaced it with descriptive text;
 the test still checks exclusion from the model prompt. Frozen benchmark sources
 and recorded model evidence are unchanged by this test-only correction.
+
+## 2026-10-18 — Archive review and next-domain scope
+
+Resolved GitGuardian incident 38378566 as a false positive (Not a secret) for
+the literal dummy test marker. Reran the check for PR #6 head ba467ab; all checks
+passed and the PR merged as 4086d2b9788fc7c09058d1a6fac748e72e493104.
+No history rewrite or scanner bypass was used.
+
+Inspected the three supplied archives/CSV without executing their code and
+recorded original hashes in docs/ARCHIVE_REVIEW.md. Independent agent review
+confirmed the lexical limitations of formal-audit and the older Snaky checker's
+610 table entries plus six base rows, distinct from the 728-card theorem.
+The Turing-machine source is absent from those tarballs. Inspected its separate
+pinned upstream definition and checked the cached file against the GitHub blob.
+Earlier local Python benchmark logs exist; this new archive review did not
+rerun them or prove port equivalence.
+
+Added a proposed two-machine halt example with exact input, theorem, trace,
+and retrieval obligations. Proposed a harder six-object repair protocol while
+requiring matching checker assurance before claiming verified feedback. The
+completed grouping checker, frozen benchmark sources, and saved results remain
+the foundation. The original attachments and requested message are packaged
+locally for handoff; executable uploads are not added to the public source tree.
+
+Independent agent review found no blocking issue in the source semantics,
+archive scope, or proposed six-object constraints. Local Markdown targets resolve,
+git diff whitespace checks pass, and all four frozen benchmark blob hashes
+still match cda3ac79a481c5631c1480471e46f665c8bde288. The handoff package is
+checked against the three original upload hashes and a complete payload manifest.
+This is documentation validation and AI-assisted review, not a new Lean proof.

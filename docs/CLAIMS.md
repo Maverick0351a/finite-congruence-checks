@@ -36,3 +36,9 @@ and dependency trust boundaries are in [LEAN_VERIFICATION.md](LEAN_VERIFICATION.
 AI-assisted review and multiple independent algorithms provide useful assurance.
 They do not establish Python implementation correctness by formal proof or count
 as outside peer review. Novelty would require a separate literature investigation.
+
+The [archive review](ARCHIVE_REVIEW.md) and [TM halt pilot](TM_HALT_PILOT.md)
+are source inspection and planning records, not additional verified rows in this
+ledger. Lexical dependency counts cannot support proof-dependency claims;
+those require elaborated declarations. Evidence does not transfer between
+different constructions or certificates merely because they share a name.
