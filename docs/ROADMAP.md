@@ -24,12 +24,13 @@ visually. Expand the interface only after retrieval tests show that agents can
 answer with correct citations and limits. Remote services and databases should
 follow demonstrated consumer needs.
 
-The next focused assurance milestone is the [certificate-checking foundation](CHECKER_FOUNDATION.md):
-prove a small reusable source checker, exhaustively compare one exact compiled
-executable on a fixed input domain, then attempt a machine-code proof of its
-core function. These are separate achievements. The plan defines a four-object
-pilot, input encoding, evidence records, REA's investigative role, and explicit
-trust boundaries. No source-checker or binary-verification completion is claimed.
+The [four-object checker](GROUPING_CHECKER.md) implements the first steps of the
+[certificate-checking foundation](CHECKER_FOUNDATION.md): source proofs for
+decoding, acceptance, and returned counterexamples; an exhaustive native
+comparison runner; and a proposal/repair demo with individual evidence records.
+The next assurance step is a machine-code refinement experiment on one small
+compiled core. It remains separate from bounded executable agreement. Extend to
+exact congruence families only with explicit completeness obligations.
 
 The [readable atlas](ATLAS.md) now develops the classification direction through
 four objects, with complete relation-family coverage, minimum operations for

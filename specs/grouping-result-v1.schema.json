@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Maverick0351a/finite-congruence-checks/blob/main/specs/grouping-result-v1.schema.json",
+  "title": "Evidenced four-object unary grouping result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "input_id", "input", "claim_id", "claim_kind", "specification", "checker", "outcome", "evidence", "assumptions", "limits"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "status": {"const": "evidenced_result"},
+    "input_id": {"type": "string", "pattern": "^ug4-v1:[0-9a-f]{4}$"},
+    "input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["word", "hex", "operation", "group_labels"],
+      "properties": {
+        "word": {"type": "integer", "minimum": 0, "maximum": 65535},
+        "hex": {"type": "string", "pattern": "^[0-9a-f]{4}$"},
+        "operation": {"$ref": "#/$defs/fields"},
+        "group_labels": {"$ref": "#/$defs/fields"}
+      }
+    },
+    "claim_id": {"type": "string", "pattern": "^preservation:ug4-v1:[0-9a-f]{4}$"},
+    "claim_kind": {"const": "unary_grouping_preservation"},
+    "specification": {
+      "type": "object", "additionalProperties": false,
+      "required": ["contract_id", "version", "artifact_path", "artifact_sha256"],
+      "properties": {
+        "contract_id": {"const": "unary-grouping-v1"}, "version": {"const": 1},
+        "artifact_path": {"const": "specs/unary-grouping-v1.json"},
+        "artifact_sha256": {"$ref": "#/$defs/hash"}
+      }
+    },
+    "checker": {
+      "type": "object", "additionalProperties": false,
+      "required": ["version", "source_revision", "source_sha256", "theorem_declaration", "binary_sha256"],
+      "properties": {
+        "version": {"const": "1"},
+        "source_revision": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "source_sha256": {"$ref": "#/$defs/hash"},
+        "binary_sha256": {"$ref": "#/$defs/hash"},
+        "theorem_declaration": {"const": "GroupingChecker.check_iff"}
+      }
+    },
+    "outcome": {
+      "type": "object", "additionalProperties": false,
+      "required": ["preserves", "violating_pair"],
+      "properties": {
+        "preserves": {"type": "boolean"},
+        "violating_pair": {"oneOf": [{"type": "null"}, {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0, "maximum": 3}}]}
+      },
+      "allOf": [{"if": {"properties": {"preserves": {"const": true}}}, "then": {"properties": {"violating_pair": {"type": "null"}}}, "else": {"properties": {"violating_pair": {"type": "array"}}}}]
+    },
+    "evidence": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["kind", "artifact_path", "artifact_sha256", "case_pointer"],
+        "properties": {
+          "kind": {"enum": ["source_proof", "bounded_executable_agreement"]},
+          "artifact_path": {"type": "string", "minLength": 1},
+          "artifact_sha256": {"$ref": "#/$defs/hash"},
+          "case_pointer": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "assumptions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "limits": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "fields": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "integer", "minimum": 0, "maximum": 3}}
+  },
+  "$comment": "Structural schema only. scripts/grouping_tool.py also checks exact artifact bytes, source manifest, decoded fields, outcome, witness, and the cited native transcript. No binary-refinement evidence is admitted by this version."
+}

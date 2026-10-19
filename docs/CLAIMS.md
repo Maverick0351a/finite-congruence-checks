@@ -16,6 +16,9 @@ for one row does not establish a stronger claim from another row.
 | M4 has no graph witness in the searched range | Search and replay records | At most four carrier vertices; larger carriers are outside this claim |
 | Saved N5/B3 graphs satisfy the exact upstream predicate in Lean | [Bridge proof and reproduction record](LEAN_VERIFICATION.md) | Exact generated color tables; all five `IsGraphWitness` conditions, including every nonempty finite ordered seed set |
 | The pinned upstream theorem passes its official comparator | [Comparator logs and controls](../lean/comparator/README.md) | Original `graph_criterion` challenge/solution; placeholder proof and altered statement both rejected |
+| A generic grouping checker implements preservation in Lean | [Checker proofs](../lean/GroupingChecker.lean), [reproduction](GROUPING_CHECKER.md) | All four-object unary operations and four group labels; exact decoding, both round trips, integer bounds, acceptance iff preservation, and returned-pair soundness |
+| One compiled grouping checker agrees with an independent reference | [Exact build receipt](../evidence/grouping-checker-v1/summary.json) | All 65,536 encoded inputs for the identified build and environment; malformed-input probes separately; no machine-code refinement claim |
+| A proposal can be rejected, repaired, and checked again with claim evidence | [Saved protocol demo](../evidence/grouping-checker-v1/demo.json) | Fixed example and deterministic repair policy; actual native checks; no LLM capability or repair-minimality claim |
 
 No claim of a new mathematical theorem or classification is made. These small
 lattices are control examples. The negative M4 result is bounded. The project

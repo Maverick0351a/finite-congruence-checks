@@ -57,6 +57,13 @@ the interface improves general AI reasoning.
 
 ## Growth decisions
 
+The [grouping checker pilot](GROUPING_CHECKER.md) adds an active evidence path:
+propose an exact rule and grouping, receive a checked counterexample, repair the
+proposal, and save the rechecked outcome. Its versioned result schema binds each
+claim to the input, source theorem, executable, and full comparison transcript.
+This is a local protocol demonstration. It does not transfer a preservation
+result to an entire atlas family or measure general agent reasoning ability.
+
 Keep the first interface local and dependency-free. Add an API or MCP adapter
 when another application needs remote queries, while preserving the same
 record identities and claim meanings. Add a database when measured record size

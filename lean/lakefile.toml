@@ -1,9 +1,16 @@
 name = "finiteCongruenceChecks"
 version = "0.1.0"
-defaultTargets = ["FiniteCongruenceChecks"]
+defaultTargets = ["FiniteCongruenceChecks", "GroupingChecker", "grouping_checker"]
 
 [[lean_lib]]
 name = "FiniteCongruenceChecks"
 
 [[lean_lib]]
 name = "CertificateData"
+
+[[lean_lib]]
+name = "GroupingChecker"
+
+[[lean_exe]]
+name = "grouping_checker"
+root = "GroupingMain"
