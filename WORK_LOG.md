@@ -137,6 +137,19 @@ proof and checks complete, this is a development target rather than verified
 atlas evidence. No smaller move bound, smaller board, novelty, or agent
 performance gain is claimed. Model benchmarks and training remain paused.
 
+## 2026-10-19 — Make the source mathematics visible in the public demo
+
+Added a prominent source-and-scope banner above the atlas introduction, with
+links to OpenAI's math corpus and this project's exact claim ledger. The Space
+README and page description use the same scope: independent checks and formal
+extensions of selected results. This presentation change does not add a
+mathematical result or claim an OpenAI affiliation.
+
+Desktop and 390-pixel mobile layouts were inspected. The existing atlas UI and
+map checks passed, and an independent AI-assisted reviewer checked the wording.
+Publication follows the protected-branch PR checks and uses only tracked Space
+files from the merged commit. Snaky proof work continues separately.
+
 ## 2026-10-19 — Five-object operation minimum proof started
 
 Following the user's research order, started a separate branch from merged
