@@ -1,0 +1,582 @@
+{
+  "schema_version": 1,
+  "dataset_id": "repair-v1",
+  "sampling_seed": "finite-congruence-checks/repair-v1/2026-10-18",
+  "sampling_method": "SHA-256(seed + NUL + purpose + NUL + canonical compact sorted-key ASCII JSON); lexical digest order, then value order for ties",
+  "status": "dataset_and_oracle_only; no model runs are implied",
+  "scope": "One fixed unary operation on four objects; initially rejected grouping; merge entire existing blocks only; keep one initially separated pair separated.",
+  "public_answer_schema": {
+    "required_exact_keys": [
+      "status",
+      "group_labels"
+    ],
+    "status": [
+      "repair",
+      "impossible"
+    ],
+    "group_labels": "Four integers in 0..3 for repair; null for impossible. Label names need not be canonical."
+  },
+  "oracle": {
+    "method": "Exhaustive enumeration of all 15 partitions; no import of the previous closure-based repair algorithm.",
+    "evidence_status": "Computational oracle cross-checked by independent forced-merge closure tests; not a formal proof of this constrained task."
+  },
+  "universe": {
+    "objects": 4,
+    "operations": 256,
+    "partitions": 15,
+    "operation_conjugacy_classes": 19,
+    "eligible_operation_conjugacy_classes": 17,
+    "rejected_operation_partition_pairs": 2112,
+    "eligible_labeled_tasks": 8832,
+    "labeled_class_counts": {
+      "sat": 2112,
+      "unsat": 6720
+    },
+    "task_isomorphism_classes": 378,
+    "orbit_class_counts": {
+      "sat": 88,
+      "unsat": 290
+    },
+    "by_initial_block_count": {
+      "2": {
+        "rejected_operation_partition_pairs": 1152,
+        "task_class_counts": {
+          "unsat": 4032
+        }
+      },
+      "3": {
+        "rejected_operation_partition_pairs": 960,
+        "task_class_counts": {
+          "sat": 2112,
+          "unsat": 2688
+        }
+      }
+    },
+    "label_convention": "Grouping label aliases are canonicalized; objects remain labeled for labeled-task counts. Required pairs are unordered. Orbit counts additionally quotient simultaneous object permutations of operation, grouping, and pair."
+  },
+  "split_policy": {
+    "grouping": "Operation conjugacy under all 24 object permutations; no operation family occurs in both dev and test.",
+    "development_use": "Only dev cases may guide prompt or runner changes before a versioned held-out run.",
+    "heldout_meaning": "Local development holdout only. Model pretraining exposure and training-data contamination are unknown.",
+    "selected_initial_block_count": 3,
+    "two_block_cases": "Excluded from both sampled splits because every rejected two-block case is UNSAT under the separation constraint; checked as a sanity stratum in exhaustive oracle tests.",
+    "dev": {
+      "tasks": 4,
+      "sat": 2,
+      "unsat": 2,
+      "operation_families": 2
+    },
+    "test": {
+      "tasks": 12,
+      "sat": 6,
+      "unsat": 6,
+      "operation_families": 6
+    },
+    "unused_eligible_operation_families": 9
+  },
+  "mathematical_limits": [
+    "Every SAT task in this four-object universe has exactly one valid repaired partition, up to group-label renaming.",
+    "A rejected two-block grouping can only be repaired by the universal grouping, which violates the required separation.",
+    "A rejected three-block grouping admits exactly two proper block merges compatible with the separated pair; two candidate probes can exhaust this repair space.",
+    "The fixed separated pair prevents universal-grouping fallback from receiving credit.",
+    "Twelve test cases from six operation families are a controlled pilot, not a broad benchmark of mathematical reasoning or new mathematical discovery."
+  ],
+  "evaluation_recommendations": [
+    "Use fresh model sessions and the identical task, output format, model, settings, and decision budget in each arm; record token usage separately.",
+    "Primary outcome: correctness of the first decision after assigned initial feedback. Report SAT and UNSAT accuracy separately and paired per-task outcomes.",
+    "Secondary outcomes: success within a fixed decision budget, native-checker queries, tokens, malformed outputs, illegal splits, and violated separation.",
+    "Treat impossible as a terminal answer; never provide the private enumeration oracle's satisfiability verdict as trial feedback.",
+    "A counterexample must come from the actual native checker and satisfy the candidate's decoded input. Pass/fail and counterexample arms share all non-witness feedback.",
+    "Operation families, not raw cases or label aliases, are the independent grouping unit. Avoid significance or broad generalization claims from six test families."
+  ],
+  "tasks": [
+    {
+      "id": "repair-v1:96570b096a2f181b5d45e33e84778c00c659644a2a16c5c0860fcb2c2735dcff",
+      "split": "dev",
+      "operation": [
+        0,
+        0,
+        2,
+        3
+      ],
+      "initial_labels": [
+        0,
+        1,
+        1,
+        2
+      ],
+      "separate": [
+        0,
+        1
+      ],
+      "operation_family_id": "operation-conjugacy-v1:409850fc8bde9de985b1f017045f52584d63d7fbf5ce88d0b61d6a7d5b3004cd",
+      "oracle": {
+        "answer_class": "unsat",
+        "solutions": [],
+        "solution_count": 0,
+        "method": "Exhaustively enumerate the 15 canonical partitions."
+      }
+    },
+    {
+      "id": "repair-v1:fa5a242b5326beca4e467bc15976f37f886c9859c4f891b93b2f88731b0e70eb",
+      "split": "dev",
+      "operation": [
+        0,
+        0,
+        2,
+        3
+      ],
+      "initial_labels": [
+        0,
+        1,
+        1,
+        2
+      ],
+      "separate": [
+        0,
+        3
+      ],
+      "operation_family_id": "operation-conjugacy-v1:409850fc8bde9de985b1f017045f52584d63d7fbf5ce88d0b61d6a7d5b3004cd",
+      "oracle": {
+        "answer_class": "sat",
+        "solutions": [
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "solution_count": 1,
+        "method": "Exhaustively enumerate the 15 canonical partitions."
+      }
+    },
+    {
+      "id": "repair-v1:e1c0b427cbece22e1e0d1909bd336ca1b43805b39272a256be25a29266405a06",
+      "split": "dev",
+      "operation": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "initial_labels": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "separate": [
+        0,
+        1
+      ],
+      "operation_family_id": "operation-conjugacy-v1:3c4b74a29c1721d211a750ccd8829838b0fe1d599c34ebe7c2c266bbce826f11",
+      "oracle": {
+        "answer_class": "unsat",
+        "solutions": [],
+        "solution_count": 0,
+        "method": "Exhaustively enumerate the 15 canonical partitions."
+      }
+    },
+    {
+      "id": "repair-v1:5257428316ec5577835331210a0d324c692ff53eb0bb4b680f765ee245fe939b",
+      "split": "dev",
+      "operation": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "initial_labels": [
+        0,
+        1,
+        2,
+        2
+      ],
+      "separate": [
+        0,
+        2
+      ],
+      "operation_family_id": "operation-conjugacy-v1:3c4b74a29c1721d211a750ccd8829838b0fe1d599c34ebe7c2c266bbce826f11",
+      "oracle": {
+        "answer_class": "sat",
+        "solutions": [
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "solution_count": 1,
+        "method": "Exhaustively enumerate the 15 canonical partitions."
+      }
+    },
+    {
+      "id": "repair-v1:d9c88efd5f9aa8c7495674531905722e40ac8c96758963c25c8346bb43ec60ab",
+      "split": "test",
+      "operation": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "initial_labels": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "separate": [
+        2,
+        3
+      ],
+      "operation_family_id": "operation-conjugacy-v1:c4b6eb04efb3f42ec2e9d8f1c791e2af10bfb9916c70dc12dfd08762d17cfa37",
+      "oracle": {
+        "answer_class": "sat",
+        "solutions": [
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "solution_count": 1,
+        "method": "Exhaustively enumerate the 15 canonical partitions."
+      }
+    },
+    {
+      "id": "repair-v1:419a3226e4333b2417881b98e06d81f77496f1c6fcee6e3fb58b909b1c390782",
+      "split": "test",
+      "operation": [
+        0,
+        0,
+        2,
+        2
+      ],
+      "initial_labels": [
+        0,
+        1,
+        1,
+        2
+      ],
+      "separate": [
+        0,
+        1
+      ],
+      "operation_family_id": "operation-conjugacy-v1:ffc4b500286d922b943933f4a6e165f22ba1f07f52628b040abf87aa2ae74905",
+      "oracle": {
+        "answer_class": "unsat",
+        "solutions": [],
+        "solution_count": 0,
+        "method": "Exhaustively enumerate the 15 canonical partitions."
+      }
+    },
+    {
+      "id": "repair-v1:039c7cb407ac0537afdf4c12cf9eb80d7238c0cb662bdfeeeb51b44ff731676c",
+      "split": "test",
+      "operation": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "initial_labels": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "separate": [
+        0,
+        3
+      ],
+      "operation_family_id": "operation-conjugacy-v1:5fb298032c226a77f7a60bd7b56b580c82a1e8962944a6812a42480717e1029f",
+      "oracle": {
+        "answer_class": "sat",
+        "solutions": [
+          [
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "solution_count": 1,
+        "method": "Exhaustively enumerate the 15 canonical partitions."
+      }
+    },
+    {
+      "id": "repair-v1:1b60325ef2dcae3ba9fe1352529ba16c23de1d99309634fdb2d0a747cdde613b",
+      "split": "test",
+      "operation": [
+        0,
+        0,
+        1,
+        2
+      ],
+      "initial_labels": [
+        0,
+        1,
+        1,
+        2
+      ],
+      "separate": [
+        2,
+        3
+      ],
+      "operation_family_id": "operation-conjugacy-v1:67f00d638088d94721d55ba1496746b7f6f488a61de10f7bd4fe864d259155ca",
+      "oracle": {
+        "answer_class": "sat",
+        "solutions": [
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "solution_count": 1,
+        "method": "Exhaustively enumerate the 15 canonical partitions."
+      }
+    },
+    {
+      "id": "repair-v1:30b04cef2f0b3be7083c6939514e22460fff07db6c97fa4aa9c50e772ae5558b",
+      "split": "test",
+      "operation": [
+        0,
+        0,
+        1,
+        3
+      ],
+      "initial_labels": [
+        0,
+        1,
+        2,
+        2
+      ],
+      "separate": [
+        0,
+        3
+      ],
+      "operation_family_id": "operation-conjugacy-v1:ec50c4cdcc3d32d2d632f4824cb0f3e7454c069f1d6b23ea236154304a766a7b",
+      "oracle": {
+        "answer_class": "unsat",
+        "solutions": [],
+        "solution_count": 0,
+        "method": "Exhaustively enumerate the 15 canonical partitions."
+      }
+    },
+    {
+      "id": "repair-v1:25f4d5b8818f39e6b264597684a6225541f018c8d1f030d0c8b7604dc8e307f0",
+      "split": "test",
+      "operation": [
+        0,
+        0,
+        1,
+        2
+      ],
+      "initial_labels": [
+        0,
+        1,
+        2,
+        0
+      ],
+      "separate": [
+        1,
+        2
+      ],
+      "operation_family_id": "operation-conjugacy-v1:67f00d638088d94721d55ba1496746b7f6f488a61de10f7bd4fe864d259155ca",
+      "oracle": {
+        "answer_class": "unsat",
+        "solutions": [],
+        "solution_count": 0,
+        "method": "Exhaustively enumerate the 15 canonical partitions."
+      }
+    },
+    {
+      "id": "repair-v1:2a11c7baff788f2280bf6aa27205e56501ee7c30fc70c1fb2419a0ddcac1f27b",
+      "split": "test",
+      "operation": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "initial_labels": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "separate": [
+        0,
+        1
+      ],
+      "operation_family_id": "operation-conjugacy-v1:bb927ab22ceb86168cf03c5cb819e6425eac44a1ad944f4a039bf18b3d5ba33d",
+      "oracle": {
+        "answer_class": "sat",
+        "solutions": [
+          [
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "solution_count": 1,
+        "method": "Exhaustively enumerate the 15 canonical partitions."
+      }
+    },
+    {
+      "id": "repair-v1:ad9530b50e6a290303536bb8e819da5c4b8f5fd49861480f534bf060ebdd7d99",
+      "split": "test",
+      "operation": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "initial_labels": [
+        0,
+        0,
+        1,
+        2
+      ],
+      "separate": [
+        1,
+        3
+      ],
+      "operation_family_id": "operation-conjugacy-v1:bb927ab22ceb86168cf03c5cb819e6425eac44a1ad944f4a039bf18b3d5ba33d",
+      "oracle": {
+        "answer_class": "unsat",
+        "solutions": [],
+        "solution_count": 0,
+        "method": "Exhaustively enumerate the 15 canonical partitions."
+      }
+    },
+    {
+      "id": "repair-v1:e727ac8a4fb2892c22663a5ea6d8090d257efe5126b60d27a5faccb29707b709",
+      "split": "test",
+      "operation": [
+        0,
+        0,
+        1,
+        3
+      ],
+      "initial_labels": [
+        0,
+        1,
+        1,
+        2
+      ],
+      "separate": [
+        0,
+        3
+      ],
+      "operation_family_id": "operation-conjugacy-v1:ec50c4cdcc3d32d2d632f4824cb0f3e7454c069f1d6b23ea236154304a766a7b",
+      "oracle": {
+        "answer_class": "sat",
+        "solutions": [
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "solution_count": 1,
+        "method": "Exhaustively enumerate the 15 canonical partitions."
+      }
+    },
+    {
+      "id": "repair-v1:e6014505e96552feda3c3110ec179ea3e40f67d7e60dd14f638855ec7b8cb679",
+      "split": "test",
+      "operation": [
+        0,
+        0,
+        2,
+        2
+      ],
+      "initial_labels": [
+        0,
+        1,
+        1,
+        2
+      ],
+      "separate": [
+        2,
+        3
+      ],
+      "operation_family_id": "operation-conjugacy-v1:ffc4b500286d922b943933f4a6e165f22ba1f07f52628b040abf87aa2ae74905",
+      "oracle": {
+        "answer_class": "sat",
+        "solutions": [
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "solution_count": 1,
+        "method": "Exhaustively enumerate the 15 canonical partitions."
+      }
+    },
+    {
+      "id": "repair-v1:d4c9cf0cd4d1c8d3c8591970a14b4c9fe9b408bf4344502b6a7a66877eacae4f",
+      "split": "test",
+      "operation": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "initial_labels": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "separate": [
+        1,
+        2
+      ],
+      "operation_family_id": "operation-conjugacy-v1:c4b6eb04efb3f42ec2e9d8f1c791e2af10bfb9916c70dc12dfd08762d17cfa37",
+      "oracle": {
+        "answer_class": "unsat",
+        "solutions": [],
+        "solution_count": 0,
+        "method": "Exhaustively enumerate the 15 canonical partitions."
+      }
+    },
+    {
+      "id": "repair-v1:ff08e349021241335a922ddf5bd08f5075fac22baece913e94d45f5b155d9515",
+      "split": "test",
+      "operation": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "initial_labels": [
+        0,
+        1,
+        0,
+        2
+      ],
+      "separate": [
+        1,
+        3
+      ],
+      "operation_family_id": "operation-conjugacy-v1:5fb298032c226a77f7a60bd7b56b580c82a1e8962944a6812a42480717e1029f",
+      "oracle": {
+        "answer_class": "unsat",
+        "solutions": [],
+        "solution_count": 0,
+        "method": "Exhaustively enumerate the 15 canonical partitions."
+      }
+    }
+  ]
+}

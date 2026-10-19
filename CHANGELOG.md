@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Constrained repair benchmark with merges only, a retained separation, and an
+  independent impossibility oracle checked on 8,832 tasks; disjoint development
+  and test operation families, local Codex runner, and offline result replay.
+
 - Generic four-object Lean grouping checker with exact bit decoding, both
   encode/decode round trips, acceptance equivalence, integer bounds, and proved
   counterexample witnesses.

@@ -28,8 +28,11 @@ The [four-object checker](GROUPING_CHECKER.md) implements the first steps of the
 [certificate-checking foundation](CHECKER_FOUNDATION.md): source proofs for
 decoding, acceptance, and returned counterexamples; an exhaustive native
 comparison runner; and a proposal/repair demo with individual evidence records.
-The next assurance step is a machine-code refinement experiment on one small
-compiled core. It remains separate from bounded executable agreement. Extend to
+The next experiment is [constrained agent repair](REPAIR_BENCHMARK.md): permit
+merges only, retain a required separation, include impossible cases, and compare
+counterexample feedback with pass/fail using a local Codex connection. Evaluate
+this interface before attempting machine-code refinement on one small compiled
+core. Refinement remains separate from bounded executable agreement. Extend to
 exact congruence families only with explicit completeness obligations.
 
 The [readable atlas](ATLAS.md) now develops the classification direction through

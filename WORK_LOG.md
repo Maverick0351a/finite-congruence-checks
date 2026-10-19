@@ -487,3 +487,42 @@ logs, mutation evidence, and actual two-call repair demonstration under
 `evidence/grouping-checker-v1/`. Exact-byte Git attributes preserve log hashes.
 Executable archives remain separate release assets, and offline validation
 explicitly reports whether those bytes were available.
+
+## 2026-10-18 — Constrained repair benchmark and local Codex connection
+
+The user refined the next experiment to allow merges only, require a designated
+pair to stay separated, and include impossible tasks. This excludes both the
+universal-grouping and singleton-grouping shortcuts. The independent oracle
+enumerates all 15 partitions instead of trusting a model's impossibility claim.
+Development and test tasks use disjoint operation conjugacy families, and the
+main test set uses three-block inputs in both classes to avoid a block-count
+shortcut. On four objects, every solvable rejected input under these constraints
+has just one valid repaired partition; this makes ceiling effects likely.
+
+The user prefers existing Codex access to separately funded API calls. Verified
+local `codex login status` reports ChatGPT authentication and a real ephemeral
+`codex exec` call succeeded. The runner uses this supported local interface,
+without copying credentials. Model calls consume the user's Codex allowance and
+are excluded from repository CI. The chosen model and effort match the user's
+local configured values (gpt-6-astra, ultra).
+
+Connection probes revealed that global AGENTS.md instructions still enter the
+CLI context despite ignoring user configuration and disabling project docs.
+Record their hash and size, retain requested settings, reject any tool activity
+in the event log, and describe this as a controlled local harness pilot rather
+than a completely isolated model evaluation. Fresh conversations receive only
+one trial's public task and feedback from this experiment. Test prompts, model
+answers, native claim records, process status, and usage will be retained; results
+are pending execution and independent review.
+
+The development pilot completed eight live calls: both arms answered all four
+development cases correctly on their first decision. These development results
+were used to check the harness, not counted as held-out results. Review found
+the initial counterexample is inferable from every sampled task, because there
+is exactly one distinct same-group pair. Added that limitation to the protocol.
+Before freezing, added checks for unique conversation IDs, complete artifact
+manifests, seeded trial order, binary identity, and a clean test source tree.
+All 24 repair tests and all 31 existing grouping tests pass. Synthetic replay
+controls reject altered grades, feedback, prompts, token reports, native inputs,
+and reused threads even when artifact hashes are recomputed. Independent agent
+review found no blocking defect; this is AI-assisted review, not external review.

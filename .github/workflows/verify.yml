@@ -50,6 +50,10 @@ jobs:
           python -m unittest discover -s lean -p 'test_*.py' -v
       - name: Check grouping reference, schema, and recorded claim controls
         run: python -m unittest discover -s scripts -p 'test_grouping*.py' -v
+      - name: Check constrained repair dataset and feedback controls
+        run: |
+          python scripts/repair_tasks.py --check
+          python -m unittest discover -s scripts -p 'test_repair*.py' -v
       - name: Replay and check explorer data
         run: python scripts/build_space_data.py --check
       - name: Check browser relation logic against verified certificates
