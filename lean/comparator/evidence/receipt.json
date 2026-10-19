@@ -1,0 +1,105 @@
+{
+  "started_at_utc": "2026-10-19T01:43:45.703876+00:00",
+  "upstream_revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "lean_version": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+  "lake_version": "Lake version 5.0.0-src+5045d00 (Lean version 4.34.1)",
+  "landrun_version": "landrun version 0.1.18",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "unprivileged_user": true,
+  "runner_sha256": "492d5af602ca37c41805cf4f2a955fe0ea7089ce4946c069bb353447fbeb10ae",
+  "sandbox": {
+    "implementation": "Landrun",
+    "systemd_restrict_address_families": "~AF_UNIX"
+  },
+  "tools": {
+    "comparator": {
+      "revision": "d03acab154d269c06e60e4de7e4cc85deebff94b",
+      "tracked_and_untracked_tree_clean": true,
+      "binary_sha256": "afa65e57a1770f5961efe7681626a9a1cd99705262421658abd30b705f66e4a2"
+    },
+    "lean4export": {
+      "revision": "076e8e57707e813375e8f9da8bf989799ace9680",
+      "tracked_and_untracked_tree_clean": true,
+      "binary_sha256": "8c5d64ba68f4d3a68b3bcb7e1c5f188e35ae573b29470b8d4530a62324c9ddd1"
+    },
+    "landrun": {
+      "revision": "ec104f6edc1e14d7fec6d31146f1ec6f9c192c5a",
+      "tracked_and_untracked_tree_clean": true,
+      "binary_sha256": "7824b298867ff3af12a2dd8f16ab88927c77d0ef1de48895f90f02a9465ab675"
+    }
+  },
+  "dependencies": {
+    "mathlib": {
+      "revision": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "tracked_and_untracked_tree_clean": true
+    },
+    "plausible": {
+      "revision": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+      "tracked_and_untracked_tree_clean": true
+    },
+    "LeanSearchClient": {
+      "revision": "ddf04cf3949fa556442341e87d47f9f6e6074707",
+      "tracked_and_untracked_tree_clean": true
+    },
+    "importGraph": {
+      "revision": "e928b72544873815af278d38681b31c0293588e3",
+      "tracked_and_untracked_tree_clean": true
+    },
+    "proofwidgets": {
+      "revision": "106ff4fafc74ef4ac99d81dbf3ab399118f497a5",
+      "tracked_and_untracked_tree_clean": true
+    },
+    "aesop": {
+      "revision": "355695d523e41d0554926416cba2a2b3544fbbc9",
+      "tracked_and_untracked_tree_clean": true
+    },
+    "Qq": {
+      "revision": "6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259",
+      "tracked_and_untracked_tree_clean": true
+    },
+    "batteries": {
+      "revision": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+      "tracked_and_untracked_tree_clean": true
+    },
+    "Cli": {
+      "revision": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+      "tracked_and_untracked_tree_clean": true
+    }
+  },
+  "input_sha256": {
+    "OAI/Algebra/Universal/GraphCriterion.lean": "bd80c2bea95ee1b4f7118fc8dc272aebac7b23038ba93cdafd386dc1b688fb50",
+    "OAI/Algebra/Universal/Congruence.lean": "30e9201344dcf4069ca9ace276c76dc3b1507d09f0f6bfbf5a7c5d693ac9716c",
+    "ComparatorChallenges/FiniteCongruenceGraph.lean": "2ee495def2e1228bf13df520f6c66699ec22b2cd3bc1ae7383a30957aae9f967",
+    "ComparatorChallenges/FiniteCongruenceGraph.json": "4527a9b96cf508c538af6e5c40654257f25bab583ac40fa5e88cb963ee56e66a",
+    "lake-manifest.json": "43889c850f1896ed2ee994cf1a218f0c2343487d387a4267b780ffee3a081c48",
+    "lean-toolchain": "8152090414016dd5dc871752f8ce4ecdbd604d9845758e9b9047cb80101280b5",
+    "lakefile.toml": "20044e4eedeb8cc2eeca2bd195d2021812f9b6a05b70cb2c2202a424cc0bcaca"
+  },
+  "scope": "Original upstream graph_criterion supporting theorem only; no Nanoda or full-corpus check.",
+  "checks": [
+    {
+      "name": "official",
+      "expected_acceptance": true,
+      "exit_code": 0,
+      "passed": true,
+      "log": "official.log"
+    },
+    {
+      "name": "sorry-control",
+      "expected_acceptance": false,
+      "exit_code": 1,
+      "passed": true,
+      "log": "sorry-control.log"
+    },
+    {
+      "name": "mismatch-control",
+      "expected_acceptance": false,
+      "exit_code": 1,
+      "passed": true,
+      "log": "mismatch-control.log"
+    }
+  ],
+  "source_bytes_unchanged_after_checks": true,
+  "completed_at_utc": "2026-10-19T01:44:05.518643+00:00",
+  "passed": true
+}

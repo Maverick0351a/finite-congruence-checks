@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "tables_checked": [
+    {
+      "lattice": "N5",
+      "certificate_sha256": "2b6648c6842bf0742c3029c6c0ad7c906fbdb8d281d8e830a85c51c047ef2685"
+    },
+    {
+      "lattice": "B3",
+      "certificate_sha256": "82c34bc3eba493827249de64f1c1ef6b1d719e5c568fa030ab138769a1cc6c9d"
+    }
+  ],
+  "upstream_sha256": {
+    "OAI/Algebra/Universal/GraphCriterion.lean": "bd80c2bea95ee1b4f7118fc8dc272aebac7b23038ba93cdafd386dc1b688fb50",
+    "OAI/Algebra/Universal/Congruence.lean": "30e9201344dcf4069ca9ace276c76dc3b1507d09f0f6bfbf5a7c5d693ac9716c"
+  }
+}

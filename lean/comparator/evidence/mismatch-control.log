@@ -1,0 +1,15 @@
+Running as unit: run-u8.service; invocation ID: 35f0d4c47b3044c884635e140887ef54
+Building ComparatorChallenges.MismatchControl
+✔ [672/672] Built ComparatorChallenges.MismatchControl (677ms)
+Build completed successfully (672 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.FiniteCongruence.graph_criterion, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from ComparatorChallenges.MismatchControl
+Building OAI.Algebra.Universal.GraphCriterion
+Build completed successfully (740 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, OAI.FiniteCongruence.graph_criterion, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from OAI.Algebra.Universal.GraphCriterion
+uncaught exception: Challenge and solution theorem statement do not match: 'OAI.FiniteCongruence.graph_criterion'
+Finished with result: exit-code
+Main processes terminated with: code=exited/status=1
+Service runtime: 5.161s
+CPU time consumed: 5.920s
+Memory peak: 312.0K
+Memory swap peak: 0B

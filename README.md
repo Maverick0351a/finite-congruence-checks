@@ -111,12 +111,13 @@ breadth-first search through congruence families. It checks all **313**
 representable exact families on carriers of sizes 1–4, plus 60 impossible-family
 controls. [Review scope and evidence](docs/RELEASE_REVIEW.md).
 
-Lean 4.34.1 compiled the concrete N5/B3 congruence certificates and the actual
-pinned upstream graph-criterion proof. Both projects passed bundled kernel
-replay for their target modules. This validates the selected formal proof and
-adds concrete checks of its finite constructions; the
-[Lean record](docs/LEAN_VERIFICATION.md) specifies the dependency trust boundary
-and the remaining comparator and Python-to-Lean connection work.
+Lean 4.34.1 proves that the **exact saved N5/B3 colorings satisfy the upstream
+`IsGraphWitness` predicate**, including connectivity for every nonempty finite
+set of ordered seed pairs. Tables are generated from the JSON certificates;
+the proofs passed compilation, bundled kernel replay, and a strict axiom check.
+Separately, the original upstream theorem passed its official comparator, with
+two invalid controls correctly rejected. [Proofs, logs, scope, and one-command
+reproduction](docs/LEAN_VERIFICATION.md).
 
 These implementations and reviews were developed with AI assistance in the same
 session. Independent algorithms strengthen the checks; external peer review and

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Formal connection from the exact saved N5/B3 certificates to upstream `IsGraphWitness`, with generated tables, congruence order isomorphisms, and principal-color equality proofs.
+- Reproducible Lean runner and CI job covering builds, bundled kernel replay, 21 axiom reports, pinned dependency checks, and retained source/log hashes; 13 targeted Python tests.
+- Recorded official comparator acceptance of the original upstream graph criterion, plus rejection of a placeholder proof and an altered theorem statement.
 - Interactive static explorer for eight lattices, seven passing certificates, and four replayed connectivity obstructions, with downloadable evidence and source hashes.
 - Deterministic data export and CI checks for browser relation calculations and certificate integrity.
 - Maintainer links to Travis Johnson's LinkedIn profile in the repository and demo.

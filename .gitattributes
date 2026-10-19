@@ -7,3 +7,5 @@ docs/index.html linguist-generated=true
 evidence/** linguist-generated=true
 reference/** -text
 lean/upstream/OAI/** -text
+lean/comparator/ComparatorChallenges/** -text
+lean/CertificateData.lean linguist-generated=true

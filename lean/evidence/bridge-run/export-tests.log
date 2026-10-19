@@ -1,0 +1,22 @@
+test_admitted_and_native_proofs_rejected (test_axioms.AxiomTests.test_admitted_and_native_proofs_rejected) ... ok
+test_complete_standard_axiom_report (test_axioms.AxiomTests.test_complete_standard_axiom_report) ... ok
+test_duplicate_declaration_rejected (test_axioms.AxiomTests.test_duplicate_declaration_rejected) ... ok
+test_missing_declaration_rejected (test_axioms.AxiomTests.test_missing_declaration_rejected) ... ok
+test_changed_valid_color_cannot_reuse_old_operation_record (test_export_data.ExportDataTests.test_changed_valid_color_cannot_reuse_old_operation_record) ... ok
+test_duplicate_operation_record_rejected (test_export_data.ExportDataTests.test_duplicate_operation_record_rejected) ... ok
+test_exact_reproducible_export (test_export_data.ExportDataTests.test_exact_reproducible_export) ... ok
+test_failed_minimization_cannot_export (test_export_data.ExportDataTests.test_failed_minimization_cannot_export) ... ok
+test_invalid_join_rejected (test_export_data.ExportDataTests.test_invalid_join_rejected) ... ok
+test_out_of_carrier_operation_rejected (test_export_data.ExportDataTests.test_out_of_carrier_operation_rejected) ... ok
+test_changed_sources_cannot_produce_passing_record (test_run_checks.CheckRunnerTests.test_changed_sources_cannot_produce_passing_record) ... Checking proof...
+ok
+test_existing_evidence_is_not_overwritten (test_run_checks.CheckRunnerTests.test_existing_evidence_is_not_overwritten) ... ok
+test_failed_child_is_recorded_and_stops_run (test_run_checks.CheckRunnerTests.test_failed_child_is_recorded_and_stops_run) ... Sources changed during checks: /tmp/tmpu3g6nj0d/result.json
+Checking bad-proof...
+Failed bad-proof; see /tmp/tmp5vc2ycks/bad-proof.log
+ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.032s
+
+OK

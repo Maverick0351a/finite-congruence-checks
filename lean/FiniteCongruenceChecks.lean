@@ -1,4 +1,4 @@
-import Std
+import CertificateData
 
 /-!
 # Concrete congruence representations on four points
@@ -15,7 +15,6 @@ set_option maxHeartbeats 0
 
 namespace FiniteCongruenceChecks
 
-abbrev V := Fin 4
 abbrev Rel := V → V → Bool
 abbrev Shape := Bool × Bool × Bool × Bool × Bool × Bool
 
@@ -138,69 +137,6 @@ structure Representation (k : Nat) (le : Fin k → Fin k → Bool)
 
 namespace N5
 
-def le (x y : Fin 5) : Bool :=
-  match x.val, y.val with
-  | 0, 0 => true
-  | 0, 1 => true
-  | 0, 2 => true
-  | 0, 3 => true
-  | 0, 4 => true
-  | 1, 0 => false
-  | 1, 1 => true
-  | 1, 2 => true
-  | 1, 3 => false
-  | 1, 4 => true
-  | 2, 0 => false
-  | 2, 1 => false
-  | 2, 2 => true
-  | 2, 3 => false
-  | 2, 4 => true
-  | 3, 0 => false
-  | 3, 1 => false
-  | 3, 2 => false
-  | 3, 3 => true
-  | 3, 4 => true
-  | 4, 0 => false
-  | 4, 1 => false
-  | 4, 2 => false
-  | 4, 3 => false
-  | 4, 4 => true
-  | _, _ => false
-
-def color (x y : V) : Fin 5 :=
-  match x.val, y.val with
-  | 0, 0 => 0
-  | 0, 1 => 1
-  | 0, 2 => 3
-  | 0, 3 => 4
-  | 1, 0 => 1
-  | 1, 1 => 0
-  | 1, 2 => 4
-  | 1, 3 => 3
-  | 2, 0 => 3
-  | 2, 1 => 4
-  | 2, 2 => 0
-  | 2, 3 => 2
-  | 3, 0 => 4
-  | 3, 1 => 3
-  | 3, 2 => 2
-  | 3, 3 => 0
-  | _, _ => 0
-
-def op1 (x : V) : V :=
-  match x.val with
-  | 0 => 1
-  | 1 => 0
-  | 2 => 3
-  | _ => 2
-
-def op2 (x : V) : V :=
-  match x.val with
-  | 0 => 0
-  | 1 => 1
-  | 2 => 0
-  | _ => 1
-
 def theta (a : Fin 5) : Rel := fun x y => le (color x y) a
 
 theorem finite_classification : ∀ s : Shape,
@@ -251,108 +187,6 @@ def representation : Representation 5 le op1 op2 where
 end N5
 
 namespace B3
-
-def le (x y : Fin 8) : Bool :=
-  match x.val, y.val with
-  | 0, 0 => true
-  | 0, 1 => true
-  | 0, 2 => true
-  | 0, 3 => true
-  | 0, 4 => true
-  | 0, 5 => true
-  | 0, 6 => true
-  | 0, 7 => true
-  | 1, 0 => false
-  | 1, 1 => true
-  | 1, 2 => false
-  | 1, 3 => true
-  | 1, 4 => false
-  | 1, 5 => true
-  | 1, 6 => false
-  | 1, 7 => true
-  | 2, 0 => false
-  | 2, 1 => false
-  | 2, 2 => true
-  | 2, 3 => true
-  | 2, 4 => false
-  | 2, 5 => false
-  | 2, 6 => true
-  | 2, 7 => true
-  | 3, 0 => false
-  | 3, 1 => false
-  | 3, 2 => false
-  | 3, 3 => true
-  | 3, 4 => false
-  | 3, 5 => false
-  | 3, 6 => false
-  | 3, 7 => true
-  | 4, 0 => false
-  | 4, 1 => false
-  | 4, 2 => false
-  | 4, 3 => false
-  | 4, 4 => true
-  | 4, 5 => true
-  | 4, 6 => true
-  | 4, 7 => true
-  | 5, 0 => false
-  | 5, 1 => false
-  | 5, 2 => false
-  | 5, 3 => false
-  | 5, 4 => false
-  | 5, 5 => true
-  | 5, 6 => false
-  | 5, 7 => true
-  | 6, 0 => false
-  | 6, 1 => false
-  | 6, 2 => false
-  | 6, 3 => false
-  | 6, 4 => false
-  | 6, 5 => false
-  | 6, 6 => true
-  | 6, 7 => true
-  | 7, 0 => false
-  | 7, 1 => false
-  | 7, 2 => false
-  | 7, 3 => false
-  | 7, 4 => false
-  | 7, 5 => false
-  | 7, 6 => false
-  | 7, 7 => true
-  | _, _ => false
-
-def color (x y : V) : Fin 8 :=
-  match x.val, y.val with
-  | 0, 0 => 0
-  | 0, 1 => 1
-  | 0, 2 => 2
-  | 0, 3 => 4
-  | 1, 0 => 1
-  | 1, 1 => 0
-  | 1, 2 => 3
-  | 1, 3 => 5
-  | 2, 0 => 2
-  | 2, 1 => 3
-  | 2, 2 => 0
-  | 2, 3 => 6
-  | 3, 0 => 4
-  | 3, 1 => 5
-  | 3, 2 => 6
-  | 3, 3 => 0
-  | _, _ => 0
-
-def op1 (x : V) : V :=
-  match x.val with
-  | 0 => 0
-  | 1 => 0
-  | 2 => 2
-  | _ => 3
-
-def op2 (x : V) : V :=
-  match x.val with
-  | 0 => 0
-  | 1 => 0
-  | 2 => 2
-  | _ => 0
 
 def theta (a : Fin 8) : Rel := fun x y => le (color x y) a
 

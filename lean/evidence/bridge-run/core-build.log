@@ -1,0 +1,11 @@
+✔ [2/4] Built CertificateData (424ms)
+ℹ [3/4] Built FiniteCongruenceChecks (4.8s)
+info: FiniteCongruenceChecks.lean:182:0: 'FiniteCongruenceChecks.N5.finite_classification' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:183:0: 'FiniteCongruenceChecks.N5.all_congruences' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:184:0: 'FiniteCongruenceChecks.N5.representation' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:185:0: 'FiniteCongruenceChecks.N5.all_relations' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteCongruenceChecks.lean:233:0: 'FiniteCongruenceChecks.B3.finite_classification' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:234:0: 'FiniteCongruenceChecks.B3.all_congruences' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:235:0: 'FiniteCongruenceChecks.B3.representation' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:236:0: 'FiniteCongruenceChecks.B3.all_relations' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (4 jobs).

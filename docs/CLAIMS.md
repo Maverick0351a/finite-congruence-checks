@@ -13,17 +13,19 @@ for one row does not establish a stronger claim from another row.
 | Minimum unary operation counts are 0,1,1,1,0,2,2 | `evidence/minimized-algebras.json` | C2,C3,C4,B2,M3,N5,B3; fixed carriers and exact saved relation families |
 | The minimizer agrees with a third exhaustive method | `evidence/operation-minima-audit.json` | All 313 representable exact relation families on carriers 1–4; 60 impossible controls |
 | M4 has no graph witness in the searched range | Search and replay records | At most four carrier vertices; larger carriers are outside this claim |
-| Concrete examples have additional formal checks | [Lean verification record](LEAN_VERIFICATION.md) | Read the exact theorem statements and compilation status there |
+| Saved N5/B3 graphs satisfy the exact upstream predicate in Lean | [Bridge proof and reproduction record](LEAN_VERIFICATION.md) | Exact generated color tables; all five `IsGraphWitness` conditions, including every nonempty finite ordered seed set |
+| The pinned upstream theorem passes its official comparator | [Comparator logs and controls](../lean/comparator/README.md) | Original `graph_criterion` challenge/solution; placeholder proof and altered statement both rejected |
 
 No claim of a new mathematical theorem or classification is made. These small
 lattices are control examples. The negative M4 result is bounded. The project
 does not verify all of OpenAI's math corpus, nor the undecidability or subgroup
 interval conclusions explicitly outside family 206's selected formalization.
 
-The upstream comparator is a specification file ending in an intentional
-`sorry`; the actual upstream solution lives in a separate module. A source
-inspection, Lean compilation, axiom inspection, and comparator run are different
-checks. Their individual status belongs in LEAN_VERIFICATION.md.
+The upstream comparator challenge is a specification file ending in an
+intentional `sorry`; the actual upstream solution lives in a separate module.
+The comparator checks that original solution. The concrete N5/B3 bridge has
+separate compilation, kernel replay, and axiom checks. Their individual records
+and dependency trust boundaries are in [LEAN_VERIFICATION.md](LEAN_VERIFICATION.md).
 
 AI-assisted review and multiple independent algorithms provide useful assurance.
 They do not establish Python implementation correctness by formal proof or count

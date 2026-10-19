@@ -1,0 +1,109 @@
+{
+  "passed": true,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "declarations": {
+    "FiniteCongruenceChecks.N5.finite_classification": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.N5.all_congruences": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.N5.representation": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.N5.all_relations": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.B3.finite_classification": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.B3.all_congruences": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.B3.representation": [
+      "propext",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.B3.all_relations": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.UpstreamBridge.N5.congruenceOrderIso": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.UpstreamBridge.N5.principalColor_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.UpstreamBridge.N5.isGraphWitness": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.UpstreamBridge.N5.hasGraphWitness": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.UpstreamBridge.N5.representable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.UpstreamBridge.B3.congruenceOrderIso": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.UpstreamBridge.B3.principalColor_eq": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.UpstreamBridge.B3.isGraphWitness": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.UpstreamBridge.B3.hasGraphWitness": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FiniteCongruenceChecks.UpstreamBridge.B3.representable": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.FiniteCongruence.graph_criterion": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.FiniteCongruence.graphOrderIso": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OAI.FiniteCongruence.principalColor_isGraphWitness": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  }
+}

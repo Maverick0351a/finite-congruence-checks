@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "scope": "N5/B3 concrete proofs and exact upstream graph witnesses; official comparator is separate",
+  "started_utc": "2026-10-19T01:45:45.108841+00:00",
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "cache_fetch_skipped": true,
+  "source_sha256": {
+    "evidence/B3-witness.json": "82c34bc3eba493827249de64f1c1ef6b1d719e5c568fa030ab138769a1cc6c9d",
+    "evidence/N5-witness.json": "2b6648c6842bf0742c3029c6c0ad7c906fbdb8d281d8e830a85c51c047ef2685",
+    "evidence/minimized-algebras.json": "76671ae20ad76bc2507b9e0c822bb78862abf2ff507f1a3ab7ba8b40efe85cea",
+    "lean/CertificateData.lean": "1db35c8b640f0ea0d73ea12cd14e5e1b4b3eef588d3eb5ed66fbec0be37258f3",
+    "lean/FiniteCongruenceChecks.lean": "845615fe7be190dc733762a1b95828cffb4e09b6d3b6b0e334211000d93422e8",
+    "lean/check_axioms.py": "2500c0f2ada461af66a70d7336678458a7a19add7ba2031dbae5fe50c6eb9a28",
+    "lean/check_data.py": "01557cd215ff9cee3ce3a691420128cbfa4f725bac016ec46727320f52f6cace",
+    "lean/check_environment.py": "a4540741f4125450e459664bb862926888e3090870dbfac9c425ac7a031b9723",
+    "lean/export_data.py": "fe356093b841b0ad5a1487ad791b6ccaf848468f5dafa62ad0cfe6609f119af2",
+    "lean/lake-manifest.json": "551234699a109abdedcafa7e96ee5d2bb2b8eca988b698bcb45dd232f360f1b9",
+    "lean/lakefile.toml": "9912f71437aa44979f88e57df0879d42c0edd7c602d95113782bdab676e6402d",
+    "lean/lean-toolchain": "8152090414016dd5dc871752f8ce4ecdbd604d9845758e9b9047cb80101280b5",
+    "lean/run_checks.py": "20701e6104b86254122175ccd4d90b4e44f7c0205e9e575708cc92ba4b93a61f",
+    "lean/test_axioms.py": "e129580c80871b199084e49707f0f748be93e42cdd921c200eb8ff6fe583ad79",
+    "lean/test_export_data.py": "394f3503aa25bc8e6c817018cfaa76588f43f7d331aa465064034464616463bf",
+    "lean/test_run_checks.py": "85902fd348130f242fadfb37560eda745e19d6e8633bf46544e4b4aa5c181b25",
+    "lean/upstream/ConcreteBridge.lean": "8a7c9d8bc83b511026efb3b6949c6265d8ba00d85ca41ef0cc7c060cc3f1b1f6",
+    "lean/upstream/OAI/Algebra/Universal/Congruence.lean": "30e9201344dcf4069ca9ace276c76dc3b1507d09f0f6bfbf5a7c5d693ac9716c",
+    "lean/upstream/OAI/Algebra/Universal/GraphCriterion.lean": "bd80c2bea95ee1b4f7118fc8dc272aebac7b23038ba93cdafd386dc1b688fb50",
+    "lean/upstream/UpstreamAudit.lean": "996f3e6c94902dd1cb45b59ee9474659b24126c61d802c570925c3d87379d4fe",
+    "lean/upstream/VerificationAudit.lean": "c8486bafe56259a09a6a941d664fecbdfc32cbfef8e835a9f8e015f00ca9db87",
+    "lean/upstream/lake-manifest.json": "d8f2b09d260cbfa429ce64811a3f3473f6745d08ebb148fdde11d433edeb027e",
+    "lean/upstream/lakefile.toml": "8a1f908434350891f8b929831122e3eeb2edec999992da51895bddc5f3ad08d6",
+    "lean/upstream/lean-toolchain": "8152090414016dd5dc871752f8ce4ecdbd604d9845758e9b9047cb80101280b5",
+    "verify_witness.py": "b742ab0d010e34cab0e9e24391fb30a8ad607830324250270d527dae0b321fba"
+  },
+  "commands": [
+    {
+      "name": "export",
+      "cwd": ".",
+      "argv": [
+        "/usr/bin/python3",
+        "lean/export_data.py",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "export.log",
+      "log_sha256": "05dd9c2aa893d231e03b5131bb0a35dd1f5b9b138f3ae3b49c6582603fc2d16f"
+    },
+    {
+      "name": "correspondence",
+      "cwd": ".",
+      "argv": [
+        "/usr/bin/python3",
+        "lean/check_data.py"
+      ],
+      "exit_code": 0,
+      "log": "correspondence.log",
+      "log_sha256": "7805eb6cfbdb7befbae69a781af69b551a7fb513e0e71b2fc4b1c235b7da5f32"
+    },
+    {
+      "name": "export-tests",
+      "cwd": ".",
+      "argv": [
+        "/usr/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "lean",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "log": "export-tests.log",
+      "log_sha256": "45bfbb34eb886e377809c9949a8ff6aba9ee704b050eb2085aa1caf0cebf839f"
+    },
+    {
+      "name": "lean-version",
+      "cwd": "lean",
+      "argv": [
+        "/tmp/finite-congruence-lean-20261019/lean-4.34.1-linux/bin/lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "exit_code": 0,
+      "log": "lean-version.log",
+      "log_sha256": "355a9a028f81641782d75d6e6b58dec70f29d2f61238a9e271690259d9bf5680"
+    },
+    {
+      "name": "core-build",
+      "cwd": "lean",
+      "argv": [
+        "/tmp/finite-congruence-lean-20261019/lean-4.34.1-linux/bin/lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "core-build.log",
+      "log_sha256": "33590a989deea48fe47e620b91df6a7842dc57e18bafd9cb7386808bc3206996"
+    },
+    {
+      "name": "core-replay",
+      "cwd": "lean",
+      "argv": [
+        "/tmp/finite-congruence-lean-20261019/lean-4.34.1-linux/bin/lake",
+        "env",
+        "leanchecker",
+        "CertificateData",
+        "FiniteCongruenceChecks"
+      ],
+      "exit_code": 0,
+      "log": "core-replay.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "upstream-build",
+      "cwd": "lean/upstream",
+      "argv": [
+        "/tmp/finite-congruence-lean-20261019/lean-4.34.1-linux/bin/lake",
+        "build"
+      ],
+      "exit_code": 0,
+      "log": "upstream-build.log",
+      "log_sha256": "e98f31c3bd112fd5d7ea969e242e5345fe868e79b8affb53b948589740502c84"
+    },
+    {
+      "name": "upstream-replay",
+      "cwd": "lean/upstream",
+      "argv": [
+        "/tmp/finite-congruence-lean-20261019/lean-4.34.1-linux/bin/lake",
+        "env",
+        "leanchecker",
+        "-v",
+        "OAI.Algebra.Universal",
+        "UpstreamAudit",
+        "ConcreteBridge"
+      ],
+      "exit_code": 0,
+      "log": "upstream-replay.log",
+      "log_sha256": "f3b0385333d1e106b59adc51457b7a248dddbbaecf13d36236854052826675b9"
+    },
+    {
+      "name": "axioms",
+      "cwd": "lean/upstream",
+      "argv": [
+        "/tmp/finite-congruence-lean-20261019/lean-4.34.1-linux/bin/lake",
+        "env",
+        "lean",
+        "VerificationAudit.lean"
+      ],
+      "exit_code": 0,
+      "log": "axioms.log",
+      "log_sha256": "5ae6be275aaff04e90dc32489a6d052d79567cb6dfba69b1584e0956ac965935"
+    },
+    {
+      "name": "axiom-allowlist",
+      "cwd": ".",
+      "argv": [
+        "/usr/bin/python3",
+        "lean/check_axioms.py",
+        "/tmp/finite-congruence-bridge-reproduction-20261019/lean/evidence/bridge-run/axioms.log"
+      ],
+      "exit_code": 0,
+      "log": "axiom-allowlist.log",
+      "log_sha256": "df59a156c8877236417e25e6213261f1ae4bcf9bde58f0b2c8902396a334d245"
+    },
+    {
+      "name": "environment",
+      "cwd": ".",
+      "argv": [
+        "/usr/bin/python3",
+        "lean/check_environment.py"
+      ],
+      "exit_code": 0,
+      "log": "environment.log",
+      "log_sha256": "2b8ae5d7222702caf575a21f524025f49a57d47763052ea6bcaed53d9286df22"
+    }
+  ],
+  "sources_unchanged": true,
+  "finished_utc": "2026-10-19T01:46:04.587587+00:00"
+}
