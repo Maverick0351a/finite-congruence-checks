@@ -1,12 +1,16 @@
 {
-  "protocol_version": "semantic-context-v1-draft1",
+  "protocol_version": "semantic-context-v1-draft2",
   "status": "proposed_not_run",
   "atlas_commit": "cddf9cf1c2d06df36bc516fb0b461daf6365920e",
   "held_out_meaning": "New prompts held out from answering agents and runner development. Existing public examples may overlap earlier exercises; no unseen-data or training-contamination claim.",
   "initial_pilot_task_ids": ["SC01", "SC05"],
   "reserved_task_ids": ["SC02", "SC03", "SC04", "SC06"],
   "initial_repetitions": 1,
-  "answering_sessions_per_task_repetition": 6,
+  "initial_answering_stages": ["direct"],
+  "deferred_answering_stages": ["author", "receiver"],
+  "repeated_trials": "deferred",
+  "answering_sessions_per_task_repetition": 2,
+  "expanded_design_answering_sessions_per_task_repetition": 6,
   "prompt_delivery": {
     "shared": "Answer using the available evidence. Identify the exact objects and inputs, distinguish the properties requested, state the assumptions and scope needed for your conclusion, and cite supporting references. Say when the available evidence is insufficient. Keep the answer within 400 words and eight cited reference units. The eight general rubric dimensions apply equally to every answer; there is no required JSON response format.",
     "direct": "Deliver shared instructions plus follow_up only. Full assigned corpus search/read access. Do not deliver this task file, author_brief, coverage tags, or answer key.",

@@ -1,6 +1,6 @@
 {
-  "protocol_version": "semantic-context-v1-draft1",
-  "status": "proposal_ready_for_user_review_comparison_not_run",
+  "protocol_version": "semantic-context-v1-draft2",
+  "status": "revised_direct_only_proposal_execution_paused_pending_preflight",
   "prepared_at_utc": "2026-10-19T06:03:10.994977+00:00",
   "atlas_commit": "cddf9cf1c2d06df36bc516fb0b461daf6365920e",
   "new_answering_sessions": 0,
@@ -39,8 +39,14 @@
       "status": "passed",
       "distinct_families": 6,
       "initial_pilot_families": 2,
-      "answering_sessions": 12,
-      "rubric_dimensions": 8
+      "answering_sessions": 4,
+      "rubric_dimensions": 8,
+      "initial_answering_stages": [
+        "direct"
+      ],
+      "all_six_task_objects_unchanged": true,
+      "reserved_task_ids_unchanged": true,
+      "rubric_and_freeze_bytes_unchanged": true
     }
   },
   "historical_smoke_regrade": {
@@ -101,17 +107,29 @@
     "authenticated_inference_verified": false,
     "budget_interrupt_verified": false,
     "actual_usage_capture_verified": false,
-    "auth_material_read_or_copied": false
+    "auth_material_read_or_copied": false,
+    "schema_reinspection": {
+      "scope": "Read local generated schemas; no live preflight inference.",
+      "ThreadStartParams.environments": "Schema documents an empty list as disabling environment access for turns without an override; not proof that every tool and inherited context is inaccessible.",
+      "ThreadTokenUsageUpdatedNotification": "Schema exposes cumulative counters; no live notification has been captured for this runner.",
+      "enforcement_test_status": "not_run",
+      "usage_event_capture_status": "not_run",
+      "execution_gate": "Do not collect pilot answers until capability isolation and actual usage reporting pass. If either cannot be enforced, report the limitation and pause.",
+      "schema_hashes": {
+        "ThreadStartParams.json": "80a40a7fac15b4bf70efb7f893fb353acc0a0d30c68f54aee4f01923deca85de",
+        "ThreadTokenUsageUpdatedNotification.json": "aba4f6c7e4a19b2b842c08ee793b57000c07dafd57b922ad0d8e7c76609108c2"
+      }
+    }
   },
   "pending_before_any_answering_run": [
-    "User review of proposed tasks, rubric, isolation, and estimated usage.",
+    "Present the revised four-answer usage estimate before execution.",
     "Build both matched reference presentations and a two-way fact map.",
-    "Audit presentation parity without task answers and freeze corpus hashes.",
-    "Finalize and hash the private answer key, semantic units, scorer, and extraction/reviewer rules outside answering capabilities.",
-    "Verify resource and citation feasibility for required evidence in both presentations.",
-    "Implement and test allowlisted reference access, forbidden-read canaries, fresh contexts, and B citation restrictions.",
-    "Select and pin one available model and settings; verify model identity/rerouting events.",
-    "Demonstrate actual usage capture and budget enforcement before collecting comparison answers."
+    "Audit presentation parity without task answers, including extra conclusions or hints in the structured arm, and freeze corpus hashes.",
+    "Finalize and hash the direct-answer private key, scorer, extraction rules and reviewer prompt outside answering capabilities.",
+    "Verify resource and citation feasibility for SC01 and SC05 in both presentations.",
+    "Implement and test allowlisted reference access, forbidden-read canaries and fresh contexts for direct agents.",
+    "Select and pin one available model and settings; verify model identity and rerouting events.",
+    "Demonstrate actual usage capture and budget enforcement; if isolation or reporting cannot be enforced, report the limitation and pause."
   ],
   "initial_plan": {
     "distinct_task_families": 2,
@@ -120,27 +138,41 @@
       "SC05"
     ],
     "repetitions": 1,
-    "answering_sessions": 12,
-    "blind_result_review_sessions": 12,
+    "answering_sessions": 4,
+    "blind_result_review_sessions": 4,
     "estimated_total_tokens": [
-      200000,
-      570000
+      66000,
+      190000
     ],
     "estimated_minutes": [
-      30,
-      90
+      10,
+      35
     ],
     "estimate_excludes": [
       "preparation",
       "preflight",
       "additional ambiguity adjudication"
     ],
-    "reserved_task_families": 4
+    "reserved_task_families": 4,
+    "answering_stages": [
+      "direct"
+    ],
+    "estimated_answering_tokens": [
+      44000,
+      136000
+    ],
+    "estimated_review_tokens": [
+      22000,
+      54000
+    ],
+    "handoffs": "deferred",
+    "repeated_trials": "deferred",
+    "purpose": "Feasibility, failure inspection, and task difficulty; not a reliable performance advantage estimate."
   },
   "artifact_hash_policy": "SHA-256 of UTF-8 bytes with CRLF normalized to LF. The freeze manifest separately records exact Git blob hashes for the atlas. Preparation record is excluded from its own hash list.",
   "artifact_hashes": {
-    "docs/SEMANTIC_CONTEXT_PILOT.md": "266daa1af735c45aad44441673e23f69e790021d203b803a759c097dad2a84ea",
-    "benchmarks/semantic-context-v1/tasks.json": "e8a878540be3a005d48cf63b21e71c361c5bc9ec481d40c793b2899db0eb1471",
+    "docs/SEMANTIC_CONTEXT_PILOT.md": "fea63ea444952271f16a6be857c13c6c16c2b3a026588c5c944d53f58c3c44ba",
+    "benchmarks/semantic-context-v1/tasks.json": "5f9b92768b3bd007e7798d9ece286fa1989541542859338958e3da33f63eca03",
     "benchmarks/semantic-context-v1/rubric.json": "d9235986f801610be4a08e1bb9aa7dae7cf2c001bce1d4469b62f4843d9a1772",
     "benchmarks/semantic-context-v1/freeze.json": "e5cb91784e8c0770c63254170d8da9f107eff1bb808781eb81ec30ad73c2f76c",
     "scripts/check_semantic_freeze.py": "b5d3ab8329cf1f7a058dca176100cfeb31cf75e13773c2c9dae5c1128186ecfb"
@@ -173,5 +205,28 @@
       "command": "git diff --check",
       "result": "passed"
     }
-  ]
+  ],
+  "updated_at_utc": "2026-10-19T06:08:17.942095+00:00",
+  "rubric_version_reused": "semantic-context-v1-draft1",
+  "deferred_plan": {
+    "answering_stages": [
+      "author",
+      "receiver"
+    ],
+    "additional_handoff_sessions_for_initial_two_families": 8,
+    "four_reserved_families_full_design_sessions": 24,
+    "additional_full_six_family_repetition_sessions": 36,
+    "scheduled": false
+  },
+  "revision_validation": {
+    "status": "passed",
+    "checks": [
+      "All six task objects exactly match the prior draft.",
+      "Four reserved IDs unchanged.",
+      "Rubric and freeze manifest bytes unchanged.",
+      "Four fresh direct answers and four blind reviews; no handoff or repeat in the initial plan.",
+      "Token estimate arithmetic: 4*(10000+1000) to 4*(30000+4000), plus 4*(5000+500) to 4*(12000+1500)."
+    ]
+  },
+  "repository_validation_note": "The full repository tests and reproduction listed below passed on draft 1. Draft 2 changes protocol documentation/metadata only; its focused consistency and freeze checks are recorded separately."
 }

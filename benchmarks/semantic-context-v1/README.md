@@ -13,9 +13,14 @@ and common instructions. The key, task coverage tags, other roles' prompts,
 smoke answers, and prior outputs are outside its capabilities.
 
 The answer key, two matched presentations, and enforced runner are pending
-review of this proposal. No comparison has run. The two-task first pilot is a
-workflow check; the four reserved tasks broaden coverage after that review.
-Neither phase can establish a general advantage on its own.
+review and execution preflight. No comparison has run. The two-task first pilot
+uses direct answers only: four fresh answering sessions and four blind reviews.
+The estimate is 66,000–190,000 tokens and 10–35 minutes, excluding preparation,
+preflight, and additional ambiguity adjudication. Handoffs and repeated trials
+are deferred; the larger design remains in the proposal. The four reserved
+tasks remain untouched. This is a feasibility check, not a reliable estimate
+of a performance advantage. Isolation and actual usage capture must pass before
+execution; otherwise report the limitation and pause.
 
 Verify the snapshot with Python 3.10+ and Git:
 

@@ -59,9 +59,11 @@ tracks described in the [second-domain pilot proposal](TM_HALT_PILOT.md):
    distinctions and the evidence boundary. Next, review the
    [controlled semantic-context pilot](SEMANTIC_CONTEXT_PILOT.md): freeze matched
    documentation/atlas information, enforce isolated reference access, compare
-   direct answers with A-to-B handoffs, and score meaning and evidence separately.
-   The proposed first two-task run checks the workflow; four further task
-   families are reserved. No comparison has run yet. Pair-specific Lean
+   direct answers, and score meaning and evidence separately. The first pilot
+   uses two tasks under both conditions: four fresh direct-answer sessions and
+   four blind reviews. A-to-B handoffs and repetitions remain in the deferred
+   design; four further task families are untouched and reserved. Isolation and
+   actual usage capture must pass preflight; no comparison has run yet. Pair-specific Lean
    preservation theorems remain separate future work.
 
 The [archive review](ARCHIVE_REVIEW.md) sets evidence-admission requirements.

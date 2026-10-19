@@ -1,9 +1,12 @@
 # Does the atlas help preserve a claim's meaning?
 
-**Status: pre-run proposal for user review. No comparison answers or scores exist.**
-The first pilot is a workflow check using two task families, two conditions,
-and one repetition; it cannot cover every failure mode or estimate an advantage.
-The remaining four proposed families are reserved. The earlier six-question
+**Status: revised pre-run proposal, draft 2. No comparison answers or scores exist.**
+The first pilot is a direct-answer feasibility check using two task families,
+two conditions, and one attempt per task/condition: **four fresh answering
+sessions**. Handoffs and repeated trials are deferred; their larger design is
+retained below. Four answers can expose practical problems and guide a larger
+experiment, but cannot establish a reliable performance advantage. The remaining
+four proposed families are unchanged and reserved. The earlier six-question
 [Turing exercise](TM_ATLAS_EVALUATION.md) remains a smoke test, outside every
 comparison denominator.
 
@@ -42,14 +45,15 @@ answering agents do not browse a changing remote branch.
 ## Proposed tasks
 
 Exact wording is in [tasks.json](../benchmarks/semantic-context-v1/tasks.json).
-Each task has an author brief for A and a self-contained follow-up used verbatim
-by both the direct agent and B. The full task file, this protocol, coverage notes,
+The initial pilot delivers only the self-contained `follow_up` question to each
+direct agent. Author briefs and later receiving-agent questions are retained for
+the deferred handoff design. The full task file, this protocol, coverage notes,
 and the answer key are excluded from answering environments; an agent receives
 only its assigned prompt. These are new question combinations on existing data,
 not unseen mathematical constructions or a contamination-free benchmark. BB4
 facts overlap the previous smoke exercise. No training-data exclusion is claimed.
 
-| ID | A explains | Direct agent and B assess | Stage |
+| ID | Subject (also retained as a later A brief) | Direct question; same question for a later B | Stage |
 | --- | --- | --- | --- |
 | SC01 | B2 entries `n4-E16433` and `n4-E16451`: exact families, rules, minima, and scope | A proposed shared minimum for these entries and arbitrary B2 realizations; give the justified replacement | Initial pilot |
 | SC02 | M3 entries `n3-E31` and `n4-E18753`: carriers, empty signatures, and minima | Whether a zero-rule entry is missing data, whether its minimum transfers, and what changes if a nonempty signature is required | Reserved |
@@ -63,15 +67,20 @@ appropriate refusals. Always answering “insufficient evidence” fails support
 parts. A new manual derivation may be considered on its merits, but cannot be
 described as a saved execution record or Lean theorem.
 
-The initial pilot has **2 distinct task families**, 2 arms, 1 repetition:
-4 direct answers, 4 A explanations, 4 B answers = **12 answering sessions**.
-Each session may make several inference requests as it retrieves references;
-12 sessions does not mean 12 underlying model requests.
-The follow-ups are part of these families, not additional independent tasks.
-After review, the four reserved families would add 24 answering sessions.
-Repeating all six once more would add 36 sessions, giving six families with two
-repetitions, not twelve independent families. Pilot results remain separate if
-any prompt, corpus, budget, scorer, or runner changes before the reserved set.
+The initial pilot has **2 distinct task families** (SC01 grouping, SC05 Turing
+machine), 2 arms, and one attempt per task/arm: **4 direct answers**, followed
+by **4 blind reviews**. No A or B sessions and no repeated trials run in this
+phase. Each session may make several inference requests as it retrieves
+references; four answering sessions does not mean four underlying requests.
+
+The larger design remains available for later review: adding A and B for these
+same two families would add eight answering sessions. Running the four reserved
+families through all three stages would add 24; a further repetition of all six
+families and stages would add 36. These are deferred possibilities, not scheduled
+runs. Repetitions and stages do not create new independent task families.
+Keep pilot results separate if any prompt, corpus, budget, scorer, or runner
+changes before a later phase. Do not alter or run the four reserved families
+during this feasibility check.
 
 ## Matched information, different presentation
 
@@ -110,7 +119,32 @@ unequal hints. Automated equality checks cover IDs, values, tables, and referenc
 they cannot establish semantic equivalence of the prose. Freeze both packet
 hashes, inventory, renderer, prompts, and resource rules after this audit.
 
-## Direct answers and a separate handoff
+## Initial pilot: direct answers only
+
+Start four fresh, un-forked contexts: SC01/documentation, SC01/atlas,
+SC05/atlas, SC05/documentation. Each receives the identical shared instructions,
+its existing direct question, and its assigned search/read interface. Seal all
+four original outputs before blind scoring. Collect no explanations for handoff
+and no receiving-agent answers in this phase.
+
+```mermaid
+flowchart LR
+  Q[Same task question and resource limits] --> D[Fresh agent: documentation]
+  Q --> A[Fresh agent: atlas records]
+  D --> R[Seal original answers; blind scoring]
+  A --> R
+```
+
+Compare direct answers by task and dimension, inspect retrieval and justification
+failures in either arm, and check for ceiling effects. If both arms answer all
+requested parts correctly with little effort, report that the task may be too
+easy under these scaffolded prompts. Four high scores would neither prove equal
+performance nor demonstrate an atlas advantage. Never tune a task using its
+pilot answer and then label a rerun held out.
+
+## Deferred design: explanation handoffs
+
+This section preserves the larger experiment and is inactive in the first pilot.
 
 ```mermaid
 flowchart LR
@@ -167,9 +201,12 @@ separate restricted executor before collecting benchmark answers. Do not use
 the shared collaboration workspace as a fallback answering environment.
 
 Preflight must attempt forbidden reads (key, scorer, other arm, prior outputs,
-host files, guessed references, path traversal, outside URLs), verify fresh
-contexts, and verify B's narrower allowlist. A successful forbidden read blocks
-inference. Enforce an allowlist, not a list of forbidden filenames. Grading runs
+host files, guessed references, path traversal, outside URLs) and verify fresh
+contexts. B's narrower allowlist is an additional gate for any later handoff
+phase. A successful forbidden read blocks inference. If isolation or actual
+usage reporting cannot be enforced, report the limitation and pause execution;
+do not collect the four task answers through a weaker fallback. Enforce an
+allowlist, not a list of forbidden filenames. Grading runs
 only after original outputs have been sealed; never send its feedback to D/A/B.
 
 Choose one available Codex model before execution, explicitly set the same
@@ -189,7 +226,9 @@ do not claim identical cache state or wall-time causality.
 
 ## Budgets, telemetry, and estimated usage
 
-| Limit per fresh answering session | Direct / A | B |
+The direct column governs this pilot; the other roles remain deferred.
+
+| Limit per fresh answering session | Direct (also future A) | Future B |
 | --- | ---: | ---: |
 | Broker calls, including failed calls | 8 | 8 |
 | Total returned reference text (UTF-8 bytes) | 48,000 | 48,000 |
@@ -215,20 +254,21 @@ limits are compliance checks, not silent response edits.
 Before freezing the rendered packets, verify deterministically that the support
 for every required subclaim fits within the shared call, byte, citation, and
 prose limits in both arms, including SC05's several source/trace units and
-SC04's complete prefixes. Verify that each A briefing can cite sufficient support
-for B within the citation cap. If limits need adjustment, change both arms
+SC04's complete prefixes when that reserved task is eventually scheduled. A/B
+citation feasibility is a later handoff gate. If limits need adjustment, change both arms
 together before inference and retain the preparation revision. This is a
 feasibility check, not an answering-model trial.
 
-For **12 answering sessions**, a planning estimate is 10,000–30,000 cumulative
-input tokens and 1,000–4,000 output tokens per session: **132,000–408,000 tokens**.
-One blind review per original response adds 12 reviewer sessions, estimated at
-5,000–12,000 input and 500–1,500 output tokens each: **66,000–162,000 tokens**.
-Combined estimate: **about 200,000–570,000 tokens**, including reasoning where
-the provider counts it in output, with roughly **30–90 minutes** of run/review
-time. These are budgeting assumptions, not measured costs or a dollar quote.
-Preparation, preflight, and adjudication usage are additional and reported separately. The
-four reserved tasks would roughly triple the two-task total across all six.
+For **4 direct-answer sessions**, a planning estimate is 10,000–30,000 cumulative
+input tokens and 1,000–4,000 output tokens per session: **44,000–136,000 tokens**.
+One blind review per original response adds **4 reviewer sessions**, estimated
+at 5,000–12,000 input and 500–1,500 output tokens each: **22,000–54,000 tokens**.
+Combined estimate: **66,000–190,000 tokens**, including reasoning where the
+provider counts it in output, with roughly **10–35 minutes** of run/review time.
+These are budgeting assumptions, not measured costs, hard caps, or a dollar quote.
+Preparation, preflight, and additional ambiguity adjudication are separate.
+Show this revised estimate to the user before execution. Neither reserved tasks,
+handoffs, nor repeated trials are included in this estimate or scheduled phase.
 
 Use the existing Codex account only after the runner preflight succeeds; no paid
 API integration or calls are authorized by this proposal. A Codex-based run
@@ -253,7 +293,10 @@ fields. Official [app-server documentation](https://learn.chatgpt.com/docs/app-s
 describes usage notifications, rerouting events, and client-handled dynamic
 tools. These support the proposed design. Tool isolation, authenticated
 inference, budget interruption, and complete telemetry have **not** been
-demonstrated by this preparation. No auth material was read or copied.
+demonstrated by this preparation. Reinspection of the local schemas confirms an
+`environments: []` option and usage event fields; a schema is not an enforcement
+test or a captured usage event. Execution remains paused at these unverified
+gates. No auth material was read or copied.
 
 ## Scoring and blind review
 
@@ -280,8 +323,9 @@ it cannot receive full credit. A correct URL/hash alone earns no entailment
 credit. Negative evidence claims must specify the bounded collection searched.
 
 Before runs, finalize a private key of required semantic units, allowed verdicts,
-exact reference bindings, acceptable alternative derivations, and A/B overlap
-units. Commit its hash with the run registration; keep the contents out of both
+exact reference bindings and acceptable alternative derivations. A/B overlap
+units are required only before a later handoff phase. Commit the key hash with
+the run registration; keep the contents out of both
 answering environments. The general rubric is shared equally; task-specific
 units and verdicts are withheld. Freeze grader version and extraction rules.
 
@@ -319,13 +363,17 @@ retain and report those attempts, rather than treating them as ties or wins.
 
 For each task, stage, repetition, and dimension show documentation score, atlas
 score, and delta: improvement, tie, or regression. Ties distinguish both-correct,
-both-partial, and both-wrong. Include direct-vs-B results, A→B unit transitions,
+both-partial, and both-wrong. For this pilot include direct answers,
 wrong-justification cases, justified/incorrect abstentions, tool use, tokens,
 latency, and failures. No combined “win rate” hiding dimension regressions.
 Use task-level paired summaries; do not count direct/A/B or repetitions as
 independent task samples. With two pilot families, describe cases and uncertainty
 without a significance or general-intelligence claim. Even six families would
 remain exploratory and drawn from a very small atlas.
+
+Direct-vs-B results and A→B unit transitions belong only to the deferred handoff
+phase. The first report focuses on whether the interface and isolation work,
+where either presentation fails, and whether these two tasks are too easy.
 
 Proceed beyond the pilot only after reviewing parity, isolation, grader errors,
 resource limits, and the complete result table. Progress never depends on an
@@ -346,6 +394,12 @@ schema changes, API calls, new mathematical
 proofs, or comparison results are part of this milestone. Matched rendered
 corpora, private answer key, enforcement runner, and blind result scoring are
 execution work after review of this proposal.
+
+Draft 2: narrowed the initial pilot to SC01 and SC05 direct answers under both
+conditions (four answering and four blind review sessions). Retained the larger
+handoff design, unchanged task wording and reserved families, matched-information
+requirements, rubric, and evidence schema. Revised the usage estimate and kept
+isolation/live telemetry as mandatory gates. No comparison answers were run.
 
 The [preparation record](../benchmarks/semantic-context-v1/preparation.json)
 lists completed checks, artifact hashes, and the gates still pending.
