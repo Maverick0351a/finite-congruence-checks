@@ -271,3 +271,44 @@ build reused its existing cache, so it does not resolve the fresh hosted-build
 gate. Hosted CI, HTTP checks for the newly pushed evidence commit, merge and
 public deployment remain separate release gates. No model benchmark or training
 was resumed.
+
+## Hosted kernel-timeout recovery review
+
+The subsequent hosted PR receipt (`39280967879`) records successful compilation
+in 1,980.924 seconds followed by kernel timeout at 2,400.105 seconds. This
+reviewer checked its diagnostic artifact hashes and independently audited its
+19 axiom reports. The kernel failure is recorded as a timeout with exit -9
+from cleanup; no negative controls ran. It is not an accepted proof receipt,
+and the available evidence does not establish an out-of-memory failure.
+
+The next operational candidate is **approved to freeze and execute**. Kernel
+replay receives 7,200 seconds, compilation retains 3,600, and other stages
+retain 2,400. The 210-minute CI job leaves time beyond the two long-stage caps
+for setup, other proofs, controls and artifact upload. Host capacity and GNU
+time measurements remain diagnostic sidecars outside the proof artifact set.
+
+This reviewer independently inspected the pinned
+[Lean checker source](https://github.com/leanprover/lean4/blob/5045d0056413266e57c625dcd7c365b10e377c52/src/LeanChecker.lean).
+Its discovery loop scans the module search path for each selector. Nine exact
+names or namespace prefixes preserve the same 179-module selection while
+reducing those scans. The new runner checks selector coverage against the
+local import closure, requests verbose output, and requires the exact complete
+module inventory plus successful process exit in both execution and saved
+replay. The announcement precedes waiting on a task; it alone does not certify
+completion. The speed effect is still unmeasured at this review.
+
+Review found and resolved a parsing gap: the first inventory parser ignored
+unexpected module names containing apostrophes or Unicode. The final parser
+collects every announced module suffix before exact comparison, so these extra
+names and malformed suffixes fail validation. The reviewer independently ran
+12 runner tests and six input tests on WSL/Linux; all 18 passed in 16.428
+seconds. After that parsing correction, all six input tests passed again in
+8.232 seconds, including the added naming controls. No Lean execution was
+started by this review.
+
+The theorem sources, exact claim, axiom policy and seven negative bindings
+remain unchanged. The preceding receipt stays preserved in Git history, with
+its original runner identity and command list. This updated runner requires a
+new actual completed receipt, exact verbose inventory, and renewed publication
+anchor before full evidence approval. Those gates and hosted reproduction are
+pending. No benchmark or training was resumed.

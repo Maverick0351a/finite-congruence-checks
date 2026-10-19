@@ -1,8 +1,31 @@
 # Finite graph search work log
 
+## 2026-10-19 — Revised Snaky replay completes with exact module inventory
+
+Committed source `c3af350005f413554aea03db8cbf2c4c2d09e31b` completed all 12
+proof stages from 19:34:58 to 19:59:10 UTC, using the existing WSL dependency
+and build cache. Kernel replay took 1,303.713 seconds and exited zero. The 179
+verbose module names match the independently reconstructed import closure
+exactly, with no missing, duplicate or extra modules. All 19 declaration axiom
+reports pass the existing policy. All seven altered bindings exited 1 with
+the expected mathematical rejection diagnostics. No timeout or setup failure
+is counted as a rejection.
+
+Independent review matched all 194 source hashes to both the frozen commit and
+the executing native checkout, verified all 20 artifact hashes, and replayed
+the completed receipt. The 21 receipt files were copied without rewriting
+their contents into the evidence directory, where saved replay also passes.
+The full run took 1,451.334 seconds; its cached build took 11.8 seconds. These
+measurements do not establish fresh hosted performance or isolate a speedup
+from the discovery change. Publication-anchor renewal, full focused tests and
+hosted CI remain the next gates. Earlier successful and failed runs retain
+their original outcomes. Benchmarks and training remain paused.
+
 ## 2026-10-19 — Hosted Snaky kernel replay exceeds its stage allowance
 
-Both runs of PR #18 head `22fdfd061fc69c29553297ecb073c7200d3b8912`
+The [PR run](https://github.com/Maverick0351a/finite-congruence-checks/actions/runs/39280967879)
+and [push run](https://github.com/Maverick0351a/finite-congruence-checks/actions/runs/39280963678)
+of PR #18 head `22fdfd061fc69c29553297ecb073c7200d3b8912`
 completed compilation and the axiom-report command. The PR run's build took
 1,980.924 seconds; the push run took 2,147.996 seconds. Independent inspection
 of each downloaded axiom log passes all 19 declaration reports. Both kernel
