@@ -1,0 +1,57 @@
+{
+  "enforce_admins": true,
+  "restrictions": null,
+  "required_status_checks": {
+    "strict": true,
+    "checks": [
+      {
+        "context": "Concrete Lean certificates",
+        "app_id": 15368
+      },
+      {
+        "context": "Python 3.12 / windows-latest",
+        "app_id": 15368
+      },
+      {
+        "context": "Python 3.10 / ubuntu-latest",
+        "app_id": 15368
+      },
+      {
+        "context": "N5 renaming proof and atlas binding",
+        "app_id": 15368
+      },
+      {
+        "context": "Pinned TM configuration agreement",
+        "app_id": 15368
+      },
+      {
+        "context": "Generic grouping checker and native agreement",
+        "app_id": 15368
+      },
+      {
+        "context": "Upstream N5/B3 witness bridge",
+        "app_id": 15368
+      },
+      {
+        "context": "Python 3.12 / ubuntu-latest",
+        "app_id": 15368
+      },
+      {
+        "context": "Exact TM pair proof and atlas binding",
+        "app_id": 15368
+      }
+    ]
+  },
+  "required_conversation_resolution": true,
+  "allow_fork_syncing": false,
+  "allow_force_pushes": false,
+  "lock_branch": false,
+  "required_pull_request_reviews": {
+    "require_code_owner_reviews": false,
+    "require_last_push_approval": false,
+    "required_approving_review_count": 0,
+    "dismiss_stale_reviews": true
+  },
+  "required_linear_history": false,
+  "allow_deletions": false
+}
