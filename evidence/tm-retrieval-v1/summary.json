@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "exercise": "tm-evidence-retrieval-v1",
+  "passed": true,
+  "correct": 6,
+  "total": 6,
+  "results": [
+    {
+      "id": "bb2-property-separation",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "id": "bb4-output-separation",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "id": "tiny-property-separation",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "id": "missing-instruction-lemma",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "id": "bounded-to-universal",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "id": "unsupported-pair",
+      "passed": true,
+      "errors": []
+    }
+  ],
+  "sources": {
+    "evidence/tm-atlas-v1.json": "abd5fa917bbe2e1c5b62d928ef1d40b0ec46a08236e6e5ccf99b8731ebd51787",
+    "benchmarks/tm-evidence-v1/tasks.json": "2eee712103d0fce11a9051ba29ade5775df34769261abab61f3fbbf68d1c3289",
+    "scripts/check_tm_retrieval.py": "0b32fe47fa1d253373db9417dddc7ab2d7d06a5a8e4a97a0c8021fe9a5bf5ee4"
+  },
+  "limits": [
+    "Structured answer, evidence-selection, value, and citation checks only.",
+    "Free-text reasoning and lemma hypotheses require separate reviewer judgment.",
+    "One same-session smoke test is not a blinded benchmark or general capability result."
+  ],
+  "answers_sha256": "65ad45a451de697155d5a9224ce129721073fbd497bd11aa661282bf54160170"
+}

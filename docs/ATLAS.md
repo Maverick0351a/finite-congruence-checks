@@ -8,6 +8,11 @@ ways to produce the same four-level chain.
 or open `space/atlas.html` directly from a downloaded repository. The atlas
 embeds its data locally and requires no server or internet connection.
 
+The atlas also includes a separate [Turing comparison panel](TM_ATLAS.md): four
+exact pairs with independent questions about halting time, tape, and head
+position. Its bounded execution records use the same citation format without
+changing the grouping catalog's classification or counts.
+
 ## How to read an entry
 
 - **Objects** are the points on which the rules act. The mathematical name for

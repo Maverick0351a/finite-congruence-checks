@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "tm-evidence-retrieval-v1",
+  "purpose": "Small same-session evidence-selection smoke test; not a general reasoning benchmark.",
+  "interface": "python scripts/query_atlas.py tm [--pair ID] [--property PROPERTY]",
+  "response_contract": {
+    "answers": "One object per task: id, verdict (supported/refuted/unsupported), explanation, claim_ids, observations, citations, general_equivalence (boolean), scope (string), and optional lemma.",
+    "observations": "Copy each selected claim's observation exactly, adding its claim_id. Select only the properties needed to answer the task.",
+    "citations": "Copy path, json_pointer, sha256 from the selected records. For scope-only answers, cite the dataset /limits using the dataset hash from the query envelope.",
+    "lemma": "For a lemma question: name (fully qualified), hypotheses (array of plain-language requirements), and citation (path/json_pointer/sha256 to its applicability record).",
+    "limits": "State the input and pair scope. Never infer a universal equivalence theorem from bounded execution agreement. An unsupported claim may have no observations."
+  },
+  "tasks": [
+    {
+      "id": "bb2-property-separation",
+      "question": "Assess: on blank input, the atlas BB2 pair has the same first halting step, same complete final tape, and same final head position. Retrieve all three properties separately."
+    },
+    {
+      "id": "bb4-output-separation",
+      "question": "Assess: on blank input, the atlas BB4 pair has identical final tapes and head positions. Give the exact two tapes and head positions; explain any tape difference."
+    },
+    {
+      "id": "tiny-property-separation",
+      "question": "Assess: on blank input, the tiny-stay pair has equal first halting times and head positions, so it must leave the same tape. Retrieve all three properties separately."
+    },
+    {
+      "id": "missing-instruction-lemma",
+      "question": "Assess: the missing-instruction side of tiny-stay preserves its tape at the first step. Use its tape claim and identify the applicable Lean missing_instruction lemma, including its hypotheses. Distinguish this source lemma from a theorem about the Python port."
+    },
+    {
+      "id": "bounded-to-universal",
+      "question": "Can we now advertise that the Python port and Lean implementation are equivalent for every machine and input because 2,857 snapshots agreed? Use the evidence boundary; do not select an unrelated pair claim as a proof."
+    },
+    {
+      "id": "unsupported-pair",
+      "question": "Can this atlas establish identical final tapes for the BB5 missing-instruction and write-right-halt variants? Try the precise pair ID tm-pair:bb5:v1, and report whether supporting records exist."
+    }
+  ]
+}

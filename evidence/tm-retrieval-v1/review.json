@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "exercise": "tm-evidence-retrieval-v1",
+  "review_type": "same-session AI review",
+  "reviewer_role": "Separate review agent within the same development session; previously contributed adversarial grader tests.",
+  "hash_encoding": "SHA-256 of UTF-8 file bytes with CRLF normalized to LF; no other byte changes.",
+  "answers_path": "evidence/tm-retrieval-v1/answers.json",
+  "answers_sha256": "65ad45a451de697155d5a9224ce129721073fbd497bd11aa661282bf54160170",
+  "reviewed_sources": {
+    "evidence/tm-retrieval-v1/answers.json": "65ad45a451de697155d5a9224ce129721073fbd497bd11aa661282bf54160170",
+    "evidence/tm-retrieval-v1/transcript.json": "be947ee2b211c6e78d8e60a479de6edf693a5ce51011992fc71c4cd9607e0133",
+    "evidence/tm-retrieval-v1/summary.json": "4df45091919ddb9da74bf40c8e6842f0be0283c698c3c47e52fa7b166475bf89",
+    "evidence/tm-atlas-v1.json": "abd5fa917bbe2e1c5b62d928ef1d40b0ec46a08236e6e5ccf99b8731ebd51787",
+    "evidence/tm-atlas-traces-v1.json": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55",
+    "benchmarks/tm-evidence-v1/tasks.json": "2eee712103d0fce11a9051ba29ade5775df34769261abab61f3fbbf68d1c3289",
+    "lean/tm/MachineChecks.lean": "e4e3e86fad42f0dedc1f6017795e406094f7190641ea4ebd1b9329e61da1e43c"
+  },
+  "passed": true,
+  "reviewed_answers": 6,
+  "citation_checks": {
+    "references_checked_including_repeats": 57,
+    "all_hashes_match": true,
+    "all_json_pointers_resolve": true
+  },
+  "results": [
+    {
+      "id": "bb2-property-separation",
+      "passed": true,
+      "judgment": "Accurate and appropriately scoped.",
+      "reason": "Both first-halt prefixes reach their first halted configuration at step 6. Complete supports agree at positions -2 through 1, while heads are -1 and 0. The answer correctly rejects the conjunction and restricts it to the exact blank-input pair."
+    },
+    {
+      "id": "bb4-output-separation",
+      "passed": true,
+      "judgment": "Accurate and appropriately scoped.",
+      "reason": "The final transition at step 106 to 107 writes the additional 1 at cell -10 on the explicit side and moves its head to -9. The missing-instruction side keeps cell -10 blank and head -10. Both full tape supports and the zero default are reported correctly; no canonical-encoding or optimality claim is made."
+    },
+    {
+      "id": "tiny-property-separation",
+      "passed": true,
+      "judgment": "Accurate and appropriately scoped.",
+      "reason": "Both sides first halt at step 1 with head 0, while the complete tapes are [] and [[0,1]]. This exact pair refutes the proposed implication from equal time and head to equal tape."
+    },
+    {
+      "id": "missing-instruction-lemma",
+      "passed": true,
+      "judgment": "Correct lemma, hypotheses, concrete application, and proof boundary.",
+      "reason": "MachineChecks.lean lines 11-15 require M.isHalting c = false and M.instruction c.state (c.tape c.head) = none, exactly as stated. The cited application is the left missing-rule case at step 0 to 1: active state 0, head 0, blank tape, and a null table entry. Updating only state to M.states preserves head and the entire tape. The answer explicitly distinguishes this generic Lean source theorem from a Python correctness theorem or a formally instantiated pair theorem."
+    },
+    {
+      "id": "bounded-to-universal",
+      "passed": true,
+      "judgment": "Correctly rejects unsupported evidence escalation.",
+      "reason": "Agreement on 2,857 saved snapshots is finite execution evidence. The answer correctly distinguishes the four-pair blank-input atlas from universal machine/input equivalence and does not treat generic Lean transition lemmas as a proof of the Python translation."
+    },
+    {
+      "id": "unsupported-pair",
+      "passed": true,
+      "judgment": "Correctly reports absence of supporting evidence.",
+      "reason": "Transcript query 9 requests the exact BB5 pair and tape property, exits 2, returns empty stdout, and reports unknown TM pair: tm-pair:bb5:v1. The answer accurately reports no supporting record without inferring a counterexample or a result for BB5."
+    }
+  ],
+  "findings": [],
+  "limitations": [
+    "This is an AI review by a separate agent in the same development session, not external peer review or a blinded evaluation.",
+    "The six questions and full atlas were available to the evaluator; this smoke test does not measure general model capability, unseen-task performance, or an improvement over a baseline.",
+    "This record assesses prose, scope, citation resolution, and lemma-hypothesis interpretation. It does not add formal proofs or establish universal Python/Lean equivalence.",
+    "Saved transcript and artifact hashes support local reproducibility and stale-data detection; they are not authenticated execution attestations."
+  ]
+}

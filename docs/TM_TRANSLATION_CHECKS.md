@@ -10,6 +10,11 @@ source. Five small Lean lemmas describe the source's step behavior. The Python
 comparison is bounded execution evidence; the lemmas prove statements about
 the Lean definition.
 
+The [Turing atlas panel](TM_ATLAS.md) connects four exact pairs to separate
+halting-time, tape, and head-position claims, with inspectable traces and
+qualified lemma links. Its [retrieval exercise](TM_ATLAS_EVALUATION.md) tests
+whether an agent selects evidence at that same level of precision.
+
 **Recorded result:** the [build and execution receipt](../evidence/tm-port-v1/summary.json)
 reports agreement on all **2,857 snapshots**, zero disagreements, **34** rejected
 malformed inputs, and **7** detected output corruptions. The five Lean lemmas

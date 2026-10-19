@@ -52,10 +52,13 @@ tracks described in the [second-domain pilot proposal](TM_HALT_PILOT.md):
    validate the oracle, then freeze a fair feedback comparison before running it.
 2. **Two Turing-machine halt behaviors.** The maintained port, exact source
    extraction, five Lean step lemmas, and bounded native comparison are now
-   implemented in [TM translation checks](TM_TRANSLATION_CHECKS.md). Next, add
-   pair-specific theorem records and test agent retrieval of the exact traces
-   and proofs. Agreement on halting must not be presented as agreement on the
-   final tape.
+   implemented in [TM translation checks](TM_TRANSLATION_CHECKS.md). The first
+   [TM atlas collection](TM_ATLAS.md) now attaches separate halting-time, tape,
+   and head-position claims to four exact pairs, with trace citations and
+   qualified source-lemma links. A small agent retrieval exercise tests those
+   distinctions and the evidence boundary. Next, expand the retrieval evaluation
+   across independent runs before adding more domains; pair-specific Lean
+   preservation theorems remain separate future work.
 
 The [archive review](ARCHIVE_REVIEW.md) sets evidence-admission requirements.
 Treat `formal-audit` as lexical screening: dependencies supporting proof claims

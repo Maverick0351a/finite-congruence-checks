@@ -6,6 +6,12 @@ limits, and citations to individual evidence records. It requires Python 3.10+
 and the standard library. It uses no model, network connection, database, or
 running service.
 
+The same CLI also exposes [Turing pair evidence](TM_ATLAS.md):
+`python scripts/query_atlas.py tm --pair tm-pair:bb2:v1 --property tape`.
+That collection reuses the claim/citation fields but has its own bounded
+execution status, source-lemma links, and scope. The grouping commands below
+continue to query the finite congruence catalog.
+
 ## Ask a concrete question
 
 “Can the same shape need different numbers of rules on the same number of objects?”

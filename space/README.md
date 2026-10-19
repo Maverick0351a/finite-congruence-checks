@@ -41,6 +41,11 @@ Technical entry details expose individual claim records with assumptions and
 limits. A [local query tool](https://github.com/Maverick0351a/finite-congruence-checks/blob/main/docs/ATLAS_QUERY.md)
 reads the same versioned records for research applications and agents.
 
+The Turing comparison panel adds four exact machine pairs. Compare first
+halting step, complete final tape, and head position independently, then inspect
+the cited trace and applicable source lemma. These are bounded observations on
+blank input. [Turing evidence guide](https://github.com/Maverick0351a/finite-congruence-checks/blob/main/docs/TM_ATLAS.md).
+
 The original graph explorer remains available at `index.html`.
 Choose one of eight lattices, inspect colored graphs and equivalence classes,
 compare passing and failing examples, and download the exact certificates.

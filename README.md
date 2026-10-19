@@ -31,6 +31,7 @@ classifies all representable grouping families through four objects, yielding
 **[Exact claims](docs/CLAIMS.md)** · **[Lean status](docs/LEAN_VERIFICATION.md)** ·
 **[Agent repair experiment](docs/REPAIR_BENCHMARK.md)** ·
 **[TM translation checks](docs/TM_TRANSLATION_CHECKS.md)** ·
+**[Compare Turing examples](docs/TM_ATLAS.md)** ·
 **[Changelog](CHANGELOG.md)** · **[Support](SUPPORT.md)**
 
 | Candidate colorings | Full witnesses | Vertex classes | Saved examples |

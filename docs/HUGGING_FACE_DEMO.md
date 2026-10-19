@@ -32,6 +32,8 @@ python scripts/query_atlas.py build-claims --check
 python -m unittest discover -s scripts -p 'test_atlas*.py' -v
 node scripts/check_atlas_ui.cjs
 node scripts/check_atlas_map.cjs
+python scripts/query_atlas.py build-tm --check
+node scripts/check_tm_atlas_ui.cjs
 python -m http.server 8765 --bind 127.0.0.1 --directory space
 ```
 
@@ -74,6 +76,12 @@ saved carrier and exact relation family. The [claim ledger](CLAIMS.md) and
   diagrams, dark edge-label text, and stacked diagrams on narrow screens.
 
 This is same-session review and implementation testing, not external peer review.
+
+The [Turing comparison panel](TM_ATLAS.md) displays four exact pairs and twelve
+property-specific claims from saved native evidence. Publish `tm-atlas.js`,
+`tm-atlas-data.js`, and `tm-atlas-data.json` with the atlas files; all are checked
+for consistency locally. Its diagrams and trace viewer display recorded values
+and do not execute a proof or machine simulation in the browser.
 
 ## Publish
 

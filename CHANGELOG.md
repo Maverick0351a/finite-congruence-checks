@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Four Turing-machine pairs in the atlas, with separate halting-time, full-tape,
+  and head-position claim records, exact trace citations, qualified Lean lemma
+  links, and a small agent evidence-selection exercise.
+
 - Maintained Turing-machine port with bounded-step consistency, strict input
   domains, immutable snapshots, and exact upstream Lean machine extraction.
   Five source step lemmas pass kernel replay; a captured native build agrees

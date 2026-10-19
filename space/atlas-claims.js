@@ -13,7 +13,7 @@ window.ATLAS_CLAIMS = {
     },
     "generator": {
       "path": "scripts/query_atlas.py",
-      "sha256": "97f6a82df86927341e3bbf44b1f73b24d9e83477c979cb519d96952dfe0c6482"
+      "sha256": "03c1b4581ef422426dff5298cd34fabe4284407c8ff54cc669516a99deda3573"
     }
   },
   "claims": [
