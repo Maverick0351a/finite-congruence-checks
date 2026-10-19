@@ -413,3 +413,33 @@ pilot is not an implemented checker or a completed binary-verification result.
 Independent review of this plan confirmed its encoding and assurance boundaries;
 clarified that existing N5/B3 graph proofs do not transfer to atlas entries merely
 because they share a shape name.
+
+Publication completed after all final CI checks passed on
+`cf8b2eaadc62e8bc0d33008d98683f22bebbb51a` (PR run `39195004759`). PR #3 merged as
+`dc16e2693a7db63e325c1e65ea965e249c827a7c`. The public Hugging Face atlas was updated
+to Space commit `072bd00372de01c7c1a67c0d71ff48e1049ac91a`; all 31 uploaded files
+were downloaded and byte-verified. The live Cytoscape map was inspected in the
+browser after publication.
+
+## 2026-10-18 — Specify the first checker input contract
+
+After the Cytoscape update passed all CI jobs and was published, the maintainer
+requested a tighter pre-implementation contract. Adopted four two-bit operation
+outputs plus four two-bit group labels, replacing the draft relation-pair format.
+All 65,536 in-range words are now valid payloads; repeated encodings of a
+partition remain separate test inputs. Specified decoding, invalid boundary
+handling, the exact acceptance equivalence, and a machine-readable contract
+with planned result fields and two explicitly unverified example records.
+No executable checker, source proof, or binary correctness claim is introduced.
+
+Specification sanity checks confirmed that bits 0–15 occur exactly once, the
+domain count is 256 × 256, the 256 label arrays represent 15 distinct partitions,
+and both example words decode to the documented fields and expected behavior.
+This checked the proposed format and fixtures, not a compiled checker.
+Independent AI review independently confirmed the example arithmetic and found
+one missing machine-readable requirement: specification artifact hash validation.
+Added mandatory exact-byte SHA-256 matching for future evidenced results, along
+with separate preservation and comparison outcomes and an explicit requirement
+to cover every distinct word before claiming complete bounded agreement.
+Final targeted review found no remaining substantive issue. The result schema,
+Lean checker theorem, and binary comparison remain future implementation work.
