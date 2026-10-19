@@ -1,0 +1,12 @@
+/home/shannonlab/fcc-n5-renaming/repo/runs/n5-transfer-reviewed/inconsistent-object-map.lean:23:61: error: Tactic `decide` proved that the proposition
+  ∀ (x : V), N5Renaming.forward x = p x
+is false
+/home/shannonlab/fcc-n5-renaming/repo/runs/n5-transfer-reviewed/inconsistent-object-map.lean:29:69: error: Tactic `decide` proved that the proposition
+  (∀ (x : V), q (p x) = x) ∧ ∀ (x : V), p (q x) = x
+is false
+/home/shannonlab/fcc-n5-renaming/repo/runs/n5-transfer-reviewed/inconsistent-object-map.lean:34:88: error: Tactic `decide` proved that the proposition
+  (∀ (x : V), h (p x) = p (g x)) ∧ ∀ (x : V), k (p x) = p (f x)
+is false
+/home/shannonlab/fcc-n5-renaming/repo/runs/n5-transfer-reviewed/inconsistent-object-map.lean:35:141: error: Tactic `decide` proved that the proposition
+  ∀ (a : Fin 5) (x y : V), dstGroup (groupMap a) (p x) = dstGroup (groupMap a) (p y) ↔ srcGroup a x = srcGroup a y
+is false

@@ -1,0 +1,3 @@
+/home/shannonlab/fcc-n5-renaming/repo/runs/n5-transfer-reviewed/unswapped-rule-map.lean:34:88: error: Tactic `decide` proved that the proposition
+  (∀ (x : V), h (p x) = p (f x)) ∧ ∀ (x : V), k (p x) = p (g x)
+is false

@@ -1,0 +1,16 @@
+name = "n5Renaming"
+version = "0.1.0"
+defaultTargets = ["Renaming", "N5Renaming", "N5RenamingBinding"]
+
+[[require]]
+name = "finiteCongruenceChecks"
+path = ".."
+
+[[lean_lib]]
+name = "Renaming"
+
+[[lean_lib]]
+name = "N5Renaming"
+
+[[lean_lib]]
+name = "N5RenamingBinding"

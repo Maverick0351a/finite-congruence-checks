@@ -1,5 +1,24 @@
 # Research and engineering roadmap
 
+## Current priority: one justified transfer
+
+The exact Turing theorem, proof-to-record binding, and fresh-checkout reproduction
+are implemented in [PR #11](https://github.com/Maverick0351a/finite-congruence-checks/pull/11).
+All eight CI jobs passed at `747eca4cbbc58cfeb8a514590dfb26d2b193cf36`; that PR
+is ready for review and its scope is closed to new features.
+
+The next separate change is [one N5 carrier renaming with rule reindexing](N5_RENAMING.md).
+Transport the existing complete classification, inclusion order, and distinctness
+through an explicit bijection, record the exact mapping, and reject inconsistent
+renamings. This supplies a checkable justification for one legitimate reuse of
+a result. It does not establish a general translator or an agent advantage.
+
+After this milestone is reviewed and reproducible, revisit the environment
+gates for the controlled documentation-versus-atlas comparison. Include valid
+and invalid transfers and score justification, uncertainty, and effort separately.
+The current benchmark and model-training work remain paused. Broader collection,
+harder repair tasks, and machine-code refinement below are later directions.
+
 ## The first release
 
 Reproduce the complete eight-lattice search through four carrier vertices,

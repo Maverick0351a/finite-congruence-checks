@@ -97,6 +97,15 @@ complete tapes differ. Reproduce the Lean proof and its atlas binding with
 `python scripts/tm_pair_proof.py run --out runs/tm-pair-fresh` in an environment
 with the pinned Lean toolchain. Python/native agreement remains separate.
 
+One [proved N5 renaming](docs/N5_RENAMING.md) demonstrates justified reuse:
+rotate the object labels and swap the rule symbols, then transport the complete
+classification and inclusion order. Its separate record binds the mapping and
+both constructions to the Lean result:
+
+```sh
+python scripts/query_context.py explain context:family-206:saved-n5:renaming:v1
+```
+
 Read the [query contract](docs/ATLAS_QUERY.md),
 [agent retrieval evaluation](docs/ATLAS_QUERY_EVALUATION.md), and
 [infrastructure direction](docs/INFRASTRUCTURE.md). These interfaces are an

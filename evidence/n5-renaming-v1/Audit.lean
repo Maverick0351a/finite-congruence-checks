@@ -1,0 +1,23 @@
+import N5RenamingBinding
+#print axioms FiniteCongruenceChecks.Renaming.congruence_iff
+#print axioms FiniteCongruenceChecks.Renaming.round_trip
+#print axioms FiniteCongruenceChecks.Renaming.inclusion_iff
+#print axioms FiniteCongruenceChecks.Renaming.swap_rules
+#print axioms FiniteCongruenceChecks.N5Renaming.transferred_congruence
+#print axioms FiniteCongruenceChecks.N5Renaming.all_relations
+#print axioms FiniteCongruenceChecks.N5Renaming.order_exact
+#print axioms FiniteCongruenceChecks.N5Renaming.theta_injective
+#print axioms FiniteCongruenceChecks.N5RenamingBinding.forward_exact
+#print axioms FiniteCongruenceChecks.N5RenamingBinding.backward_exact
+#print axioms FiniteCongruenceChecks.N5RenamingBinding.inverse_laws
+#print axioms FiniteCongruenceChecks.N5RenamingBinding.source_op1
+#print axioms FiniteCongruenceChecks.N5RenamingBinding.source_op2
+#print axioms FiniteCongruenceChecks.N5RenamingBinding.target_op1
+#print axioms FiniteCongruenceChecks.N5RenamingBinding.target_op2
+#print axioms FiniteCongruenceChecks.N5RenamingBinding.source_groups
+#print axioms FiniteCongruenceChecks.N5RenamingBinding.target_groups
+#print axioms FiniteCongruenceChecks.N5RenamingBinding.rule_correspondence
+#print axioms FiniteCongruenceChecks.N5RenamingBinding.grouping_correspondence
+#print axioms FiniteCongruenceChecks.N5RenamingBinding.checked_classification
+#print axioms FiniteCongruenceChecks.N5RenamingBinding.checked_order
+#print axioms FiniteCongruenceChecks.N5RenamingBinding.checked_distinct

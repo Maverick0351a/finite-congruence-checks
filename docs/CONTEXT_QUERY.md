@@ -1,8 +1,9 @@
 # Query exact claims and their evidence
 
 The context interface supports two exact N5 construction claims, their
-comparison, and one existing Turing-machine tape claim. It reads the records
-used by the website, validates the relevant saved evidence, and returns JSON.
+comparison, one proved N5 renaming, and one existing Turing-machine tape claim.
+It reads the website's records and separately identified proof supplements,
+validates the relevant saved evidence, and returns JSON.
 It runs locally using the Python standard library. No model, credentials,
 network access, or new Lean run is needed.
 
@@ -11,6 +12,7 @@ python scripts/query_context.py explain context:family-206:saved-n5:classificati
 python scripts/query_context.py explain construction:n4-E16709
 python scripts/query_context.py compare
 python scripts/query_context.py explain tm:tiny-stay:tape:v1
+python scripts/query_context.py explain context:family-206:saved-n5:renaming:v1
 ```
 
 | Claim ID | Construction ID | Evidence attached here |
@@ -18,6 +20,7 @@ python scripts/query_context.py explain tm:tiny-stay:tape:v1
 | `context:family-206:saved-n5:classification:v1` | `saved:family-206:n5:v1` | Exact local Lean classification with a recorded build and kernel replay |
 | `construction:n4-E16709` | `atlas:n4-E16709:displayed-operations:v1` | Exhaustive computation with an independent finite check |
 | `tm:tiny-stay:tape:v1` | `tm-pair:tiny-stay:v1` | Original execution evidence plus a separately identified exact-pair Lean proof |
+| `context:family-206:saved-n5:renaming:v1` | `saved:family-206:n5:rotate-and-swap:v1` | Complete classification, inclusion order, and distinctness transported through a proved carrier bijection and rule permutation |
 
 `n4-E16709` identifies a relation-family atlas entry. Its construction ID above
 specifically names the displayed operation tables at this version. A lattice
@@ -59,6 +62,33 @@ and checks the inclusion-order correspondence. The operation lists differ
 under **this bijection**; the interface makes no claim about algebra
 isomorphism under all possible permutations. It does not transport the saved
 Lean proof to the other operation list.
+
+## One legitimate N5 transfer
+
+The [renaming example](N5_RENAMING.md) has its own construction and claim IDs.
+Its record includes both operation tables and grouping families, both object-map
+directions, the target-to-source rule index map, and the grouping index map.
+These mapping fields are needed to express the new transfer claim. The query
+envelope and existing claim records retain their meaning.
+
+```sh
+python scripts/query_context.py explain context:family-206:saved-n5:renaming:v1 --out renamed-n5.json
+python scripts/query_context.py check renamed-n5.json
+```
+
+The record links the generic congruence transport theorem, the source N5
+classification, and the instantiated target classification/order/distinctness
+proofs. A generated Lean module checks the exact displayed tables and mapping
+equations against those declarations. The export also contains a separate
+receipt with source hashes and the elaborated axiom audit.
+
+`check` still compares with the registered export. The mathematical permission
+to reuse this source result comes from the linked transport proof and binding.
+Other valid renamings need their own registration and evidence. A changed rule
+map can preserve the congruence family while failing the declared correspondence;
+the Lean run tests that case separately. The existing `compare` command still
+compares the original saved N5 and `n4-E16709` and does not transfer this new
+proof to the atlas's different operation tables.
 
 ## One Turing-machine claim
 
