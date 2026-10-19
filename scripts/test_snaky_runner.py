@@ -47,13 +47,30 @@ class SnakyRunnerTests(unittest.TestCase):
         while True:
             try:
                 state = Path(f"/proc/{child_pid}/stat").read_text().split(") ", 1)[1].split()[0]
-            except FileNotFoundError:
+            except (FileNotFoundError, ProcessLookupError):
+                # The process may disappear between opening and reading /proc.
                 return
             if state == "Z":  # Exited, awaiting reaping by the system parent.
                 return
             if time.monotonic() >= deadline:
                 self.fail("spawned child survived its failed process group")
             time.sleep(0.05)
+
+    def test_child_status_handles_disappearance_during_read(self):
+        for error in (FileNotFoundError(2, "No such file"),
+                      ProcessLookupError(3, "No such process")):
+            with self.subTest(error=type(error).__name__), \
+                    mock.patch.object(Path, "read_text", side_effect=error):
+                self.assert_child_stopped(12345)
+
+    def test_child_status_does_not_hide_unreadable_or_live_processes(self):
+        with mock.patch.object(Path, "read_text", side_effect=PermissionError(13, "Denied")):
+            with self.assertRaises(PermissionError):
+                self.assert_child_stopped(12345)
+        with mock.patch.object(Path, "read_text", return_value="12345 (child) S 1"), \
+                mock.patch.object(time, "monotonic", side_effect=[0, 4]):
+            with self.assertRaisesRegex(AssertionError, "spawned child survived"):
+                self.assert_child_stopped(12345)
 
     def test_only_build_and_kernel_get_longer_limits(self):
         self.assertEqual(proof.stage_timeout("build"), 3600)

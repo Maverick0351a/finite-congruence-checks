@@ -1,5 +1,25 @@
 # Finite graph search work log
 
+## 2026-10-19 — Fix a Linux process-disappearance race in the cleanup test
+
+The push run for `4102fc1ec98a8516182270765e730a04ec626295` failed its
+Python 3.10 job while the corresponding PR job passed. The
+[job log](https://github.com/Maverick0351a/finite-congruence-checks/actions/runs/39316093274/job/118277828681)
+records `ProcessLookupError: [Errno 3] No such process` during a read of the
+terminated child's `/proc` status. The test already handled a missing file;
+it now also handles the process disappearing after the file was opened.
+Other read errors still propagate, and a live child still fails the deadline.
+
+Two deterministic regression tests cover both disappearance errors and retain
+the permission-error/live-process failures. All 14 runner tests passed on
+WSL/Linux in 10.751 seconds; Windows passed its 11 applicable tests with three
+existing platform skips. Independent review approved the narrow test-only
+repair and ran the two added controls. The test file is outside the proof's
+194-source manifest and presentation's 219-input anchor; the actual proof,
+runner and saved receipt are unchanged. All 13 immutable presentation links
+also resolved and matched their anchored files after push. Fresh CI and
+deployment remain pending. Benchmarks and training remain paused.
+
 ## 2026-10-19 — Revised Snaky replay completes with exact module inventory
 
 Committed source `c3af350005f413554aea03db8cbf2c4c2d09e31b` completed all 12

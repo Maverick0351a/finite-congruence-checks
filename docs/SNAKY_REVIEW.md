@@ -351,3 +351,21 @@ evidence links follow pushing the anchor commit, and the public demo requires
 its deployment check. The locally warmed build and receipt inspection do not
 establish completion of those release gates. Model benchmarks, reserved tasks
 and training remain paused.
+
+## Process-observation test race follow-up
+
+**Approved** the narrow test-only correction following push run `39316093274`,
+Python 3.10 job `118277828681`. The saved traceback shows `ProcessLookupError`
+(errno 3) during the read of `/proc/<pid>/stat` in the child-cleanup assertion.
+A process can disappear after the file is opened. The helper now accepts that
+exception alongside `FileNotFoundError`; it continues to propagate permission
+errors and reject a live process at its deadline.
+
+This reviewer independently ran the two new deterministic WSL/Linux tests;
+both passed in 0.002 seconds. They cover both disappearance exceptions,
+unreadable process status, and a still-live sleeping process. The reviewed code
+delta changes only `scripts/test_snaky_runner.py`. That file is absent from
+both the receipt's 194-source hash set and the publication anchor's 219 inputs,
+so the production runner, mathematical sources, receipt and evidence anchor
+retain their prior identities. No proof execution was started for this review.
+Hosted checks for the corrected candidate remain the release gate.
