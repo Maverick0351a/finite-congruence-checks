@@ -1,0 +1,61 @@
+{
+  "protocol_version": "semantic-context-v1-draft1",
+  "status": "proposed_not_run",
+  "atlas_commit": "cddf9cf1c2d06df36bc516fb0b461daf6365920e",
+  "held_out_meaning": "New prompts held out from answering agents and runner development. Existing public examples may overlap earlier exercises; no unseen-data or training-contamination claim.",
+  "initial_pilot_task_ids": ["SC01", "SC05"],
+  "reserved_task_ids": ["SC02", "SC03", "SC04", "SC06"],
+  "initial_repetitions": 1,
+  "answering_sessions_per_task_repetition": 6,
+  "prompt_delivery": {
+    "shared": "Answer using the available evidence. Identify the exact objects and inputs, distinguish the properties requested, state the assumptions and scope needed for your conclusion, and cite supporting references. Say when the available evidence is insufficient. Keep the answer within 400 words and eight cited reference units. The eight general rubric dimensions apply equally to every answer; there is no required JSON response format.",
+    "direct": "Deliver shared instructions plus follow_up only. Full assigned corpus search/read access. Do not deliver this task file, author_brief, coverage tags, or answer key.",
+    "author": "Deliver shared instructions plus author_brief only. Full assigned corpus search/read access. Do not deliver follow_up, direct answers, coverage tags, or answer key.",
+    "receiver": "Deliver shared instructions plus follow_up and the original author explanation/citations only. Permit reading only cited reference units. Do not deliver author_brief, direct answers, full corpus search, coverage tags, or answer key."
+  },
+  "tasks": [
+    {
+      "id": "SC01",
+      "domain": "groupings",
+      "author_brief": "Explain what the atlas establishes about entries n4-E16433 and n4-E16451. Include their carrier, complete partition families, displayed operations, lattice shape, minimum numbers of unary operations, what is held fixed in those minima, and the evidence supporting them. Explain what these entries establish about other realizations of the same shape.",
+      "follow_up": "A report proposes: 'The B2 constructions n4-E16433 and n4-E16451 have the same minimum rule count because their lattices have the same shape; that count is the minimum for any B2 realization on any carrier.' Assess each part using the available evidence. Give the exact operation counts and displayed operations for the two entries, identify what is fixed when each minimum is claimed, and provide a justified replacement for the proposed sentence.",
+      "coverage_for_controller_only": ["same_shape_different_construction", "minimum_scope", "bounded_to_universal"]
+    },
+    {
+      "id": "SC02",
+      "domain": "groupings",
+      "author_brief": "Explain the M3 entries n3-E31 and n4-E18753, their carrier sizes, displayed operations and partitions, minimum operation counts, and the atlas convention about empty signatures. Describe the evidence for the minima and whether the same claim addresses requiring at least one operation.",
+      "follow_up": "For n3-E31 and n4-E18753, assess whether an empty operation list means missing data and whether a minimum for one entry transfers to the other because both have shape M3. State the carriers and minimum counts with their assumptions. A downstream user now requires at least one total unary operation: does the original zero-operation statement answer that modified question? If you derive a new answer, label it as a derivation and justify it rather than attributing it to an existing record.",
+      "coverage_for_controller_only": ["empty_signature", "changed_assumptions", "same_shape_different_carrier", "supported_claim"]
+    },
+    {
+      "id": "SC03",
+      "domain": "groupings",
+      "author_brief": "Explain exactly which N5 construction FiniteCongruenceChecks.UpstreamBridge.N5.isGraphWitness concerns and what it proves. Compare its generated operation tables with atlas entry n4-E16709. Identify the evidence for the atlas construction and its minimum and any missing connection between those claims and the source theorem.",
+      "follow_up": "A maintainer wants to label both construction:n4-E16709 and its operation minimum as Lean-proved, citing FiniteCongruenceChecks.UpstreamBridge.N5.isGraphWitness. Does the supplied evidence justify each label? Identify the exact constructions and tables the evidence binds, what the theorem actually asserts, and any additional bridge or proof required. Give the strongest supported description of the atlas entry.",
+      "coverage_for_controller_only": ["proof_object_identity", "missing_bridge", "evidence_status", "wrong_justification"]
+    },
+    {
+      "id": "SC04",
+      "domain": "turing_machines",
+      "author_brief": "Compare tm-pair:bb3:v1 and tm-pair:bb4:v1 on their recorded blank input. For each pair, describe the two encodings, first halting times, complete final tapes and final head positions. Separate equality of tape from equality of the full configuration. Cite the appropriate complete trace prefixes and explain the status and limits of the evidence.",
+      "follow_up": "An exporter retains only the tape at the first halt. On the recorded blank input, can it replace the missing-instruction encoding with the explicit-instruction encoding for tm-pair:bb3:v1 and for tm-pair:bb4:v1 while preserving that output? Assess each separately. Give both stopping times, the full final tape supports and head positions, explain what changes if the exporter also retains the head, and state exactly what evidence supports the comparison.",
+      "coverage_for_controller_only": ["equal_time_different_output", "property_separation", "full_tape_not_symbol_count", "bounded_observation"],
+      "prior_overlap_for_controller_only": "BB4 output facts appeared in the old smoke test; this comparative prompt and BB3 pairing are new."
+    },
+    {
+      "id": "SC05",
+      "domain": "turing_machines",
+      "author_brief": "Explain steps 13 to 14 and 14 to 15 on each side of tm-pair:bb3:v1 for the recorded input. State the active/halting status, relevant table lookup, head and tape effects, and which Lean source lemma applies with which hypotheses. Explain the scope of the source lemmas, the status of concrete trace evidence, and what this establishes about the maintained Python port.",
+      "follow_up": "For tm-pair:bb3:v1 on the recorded input, which Lean source lemmas justify the step 13-to-14 effects on each side, and which justify step 14-to-15? Check the hypotheses against the actual states and table lookups, and state the head/tape effects. Does this reasoning establish equivalence of the Python port and Lean for all machines and inputs? Give the precise supported conclusion with references.",
+      "coverage_for_controller_only": ["lemma_applicability", "changed_hypotheses", "valid_quantified_source_lemma", "bounded_to_universal"]
+    },
+    {
+      "id": "SC06",
+      "domain": "turing_machines",
+      "author_brief": "Explain what saved input and full-trace evidence exists for the exact tables in tm-pair:bb3:v1. Compare coverage for the input symbol lists [] and [0,1], using the pinned input convention. Describe the scope of the available source lemmas and any pair-level preservation theorem or missing evidence relevant to those inputs. Keep a new derivation distinct from a saved execution receipt.",
+      "follow_up": "Using the exact tables identified by tm-pair:bb3:v1, which saved record establishes that the two encodings have equal first halting times on input [0,1]? Give its input, trace reference and bound if present. If the supplied collection does not contain such evidence, say what is missing, what can still be said about input [], and whether absence of the record establishes unequal times or non-halting. Can the blank-input result alone establish agreement for every finite input?",
+      "coverage_for_controller_only": ["missing_input_evidence", "absence_not_falsity", "exact_input", "bounded_to_universal"]
+    }
+  ]
+}
