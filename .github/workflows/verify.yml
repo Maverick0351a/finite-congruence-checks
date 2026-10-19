@@ -52,6 +52,13 @@ jobs:
         run: python scripts/build_space_data.py --check
       - name: Check browser relation logic against verified certificates
         run: node scripts/check_space.cjs
+      - name: Rebuild and independently verify the representation atlas
+        run: |
+          python scripts/build_atlas_data.py --check
+          python scripts/check_atlas.py --out runs/atlas-review.json --check-receipt evidence/atlas-review.json
+          python scripts/query_atlas.py build-claims --check
+          python -m unittest discover -s scripts -p 'test_atlas*.py' -v
+          node scripts/check_atlas_ui.cjs
       - name: Preserve reproduction evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4

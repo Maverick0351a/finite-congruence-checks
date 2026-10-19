@@ -7,19 +7,31 @@ seven passing witnesses, four connectivity obstructions, equivalence classes,
 and minimal unary operations for each saved positive representation. Its
 canonical source is `space/` in this repository.
 
+The Space now opens the [readable representation atlas](ATLAS.md), beginning
+with a three-object lesson. The original graph explorer remains at `index.html`.
+The atlas catalog covers all representable congruence families through four
+objects and groups them by object renaming and abstract lattice shape. It has
+separate generated data, exhaustive verification, and browser checks.
+
 ## Run and check locally
 
 Python 3.10+ builds the data using only the standard library. Node.js 18+ runs
-the browser-logic checks. Serve the directory over HTTP so the browser can load
-the JSON data.
+the browser-logic checks. The atlas also opens offline from `space/atlas.html`.
+Serve the directory over HTTP to use both the atlas and the original graph
+explorer, which loads JSON over HTTP.
 
 ```sh
 python scripts/build_space_data.py --check
 node scripts/check_space.cjs
+python scripts/build_atlas_data.py --check
+python scripts/check_atlas.py --check-receipt evidence/atlas-review.json
+python scripts/query_atlas.py build-claims --check
+python -m unittest discover -s scripts -p 'test_atlas*.py' -v
+node scripts/check_atlas_ui.cjs
 python -m http.server 8765 --bind 127.0.0.1 --directory space
 ```
 
-Open `http://127.0.0.1:8765`. To regenerate the exported JSON and certificates,
+Open `http://127.0.0.1:8765/atlas.html`. To regenerate the original explorer's JSON and certificates,
 run `python scripts/build_space_data.py` without `--check`.
 
 ## Evidence boundary
@@ -63,7 +75,7 @@ This is same-session review and implementation testing, not external peer review
 
 Publish only the contents of `space/` to the static Space
 `Maverick03511/finite-congruence-checks`. Its README declares `sdk: static` and
-`app_file: index.html`. Keep GitHub as the canonical source and record the source
+`app_file: atlas.html`. Keep GitHub as the canonical source and record the source
 commit alongside each publication. Use the Hugging Face Hub SDK or Git with an
 existing authenticated account; never commit credentials.
 

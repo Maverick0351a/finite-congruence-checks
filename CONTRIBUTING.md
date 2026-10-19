@@ -36,3 +36,26 @@ the pull request template to record evidence and scope. See [SUPPORT.md](SUPPORT
 for questions. Discuss claims and code respectfully, welcome good-faith questions,
 and keep criticism specific to the work. Harassment and disclosure of another
 person's private information are not acceptable in project discussions.
+
+## Explain the math for people seeing it for the first time
+
+For explanations and showcase material, start with a small concrete example,
+then a simple diagram, then the mathematical name or notation. Say what each
+node, line, color, and direction means. In particular, distinguish carrier
+objects from lattice nodes, which represent whole congruences. Show both a
+passing and a failing case when explaining a check.
+
+Connect each result to why it matters. Distinguish an example, a bounded
+exhaustive result, a conjecture, and a formal theorem. State which carrier and
+relations are fixed when discussing operation minima. Use the
+[illustrated introduction](docs/PLAIN_LANGUAGE_GUIDE.md) as a starting point.
+
+## Preserve the query contract
+
+Atlas data changes must preserve the meanings of versioned identifiers or
+introduce a documented new identity version. Read [the query contract](docs/ATLAS_QUERY.md)
+before changing response fields, relation enumeration, or shape canonicalization.
+Regenerate claim records with `python scripts/query_atlas.py build-claims` after
+rebuilding and independently checking the atlas. Run the commands in
+[ATLAS.md](docs/ATLAS.md), including the query tests, before submitting changes.
+Include evidence and limits for each added claim; a display name is not a citation.

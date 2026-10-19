@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Maverick0351a/finite-congruence-checks/schema/atlas-v1.schema.json",
+  "title": "Finite Congruence Atlas, schema version 1",
+  "description": "Structural format for the bounded one-through-four-object atlas. Mathematical consistency requires scripts/check_atlas.py; schema validation alone does not establish it.",
+  "type": "object",
+  "required": ["schema_version", "scope", "source_sha256", "generator_sha256", "hash_encoding", "encoding", "evidence_status", "minimum_scope", "method", "checks", "carrier_summary", "abstract_types", "entries"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "scope": {"type": "string", "minLength": 1},
+    "source_sha256": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/hash"}},
+    "generator_sha256": {"$ref": "#/$defs/hash"},
+    "hash_encoding": {"type": "string", "minLength": 1},
+    "encoding": {"type": "string", "minLength": 1},
+    "evidence_status": {"type": "string", "minLength": 1},
+    "minimum_scope": {"type": "string", "minLength": 1},
+    "method": {"type": "string", "minLength": 1},
+    "checks": {
+      "type": "object",
+      "required": ["passed", "negative_and_relabeling_controls"],
+      "properties": {
+        "passed": {"const": true},
+        "negative_and_relabeling_controls": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "carrier_summary": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["carrier_size", "labeled_relation_families", "embedding_orbits", "abstract_types"],
+        "properties": {
+          "carrier_size": {"$ref": "#/$defs/carrier"},
+          "labeled_relation_families": {"type": "integer", "minimum": 1},
+          "embedding_orbits": {"type": "integer", "minimum": 1},
+          "abstract_types": {"type": "integer", "minimum": 1}
+        }
+      }
+    },
+    "abstract_types": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "required": ["id", "name", "lattice_elements", "embedding_ids"],
+        "properties": {
+          "id": {"$ref": "#/$defs/typeId"},
+          "name": {"type": "string", "minLength": 1},
+          "lattice_elements": {"type": "integer", "minimum": 1, "maximum": 15},
+          "embedding_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/entryId"}}
+        }
+      }
+    },
+    "entries": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/entry"}}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "carrier": {"type": "integer", "minimum": 1, "maximum": 4},
+    "entryId": {"type": "string", "pattern": "^n[1-4]-E[1-9][0-9]*$", "description": "Schema-v1 carrier size and canonical relation-family bit mask, defined in docs/ATLAS_QUERY.md."},
+    "typeId": {"type": "string", "pattern": "^T[0-9]{2,}$", "description": "Snapshot-local abstract-type label, not a stable cross-version shape identifier."},
+    "pointList": {"type": "array", "minItems": 1, "maxItems": 4, "items": {"type": "integer", "minimum": 0, "maximum": 3}},
+    "entry": {
+      "type": "object",
+      "required": ["id", "carrier_size", "abstract_type", "name", "partitions", "operations", "minimum_unary_operations", "orbit_size", "order", "covers", "named_targets"],
+      "properties": {
+        "id": {"$ref": "#/$defs/entryId"},
+        "carrier_size": {"$ref": "#/$defs/carrier"},
+        "abstract_type": {"$ref": "#/$defs/typeId"},
+        "name": {"type": "string", "minLength": 1},
+        "partitions": {"type": "array", "minItems": 1, "maxItems": 15, "uniqueItems": true, "items": {"$ref": "#/$defs/pointList"}},
+        "operations": {"type": "array", "items": {"$ref": "#/$defs/pointList"}},
+        "minimum_unary_operations": {"type": "integer", "minimum": 0},
+        "orbit_size": {"type": "integer", "minimum": 1, "maximum": 24},
+        "order": {"type": "array", "minItems": 1, "maxItems": 15, "items": {"type": "array", "minItems": 1, "maxItems": 15, "items": {"type": "boolean"}}},
+        "covers": {"type": "array", "uniqueItems": true, "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 0, "maximum": 14}}},
+        "named_targets": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  }
+}

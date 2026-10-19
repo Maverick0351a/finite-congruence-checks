@@ -13,12 +13,20 @@ verify every quantified condition with an independent implementation, recover
 the corresponding unary algebras, and find their smallest operation lists on a
 fixed representation. The core experiment uses only Python's standard library.
 
+In plain language, we build small systems whose rules permit exactly a chosen
+pattern of consistent groupings. Start with a three-object example in the
+**[illustrated introduction](docs/PLAIN_LANGUAGE_GUIDE.md)** to see what that means.
+
 The starting specification is the graph-witness criterion in
 [OpenAI's math corpus, family 206](reference/README.md), pinned to an exact commit.
-This is an independent companion project. Its results cover eight specified
-lattices and carriers of size **one through four**.
+This is an independent companion project. The original graph experiment covers
+eight specified lattices on carriers of size **one through four**. The atlas
+classifies all representable grouping families through four objects, yielding
+22 abstract lattice shapes.
 
 **[Interactive demo](https://huggingface.co/spaces/Maverick03511/finite-congruence-checks)** ·
+**[Understand the math](docs/PLAIN_LANGUAGE_GUIDE.md)** ·
+**[Readable atlas](https://maverick03511-finite-congruence-checks.static.hf.space/atlas.html)** ·
 **[Quick start](#quick-start)** · **[Evidence gallery](docs/index.html)** ·
 **[Exact claims](docs/CLAIMS.md)** · **[Lean status](docs/LEAN_VERIFICATION.md)** ·
 **[Changelog](CHANGELOG.md)** · **[Support](SUPPORT.md)**
@@ -30,6 +38,39 @@ lattices and carriers of size **one through four**.
 The HTML gallery is self-contained and works offline. Download the repository
 and open `docs/index.html` in a browser; GitHub displays HTML source in its file
 viewer. Each figure is also available as PNG and editable SVG in `charts/`.
+
+## Understand the math visually
+
+Start with **[the readable atlas](https://maverick03511-finite-congruence-checks.static.hf.space/atlas.html)**:
+three objects, one rule, and five possible groupings. Try a grouping, see why
+it works or fails, then explore the complete catalog through four objects.
+Every diagram explains what its nodes and lines mean; technical data is expandable.
+
+The catalog contains **39 grouping-family representatives** after renaming
+objects, covering **22 abstract lattice shapes**. Compare two four-object
+constructions with the same chain shape but different minimum rule counts.
+These counts describe congruence families and are separate from the original
+colored-graph search totals above. [Scope and independent checks](docs/ATLAS.md).
+
+Download the repo and open `space/atlas.html` for an offline copy. For a text
+walkthrough or presentation script, use the [illustrated introduction](docs/PLAIN_LANGUAGE_GUIDE.md).
+
+## Query examples and evidence
+
+The atlas also provides a small local interface for research tools and agents.
+Query the same versioned records used by the website, with stable entry IDs,
+claim-level assumptions and limits, and citations to supporting JSON records.
+
+```sh
+python scripts/query_atlas.py compare --shape C4
+python scripts/query_atlas.py show n4-E16403
+python scripts/query_atlas.py claims --entry n4-E16403
+```
+
+Read the [query contract](docs/ATLAS_QUERY.md),
+[agent retrieval evaluation](docs/ATLAS_QUERY_EVALUATION.md), and
+[infrastructure direction](docs/INFRASTRUCTURE.md). These interfaces are an
+early foundation for reliable evidence retrieval in a bounded mathematical domain.
 
 ## Quick start
 
@@ -127,7 +168,7 @@ in [the claim ledger](docs/CLAIMS.md).
 
 ## Explore an example
 
-**[Open the interactive explorer on Hugging Face](https://huggingface.co/spaces/Maverick03511/finite-congruence-checks).**
+**[Open the original graph explorer](https://maverick03511-finite-congruence-checks.static.hf.space/index.html).**
 Choose a lattice, inspect its relations and unary operations, compare passing
 and failing examples, and download the exact certificates. The demo displays
 precomputed evidence; its controls do not rerun the exhaustive search or check

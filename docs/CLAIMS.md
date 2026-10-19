@@ -12,6 +12,7 @@ for one row does not establish a stronger claim from another row.
 | Positive examples attain minimum carrier sizes | `METHOD.md`, search and algebra records | The attained size equals the elementary chain-height lower bound |
 | Minimum unary operation counts are 0,1,1,1,0,2,2 | `evidence/minimized-algebras.json` | C2,C3,C4,B2,M3,N5,B3; fixed carriers and exact saved relation families |
 | The minimizer agrees with a third exhaustive method | `evidence/operation-minima-audit.json` | All 313 representable exact relation families on carriers 1–4; 60 impossible controls |
+| The atlas groups all small representable relation families | [Atlas method](ATLAS.md), `evidence/atlas.json`, `evidence/atlas-review.json` | Carriers 1–4; 313 labeled families, 39 classes under object relabeling, 22 abstract lattice types across the range; finite computational evidence |
 | M4 has no graph witness in the searched range | Search and replay records | At most four carrier vertices; larger carriers are outside this claim |
 | Saved N5/B3 graphs satisfy the exact upstream predicate in Lean | [Bridge proof and reproduction record](LEAN_VERIFICATION.md) | Exact generated color tables; all five `IsGraphWitness` conditions, including every nonempty finite ordered seed set |
 | The pinned upstream theorem passes its official comparator | [Comparator logs and controls](../lean/comparator/README.md) | Original `graph_criterion` challenge/solution; placeholder proof and altered statement both rejected |

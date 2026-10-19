@@ -272,3 +272,90 @@ log hashes match. Reran the official comparator and both controls against the
 normalized toolchain input. Proof sources and pinned dependency revisions did
 not change. The change and hosted checks are tracked in
 [pull request #1](https://github.com/Maverick0351a/finite-congruence-checks/pull/1).
+
+## Plain-language showcase guide — 18 October 2026, Pacific time
+
+Added an illustrated introduction following the maintainer's request for more
+mathematical explanation and simple diagrams. The walkthrough relabels the
+saved B2 example as three objects A, B, and C; checks all five partitions; and
+draws the four surviving congruences as a Boolean square. It distinguishes
+operation arrows, lattice edges, and the colored graphs used in the search.
+Added a short presentation script, evidence-scope explanations, README links,
+and contributor guidance to keep future explanations concrete and accessible.
+
+Validation passed: a separate AI reviewer independently enumerated the five
+partitions, confirmed the one-operation minimum and relabeling, and found no
+substantive math or scope issues in the completed guide. Incorporated two
+clarifications about repeated output values and choosing a group member.
+Checked all 48 local links across the changed documents. The complete Python
+experiment passed, including unit tests and independent exhaustive replay;
+the evidence checker confirmed agreement with the recorded mathematical
+results. The run is saved locally in `runs/plain-language-guide/`.
+These are documentation changes prepared locally on
+`codex/plain-language-guide`; publication is not part of this entry.
+
+## Readable representation atlas — 18 October 2026, Pacific time
+
+Started the first atlas milestone after approval to proceed. The main reading
+path teaches a three-object example before introducing a catalog of all
+representable relation families on carriers of one through four points, grouped
+under object relabeling and then abstract lattice isomorphism. Each entry will
+show its actual partitions and a minimum operation list in matching labels.
+The earlier five/six-point research pilot and conjectures remain separate.
+
+Implementation is split between a deterministic exporter, an independent
+complete classification check, and the accessible static interface. The
+classification check must agree before the new counts are published. Planned
+validation includes corruption controls, browser interaction and narrow-screen
+review, existing experiment checks, hosted CI, and verification of the public
+Hugging Face deployment. No new Lean coverage is claimed for atlas entries.
+
+Completed the independent census: 313 labeled congruence families, 39 classes
+under object renaming, and 22 abstract lattice shapes across carriers of sizes
+one through four. The exporter and separate exhaustive checker agree on every
+family, operation minimum, orbit, order relation, and cover. The saved receipt
+is checked against fresh computation in CI, including deliberately corrupted
+and incomplete input controls.
+
+The static atlas now introduces objects, rules, groupings, and shapes through
+an interactive three-object lesson. Each catalog entry shows its actual rules,
+all valid groupings, a labeled order diagram, and a downloadable record. The
+C4 comparison explains why two exact grouping families on four objects can
+require different numbers of unary rules. Browser review covered desktop and
+390-pixel layouts, keyboard selection, empty filters, technical disclosures,
+wide diagrams, and a downloaded entry checked against the canonical data.
+
+Following the maintainer's direction to treat this as early AI infrastructure,
+added a versioned structural schema, stable relation-family IDs and shape keys,
+a dependency-free local JSON query tool, and 106 individual claim records.
+Every read command checks evidence freshness before advertising claim IDs.
+The website and query tool use the same claim registry. A separate agent used
+the real CLI to answer the same-shape/different-rule-count question and inspect
+its citations. Four shapes have differing minima at a fixed carrier size;
+six do when different sizes are allowed. The evaluation records this distinction
+and its same-session, non-blinded limits in `docs/ATLAS_QUERY_EVALUATION.md`.
+Architecture decisions and growth criteria are in `docs/INFRASTRUCTURE.md`.
+
+Local validation passed: 23 atlas/query tests, deterministic atlas and claim
+exports, fresh independent receipt comparison, and UI checks covering 518
+grouping demonstrations, 304 explicit rejection witnesses, 1,428 rendered
+nodes, 1,974 rendered edges, and 117 entry-to-claim links with exact source
+pointers. The existing complete experiment reproduced its recorded results in
+`runs/atlas-release/`; its 33 tests, 13 Lean/export tests, chart regeneration,
+original explorer checks, and evidence integrity checks also passed. Hosted
+CI and public deployment verification remain release steps at this entry.
+
+Final documentation checks resolved all 86 local Markdown links and validated
+the structural JSON Schema against the canonical dataset. Desktop browser
+review confirmed the revised C4 diagrams and claim disclosures; the narrow
+layout wraps the complete claim IDs without page overflow. Direct `file:`
+navigation could not be tested in the controlled browser because its URL policy
+allows HTTP and HTTPS only. Local HTTP interaction and the script-only tests
+passed; the atlas assets themselves make no network requests.
+
+Final independent AI review found no substantive correctness gaps or publication
+blockers. It resolved citations for all 106 claims, checked every claim link for
+39 entries and all 27 comparison groups, and reviewed the documentation and CI
+integration. A test-harness import defect affecting direct invocation was fixed;
+both the documented direct command (10 query tests) and discovery (23 combined
+tests) pass. The hash-bound query implementation did not change during that fix.
