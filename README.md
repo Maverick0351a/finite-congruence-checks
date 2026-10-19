@@ -49,6 +49,9 @@ Every diagram explains what its nodes and lines mean; technical data is expandab
 The catalog contains **39 grouping-family representatives** after renaming
 objects, covering **22 abstract lattice shapes**. Compare two four-object
 constructions with the same chain shape but different minimum rule counts.
+Use the **[Cytoscape map](https://maverick03511-finite-congruence-checks.static.hf.space/atlas.html#shape-map)**
+to follow construction-to-shape connections, compare rule counts, and open each
+entry's evidence. [How to read the map](docs/ATLAS_MAP.md).
 These counts describe congruence families and are separate from the original
 colored-graph search totals above. [Scope and independent checks](docs/ATLAS.md).
 

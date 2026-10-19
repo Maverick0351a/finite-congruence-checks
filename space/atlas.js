@@ -205,7 +205,7 @@
     link.download = `atlas-${selectedEntry.id}.json`;
     document.body.append(link); link.click(); link.remove();
   });
-  byId('reproduce-commands').textContent = 'python scripts/build_atlas_data.py --check\npython scripts/check_atlas.py --check-receipt evidence/atlas-review.json\npython scripts/check_atlas.py --out runs/atlas-review.json\npython scripts/query_atlas.py build-claims --check\npython -m unittest discover -s scripts -p "test_atlas*.py" -v\nnode scripts/check_atlas_ui.cjs';
+  byId('reproduce-commands').textContent = 'python scripts/build_atlas_data.py --check\npython scripts/check_atlas.py --check-receipt evidence/atlas-review.json\npython scripts/check_atlas.py --out runs/atlas-review.json\npython scripts/query_atlas.py build-claims --check\npython -m unittest discover -s scripts -p "test_atlas*.py" -v\nnode scripts/check_atlas_ui.cjs\nnode scripts/check_atlas_map.cjs';
   byId('copy-commands').addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText(byId('reproduce-commands').textContent);
@@ -219,4 +219,14 @@
   byId('atlas-app').hidden = false;
   renderCatalog();
   renderEntry(selectedEntry);
+  if (window.AtlasMap) window.AtlasMap.mount(data, registry, entry => {
+    byId('carrier-filter').value = String(entry.carrier_size);
+    byId('shape-filter').value = entry.abstract_type;
+    renderCatalog();
+    renderEntry(entry);
+    const title = byId('entry-title');
+    title.setAttribute('tabindex', '-1');
+    title.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+    title.focus({ preventScroll: true });
+  });
 }());

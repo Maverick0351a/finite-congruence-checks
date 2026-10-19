@@ -2,7 +2,7 @@
 title: Finite Congruence Checks
 emoji: 🔬
 colorFrom: blue
-colorTo: green
+colorTo: purple
 sdk: static
 app_file: atlas.html
 pinned: true
@@ -19,6 +19,7 @@ tags:
   - universal-algebra
   - reproducible-research
   - interactive-visualization
+  - cytoscape
 ---
 
 # Finite Congruence Checks
@@ -31,6 +32,9 @@ OpenAI's math corpus, family 206.
 Start with the readable atlas: a three-object lesson, 39 grouping-family
 representatives through four objects, and 22 abstract lattice shapes. Explore
 objects, rules, consistent groupings, and a comparison of two C4 constructions.
+The Cytoscape map connects each construction to its abstract shape. Filter by
+shape and object count, inspect claim IDs, then open the selected rules and
+evidence. A midnight, teal, and violet palette follows light/dark preferences.
 The catalog has its own complete classification and independent checker.
 See [the atlas method](https://github.com/Maverick0351a/finite-congruence-checks/blob/main/docs/ATLAS.md).
 Technical entry details expose individual claim records with assumptions and
@@ -78,8 +82,10 @@ Run `python scripts/build_space_data.py` there to regenerate the data, or add
 `python scripts/build_atlas_data.py --check`,
 `python scripts/check_atlas.py --check-receipt evidence/atlas-review.json`, and
 `python scripts/query_atlas.py build-claims --check`, followed by
-`node scripts/check_atlas_ui.cjs`. The downloadable `data.json` lists source hashes
+`node scripts/check_atlas_ui.cjs` and `node scripts/check_atlas_map.cjs`.
+The downloadable `data.json` lists source hashes
 and the pinned upstream revision. Publish only the contents of `space/`.
 
-The app uses native HTML, CSS, JavaScript, and SVG. It has no runtime package,
-external font, telemetry, server, model, or GPU dependency.
+The app uses native HTML, CSS, JavaScript, SVG, and a local pinned Cytoscape.js
+build with its MIT license. It needs no package install, CDN, external font,
+telemetry, server, model, or GPU service.

@@ -63,10 +63,12 @@ record identities and claim meanings. Add a database when measured record size
 or query cost justifies it. Evaluate adapters against the same fixtures before
 publishing them.
 
-Cytoscape could render relationships among constructions, claims, and evidence.
-It would consume the shared records as another visual view; it would not be the
-source of mathematical truth. The current SVG diagrams are sufficient for the
-small atlas and work offline.
+Cytoscape.js now renders the construction-to-shape relationships in the
+[interactive map](ATLAS_MAP.md). It consumes the same atlas and claim records;
+the inspector exposes claim IDs and opens the selected entry's rules and
+evidence. The graph uses versioned shape keys from the claims, and its positions
+carry no mathematical meaning. The small grouping diagrams remain SVG. Both
+views use local assets, including a pinned, licensed copy of Cytoscape.js.
 
 External replication, reviewed mathematical extensions, and versioned releases
 are the next trust milestones. A service used by other projects will also need

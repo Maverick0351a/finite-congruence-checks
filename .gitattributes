@@ -9,3 +9,5 @@ reference/** -text
 lean/upstream/OAI/** -text
 lean/comparator/ComparatorChallenges/** -text
 lean/CertificateData.lean linguist-generated=true
+space/vendor/cytoscape-3.34.4.min.js -text
+space/vendor/cytoscape-LICENSE.txt -text
