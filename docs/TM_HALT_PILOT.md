@@ -1,9 +1,12 @@
 # Proposed second-domain pilot: two ways to halt
 
-**Status: the executable foundation and five source step lemmas are implemented;
-the pair-specific theorem records and agent retrieval demonstration remain proposed.**
+**Status: the executable foundation, five source step lemmas, four-pair atlas,
+and first agent retrieval exercise are implemented. Pair-specific Lean
+preservation theorems remain proposed.**
 See [TM translation checks](TM_TRANSLATION_CHECKS.md) for the maintained port,
 exact source extraction, test domain, and reproduction commands.
+The [pair atlas](TM_ATLAS.md) and [retrieval record](TM_ATLAS_EVALUATION.md)
+document the implemented observation records and the six-question guided run.
 This follows the [archive review](ARCHIVE_REVIEW.md). Keep the completed
 [grouping checker](GROUPING_CHECKER.md) and its evidence intact while testing
 whether the atlas can explain a precise semantic difference in another domain.

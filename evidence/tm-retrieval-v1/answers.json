@@ -1,0 +1,580 @@
+{
+  "schema_version": 1,
+  "answers": [
+    {
+      "id": "bb2-property-separation",
+      "verdict": "refuted",
+      "explanation": "The first halting step is 6 on each side, and both complete tapes are [[-2,1],[-1,1],[0,1],[1,1]]. The final heads differ: -1 for the missing-instruction encoding and 0 for the explicit write-right-halt encoding. Every unlisted tape cell is zero, so the conjunction of all three equalities is false.",
+      "claim_ids": [
+        "tm:bb2:halting_time:v1",
+        "tm:bb2:tape:v1",
+        "tm:bb2:head_position:v1"
+      ],
+      "observations": [
+        {
+          "left": 6,
+          "right": 6,
+          "equal": true,
+          "claim_id": "tm:bb2:halting_time:v1"
+        },
+        {
+          "left": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "right": [
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "equal": true,
+          "claim_id": "tm:bb2:tape:v1"
+        },
+        {
+          "left": -1,
+          "right": 0,
+          "equal": false,
+          "claim_id": "tm:bb2:head_position:v1"
+        }
+      ],
+      "citations": [
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/1/left/first_halt",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/1/right/first_halt",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/1/left/machine",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/1/right/machine",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/1/input",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/1/left/trace",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/1/right/trace",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/1/applicable_lemmas/0",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/1/applicable_lemmas/1",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/1/applicable_lemmas/2",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/1/applicable_lemmas/4",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/1/left/final/tape",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/1/right/final/tape",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/1/applicable_lemmas/3",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/1/left/final/head",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/1/right/final/head",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        }
+      ],
+      "general_equivalence": false,
+      "scope": "Only the exact atlas pair tm-pair:bb2:v1 on blank input; final refers to its first halting configurations. These saved executions establish the listed observations, not general equivalence or Busy Beaver optimality."
+    },
+    {
+      "id": "bb4-output-separation",
+      "verdict": "refuted",
+      "explanation": "The missing-instruction tape is [[-8,1],[-7,1],[-6,1],[-5,1],[-4,1],[-3,1],[-2,1],[-1,1],[0,1],[1,1],[2,1],[3,1]], with head -10. The explicit write-right-halt tape is [[-10,1],[-8,1],[-7,1],[-6,1],[-5,1],[-4,1],[-3,1],[-2,1],[-1,1],[0,1],[1,1],[2,1],[3,1]], with head -9. All unlisted cells are zero. The explicit final instruction writes 1 at the previously blank cell -10 and moves right before halting is observed; the missing instruction preserves that cell and the head.",
+      "claim_ids": [
+        "tm:bb4:tape:v1",
+        "tm:bb4:head_position:v1"
+      ],
+      "observations": [
+        {
+          "left": [
+            [
+              -8,
+              1
+            ],
+            [
+              -7,
+              1
+            ],
+            [
+              -6,
+              1
+            ],
+            [
+              -5,
+              1
+            ],
+            [
+              -4,
+              1
+            ],
+            [
+              -3,
+              1
+            ],
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "right": [
+            [
+              -10,
+              1
+            ],
+            [
+              -8,
+              1
+            ],
+            [
+              -7,
+              1
+            ],
+            [
+              -6,
+              1
+            ],
+            [
+              -5,
+              1
+            ],
+            [
+              -4,
+              1
+            ],
+            [
+              -3,
+              1
+            ],
+            [
+              -2,
+              1
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "equal": false,
+          "claim_id": "tm:bb4:tape:v1"
+        },
+        {
+          "left": -10,
+          "right": -9,
+          "equal": false,
+          "claim_id": "tm:bb4:head_position:v1"
+        }
+      ],
+      "citations": [
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/3/left/final/tape",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/3/right/final/tape",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/3/left/machine",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/3/right/machine",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/3/input",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/3/applicable_lemmas/0",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/3/applicable_lemmas/1",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/3/applicable_lemmas/2",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/3/applicable_lemmas/3",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/3/applicable_lemmas/4",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/3/left/final/head",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/3/right/final/head",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        }
+      ],
+      "general_equivalence": false,
+      "scope": "Only the exact atlas pair tm-pair:bb4:v1 on blank input, comparing its first halting configurations; no assertion about other machines, inputs, or canonical Busy Beaver encodings."
+    },
+    {
+      "id": "tiny-property-separation",
+      "verdict": "refuted",
+      "explanation": "Both sides first halt at step 1 and both final heads are 0, but their complete tapes differ: the missing-instruction side has [] and the explicit write-stay-halt side has [[0,1]]. Every unlisted cell is zero. Equal halting times and head positions therefore do not imply equal tapes in this pair.",
+      "claim_ids": [
+        "tm:tiny-stay:halting_time:v1",
+        "tm:tiny-stay:tape:v1",
+        "tm:tiny-stay:head_position:v1"
+      ],
+      "observations": [
+        {
+          "left": 1,
+          "right": 1,
+          "equal": true,
+          "claim_id": "tm:tiny-stay:halting_time:v1"
+        },
+        {
+          "left": [],
+          "right": [
+            [
+              0,
+              1
+            ]
+          ],
+          "equal": false,
+          "claim_id": "tm:tiny-stay:tape:v1"
+        },
+        {
+          "left": 0,
+          "right": 0,
+          "equal": true,
+          "claim_id": "tm:tiny-stay:head_position:v1"
+        }
+      ],
+      "citations": [
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/left/first_halt",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/right/first_halt",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/left/machine",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/right/machine",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/input",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/left/trace",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/right/trace",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/applicable_lemmas/0",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/applicable_lemmas/1",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/applicable_lemmas/2",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/applicable_lemmas/4",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/left/final/tape",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/right/final/tape",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/applicable_lemmas/3",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/left/final/head",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/right/final/head",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        }
+      ],
+      "general_equivalence": false,
+      "scope": "Only tm-pair:tiny-stay:v1 on blank input, with final meaning the first halting configuration; this is a concrete observed counterexample to the stated implication."
+    },
+    {
+      "id": "missing-instruction-lemma",
+      "verdict": "supported",
+      "explanation": "The missing-instruction side begins with the blank tape [] and still has [] after its first step. TMOracle.Checks.missing_instruction proves that, under its hypotheses, the extracted Lean step changes only the state to M.states, preserving the entire tape and head. Its applicability here is supported by the saved step-0 configuration and missing table entry. This is a generic source lemma over the pinned extracted Lean definitions, not a theorem proving the Python port correct or a Lean instantiation of this particular pair.",
+      "claim_ids": [
+        "tm:tiny-stay:tape:v1"
+      ],
+      "observations": [
+        {
+          "left": [],
+          "right": [
+            [
+              0,
+              1
+            ]
+          ],
+          "equal": false,
+          "claim_id": "tm:tiny-stay:tape:v1"
+        }
+      ],
+      "citations": [
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/left/final/tape",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/right/final/tape",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/left/machine",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/right/machine",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/input",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/applicable_lemmas/0",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/applicable_lemmas/1",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/applicable_lemmas/2",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/applicable_lemmas/3",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        },
+        {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/applicable_lemmas/4",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        }
+      ],
+      "general_equivalence": false,
+      "scope": "The preservation observation concerns the left side of tm-pair:tiny-stay:v1 on blank input, from step 0 to step 1. The source lemma applies to configurations satisfying its two hypotheses; it supplies no universal Python/Lean equivalence theorem.",
+      "lemma": {
+        "name": "TMOracle.Checks.missing_instruction",
+        "hypotheses": [
+          "The current configuration is not halting (M.isHalting c = false).",
+          "Looking up the instruction for the current state and scanned tape symbol returns none (M.instruction c.state (c.tape c.head) = none)."
+        ],
+        "citation": {
+          "path": "evidence/tm-atlas-traces-v1.json",
+          "json_pointer": "/pairs/0/applicable_lemmas/0",
+          "sha256": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+        }
+      }
+    },
+    {
+      "id": "bounded-to-universal",
+      "verdict": "unsupported",
+      "explanation": "No. Agreement on 2,857 tested snapshots cannot justify equivalence for every machine and input. The atlas explicitly limits its claims to bounded observations and states that it does not prove the Python translation. Its generic Lean transition lemmas do not prove the observed pair outcomes or establish correctness of the Python implementation.",
+      "claim_ids": [],
+      "observations": [],
+      "citations": [
+        {
+          "path": "evidence/tm-atlas-v1.json",
+          "json_pointer": "/limits",
+          "sha256": "abd5fa917bbe2e1c5b62d928ef1d40b0ec46a08236e6e5ccf99b8731ebd51787"
+        }
+      ],
+      "general_equivalence": false,
+      "scope": "The atlas covers four specified encoding pairs (tiny-stay, bb2, bb3, and bb4) on blank input through the first halt and one subsequent fixed configuration. It does not cover all machines or all inputs."
+    },
+    {
+      "id": "unsupported-pair",
+      "verdict": "unsupported",
+      "explanation": "The precise query tm --pair tm-pair:bb5:v1 --property tape returned exit code 2, empty stdout, and an error reporting unknown TM pair: tm-pair:bb5:v1. No supporting BB5 tape records were returned, so this atlas cannot establish identical final tapes for those variants.",
+      "claim_ids": [],
+      "observations": [],
+      "citations": [
+        {
+          "path": "evidence/tm-atlas-v1.json",
+          "json_pointer": "/limits",
+          "sha256": "abd5fa917bbe2e1c5b62d928ef1d40b0ec46a08236e6e5ccf99b8731ebd51787"
+        }
+      ],
+      "general_equivalence": false,
+      "scope": "The requested tm-pair:bb5:v1 has no supporting records in this atlas. The available atlas scope is four specified pairs on blank input; no BB5 or other-input result is inferred."
+    }
+  ]
+}

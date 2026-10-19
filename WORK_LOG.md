@@ -623,3 +623,42 @@ exact evidence boundary. Full configuration comparison validates the tested
 translation cases; no general Python/Lean equivalence, binary refinement, or PDE
 verification is inferred. Pair-specific theorem records and agent retrieval
 remain the next steps. New CI repeats the native build and preserves its evidence.
+
+## 2026-10-18 — Pair-specific TM atlas evidence
+
+Started the requested small second-domain atlas integration from PR #8's
+recorded native evidence. Four pairs on blank input receive independent claims
+for first halting step, entire finite-support tape, and head position. The
+existing claim fields and JSON-pointer/hash citations are reused. Derived JSON
+traces retain the source JSONL line identities; first-halt evidence includes
+the complete prefix. Qualified Lean lemma references explain source steps and
+do not promote the observations to pair theorems or Python equivalence proofs.
+
+Prepared six retrieval questions before running an evaluator: three property
+comparisons, one source-lemma applicability question, a proposed universal
+equivalence claim, and an absent BB5 pair. Structured checks and independent
+prose review will be recorded separately. The grouping checker, original
+TM native evidence, and frozen repair experiment are unchanged.
+
+Completed four pairs and twelve claims from 272 exact saved configurations.
+Each native locator and source-lemma link pins the existing source commit;
+fixed source hashes prevent v1 IDs from silently acquiring changed inputs.
+Review prompted complete-prefix citations for first halt, exact pair/side/step
+lemma citations, and separate left/right lemma application anchors. The browser
+shows explicit zero cells and head positions, opens exact trace rows, and clears
+stale evidence fragments when a user changes the selected pair.
+
+Fresh-context evaluator: six first answers pass structured checks, and a separate
+agent review accepts all six explanations and lemma hypotheses. Ten CLI queries
+are retained, including the expected unknown-BB5 rejection. Prompt, first answers,
+transcript, score, review and source hashes are saved in evidence/tm-retrieval-v1.
+No answer was revised after grading. This is one guided same-session exercise,
+with no control arm, enforced file-access isolation, or general capability claim.
+
+Validation: 50 atlas tests pass, including 27 TM data/retrieval tests; 33 root
+tests pass. The full bounded experiment reproduces 143,685 candidates, 217
+witnesses and 22 classes without differences. The 39-entry atlas rebuild and
+independent review agree. Browser logic checks pass for 12 TM claims, 272 trace
+rows and 120 citations, alongside the existing atlas and Cytoscape map checks.
+Narrow-screen browser inspection confirms the BB4 tape difference at -10,
+distinct heads, source/trace navigation and the pair-switch fragment repair.

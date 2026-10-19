@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "tm-evidence-retrieval-v1",
+  "run_date_utc": "2026-10-19",
+  "base_repository_commit": "2b611847611479cc04f41125c437281e2bc907df",
+  "execution": {
+    "surface": "Codex collaboration subagent",
+    "task_name": "tm_retrieval_eval",
+    "fork_turns": "none",
+    "model_override": null,
+    "model_snapshot": null,
+    "settings": "Inherited from the calling session.",
+    "first_submission_only": true,
+    "feedback_revisions": 0,
+    "queries": 10,
+    "successful_queries": 9,
+    "expected_unknown_pair_rejections": 1
+  },
+  "result": {
+    "structured_checks": 6,
+    "structured_passes": 6,
+    "prose_review": "evidence/tm-retrieval-v1/review.json"
+  },
+  "hash_encoding": "SHA-256 of UTF-8 file bytes with CRLF normalized to LF; no other byte changes.",
+  "artifacts": {
+    "prompt.txt": "9e093c9aa864a57eb15f30fc8ffd8de81b72a08162d4605f63270d3d1685b530",
+    "answers.json": "65ad45a451de697155d5a9224ce129721073fbd497bd11aa661282bf54160170",
+    "transcript.json": "be947ee2b211c6e78d8e60a479de6edf693a5ce51011992fc71c4cd9607e0133",
+    "summary.json": "4df45091919ddb9da74bf40c8e6842f0be0283c698c3c47e52fa7b166475bf89",
+    "review.json": "e49ebaf6fa1cbd8e9578fc477d485185b76a75e70d9da9462fefb809bdddc906"
+  },
+  "sources": {
+    "benchmarks/tm-evidence-v1/tasks.json": "2eee712103d0fce11a9051ba29ade5775df34769261abab61f3fbbf68d1c3289",
+    "scripts/query_atlas.py": "03c1b4581ef422426dff5298cd34fabe4284407c8ff54cc669516a99deda3573",
+    "scripts/tm_atlas.py": "fc2ec1430fe218263cf047165963e161ea1f17e02fc997628dccbaf34cea4cdc",
+    "scripts/check_tm_retrieval.py": "0b32fe47fa1d253373db9417dddc7ab2d7d06a5a8e4a97a0c8021fe9a5bf5ee4",
+    "evidence/tm-atlas-v1.json": "abd5fa917bbe2e1c5b62d928ef1d40b0ec46a08236e6e5ccf99b8731ebd51787",
+    "evidence/tm-atlas-traces-v1.json": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55"
+  },
+  "limits": [
+    "One guided same-session run with six purpose-built questions and no control arm.",
+    "Fresh conversation context; shared workspace file-access restrictions were instructions, not enforced isolation.",
+    "No immutable model snapshot identifier was exposed for this run.",
+    "Transcript and review are local records, not provider-signed attestations or external peer review.",
+    "This checks retrieval in the stated setting; no general capability or feedback advantage is established."
+  ]
+}

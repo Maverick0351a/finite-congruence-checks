@@ -6,6 +6,8 @@ Examples:
   python scripts/query_atlas.py compare --shape C4 --carrier 4
   python scripts/query_atlas.py compare
   python scripts/query_atlas.py claims --entry n4-E16403
+  python scripts/query_atlas.py tm --pair tm-pair:bb2:v1 --property tape
+  python scripts/query_atlas.py build-tm --check
   python scripts/query_atlas.py build-claims --check
 
 This reads the saved computational evidence. It does not rerun the census or
@@ -321,10 +323,34 @@ def main(argv=None):
     claiming.add_argument("--entry")
     building = sub.add_parser("build-claims", help="Regenerate deterministic claim records")
     building.add_argument("--check", action="store_true")
+    tm = sub.add_parser("tm", help="Read pair-specific Turing observations and exact evidence")
+    tm.add_argument("--pair")
+    tm.add_argument("--property", choices=("halting_time", "tape", "head_position"))
+    tm_building = sub.add_parser("build-tm", help="Regenerate Turing pair records from saved execution evidence")
+    tm_building.add_argument("--check", action="store_true")
     try:
         args = parser.parse_args(argv)
-        dataset = load_dataset()
         query = {key: value for key, value in vars(args).items() if key != "command" and value is not None}
+        if args.command in ("tm", "build-tm"):
+            # The common citation/claim format is reused; each domain retains
+            # its own evidence status and scope rather than inheriting a census.
+            import tm_atlas
+            data = (tm_atlas.build(root=ROOT, check=args.check) if args.command == "build-tm"
+                    else tm_atlas.load_dataset(root=ROOT))
+            results = (tm_atlas.query(data, pair_id=args.pair, property=args.property)
+                       if args.command == "tm" else
+                       [{"action": "checked" if args.check else "built", "pairs": len(data["pairs"]),
+                         "claims": len(data["claims"])}])
+            output = {"schema_version": 1, "status": "ok", "command": args.command, "query": query,
+                      "dataset": {"path": "evidence/tm-atlas-v1.json",
+                                  "sha256": digest(ROOT / "evidence/tm-atlas-v1.json")},
+                      "namespace": data["namespace"], "hash_encoding": data["hash_encoding"],
+                      **{key: data[key] for key in ("scope", "evidence_status", "assumptions", "limits")},
+                      "results": results,
+                      "citations": unique_citations([c for row in results for c in row.get("citations", [])])}
+            sys.stdout.buffer.write(encode(output))
+            return 0
+        dataset = load_dataset()
         if args.command != "build-claims":
             load_claims(dataset)
         if args.command == "list":
