@@ -9,6 +9,7 @@ import copy
 from pathlib import Path
 
 import tm_atlas
+import tm_pair_proof
 
 CLAIM_ID = "tm:tiny-stay:tape:v1"
 PAIR_ID = "tm-pair:tiny-stay:v1"
@@ -33,8 +34,16 @@ def explain(root):
         "values": {"input": copy.deepcopy(pair["input"]),
                    "tape_encoding": "Sorted [integer position, nonzero natural symbol] pairs; every unlisted cell is zero.",
                    **{side: copy.deepcopy(pair[side]) for side in ("left", "right")}},
-        "proof_status": "The observed tape inequality is backed by saved native execution cross-checked with Python. The attached generic Lean lemmas explain transitions under their stated hypotheses; no pair-specific Lean theorem proves this observation here.",
+        "proof_status": "The original claim and its limits retain the frozen execution snapshot's status. The separate formal_supplement proves first halt at step one, heads at zero, and the complete tapes for these exact formal machines and input. It does not prove the Python or compiled implementations correct.",
     })
+    receipt = tm_pair_proof.replay(root / tm_pair_proof.EVIDENCE, root, dataset)
+    claim["formal_supplement"] = {
+        "claim": receipt["claim"],
+        "receipt": {"path": tm_pair_proof.EVIDENCE + "/summary.json",
+                    "sha256": tm_pair_proof.digest(root / tm_pair_proof.EVIDENCE / "summary.json")},
+        "source_hashes": receipt["source_hashes"], "axioms": receipt["axioms"],
+        "validation": "Saved proof receipt replayed offline. No Lean process runs during this query. Use the reproduction command for a fresh proof check.",
+    }
     registry_sha = tm_atlas.digest(root / tm_atlas.DATA_PATH)
     source = {"id": pair["id"], "namespace": dataset["namespace"],
               "path": tm_atlas.DATA_PATH, "json_pointer": f"/pairs/{pair_index}", "sha256": registry_sha,

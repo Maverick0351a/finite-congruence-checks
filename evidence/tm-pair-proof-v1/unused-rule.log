@@ -1,0 +1,10 @@
+/home/shannonlab/fcc-tm-pair/repo/runs/tm-pair-final/unused-rule.lean:9:0: error: Not a definitional equality: the left-hand side
+  TinyPair.rightMachine
+is not definitionally equal to the right-hand side
+  rightExpected
+/home/shannonlab/fcc-tm-pair/repo/runs/tm-pair-final/unused-rule.lean:9:77: error: Type mismatch
+  rfl
+has type
+  ?m.3 = ?m.3
+but is expected to have type
+  TinyPair.rightMachine = rightExpected

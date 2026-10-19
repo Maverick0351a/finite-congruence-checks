@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "namespace": "finite-congruence-atlas/tm-formal-pair-v1",
+  "id": "tm:tiny-stay:formal-result:v1",
+  "pair_id": "tm-pair:tiny-stay:v1",
+  "property": "first_halt_head_and_complete_tape",
+  "evidence_status": "lean_theorem_with_recorded_kernel_replay",
+  "statement": "Both specified machines first halt after one transition on []; both heads are at zero. The left tape is zero everywhere; the right tape is one at zero and zero everywhere else. The complete tapes differ.",
+  "scope": "One exact pair and one exact input; all integer tape positions.",
+  "assumptions": [
+    "Machine.run uses the pinned extracted OpenAI family 376 definitions.",
+    "Lean's kernel and the standard axioms reported in the receipt are trusted."
+  ],
+  "limits": [
+    "This proves the two specified formal machines on exactly the input []; every integer tape position is covered.",
+    "It does not prove that Python, the JSON decoder, the compiler, or the native executable implements those definitions. Their saved agreement tests remain separate.",
+    "No general translation equivalence, other input, Busy Beaver optimality, or fluid-flow claim follows.",
+    "Offline receipt replay checks saved records and hashes; rerun the Lean command for a fresh elaboration and kernel check."
+  ],
+  "values": {
+    "input": [],
+    "left": {
+      "n_states_minus_one": 0,
+      "n_alphabet_minus_one": 1,
+      "initial_state": 0,
+      "halting_states": [],
+      "table": [
+        null,
+        null
+      ]
+    },
+    "right": {
+      "n_states_minus_one": 1,
+      "n_alphabet_minus_one": 1,
+      "initial_state": 0,
+      "halting_states": [
+        1
+      ],
+      "table": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        null,
+        null
+      ]
+    }
+  },
+  "conclusion": {
+    "initial_halted": [
+      false,
+      false
+    ],
+    "first_halt": [
+      1,
+      1
+    ],
+    "head": [
+      0,
+      0
+    ],
+    "tape": {
+      "quantifier": "every i : Int",
+      "left": [],
+      "right": [
+        [
+          0,
+          1
+        ]
+      ],
+      "unlisted_symbol": 0
+    },
+    "tapes_equal": false
+  },
+  "theorem": "TMOracle.TinyPair.exact_result",
+  "definitions": {
+    "left": "TMOracle.TinyPair.leftMachine",
+    "right": "TMOracle.TinyPair.rightMachine",
+    "input": "TMOracle.TinyPair.blankInput",
+    "run": "OAI.AlternatingNS.Machine.run"
+  },
+  "citations": [
+    {
+      "path": "lean/tm-pair/TinyPair.lean",
+      "declaration": "TMOracle.TinyPair.exact_result",
+      "sha256": "e36d6a20900bb2cd05dd9e9b9368568c2cc6b804a87ea3b4cd536059f4cc4d86"
+    },
+    {
+      "path": "lean/tm-pair/TinyPairBinding.lean",
+      "declarations": [
+        "TMOracle.TinyPairBinding.left_definition",
+        "TMOracle.TinyPairBinding.right_definition",
+        "TMOracle.TinyPairBinding.input_definition",
+        "TMOracle.TinyPairBinding.checked_result"
+      ],
+      "sha256": "f7c453e7589ee9978d4b333ec29a4e1f7c67cc7cc93e17576327859293ac6450"
+    },
+    {
+      "path": "evidence/tm-atlas-v1.json",
+      "json_pointer": "/pairs/0",
+      "sha256": "abd5fa917bbe2e1c5b62d928ef1d40b0ec46a08236e6e5ccf99b8731ebd51787"
+    },
+    {
+      "path": "lean/tm/source/manifest.json",
+      "sha256": "c5900aa1e3ab59a745ca2f68e1b749897d7de26a9de70b0fb0b7ecd55a397973"
+    }
+  ],
+  "separate_execution_evidence": {
+    "claim_id": "tm:tiny-stay:tape:v1",
+    "path": "evidence/tm-atlas-v1.json",
+    "status": "saved_native_execution_cross_checked_with_python",
+    "note": "The original snapshot's limits describe its original evidence. This supplemental formal proof does not change that snapshot or its native receipt."
+  }
+}

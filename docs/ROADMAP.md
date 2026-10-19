@@ -56,9 +56,11 @@ tracks described in the [second-domain pilot proposal](TM_HALT_PILOT.md):
    [TM atlas collection](TM_ATLAS.md) now attaches separate halting-time, tape,
    and head-position claims to four exact pairs, with trace citations and
    qualified source-lemma links. A small agent retrieval exercise tests those
-   distinctions and the evidence boundary. Next, expand the retrieval evaluation
-   across independent runs before adding more domains; pair-specific Lean
-   preservation theorems remain separate future work.
+   distinctions and the evidence boundary. The [tiny-stay pair proof](TM_PAIR_PROOF.md)
+   now covers first halt, heads, and complete tapes, with an exact atlas binding
+   and a fresh-checkout reproduction command. A broader preservation theorem
+   remains future work. The controlled agent benchmark stays paused pending
+   approval; this proof milestone does not measure agent performance.
 
 The [archive review](ARCHIVE_REVIEW.md) sets evidence-admission requirements.
 Treat `formal-audit` as lexical screening: dependencies supporting proof claims

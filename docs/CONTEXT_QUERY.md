@@ -17,7 +17,7 @@ python scripts/query_context.py explain tm:tiny-stay:tape:v1
 | --- | --- | --- |
 | `context:family-206:saved-n5:classification:v1` | `saved:family-206:n5:v1` | Exact local Lean classification with a recorded build and kernel replay |
 | `construction:n4-E16709` | `atlas:n4-E16709:displayed-operations:v1` | Exhaustive computation with an independent finite check |
-| `tm:tiny-stay:tape:v1` | `tm-pair:tiny-stay:v1` | Saved native execution cross-checked with Python; qualified generic transition lemmas |
+| `tm:tiny-stay:tape:v1` | `tm-pair:tiny-stay:v1` | Original execution evidence plus a separately identified exact-pair Lean proof |
 
 `n4-E16709` identifies a relation-family atlas entry. Its construction ID above
 specifically names the displayed operation tables at this version. A lattice
@@ -104,17 +104,22 @@ No original atlas schema or evidence record is changed.
 | `TMOracle.Checks.instruction_step` and `instruction_writes` | Right transition 0→1: execute the write/stay/halt instruction | Generic Lean theorems; `instruction_writes` alone describes the old head cell |
 | `TMOracle.Checks.halted_fixed` | Both transitions 1→2: already halted | Does not apply to either active configuration at step 0 |
 
-There is no pair-specific Lean theorem proving the final-tape comparison in
-this export. The generic lemmas explain the transitions under stated
-hypotheses; their applicability records are not Lean instantiations. The
-bounded observation establishes neither general translation equivalence nor
-any fluid-dynamics result.
+The separate `formal_supplement` now links
+`TMOracle.TinyPair.exact_result` to these exact machines and `[]`. It proves
+initial nonhalting, first halt at step one, both heads at zero, and both
+complete tapes over every integer position. The original claim's limits
+describe the original execution snapshot; they do not describe this new
+supplement. The generic applicability records retain their original status.
+See [the proof and fresh-checkout command](TM_PAIR_PROOF.md). This does not
+prove Python or compiled implementation correctness, general translation
+equivalence, or any fluid-dynamics result.
 
 Each TM query reuses the existing loader's offline replay of the retained
 2,857-configuration receipt and checks the canonical registry, traces, and
 both browser copies. This executes Python over saved inputs and outputs; it
 does not rebuild Lean or run the native binary. It verifies the existing
-collection before exporting this one claim. N5 queries load only N5 evidence,
+collection and replays the supplemental proof receipt before exporting this
+one claim. N5 queries load only N5 evidence,
 and `compare` remains the two-construction N5 comparison. Other TM claim IDs
 remain available through `query_atlas.py tm`, outside this small interface pilot.
 

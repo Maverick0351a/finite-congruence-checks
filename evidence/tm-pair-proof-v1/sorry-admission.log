@@ -1,0 +1,2 @@
+/home/shannonlab/fcc-tm-pair/repo/runs/tm-pair-final/sorry-admission.lean:11:8: warning: declaration uses `sorry`
+'TMOracle.TinyPairBinding.checked_result' depends on axioms: [propext, sorryAx, Quot.sound]

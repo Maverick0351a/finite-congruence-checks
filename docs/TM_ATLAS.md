@@ -65,6 +65,12 @@ the exact input, machine tables, traces, and qualified lemma references; its
 the same interface used for N5 without changing the atlas registry or running
 the paused model benchmark.
 
+This export also carries a separately identified [exact-pair Lean proof](TM_PAIR_PROOF.md).
+It proves first halt at step one, head positions, and the complete tapes for
+the `tiny-stay` pair on `[]`. The original atlas's evidence status and limits
+remain those of its execution snapshot; the proof supplement has its own
+claim, source binding, receipt, and trust boundary.
+
 ## Follow a claim to evidence
 
 - [Pair registry](../evidence/tm-atlas-v1.json): exact machines, blank input,

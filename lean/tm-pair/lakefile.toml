@@ -1,0 +1,13 @@
+name = "tmPairReference"
+version = "0.1.0"
+defaultTargets = ["TinyPair", "TinyPairBinding"]
+
+[[require]]
+name = "tmTranslationOracle"
+path = "../tm"
+
+[[lean_lib]]
+name = "TinyPair"
+
+[[lean_lib]]
+name = "TinyPairBinding"

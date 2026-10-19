@@ -57,7 +57,11 @@ class TMContextTests(unittest.TestCase):
         self.assertEqual(self.claim["observation"], {"left": [], "right": [[0, 1]], "equal": False})
         self.assertEqual(self.claim["construction_id"], tm_context.PAIR_ID)
         self.assertEqual(self.claim["values"]["input"], [])
-        self.assertIn("no pair-specific Lean theorem", self.claim["proof_status"])
+        self.assertIn("does not prove the Python", self.claim["proof_status"])
+        formal = self.claim["formal_supplement"]["claim"]
+        self.assertEqual(formal["id"], "tm:tiny-stay:formal-result:v1")
+        self.assertEqual(formal["conclusion"]["first_halt"], [1, 1])
+        self.assertEqual(formal["conclusion"]["tape"]["quantifier"], "every i : Int")
         for side in ("left", "right"):
             values = self.claim["values"][side]
             self.assertEqual(values["first_halt"], 1)
@@ -87,6 +91,16 @@ class TMContextTests(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertEqual(checked["status"], "supported")
             self.assertEqual(checked["mismatch_paths"], [])
+
+    def test_formal_supplement_cannot_change_theorem_or_conclusion(self):
+        for field, value in (("theorem", "TMOracle.TinyPair.left_halts_one"),
+                             ("conclusion", {"first_halt": [2, 2]}),
+                             ("values", {})):
+            proposed = copy.deepcopy(self.record)
+            proposed["claim"]["formal_supplement"]["claim"][field] = value
+            self.assert_unsupported(proposed, "/claim/formal_supplement/claim/" + field if field == "theorem"
+                                    else "/claim/formal_supplement/claim/" + field +
+                                    ("/first_halt/0" if field == "conclusion" else "/input"))
 
     def test_changed_unused_rule_preserves_trace_but_loses_binding(self):
         proposed = copy.deepcopy(self.record)

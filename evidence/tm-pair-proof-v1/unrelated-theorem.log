@@ -1,0 +1,14 @@
+/home/shannonlab/fcc-tm-pair/repo/runs/tm-pair-final/unrelated-theorem.lean:21:2: error: Type mismatch
+  Checks.halted_fixed
+has type
+  ∀ (M : Machine) (c : Machine.Configuration), M.isHalting c = true → M.step c = c
+but is expected to have type
+  leftExpected.isHalting (leftExpected.run inputExpected 0) = false ∧
+    rightExpected.isHalting (rightExpected.run inputExpected 0) = false ∧
+      leftExpected.isHalting (leftExpected.run inputExpected 1) = true ∧
+        rightExpected.isHalting (rightExpected.run inputExpected 1) = true ∧
+          (leftExpected.run inputExpected 1).head = 0 ∧
+            (rightExpected.run inputExpected 1).head = 0 ∧
+              (∀ (i : ℤ), (leftExpected.run inputExpected 1).tape i = 0) ∧
+                (∀ (i : ℤ), (rightExpected.run inputExpected 1).tape i = if i = 0 then 1 else 0) ∧
+                  (leftExpected.run inputExpected 1).tape ≠ (rightExpected.run inputExpected 1).tape

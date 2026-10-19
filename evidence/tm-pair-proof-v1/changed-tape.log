@@ -1,0 +1,23 @@
+/home/shannonlab/fcc-tm-pair/repo/runs/tm-pair-final/changed-tape.lean:21:2: error: Type mismatch
+  TinyPair.exact_result
+has type
+  TinyPair.leftMachine.isHalting (TinyPair.leftMachine.run TinyPair.blankInput 0) = false ∧
+    TinyPair.rightMachine.isHalting (TinyPair.rightMachine.run TinyPair.blankInput 0) = false ∧
+      TinyPair.leftMachine.isHalting (TinyPair.leftMachine.run TinyPair.blankInput 1) = true ∧
+        TinyPair.rightMachine.isHalting (TinyPair.rightMachine.run TinyPair.blankInput 1) = true ∧
+          (TinyPair.leftMachine.run TinyPair.blankInput 1).head = 0 ∧
+            (TinyPair.rightMachine.run TinyPair.blankInput 1).head = 0 ∧
+              (∀ (i : ℤ), (TinyPair.leftMachine.run TinyPair.blankInput 1).tape i = 0) ∧
+                (∀ (i : ℤ), (TinyPair.rightMachine.run TinyPair.blankInput 1).tape i = if i = 0 then 1 else 0) ∧
+                  (TinyPair.leftMachine.run TinyPair.blankInput 1).tape ≠
+                    (TinyPair.rightMachine.run TinyPair.blankInput 1).tape
+but is expected to have type
+  leftExpected.isHalting (leftExpected.run inputExpected 0) = false ∧
+    rightExpected.isHalting (rightExpected.run inputExpected 0) = false ∧
+      leftExpected.isHalting (leftExpected.run inputExpected 1) = true ∧
+        rightExpected.isHalting (rightExpected.run inputExpected 1) = true ∧
+          (leftExpected.run inputExpected 1).head = 0 ∧
+            (rightExpected.run inputExpected 1).head = 0 ∧
+              (∀ (i : ℤ), (leftExpected.run inputExpected 1).tape i = 0) ∧
+                (∀ (i : ℤ), (rightExpected.run inputExpected 1).tape i = if i = 0 then 2 else 0) ∧
+                  (leftExpected.run inputExpected 1).tape ≠ (rightExpected.run inputExpected 1).tape

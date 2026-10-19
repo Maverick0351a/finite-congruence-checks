@@ -1,0 +1,397 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "claim": {
+    "schema_version": 1,
+    "namespace": "finite-congruence-atlas/tm-formal-pair-v1",
+    "id": "tm:tiny-stay:formal-result:v1",
+    "pair_id": "tm-pair:tiny-stay:v1",
+    "property": "first_halt_head_and_complete_tape",
+    "evidence_status": "lean_theorem_with_recorded_kernel_replay",
+    "statement": "Both specified machines first halt after one transition on []; both heads are at zero. The left tape is zero everywhere; the right tape is one at zero and zero everywhere else. The complete tapes differ.",
+    "scope": "One exact pair and one exact input; all integer tape positions.",
+    "assumptions": [
+      "Machine.run uses the pinned extracted OpenAI family 376 definitions.",
+      "Lean's kernel and the standard axioms reported in the receipt are trusted."
+    ],
+    "limits": [
+      "This proves the two specified formal machines on exactly the input []; every integer tape position is covered.",
+      "It does not prove that Python, the JSON decoder, the compiler, or the native executable implements those definitions. Their saved agreement tests remain separate.",
+      "No general translation equivalence, other input, Busy Beaver optimality, or fluid-flow claim follows.",
+      "Offline receipt replay checks saved records and hashes; rerun the Lean command for a fresh elaboration and kernel check."
+    ],
+    "values": {
+      "input": [],
+      "left": {
+        "n_states_minus_one": 0,
+        "n_alphabet_minus_one": 1,
+        "initial_state": 0,
+        "halting_states": [],
+        "table": [
+          null,
+          null
+        ]
+      },
+      "right": {
+        "n_states_minus_one": 1,
+        "n_alphabet_minus_one": 1,
+        "initial_state": 0,
+        "halting_states": [
+          1
+        ],
+        "table": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          null,
+          null
+        ]
+      }
+    },
+    "conclusion": {
+      "initial_halted": [
+        false,
+        false
+      ],
+      "first_halt": [
+        1,
+        1
+      ],
+      "head": [
+        0,
+        0
+      ],
+      "tape": {
+        "quantifier": "every i : Int",
+        "left": [],
+        "right": [
+          [
+            0,
+            1
+          ]
+        ],
+        "unlisted_symbol": 0
+      },
+      "tapes_equal": false
+    },
+    "theorem": "TMOracle.TinyPair.exact_result",
+    "definitions": {
+      "left": "TMOracle.TinyPair.leftMachine",
+      "right": "TMOracle.TinyPair.rightMachine",
+      "input": "TMOracle.TinyPair.blankInput",
+      "run": "OAI.AlternatingNS.Machine.run"
+    },
+    "citations": [
+      {
+        "path": "lean/tm-pair/TinyPair.lean",
+        "declaration": "TMOracle.TinyPair.exact_result",
+        "sha256": "e36d6a20900bb2cd05dd9e9b9368568c2cc6b804a87ea3b4cd536059f4cc4d86"
+      },
+      {
+        "path": "lean/tm-pair/TinyPairBinding.lean",
+        "declarations": [
+          "TMOracle.TinyPairBinding.left_definition",
+          "TMOracle.TinyPairBinding.right_definition",
+          "TMOracle.TinyPairBinding.input_definition",
+          "TMOracle.TinyPairBinding.checked_result"
+        ],
+        "sha256": "f7c453e7589ee9978d4b333ec29a4e1f7c67cc7cc93e17576327859293ac6450"
+      },
+      {
+        "path": "evidence/tm-atlas-v1.json",
+        "json_pointer": "/pairs/0",
+        "sha256": "abd5fa917bbe2e1c5b62d928ef1d40b0ec46a08236e6e5ccf99b8731ebd51787"
+      },
+      {
+        "path": "lean/tm/source/manifest.json",
+        "sha256": "c5900aa1e3ab59a745ca2f68e1b749897d7de26a9de70b0fb0b7ecd55a397973"
+      }
+    ],
+    "separate_execution_evidence": {
+      "claim_id": "tm:tiny-stay:tape:v1",
+      "path": "evidence/tm-atlas-v1.json",
+      "status": "saved_native_execution_cross_checked_with_python",
+      "note": "The original snapshot's limits describe its original evidence. This supplemental formal proof does not change that snapshot or its native receipt."
+    }
+  },
+  "hash_encoding": "SHA-256 with CRLF normalized to LF",
+  "source_hashes": {
+    "evidence/tm-atlas-v1.json": "abd5fa917bbe2e1c5b62d928ef1d40b0ec46a08236e6e5ccf99b8731ebd51787",
+    "evidence/tm-pair-proof-v1/claim.json": "0b699f0a70f8d275640b4c3f329d9463ff799926b4ca0f930820df5195b8df2a",
+    "lean/tm/MachineChecks.lean": "e4e3e86fad42f0dedc1f6017795e406094f7190641ea4ebd1b9329e61da1e43c",
+    "lean/tm/MachineExtract.lean": "d841b79735f7aef28dbf95e771f9b7931c918067cb48ad1e8da57513cd8e6de9",
+    "lean/tm/check_source.py": "c7686d3cc96ed19e820d2bddbf7d38229adc37711be0e7719fddaba92f03e8fa",
+    "lean/tm/lake-manifest.json": "7590938a658deb95878a502af9d02133543b5e06b4fa9bb41607b451e3172be1",
+    "lean/tm/lakefile.toml": "8aeef81242c25d131f871c54ca6139f2b39e88a68a235d012e5c4c146b7dd18c",
+    "lean/tm/lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "lean/tm/source/manifest.json": "c5900aa1e3ab59a745ca2f68e1b749897d7de26a9de70b0fb0b7ecd55a397973",
+    "lean/tm-pair/TinyPair.lean": "e36d6a20900bb2cd05dd9e9b9368568c2cc6b804a87ea3b4cd536059f4cc4d86",
+    "lean/tm-pair/TinyPairBinding.lean": "f7c453e7589ee9978d4b333ec29a4e1f7c67cc7cc93e17576327859293ac6450",
+    "lean/tm-pair/lake-manifest.json": "b7bd21ad4ed7a1cf22a759567f1fe383af5c0dc2bc8f81803af160e41d9676f8",
+    "lean/tm-pair/lakefile.toml": "82a98b3594931ed9581351f84da63b19633934011f19ea8084124c4584b60a4f",
+    "lean/tm-pair/lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "scripts/tm_atlas.py": "fc2ec1430fe218263cf047165963e161ea1f17e02fc997628dccbaf34cea4cdc",
+    "scripts/tm_pair_proof.py": "c8b788220f992b55c2ebf5a0181c5a2603667f51248f92c1e0bfa195020fe914"
+  },
+  "stages": [
+    {
+      "name": "source",
+      "command": [
+        "{python}",
+        "lean/tm/check_source.py"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "duration_seconds": 0.026
+    },
+    {
+      "name": "version",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "cwd": "lean/tm-pair",
+      "exit_code": 0,
+      "duration_seconds": 2.788
+    },
+    {
+      "name": "cache",
+      "command": [
+        "lake",
+        "exe",
+        "cache",
+        "get",
+        "Mathlib.Logic.Function.Iterate",
+        "Mathlib.Data.Int.Basic"
+      ],
+      "cwd": "lean/tm-pair",
+      "exit_code": 0,
+      "duration_seconds": 3.302
+    },
+    {
+      "name": "build",
+      "command": [
+        "lake",
+        "build",
+        "TinyPair",
+        "TinyPairBinding"
+      ],
+      "cwd": "lean/tm-pair",
+      "exit_code": 0,
+      "duration_seconds": 0.525
+    },
+    {
+      "name": "axioms",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/Audit.lean"
+      ],
+      "cwd": "lean/tm-pair",
+      "exit_code": 0,
+      "duration_seconds": 1.598
+    },
+    {
+      "name": "kernel",
+      "command": [
+        "lake",
+        "env",
+        "leanchecker",
+        "MachineExtract",
+        "MachineChecks",
+        "TinyPair",
+        "TinyPairBinding"
+      ],
+      "cwd": "lean/tm-pair",
+      "exit_code": 0,
+      "duration_seconds": 3.676
+    },
+    {
+      "name": "unused-rule",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/unused-rule.lean"
+      ],
+      "cwd": "lean/tm-pair",
+      "exit_code": 1,
+      "duration_seconds": 0.916
+    },
+    {
+      "name": "different-input",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/different-input.lean"
+      ],
+      "cwd": "lean/tm-pair",
+      "exit_code": 1,
+      "duration_seconds": 0.89
+    },
+    {
+      "name": "unrelated-theorem",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/unrelated-theorem.lean"
+      ],
+      "cwd": "lean/tm-pair",
+      "exit_code": 1,
+      "duration_seconds": 0.865
+    },
+    {
+      "name": "changed-tape",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/changed-tape.lean"
+      ],
+      "cwd": "lean/tm-pair",
+      "exit_code": 1,
+      "duration_seconds": 0.993
+    },
+    {
+      "name": "sampled-cell-only",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/sampled-cell-only.lean"
+      ],
+      "cwd": "lean/tm-pair",
+      "exit_code": 1,
+      "duration_seconds": 0.836
+    },
+    {
+      "name": "halting-without-firstness",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/halting-without-firstness.lean"
+      ],
+      "cwd": "lean/tm-pair",
+      "exit_code": 1,
+      "duration_seconds": 0.848
+    },
+    {
+      "name": "sorry-admission",
+      "command": [
+        "lake",
+        "env",
+        "lean",
+        "{out}/sorry-admission.lean"
+      ],
+      "cwd": "lean/tm-pair",
+      "exit_code": 0,
+      "duration_seconds": 0.822
+    }
+  ],
+  "artifacts": {
+    "Audit.lean": "a3b74127546b27dbe29f2fa0a3d90b9d74eb873379b20209a2ea4c579979ae39",
+    "axioms.log": "af4d6515665d105e364fc5fec43300f8b078ce0035fa3a4a71512b59427bf8f2",
+    "build.log": "ef07b783af7c1ac877460171040b61b02bf6e5e06a2a834da534faf6db292d2f",
+    "cache.log": "e8057df2b9bd3a56bcbd48ccd3c18e4189a6cb61600f9879189f469a884b9d53",
+    "changed-tape.lean": "3ef733f54b65be93c2f87db3272ef75fef22fea8f0d11b9a00f7fcb45c978187",
+    "changed-tape.log": "5d733f049697812a576d10749b697fd62b3a415380d4f315abdad5df253d77f7",
+    "different-input.lean": "f6de6d9cba56ffb0a43b554e5c1624ccd9a91e2fd7cc66841bd018f27961f3f5",
+    "different-input.log": "eda1854b9b215bca4a7de8ad58dfc7bb327b5473815022e9f4e888f70e961e72",
+    "halting-without-firstness.lean": "b8d9143f6ea1e37f3f5b60660b85732fa0df85492f892d8fffb0d082ff076727",
+    "halting-without-firstness.log": "6124f2cbe7f3efde31613bf48038f43e3c79f2107b012461a8e00df9244bbdaa",
+    "kernel.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sampled-cell-only.lean": "61aa37237d1c8048d1c5b7b3293f02d704de601d4547d1545ff54f15b2d4cdfc",
+    "sampled-cell-only.log": "eeb76d4cda8ee12d095aad0581c9790a83a2e66c372f6f424769f0ce282953f3",
+    "sorry-admission.lean": "ad27e5e69216af6d7c160f77766d726469a32e6fb8ef4f330d3208524e0850f3",
+    "sorry-admission.log": "5094d939875b041e2d07603e55bd462a3a7988241081ffcdf4ff2b3ebb0861b5",
+    "source.log": "ffb42fc415a427808a6861a1f450c79dfcc66935c13f1a4531585a2b06587175",
+    "unrelated-theorem.lean": "66cf02d4fe351f29edd10867dd323d9f27d7a601906cda7ddf413a364965d978",
+    "unrelated-theorem.log": "d9a143fc6228ebc744e2b56046d3a0cef9e4ea31f25ae485a7b1456bf6dd2bd5",
+    "unused-rule.lean": "a591c365b17454afaac4bedcef62c4940c9e4de11b01e456a503fb13b553146f",
+    "unused-rule.log": "5e88aaa2db5f068431dd683c92d0a640c0d8a9f18b1f9c596b168319bf546332",
+    "version.log": "355a9a028f81641782d75d6e6b58dec70f29d2f61238a9e271690259d9bf5680"
+  },
+  "axioms": {
+    "TMOracle.TinyPair.exact_result": [
+      "propext",
+      "Quot.sound"
+    ],
+    "TMOracle.TinyPairBinding.left_definition": [],
+    "TMOracle.TinyPairBinding.right_definition": [
+      "propext"
+    ],
+    "TMOracle.TinyPairBinding.input_definition": [],
+    "TMOracle.TinyPairBinding.checked_result": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "limits": [
+    "This proves the two specified formal machines on exactly the input []; every integer tape position is covered.",
+    "It does not prove that Python, the JSON decoder, the compiler, or the native executable implements those definitions. Their saved agreement tests remain separate.",
+    "No general translation equivalence, other input, Busy Beaver optimality, or fluid-flow claim follows.",
+    "Offline receipt replay checks saved records and hashes; rerun the Lean command for a fresh elaboration and kernel check."
+  ],
+  "started_utc": "2026-10-19T07:28:39.723156+00:00",
+  "dependencies": {
+    "mathlib": {
+      "url": "https://github.com/leanprover-community/mathlib4.git",
+      "revision": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+      "working_tree_clean": true
+    },
+    "plausible": {
+      "url": "https://github.com/leanprover-community/plausible",
+      "revision": "118aa17ee84656b8bd727fef7c458ee8c833385c",
+      "working_tree_clean": true
+    },
+    "LeanSearchClient": {
+      "url": "https://github.com/leanprover-community/LeanSearchClient",
+      "revision": "ddf04cf3949fa556442341e87d47f9f6e6074707",
+      "working_tree_clean": true
+    },
+    "importGraph": {
+      "url": "https://github.com/leanprover-community/import-graph",
+      "revision": "e928b72544873815af278d38681b31c0293588e3",
+      "working_tree_clean": true
+    },
+    "proofwidgets": {
+      "url": "https://github.com/leanprover-community/ProofWidgets4",
+      "revision": "106ff4fafc74ef4ac99d81dbf3ab399118f497a5",
+      "working_tree_clean": true
+    },
+    "aesop": {
+      "url": "https://github.com/leanprover-community/aesop",
+      "revision": "355695d523e41d0554926416cba2a2b3544fbbc9",
+      "working_tree_clean": true
+    },
+    "Qq": {
+      "url": "https://github.com/leanprover-community/quote4",
+      "revision": "6a489d9af5d0c47e5b259e2e8bcdfc1811b5a259",
+      "working_tree_clean": true
+    },
+    "batteries": {
+      "url": "https://github.com/leanprover-community/batteries",
+      "revision": "f2effa3d803fda822b1f97b806c47cf2adfbcbc2",
+      "working_tree_clean": true
+    },
+    "Cli": {
+      "url": "https://github.com/leanprover/lean4-cli",
+      "revision": "e92c9f15fdfacc8536f31cfb3b7ad26c3c8cd204",
+      "working_tree_clean": true
+    }
+  },
+  "finished_utc": "2026-10-19T07:28:57.873388+00:00"
+}

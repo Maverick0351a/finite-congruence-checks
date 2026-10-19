@@ -1,0 +1,14 @@
+/home/shannonlab/fcc-tm-pair/repo/runs/tm-pair-final/halting-without-firstness.lean:22:2: error: Type mismatch
+  weak
+has type
+  TinyPair.leftMachine.isHalting (TinyPair.leftMachine.run TinyPair.blankInput 1) = true
+but is expected to have type
+  leftExpected.isHalting (leftExpected.run inputExpected 0) = false ∧
+    rightExpected.isHalting (rightExpected.run inputExpected 0) = false ∧
+      leftExpected.isHalting (leftExpected.run inputExpected 1) = true ∧
+        rightExpected.isHalting (rightExpected.run inputExpected 1) = true ∧
+          (leftExpected.run inputExpected 1).head = 0 ∧
+            (rightExpected.run inputExpected 1).head = 0 ∧
+              (∀ (i : ℤ), (leftExpected.run inputExpected 1).tape i = 0) ∧
+                (∀ (i : ℤ), (rightExpected.run inputExpected 1).tape i = if i = 0 then 1 else 0) ∧
+                  (leftExpected.run inputExpected 1).tape ≠ (rightExpected.run inputExpected 1).tape

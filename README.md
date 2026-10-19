@@ -91,6 +91,12 @@ python scripts/query_context.py compare
 python scripts/query_context.py explain tm:tiny-stay:tape:v1
 ```
 
+The Turing export includes a [proof for the exact pair](docs/TM_PAIR_PROOF.md):
+both machines first halt after one step, both heads stay at zero, and their
+complete tapes differ. Reproduce the Lean proof and its atlas binding with
+`python scripts/tm_pair_proof.py run --out runs/tm-pair-fresh` in an environment
+with the pinned Lean toolchain. Python/native agreement remains separate.
+
 Read the [query contract](docs/ATLAS_QUERY.md),
 [agent retrieval evaluation](docs/ATLAS_QUERY_EVALUATION.md), and
 [infrastructure direction](docs/INFRASTRUCTURE.md). These interfaces are an
