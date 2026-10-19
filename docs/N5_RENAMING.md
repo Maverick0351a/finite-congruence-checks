@@ -122,8 +122,7 @@ external Lean packages. Use Linux, macOS, or WSL for the full run.
 ```sh
 git clone https://github.com/Maverick0351a/finite-congruence-checks.git
 cd finite-congruence-checks
-# While the transfer PR is open:
-git checkout codex/n5-renaming-transfer
+git checkout main
 git rev-parse HEAD
 python scripts/n5_transfer.py run --out runs/n5-renaming-fresh
 python scripts/n5_transfer.py replay --out runs/n5-renaming-fresh

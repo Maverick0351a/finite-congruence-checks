@@ -16,6 +16,14 @@ The [Cytoscape construction map](ATLAS_MAP.md) connects entries to their abstrac
 shapes and opens the same claim records. Its pinned library and license are
 included locally; retain the complete `space/vendor/` directory when publishing.
 
+The [N5 proof-reuse panel](N5_PROOF_REUSE.md) at `context-n5.html#reuse` uses
+two exact query envelopes and a separate generated presentation record. Publish
+`n5-reuse.js`, `n5-reuse-data.js`, `n5-reuse.json`, `n5-reuse-reverse.json`, and
+`n5-reuse-rotate.json` together with the context page and stylesheet. The source
+anchor binds every linked proof and receipt to an immutable Git revision.
+The browser demonstrates finite calculations and displays saved proof evidence;
+it does not run Lean or establish an agent benefit.
+
 ## Run and check locally
 
 Python 3.10+ builds the data using only the standard library. Node.js 18+ runs
@@ -34,6 +42,8 @@ node scripts/check_atlas_ui.cjs
 node scripts/check_atlas_map.cjs
 python scripts/query_atlas.py build-tm --check
 node scripts/check_tm_atlas_ui.cjs
+python scripts/build_n5_reuse.py --check
+node scripts/check_n5_reuse.cjs
 python -m http.server 8765 --bind 127.0.0.1 --directory space
 ```
 

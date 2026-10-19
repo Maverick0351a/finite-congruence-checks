@@ -62,8 +62,7 @@ Use Linux, macOS, or WSL for the full Lean run. No API key or model is needed.
 ```sh
 git clone https://github.com/Maverick0351a/finite-congruence-checks.git
 cd finite-congruence-checks
-# While PR #11 is open, select its reviewed branch:
-git checkout codex/n5-source-context
+git checkout main
 python scripts/tm_pair_proof.py run --out runs/tm-pair-fresh
 python scripts/tm_pair_proof.py replay --out runs/tm-pair-fresh
 python scripts/query_context.py explain tm:tiny-stay:tape:v1 --out proposed-tm.json

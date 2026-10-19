@@ -42,6 +42,11 @@ lets readers test all 15 partitions, and links the original question, comparator
 target, completed proof, and concrete Lean bridge. Its source map labels each
 relationship. The atlas's N5 entry has different operation tables; the story
 shows the checked grouping correspondence without transferring formal evidence.
+Its proof-reuse panel adds two explicitly proved label transformations, including
+one that keeps the rule names. Follow corresponding objects and groups, inspect
+the exact Lean theorem, and distinguish a failed grouping, a wrong rule mapping,
+and an unsupported proof reference. The downloads are the same records returned
+by the local query interface; browsing the page does not run Lean.
 Technical entry details expose individual claim records with assumptions and
 limits. A [local query tool](https://github.com/Maverick0351a/finite-congruence-checks/blob/main/docs/ATLAS_QUERY.md)
 reads the same versioned records for research applications and agents.

@@ -1,7 +1,7 @@
 # Query exact claims and their evidence
 
 The context interface supports two exact N5 construction claims, their
-comparison, one proved N5 renaming, and one existing Turing-machine tape claim.
+comparison, two proved N5 renamings, and one existing Turing-machine tape claim.
 It reads the website's records and separately identified proof supplements,
 validates the relevant saved evidence, and returns JSON.
 It runs locally using the Python standard library. No model, credentials,
@@ -13,6 +13,7 @@ python scripts/query_context.py explain construction:n4-E16709
 python scripts/query_context.py compare
 python scripts/query_context.py explain tm:tiny-stay:tape:v1
 python scripts/query_context.py explain context:family-206:saved-n5:renaming:v1
+python scripts/query_context.py explain context:family-206:saved-n5:reverse-labels:v1
 ```
 
 | Claim ID | Construction ID | Evidence attached here |
@@ -21,6 +22,7 @@ python scripts/query_context.py explain context:family-206:saved-n5:renaming:v1
 | `construction:n4-E16709` | `atlas:n4-E16709:displayed-operations:v1` | Exhaustive computation with an independent finite check |
 | `tm:tiny-stay:tape:v1` | `tm-pair:tiny-stay:v1` | Original execution evidence plus a separately identified exact-pair Lean proof |
 | `context:family-206:saved-n5:renaming:v1` | `saved:family-206:n5:rotate-and-swap:v1` | Complete classification, inclusion order, and distinctness transported through a proved carrier bijection and rule permutation |
+| `context:family-206:saved-n5:reverse-labels:v1` | `saved:family-206:n5:reverse-labels:v1` | The same three properties transported by reversing object labels while preserving rule order |
 
 `n4-E16709` identifies a relation-family atlas entry. Its construction ID above
 specifically names the displayed operation tables at this version. A lattice
@@ -63,10 +65,13 @@ under **this bijection**; the interface makes no claim about algebra
 isomorphism under all possible permutations. It does not transport the saved
 Lean proof to the other operation list.
 
-## One legitimate N5 transfer
+## Two legitimate N5 transfers
 
-The [renaming example](N5_RENAMING.md) has its own construction and claim IDs.
-Its record includes both operation tables and grouping families, both object-map
+The [rotation example](N5_RENAMING.md) and [reverse-label example](N5_PROOF_REUSE.md)
+have separate construction and claim IDs. Rotation uses object map `[1,2,3,0]`
+and swaps the rules with index map `[1,0]`. Reversal uses `[3,2,1,0]` and keeps
+rule order with index map `[0,1]`.
+Each record includes both operation tables and grouping families, both object-map
 directions, the target-to-source rule index map, and the grouping index map.
 These mapping fields are needed to express the new transfer claim. The query
 envelope and existing claim records retain their meaning.

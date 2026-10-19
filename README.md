@@ -97,13 +97,16 @@ complete tapes differ. Reproduce the Lean proof and its atlas binding with
 `python scripts/tm_pair_proof.py run --out runs/tm-pair-fresh` in an environment
 with the pinned Lean toolchain. Python/native agreement remains separate.
 
-One [proved N5 renaming](docs/N5_RENAMING.md) demonstrates justified reuse:
-rotate the object labels and swap the rule symbols, then transport the complete
-classification and inclusion order. Its separate record binds the mapping and
-both constructions to the Lean result:
+The [proof-reuse guide](docs/N5_PROOF_REUSE.md) shows two justified transformations:
+reverse the object labels while keeping rule names, or
+[rotate the labels and swap rule names](docs/N5_RENAMING.md). Both transport the
+complete classification, inclusion order, and distinctness. Open the N5 lesson's
+proof-reuse panel to follow a valid mapping and three deliberate mistakes.
+Each construction has its own exact proof and downloadable query record:
 
 ```sh
 python scripts/query_context.py explain context:family-206:saved-n5:renaming:v1
+python scripts/query_context.py explain context:family-206:saved-n5:reverse-labels:v1
 ```
 
 Read the [query contract](docs/ATLAS_QUERY.md),

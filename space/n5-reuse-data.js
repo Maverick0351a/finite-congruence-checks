@@ -1,0 +1,726 @@
+window.N5_REUSE = {
+  "schema_version": 1,
+  "id": "context:family-206:proof-reuse-demo:v1",
+  "source_revision": "3b75f858563b8c7d44a083a5be99ca9d41705e06",
+  "default_transfer": "reverse",
+  "transfers": [
+    {
+      "key": "reverse",
+      "title": "Reverse the labels; keep the rule names",
+      "description": "Exchange 0 with 3 and 1 with 2. Both rules keep their names and are transported with the objects.",
+      "record": {
+        "schema_version": 1,
+        "namespace": "finite-congruence-context/query-v1",
+        "status": "ok",
+        "command": "explain",
+        "context": {
+          "id": "context:n5-reverse-labels:v1",
+          "path": "evidence/n5-reverse-labels-v1/claim.json",
+          "sha256": "c35fa626982a399d3f1f36365f561850a46e360a3e01140b7bcb115ef12956ec"
+        },
+        "claim": {
+          "schema_version": 1,
+          "namespace": "finite-congruence-atlas/n5-renaming-v1",
+          "id": "context:family-206:saved-n5:reverse-labels:v1",
+          "kind": "proved_transport",
+          "construction_id": "saved:family-206:n5:reverse-labels:v1",
+          "source_claim_id": "context:family-206:saved-n5:classification:v1",
+          "source_construction_id": "saved:family-206:n5:v1",
+          "evidence_status": "lean_proof_with_recorded_kernel_replay",
+          "statement": "Reversing the four object labels while preserving the two rule names transports precisely the saved N5 congruences, preserving their inclusion order and distinctness.",
+          "scope": "One recorded carrier bijection with identity rule correspondence of the exact saved N5 algebra.",
+          "assumptions": [
+            "The maps forward and backward are inverse bijections on Fin 4.",
+            "For every target rule j and source object x, target[j](forward(x)) = forward(source[j](x)).",
+            "Groupings are equivalence relations; compatibility uses the existing IsPropCongruence definition.",
+            "Lean's kernel and the standard axioms listed in the receipt are trusted."
+          ],
+          "limits": [
+            "This record instantiates one proved bijection on Fin 4 with the identity permutation of the two unary rule symbols. It preserves each rule name.",
+            "The result covers all equivalence relations for the exact displayed source and target operations; it does not transfer operation minimality, a graph certificate, or a claim about a different atlas construction.",
+            "The Python exporter and offline record comparison are not proved implementations. Rerun Lean to check the generated mathematical type; saved hashes and receipts alone are not proofs or authenticated attestations.",
+            "No agent performance benefit is established; the model benchmark remains paused."
+          ],
+          "values": {
+            "carrier": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "source": {
+              "operations": [
+                [
+                  1,
+                  0,
+                  3,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1
+                ]
+              ],
+              "groupings": [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "target": {
+              "operations": [
+                [
+                  1,
+                  0,
+                  3,
+                  2
+                ],
+                [
+                  2,
+                  3,
+                  2,
+                  3
+                ]
+              ],
+              "groupings": [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                [
+                  0,
+                  1,
+                  2,
+                  2
+                ],
+                [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            }
+          },
+          "mapping": {
+            "object_forward_source_to_target": [
+              3,
+              2,
+              1,
+              0
+            ],
+            "object_backward_target_to_source": [
+              3,
+              2,
+              1,
+              0
+            ],
+            "rule_target_to_source": [
+              0,
+              1
+            ],
+            "grouping_source_to_target": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "conclusion": {
+            "quantifier": "every r : Fin 4 -> Fin 4 -> Prop",
+            "predicate": "IsPropCongruence target[0] target[1] r iff r is one of the five displayed target groupings",
+            "distinct_groupings": 5,
+            "inclusion_order_preserved": true
+          },
+          "theorem": "FiniteCongruenceChecks.N5ReverseLabels.all_relations",
+          "applicable_lemmas": [
+            {
+              "theorem": "FiniteCongruenceChecks.Renaming.congruence_iff",
+              "role": "compatibility_transport"
+            },
+            {
+              "theorem": "FiniteCongruenceChecks.N5.all_relations",
+              "role": "source_classification"
+            },
+            {
+              "theorem": "FiniteCongruenceChecks.N5ReverseLabels.all_relations",
+              "role": "target_classification"
+            },
+            {
+              "theorem": "FiniteCongruenceChecks.N5ReverseLabels.order_exact",
+              "role": "inclusion_order"
+            },
+            {
+              "theorem": "FiniteCongruenceChecks.N5ReverseLabels.theta_injective",
+              "role": "distinctness"
+            }
+          ],
+          "citations": [
+            {
+              "path": "lean/CertificateData.lean",
+              "sha256": "1db35c8b640f0ea0d73ea12cd14e5e1b4b3eef588d3eb5ed66fbec0be37258f3"
+            },
+            {
+              "path": "lean/FiniteCongruenceChecks.lean",
+              "sha256": "845615fe7be190dc733762a1b95828cffb4e09b6d3b6b0e334211000d93422e8"
+            },
+            {
+              "path": "lean/renaming/Renaming.lean",
+              "sha256": "ca69ad8d431eb1855eb83d20f523f6148e61216bfec5008aa3af336aba85a200"
+            },
+            {
+              "path": "lean/renaming_reverse/N5ReverseLabels.lean",
+              "sha256": "4bb1e0452086ce3b179f51d09f08830e045c2d16de77bbb4bcec88867fd93014"
+            },
+            {
+              "path": "lean/renaming_reverse/N5ReverseLabelsBinding.lean",
+              "sha256": "329d61f1d336b518d4d0e0c57a384349b143c491ed3ad09907ef77c7cd5d17e7"
+            }
+          ],
+          "source_evidence": {
+            "path": "lean/evidence/bridge-run/result.json",
+            "sha256": "29666ea7b9c28a6a643dcaeef3666f692c0e062e775d5a5eda9b5986f04883a8",
+            "role": "separate saved source proof receipt"
+          },
+          "proof_evidence": {
+            "path": "evidence/n5-reverse-labels-v1/summary.json",
+            "sha256": "b66d08265c80ab9727d7c1292d006164124788220168d2d144bbdafcc798ad00",
+            "axioms": {
+              "FiniteCongruenceChecks.Renaming.congruence_iff": [],
+              "FiniteCongruenceChecks.Renaming.round_trip": [
+                "propext",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.Renaming.inclusion_iff": [],
+              "FiniteCongruenceChecks.N5ReverseLabels.transferred_congruence": [
+                "propext"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabels.all_relations": [
+                "propext",
+                "Classical.choice",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabels.order_exact": [
+                "propext"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabels.theta_injective": [
+                "propext"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabelsBinding.forward_exact": [
+                "propext",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabelsBinding.backward_exact": [
+                "propext",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabelsBinding.inverse_laws": [
+                "propext"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabelsBinding.source_op1": [
+                "propext",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabelsBinding.source_op2": [
+                "propext",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabelsBinding.target_op1": [
+                "propext",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabelsBinding.target_op2": [
+                "propext",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabelsBinding.source_groups": [
+                "propext"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabelsBinding.target_groups": [
+                "propext"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabelsBinding.rule_correspondence": [
+                "propext"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabelsBinding.grouping_correspondence": [
+                "propext"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabelsBinding.checked_classification": [
+                "propext",
+                "Classical.choice",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabelsBinding.checked_order": [
+                "propext",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabelsBinding.checked_distinct": [
+                "propext",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5ReverseLabelsBinding.conclusion_exact": []
+            },
+            "validation": "saved receipt replay; no Lean execution during query"
+          }
+        },
+        "binding_method": "curated_exact_binding",
+        "validation_limit": "Exact registered context matching only. This does not elaborate Lean, infer theorem applicability, verify arbitrary claims, or establish that an agent preserved meaning."
+      },
+      "download": "n5-reuse-reverse.json",
+      "links": {
+        "construction": "https://github.com/Maverick0351a/finite-congruence-checks/blob/3b75f858563b8c7d44a083a5be99ca9d41705e06/lean/FiniteCongruenceChecks.lean",
+        "claim": "https://github.com/Maverick0351a/finite-congruence-checks/blob/3b75f858563b8c7d44a083a5be99ca9d41705e06/evidence/n5-reverse-labels-v1/claim.json",
+        "proof": "https://github.com/Maverick0351a/finite-congruence-checks/blob/3b75f858563b8c7d44a083a5be99ca9d41705e06/lean/renaming_reverse/N5ReverseLabels.lean",
+        "receipt": "https://github.com/Maverick0351a/finite-congruence-checks/blob/3b75f858563b8c7d44a083a5be99ca9d41705e06/evidence/n5-reverse-labels-v1/summary.json"
+      }
+    },
+    {
+      "key": "rotate",
+      "title": "Rotate the labels; swap the rule names",
+      "description": "Send 0 to 1, 1 to 2, 2 to 3, and 3 to 0. Target f corresponds to source g, and target g to source f.",
+      "record": {
+        "schema_version": 1,
+        "namespace": "finite-congruence-context/query-v1",
+        "status": "ok",
+        "command": "explain",
+        "context": {
+          "id": "context:n5-renaming:v1",
+          "path": "evidence/n5-renaming-v1/claim.json",
+          "sha256": "5f0b37d4605e7541aaa8ff4e9c8c443e7f1919be83fc12c048e9369bd6218313"
+        },
+        "claim": {
+          "schema_version": 1,
+          "namespace": "finite-congruence-atlas/n5-renaming-v1",
+          "id": "context:family-206:saved-n5:renaming:v1",
+          "kind": "proved_transport",
+          "construction_id": "saved:family-206:n5:rotate-and-swap:v1",
+          "source_claim_id": "context:family-206:saved-n5:classification:v1",
+          "source_construction_id": "saved:family-206:n5:v1",
+          "evidence_status": "lean_proof_with_recorded_kernel_replay",
+          "statement": "Rotating the four object labels and swapping the two rule symbols transports precisely the saved N5 congruences, preserving their inclusion order and distinctness.",
+          "scope": "One recorded carrier bijection and rule permutation of the exact saved N5 algebra.",
+          "assumptions": [
+            "The maps forward and backward are inverse bijections on Fin 4.",
+            "For every target rule j and source object x, target[j](forward(x)) = forward(source[target_to_source[j]](x)).",
+            "Groupings are equivalence relations; compatibility uses the existing IsPropCongruence definition.",
+            "Lean's kernel and the standard axioms listed in the receipt are trusted."
+          ],
+          "limits": [
+            "This record instantiates a proved bijection on Fin 4 and a permutation of the two unary rule symbols. It is not a fixed-signature isomorphism that preserves each original rule name.",
+            "The result covers all equivalence relations for the exact displayed source and target operations; it does not transfer operation minimality, a graph certificate, or a claim about a different atlas construction.",
+            "The Python exporter and offline record comparison are not proved implementations. Rerun Lean to check the generated mathematical type; saved hashes and receipts alone are not proofs or authenticated attestations.",
+            "No agent performance benefit is established; the model benchmark remains paused."
+          ],
+          "values": {
+            "carrier": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "source": {
+              "operations": [
+                [
+                  1,
+                  0,
+                  3,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1
+                ]
+              ],
+              "groupings": [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  0,
+                  1,
+                  1
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            },
+            "target": {
+              "operations": [
+                [
+                  2,
+                  1,
+                  2,
+                  1
+                ],
+                [
+                  3,
+                  2,
+                  1,
+                  0
+                ]
+              ],
+              "groupings": [
+                [
+                  0,
+                  1,
+                  2,
+                  3
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  2
+                ],
+                [
+                  0,
+                  1,
+                  1,
+                  0
+                ],
+                [
+                  0,
+                  1,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              ]
+            }
+          },
+          "mapping": {
+            "object_forward_source_to_target": [
+              1,
+              2,
+              3,
+              0
+            ],
+            "object_backward_target_to_source": [
+              3,
+              0,
+              1,
+              2
+            ],
+            "rule_target_to_source": [
+              1,
+              0
+            ],
+            "grouping_source_to_target": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "conclusion": {
+            "quantifier": "every r : Fin 4 -> Fin 4 -> Prop",
+            "predicate": "IsPropCongruence target[0] target[1] r iff r is one of the five displayed target groupings",
+            "distinct_groupings": 5,
+            "inclusion_order_preserved": true
+          },
+          "theorem": "FiniteCongruenceChecks.N5Renaming.all_relations",
+          "applicable_lemmas": [
+            {
+              "theorem": "FiniteCongruenceChecks.Renaming.congruence_iff",
+              "role": "compatibility_transport"
+            },
+            {
+              "theorem": "FiniteCongruenceChecks.Renaming.swap_rules",
+              "role": "signature_permutation"
+            },
+            {
+              "theorem": "FiniteCongruenceChecks.N5.all_relations",
+              "role": "source_classification"
+            },
+            {
+              "theorem": "FiniteCongruenceChecks.N5Renaming.all_relations",
+              "role": "target_classification"
+            },
+            {
+              "theorem": "FiniteCongruenceChecks.N5Renaming.order_exact",
+              "role": "inclusion_order"
+            },
+            {
+              "theorem": "FiniteCongruenceChecks.N5Renaming.theta_injective",
+              "role": "distinctness"
+            }
+          ],
+          "citations": [
+            {
+              "path": "lean/CertificateData.lean",
+              "sha256": "1db35c8b640f0ea0d73ea12cd14e5e1b4b3eef588d3eb5ed66fbec0be37258f3"
+            },
+            {
+              "path": "lean/FiniteCongruenceChecks.lean",
+              "sha256": "845615fe7be190dc733762a1b95828cffb4e09b6d3b6b0e334211000d93422e8"
+            },
+            {
+              "path": "lean/renaming/Renaming.lean",
+              "sha256": "ca69ad8d431eb1855eb83d20f523f6148e61216bfec5008aa3af336aba85a200"
+            },
+            {
+              "path": "lean/renaming/N5Renaming.lean",
+              "sha256": "3b3142ec9d9d9147b797449dc1fcaa4a74ebd2372b97c26d4f770474259378e7"
+            },
+            {
+              "path": "lean/renaming/N5RenamingBinding.lean",
+              "sha256": "fef7fff2f619d90b1a5cd13ecfda5a8ab020141ffee147f293c9c0f831e61c61"
+            }
+          ],
+          "source_evidence": {
+            "path": "lean/evidence/bridge-run/result.json",
+            "sha256": "29666ea7b9c28a6a643dcaeef3666f692c0e062e775d5a5eda9b5986f04883a8",
+            "role": "separate saved source proof receipt"
+          },
+          "proof_evidence": {
+            "path": "evidence/n5-renaming-v1/summary.json",
+            "sha256": "e3b5327d0a3005a9927e6f2d87dc8c5e27d8b46727577b66d6dfab68c7365df1",
+            "axioms": {
+              "FiniteCongruenceChecks.Renaming.congruence_iff": [],
+              "FiniteCongruenceChecks.Renaming.round_trip": [
+                "propext",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.Renaming.inclusion_iff": [],
+              "FiniteCongruenceChecks.Renaming.swap_rules": [],
+              "FiniteCongruenceChecks.N5Renaming.transferred_congruence": [
+                "propext"
+              ],
+              "FiniteCongruenceChecks.N5Renaming.all_relations": [
+                "propext",
+                "Classical.choice",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5Renaming.order_exact": [
+                "propext"
+              ],
+              "FiniteCongruenceChecks.N5Renaming.theta_injective": [
+                "propext"
+              ],
+              "FiniteCongruenceChecks.N5RenamingBinding.forward_exact": [
+                "propext",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5RenamingBinding.backward_exact": [
+                "propext",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5RenamingBinding.inverse_laws": [
+                "propext"
+              ],
+              "FiniteCongruenceChecks.N5RenamingBinding.source_op1": [
+                "propext",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5RenamingBinding.source_op2": [
+                "propext",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5RenamingBinding.target_op1": [
+                "propext",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5RenamingBinding.target_op2": [
+                "propext",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5RenamingBinding.source_groups": [
+                "propext"
+              ],
+              "FiniteCongruenceChecks.N5RenamingBinding.target_groups": [
+                "propext"
+              ],
+              "FiniteCongruenceChecks.N5RenamingBinding.rule_correspondence": [
+                "propext"
+              ],
+              "FiniteCongruenceChecks.N5RenamingBinding.grouping_correspondence": [
+                "propext"
+              ],
+              "FiniteCongruenceChecks.N5RenamingBinding.checked_classification": [
+                "propext",
+                "Classical.choice",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5RenamingBinding.checked_order": [
+                "propext",
+                "Quot.sound"
+              ],
+              "FiniteCongruenceChecks.N5RenamingBinding.checked_distinct": [
+                "propext",
+                "Quot.sound"
+              ]
+            },
+            "validation": "saved receipt replay; no Lean execution during query"
+          }
+        },
+        "binding_method": "curated_exact_binding",
+        "validation_limit": "Exact registered context matching only. This does not elaborate Lean, infer theorem applicability, verify arbitrary claims, or establish that an agent preserved meaning."
+      },
+      "download": "n5-reuse-rotate.json",
+      "links": {
+        "construction": "https://github.com/Maverick0351a/finite-congruence-checks/blob/3b75f858563b8c7d44a083a5be99ca9d41705e06/lean/FiniteCongruenceChecks.lean",
+        "claim": "https://github.com/Maverick0351a/finite-congruence-checks/blob/3b75f858563b8c7d44a083a5be99ca9d41705e06/evidence/n5-renaming-v1/claim.json",
+        "proof": "https://github.com/Maverick0351a/finite-congruence-checks/blob/3b75f858563b8c7d44a083a5be99ca9d41705e06/lean/renaming/N5Renaming.lean",
+        "receipt": "https://github.com/Maverick0351a/finite-congruence-checks/blob/3b75f858563b8c7d44a083a5be99ca9d41705e06/evidence/n5-renaming-v1/summary.json"
+      }
+    }
+  ],
+  "controls": [
+    {
+      "id": "grouping-failure",
+      "title": "Rename only the grouping",
+      "category": "grouping_failure",
+      "transfer": "reverse",
+      "partition": [
+        0,
+        1,
+        2,
+        2
+      ],
+      "operations": [
+        [
+          1,
+          0,
+          3,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "witness": {
+        "rule": 1,
+        "pair": [
+          2,
+          3
+        ],
+        "outputs": [
+          0,
+          1
+        ]
+      },
+      "explanation": "Objects 2 and 3 are together, but the original g sends them to 0 and 1, which are separate. This particular grouping fails for the unchanged rules."
+    },
+    {
+      "id": "correspondence-failure",
+      "title": "Forget the rule-name swap",
+      "category": "correspondence_failure",
+      "transfer": "rotate",
+      "rule_map": [
+        0,
+        1
+      ],
+      "witness": {
+        "rule": 0,
+        "source_object": 0,
+        "target_object": 1,
+        "target_output": 1,
+        "expected_output": 2
+      },
+      "family_unchanged": true,
+      "explanation": "The target rules and its five groupings stay unchanged. Declaring the wrong rule correspondence breaks the mapping equation; it does not make the target cease to have N5 groupings."
+    },
+    {
+      "id": "unsupported-evidence",
+      "title": "Cite the B3 theorem instead",
+      "category": "unsupported_evidence",
+      "transfer": "reverse",
+      "proposed_theorem": "FiniteCongruenceChecks.B3.all_relations",
+      "validation": {
+        "schema_version": 1,
+        "namespace": "finite-congruence-context/query-v1",
+        "status": "unsupported",
+        "command": "check",
+        "candidate_claim_id": "context:family-206:saved-n5:reverse-labels:v1",
+        "candidate_canonical_sha256": "15077cb0429f2d150661f141d5d4ea8e96a9f8f2a1679971ba6f2858872aa7f7",
+        "reason": "record_does_not_match_registered_binding",
+        "mismatch_paths": [
+          "/claim/theorem"
+        ],
+        "validation_limit": "Exact registered context matching only. This does not elaborate Lean, infer theorem applicability, verify arbitrary claims, or establish that an agent preserved meaning."
+      },
+      "explanation": "The construction is unchanged, but this registered claim is not supported by the substituted B3 theorem. Record rejection alone does not show the mathematical conclusion is false."
+    }
+  ],
+  "limits": [
+    "These controls are deliberately constructed examples, not observed agent mistakes.",
+    "The browser displays finite calculations and saved evidence; it does not run Lean.",
+    "The local query checker matches exact registered records; it is not a general theorem-applicability decision procedure.",
+    "No improvement in agent reasoning is established by this demo."
+  ]
+};

@@ -29,6 +29,8 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0 # Verify immutable proof-demo links against their Git blobs.
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: ${{ matrix.python }}
@@ -81,7 +83,11 @@ jobs:
           python -m unittest discover -s scripts -p 'test_context_query.py' -v
           python -m unittest discover -s scripts -p 'test_context_tm.py' -v
           python -m unittest discover -s scripts -p 'test_n5_transfer.py' -v
+          python -m unittest discover -s scripts -p 'test_n5_reverse_transfer.py' -v
+          python scripts/build_n5_reuse.py --check
+          python -m unittest discover -s scripts -p 'test_n5_reuse.py' -v
           node scripts/check_n5_context.cjs
+          node scripts/check_n5_reuse.cjs
       - name: Preserve reproduction evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
@@ -241,12 +247,18 @@ jobs:
         run: python scripts/n5_transfer.py run --out runs/n5-renaming
       - name: Replay the new proof record
         run: python scripts/n5_transfer.py replay --out runs/n5-renaming
+      - name: Prove the reverse-label transfer and reject mismatched bindings
+        run: python scripts/n5_reverse_transfer.py run --out runs/n5-reverse-labels
+      - name: Replay the reverse-label proof record
+        run: python scripts/n5_reverse_transfer.py replay --out runs/n5-reverse-labels
       - name: Preserve proof and binding evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: n5-renaming-proof
-          path: runs/n5-renaming/
+          path: |
+            runs/n5-renaming/
+            runs/n5-reverse-labels/
           retention-days: 90
 
   upstream-bridge:

@@ -17,10 +17,11 @@ import build_n5_context as context
 import query_atlas
 import tm_context
 import n5_transfer
+import n5_reverse_transfer
 
 ROOT = context.ROOT
 N5_CLAIM_IDS = (context.SAVED_CLAIM_ID, context.ATLAS_CLAIM_ID)
-CLAIM_IDS = (*N5_CLAIM_IDS, tm_context.CLAIM_ID, n5_transfer.CLAIM_ID)
+CLAIM_IDS = (*N5_CLAIM_IDS, tm_context.CLAIM_ID, n5_transfer.CLAIM_ID, n5_reverse_transfer.CLAIM_ID)
 NAMESPACE = "finite-congruence-context/query-v1"
 CHECK_LIMIT = ("Exact registered context matching only. This does not elaborate Lean, "
                "infer theorem applicability, verify arbitrary claims, or establish that an agent preserved meaning.")
@@ -74,6 +75,9 @@ def explain_claim(identifier, data=None, root=ROOT):
         return explanation(source, claim)
     if identifier == n5_transfer.CLAIM_ID:
         source, claim = n5_transfer.explain(root)
+        return explanation(source, claim)
+    if identifier == n5_reverse_transfer.CLAIM_ID:
+        source, claim = n5_reverse_transfer.explain(root)
         return explanation(source, claim)
     data = load_context(root) if data is None else data
     if identifier == context.SAVED_CLAIM_ID:
