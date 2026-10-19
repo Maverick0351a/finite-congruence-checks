@@ -410,3 +410,6 @@ and Alive2 sources, and recorded a scoped next milestone in
 `docs/CHECKER_FOUNDATION.md`. The plan distinguishes preservation of one grouping
 from exact-family verification and search completeness. Its proposed 16-bit
 pilot is not an implemented checker or a completed binary-verification result.
+Independent review of this plan confirmed its encoding and assurance boundaries;
+clarified that existing N5/B3 graph proofs do not transfer to atlas entries merely
+because they share a shape name.

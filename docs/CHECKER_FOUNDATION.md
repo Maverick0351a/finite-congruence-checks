@@ -1,8 +1,9 @@
 # From mathematical certificates to checked executables
 
-Status: proposed next milestone. The existing atlas has computational checks
-and concrete Lean proofs for the saved N5/B3 examples. It does not yet have a
-general executable certificate-checker theorem or a machine-code proof.
+Status: proposed next milestone. The project has computational atlas checks and
+separate concrete Lean proofs for the exact saved N5/B3 graphs. A shared shape
+name does not transfer those proofs to an atlas entry. The project does not yet
+have a general executable certificate-checker theorem or a machine-code proof.
 
 ## The mathematical question
 
