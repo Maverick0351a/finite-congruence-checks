@@ -82,6 +82,14 @@ python scripts/query_atlas.py show n4-E16403
 python scripts/query_atlas.py claims --entry n4-E16403
 ```
 
+Explain an exact N5 claim or compare its two constructions with the
+[source-context interface](docs/CONTEXT_QUERY.md):
+
+```sh
+python scripts/query_context.py explain context:family-206:saved-n5:classification:v1
+python scripts/query_context.py compare
+```
+
 Read the [query contract](docs/ATLAS_QUERY.md),
 [agent retrieval evaluation](docs/ATLAS_QUERY_EVALUATION.md), and
 [infrastructure direction](docs/INFRASTRUCTURE.md). These interfaces are an

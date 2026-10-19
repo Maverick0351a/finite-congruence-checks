@@ -13,6 +13,7 @@ window.N5_CONTEXT = {
     {
       "id": "context:family-206:saved-n5:classification:v1",
       "kind": "exact_construction",
+      "construction_id": "saved:family-206:n5:v1",
       "statement": "On {0,1,2,3}, f=(1,0,3,2) and g=(0,1,0,1) have exactly the five displayed congruences, ordered as N5.",
       "evidence_status": "lean_proof_with_recorded_kernel_replay",
       "scope": "The exact saved four-point, two-operation algebra and its saved coloring.",
@@ -96,6 +97,54 @@ window.N5_CONTEXT = {
           }
         ]
       },
+      "predicate": "For every equivalence relation r on {0,1,2,3}, r is preserved by both displayed operations if and only if it equals one of the five displayed groupings. Their inclusion order is the saved N5 order, and they are pairwise distinct.",
+      "applicable_lemmas": [
+        {
+          "theorem": "FiniteCongruenceChecks.N5.all_relations",
+          "role": "complete_classification",
+          "statement": "theorem all_relations (r : V → V → Prop) : IsPropCongruence op1 op2 r ↔ ∃ a, ∀ x y, r x y ↔ theta a x y = true",
+          "construction_id": "saved:family-206:n5:v1",
+          "applicability": "curated_exact_binding",
+          "citations": [
+            {
+              "path": "lean/FiniteCongruenceChecks.lean",
+              "sha256": "845615fe7be190dc733762a1b95828cffb4e09b6d3b6b0e334211000d93422e8",
+              "url": "https://github.com/Maverick0351a/finite-congruence-checks/blob/cddf9cf1c2d06df36bc516fb0b461daf6365920e/lean/FiniteCongruenceChecks.lean#L159",
+              "line": 159
+            }
+          ]
+        },
+        {
+          "theorem": "FiniteCongruenceChecks.N5.order_exact",
+          "role": "inclusion_order",
+          "statement": "theorem order_exact : ∀ a b : Fin 5, le a b = true ↔ Included (theta a) (theta b)",
+          "construction_id": "saved:family-206:n5:v1",
+          "applicability": "curated_exact_binding",
+          "citations": [
+            {
+              "path": "lean/FiniteCongruenceChecks.lean",
+              "sha256": "845615fe7be190dc733762a1b95828cffb4e09b6d3b6b0e334211000d93422e8",
+              "url": "https://github.com/Maverick0351a/finite-congruence-checks/blob/cddf9cf1c2d06df36bc516fb0b461daf6365920e/lean/FiniteCongruenceChecks.lean#L170",
+              "line": 170
+            }
+          ]
+        },
+        {
+          "theorem": "FiniteCongruenceChecks.N5.theta_injective",
+          "role": "distinct_groupings",
+          "statement": "theorem theta_injective : ∀ a b : Fin 5, Same (theta a) (theta b) → a = b",
+          "construction_id": "saved:family-206:n5:v1",
+          "applicability": "curated_exact_binding",
+          "citations": [
+            {
+              "path": "lean/FiniteCongruenceChecks.lean",
+              "sha256": "845615fe7be190dc733762a1b95828cffb4e09b6d3b6b0e334211000d93422e8",
+              "url": "https://github.com/Maverick0351a/finite-congruence-checks/blob/cddf9cf1c2d06df36bc516fb0b461daf6365920e/lean/FiniteCongruenceChecks.lean#L173",
+              "line": 173
+            }
+          ]
+        }
+      ],
       "citations": [
         {
           "path": "evidence/N5-witness.json",
@@ -240,8 +289,29 @@ window.N5_CONTEXT = {
       2,
       0
     ],
+    "id": "context:family-206:saved-n5:atlas-comparison:v1",
+    "claim_ids": [
+      "context:family-206:saved-n5:classification:v1",
+      "construction:n4-E16709"
+    ],
+    "construction_ids": [
+      "saved:family-206:n5:v1",
+      "atlas:n4-E16709:displayed-operations:v1"
+    ],
     "relation": "same_grouping_family_after_relabeling",
     "evidence_status": "checked_by_finite_computation",
+    "saved_grouping_index_to_atlas_index": [
+      0,
+      1,
+      3,
+      2,
+      4
+    ],
+    "inclusion_order_preserved": true,
+    "partition_checks": {
+      "partitions_per_construction": 15,
+      "valid_per_construction": 5
+    },
     "transformed_saved_operations": [
       [
         2,
@@ -278,7 +348,23 @@ window.N5_CONTEXT = {
         "sha256": "9bd8976488b269a86468dfcdb9f9ebbf246cfe8e0ffe4960f86941369919c82a",
         "url": "https://github.com/Maverick0351a/finite-congruence-checks/blob/cddf9cf1c2d06df36bc516fb0b461daf6365920e/space/atlas-data.json",
         "json_pointer": "/entries/22"
+      },
+      {
+        "path": "evidence/atlas.json",
+        "sha256": "9bd8976488b269a86468dfcdb9f9ebbf246cfe8e0ffe4960f86941369919c82a",
+        "url": "https://github.com/Maverick0351a/finite-congruence-checks/blob/cddf9cf1c2d06df36bc516fb0b461daf6365920e/evidence/atlas.json",
+        "json_pointer": "/entries/22"
+      },
+      {
+        "path": "evidence/atlas-review.json",
+        "sha256": "f702ebcfd8addcb12aa8cf0434c074c8869a71ae738cd996727819d8f165cd26",
+        "url": "https://github.com/Maverick0351a/finite-congruence-checks/blob/cddf9cf1c2d06df36bc516fb0b461daf6365920e/evidence/atlas-review.json",
+        "json_pointer": "/entries/22"
       }
+    ],
+    "limits": [
+      "Operation-set inequality is for the displayed bijection only; this comparison does not decide algebra isomorphism under every permutation.",
+      "The saved Lean classification applies to the saved tables. The atlas tables retain their independently checked computational evidence; no Lean proof is transported here."
     ],
     "explanation": "The grouping families agree after this renaming, but the displayed operation sets differ. This link is a computational correspondence, not a Lean proof of the atlas entry."
   },

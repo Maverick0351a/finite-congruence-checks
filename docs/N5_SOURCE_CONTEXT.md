@@ -6,6 +6,10 @@ A grouping means a partition into nonempty, disjoint blocks. It is valid for thi
 
 The interactive explanation is in [the N5 source-context page](../space/context-n5.html), with a separate [machine-readable context record](../space/n5-context.json). This note describes the saved construction and the scope of its evidence.
 
+For local agents, the [context query interface](CONTEXT_QUERY.md) explains either
+exact construction by claim ID, compares the two N5 systems, and checks whether
+a proposed record still matches its registered evidence binding.
+
 The carrier is `V = Fin 4`, represented by `{0,1,2,3}`. The selected operation tables are:
 
 | Input point | 0 | 1 | 2 | 3 |
@@ -182,3 +186,25 @@ declarations for a future automatic proof-dependency layer.
 - This work reused the existing Lean receipts; it did not rerun Lean or add a new
   formal theorem. No benchmark answering session was run. The four answering
   sessions and reserved task families remain paused and untouched.
+
+## Context interface follow-up — 18 October 2026
+
+- PR #11's page implementation at `03beb54` passed all seven verification jobs
+  and its GitGuardian scan before this extension.
+- Added a local `explain`, `compare`, and `check` interface using the page's
+  saved record. Added explicit construction identities and fully qualified
+  classification, order, and distinctness theorem references. These are curated
+  bindings; no dependency-extraction or arbitrary theorem-checking claim is made.
+- Pinned the original atlas data and independent review alongside the browser
+  copy, bringing the source manifest to twelve pins. Recomputed both complete
+  partition families and their order correspondence under the displayed bijection.
+- Eleven interface tests and the existing six context tests passed locally,
+  including a changed rule that preserves every valid grouping and an unrelated
+  theorem within the same hashed Lean file. The browser-data check also passed.
+- All 50 existing atlas tests passed. Independent review checked the theorem
+  lines, source pins, exact comparison, evidence status, and rejection behavior
+  and found no remaining actionable defects. All twelve pins were checked
+  against the Git objects at the stated revision.
+- The original atlas claim schema, frozen benchmark, and four reserved task
+  families were not edited. No model answering session or new local Lean
+  proof run was performed for this interface.

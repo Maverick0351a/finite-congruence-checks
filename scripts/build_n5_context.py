@@ -18,9 +18,15 @@ UPSTREAM_REV = "1581d4cbdd69a0faf34b2089614fe2a814316a6a"
 LOCAL = f"https://github.com/Maverick0351a/finite-congruence-checks/blob/{LOCAL_REV}/"
 UPSTREAM = f"https://github.com/openai/math/blob/{UPSTREAM_REV}/"
 OUTPUTS = ("space/n5-context.json", "space/n5-context-data.js")
+SAVED_CLAIM_ID = "context:family-206:saved-n5:classification:v1"
+SAVED_CONSTRUCTION_ID = "saved:family-206:n5:v1"
+ATLAS_CLAIM_ID = "construction:n4-E16709"
+ATLAS_CONSTRUCTION_ID = "atlas:n4-E16709:displayed-operations:v1"
 # These normalized hashes were checked against LOCAL_REV, not derived anew on
 # regeneration. A source change needs an explicit revision-and-hash review.
 PINNED_SOURCES = {
+    "evidence/atlas.json": "9bd8976488b269a86468dfcdb9f9ebbf246cfe8e0ffe4960f86941369919c82a",
+    "evidence/atlas-review.json": "f702ebcfd8addcb12aa8cf0434c074c8869a71ae738cd996727819d8f165cd26",
     "evidence/N5-witness.json": "2b6648c6842bf0742c3029c6c0ad7c906fbdb8d281d8e830a85c51c047ef2685",
     "evidence/minimized-algebras.json": "76671ae20ad76bc2507b9e0c822bb78862abf2ff507f1a3ab7ba8b40efe85cea",
     "lean/CertificateData.lean": "1db35c8b640f0ea0d73ea12cd14e5e1b4b3eef588d3eb5ed66fbec0be37258f3",
@@ -115,6 +121,19 @@ def build(root=ROOT):
     transformed_ops = [[perm[op[inv[j]]] for j in range(4)] for op in operations]
     require(transformed_parts == {tuple(p) for p in entry["partitions"]}, "atlas family correspondence changed")
     require(sorted(transformed_ops) != sorted(entry["operations"]), "reassess operation identity boundary")
+    atlas_parts = {tuple(p) for p in partitions if failure(p, entry["operations"]) is None}
+    require(atlas_parts == transformed_parts, "atlas operation classification disagrees")
+    grouping_map = [entry["partitions"].index(list(normalize([g["partition"][inv[j]] for j in range(4)])))
+                    for g in groupings]
+    def included(p, q):
+        return all(p[x] != p[y] or q[x] == q[y] for x in range(4) for y in range(4))
+    require(all(included(a["partition"], b["partition"]) == entry["order"][grouping_map[i]][grouping_map[j]]
+                for i, a in enumerate(groupings) for j, b in enumerate(groupings)),
+            "atlas order correspondence disagrees")
+    review = read("evidence/atlas-review.json")
+    ri, reviewed = next((i, e) for i, e in enumerate(review["entries"]) if e["id"] == entry["id"])
+    require(review["passed"] is True and reviewed["exact_operations_order_and_covers"] is True,
+            "atlas independent review did not pass")
 
     sources = [
         {"id": "scope", "title": "Family 206 · selected scope", "role": "scope_note",
@@ -150,13 +169,28 @@ def build(root=ROOT):
          "description": "Separate acceptance record for the upstream theorem, with placeholder-proof and changed-statement rejection controls; Nanoda was disabled."},
     ]
     claims = [{
-        "id": "context:family-206:saved-n5:classification:v1", "kind": "exact_construction",
+        "id": SAVED_CLAIM_ID, "kind": "exact_construction", "construction_id": SAVED_CONSTRUCTION_ID,
         "statement": "On {0,1,2,3}, f=(1,0,3,2) and g=(0,1,0,1) have exactly the five displayed congruences, ordered as N5.",
         "evidence_status": "lean_proof_with_recorded_kernel_replay",
         "scope": "The exact saved four-point, two-operation algebra and its saved coloring.",
         "assumptions": ["Both operations are total unary maps.", "A grouping is an equivalence relation preserved by both operations.", "The recorded Lean toolchain, imported definitions and declared axioms are trusted as documented in the verification receipt."],
         "limits": ["This page and its explanatory graph are not a new formal proof.", "The minimum number of operations is a separate computational claim.", "A shared N5 shape name does not transfer this proof to different operation tables.", "No undecidability, subgroup-interval, or fluid-simulation conclusion follows from this example."],
         "values": {"carrier": [0, 1, 2, 3], "operations": operations, "groupings": groupings},
+        "predicate": "For every equivalence relation r on {0,1,2,3}, r is preserved by both displayed operations if and only if it equals one of the five displayed groupings. Their inclusion order is the saved N5 order, and they are pairwise distinct.",
+        "applicable_lemmas": [
+            {"theorem": "FiniteCongruenceChecks.N5.all_relations", "role": "complete_classification",
+             "statement": "theorem all_relations (r : V → V → Prop) : IsPropCongruence op1 op2 r ↔ ∃ a, ∀ x y, r x y ↔ theta a x y = true",
+             "construction_id": SAVED_CONSTRUCTION_ID, "applicability": "curated_exact_binding",
+             "citations": [citation("lean/FiniteCongruenceChecks.lean", line=159)]},
+            {"theorem": "FiniteCongruenceChecks.N5.order_exact", "role": "inclusion_order",
+             "statement": "theorem order_exact : ∀ a b : Fin 5, le a b = true ↔ Included (theta a) (theta b)",
+             "construction_id": SAVED_CONSTRUCTION_ID, "applicability": "curated_exact_binding",
+             "citations": [citation("lean/FiniteCongruenceChecks.lean", line=170)]},
+            {"theorem": "FiniteCongruenceChecks.N5.theta_injective", "role": "distinct_groupings",
+             "statement": "theorem theta_injective : ∀ a b : Fin 5, Same (theta a) (theta b) → a = b",
+             "construction_id": SAVED_CONSTRUCTION_ID, "applicability": "curated_exact_binding",
+             "citations": [citation("lean/FiniteCongruenceChecks.lean", line=173)]},
+        ],
         "citations": [citation("evidence/N5-witness.json"), citation("evidence/minimized-algebras.json", f"/certificates/{ci}"), citation("lean/CertificateData.lean", line=68), citation("lean/FiniteCongruenceChecks.lean", line=142), citation("lean/upstream/ConcreteBridge.lean", line=130), citation("lean/evidence/bridge-run/result.json")],
     }]
     return {
@@ -169,10 +203,19 @@ def build(root=ROOT):
         "formal_statement": "theorem graph_criterion (Lat : Type) [Fintype Lat] [Lattice Lat] [OrderBot Lat] : Representable Lat ↔ HasGraphWitness Lat",
         "claims": claims, "sources": sources,
         "atlas_relation": {"entry_id": entry["id"], "saved_to_atlas": perm,
+            "id": "context:family-206:saved-n5:atlas-comparison:v1",
+            "claim_ids": [SAVED_CLAIM_ID, ATLAS_CLAIM_ID],
+            "construction_ids": [SAVED_CONSTRUCTION_ID, ATLAS_CONSTRUCTION_ID],
             "relation": "same_grouping_family_after_relabeling", "evidence_status": "checked_by_finite_computation",
+            "saved_grouping_index_to_atlas_index": grouping_map, "inclusion_order_preserved": True,
+            "partition_checks": {"partitions_per_construction": len(partitions), "valid_per_construction": 5},
             "transformed_saved_operations": transformed_ops, "atlas_operations": entry["operations"],
             "same_operation_set": False, "formal_proof_transferred": False,
-            "citations": [citation("space/atlas-data.json", f"/entries/{atlas['entries'].index(entry)}")],
+            "citations": [citation("space/atlas-data.json", f"/entries/{atlas['entries'].index(entry)}"),
+                          citation("evidence/atlas.json", f"/entries/{atlas['entries'].index(entry)}"),
+                          citation("evidence/atlas-review.json", f"/entries/{ri}")],
+            "limits": ["Operation-set inequality is for the displayed bijection only; this comparison does not decide algebra isomorphism under every permutation.",
+                       "The saved Lean classification applies to the saved tables. The atlas tables retain their independently checked computational evidence; no Lean proof is transported here."],
             "explanation": "The grouping families agree after this renaming, but the displayed operation sets differ. This link is a computational correspondence, not a Lean proof of the atlas entry."},
         "color": witness["color"], "lattice": witness["lattice"],
         "partition_audit": audit,

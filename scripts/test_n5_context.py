@@ -5,7 +5,7 @@ import shutil
 import tempfile
 import unittest
 
-from build_n5_context import ROOT, build, failure
+from build_n5_context import ROOT, PINNED_SOURCES, build, failure
 
 
 class ContextTests(unittest.TestCase):
@@ -47,10 +47,7 @@ class ContextTests(unittest.TestCase):
         self.assertNotEqual(sorted(r['transformed_saved_operations']), sorted(r['atlas_operations']))
 
     def test_changed_data_or_proof_rejected(self):
-        record = build()
-        paths = {r['path'] for r in record['claims'][0]['citations']}
-        paths.update(r['path'] for r in record['sources'] if 'path' in r)
-        paths.update(['space/atlas-data.json'])
+        paths = PINNED_SOURCES
         for changed, replacement, message in [
             ('lean/FiniteCongruenceChecks.lean', 'changed proof', 'pinned source mismatch'),
             ('evidence/N5-witness.json', '{}', 'pinned source mismatch'),
