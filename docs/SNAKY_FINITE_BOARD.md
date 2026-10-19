@@ -103,8 +103,10 @@ toolchain available through `lake`. The command downloads the pinned Mathlib
 dependency cache on its first run. Allow time and disk space for that dependency
 and the 728-card proof. The output directory must be new, so a run preserves its
 own logs. CI runs the same command on Linux; Windows users can use WSL.
-The runner records its environment overrides and limits Lean to one worker to
-reduce concurrent memory use during compilation and kernel replay.
+The runner records `LEAN_NUM_THREADS=1` to reduce concurrent compilation work.
+This setting is not a strict memory or concurrency limit for `leanchecker`:
+the pinned runtime may start another worker when a task waits on dependencies.
+The initial replay's observed memory peak is being assessed before hosted CI.
 
 The runner first checks the independent certificate reconstruction and exact
 upstream bytes. It then builds the Lean proof, audits the theorem dependencies'

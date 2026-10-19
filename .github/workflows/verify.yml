@@ -101,7 +101,11 @@ jobs:
           python scripts/snaky_proof.py replay
           python scripts/build_snaky_chart.py --check
           python lean/snaky/generate_finite_cards.py --check
+          python scripts/build_snaky_play.py --check
+          python scripts/check_snaky_play.py
+          python scripts/build_snaky_presentation.py --check
           python -m unittest discover -s scripts -p 'test_snaky*.py' -v
+          node scripts/check_snaky_play_ui.cjs
       - name: Preserve reproduction evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
@@ -113,7 +117,7 @@ jobs:
   lean:
     name: Concrete Lean certificates
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90 # Fresh Snaky compilation and complete local-module kernel replay.
     env:
       LEAN_NUM_THREADS: '1'
       MATHLIB_NO_CACHE_ON_UPDATE: '1'

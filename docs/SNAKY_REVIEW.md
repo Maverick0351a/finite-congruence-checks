@@ -86,6 +86,44 @@ part of the certificate's identity.
   and draft walkthrough. Re-ran four input/audit validation tests successfully,
   including altered vendor/dependency pins and setup errors that must not be
   classified as mathematical rejection.
+- Inspected the completed native development build: all 9,103 jobs passed,
+  including the finite semantics, complete certificate adaptation, concrete
+  boards, and literal claim binding. The proof source was then frozen at
+  `f205fe504af726f57a3fc52e84c0b7fa962137f6` for the recorded verification run.
+- Read the actual axiom log from that run. All 19 requested declarations have
+  reports, using only `propext`, `Classical.choice`, and `Quot.sound`; no missing
+  proof or extra axiom appears. The complete kernel/negative-control receipt
+  remains a separate pending gate.
+- Reviewed the Hugging Face corpus banner's wording and source changes. Its
+  reference to independent checks and formal extensions of selected corpus
+  results is appropriately scoped. Visual browser checks were performed by
+  the implementation agent; this review adds a wording check, not a second
+  browser inspection.
+- Read the illustrative-play adapter and its separate replay checker. The
+  checker reconstructs certificate geometry using separate coordinate
+  formulas, composes placements through basis-point images, and verifies
+  fresh claims, child requirements and envelopes, actual move counts, and the
+  complete winning target. It shares the pinned certificate grammar, not the
+  move generator. All 23 play tests, saved replay, and generator freshness
+  checks passed when rerun independently.
+- Reconstructed the play's ownership history with a separate transient
+  calculation importing none of the implementation modules. Enumeration of
+  signed coordinate permutations confirms eight legal Maker claims, seven
+  legal Breaker replies, no earlier win, and one complete six-cell target at
+  move eight. These are checks of one chosen execution, not a better universal
+  move bound. The replacement test is an isolated fixture, not a position
+  asserted to occur in that illustrated play.
+- Checked the initial play choices against the pinned paper's
+  [worked continuation](https://github.com/openai/math/blob/1581d4cbdd69a0faf34b2089614fe2a814316a6a/preprints/Snaky-in-21-Maker-moves-September-25-2026/build/certificate-proof.tex#L184).
+  Its two displayed Breaker replies and first three Maker pivots match. The
+  example then uses its explicitly declared deterministic reply choices.
+- Re-ran five presentation-anchor controls using actual temporary Git
+  commits, plus the explicit example-only renderer check. They check committed
+  bytes, all eight rendered ownership states, surviving-envelope outlines,
+  the final target, links, and navigation. The renderer check uses a DOM stub;
+  browser layout and native keyboard behavior require separate inspection.
+  Full publication tests intentionally require the actual proof receipt,
+  source anchor, and generated packet instead of skipping missing inputs.
 
 No correctness finding is open in the source reviewed so far. The finite game
 constructors permit immediate victory; they do not require every strategy-tree
@@ -95,7 +133,8 @@ should preserve this distinction from an extracted executable policy.
 
 ## Pending review
 
-The completed Lean build, kernel replay, allowed-axiom audit, actual negative
-control logs, saved receipt validation, full query tests, and final user-facing
-explanation remain to be assessed as they become available. Source changes
-made after the checks above will receive a final review.
+Kernel replay, actual negative-control logs, saved receipt validation, full
+query tests, and the final user-facing explanation remain to be assessed as
+they become available. The recorded run uses Git-archived committed sources
+with an existing dependency/build cache; it must not be described as a clean
+build. Source changes made after the checks above will receive a final review.

@@ -25,6 +25,8 @@ for one row does not establish a stronger claim from another row.
 | Five step properties hold for the extracted upstream Turing-machine definition | [Source lemmas](../lean/tm/MachineChecks.lean), [axiom reports](../evidence/tm-port-v1/build/axioms.log), [build and kernel receipt](../evidence/tm-port-v1/summary.json) | Halted configurations are fixed; a missing instruction changes only state; a present instruction has the defined write/move/target effect and preserves other cells; exact pinned fragment with narrower imports |
 | The maintained Python TM port agrees with one compiled Lean oracle on complete configurations | [Native comparison receipt](../evidence/tm-port-v1/summary.json), [method and limits](TM_TRANSLATION_CHECKS.md) | 2,857 specified snapshots: 297 named, 1,960 exhaustive within a stated small domain, 600 sampled; full nonzero tape support, state, head and halting status; 34 decoder rejection probes and seven output-corruption controls; no general port-equivalence proof |
 | The TM atlas compares three properties of four exact encoding pairs | [Pair claims](../evidence/tm-atlas-v1.json), [trace records](../evidence/tm-atlas-traces-v1.json), [method](TM_ATLAS.md) | Twelve separate stopping-time, complete-tape, and head-position observations on blank input; exact source/trace citations and qualified generic lemma links; no pair-equivalence theorem |
+| The exact tiny-stay machines first halt after one transition with equal heads and different complete tapes | [Formal supplement and reproduction](TM_PAIR_PROOF.md), [separate proof receipt](../evidence/tm-pair-proof-v1/summary.json) | Exact two machine definitions and blank input; tape formulas quantified over every integer position; no general Python/Lean equivalence claim |
+| Two consistent relabelings preserve the saved N5 construction's complete classification, ordering and distinctness | [Proof-reuse walkthrough](N5_PROOF_REUSE.md), [generic transfer](N5_RENAMING.md) | Two exact registered applications of the general bijective transport theorem; inconsistent rule correspondences and unrelated theorem references are rejected |
 | One fresh-context agent selected the required evidence in six guided questions | [First answers and score](../evidence/tm-retrieval-v1/summary.json), [protocol and limits](TM_ATLAS_EVALUATION.md) | Six first responses pass structured pair/property/value/citation checks; prose receives separate same-session AI review; no control arm, feedback advantage, or general capability claim |
 
 No claim of a new mathematical theorem or classification is made. These small
@@ -45,7 +47,9 @@ as outside peer review. Novelty would require a separate literature investigatio
 The [archive review](ARCHIVE_REVIEW.md) preserves the original inspection scope.
 The subsequent [TM checks](TM_TRANSLATION_CHECKS.md), [pair atlas](TM_ATLAS.md),
 and [retrieval exercise](TM_ATLAS_EVALUATION.md) support only their scoped rows
-above. Pair-specific Lean preservation proofs remain future work in the
-[TM halt pilot](TM_HALT_PILOT.md). Lexical dependency counts cannot support proof-dependency claims;
+above. The [tiny-stay formal supplement](TM_PAIR_PROOF.md) now proves that one
+exact pair's result while retaining the original bounded execution records.
+Broader preservation proofs remain future work in the [TM halt pilot](TM_HALT_PILOT.md).
+Lexical dependency counts cannot support proof-dependency claims;
 those require elaborated declarations. Evidence does not transfer between
 different constructions or certificates merely because they share a name.

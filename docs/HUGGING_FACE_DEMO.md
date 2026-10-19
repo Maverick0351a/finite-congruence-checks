@@ -95,6 +95,13 @@ and do not execute a proof or machine simulation in the browser.
 
 ## Publish
 
+The top of the atlas highlights its work with OpenAI's math corpus and links
+directly to the original repository and our claim ledger. The wording identifies
+independent checks and formal extensions of selected results. This banner was
+published through PR #17 from GitHub commit
+`3632a58d80320e56a7a44c017a74746008b920d8` to Space commit
+`63a85954e68f4e0202db2382c875267f9ae03f40`; all 44 published file hashes matched.
+
 Publish only the contents of `space/` to the static Space
 `Maverick03511/finite-congruence-checks`. Its README declares `sdk: static` and
 `app_file: atlas.html`. Keep GitHub as the canonical source and record the source

@@ -1,5 +1,72 @@
 # Finite graph search work log
 
+## 2026-10-19 — Snaky presentation prepared behind the proof gate
+
+The page, offline-script exporter and download share one generated packet.
+Export requires the actual proof receipt, supported exact claim, independently
+replayed example and immutable Git bytes for every linked input. Five anchor
+controls pass, including a rehashed local mutation that disagrees with Git.
+The explicit development renderer check passes all eight ownership states,
+continuation outlines, counters, links and the final six-cell target. Browser
+layout and keyboard review still await the real exported packet.
+
+The ongoing bulk kernel replay has reached more than 25 minutes and observed
+roughly 14.3 GiB peak RSS. This is a measurement of this local run, not a hosted
+resource guarantee. The required Concrete Lean certificates job now allows
+90 minutes; its job name and branch-protection requirement are unchanged.
+The saved source runner and its current replay have not been changed.
+
+## 2026-10-19 — OpenAI corpus highlight published
+
+PR #17 adds a prominent source-and-scope banner above the atlas introduction,
+with links to OpenAI's math corpus and this project's exact claims. Independent
+review found no issues; all nine required checks passed before protected merge
+`3632a58d80320e56a7a44c017a74746008b920d8`. The public static Hugging Face Space
+now serves commit `63a85954e68f4e0202db2382c875267f9ae03f40`, containing the 44
+tracked Space files from that GitHub revision. All remote file hashes match.
+The public Space page visibly shows the banner and reports Running.
+
+The first publishing attempt failed during local Windows-to-WSL path conversion,
+before an HTTP commit. The corrected attempt rechecked the unchanged remote
+parent and exact payload. No credentials were written to the payload or logs.
+The publication receipt and live screenshot are retained under
+`runs/hf-corpus-banner-3632a58d8032/`. This delivery is independent of the ongoing
+Snaky proof replay and makes no new verification claim.
+
+## 2026-10-19 — Checked illustrative Snaky play
+
+The new adapter records eight fresh Maker claims and seven legal Breaker replies,
+with the first complete Snaky on Maker's eighth move. An independent validator
+reconstructs placements, ownership, surviving continuations and move budgets.
+All 23 focused tests pass, including incorrect transforms, stale envelopes,
+incomplete winning targets, post-win moves, and counted replacement moves.
+A separate reviewer reconstructed the ownership and all target placements
+without importing either implementation and found the same first win.
+
+This is one chosen execution on the exact 251-cell board. It establishes no
+eight-move guarantee or formally verified policy extraction. The forthcoming
+viewer distinguishes actual moves, the remaining 21-claim allowance, and each
+selected card's bound; its exporter requires the separate formal proof receipt.
+
+## 2026-10-19 — Complete finite Snaky build and committed-source replay
+
+The full native `SnakyBinding` build passed, including the 728-card strategy,
+the new finite semantics, both concrete board theorems and the literal atlas
+binding. The development log spans about 20 minutes 12 seconds with the warmed
+dependency cache. This is a development measurement, not a clean-checkout timing.
+
+Candidate source commit `f205fe504af726f57a3fc52e84c0b7fa962137f6` was exported
+with `git archive` into a new native directory. The verification runner is now
+checking that committed source while reusing the development `.lake` cache.
+It hashes 194 source files, audits 19 declarations, and explicitly supplies 179
+local modules for kernel replay. Its seven altered-claim checks remain a
+separate gate. Hosted CI will supply the independent fresh-checkout run.
+
+The next presentation step is one checked example play with a per-move
+certificate explanation. A read-only feasibility probe found an eight-Maker-move
+branch. That example would not strengthen the universal 21-move guarantee; its
+chosen Breaker replies and complete winning placement must be recorded.
+
 ## 2026-10-19 — Finite Snaky core compiles
 
 The native Lean 4.34.1 build now accepts `SnakySemantics`, including the
