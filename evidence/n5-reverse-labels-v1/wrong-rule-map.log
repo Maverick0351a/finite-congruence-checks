@@ -1,0 +1,3 @@
+/tmp/finite-congruence-reverse-source-v1/runs/fresh-native-v1/wrong-rule-map.lean:34:88: error: Tactic `decide` proved that the proposition
+  (∀ (x : V), h (p x) = p (g x)) ∧ ∀ (x : V), k (p x) = p (f x)
+is false

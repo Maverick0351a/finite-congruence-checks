@@ -1,0 +1,3 @@
+/tmp/finite-congruence-reverse-source-v1/runs/fresh-native-v1/inconsistent-grouping-map.lean:35:141: error: Tactic `decide` proved that the proposition
+  ∀ (a : Fin 5) (x y : V), dstGroup (groupMap a) (p x) = dstGroup (groupMap a) (p y) ↔ srcGroup a x = srcGroup a y
+is false

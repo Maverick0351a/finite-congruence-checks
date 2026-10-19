@@ -1,0 +1,14 @@
+✔ [4/9] Built CertificateData (455ms)
+ℹ [5/9] Built FiniteCongruenceChecks (5.3s)
+info: FiniteCongruenceChecks.lean:182:0: 'FiniteCongruenceChecks.N5.finite_classification' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:183:0: 'FiniteCongruenceChecks.N5.all_congruences' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:184:0: 'FiniteCongruenceChecks.N5.representation' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:185:0: 'FiniteCongruenceChecks.N5.all_relations' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: FiniteCongruenceChecks.lean:233:0: 'FiniteCongruenceChecks.B3.finite_classification' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:234:0: 'FiniteCongruenceChecks.B3.all_congruences' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:235:0: 'FiniteCongruenceChecks.B3.representation' depends on axioms: [propext, Quot.sound]
+info: FiniteCongruenceChecks.lean:236:0: 'FiniteCongruenceChecks.B3.all_relations' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [6/9] Built Renaming (316ms)
+✔ [7/9] Built N5ReverseLabels (282ms)
+✔ [8/9] Built N5ReverseLabelsBinding (394ms)
+Build completed successfully (9 jobs).
