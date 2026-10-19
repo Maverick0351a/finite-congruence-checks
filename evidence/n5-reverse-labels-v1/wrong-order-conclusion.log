@@ -1,0 +1,3 @@
+/tmp/finite-congruence-reverse-source-v1/runs/fresh-native-v1/wrong-order-conclusion.lean:36:71: error: Tactic `decide` proved that the proposition
+  5 = 5 ∧ false = true
+is false

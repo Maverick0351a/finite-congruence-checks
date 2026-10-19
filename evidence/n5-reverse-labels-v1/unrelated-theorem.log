@@ -1,0 +1,6 @@
+/tmp/finite-congruence-reverse-source-v1/runs/fresh-native-v1/unrelated-theorem.lean:40:2: error: Type mismatch: After simplification, term
+  proof
+ has type
+  IsPropCongruence B3.op1 B3.op2 r ↔ ∃ a, ∀ (x y : V), r x y ↔ B3.theta a x y = true
+but is expected to have type
+  IsPropCongruence h k r ↔ ∃ a, ∀ (x y : V), r x y ↔ dstGroup a x = dstGroup a y

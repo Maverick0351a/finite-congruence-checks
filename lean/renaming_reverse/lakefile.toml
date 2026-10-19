@@ -1,0 +1,13 @@
+name = "n5ReverseLabels"
+version = "0.1.0"
+defaultTargets = ["N5ReverseLabels", "N5ReverseLabelsBinding"]
+
+[[require]]
+name = "n5Renaming"
+path = "../renaming"
+
+[[lean_lib]]
+name = "N5ReverseLabels"
+
+[[lean_lib]]
+name = "N5ReverseLabelsBinding"

@@ -1,5 +1,39 @@
 # Finite graph search work log
 
+## 2026-10-19 — N5 proof reuse
+
+Merged the separately reviewed governance documentation PR #14 after all 19
+checks passed. Started the proof-reuse milestone from main at `03dba7e` on
+`codex/n5-proof-reuse-demo`. The second construction reverses the object labels
+with rule order unchanged. A sibling Lean project preserves the first transfer's
+source files and receipts. The page and query interface share exact records,
+with separate controls for failed groupings, false correspondences and mismatched
+evidence. Benchmarks, reserved task families and training remain paused.
+
+Independent review identified a source-link validation gap before publication:
+local file hashes alone do not bind their bytes to a Git commit. The presentation
+exporter now checks the actual commit blobs, and CI obtains full Git history for
+this check. The original receipts and frozen benchmark packets are preserved.
+
+The new proof passed a fresh Linux source build with the existing Lean 4.34.1
+runtime: 12 stages, 22 audited declarations, kernel replay, and eight expected
+Lean binding rejections. Two slow runs using Windows-mounted files were stopped
+and retained under ignored `runs/`; the successful run used a temporary Linux
+source copy with no build cache and all 36 pinned source hashes matched. The
+original nine-stage transfer receipt still replays.
+
+All 12 new backend tests and 10 presentation integration tests passed. The
+independent reviewer also enumerated the 15 partitions with a separate oracle,
+confirmed the five target congruences, and verified the 11 cited file blobs at
+`3b75f858563b8c7d44a083a5be99ca9d41705e06`. This was an independent AI code and
+mathematics review, not a blind model evaluation. Existing context/query tests
+and original data checks passed. Browser review covered both transfers, all
+three controls, keyboard focus and paired selection, desktop columns, and a
+326-pixel mobile viewport without horizontal overflow. Hosted CI and public
+publication are the remaining delivery checks.
+
+## Original experiment log
+
 18 October 2026. Continuing the repaired math corpus audit.
 
 The next experiment is a bounded search over colored graphs for six explicitly
