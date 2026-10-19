@@ -1,0 +1,3 @@
+/tmp/snaky-proof-candidate-f205fe5/runs/snaky-proof/wrong-card.lean:14:77: error: Tactic `decide` proved that the proposition
+  initialM = ∅ ∧ initialB = ∅ ∧ 726 = 727
+is false

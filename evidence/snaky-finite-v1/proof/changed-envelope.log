@@ -1,0 +1,6 @@
+/tmp/snaky-proof-candidate-f205fe5/runs/snaky-proof/changed-envelope.lean:12:55: error: (kernel) application type mismatch
+  id (Eq.refl true)
+argument has type
+  true = true
+but function has type
+  decide (envelope_727 = envelope) = true → decide (envelope_727 = envelope) = true

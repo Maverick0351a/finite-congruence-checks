@@ -1,0 +1,3 @@
+/tmp/snaky-proof-candidate-f205fe5/runs/snaky-proof/nonempty-input.lean:14:77: error: Tactic `decide` proved that the proposition
+  initialM = ∅ ∧ initialB = ∅ ∧ 727 = 727
+is false

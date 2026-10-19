@@ -1,0 +1,6 @@
+/tmp/snaky-proof-candidate-f205fe5/runs/snaky-proof/unrelated-theorem.lean:21:2: error: Type mismatch
+  square_wins
+has type
+  FiniteWins square17 HasSnaky 21 ∅ ∅
+but is expected to have type
+  FiniteWins envelope_727 HasSnaky 21 ∅ ∅
