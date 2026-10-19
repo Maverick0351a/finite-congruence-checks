@@ -1143,7 +1143,7 @@
   ],
   "hash_encoding": "SHA-256 of UTF-8 file bytes with CRLF normalized to LF; no other byte changes.",
   "source_hashes": {
-    "scripts/snaky_proof.py": "454e9f4b6a47af04d6738ef055f2490b710a33cd28c71344fddb0ad2aa6a6e7e",
+    "scripts/snaky_proof.py": "e0c904dea48b22647ce36643aafca816a94e1ebfc7a5b29c92c0e4a100427c6d",
     "scripts/check_snaky.py": "39557ec80096081efac4f5f8f0182383a4d23af855bb652a8108fa4228ee2d42",
     "evidence/snaky-finite-v1/certificate.txt": "3fa12d36a6d4dbb185e3f2808c8dfde13d85ee309afbca030d6ad17ae9fe3d04",
     "evidence/snaky-finite-v1/claim.json": "20eb112e32c82ab23fb0c8d7db880f4996cd5008a4c767c84fa67822cad3b201",
@@ -1356,8 +1356,13 @@
         "--version"
       ],
       "cwd": "lean/snaky",
+      "status": "passed",
+      "failure_kind": null,
       "exit_code": 0,
-      "duration_seconds": 3.724
+      "timeout_seconds": 2400,
+      "duration_seconds": 3.075,
+      "started_utc": "2026-10-19T15:14:11.929150+00:00",
+      "finished_utc": "2026-10-19T15:14:15.003973+00:00"
     },
     {
       "name": "dependencies",
@@ -1368,8 +1373,13 @@
         "get"
       ],
       "cwd": "lean/snaky",
+      "status": "passed",
+      "failure_kind": null,
       "exit_code": 0,
-      "duration_seconds": 6.382
+      "timeout_seconds": 2400,
+      "duration_seconds": 6.434,
+      "started_utc": "2026-10-19T15:14:15.004924+00:00",
+      "finished_utc": "2026-10-19T15:14:21.438644+00:00"
     },
     {
       "name": "build",
@@ -1379,8 +1389,13 @@
         "SnakyBinding"
       ],
       "cwd": "lean/snaky",
+      "status": "passed",
+      "failure_kind": null,
       "exit_code": 0,
-      "duration_seconds": 11.182
+      "timeout_seconds": 3600,
+      "duration_seconds": 12.802,
+      "started_utc": "2026-10-19T15:14:21.439595+00:00",
+      "finished_utc": "2026-10-19T15:14:34.241658+00:00"
     },
     {
       "name": "axioms",
@@ -1391,8 +1406,13 @@
         "{out}/Audit.lean"
       ],
       "cwd": "lean/snaky",
+      "status": "passed",
+      "failure_kind": null,
       "exit_code": 0,
-      "duration_seconds": 20.725
+      "timeout_seconds": 2400,
+      "duration_seconds": 20.631,
+      "started_utc": "2026-10-19T15:14:34.242697+00:00",
+      "finished_utc": "2026-10-19T15:14:54.873947+00:00"
     },
     {
       "name": "kernel",
@@ -1581,8 +1601,13 @@
         "SnakyBinding"
       ],
       "cwd": "lean/snaky",
+      "status": "passed",
+      "failure_kind": null,
       "exit_code": 0,
-      "duration_seconds": 1631.946
+      "timeout_seconds": 2400,
+      "duration_seconds": 1733.691,
+      "started_utc": "2026-10-19T15:14:54.875669+00:00",
+      "finished_utc": "2026-10-19T15:43:48.567358+00:00"
     },
     {
       "name": "changed-target",
@@ -1593,8 +1618,13 @@
         "{out}/changed-target.lean"
       ],
       "cwd": "lean/snaky",
+      "status": "passed",
+      "failure_kind": null,
       "exit_code": 1,
-      "duration_seconds": 17.069
+      "timeout_seconds": 2400,
+      "duration_seconds": 18.342,
+      "started_utc": "2026-10-19T15:43:48.602808+00:00",
+      "finished_utc": "2026-10-19T15:44:06.944503+00:00"
     },
     {
       "name": "changed-envelope",
@@ -1605,8 +1635,13 @@
         "{out}/changed-envelope.lean"
       ],
       "cwd": "lean/snaky",
+      "status": "passed",
+      "failure_kind": null,
       "exit_code": 1,
-      "duration_seconds": 16.988
+      "timeout_seconds": 2400,
+      "duration_seconds": 16.126,
+      "started_utc": "2026-10-19T15:44:06.946788+00:00",
+      "finished_utc": "2026-10-19T15:44:23.072677+00:00"
     },
     {
       "name": "changed-square",
@@ -1617,8 +1652,13 @@
         "{out}/changed-square.lean"
       ],
       "cwd": "lean/snaky",
+      "status": "passed",
+      "failure_kind": null,
       "exit_code": 1,
-      "duration_seconds": 15.984
+      "timeout_seconds": 2400,
+      "duration_seconds": 16.476,
+      "started_utc": "2026-10-19T15:44:23.073867+00:00",
+      "finished_utc": "2026-10-19T15:44:39.549860+00:00"
     },
     {
       "name": "wrong-move-bound",
@@ -1629,8 +1669,13 @@
         "{out}/wrong-move-bound.lean"
       ],
       "cwd": "lean/snaky",
+      "status": "passed",
+      "failure_kind": null,
       "exit_code": 1,
-      "duration_seconds": 15.928
+      "timeout_seconds": 2400,
+      "duration_seconds": 16.476,
+      "started_utc": "2026-10-19T15:44:39.551013+00:00",
+      "finished_utc": "2026-10-19T15:44:56.026721+00:00"
     },
     {
       "name": "wrong-card",
@@ -1641,8 +1686,13 @@
         "{out}/wrong-card.lean"
       ],
       "cwd": "lean/snaky",
+      "status": "passed",
+      "failure_kind": null,
       "exit_code": 1,
-      "duration_seconds": 15.865
+      "timeout_seconds": 2400,
+      "duration_seconds": 16.676,
+      "started_utc": "2026-10-19T15:44:56.028075+00:00",
+      "finished_utc": "2026-10-19T15:45:12.703623+00:00"
     },
     {
       "name": "nonempty-input",
@@ -1653,8 +1703,13 @@
         "{out}/nonempty-input.lean"
       ],
       "cwd": "lean/snaky",
+      "status": "passed",
+      "failure_kind": null,
       "exit_code": 1,
-      "duration_seconds": 16.721
+      "timeout_seconds": 2400,
+      "duration_seconds": 16.475,
+      "started_utc": "2026-10-19T15:45:12.704871+00:00",
+      "finished_utc": "2026-10-19T15:45:29.179754+00:00"
     },
     {
       "name": "unrelated-theorem",
@@ -1665,8 +1720,13 @@
         "{out}/unrelated-theorem.lean"
       ],
       "cwd": "lean/snaky",
+      "status": "passed",
+      "failure_kind": null,
       "exit_code": 1,
-      "duration_seconds": 16.074
+      "timeout_seconds": 2400,
+      "duration_seconds": 16.479,
+      "started_utc": "2026-10-19T15:45:29.184372+00:00",
+      "finished_utc": "2026-10-19T15:45:45.662948+00:00"
     }
   ],
   "artifacts": {
@@ -1674,24 +1734,24 @@
     "axioms.log": "ee6611b79ea4ba944f7f84f5249e51c79aa0a29f37a442348e8a8f4317218876",
     "build.log": "163fb6d214cac38bf07a43567ef6aa96d3c83f5090b03c3e601985d6ed90e6ca",
     "changed-envelope.lean": "09dcb538cd327b2d643b34a01310b7f030635555e87100d6a2030aae40919cf6",
-    "changed-envelope.log": "71456ac0a5a2085f58a2d710baa29cd853349ea31bb0da72716fface9ec32a18",
+    "changed-envelope.log": "264cb4f0fa34718076a5ca845c57ede271a31c487bfba74d279189e366c1c086",
     "changed-square.lean": "a164f229a96ccdd4e0fd28bc85d9e526d6eb1fe1f737671bc3fd715d9bb8741e",
-    "changed-square.log": "1008d4e4f4a23b64f241ef1e989e638f379349ad453d03bde3d561199961249e",
+    "changed-square.log": "894e90f306d0cc71b27a867b1067a394a9dde986eb2e045d058a8e85f816f1ac",
     "changed-target.lean": "e0c4f53b637461df801de33dcc35304723ba539b07cefd934bb6f84a99c6c81c",
-    "changed-target.log": "7f34d196210ba37a28b7f49fe8bdb5e1395bd46e35c46f6b3a922f68a4ee50e9",
+    "changed-target.log": "64ca3ea5fb9b1d8dce6fc3a99ccfe2e87c9793d5a94e6bed9ddb1c7a61b10252",
     "dependencies.log": "29e284dc7d8024aa6a333a92d0b23035028d78ada47b37f7dd77d8e1a0293483",
     "kernel.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "nonempty-input.lean": "dd97852ef1248ba6125bd2c744a58f1657b4c83f6576ec2bfb242f6cf6084926",
-    "nonempty-input.log": "5c043ad6f46955be00a9150486120dfee5d4a0f555454c9882053e4fe72d2107",
+    "nonempty-input.log": "508c671938028a2ee9cd1e2c127fdc197b5f0ca15a8305118b44aaca764e52fe",
     "unrelated-theorem.lean": "7f0df330be1fb6245ddd4cc2be2bb188b437df35f4992c3b707222cb3b747d21",
-    "unrelated-theorem.log": "371bd92b862ec34caedea23cdc26f5f8aaca588d0fd1db0c30ac7deac9adde52",
+    "unrelated-theorem.log": "d75dc6bec8474e86227cd9e9703805532d0300c01e2ebd4fbddf9267bd27d1c4",
     "version.log": "355a9a028f81641782d75d6e6b58dec70f29d2f61238a9e271690259d9bf5680",
     "wrong-card.lean": "ff5de90e8fd5a0bbe6e910a97aeb1aa5bdef4286f127d00e89bbe97980bdf001",
-    "wrong-card.log": "3521ba9fea2209d8095254425c29cbf1098d8dbdf7062ed105e333dd12efc9f4",
+    "wrong-card.log": "c163e5291b56ec6f1bfcbbaf65c6157712691178bb03fbe3fd4d2e01dc95866f",
     "wrong-move-bound.lean": "700a2b952ea22cb9ec9450b77a5369646837fca6b9a6dbcd2ca5fb8771e1a664",
-    "wrong-move-bound.log": "0aee2cc53513767c9904dd27c4c44122c23cf7e6fe8397096de961c78228b3a9"
+    "wrong-move-bound.log": "f7527454ac8da1afcd58cd382dc5c5d0c9131e9d02a80724f6c11ac4d3f8cf27"
   },
-  "started_utc": "2026-10-19T13:42:08.536796+00:00",
+  "started_utc": "2026-10-19T15:14:11.902864+00:00",
   "axioms": {
     "FiniteCongruenceChecks.SnakyFinite.FiniteWins.false_impossible": [
       "Classical.choice",
@@ -1788,5 +1848,5 @@
       "propext"
     ]
   },
-  "finished_utc": "2026-10-19T14:11:57.276454+00:00"
+  "finished_utc": "2026-10-19T15:45:45.718008+00:00"
 }

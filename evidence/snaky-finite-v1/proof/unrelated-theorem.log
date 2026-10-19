@@ -1,4 +1,4 @@
-/tmp/snaky-proof-candidate-f205fe5/runs/snaky-proof/unrelated-theorem.lean:21:2: error: Type mismatch
+/tmp/snaky-recovery-5fa1b81550a1841a3b2b91a0c48a7cc5b4380448/runs/snaky-proof/unrelated-theorem.lean:21:2: error: Type mismatch
   square_wins
 has type
   FiniteWins square17 HasSnaky 21 ∅ ∅

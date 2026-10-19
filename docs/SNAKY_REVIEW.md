@@ -197,3 +197,40 @@ after deployment. Their local source bytes and URLs have passed the anchor
 checks; this review does not claim that those later release actions are complete.
 Subsequent mathematical or evidence changes require renewed review. No model
 benchmark, reserved task, API session, or training job was run for this review.
+
+## Operational follow-up after hosted compilation timeout
+
+The first hosted PR run (`39267847727`, job `118112018126`) reached the former
+2,400-second compilation limit at 15:07:55 UTC on 19 October 2026. The downloaded
+failed receipt records successful version and dependency stages; the build's
+buffered output was not saved. This is a verification-infrastructure failure,
+not a rejected mathematical claim or a completed hosted reproduction.
+
+The operational code review is **approved**. Only compilation receives the
+3,600-second allowance; every other stage retains 2,400 seconds. The hosted
+job allowance is 120 minutes, with the mathematical and negative-binding
+checks retained. Logs stream to files, and an atomic checkpoint records the
+stage before execution and after completion or failure. The receipt excludes
+itself and its temporary file from the artifact hashes. Replay requires each
+stage to have passed, no failure classification, and the exact timeout policy.
+
+Review found one cleanup gap in the first draft: a terminated direct child
+could leave a live helper in its process group. The final code cleans that
+owned POSIX group on every stage failure while preserving the direct child's
+original exit code. A regression test exercises a parent terminated by SIGTERM
+and its live descendant. POSIX group cleanup applies to Linux/WSL; native
+Windows cleanup terminates the direct child only.
+
+This reviewer independently ran all 11 synthetic runner tests on WSL/Linux;
+all passed in 10.265 seconds. They exercise partial output, timeouts,
+interruption, launch failure, owned-group cleanup, preservation of an unrelated
+process, actual completed rejection, and rejection of incomplete or failed
+stage records. In particular, a timeout after printing a type-error message
+and a process terminated by a signal cannot become successful mathematical
+rejection evidence. The fixtures run short Python processes and do not execute
+Lean or establish the Snaky theorem.
+
+The earlier mathematical approval remains limited to its recorded source and
+receipt. The updated runner still requires its own completed 12-stage receipt
+and publication anchor before renewed full approval. Those evidence checks
+are **pending**; code approval is sufficient to freeze and run the candidate.

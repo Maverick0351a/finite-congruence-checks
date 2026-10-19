@@ -1,4 +1,4 @@
-/tmp/snaky-proof-candidate-f205fe5/runs/snaky-proof/changed-envelope.lean:12:55: error: (kernel) application type mismatch
+/tmp/snaky-recovery-5fa1b81550a1841a3b2b91a0c48a7cc5b4380448/runs/snaky-proof/changed-envelope.lean:12:55: error: (kernel) application type mismatch
   id (Eq.refl true)
 argument has type
   true = true
