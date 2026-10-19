@@ -121,11 +121,11 @@ external peer review is claimed here.
   targeted upstream project. Added a passing JSON-to-Lean table consistency
   check and upstream source hashes. Compiler validation remains pending at this
   point in the log.
-- 2026-10-19 00:25 UTC: Verified the official Lean archive SHA-256, ran Lean
+- 2026-10-19 00:26 UTC: Verified the official Lean archive SHA-256, ran Lean
   4.34.1 and Lake 5.0.0, and compiled both concrete examples successfully.
   The first attempt needed explicit case splitting over the six Boolean
   coordinates because Std has no automatic decision instance for that product
   quantifier. After this repair, `lake build` returned 0; the axiom report is
   recorded above. Upstream dependency preparation and kernel replay continue.
-- 2026-10-19 00:27 UTC: `lake env leanchecker FiniteCongruenceChecks` completed
+- 2026-10-19 00:26 UTC: `lake env leanchecker FiniteCongruenceChecks` completed
   successfully with exit 0 and no diagnostic output.

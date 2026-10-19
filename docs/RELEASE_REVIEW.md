@@ -13,13 +13,13 @@ configuration. Carrier and operation minima are stated within their actual
 bounds. After the repairs below, no unresolved blockers were found within this
 reviewed scope.
 
-The final recorded Python run passes `scripts/check_evidence.py` against the
-current root Python source hashes. Its eleven child stages succeeded, its unit
-test log records 33 passing tests, and its output registry is complete. The
+The regenerated Python baseline passes `scripts/check_evidence.py` against the
+current root Python source hashes, including the test-only portability repair
+below. Its eleven child stages succeeded, its unit test log records 33 passing
+tests, and its output registry is complete. The
 supplementary minima audit's script and minimizer hashes also match the current
 files. Root Python sources use LF line endings, matching the repository checkout
-policy. CI configuration was reviewed locally; its hosted execution status is a
-separate record.
+policy. Hosted CI execution status is a separate record.
 
 Three reproducible input/evidence findings were reported and repaired:
 
@@ -41,6 +41,25 @@ missing digest, a duplicated stage, changed output bytes, and a filename that
 escapes the evidence directory. A simulated child exit code of 7 produces a
 runner exit code of 1 and saved `passed=false` evidence. A nonempty destination
 is rejected without changing its contents. All **33** unit tests pass.
+
+## Hosted CI follow-up
+
+The [first hosted run](https://github.com/Maverick0351a/finite-congruence-checks/actions/runs/39180794258)
+passed the Windows Python job and the concrete Lean job. Both Ubuntu Python
+jobs exposed an isolation defect in the injected-child-failure test: the global
+`subprocess.run` mock also intercepted a subprocess used by `platform.platform()`
+to collect Linux CPU metadata. This made the test observe two calls instead of
+the one intended child command.
+
+The fix stubs `platform.platform()` to a fixed test value before installing the
+child-process mock. The test still checks runner failure, stopping after one
+child command, a saved failed outcome, normalized arguments, and the log hash.
+The focused regression passes locally. Production algorithms are unchanged.
+The primary agent reran the full experiment and all 33 tests, and this reviewer
+confirmed that the regenerated evidence passes the source/output integrity
+check. The primary agent also reports all six evidence tests passing in WSL
+Linux. The repaired source still requires a successful hosted rerun before
+claiming that it has passed the complete hosted release workflow.
 
 ## Independent operation-minimum audit
 

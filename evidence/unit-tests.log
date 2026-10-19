@@ -33,6 +33,6 @@ test_nonchain_join_uses_lattice_table (test_verify_witness.VerifierTests.test_no
 test_trivial_lattice_and_single_vertex (test_verify_witness.VerifierTests.test_trivial_lattice_and_single_vertex) ... ok
 
 ----------------------------------------------------------------------
-Ran 33 tests in 1.521s
+Ran 33 tests in 1.462s
 
 OK

@@ -124,3 +124,19 @@ of the gallery was unavailable; HTML structure and links were checked statically
 
 Lean work is recorded separately in docs/LEAN_VERIFICATION.md, including the
 exact boundary between concrete examples and the upstream theorem.
+
+Created the private GitHub repository and applied 13 relevant topics, including
+openai-math, openai, math, congruence-lattices, universal-algebra, lean4, and
+reproducible-research. Added a vector project banner, accessible README navigation,
+citation metadata, changelog, support guidance, issue forms, pull request template,
+and research-specific issue labels. All 32 README local links resolve; the banner
+and scientific figures were visually inspected. Repository visibility remains private.
+
+The concrete N5/B3 certificate project compiled with Lean 4.34.1 and passed its
+bundled leanchecker replay locally. The first hosted CI run also passed the Lean
+job and Windows Python job. Ubuntu exposed a test-fixture interaction: Linux's
+platform metadata probe uses subprocess.run, which the failed-child regression
+test was mocking globally. Isolated that metadata call in the test. Production
+algorithms were unchanged. All six evidence tests then passed in local WSL, and
+the complete 33-test experiment was rerun successfully with fresh recorded hashes.
+Hosted verification of the correction is recorded with the release checks.

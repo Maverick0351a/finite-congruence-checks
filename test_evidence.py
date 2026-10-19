@@ -63,6 +63,7 @@ class EvidenceTests(unittest.TestCase):
             output = Path(temporary) / "failed-run"
             fake = SimpleNamespace(returncode=7, stdout="injected child failure\n", stderr="")
             with patch("sys.argv", ["run_experiment.py", "--out", str(output)]), \
+                 patch.object(run_experiment.platform, "platform", return_value="test-platform"), \
                  patch.object(run_experiment.subprocess, "run", return_value=fake) as invoked, \
                  redirect_stdout(io.StringIO()), redirect_stderr(io.StringIO()):
                 status = run_experiment.main()

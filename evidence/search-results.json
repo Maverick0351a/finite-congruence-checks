@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-19T00:17:15.695356+00:00",
+  "generated_utc": "2026-10-19T00:27:18.762441+00:00",
   "source": {
     "repository": "https://github.com/openai/math",
     "revision": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
@@ -83,7 +83,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 2.9e-05
+          "seconds": 2.3e-05
         },
         {
           "vertices": 2,
@@ -111,7 +111,7 @@
             }
           ],
           "first_connectivity_failure": null,
-          "seconds": 4.3e-05
+          "seconds": 3.9e-05
         },
         {
           "vertices": 3,
@@ -146,7 +146,7 @@
             }
           ],
           "first_connectivity_failure": null,
-          "seconds": 5.5e-05
+          "seconds": 5.3e-05
         },
         {
           "vertices": 4,
@@ -190,7 +190,7 @@
             }
           ],
           "first_connectivity_failure": null,
-          "seconds": 0.000308
+          "seconds": 0.000322
         }
       ],
       "minimum_vertices_found": 2,
@@ -252,7 +252,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 3.4e-05
+          "seconds": 2e-05
         },
         {
           "vertices": 2,
@@ -265,7 +265,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 1.8e-05
+          "seconds": 1.7e-05
         },
         {
           "vertices": 3,
@@ -302,7 +302,7 @@
             }
           ],
           "first_connectivity_failure": null,
-          "seconds": 0.000149
+          "seconds": 0.000138
         },
         {
           "vertices": 4,
@@ -406,7 +406,7 @@
             }
           ],
           "first_connectivity_failure": null,
-          "seconds": 0.003006
+          "seconds": 0.004115
         }
       ],
       "minimum_vertices_found": 3,
@@ -487,7 +487,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 1.6e-05
+          "seconds": 1.7e-05
         },
         {
           "vertices": 2,
@@ -500,7 +500,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 2.3e-05
+          "seconds": 2e-05
         },
         {
           "vertices": 3,
@@ -514,7 +514,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 0.000156
+          "seconds": 0.000137
         },
         {
           "vertices": 4,
@@ -589,7 +589,7 @@
             }
           ],
           "first_connectivity_failure": null,
-          "seconds": 0.006698
+          "seconds": 0.008548
         }
       ],
       "minimum_vertices_found": 4,
@@ -670,7 +670,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 3.1e-05
+          "seconds": 2.6e-05
         },
         {
           "vertices": 2,
@@ -683,7 +683,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 2.3e-05
+          "seconds": 2.4e-05
         },
         {
           "vertices": 3,
@@ -720,7 +720,7 @@
             }
           ],
           "first_connectivity_failure": null,
-          "seconds": 0.000309
+          "seconds": 0.000322
         },
         {
           "vertices": 4,
@@ -930,7 +930,7 @@
               "bound": 3
             }
           },
-          "seconds": 0.016613
+          "seconds": 0.016542
         }
       ],
       "minimum_vertices_found": 3,
@@ -1034,7 +1034,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 2.6e-05
+          "seconds": 2.4e-05
         },
         {
           "vertices": 2,
@@ -1047,7 +1047,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 2.5e-05
+          "seconds": 2.6e-05
         },
         {
           "vertices": 3,
@@ -1084,7 +1084,7 @@
             }
           ],
           "first_connectivity_failure": null,
-          "seconds": 0.000613
+          "seconds": 0.000559
         },
         {
           "vertices": 4,
@@ -1174,7 +1174,7 @@
               "bound": 1
             }
           },
-          "seconds": 0.065424
+          "seconds": 0.060426
         }
       ],
       "minimum_vertices_found": 3,
@@ -1278,7 +1278,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 2.9e-05
+          "seconds": 2.6e-05
         },
         {
           "vertices": 2,
@@ -1291,7 +1291,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 2.4e-05
+          "seconds": 2.7e-05
         },
         {
           "vertices": 3,
@@ -1305,7 +1305,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 0.00032
+          "seconds": 0.000303
         },
         {
           "vertices": 4,
@@ -1399,7 +1399,7 @@
               "bound": 4
             }
           },
-          "seconds": 0.028546
+          "seconds": 0.035518
         }
       ],
       "minimum_vertices_found": 4,
@@ -1530,7 +1530,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 3.1e-05
+          "seconds": 2e-05
         },
         {
           "vertices": 2,
@@ -1557,7 +1557,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 0.0007
+          "seconds": 0.000772
         },
         {
           "vertices": 4,
@@ -1616,7 +1616,7 @@
               "bound": 1
             }
           },
-          "seconds": 0.174227
+          "seconds": 0.187736
         }
       ],
       "minimum_vertices_found": null,
@@ -1813,7 +1813,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 2e-05
+          "seconds": 1.9e-05
         },
         {
           "vertices": 2,
@@ -1826,7 +1826,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 4.1e-05
+          "seconds": 3.8e-05
         },
         {
           "vertices": 3,
@@ -1840,7 +1840,7 @@
           "vertex_isomorphism_classes": 0,
           "representatives": [],
           "first_connectivity_failure": null,
-          "seconds": 0.001464
+          "seconds": 0.001697
         },
         {
           "vertices": 4,
@@ -1973,7 +1973,7 @@
             }
           ],
           "first_connectivity_failure": null,
-          "seconds": 0.549686
+          "seconds": 0.588238
         }
       ],
       "minimum_vertices_found": 4,
