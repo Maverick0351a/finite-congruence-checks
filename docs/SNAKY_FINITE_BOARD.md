@@ -95,9 +95,11 @@ for the stated target, empty initial ownership and bound 21.
 The receipt records 194 source hashes, 179 explicitly replayed local modules,
 19 declaration axiom reports, and all seven rejected bindings. Only
 `propext`, `Classical.choice` and `Quot.sound` occur in the audited dependencies.
-The local run used a committed-source export with a warmed build/dependency
-cache. Its kernel stage took 1,631.946 seconds; the full 12-stage run took about
-30 minutes. These are local measurements, not fresh hosted-build timings.
+The renewed local run used committed source
+`5fa1b81550a1841a3b2b91a0c48a7cc5b4380448` with a warmed build/dependency
+cache. Its kernel stage took 1,733.691 seconds; the full 12-stage run took
+31 minutes 34 seconds. These are local measurements, not fresh hosted-build
+timings. The initial successful receipt remains in Git history.
 
 Stable claim ID: `context:family-187:snaky:finite-board-21:v1`.
 

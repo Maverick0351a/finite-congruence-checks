@@ -1,5 +1,21 @@
 # Finite graph search work log
 
+## 2026-10-19 — Renewed Snaky verification passes with complete stage records
+
+The revised runner completed all 12 actual proof stages from committed source
+`5fa1b81550a1841a3b2b91a0c48a7cc5b4380448`, using the existing WSL build cache.
+The run lasted from 15:14:11 to 15:45:45 UTC. Kernel replay passed in 1,733.691
+seconds; the 179 local modules, 19 allowed-axiom reports and seven deliberately
+changed claims remain covered. Each rejection completed with exit code 1.
+The receipt replays successfully and is committed at
+`f516abb4e98696cc61003de55518961245416a40`. Presentation generation now binds
+its 219 inputs to that commit. The earlier successful receipt is preserved in
+Git history. Independent review checked all 194 source hashes against the source
+commit, passed all 84 focused tests on Linux without skips, and approved the
+renewed receipt and presentation. Generation freshness and the full renderer
+check pass. Hosted reproduction and HTTP checks for the new evidence anchor
+remain pending before merge and deployment.
+
 ## 2026-10-19 — Fresh hosted Snaky compilation exceeded its stage allowance
 
 PR #18 run `39267847727` passed eight of nine required jobs. The Concrete Lean

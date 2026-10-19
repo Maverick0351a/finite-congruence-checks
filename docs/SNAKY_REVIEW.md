@@ -234,3 +234,40 @@ The earlier mathematical approval remains limited to its recorded source and
 receipt. The updated runner still requires its own completed 12-stage receipt
 and publication anchor before renewed full approval. Those evidence checks
 are **pending**; code approval is sufficient to freeze and run the candidate.
+
+## Renewed receipt and publication review
+
+**Approved** after inspection of the completed replacement receipt. This
+supersedes the pending evidence gate immediately above. The renewed run used
+source commit `5fa1b81550a1841a3b2b91a0c48a7cc5b4380448`, and the receipt is
+committed at `f516abb4e98696cc61003de55518961245416a40`. This reviewer checked
+all 194 recorded source hashes against the source commit's Git blobs and
+confirmed that the Lean project, exact claim, and certificate are unchanged
+from the original mathematical review.
+
+All 12 recorded stages completed with status `passed`, no failure classification,
+and the exact reviewed timeout policy. The kernel stage names 179 local modules
+and records exit code 0 after 1,733.691 seconds. The 19 declaration reports
+contain only the allowed standard axioms. All seven deliberate bad bindings
+completed with exit code 1; their saved diagnostics identify false propositions
+or the expected mathematical type mismatches. No timeout or interrupted process
+is counted as a successful rejection. The 20 artifact hashes exclude the
+receipt itself. The normalized receipt SHA-256 is
+`f7548e47de85f73ff2b88ce6da23b007d531030cd979d1a285f0c7287b5ff581`.
+
+This reviewer independently ran saved-receipt replay and all 84 focused tests
+on WSL/Linux; all passed in 88.836 seconds with no skips. That total comprises
+the earlier 73 certificate, play, presentation and proof/query tests plus 11
+runner fixtures. Presentation freshness and the full renderer check also
+passed. The renewed 219-input publication anchor identifies commit
+`f516abb4e98696cc61003de55518961245416a40`; the generated JSON, JavaScript
+wrapper, exact claim and evidence URLs agree. The updated walkthrough correctly
+identifies the warmed-cache run and retains the original receipt in Git history.
+
+This approval covers the revised runner, renewed local receipt and regenerated
+presentation records. The reviewer did not start another Lean execution; saved
+receipt validation remains distinct from the recorded kernel run. The local
+build reused its existing cache, so it does not resolve the fresh hosted-build
+gate. Hosted CI, HTTP checks for the newly pushed evidence commit, merge and
+public deployment remain separate release gates. No model benchmark or training
+was resumed.
