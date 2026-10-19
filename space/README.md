@@ -37,6 +37,11 @@ shape and object count, inspect claim IDs, then open the selected rules and
 evidence. A midnight, teal, and violet palette follows light/dark preferences.
 The catalog has its own complete classification and independent checker.
 See [the atlas method](https://github.com/Maverick0351a/finite-congruence-checks/blob/main/docs/ATLAS.md).
+The N5 story at `context-n5.html` explains the exact saved two-rule construction,
+lets readers test all 15 partitions, and links the original question, comparator
+target, completed proof, and concrete Lean bridge. Its source map labels each
+relationship. The atlas's N5 entry has different operation tables; the story
+shows the checked grouping correspondence without transferring formal evidence.
 Technical entry details expose individual claim records with assumptions and
 limits. A [local query tool](https://github.com/Maverick0351a/finite-congruence-checks/blob/main/docs/ATLAS_QUERY.md)
 reads the same versioned records for research applications and agents.
@@ -88,6 +93,10 @@ Run `python scripts/build_space_data.py` there to regenerate the data, or add
 `python scripts/check_atlas.py --check-receipt evidence/atlas-review.json`, and
 `python scripts/query_atlas.py build-claims --check`, followed by
 `node scripts/check_atlas_ui.cjs` and `node scripts/check_atlas_map.cjs`.
+For the saved N5 context, run `python scripts/build_n5_context.py --check`,
+`python -m unittest discover -s scripts -p 'test_n5_context.py' -v`, and
+`node scripts/check_n5_context.cjs`. The builder checks fixed source hashes
+against its pinned revision before regenerating the sidecar record.
 The downloadable `data.json` lists source hashes
 and the pinned upstream revision. Publish only the contents of `space/`.
 

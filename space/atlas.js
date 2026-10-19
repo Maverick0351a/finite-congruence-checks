@@ -167,6 +167,7 @@
     byId('entry-takeaway').textContent = minimum === 0 ? `Takeaway: the objects alone already give this shape. Adding a rule is unnecessary for this grouping family.` : `Takeaway: ${minimum === 1 ? 'this one rule allows' : `these ${minimum} rules allow`} every displayed grouping and ${minimum === 1 ? 'excludes' : 'exclude'} every other partition. Exhaustive checking shows that fewer unary rules cannot produce this exact family on these ${n} objects.`;
     byId('entry-provenance').innerHTML = `<dl><dt>Entry</dt><dd>${escapeHtml(entry.id)}</dd><dt>Abstract shape</dt><dd>${escapeHtml(entry.abstract_type)}</dd><dt>Labeled families represented</dt><dd>${entry.orbit_size} under object renaming</dd><dt>Stored object indices</dt><dd>${Array.from({ length: n }, (_, i) => `${LETTERS[i]} = ${i}`).join(', ')}</dd><dt>Evidence type</dt><dd>Exhaustive finite computation and independent verification</dd></dl><p><a href="${GITHUB}/blob/main/evidence/atlas-review.json">Inspect the independent verification record ↗</a></p>`;
     byId('entry-claims').innerHTML = claimsHtml(registry, entry);
+    byId('entry-context').hidden = entry.id !== 'n4-E16709';
     byId('entry-json').textContent = JSON.stringify(certificate(data, entry, registry), null, 2);
     byId('entry-list').querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.entry === entry.id)));
     const firstNontrivial = entry.partitions.findIndex(partition => blocks(partition).some(group => group.length > 1) && blocks(partition).length > 1);
@@ -218,6 +219,8 @@
   byId('atlas-loading').hidden = true;
   byId('atlas-app').hidden = false;
   renderCatalog();
+  const requestedEntry = data.entries.find(entry => entry.id === new URLSearchParams(window.location.search).get('entry'));
+  if (requestedEntry) selectedEntry = requestedEntry;
   renderEntry(selectedEntry);
   if (window.AtlasMap) window.AtlasMap.mount(data, registry, entry => {
     byId('carrier-filter').value = String(entry.carrier_size);

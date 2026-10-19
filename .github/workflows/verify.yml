@@ -74,6 +74,11 @@ jobs:
           node scripts/check_atlas_map.cjs
           node scripts/check_tm_atlas_ui.cjs
           python scripts/check_tm_retrieval.py evidence/tm-retrieval-v1/answers.json
+      - name: Check the saved N5 source context and correspondence
+        run: |
+          python scripts/build_n5_context.py --check
+          python -m unittest discover -s scripts -p 'test_n5_context.py' -v
+          node scripts/check_n5_context.cjs
       - name: Preserve reproduction evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
