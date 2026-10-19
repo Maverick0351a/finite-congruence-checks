@@ -156,3 +156,15 @@ independent checkers, and Lean proof checks. This names the selected scope rathe
 than implying validation of the whole corpus. Added an optional future static
 Hugging Face demonstration to the roadmap. A final separate subagent review found
 no actionable problems in release packaging, manifest coverage, or checksums.
+
+Tagged and released v0.1.0 at ee45ecd2e576a0b3e82a905927c3bf075320eda2 after
+hosted run 39181960497 passed all four jobs. The uploaded 110-file ZIP has SHA-256
+9b397975697a1efda9649fa0052963bcaefd70f275e3987e065e458c2342fe9d,
+matching GitHub's asset digest. The repository remains private.
+
+After the release, added two README badges: a recorded Lean verification badge
+linked to its exact scope/logs, and a version badge linked to the tagged release.
+These are local SVGs so they work for authorized viewers of a private repository.
+The existing CI badge remains live. Badges provide navigation to evidence, not
+external certification. This presentation update does not alter the frozen
+v0.1.0 archive or tag.

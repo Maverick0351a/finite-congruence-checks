@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="183" height="20" role="img" aria-labelledby="title desc">
+  <title id="title">Lean 4.34.1: recorded pass</title>
+  <desc id="desc">Recorded compilation and bundled kernel replay passed for the concrete N5/B3 certificates and targeted upstream modules. Follow the badge link for exact scope and logs.</desc>
+  <clipPath id="rounded"><rect width="183" height="20" rx="3"/></clipPath>
+  <g clip-path="url(#rounded)"><path fill="#555" d="M0 0h94v20H0z"/><path fill="#087f8c" d="M94 0h89v20H94z"/></g>
+  <g fill="#fff" font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" text-anchor="middle"><text x="47" y="14">Lean 4.34.1</text><text x="138.5" y="14">recorded pass</text></g>
+</svg>

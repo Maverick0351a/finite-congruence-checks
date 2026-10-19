@@ -3,6 +3,8 @@
 ![Finite Congruence Checks — project identity banner: small algebras, explicit witnesses and reproducible evidence](charts/project-banner.svg)
 
 [![Reproduce and verify](https://github.com/Maverick0351a/finite-congruence-checks/actions/workflows/verify.yml/badge.svg)](https://github.com/Maverick0351a/finite-congruence-checks/actions/workflows/verify.yml)
+[![Recorded Lean 4.34.1 checks passed: concrete N5/B3 and targeted upstream modules](charts/lean-checks-badge.svg)](docs/LEAN_VERIFICATION.md)
+[![Release v0.1.0](charts/release-badge.svg)](https://github.com/Maverick0351a/finite-congruence-checks/releases/tag/v0.1.0)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-315B78)](LICENSE)
 [![Python: 3.10+](https://img.shields.io/badge/python-3.10%2B-315B78)](#quick-start)
 
