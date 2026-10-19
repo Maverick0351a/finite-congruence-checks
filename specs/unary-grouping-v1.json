@@ -1,0 +1,90 @@
+{
+  "contract_id": "unary-grouping-v1",
+  "contract_version": 1,
+  "status": "specified_not_implemented",
+  "carrier": [0, 1, 2, 3],
+  "operation_count": 1,
+  "operation_arity": 1,
+  "input": {
+    "kind": "unsigned_integer",
+    "bit_width": 16,
+    "minimum": 0,
+    "maximum": 65535,
+    "input_count": 65536,
+    "operation_output_bit_pairs_lsb_first": [[0, 1], [2, 3], [4, 5], [6, 7]],
+    "group_label_bit_pairs_lsb_first": [[8, 9], [10, 11], [12, 13], [14, 15]],
+    "operation_decode": "f(i) = (w >> (2*i)) & 3",
+    "group_label_decode": "g(i) = (w >> (8+2*i)) & 3",
+    "grouping_relation": "R(x,y) iff g(x) = g(y)",
+    "all_in_range_words_are_valid": true,
+    "label_assignments_are_not_canonical_partitions": true,
+    "out_of_range_behavior": "invalid_input; never truncate, wrap, or clamp",
+    "serialized_input_policy": "reject malformed values, booleans, and non-integer JSON values before calling the core",
+    "optional_byte_adapter": "exactly two bytes, least significant byte first"
+  },
+  "source_obligations": [
+    "For every w in Fin 65536: check(w) = true iff for every x,y in Fin 4, g_w(x) = g_w(y) implies g_w(f_w(x)) = g_w(f_w(y)).",
+    "Decoded fields agree with the specified bit positions.",
+    "Encoding the decoded fields returns the original word.",
+    "For every integer z, decoding returns invalid_input iff z < 0 or z >= 65536."
+  ],
+  "result_contract": {
+    "status": "planned_schema",
+    "applies_to": "Future records with status evidenced_result. The specification_example fixtures below are incomplete placeholders, not admissible checked results.",
+    "input_id_format": "ug4-v1:<four lowercase hexadecimal digits>",
+    "required_fields": ["status", "input_id", "input", "claim_id", "claim_kind", "specification", "checker", "outcome", "evidence", "assumptions", "limits"],
+    "claim_kind": "unary_grouping_preservation",
+    "identity_rule": "Bind claims to the exact encoded word and contract version, even when group labels define the same partition.",
+    "specification_fields": ["contract_id", "version", "artifact_sha256"],
+    "hash_encoding": "SHA-256 of the exact referenced artifact bytes, encoded as 64 lowercase hexadecimal digits; no newline normalization or self-hashing contract field.",
+    "checker_fields": ["version", "source_revision", "source_sha256", "theorem_declaration"],
+    "outcome_fields": ["preserves", "violating_pair"],
+    "outcome_semantics": "For an evidenced valid input, preserves is a Boolean; violating_pair is null when true and an explicit pair when false. Invalid input is a separate boundary result. Checker/reference agreement is a separate run observation.",
+    "evidence_fields": ["kind", "artifact_path", "artifact_sha256", "case_pointer"],
+    "evidence_kinds": ["source_proof", "bounded_executable_agreement", "binary_refinement"],
+    "binary_run_fields": ["binary_sha256", "target_architecture", "compiler", "compiler_flags", "linked_runtime", "independent_reference_version", "independent_reference_source_sha256", "harness_source_sha256", "command", "covered_words", "actual_tested_count", "distinct_word_count", "disagreements"],
+    "disagreement_fields": ["word", "checker_output", "reference_output"],
+    "consistency_requirements": [
+      "The input ID encodes the same word as input.word.",
+      "Decoded operation and group labels match input.word under this contract.",
+      "The claim names this exact input, specification version, and claim kind.",
+      "The specification ID, version, and artifact_sha256 match the selected contract artifact; recompute its hash from the exact bytes before accepting the record.",
+      "An outcome may be published only with evidence tied to the checker and this input.",
+      "A failed preservation claim includes a pair x,y with equal original labels and different output labels.",
+      "A false preservation outcome is distinct from checker/reference disagreement.",
+      "Full bounded coverage requires the distinct covered words to be exactly 0 through 65535, not only a total execution count of 65536.",
+      "Malformed-input adapter tests are recorded separately from the 16-bit word domain.",
+      "A passed executable comparison retains its bounded scope; it does not imply binary refinement."
+    ]
+  },
+  "examples": [
+    {
+      "input_id": "ug4-v1:50a0",
+      "status": "specification_example",
+      "input": {"word": 20640, "hex": "50a0", "operation": [0, 0, 2, 2], "group_labels": [0, 0, 1, 1]},
+      "claim_id": "preservation:ug4-v1:50a0",
+      "claim_kind": "unary_grouping_preservation",
+      "specification": {"contract_id": "unary-grouping-v1", "version": 1},
+      "expected": {"preserves": true, "basis": "manually specified fixture"},
+      "checker": null,
+      "outcome": null,
+      "evidence": [],
+      "assumptions": ["Four objects; one total unary operation; grouping is equality of labels."],
+      "limits": ["No checker or binary execution is evidenced by this fixture.", "This concerns one grouping, not the entire congruence family or any minimality claim."]
+    },
+    {
+      "input_id": "ug4-v1:50a8",
+      "status": "specification_example",
+      "input": {"word": 20648, "hex": "50a8", "operation": [0, 2, 2, 2], "group_labels": [0, 0, 1, 1]},
+      "claim_id": "preservation:ug4-v1:50a8",
+      "claim_kind": "unary_grouping_preservation",
+      "specification": {"contract_id": "unary-grouping-v1", "version": 1},
+      "expected": {"preserves": false, "violating_pair": [0, 1], "basis": "manually specified fixture"},
+      "checker": null,
+      "outcome": null,
+      "evidence": [],
+      "assumptions": ["Four objects; one total unary operation; grouping is equality of labels."],
+      "limits": ["No checker or binary execution is evidenced by this fixture.", "This concerns one grouping, not the entire congruence family or any minimality claim."]
+    }
+  ]
+}
