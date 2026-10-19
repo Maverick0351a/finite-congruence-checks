@@ -1,0 +1,11 @@
+'GroupingChecker.decode_operation_bits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GroupingChecker.decode_label_bits' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GroupingChecker.encode_decode' depends on axioms: [propext, Quot.sound]
+'GroupingChecker.decode_encode' depends on axioms: [propext, Quot.sound]
+'GroupingChecker.decodeInt_invalid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GroupingChecker.decodeInt_value' depends on axioms: [propext, Quot.sound]
+'GroupingChecker.decodeInt_valid' depends on axioms: [propext, Quot.sound]
+'GroupingChecker.labels_equivalence' does not depend on any axioms
+'GroupingChecker.check_iff' depends on axioms: [propext, Quot.sound]
+'GroupingChecker.witness_sound' depends on axioms: [propext]
+'GroupingChecker.rejected_has_witness' depends on axioms: [propext]

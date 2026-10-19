@@ -1,0 +1,18 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs": "ae77ba86a42f0832.o",
+ "log":
+ [{"message":
+   ".> /tmp/grouping-checker-toolchain/lean-4.34.1-linux/bin/clang -c -o /mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/ir/GroupingMain.c.o.export /mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/ir/GroupingMain.c -I /tmp/grouping-checker-toolchain/lean-4.34.1-linux/include -fstack-clash-protection -ffp-contract=off -fdata-sections -ffunction-sections -fPIC -fvisibility=hidden -Wno-unused-command-line-argument --sysroot /tmp/grouping-checker-toolchain/lean-4.34.1-linux -nostdinc -isystem /tmp/grouping-checker-toolchain/lean-4.34.1-linux/include/clang -O3 -DNDEBUG -DLEAN_EXPORTING",
+   "level": "trace"}],
+ "inputs":
+ [["GroupingMain:c",
+   [["/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/ir/GroupingMain.c",
+     "5df1275080ff35f2"],
+    ["Lean 4.34.1, commit 5045d0056413266e57c625dcd7c365b10e377c52",
+     "e9f3658beb070375"]]],
+  ["Lean 4.34.1, commit 5045d0056413266e57c625dcd7c365b10e377c52",
+   "e9f3658beb070375"],
+  ["traceArgs: #[-O3, -DNDEBUG, -DLEAN_EXPORTING]", "c1efb66122fb2b9a"],
+  ["x86_64-unknown-linux-gnu", "53a0e8937c307c28"]],
+ "depHash": "00ba11f729731656"}

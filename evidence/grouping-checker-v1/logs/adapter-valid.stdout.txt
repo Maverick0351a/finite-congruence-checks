@@ -1,0 +1,6 @@
+{"group_labels":[0,0,0,0],"operation":[0,0,0,0],"preserves":true,"roundtrip_word":0,"status":"checked","violating_pair":null,"word":0}
+{"group_labels":[3,3,3,3],"operation":[3,3,3,3],"preserves":true,"roundtrip_word":65535,"status":"checked","violating_pair":null,"word":65535}
+{"group_labels":[0,0,0,0],"operation":[1,0,0,0],"preserves":true,"roundtrip_word":1,"status":"checked","violating_pair":null,"word":1}
+{"group_labels":[0,0,1,1],"operation":[0,0,2,2],"preserves":true,"roundtrip_word":20640,"status":"checked","violating_pair":null,"word":20640}
+{"group_labels":[0,0,1,1],"operation":[0,2,2,2],"preserves":false,"roundtrip_word":20648,"status":"checked","violating_pair":[0,1],"word":20648}
+{"group_labels":[0,0,0,0],"operation":[0,0,0,0],"preserves":true,"roundtrip_word":0,"status":"checked","violating_pair":null,"word":0}

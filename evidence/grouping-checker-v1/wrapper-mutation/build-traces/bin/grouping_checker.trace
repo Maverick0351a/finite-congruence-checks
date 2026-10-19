@@ -1,0 +1,21 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs": "850ba7c262ec6585",
+ "log":
+ [{"message":
+   ".> /tmp/grouping-checker-toolchain/lean-4.34.1-linux/bin/clang -o /tmp/grouping-wrapper-fault-ac42fcyk/.lake/build/bin/grouping_checker @/tmp/grouping-wrapper-fault-ac42fcyk/.lake/build/bin/grouping_checker.rsp",
+   "level": "trace"}],
+ "inputs":
+ [["GroupingMain:linkInfo",
+   [["Module.moreLinkObjs",
+     [["/tmp/grouping-wrapper-fault-ac42fcyk/.lake/build/ir/GroupingMain.c.o.export",
+       "89a834c4cf5ae5dc"],
+      ["/tmp/grouping-wrapper-fault-ac42fcyk/.lake/build/ir/GroupingChecker.c.o.export",
+       "ed5d037fc7a5dec9"]]],
+    ["Module.moreLinkLibs", "00000000000006bb"],
+    ["Module.moreLinkArgs: #[]", "00000000000006bb"]]],
+  ["LeanExe.exeOnlyLinkArgs: #[]", "00000000000006bb"],
+  ["Lean 4.34.1, commit 5045d0056413266e57c625dcd7c365b10e377c52",
+   "e9f3658beb070375"],
+  ["x86_64-unknown-linux-gnu", "53a0e8937c307c28"]],
+ "depHash": "a42fe6894cdbf7d9"}

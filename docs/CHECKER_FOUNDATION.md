@@ -1,9 +1,11 @@
 # From mathematical certificates to checked executables
 
-Status: proposed next milestone. The project has computational atlas checks and
-separate concrete Lean proofs for the exact saved N5/B3 graphs. A shared shape
-name does not transfer those proofs to an atlas entry. The project does not yet
-have a general executable certificate-checker theorem or a machine-code proof.
+Status: the four-object generic source checker is implemented, with decoding,
+acceptance-equivalence, and returned-witness proofs. The native comparison and
+active proposal/repair demonstration have a reproducible runner; see the
+[implementation and evidence](GROUPING_CHECKER.md). A machine-code proof remains
+future work. Separate concrete N5/B3 proofs still apply to their exact saved
+graphs; a shared shape name does not transfer them to another atlas entry.
 
 ## The mathematical question
 
@@ -56,7 +58,8 @@ does not need a separate transitivity test. Every integer from 0 through 65,535
 is a valid payload. There are 256 operation tables and 256 group-label arrays,
 so there are exactly 65,536 inputs. Several label arrays encode the same one of
 the 15 partitions. All labelings remain in the test domain, and distinct encoded
-inputs keep distinct IDs. These are design counts, not a completed binary test.
+inputs keep distinct IDs. The [native run receipt](../evidence/grouping-checker-v1/summary.json)
+records actual coverage separately from these design counts.
 
 This contract supersedes the initial six-relation-bit/two-reserved-bit proposal.
 That different format also had 65,536 raw words, but different decoding and
@@ -84,7 +87,8 @@ two bytes, least significant byte first, with that adapter tested separately.
 For example, `0x50a0` decodes to `f=[0,0,2,2]` and `g=[0,0,1,1]`, which
 preserves the grouping. Changing only f(1) to 2 gives `0x50a8`: objects 0 and 1
 start together, but f(0)=0 and f(1)=2 have different labels. These are manually
-specified examples with expected results, not executable-checker evidence.
+specified examples in the frozen contract. Actual executable evidence is stored
+separately in the [native transcript](../evidence/grouping-checker-v1/native.jsonl.gz).
 
 1. **Prove the source checker.** Specify decoding and rejection behavior in Lean;
    prove the equivalence and decoding obligations above. Record the theorem, exact source hash,
@@ -131,7 +135,7 @@ kinds and a versioned schema extension before adding software-verification
 records to the mathematical registry. Missing evidence must remain visibly
 missing; an agent must not infer a later achievement from an earlier one.
 
-For each checked input, a future result record must include:
+For each checked input, the [implemented result schema](../specs/grouping-result-v1.schema.json) includes:
 
 | Field | Required meaning |
 | --- | --- |
@@ -162,8 +166,8 @@ lack the evidence and artifact hashes required of future `evidenced_result`
 records. For such records, require the specification ID, version, and SHA-256
 of its exact artifact bytes, encoded as 64 lowercase hexadecimal digits. Recompute
 that hash against the selected contract before admitting the record; a matching
-name or version alone is insufficient. Implement and test
-the result schema and cross-field consistency rules before accepting real results.
+name or version alone is insufficient. The implementation's result validator
+checks the schema and cross-field consistency before accepting real results.
 
 REA can inspect branches, data handling, and disassembly and propose candidate
 invariants or counterexamples. Its explanations remain hypotheses until tests

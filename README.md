@@ -75,6 +75,24 @@ Read the [query contract](docs/ATLAS_QUERY.md),
 [infrastructure direction](docs/INFRASTRUCTURE.md). These interfaces are an
 early foundation for reliable evidence retrieval in a bounded mathematical domain.
 
+## Propose a grouping, get a checked counterexample
+
+The new [four-object grouping checker](docs/GROUPING_CHECKER.md) adds an active
+tool interface. Lean proves its decoding round trips, acceptance equivalence,
+and the correctness of every returned violating pair. A separate runner compares
+the compiled build with an independent reference over all **65,536** inputs.
+
+```text
+Rule: [0,2,2,3]
+Proposal {0,1} | {2} | {3} → reject, pair (0,1)
+Repair   {0,1,2} | {3}     → accept
+```
+
+The [recorded demo](evidence/grouping-checker-v1/demo.json) links each outcome to
+its exact input, source proof, and bounded executable evidence. Read the
+[walkthrough and reproduction commands](docs/GROUPING_CHECKER.md). This pilot
+checks one rule and grouping; a machine-code refinement proof remains future work.
+
 ## Quick start
 
 Python 3.10 or later. Clone the repository, enter it, and check a saved example:

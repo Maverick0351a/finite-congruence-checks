@@ -1,0 +1,13 @@
+{"input":"-1","status":"invalid_input"}
+{"input":"65536","status":"invalid_input"}
+{"input":"","status":"invalid_input"}
+{"input":" ","status":"invalid_input"}
+{"input":"+1","status":"invalid_input"}
+{"input":" 1","status":"invalid_input"}
+{"input":"1 ","status":"invalid_input"}
+{"input":"true","status":"invalid_input"}
+{"input":"False","status":"invalid_input"}
+{"input":"1.0","status":"invalid_input"}
+{"input":"1e0","status":"invalid_input"}
+{"input":"0x50a0","status":"invalid_input"}
+{"input":"--unknown","status":"invalid_input"}

@@ -1,0 +1,836 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "contract_id": "unary-grouping-v1",
+  "source_revision": "5f3a65f3b9ad29c13a822e3a781476fcc5867be0",
+  "source_tree_dirty": false,
+  "source_manifest": {
+    "specs/unary-grouping-v1.json": "2a25406831cccfd3c520cfd1b2b2bde6b7bbad50c7f5f771ab5f0e7f96c21b01",
+    "specs/grouping-result-v1.schema.json": "59f1b54c7e5e7d56d6dca387c2f7aa6447528fe0b82d40c88c8fecda848d6b5b",
+    "scripts/grouping_reference.py": "63a178876473d3a5944a34fc805b1e69f32c63340eb7ed7b0d374089f9eb79cf",
+    "scripts/test_grouping_reference.py": "053e58d56a7d1694e19f12d3287b6dacdecc964d99ce700600c72772a00d2646",
+    "scripts/run_grouping_checks.py": "e8ec15cf67dbba15a6623bc2dccfb87d41e0b2fd48d5545da0b8ac54e5ff39c7",
+    "scripts/test_grouping_checks.py": "c2473b3e15987ec3dd79eebfe687447fc12e57f73091f31c74c371108fc838c9",
+    "scripts/grouping_tool.py": "3ed8f5bb64a00440ee030fe939cadaa955cc33ba17d4deed7dbfad418272cdca",
+    "scripts/test_grouping_tool.py": "4d083dd8b756aa998dc95b46ed317a7ff46966237e63f2f754ca78e3a67acfb8",
+    "lean/GroupingChecker.lean": "057fc24fe3b7af8ed903b0d1711cc7c1bd086f7738e258cea60ee8c26093bddd",
+    "lean/GroupingMain.lean": "dbdff32181c6aca466c79d9f457e583c987bd96ba10c8702b33ffd7a9605da7e",
+    "lean/GroupingAudit.lean": "f14614dda77f459431264c390c99bf7d9c6ffabdf8fc63694d284361e60c5450",
+    "lean/lakefile.toml": "cff02746b410fb58fedffefe7d0ab2906ccddb30c1e0ec021686fad0bb3e37b0",
+    "lean/lake-manifest.json": "551234699a109abdedcafa7e96ee5d2bb2b8eca988b698bcb45dd232f360f1b9",
+    "lean/lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b"
+  },
+  "source_manifest_after": {
+    "specs/unary-grouping-v1.json": "2a25406831cccfd3c520cfd1b2b2bde6b7bbad50c7f5f771ab5f0e7f96c21b01",
+    "specs/grouping-result-v1.schema.json": "59f1b54c7e5e7d56d6dca387c2f7aa6447528fe0b82d40c88c8fecda848d6b5b",
+    "scripts/grouping_reference.py": "63a178876473d3a5944a34fc805b1e69f32c63340eb7ed7b0d374089f9eb79cf",
+    "scripts/test_grouping_reference.py": "053e58d56a7d1694e19f12d3287b6dacdecc964d99ce700600c72772a00d2646",
+    "scripts/run_grouping_checks.py": "e8ec15cf67dbba15a6623bc2dccfb87d41e0b2fd48d5545da0b8ac54e5ff39c7",
+    "scripts/test_grouping_checks.py": "c2473b3e15987ec3dd79eebfe687447fc12e57f73091f31c74c371108fc838c9",
+    "scripts/grouping_tool.py": "3ed8f5bb64a00440ee030fe939cadaa955cc33ba17d4deed7dbfad418272cdca",
+    "scripts/test_grouping_tool.py": "4d083dd8b756aa998dc95b46ed317a7ff46966237e63f2f754ca78e3a67acfb8",
+    "lean/GroupingChecker.lean": "057fc24fe3b7af8ed903b0d1711cc7c1bd086f7738e258cea60ee8c26093bddd",
+    "lean/GroupingMain.lean": "dbdff32181c6aca466c79d9f457e583c987bd96ba10c8702b33ffd7a9605da7e",
+    "lean/GroupingAudit.lean": "f14614dda77f459431264c390c99bf7d9c6ffabdf8fc63694d284361e60c5450",
+    "lean/lakefile.toml": "cff02746b410fb58fedffefe7d0ab2906ccddb30c1e0ec021686fad0bb3e37b0",
+    "lean/lake-manifest.json": "551234699a109abdedcafa7e96ee5d2bb2b8eca988b698bcb45dd232f360f1b9",
+    "lean/lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b"
+  },
+  "hash_encoding": "SHA-256 of exact artifact bytes; 64 lowercase hexadecimal digits; no text normalization",
+  "sources_unchanged": true,
+  "reference": {
+    "path": "scripts/grouping_reference.py",
+    "version": "1",
+    "sha256": "63a178876473d3a5944a34fc805b1e69f32c63340eb7ed7b0d374089f9eb79cf",
+    "independence": "Authored from the input contract before its author read the Lean implementation; integration harness authored afterwards. Arithmetic base-4 decoding and block-image-set preservation reference; no formal proof of the Python reference."
+  },
+  "harness": {
+    "path": "scripts/run_grouping_checks.py",
+    "sha256": "e8ec15cf67dbba15a6623bc2dccfb87d41e0b2fd48d5545da0b8ac54e5ff39c7"
+  },
+  "toolchain": {
+    "pinned": "leanprover/lean4:v4.34.1",
+    "lean_version": "Lean (version 4.34.1, x86_64-unknown-linux-gnu, commit 5045d0056413266e57c625dcd7c365b10e377c52, Release)",
+    "lake_version": "Lake version 5.0.0-src+5045d00 (Lean version 4.34.1)",
+    "matches_pin": true
+  },
+  "proof_status": {
+    "build": true,
+    "kernel_replay": true,
+    "axioms": true,
+    "expected_declarations": [
+      "GroupingChecker.decode_operation_bits",
+      "GroupingChecker.decode_label_bits",
+      "GroupingChecker.encode_decode",
+      "GroupingChecker.decode_encode",
+      "GroupingChecker.decodeInt_invalid",
+      "GroupingChecker.decodeInt_value",
+      "GroupingChecker.decodeInt_valid",
+      "GroupingChecker.labels_equivalence",
+      "GroupingChecker.check_iff",
+      "GroupingChecker.witness_sound",
+      "GroupingChecker.rejected_has_witness"
+    ],
+    "axiom_reports": {
+      "passed": true,
+      "expected_declarations": [
+        "GroupingChecker.decode_operation_bits",
+        "GroupingChecker.decode_label_bits",
+        "GroupingChecker.encode_decode",
+        "GroupingChecker.decode_encode",
+        "GroupingChecker.decodeInt_invalid",
+        "GroupingChecker.decodeInt_value",
+        "GroupingChecker.decodeInt_valid",
+        "GroupingChecker.labels_equivalence",
+        "GroupingChecker.check_iff",
+        "GroupingChecker.witness_sound",
+        "GroupingChecker.rejected_has_witness"
+      ],
+      "reports": [
+        {
+          "declaration": "GroupingChecker.decode_operation_bits",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "GroupingChecker.decode_label_bits",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "GroupingChecker.encode_decode",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "GroupingChecker.decode_encode",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "GroupingChecker.decodeInt_invalid",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "GroupingChecker.decodeInt_value",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "GroupingChecker.decodeInt_valid",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "GroupingChecker.labels_equivalence",
+          "axioms": []
+        },
+        {
+          "declaration": "GroupingChecker.check_iff",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "declaration": "GroupingChecker.witness_sound",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "declaration": "GroupingChecker.rejected_has_witness",
+          "axioms": [
+            "propext"
+          ]
+        }
+      ],
+      "allowed_axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "forbidden_axioms": [],
+      "missing_declarations": [],
+      "unexpected_declarations": [],
+      "duplicate_declarations": []
+    },
+    "scope": "Lean source and exported module replay for the unary grouping checker; excludes a proof about the native executable, compiler, runtime, or hardware"
+  },
+  "binary": {
+    "path": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/bin/grouping_checker",
+    "build_artifact_path": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/bin/grouping_checker",
+    "target_architecture": "x86_64-unknown-linux-gnu",
+    "host": {
+      "system": "Linux",
+      "machine": "x86_64",
+      "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.39"
+    },
+    "compiler": {
+      "path": "/tmp/grouping-checker-toolchain/lean-4.34.1-linux/bin/clang",
+      "sha256": "9fcd5fc4baeea9c449bcc9ca4b9db7714465107669498b0056a853f22f5f4def",
+      "version": "clang version 22.1.4 (https://github.com/llvm/llvm-project 35990504507d79e0b9deb809c8ee5e1b34ceef20)\nTarget: x86_64-unknown-linux-gnu\nThread model: posix\nInstalledDir: /tmp/grouping-checker-toolchain/lean-4.34.1-linux/bin",
+      "target": "x86_64-unknown-linux-gnu"
+    },
+    "build_command": "build",
+    "build_log": {
+      "stdout_path": "logs/build.stdout.txt",
+      "stderr_path": "logs/build.stderr.txt"
+    },
+    "build_trace_artifacts": [
+      {
+        "source_path": "lean/.lake/build/bin/grouping_checker.rsp",
+        "sha256": "237d46fab4695f9749845b46977abb05963ec69803f073c4e90f27b823e1381e",
+        "size_bytes": 1076,
+        "path": "build-traces/bin/grouping_checker.rsp"
+      },
+      {
+        "source_path": "lean/.lake/build/bin/grouping_checker.trace",
+        "sha256": "495fb7b3e8554a35a80e7d16a79fb0bcdd802dcc6c4d2e19dfe5b32883a95053",
+        "size_bytes": 1199,
+        "path": "build-traces/bin/grouping_checker.trace"
+      },
+      {
+        "source_path": "lean/.lake/build/ir/GroupingChecker.c",
+        "sha256": "e692eda18bfe4449fee66a20d1c05f0ddd140d19cf8479575fbaca08c2d1871d",
+        "size_bytes": 31219
+      },
+      {
+        "source_path": "lean/.lake/build/ir/GroupingChecker.c.o.export.trace",
+        "sha256": "6cb5c5f2e1589912d829aa51d9aa16dc7cee896364c1ce99e13d12e88cce2c5a",
+        "size_bytes": 1375,
+        "path": "build-traces/ir/GroupingChecker.c.o.export.trace"
+      },
+      {
+        "source_path": "lean/.lake/build/ir/GroupingChecker.setup.json",
+        "sha256": "6416d2d4648cb1f082d348007321a8fed276b347c48c877bf4d07bb25bffab4f",
+        "size_bytes": 152,
+        "path": "build-traces/ir/GroupingChecker.setup.json"
+      },
+      {
+        "source_path": "lean/.lake/build/ir/GroupingMain.c",
+        "sha256": "c310a46bd8ac7e6e14992f9e0816050d0b1fc8512ccd90c41d41197abe8a1242",
+        "size_bytes": 45766
+      },
+      {
+        "source_path": "lean/.lake/build/ir/GroupingMain.c.o.export.trace",
+        "sha256": "df0fe08e8e50837e51f39821ed9468fecd39e704d6076beff0150655be7f8ea9",
+        "size_bytes": 1363,
+        "path": "build-traces/ir/GroupingMain.c.o.export.trace"
+      },
+      {
+        "source_path": "lean/.lake/build/ir/GroupingMain.setup.json",
+        "sha256": "889fa9f790c0f7e6c82d359435066431649fdb282054a0fa07ad69531ef95aa0",
+        "size_bytes": 310,
+        "path": "build-traces/ir/GroupingMain.setup.json"
+      },
+      {
+        "source_path": "lean/.lake/build/lib/lean/GroupingChecker.olean",
+        "sha256": "b0324bc8c2de2cede9f2401ae6d755fc2ad49187939181e5c06fb2876cc84929",
+        "size_bytes": 1036352
+      },
+      {
+        "source_path": "lean/.lake/build/lib/lean/GroupingChecker.trace",
+        "sha256": "1c1d9455282ef24f668b0b35d11561f22ec8991efda1a1dddb14837427a9a018",
+        "size_bytes": 1974,
+        "path": "build-traces/lib/lean/GroupingChecker.trace"
+      },
+      {
+        "source_path": "lean/.lake/build/lib/lean/GroupingMain.olean",
+        "sha256": "82c248e38b88908a977565762962a8e2b5a048cfc76dd84d90cf114f9d9c1d71",
+        "size_bytes": 170712
+      },
+      {
+        "source_path": "lean/.lake/build/lib/lean/GroupingMain.trace",
+        "sha256": "af8ab5420bd2380652673aaaa5bfc6b0503eba6adc21398e7a28c36208c2be26",
+        "size_bytes": 2071,
+        "path": "build-traces/lib/lean/GroupingMain.trace"
+      }
+    ],
+    "cache_policy": "Lake validates its dependency traces and may replay cached commands. Trace files and verbose output are retained; a replay is not described as a fresh compiler invocation.",
+    "verbose_output_mentions_replay": true,
+    "sha256": "af15b1331866d4a3a0f8d8956d1629769d269e5e24ba9fc6534ae3bf46f985a6",
+    "size_bytes": 121982440,
+    "build_artifact_sha256": "af15b1331866d4a3a0f8d8956d1629769d269e5e24ba9fc6534ae3bf46f985a6",
+    "matches_build_artifact": true,
+    "archive": {
+      "path": "binary.gz",
+      "format": "gzip",
+      "mtime": 0,
+      "sha256": "1306664979ee57a0c71b39670d62ce2ca5b6988186ed7f0be36d9d0d37dea378",
+      "size_bytes": 34105528,
+      "raw_sha256": "af15b1331866d4a3a0f8d8956d1629769d269e5e24ba9fc6534ae3bf46f985a6",
+      "raw_size_bytes": 121982440
+    },
+    "linked_libraries": {
+      "name": "linked-libraries",
+      "argv": [
+        "ldd",
+        "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/bin/grouping_checker"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks",
+      "exit_code": 0,
+      "stdout_path": "logs/linked-libraries.stdout.txt",
+      "stdout_sha256": "306ae5ffb408253cddb596d44206cbb6b89af7e9d159c824fce9830c01938d5a",
+      "stderr_path": "logs/linked-libraries.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "linked_libraries_scope": "The platform command reports dynamic dependencies; static library flags and search paths are preserved in the link response file.",
+    "sha256_after": "af15b1331866d4a3a0f8d8956d1629769d269e5e24ba9fc6534ae3bf46f985a6",
+    "unchanged_during_checks": true
+  },
+  "commands": [
+    {
+      "name": "git-path-conversion",
+      "argv": [
+        "wslpath",
+        "-w",
+        "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks",
+      "exit_code": 0,
+      "stdout_path": "logs/git-path-conversion.stdout.txt",
+      "stdout_sha256": "3c89c1a834f059134743e900c80a0120ed8c75cac86606901d9ea725abd88379",
+      "stderr_path": "logs/git-path-conversion.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "git-revision",
+      "argv": [
+        "/mnt/c/Users/Maverick/AppData/Local/hermes/git/cmd/git.exe",
+        "-C",
+        "C:\\Users\\Maverick\\Documents\\Codex\\2026-10-18\\thi\\outputs\\finite-congruence-checks",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks",
+      "exit_code": 0,
+      "stdout_path": "logs/git-revision.stdout.txt",
+      "stdout_sha256": "62e6ad6dcfaeeb5c473aa4f1a0ffbc1ec46f0aba3c4bb134675374f5613e7ac4",
+      "stderr_path": "logs/git-revision.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "git-status",
+      "argv": [
+        "/mnt/c/Users/Maverick/AppData/Local/hermes/git/cmd/git.exe",
+        "-C",
+        "C:\\Users\\Maverick\\Documents\\Codex\\2026-10-18\\thi\\outputs\\finite-congruence-checks",
+        "status",
+        "--porcelain",
+        "--untracked-files=normal"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks",
+      "exit_code": 0,
+      "stdout_path": "logs/git-status.stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "logs/git-status.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "lake-version",
+      "argv": [
+        "lake",
+        "--version"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean",
+      "exit_code": 0,
+      "stdout_path": "logs/lake-version.stdout.txt",
+      "stdout_sha256": "36526a338068c343bedff5daa38fec328b4f722df1e8f0b5d026d4f0f908f3a3",
+      "stderr_path": "logs/lake-version.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "lean-version",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "--version"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean",
+      "exit_code": 0,
+      "stdout_path": "logs/lean-version.stdout.txt",
+      "stdout_sha256": "355a9a028f81641782d75d6e6b58dec70f29d2f61238a9e271690259d9bf5680",
+      "stderr_path": "logs/lean-version.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "build",
+      "argv": [
+        "lake",
+        "-v",
+        "build",
+        "grouping_checker"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean",
+      "exit_code": 0,
+      "stdout_path": "logs/build.stdout.txt",
+      "stdout_sha256": "3a773a6f31b7e6988560681ad45659697d04a36e6112aa058cae9c78901b048e",
+      "stderr_path": "logs/build.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "kernel-replay",
+      "argv": [
+        "lake",
+        "env",
+        "leanchecker",
+        "GroupingChecker"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean",
+      "exit_code": 0,
+      "stdout_path": "logs/kernel-replay.stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "logs/kernel-replay.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "axioms",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "GroupingAudit.lean"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean",
+      "exit_code": 0,
+      "stdout_path": "logs/axioms.stdout.txt",
+      "stdout_sha256": "2051115a7db25ba948de3f287b63e5c4af74610f000c720c68c9266fe9bde4ee",
+      "stderr_path": "logs/axioms.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "lean-prefix",
+      "argv": [
+        "lake",
+        "env",
+        "lean",
+        "--print-prefix"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean",
+      "exit_code": 0,
+      "stdout_path": "logs/lean-prefix.stdout.txt",
+      "stdout_sha256": "73124e5232a37b7093a8436ed2085b160e6e87bfd395703d221d5447f22f53fd",
+      "stderr_path": "logs/lean-prefix.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "compiler-version",
+      "argv": [
+        "/tmp/grouping-checker-toolchain/lean-4.34.1-linux/bin/clang",
+        "--version"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean",
+      "exit_code": 0,
+      "stdout_path": "logs/compiler-version.stdout.txt",
+      "stdout_sha256": "53ee5c9cafc9d724da260edd726f1f4989d52fea3dd48b0adfd84fa7a92e624a",
+      "stderr_path": "logs/compiler-version.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "compiler-target",
+      "argv": [
+        "/tmp/grouping-checker-toolchain/lean-4.34.1-linux/bin/clang",
+        "-dumpmachine"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean",
+      "exit_code": 0,
+      "stdout_path": "logs/compiler-target.stdout.txt",
+      "stdout_sha256": "0f8c1ba3b2472237fbea77ab675c51c649f80370d3e559f385f9af57d2a66036",
+      "stderr_path": "logs/compiler-target.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "linked-libraries",
+      "argv": [
+        "ldd",
+        "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/bin/grouping_checker"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks",
+      "exit_code": 0,
+      "stdout_path": "logs/linked-libraries.stdout.txt",
+      "stdout_sha256": "306ae5ffb408253cddb596d44206cbb6b89af7e9d159c824fce9830c01938d5a",
+      "stderr_path": "logs/linked-libraries.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "native-all",
+      "argv": [
+        "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/bin/grouping_checker",
+        "--all"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks",
+      "exit_code": 0,
+      "stdout_path": "native.jsonl.gz",
+      "stdout_sha256": "f8c6dfcbca6e49657374565730d61bc169141670017fcd0fad1732c75ac4d630",
+      "stderr_path": "logs/native-all.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_compression": "gzip",
+      "stdout_uncompressed_sha256": "889b5932ff60c2c392c793a19112d753b46b84baaecbccee244a30fa34080142"
+    },
+    {
+      "name": "adapter-valid",
+      "argv": [
+        "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/bin/grouping_checker",
+        "0",
+        "65535",
+        "00001",
+        "20640",
+        "20648",
+        "-0"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks",
+      "exit_code": 0,
+      "stdout_path": "logs/adapter-valid.stdout.txt",
+      "stdout_sha256": "acfcb595f1adca818aa6c66d2745495318addb3ee05d3168f2e30e0b448126a3",
+      "stderr_path": "logs/adapter-valid.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "adapter-invalid",
+      "argv": [
+        "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/bin/grouping_checker",
+        "-1",
+        "65536",
+        "",
+        " ",
+        "+1",
+        " 1",
+        "1 ",
+        "true",
+        "False",
+        "1.0",
+        "1e0",
+        "0x50a0",
+        "--unknown"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks",
+      "exit_code": 2,
+      "stdout_path": "logs/adapter-invalid.stdout.txt",
+      "stdout_sha256": "df45194d354f3d52259048834b0b8616f60c7464081524df939bacb1c086f3ea",
+      "stderr_path": "logs/adapter-invalid.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "adapter-mixed",
+      "argv": [
+        "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/bin/grouping_checker",
+        "0",
+        "65536",
+        "00001"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks",
+      "exit_code": 2,
+      "stdout_path": "logs/adapter-mixed.stdout.txt",
+      "stdout_sha256": "57c3b58729272fb24a494348d3f639458739941c84e6526eade9378fe298c2ba",
+      "stderr_path": "logs/adapter-mixed.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "adapter-empty",
+      "argv": [
+        "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/bin/grouping_checker"
+      ],
+      "cwd": "/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks",
+      "exit_code": 2,
+      "stdout_path": "logs/adapter-empty.stdout.txt",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_path": "logs/adapter-empty.stderr.txt",
+      "stderr_sha256": "19e83667c72066b661fb8c6a9a814f2c9168b732c8377cd3cddc9859a104416d"
+    },
+    {
+      "name": "wrapper-fault-build",
+      "argv": [
+        "lake",
+        "-v",
+        "build",
+        "grouping_checker"
+      ],
+      "cwd": "/tmp/grouping-wrapper-fault-ac42fcyk",
+      "exit_code": 0,
+      "stdout_path": "logs/wrapper-fault-build.stdout.txt",
+      "stdout_sha256": "d332aecab0a84f286efa8054e7c2b60cd7d3ab771a10b38b6ceeba4a14b93d64",
+      "stderr_path": "logs/wrapper-fault-build.stderr.txt",
+      "stderr_sha256": "3a68a5a0d793f8c1b470df14226137391dbf41acb6b57917417bbf0d0ef2904f"
+    },
+    {
+      "name": "wrapper-fault-all",
+      "argv": [
+        "/tmp/grouping-wrapper-fault-ac42fcyk/.lake/build/bin/grouping_checker",
+        "--all"
+      ],
+      "cwd": "/tmp/grouping-wrapper-fault-ac42fcyk",
+      "exit_code": 0,
+      "stdout_path": "wrapper-mutation/native.jsonl.gz",
+      "stdout_sha256": "6a27f20ba50871d2049cbb42f2195301ee867df53b564adfdae84850bd0f70a5",
+      "stderr_path": "logs/wrapper-fault-all.stderr.txt",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_compression": "gzip",
+      "stdout_uncompressed_sha256": "063b040591cd1c52835f0638405418218b0b67193ba131d1e13d72ed9799fe3f"
+    }
+  ],
+  "transcript": {
+    "path": "native.jsonl.gz",
+    "format": "gzip",
+    "mtime": 0,
+    "sha256": "f8c6dfcbca6e49657374565730d61bc169141670017fcd0fad1732c75ac4d630",
+    "size_bytes": 519975,
+    "raw_sha256": "889b5932ff60c2c392c793a19112d753b46b84baaecbccee244a30fa34080142",
+    "raw_size_bytes": 9423156,
+    "record_format": "UTF-8 JSON Lines; native stdout, exact bytes before gzip",
+    "command": "native-all"
+  },
+  "coverage": {
+    "expected_word_count": 65536,
+    "total_output_records": 65536,
+    "actual_tested_count": 65536,
+    "distinct_word_count": 65536,
+    "minimum_word": 0,
+    "maximum_word": 65535,
+    "missing_words": [],
+    "unexpected_words": [],
+    "duplicate_words": [],
+    "full_domain": true,
+    "expected_coverage_complete": true,
+    "count_definition": "actual_tested_count counts in-range records with status checked, including repeats and records with other invalid fields; distinct_word_count counts distinct in-range words in all parsed objects; both are separate from successful validation"
+  },
+  "disagreements": [],
+  "adapter_tests": [
+    {
+      "name": "adapter-valid",
+      "tokens": [
+        "0",
+        "65535",
+        "00001",
+        "20640",
+        "20648",
+        "-0"
+      ],
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "record_count": 6,
+      "passed": true,
+      "disagreements": [],
+      "command": "adapter-valid"
+    },
+    {
+      "name": "adapter-invalid",
+      "tokens": [
+        "-1",
+        "65536",
+        "",
+        " ",
+        "+1",
+        " 1",
+        "1 ",
+        "true",
+        "False",
+        "1.0",
+        "1e0",
+        "0x50a0",
+        "--unknown"
+      ],
+      "expected_exit_code": 2,
+      "actual_exit_code": 2,
+      "record_count": 13,
+      "passed": true,
+      "disagreements": [],
+      "command": "adapter-invalid"
+    },
+    {
+      "name": "adapter-mixed",
+      "tokens": [
+        "0",
+        "65536",
+        "00001"
+      ],
+      "expected_exit_code": 2,
+      "actual_exit_code": 2,
+      "record_count": 3,
+      "passed": true,
+      "disagreements": [],
+      "command": "adapter-mixed"
+    },
+    {
+      "name": "adapter-empty",
+      "tokens": [],
+      "expected_exit_code": 2,
+      "actual_exit_code": 2,
+      "record_count": 0,
+      "passed": true,
+      "disagreements": [],
+      "command": "adapter-empty"
+    }
+  ],
+  "run_problems": [],
+  "compiled_wrapper_mutation": {
+    "kind": "compiled_wrapper_output_fault",
+    "passed": true,
+    "mutation": "Negate only the emitted preserves field; checker and witness logic unchanged.",
+    "scope": "Tests detection of a compiled output-wrapper fault; does not mutate the proved check function or establish machine-code refinement.",
+    "source_manifest": {
+      "wrapper-mutation/source/GroupingChecker.lean": "057fc24fe3b7af8ed903b0d1711cc7c1bd086f7738e258cea60ee8c26093bddd",
+      "wrapper-mutation/source/GroupingMain.lean": "ee6f7ba9b47d836611f185a872dbd1830c5462eb8e7238e426b6a8ea43a1e6a4",
+      "wrapper-mutation/source/lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+      "wrapper-mutation/source/lakefile.toml": "00b9c2699556fe4ce989b05060b7fe338137e01bfcd0aa28645005d4af08f9ed"
+    },
+    "original_wrapper_sha256": "dbdff32181c6aca466c79d9f457e583c987bd96ba10c8702b33ffd7a9605da7e",
+    "build_command": "wrapper-fault-build",
+    "build_exit_code": 0,
+    "build_trace_artifacts": [
+      {
+        "source_path": ".lake/build/bin/grouping_checker.rsp",
+        "sha256": "5c7badfcc9842ebaf37b62866ac7b5bc909adbcc415537ba919e9a808b50e9fc",
+        "size_bytes": 968,
+        "path": "wrapper-mutation/build-traces/bin/grouping_checker.rsp"
+      },
+      {
+        "source_path": ".lake/build/bin/grouping_checker.trace",
+        "sha256": "15ba4b3e1518cb602870588ed4fe280e3b271e528e21dca73dff03e83c20f85c",
+        "size_bytes": 983,
+        "path": "wrapper-mutation/build-traces/bin/grouping_checker.trace"
+      },
+      {
+        "source_path": ".lake/build/ir/GroupingChecker.c",
+        "sha256": "a645bbb59bbebdf02e3ec290a54696c0aabf2547a0d6f2b74805d71671c822de",
+        "size_bytes": 30897
+      },
+      {
+        "source_path": ".lake/build/ir/GroupingChecker.c.o.export.trace",
+        "sha256": "498d4e50499081d8146629c96fa3d81b5738fc2bfd3735d93943c41761640be6",
+        "size_bytes": 1213,
+        "path": "wrapper-mutation/build-traces/ir/GroupingChecker.c.o.export.trace"
+      },
+      {
+        "source_path": ".lake/build/ir/GroupingChecker.setup.json",
+        "sha256": "a6325988ae64117fa3a19c8c2e188e8389ca003c574fe88f0f01329ba4de7d91",
+        "size_bytes": 150,
+        "path": "wrapper-mutation/build-traces/ir/GroupingChecker.setup.json"
+      },
+      {
+        "source_path": ".lake/build/ir/GroupingMain.c",
+        "sha256": "c22078fd593edc661474839f864a23c25312d8c410449abd2a373626b16307e3",
+        "size_bytes": 46289
+      },
+      {
+        "source_path": ".lake/build/ir/GroupingMain.c.o.export.trace",
+        "sha256": "21a6a36428428bd6d5b5ed385f2c491cdc5450bbcea61b30a84a57702682eaf4",
+        "size_bytes": 1201,
+        "path": "wrapper-mutation/build-traces/ir/GroupingMain.c.o.export.trace"
+      },
+      {
+        "source_path": ".lake/build/ir/GroupingMain.setup.json",
+        "sha256": "9689556b11c558b9b2f4150545cd22e498bbc1b81ad56e4476ed31c9fe3ceb93",
+        "size_bytes": 254,
+        "path": "wrapper-mutation/build-traces/ir/GroupingMain.setup.json"
+      },
+      {
+        "source_path": ".lake/build/lib/lean/GroupingChecker.olean",
+        "sha256": "017dd7f502d984e669d80ee11524c56d2443216750bfc5674fc812a22655f53b",
+        "size_bytes": 1036352
+      },
+      {
+        "source_path": ".lake/build/lib/lean/GroupingChecker.trace",
+        "sha256": "beb88ce5059e5561e36332af4e8bac07cd42b2a6b750636611d7954e9e1de736",
+        "size_bytes": 1590,
+        "path": "wrapper-mutation/build-traces/lib/lean/GroupingChecker.trace"
+      },
+      {
+        "source_path": ".lake/build/lib/lean/GroupingMain.olean",
+        "sha256": "a72f200aade4688bed136e705ea5e8e289470074f2f6198a5b6f9864e6e122c8",
+        "size_bytes": 174928
+      },
+      {
+        "source_path": ".lake/build/lib/lean/GroupingMain.trace",
+        "sha256": "cb451fe9ed3453ad8688946da9f58e8ed4a8cd2b5043214fd205e7cf2607f290",
+        "size_bytes": 1687,
+        "path": "wrapper-mutation/build-traces/lib/lean/GroupingMain.trace"
+      }
+    ],
+    "binary": {
+      "sha256": "826f51a90ac90fd1f7e017a633b785120b9cd4075a57711ed3f39ddc7f7a76fb",
+      "size_bytes": 121982272,
+      "archive": {
+        "path": "wrapper-mutation/binary.gz",
+        "format": "gzip",
+        "mtime": 0,
+        "sha256": "633393eb60032a143e3b48575642d88d7d2ed6524a90ceba68966df61d863854",
+        "size_bytes": 34105647,
+        "raw_sha256": "826f51a90ac90fd1f7e017a633b785120b9cd4075a57711ed3f39ddc7f7a76fb",
+        "raw_size_bytes": 121982272
+      }
+    },
+    "native_command": "wrapper-fault-all",
+    "native_exit_code": 0,
+    "transcript": {
+      "path": "wrapper-mutation/native.jsonl.gz",
+      "format": "gzip",
+      "mtime": 0,
+      "sha256": "6a27f20ba50871d2049cbb42f2195301ee867df53b564adfdae84850bd0f70a5",
+      "size_bytes": 520008,
+      "raw_sha256": "063b040591cd1c52835f0638405418218b0b67193ba131d1e13d72ed9799fe3f",
+      "raw_size_bytes": 9414964
+    },
+    "comparison": {
+      "path": "wrapper-mutation/comparison.json.gz",
+      "format": "gzip",
+      "mtime": 0,
+      "sha256": "7ff6bcef3d3a7ed6bf635c78b1064a4134ce9536670d069a73484e7470c389a0",
+      "size_bytes": 971225,
+      "raw_sha256": "498d6547cc77a09a690e0ad79ff9e3e40d0791be5c44711a91328b83d1991def",
+      "raw_size_bytes": 17069209
+    },
+    "coverage": {
+      "expected_word_count": 65536,
+      "total_output_records": 65536,
+      "actual_tested_count": 65536,
+      "distinct_word_count": 65536,
+      "minimum_word": 0,
+      "maximum_word": 65535,
+      "missing_words": [],
+      "unexpected_words": [],
+      "duplicate_words": [],
+      "full_domain": true,
+      "expected_coverage_complete": true,
+      "count_definition": "actual_tested_count counts in-range records with status checked, including repeats and records with other invalid fields; distinct_word_count counts distinct in-range words in all parsed objects; both are separate from successful validation"
+    },
+    "disagreement_count": 65536,
+    "disagreement_kinds": {
+      "preserves": 65536
+    },
+    "detected_as_failure": true
+  },
+  "scope": "All 65,536 encodings of one unary operation and one labeled grouping on exactly four objects; every labeling remains a distinct input",
+  "assumptions": [
+    "The written contract expresses the intended property.",
+    "Lean kernel replay and reported axioms support the source theorem under the installed Lean toolchain.",
+    "The independent Python reference, comparison harness, OS, runtime, and hardware behave correctly.",
+    "SHA-256 binds saved bytes; source revision alone does not identify uncommitted files."
+  ],
+  "limits": [
+    "Exhaustive executable agreement is not a native machine-code refinement proof.",
+    "One grouping's preservation does not establish a full congruence family or an atlas census.",
+    "Adapter probes are a separate finite test set, not exhaustive testing of every possible input string.",
+    "Unit corruption controls test the harness validator; the compiled fault control changes only the wrapper's emitted acceptance field, not the proved checker.",
+    "The independently authored reference and Lean source still share the same written contract."
+  ]
+}

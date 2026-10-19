@@ -1,0 +1,33 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["f04796455db48adf.olean"],
+  "m": false,
+  "i": "c99d4ee305239d18.ilean",
+  "c": "0cb3d90c7ffa078d.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/tmp/grouping-wrapper-fault-ac42fcyk/.lake/build/lib/lean /tmp/grouping-checker-toolchain/lean-4.34.1-linux/bin/lean /tmp/grouping-wrapper-fault-ac42fcyk/GroupingMain.lean -o /tmp/grouping-wrapper-fault-ac42fcyk/.lake/build/lib/lean/GroupingMain.olean -i /tmp/grouping-wrapper-fault-ac42fcyk/.lake/build/lib/lean/GroupingMain.ilean -c /tmp/grouping-wrapper-fault-ac42fcyk/.lake/build/ir/GroupingMain.c --setup /tmp/grouping-wrapper-fault-ac42fcyk/.lake/build/ir/GroupingMain.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["deps",
+   [["groupingWrapperFault/grouping_checker:extraDep",
+     [["@groupingWrapperFault:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["GroupingChecker transitive imports (legacy)", "00000000000006bb"],
+      ["GroupingChecker:importAllArts", "d872201fda4645f5"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.34.1, commit 5045d0056413266e57c625dcd7c365b10e377c52",
+   "e9f3658beb070375"],
+  ["/tmp/grouping-wrapper-fault-ac42fcyk/GroupingMain.lean",
+   "a9d6f7d6f692e1bb"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: GroupingMain", "182623c40b1a4857"],
+  ["Package.id?: (some groupingWrapperFault)", "120b4fb30c9d6a57"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "ec2c323afc8c2cdf"}

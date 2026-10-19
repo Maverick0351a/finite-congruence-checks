@@ -1,0 +1,31 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["f1e8810f5b9ee6c2.olean"],
+  "m": false,
+  "i": "3ceb7b4d74c47c67.ilean",
+  "c": "68b2b4cd7192d39a.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/lib/lean /tmp/grouping-checker-toolchain/lean-4.34.1-linux/bin/lean /mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/GroupingChecker.lean -o /mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/lib/lean/GroupingChecker.olean -i /mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/lib/lean/GroupingChecker.ilean -c /mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/ir/GroupingChecker.c --setup /mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/ir/GroupingChecker.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["deps",
+   [["finiteCongruenceChecks/GroupingChecker:extraDep",
+     [["@finiteCongruenceChecks:extraDep", "00000000000006bb"]]],
+    ["imports", "00000000000006bb"]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.34.1, commit 5045d0056413266e57c625dcd7c365b10e377c52",
+   "e9f3658beb070375"],
+  ["/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/GroupingChecker.lean",
+   "d6481823dbf52167"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: GroupingChecker", "c0be5dc7b1f931da"],
+  ["Package.id?: (some finiteCongruenceChecks)", "9f534c500f85afed"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "a31dee7948419138"}

@@ -1,0 +1,9 @@
+{"plugins": [],
+ "package": "finiteCongruenceChecks",
+ "options": {},
+ "name": "GroupingMain",
+ "isModule": false,
+ "importArts":
+ {"GroupingChecker":
+  [["/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/lib/lean/GroupingChecker.olean"]]},
+ "dynlibs": []}

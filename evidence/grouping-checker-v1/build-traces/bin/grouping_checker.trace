@@ -1,0 +1,21 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs": "712789593e886068",
+ "log":
+ [{"message":
+   ".> /tmp/grouping-checker-toolchain/lean-4.34.1-linux/bin/clang -o /mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/bin/grouping_checker @/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/bin/grouping_checker.rsp",
+   "level": "trace"}],
+ "inputs":
+ [["GroupingMain:linkInfo",
+   [["Module.moreLinkObjs",
+     [["/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/ir/GroupingMain.c.o.export",
+       "ae77ba86a42f0832"],
+      ["/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/ir/GroupingChecker.c.o.export",
+       "6a80fa66959a99ca"]]],
+    ["Module.moreLinkLibs", "00000000000006bb"],
+    ["Module.moreLinkArgs: #[]", "00000000000006bb"]]],
+  ["LeanExe.exeOnlyLinkArgs: #[]", "00000000000006bb"],
+  ["Lean 4.34.1, commit 5045d0056413266e57c625dcd7c365b10e377c52",
+   "e9f3658beb070375"],
+  ["x86_64-unknown-linux-gnu", "53a0e8937c307c28"]],
+ "depHash": "076e866047d2abc7"}

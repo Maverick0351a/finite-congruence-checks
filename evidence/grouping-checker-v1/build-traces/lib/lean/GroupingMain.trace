@@ -1,0 +1,33 @@
+{"synthetic": false,
+ "schemaVersion": "2025-09-10",
+ "outputs":
+ {"o": ["7f4597e34c838065.olean"],
+  "m": false,
+  "i": "f2c6f32e0b8d469b.ilean",
+  "c": "5df1275080ff35f2.c"},
+ "log":
+ [{"message":
+   ".> LEAN_PATH=/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/lib/lean /tmp/grouping-checker-toolchain/lean-4.34.1-linux/bin/lean /mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/GroupingMain.lean -o /mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/lib/lean/GroupingMain.olean -i /mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/lib/lean/GroupingMain.ilean -c /mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/ir/GroupingMain.c --setup /mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/.lake/build/ir/GroupingMain.setup.json --json",
+   "level": "trace"}],
+ "inputs":
+ [["deps",
+   [["finiteCongruenceChecks/grouping_checker:extraDep",
+     [["@finiteCongruenceChecks:extraDep", "00000000000006bb"]]],
+    ["imports",
+     [["GroupingChecker transitive imports (legacy)", "00000000000006bb"],
+      ["GroupingChecker:importAllArts", "6834190f380fe19c"]]]]],
+  ["libs",
+   [["import dynlibs", "00000000000006bb"],
+    ["package external libraries", "00000000000006bb"],
+    ["module dynlibs", "00000000000006bb"],
+    ["module plugins", "00000000000006bb"]]],
+  ["Lean 4.34.1, commit 5045d0056413266e57c625dcd7c365b10e377c52",
+   "e9f3658beb070375"],
+  ["/mnt/c/Users/Maverick/Documents/Codex/2026-10-18/thi/outputs/finite-congruence-checks/lean/GroupingMain.lean",
+   "18fcee292e5f2f57"],
+  ["options", "00000000000006bb"],
+  ["isModule: false", "feefd2a0d3a1847e"],
+  ["Module.name: GroupingMain", "182623c40b1a4857"],
+  ["Package.id?: (some finiteCongruenceChecks)", "9f534c500f85afed"],
+  ["Module.leanArgs: #[]", "00000000000006bb"]],
+ "depHash": "caa57a436e565815"}

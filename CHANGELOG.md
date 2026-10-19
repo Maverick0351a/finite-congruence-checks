@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+- Generic four-object Lean grouping checker with exact bit decoding, both
+  encode/decode round trips, acceptance equivalence, integer bounds, and proved
+  counterexample witnesses.
+- Independent exhaustive native comparison runner, retained build metadata,
+  compiled output fault control, and versioned claim evidence with a local
+  propose/counterexample/repair/recheck demonstration.
+
 - Interactive Cytoscape construction map with stable shape keys, claim-linked
   inspection, keyboard alternatives, and a pinned offline library with its license.
 - Refreshed atlas palette in midnight blue, teal, and violet, with light/dark

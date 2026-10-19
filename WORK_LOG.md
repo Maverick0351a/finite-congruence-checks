@@ -443,3 +443,47 @@ with separate preservation and comparison outcomes and an explicit requirement
 to cover every distinct word before claiming complete bounded agreement.
 Final targeted review found no remaining substantive issue. The result schema,
 Lean checker theorem, and binary comparison remain future implementation work.
+
+## 2026-10-18 — Implement the generic grouping checker
+
+Implemented the frozen four-object input contract in a separate Lean module.
+Proved exact bit-field decoding, both encode/decode round trips, integer-range
+rejection and value preservation, label equivalence, acceptance iff preservation,
+and soundness/existence of a returned violating pair. Local compilation and
+bundled kernel replay succeeded; all 11 axiom reports use only the allowed
+standard axioms. Independent AI source review found no substantive gaps and
+confirmed that parsing, native compilation, and repair remain separate boundaries.
+
+An independent reference was written from the contract before its author read
+the Lean implementation. It checks block image sets and has exhaustive tests
+against the literal pair condition, plus repair checks for all 65,536 inputs.
+Added a native JSON Lines wrapper, an exhaustive comparison runner retaining
+binary/transcript hashes and compiler traces, an isolated compiled output fault
+control, a versioned result schema, and a local evidence admission tool.
+
+The demonstration uses rule [0,2,2,3]. It rejects grouping [0,0,1,2] with pair
+(0,1), then checks repair [0,0,0,2], keeping object 3 separate. The repair policy
+is deterministic and unproved; acceptance requires another native invocation.
+The saved replay is an agent-usable protocol demonstration, not an LLM benchmark.
+Full run results and publication details are recorded below after execution.
+
+The first native pilot had zero mathematical disagreements but remained failed
+because WSL could not locate Git for source provenance. Added and tested a
+Windows Git fallback with explicit path conversion. The final run from committed
+source `5f3a65f3b9ad29c13a822e3a781476fcc5867be0` passed with complete coverage,
+zero disagreements, 28,672 preserved cases, and 36,864 rejected cases. The isolated
+compiled output mutation produced exactly 65,536 detected Boolean mismatches.
+
+Evidence admission review identified two consistency improvements: compare all
+recorded binary digests and verify archive bytes when present, and fail when an
+explicitly configured receipt is missing. Also tied source revision/clean-tree
+flags back to retained Git logs. Applied the corrections and regression controls;
+the reviewer reported no remaining blocking issues. All 31 grouping tests passed
+on Linux and Windows, with no skipped receipt tests. Existing evidence integrity,
+Lean table correspondence/export, and all 13 bridge controls also passed.
+
+Saved the final receipt, full compressed native transcript, compiler traces,
+logs, mutation evidence, and actual two-call repair demonstration under
+`evidence/grouping-checker-v1/`. Exact-byte Git attributes preserve log hashes.
+Executable archives remain separate release assets, and offline validation
+explicitly reports whether those bytes were available.
