@@ -67,15 +67,19 @@ either minimum a universal lower bound for that abstract shape.
 ```sh
 node scripts/check_atlas_ui.cjs
 node scripts/check_atlas_map.cjs
+node scripts/check_atlas_selection.cjs
 python scripts/query_atlas.py build-claims --check
 ```
 
-The new check loads the real vendored Cytoscape build in headless mode, checks
+The map check loads the real vendored Cytoscape build in headless mode, checks
 all graph components and entry-to-claim links, exercises seven rejection
-controls, verifies library/license hashes, and checks light/dark theme contrast
-for the specified text, controls, and graph colors. These automated checks are
-supplemented by desktop and narrow-screen interaction review; they are not a
-complete accessibility certification.
+controls, verifies library/license hashes, and checks the base stylesheet's
+light/dark contrast tokens. The selection check exercises the actual Atlas
+scripts together in a DOM/headless fixture, including exact claims and export
+selection. Neither check establishes rendered behavior or contrast under every
+stylesheet override. The yellow/black presentation still needs browser, narrow-
+screen, keyboard and assistive-technology acceptance; no complete accessibility
+certification is claimed.
 
 Cytoscape.js 3.34.4 is vendored with its MIT license and integrity manifest in
 [`space/vendor/`](../space/vendor/README.md). No CDN or package installation is

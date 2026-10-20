@@ -7,8 +7,10 @@ seven passing witnesses, four connectivity obstructions, equivalence classes,
 and minimal unary operations for each saved positive representation. Its
 canonical source is `space/` in this repository.
 
-The Space now opens the [readable representation atlas](ATLAS.md), beginning
-with a three-object lesson. The original graph explorer remains at `index.html`.
+The configured entry point is the [representation atlas](ATLAS.md), with a
+construction map, exact claim inspector and worked example. The original graph
+explorer remains at `index.html`. The publication record below identifies the
+last recorded deployed revision; current source changes may be newer.
 The atlas catalog covers all representable congruence families through four
 objects and groups them by object renaming and abstract lattice shape. It has
 separate generated data, exhaustive verification, and browser checks.
@@ -40,6 +42,7 @@ python scripts/query_atlas.py build-claims --check
 python -m unittest discover -s scripts -p 'test_atlas*.py' -v
 node scripts/check_atlas_ui.cjs
 node scripts/check_atlas_map.cjs
+node scripts/check_atlas_selection.cjs
 python scripts/query_atlas.py build-tm --check
 node scripts/check_tm_atlas_ui.cjs
 python scripts/build_n5_reuse.py --check
@@ -101,6 +104,16 @@ independent checks and formal extensions of selected results. This banner was
 published through PR #17 from GitHub commit
 `3632a58d80320e56a7a44c017a74746008b920d8` to Space commit
 `63a85954e68f4e0202db2382c875267f9ae03f40`; all 44 published file hashes matched.
+A read of the Space README on 20 October 2026 still returned that commit in
+`X-Repo-Commit`. This recorded deployment predates the Snaky source merge and the
+yellow/black Atlas selection repair. No newer deployment is claimed here.
+
+The current source adds shared selection and exact claim inspection. Its local
+DOM/headless checks are distinct from browser rendering, responsive layout,
+keyboard/assistive-technology behavior and actual browser downloads. Complete
+those acceptance checks in a permitted context, retain exact-head independent
+review and required CI, then publish the accepted merged `space/` files and
+record their source/deployment revisions and file hashes.
 
 Publish only the contents of `space/` to the static Space
 `Maverick03511/finite-congruence-checks`. Its README declares `sdk: static` and

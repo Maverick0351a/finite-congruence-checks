@@ -1,5 +1,71 @@
 # Finite graph search work log
 
+## 2026-10-20 - Repair runtime reproduction commands after independent review
+
+Independent review found OR-R1: Atlas initialization replaced the corrected
+static reproduction list with an older string, so the displayed list and Copy
+commands omitted `node scripts/check_atlas_selection.cjs`. The earlier source
+checks did not cover this user path. Added the missing runtime command and four
+regression assertions for the runtime/static lists, complete clipboard API input,
+and reading the current displayed text on each copy action.
+
+The review also identified that filtering push branches alone suppressed tag
+pushes. Added `push.tags: ['**']` so release-tag verification is retained while
+feature-branch/PR duplication is removed. Every existing job and check remains.
+
+The new regression failed against the preserved original runtime source, then
+passed after repair. All three affected Atlas checkers pass; the selection suite
+now has 282 assertions. The reviewer's original focused control also passes.
+Clipboard writes are mocked in the DOM fixture: no actual browser clipboard,
+rendering or download acceptance is implied. No Python reproduction, proof or
+model job was repeated.
+
+Versioned repair evidence is in
+`runs/online-atlas-repair-20261020/repairs/OR-R1-v2/`. The original 97-artifact
+manifest, report, source snapshots and handoff remain byte-for-byte unchanged;
+failed-control output and original source are preserved. This repair awaits the
+same independent reviewer's clearance. No commit or remote action occurred.
+
+## 2026-10-20 - Prepare the research atlas for online delivery
+
+The map, catalog, detail and export previously maintained inconsistent selected
+entries. Reused the independently reviewed five-file Atlas integration on a
+separate worktree at main `0102845fc6a91c46e4b2def7455b6d418e671c01`; that tree
+matches the patch's original base. The implementation owner's retained dirty
+checkout, helper and log were not changed. The new source shares selection and
+shows exact construction/minimum records, hypotheses, citations and separate
+unknown formal/model evidence gates.
+
+Added the 278-assertion selection check to CI and reproduction guidance. All
+existing CI jobs, required contexts, commands, timeouts and permissions remain;
+push now targets main while pull-request and manual triggers remain, avoiding
+duplicate feature-branch and PR proof pipelines. Updated the research-first
+README, yellow/black Atlas and Space copy, and roadmap. The aim is mathematical
+progress and useful foundational technology, without predetermining AI
+architectures or asserting novelty. HF card colors use documented yellow/gray;
+the atlas stylesheet is yellow/black.
+
+All three Atlas checkers passed, including 39 entries, 518 grouping cases,
+304 rejection witnesses, 117 claim links, 115 map-filter combinations and 278
+selection/inspector assertions. All 50 Atlas query tests and 33 ordinary root
+unit tests passed. Standard finite reproduction also passed, including its own
+33-test stage; its totals match saved evidence: 143,685 candidates, 217 witnesses
+and 22 vertex classes. Atlas data/claim freshness, independent classification,
+saved-evidence validation and 111 local documentation targets passed.
+
+Evidence is retained in `runs/online-atlas-repair-20261020/`, including exact
+patch/base identities, original-checkout preservation hashes, command logs,
+source snapshots and review handoff. The first setup command was rejected by a
+transport disconnection before process creation; a read confirmed no directory
+or source mutation before retry. No product check failed in this allocation.
+
+These are local source/data/fixture checks. This change does not publish the
+Space, establish rendered/assistive-technology acceptance, execute Lean/model
+work, or alter mathematical evidence. At the recorded 20 October read, the
+Space was still at `63a85954e68f4e0202db2382c875267f9ae03f40`, predating Snaky.
+Exact-byte independent review, hosted CI and publication acceptance remain
+separate. Substantial AI assistance was used.
+
 ## 2026-10-19 — Fix a Linux process-disappearance race in the cleanup test
 
 The push run for `4102fc1ec98a8516182270765e730a04ec626295` failed its

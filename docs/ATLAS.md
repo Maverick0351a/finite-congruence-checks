@@ -76,6 +76,8 @@ python scripts/check_atlas.py --check-receipt evidence/atlas-review.json --out r
 python scripts/query_atlas.py build-claims --check
 python -m unittest discover -s scripts -p 'test_atlas*.py' -v
 node scripts/check_atlas_ui.cjs
+node scripts/check_atlas_map.cjs
+node scripts/check_atlas_selection.cjs
 ```
 
 The exporter starts from the complete small-family enumeration used by the

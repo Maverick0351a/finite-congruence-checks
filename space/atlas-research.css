@@ -1,0 +1,52 @@
+/* Research presentation. Loaded after the shared atlas stylesheet. */
+:root {
+  color-scheme: dark;
+  --ink:#f5f5ee; --body:#d2d5d7; --muted:#b3b9bf;
+  --paper:#191c20; --ground:#111315; --line:#444b52;
+  --teal:#ffe24a; --wash:#303026; --gold:#ffe24a;
+  --red:#ffb5b5; --redwash:#3d2428;
+  --surface-soft:#25292e; --surface-code:#111315;
+  --accent-wash:#303026; --accent:#ffe24a;
+  --control-border:#a1a9b2; --graph-construction:#3c454c;
+  --graph-shape:#6c5500; --graph-edge:#a1a9b2; --graph-selected:#ffe24a;
+  --shadow:none; --serif:var(--sans);
+}
+.corpus-banner{border-left-color:var(--accent);border-radius:4px;box-shadow:none;padding:18px 22px}
+.corpus-statement{font-size:1rem}
+.hero{padding-bottom:20px;gap:36px;align-items:center}
+h1{font:650 clamp(2rem,4.2vw,3.75rem)/1.07 var(--sans);letter-spacing:-.035em}
+h1 em{font-style:normal}.hero .lead{font-size:1.05rem;max-width:720px}
+.hero-card{min-height:0;padding:26px;border-radius:4px;background:var(--paper)}
+.hero-card h2{font:600 1.5rem/1.25 var(--sans);margin:20px 0 14px}
+.hero-card p,.hero-card a{font-size:.85rem}.hero-small{max-width:680px}
+.primary{background:var(--accent);color:var(--ground);border:1px solid var(--accent)}
+.primary:hover{background:var(--ink);color:var(--ground);border-color:var(--ink)}
+.metrics{background:var(--paper);color:var(--body);border:1px solid var(--line)}
+.metrics strong{color:var(--accent)}.metrics>div+div:before{background:var(--line)}
+.terms,.count-explainer,.reproduction{background:var(--paper)}
+.object,.big-objects span,.big-objects span:nth-child(2),.big-objects span:nth-child(3),.block{background:var(--wash);border-color:var(--control-border);color:var(--ink)}
+.shape-map,.entry-detail,.paper,.comparison-card,.tm-panel{border-radius:5px;box-shadow:none}
+.entry-heading h3,.map-heading h3{font:600 1.7rem/1.2 var(--sans)}
+.status{font-size:.69rem}.step,.grouping-result,.grouping-result.is-fail{border-color:var(--control-border)}
+.evidence-grid article{border-color:var(--line)}
+#entry-claims{margin:20px 0;padding:22px 0;border-block:1px solid var(--line);min-width:0}
+#entry-claims h4{font-size:1.1rem;margin:0 0 12px}#entry-claims h5{font-size:.88rem;margin:0 0 8px}#entry-claims h6{font-size:.85rem;margin:20px 0 9px}
+#entry-claims p,#entry-claims li,#entry-claims summary{font-size:.82rem}
+#entry-claims code{overflow-wrap:anywhere;white-space:normal;font-size:.75rem}
+#entry-claims pre{white-space:pre;max-height:310px}
+#entry-claims dl{display:grid;grid-template-columns:minmax(110px,1fr) minmax(0,2fr);gap:8px 16px;font-size:.78rem}
+#entry-claims dt{font-weight:650;color:var(--ink)}#entry-claims dd{margin:0;overflow-wrap:anywhere}
+.claim-record{padding:17px;border-left:3px solid var(--accent)}
+.claim-citations{padding-left:20px}.claim-citations li{margin-bottom:16px}
+.claim-gates{width:100%;table-layout:fixed;border-collapse:collapse;font-size:.77rem}
+.claim-gates caption{text-align:left;padding:10px 0;color:var(--muted)}
+.claim-gates th,.claim-gates td{padding:10px 8px;text-align:left;vertical-align:top;border-bottom:1px solid var(--control-border);overflow-wrap:anywhere}
+.claim-gates th:first-child{width:34%}.claim-gates th{color:var(--ink)}
+button,select,summary,.button{min-height:44px}summary{padding-block:10px}
+button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+@media(max-width:760px){.hero-card{margin-top:25px}.hero{padding-top:25px}.claim-record{padding:13px}#entry-claims dl{grid-template-columns:1fr;gap:3px}#entry-claims dd{margin-bottom:10px}.claim-gates th:first-child{width:38%}}
+@media(forced-colors:active){
+  :root{--ink:CanvasText;--body:CanvasText;--muted:CanvasText;--paper:Canvas;--ground:Canvas;--line:CanvasText;--teal:LinkText;--wash:Canvas;--accent:Highlight;--accent-wash:Canvas;--surface-soft:Canvas;--surface-code:Canvas;--control-border:ButtonText}
+  .primary,.primary:hover{color:ButtonText;background:ButtonFace;border-color:ButtonText}
+  .claim-record{border:1px solid CanvasText}.metrics strong{color:CanvasText}
+}

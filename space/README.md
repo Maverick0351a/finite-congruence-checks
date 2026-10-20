@@ -1,13 +1,13 @@
 ---
 title: Finite Congruence Checks
 emoji: 🔬
-colorFrom: blue
-colorTo: purple
+colorFrom: yellow
+colorTo: gray
 sdk: static
 app_file: atlas.html
 pinned: true
 license: apache-2.0
-short_description: Explore independent graph-criterion checks from OpenAI math
+short_description: Inspect exact mathematical claims and their evidence
 tags:
   - openai-math
   - openai
@@ -24,23 +24,31 @@ tags:
 
 # Finite Congruence Checks
 
-**Independent checks and formal extensions of selected results from
-[OpenAI's math corpus](https://github.com/openai/math).**
-Explore concrete examples, Lean proofs, and [evidence for each exact claim](https://github.com/Maverick0351a/finite-congruence-checks/blob/main/docs/CLAIMS.md).
+**Inspect exact claims and their evidence.**
 
-An interactive companion to [the research repository](https://github.com/Maverick0351a/finite-congruence-checks).
-Maintained by [Travis Johnson](https://www.linkedin.com/in/travis-johnson-606207379).
-Explore independent validation of the **finite congruence graph criterion** from
-OpenAI's math corpus, family 206.
+Compare finite constructions and inspect their assumptions, sources and recorded
+checks. This independent research interface builds on selected mathematics from
+[OpenAI Math](https://github.com/openai/math), including the finite congruence
+graph criterion in family 206. See the [exact claim ledger](https://github.com/Maverick0351a/finite-congruence-checks/blob/main/docs/CLAIMS.md).
 
-Start with the readable atlas: a three-object lesson, 39 grouping-family
-representatives through four objects, and 22 abstract lattice shapes. Explore
-objects, rules, consistent groupings, and a comparison of two C4 constructions.
-The Cytoscape map connects each construction to its abstract shape. Filter by
-shape and object count, inspect claim IDs, then open the selected rules and
-evidence. A midnight, teal, and violet palette follows light/dark preferences.
+The broader research goal is to discover useful technical capabilities and
+foundational technology through mathematical work. No single application is
+predetermined; novelty and performance gains remain goals.
+
+The [research repository](https://github.com/Maverick0351a/finite-congruence-checks)
+is the canonical source. Maintained by
+[Travis Johnson](https://www.linkedin.com/in/travis-johnson-606207379).
+
+The atlas contains 39 grouping-family representatives through four objects and
+22 abstract lattice shapes. Its Cytoscape map connects exact constructions to
+abstract shapes. Filter by shape and object count, compare C4 constructions,
+and inspect construction and operation-minimum claims. Map, catalog, detail
+and export share the selected entry. Each claim retains its hypotheses and
+citations; absent formal or model checks are shown as not supplied for that entry.
+The yellow/black atlas theme keeps evidence and graph controls prominent.
 The catalog has its own complete classification and independent checker.
 See [the atlas method](https://github.com/Maverick0351a/finite-congruence-checks/blob/main/docs/ATLAS.md).
+
 The N5 story at `context-n5.html` explains the exact saved two-rule construction,
 lets readers test all 15 partitions, and links the original question, comparator
 target, completed proof, and concrete Lean bridge. Its source map labels each
@@ -109,7 +117,9 @@ Run `python scripts/build_space_data.py` there to regenerate the data, or add
 `python scripts/build_atlas_data.py --check`,
 `python scripts/check_atlas.py --check-receipt evidence/atlas-review.json`, and
 `python scripts/query_atlas.py build-claims --check`, followed by
-`node scripts/check_atlas_ui.cjs` and `node scripts/check_atlas_map.cjs`.
+`node scripts/check_atlas_ui.cjs`, `node scripts/check_atlas_map.cjs`, and
+`node scripts/check_atlas_selection.cjs`. The last check exercises shared selection
+and exact claim records in a DOM/headless fixture; it is not browser acceptance.
 For the saved N5 context, run `python scripts/build_n5_context.py --check`,
 `python -m unittest discover -s scripts -p 'test_n5_context.py' -v`, and
 `node scripts/check_n5_context.cjs`. The builder checks fixed source hashes

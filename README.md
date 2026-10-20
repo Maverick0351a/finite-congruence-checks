@@ -1,40 +1,44 @@
 # Finite Congruence Checks
 
-![Finite Congruence Checks — project identity banner: small algebras, explicit witnesses and reproducible evidence](charts/project-banner.svg)
-
 [![Reproduce and verify](https://github.com/Maverick0351a/finite-congruence-checks/actions/workflows/verify.yml/badge.svg)](https://github.com/Maverick0351a/finite-congruence-checks/actions/workflows/verify.yml)
 [![Recorded Lean 4.34.1 checks passed: concrete N5/B3 and targeted upstream modules](charts/lean-checks-badge.svg)](docs/LEAN_VERIFICATION.md)
 [![Release v0.1.0](charts/release-badge.svg)](https://github.com/Maverick0351a/finite-congruence-checks/releases/tag/v0.1.0)
 [![License: Apache 2.0](https://img.shields.io/badge/license-Apache%202.0-315B78)](LICENSE)
 [![Python: 3.10+](https://img.shields.io/badge/python-3.10%2B-315B78)](#quick-start)
 
-A focused research toolkit for finite congruence lattices. Search colored graphs,
-verify every quantified condition with an independent implementation, recover
-the corresponding unary algebras, and find their smallest operation lists on a
-fixed representation. The core experiment uses only Python's standard library.
+Research tools for exact mathematical claims: finite constructions, independent
+checks, and scoped Lean proofs. Compare representations, inspect their hypotheses,
+and trace a result back to its source and reproducible evidence.
 
-In plain language, we build small systems whose rules permit exactly a chosen
-pattern of consistent groupings. Start with a three-object example in the
-**[illustrated introduction](docs/PLAIN_LANGUAGE_GUIDE.md)** to see what that means.
+The project builds on selected results from **[OpenAI Math](reference/README.md)**,
+starting with the graph-witness criterion in family 206 and extending to exact
+Turing-machine examples and Snaky on finite boards. Source revisions and claim
+boundaries are recorded separately for each result. This is independent work;
+source attribution does not imply OpenAI affiliation or endorsement.
 
-The starting specification is the graph-witness criterion in
-[OpenAI's math corpus, family 206](reference/README.md), pinned to an exact commit.
-This is an independent companion project. The original graph experiment covers
-eight specified lattices on carriers of size **one through four**. The atlas
-classifies all representable grouping families through four objects, yielding
-22 abstract lattice shapes.
+The broader goal is to discover useful technical capabilities and foundational
+technology through sustained mathematical work. AI architectures are one possible
+direction. Mathematical progress, failed approaches and reusable methods inform
+what to investigate next; novelty and performance gains remain research goals.
 
-**[Interactive demo](https://huggingface.co/spaces/Maverick03511/finite-congruence-checks)** ·
-**[Understand the math](docs/PLAIN_LANGUAGE_GUIDE.md)** ·
-**[Why the saved N5 rules work](docs/N5_SOURCE_CONTEXT.md)** ·
-**[Readable atlas](https://maverick03511-finite-congruence-checks.static.hf.space/atlas.html)** ·
-**[Quick start](#quick-start)** · **[Evidence gallery](docs/index.html)** ·
-**[Exact claims](docs/CLAIMS.md)** · **[Lean status](docs/LEAN_VERIFICATION.md)** ·
-**[Agent repair experiment](docs/REPAIR_BENCHMARK.md)** ·
-**[TM translation checks](docs/TM_TRANSLATION_CHECKS.md)** ·
-**[Compare Turing examples](docs/TM_ATLAS.md)** ·
-**[Snaky on finite boards](docs/SNAKY_FINITE_BOARD.md)** ·
-**[Changelog](CHANGELOG.md)** · **[Support](SUPPORT.md)**
+**[Explore the research atlas](https://huggingface.co/spaces/Maverick03511/finite-congruence-checks)** ·
+**[Inspect exact claims](docs/CLAIMS.md)** · **[Reproduce a result](#quick-start)** ·
+**[Read the Lean evidence](docs/LEAN_VERIFICATION.md)** · **[Research roadmap](docs/ROADMAP.md)**
+
+The repository is the canonical source. The hosted Space is a separate deployment;
+see the [publication record](docs/HUGGING_FACE_DEMO.md#publish) for its recorded revision.
+
+| Research capability | Evidence and limits |
+|:--|:--|
+| [Enumerate finite constructions](docs/ATLAS.md) | 39 representatives and 22 abstract shapes through four objects; independently checked finite computation. |
+| [Compare exact claims](docs/ATLAS_QUERY.md) | Stable entry IDs, fixed-carrier operation minima, hypotheses and source citations. A shared shape name does not transfer a proof. |
+| [Inspect proof correspondence](docs/CONTEXT_QUERY.md) | Exact saved N5/B3 constructions, proved N5 renamings and selected Turing claims; each has its own scope and binding. |
+| [Follow finite-board Snaky](docs/SNAKY_FINITE_BOARD.md) | The existing paper result is formalized for its 251-cell envelope and containing 17 × 17 square; an example play is separate from the 21-claim guarantee. |
+
+The original graph experiment searches eight specified lattices on carriers of
+size **one through four**, checks every quantified condition independently, and
+recovers minimum unary-operation lists for fixed representations. It uses only
+Python's standard library. Its totals below are separate from the atlas counts.
 
 | Candidate colorings | Full witnesses | Vertex classes | Saved examples |
 |:--|:--|:--|:--|
@@ -44,12 +48,14 @@ The HTML gallery is self-contained and works offline. Download the repository
 and open `docs/index.html` in a browser; GitHub displays HTML source in its file
 viewer. Each figure is also available as PNG and editable SVG in `charts/`.
 
-## Understand the math visually
+## Compare constructions and inspect evidence
 
-Start with **[the readable atlas](https://maverick03511-finite-congruence-checks.static.hf.space/atlas.html)**:
-three objects, one rule, and five possible groupings. Try a grouping, see why
-it works or fails, then explore the complete catalog through four objects.
-Every diagram explains what its nodes and lines mean; technical data is expandable.
+Use the **[interactive atlas](https://maverick03511-finite-congruence-checks.static.hf.space/atlas.html)**
+to move between the construction map, exact entry records and claim citations.
+The current source keeps map, catalog, detail and export selection synchronized.
+Its claim inspector separates saved finite computation from formal or model
+checks that are not supplied for that entry. The yellow/black interface emphasizes
+objects, rules and evidence; a worked example explains the diagram notation.
 
 The catalog contains **39 grouping-family representatives** after renaming
 objects, covering **22 abstract lattice shapes**. Compare two four-object

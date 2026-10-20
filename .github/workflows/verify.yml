@@ -2,6 +2,8 @@ name: Reproduce and verify
 
 on:
   push:
+    branches: [main]
+    tags: ['**']
   pull_request:
   workflow_dispatch:
 
@@ -74,6 +76,7 @@ jobs:
           python -m unittest discover -s scripts -p 'test_atlas*.py' -v
           node scripts/check_atlas_ui.cjs
           node scripts/check_atlas_map.cjs
+          node scripts/check_atlas_selection.cjs
           node scripts/check_tm_atlas_ui.cjs
           python scripts/check_tm_retrieval.py evidence/tm-retrieval-v1/answers.json
       - name: Check N5 and Turing source context bindings
