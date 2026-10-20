@@ -1,5 +1,124 @@
 # Finite graph search work log
 
+## 2026-10-20 - Repair contrast-checker false passes after independent review
+
+Independent controls exposed CR-R1 (first declaration incorrectly winning an
+equal-priority tie inside one rule) and CR-R2 (an unsupported `:not` color
+selector silently treated as inactive). Both failures were reproduced before
+repair. Cascade priority now includes declaration position after rule order.
+Selectors for modeled color/custom-property rules are validated before component
+matching, so unsupported syntax fails explicitly even without a matching fixture.
+Only the existing metrics separator pseudo-element is explicitly excluded.
+
+The original reviewer controls now pass. The CI selection checker retains all
+282 assertions and runs 224 color pairings, eight contrast regressions, four
+unsupported-selector rejection controls and two valid cascade controls, including
+earlier `!important`. Presentation CSS and selection code are unchanged from the
+first contrast handoff. The checker remains a bounded source fixture; its explicit
+subset and exclusions are documented in the repair handoff, with no browser or
+full CSS/accessibility acceptance claim.
+
+The original 87-file evidence manifest and every frozen artifact are preserved;
+four reviewed source snapshots and before/after control logs are retained in
+`runs/atlas-contrast-20261020/repairs/CR-v2/`. Focused syntax, source/selection checks
+and the reviewer's controls pass. No unchanged mathematical suite was repeated,
+and no proof/model, browser or remote action occurred. Independent repair review
+remains separate.
+
+## 2026-10-20 - Verify the full Atlas cascade and repair keyboard-link contrast
+
+The PR19 review named six pale surfaces, but later unconditional rules in
+`atlas.css` already replace those fills with theme tokens. Reading only the
+earlier minified rules reproduced neither their final colors nor the reported
+general failure. A source-level cascade audit instead found a real residual
+problem: the keyboard skip link inherited yellow text over a literal white
+background (1.293946:1). It now uses the dark surface and text tokens. SVG order
+edges also receive an explicit system-color fallback under forced colors.
+
+Added `check_atlas_contrast.cjs`, invoked by the existing CI selection checker.
+It resolves the checked stylesheet subset in actual load order against static
+HTML and generated claim/operation/SVG markup, including normal, hover, selected
+and keyboard-focus states at two widths and both color-scheme preferences.
+It retains the separate system-color checks and seven deliberately injected
+regressions. This closes the gap in the earlier token-only contrast checks.
+Unsupported solid-color values fail; this is a bounded source fixture, not a
+complete CSS engine, browser rendering, native-widget or accessibility audit.
+
+Author validation: 224 component pairings pass (minimum text 6.73:1 and checked
+SVG/focus 7.83:1), as do all 282 existing selection assertions and the other two
+Atlas checkers. All 33 root tests pass; the required finite reproduction and
+evidence comparison agree with the recorded results. Original sources, failing
+skip-link control, cascade diagnosis, commands, logs and exact handoff hashes are
+retained under `runs/atlas-contrast-20261020/`. No proof/data, remote publication,
+model execution or denied browser-preview workaround occurred. Independent
+review of these exact bytes remains a separate gate.
+
+## 2026-10-20 - Repair runtime reproduction commands after independent review
+
+Independent review found OR-R1: Atlas initialization replaced the corrected
+static reproduction list with an older string, so the displayed list and Copy
+commands omitted `node scripts/check_atlas_selection.cjs`. The earlier source
+checks did not cover this user path. Added the missing runtime command and four
+regression assertions for the runtime/static lists, complete clipboard API input,
+and reading the current displayed text on each copy action.
+
+The review also identified that filtering push branches alone suppressed tag
+pushes. Added `push.tags: ['**']` so release-tag verification is retained while
+feature-branch/PR duplication is removed. Every existing job and check remains.
+
+The new regression failed against the preserved original runtime source, then
+passed after repair. All three affected Atlas checkers pass; the selection suite
+now has 282 assertions. The reviewer's original focused control also passes.
+Clipboard writes are mocked in the DOM fixture: no actual browser clipboard,
+rendering or download acceptance is implied. No Python reproduction, proof or
+model job was repeated.
+
+Versioned repair evidence is in
+`runs/online-atlas-repair-20261020/repairs/OR-R1-v2/`. The original 97-artifact
+manifest, report, source snapshots and handoff remain byte-for-byte unchanged;
+failed-control output and original source are preserved. This repair awaits the
+same independent reviewer's clearance. No commit or remote action occurred.
+
+## 2026-10-20 - Prepare the research atlas for online delivery
+
+The map, catalog, detail and export previously maintained inconsistent selected
+entries. Reused the independently reviewed five-file Atlas integration on a
+separate worktree at main `0102845fc6a91c46e4b2def7455b6d418e671c01`; that tree
+matches the patch's original base. The implementation owner's retained dirty
+checkout, helper and log were not changed. The new source shares selection and
+shows exact construction/minimum records, hypotheses, citations and separate
+unknown formal/model evidence gates.
+
+Added the 278-assertion selection check to CI and reproduction guidance. All
+existing CI jobs, required contexts, commands, timeouts and permissions remain;
+push now targets main while pull-request and manual triggers remain, avoiding
+duplicate feature-branch and PR proof pipelines. Updated the research-first
+README, yellow/black Atlas and Space copy, and roadmap. The aim is mathematical
+progress and useful foundational technology, without predetermining AI
+architectures or asserting novelty. HF card colors use documented yellow/gray;
+the atlas stylesheet is yellow/black.
+
+All three Atlas checkers passed, including 39 entries, 518 grouping cases,
+304 rejection witnesses, 117 claim links, 115 map-filter combinations and 278
+selection/inspector assertions. All 50 Atlas query tests and 33 ordinary root
+unit tests passed. Standard finite reproduction also passed, including its own
+33-test stage; its totals match saved evidence: 143,685 candidates, 217 witnesses
+and 22 vertex classes. Atlas data/claim freshness, independent classification,
+saved-evidence validation and 111 local documentation targets passed.
+
+Evidence is retained in `runs/online-atlas-repair-20261020/`, including exact
+patch/base identities, original-checkout preservation hashes, command logs,
+source snapshots and review handoff. The first setup command was rejected by a
+transport disconnection before process creation; a read confirmed no directory
+or source mutation before retry. No product check failed in this allocation.
+
+These are local source/data/fixture checks. This change does not publish the
+Space, establish rendered/assistive-technology acceptance, execute Lean/model
+work, or alter mathematical evidence. At the recorded 20 October read, the
+Space was still at `63a85954e68f4e0202db2382c875267f9ae03f40`, predating Snaky.
+Exact-byte independent review, hosted CI and publication acceptance remain
+separate. Substantial AI assistance was used.
+
 ## 2026-10-19 — Fix a Linux process-disappearance race in the cleanup test
 
 The push run for `4102fc1ec98a8516182270765e730a04ec626295` failed its

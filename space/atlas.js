@@ -101,23 +101,70 @@
     if (!registry || registry.schema_version !== 1 || !Array.isArray(registry.claims)) return [];
     return registry.claims.filter(claim => claim.entry_id === entry.id || (Array.isArray(claim.entry_ids) && claim.entry_ids.includes(entry.id)));
   }
+  // Build provenance is separate from the registry, which supplies no Git revision.
+  const BUILD_INPUT = Object.freeze({ repository: GITHUB, base_revision: '5a5167574cf63ba4e807893a3fb2f71277b14611' });
+  function createSelection(data, requestedId) {
+    if (data.schema_version !== 1 || new Set(data.entries.map(entry => entry.id)).size !== data.entries.length) throw new Error('Unique schema-1 entry IDs are required.');
+    const initial = data.entries.find(entry => entry.id === requestedId) || data.entries.find(entry => entry.name === 'C4' && entry.carrier_size === 4 && entry.minimum_unary_operations === 1) || data.entries[0];
+    let state = Object.freeze({ carrier: String(initial.carrier_size), shape: initial.abstract_type, entry: initial });
+    const listeners = new Set();
+    function publish(carrier, shape, entry) {
+      if (state.carrier === carrier && state.shape === shape && state.entry === entry) return;
+      state = Object.freeze({ carrier, shape, entry });
+      listeners.forEach(listener => listener(state));
+    }
+    return Object.freeze({
+      snapshot: () => state,
+      subscribe(listener) { listeners.add(listener); listener(state); return () => listeners.delete(listener); },
+      select(id) {
+        const entry = data.entries.find(item => item.id === id);
+        if (!entry) throw new Error('Unknown entry ID.');
+        const visible = filterEntries(data.entries, state.carrier, state.shape).includes(entry);
+        publish(visible ? state.carrier : String(entry.carrier_size), visible ? state.shape : entry.abstract_type, entry);
+      },
+      setFilters(carrier, shape) {
+        carrier = String(carrier);
+        if (!['all', '1', '2', '3', '4'].includes(carrier) || (shape !== 'all' && !data.abstract_types.some(item => item.id === shape))) throw new Error('Unknown atlas filter.');
+        const visible = filterEntries(data.entries, carrier, shape);
+        publish(carrier, shape, visible.includes(state.entry) ? state.entry : visible[0] || null);
+      },
+    });
+  }
+  function evidenceGates(claim) {
+    const absent = 'Not supplied for this claim';
+    return [
+      ['Formal source / theorem type', absent],
+      ['Lean compilation', absent],
+      ['Kernel replay', absent],
+      ['Allowed-axiom audit', absent],
+      ['Finite computation', claim.evidence_status === 'exhaustive_computation_independently_checked' ? 'Saved exhaustive computation and independent check; not rerun by this inspector' : `Recorded status: ${claim.evidence_status || 'not supplied'}`],
+      ['Negative controls', 'No per-claim receipt supplied; atlas-wide controls are recorded separately'],
+      ['Citation integrity', Array.isArray(claim.citations) && claim.citations.length ? 'Source locators and normalized SHA-256 hashes supplied; not rehashed by the browser' : absent],
+      ['Formal theorem/data binding', absent],
+      ['Model performance', absent],
+    ];
+  }
   function claimsHtml(registry, entry) {
     const claims = claimsForEntry(registry, entry);
     if (!claims.length) return '<p>The offline claim registry is unavailable for this entry. The mathematical data remains available below.</p>';
-    const unique = field => [...new Set(claims.flatMap(claim => claim[field] || []))];
     const list = items => `<ul>${items.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
-    const records = claims.map(claim => `<div class="claim-record"><code>${escapeHtml(claim.id)}</code><p>${escapeHtml(claim.statement)}</p></div>`).join('');
-    const scopes = [...new Set(claims.map(claim => claim.scope))];
-    const evidence = [...new Set(claims.map(claim => claim.evidence_status.replace(/_/g, ' ')))];
-    return `<h4>Claims attached to this entry</h4><p>These stable IDs connect the displayed result to source locations and file hashes in the downloadable registry.</p>${records}<details><summary>Read the assumptions, limits, and evidence status</summary><p><strong>Evidence:</strong> ${escapeHtml(evidence.join('; '))}.</p><p><strong>Scope:</strong> ${scopes.map(escapeHtml).join(' ')}</p><p><strong>Assumptions</strong></p>${list(unique('assumptions'))}<p><strong>Limits</strong></p>${list(unique('limits'))}</details><p><a href="atlas-claims.json" download>Download all claim records and source citations ↓</a> · <a href="${GITHUB}/blob/main/docs/ATLAS_QUERY.md">Query guide ↗</a></p>`;
+    const pinned = path => `${GITHUB}/blob/${BUILD_INPUT.base_revision}/${path.split('/').map(encodeURIComponent).join('/')}`;
+    const records = claims.map(claim => {
+      const direct = claim.entry_id === entry.id;
+      const citations = (claim.citations || []).map(citation => `<li><a href="${escapeHtml(pinned(citation.path))}">${escapeHtml(citation.path)}</a><br>JSON pointer <code>${escapeHtml(citation.json_pointer)}</code><br>SHA-256 <code>${escapeHtml(citation.sha256)}</code></li>`).join('');
+      const gates = evidenceGates(claim).map(([gate, status]) => `<tr><th scope="row">${escapeHtml(gate)}</th><td>${escapeHtml(status)}</td></tr>`).join('');
+      return `<article class="claim-record"><h5>${direct ? (claim.kind === 'fixed_family_minimum' ? 'Fixed-family minimum' : 'Exact construction') : 'Related comparison'}</h5><code>${escapeHtml(claim.id)}</code><p>${escapeHtml(claim.statement)}</p><p><strong>Scope:</strong> ${escapeHtml(claim.scope)}</p><details><summary>Inspect ${escapeHtml(claim.id)}: hypotheses, citations and evidence gates</summary><dl><dt>Kind</dt><dd>${escapeHtml(claim.kind)}</dd><dt>Exact entry IDs</dt><dd>${escapeHtml(direct ? claim.entry_id : claim.entry_ids.join(', '))}</dd><dt>Carrier size</dt><dd>${escapeHtml(claim.carrier_size)}</dd><dt>Shape key (classification only)</dt><dd><code>${escapeHtml(claim.shape_key)}</code></dd>${claim.minimum_unary_operations !== undefined ? `<dt>Minimum unary operations</dt><dd>${escapeHtml(claim.minimum_unary_operations)}</dd>` : ''}<dt>Recorded status</dt><dd><code>${escapeHtml(claim.evidence_status)}</code></dd></dl><h6>Recorded hypotheses</h6>${list(claim.assumptions || [])}<h6>Limits</h6>${list(claim.limits || [])}<h6>Separate evidence gates</h6><table class="claim-gates"><caption>Evidence supplied for ${escapeHtml(claim.id)}</caption><thead><tr><th scope="col">Gate</th><th scope="col">Record status</th></tr></thead><tbody>${gates}</tbody></table><h6>Source citations</h6><p class="small">${escapeHtml(registry.hash_encoding)}</p><ul class="claim-citations">${citations}</ul></details></article>`;
+    }).join('');
+    return `<h4>Exact claim record</h4><p>Selected mathematical object: <code>schema 1 / ${escapeHtml(entry.id)}</code>. Carrier: {${Array.from({ length: entry.carrier_size }, (_, i) => i).join(', ')}}. Construction and minimum are distinct claims.</p><details><summary>Inspect the selected operations and complete relation family</summary><pre>${escapeHtml(JSON.stringify({ operations: entry.operations, partitions: entry.partitions, order: entry.order, covers: entry.covers }, null, 2))}</pre></details><dl class="claim-provenance"><dt>Registry</dt><dd><code>${escapeHtml(registry.namespace)}</code> · schema ${escapeHtml(registry.schema_version)}</dd><dt>UI/build input revision</dt><dd><a href="${GITHUB}/tree/${BUILD_INPUT.base_revision}"><code>${BUILD_INPUT.base_revision}</code></a></dd><dt>Registry Git revision</dt><dd>Not supplied by this registry; the revision above identifies the copied build inputs.</dd><dt>Formal theorem type</dt><dd>Not supplied for this claim</dd></dl><p class="small">Shape labels classify records; they do not transfer N5 or B3 proofs to this entry. Citation hashes are record-integrity metadata, not formal theorem/data binding.</p>${records}<p><a href="atlas-claims.json" download>Download all claim records and source citations ↓</a> · <a href="${pinned('docs/ATLAS_QUERY.md')}">Pinned query contract ↗</a></p>`;
   }
   function certificate(data, entry, registry = null) {
     const record = { schema_version: data.schema_version, scope: data.scope, evidence_status: data.evidence_status, minimum_scope: data.minimum_scope, source_sha256: data.source_sha256, generator_sha256: data.generator_sha256, hash_encoding: data.hash_encoding, entry };
     const claims = claimsForEntry(registry, entry);
-    if (claims.length) record.claims = { registry: 'atlas-claims.json', namespace: registry.namespace, ids: claims.map(claim => claim.id), sources: registry.sources };
+    record.ui_build_input = BUILD_INPUT;
+    if (claims.length) record.claims = { registry: 'atlas-claims.json', schema_version: registry.schema_version, namespace: registry.namespace, registry_git_revision: null, hash_encoding: registry.hash_encoding, ids: claims.map(claim => claim.id), sources: registry.sources, records: claims, evidence_gates: claims.map(claim => ({ claim_id: claim.id, gates: evidenceGates(claim) })) };
     return record;
   }
-  const api = { LESSON, escapeHtml, blocks, partitionLabel, partitions, checkGrouping, operationHtml, groupingHtml, latticeSvg, filterEntries, claimsForEntry, claimsHtml, certificate };
+  const api = { LESSON, escapeHtml, blocks, partitionLabel, partitions, checkGrouping, operationHtml, groupingHtml, latticeSvg, filterEntries, claimsForEntry, claimsHtml, certificate, createSelection, evidenceGates, BUILD_INPUT };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   if (typeof document === 'undefined') return;
 
@@ -139,23 +186,22 @@
     byId('comparison').hidden = true;
     return;
   }
-  let selectedEntry = data.entries.find(entry => entry.name === 'B2' && entry.carrier_size === 3) || data.entries[0];
-  let selectedGrouping = 0;
+  const selection = createSelection(data, new URLSearchParams(window.location.search).get('entry'));
   let lastDownloadUrl = null;
   function renderGrouping(index) {
-    selectedGrouping = index;
+    const selectedEntry = selection.snapshot().entry;
+    if (!selectedEntry) return;
     const partition = selectedEntry.partitions[index];
     byId('entry-grouping').innerHTML = groupingHtml(partition, selectedEntry.operations);
     byId('entry-diagram').innerHTML = latticeSvg(selectedEntry, index);
     byId('grouping-list').querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.grouping) === index)));
   }
   function renderEntry(entry) {
-    selectedEntry = entry;
     const n = entry.carrier_size, minimum = entry.minimum_unary_operations;
     const shape = entry.name.startsWith('Shape ') ? `${entry.name} · ${entry.partitions.length} grouping${entry.partitions.length === 1 ? '' : 's'}` : `${entry.name} · ${n} object${n === 1 ? '' : 's'}`;
     byId('entry-kicker').textContent = `ENTRY ${entry.id} / SHAPE ${entry.abstract_type}`;
     byId('entry-title').textContent = shape;
-    byId('entry-intro').textContent = `${n} object${n === 1 ? '' : 's'} and ${minimum} rule${minimum === 1 ? '' : 's'} give exactly ${entry.partitions.length} valid grouping${entry.partitions.length === 1 ? '' : 's'}. Each entry has its own rules and object labels; check the arrows again.`;
+    byId('entry-intro').textContent = `${n} object${n === 1 ? '' : 's'} and ${minimum} rule${minimum === 1 ? '' : 's'} give exactly ${entry.partitions.length} valid grouping${entry.partitions.length === 1 ? '' : 's'}. The operation tables and complete relation family identify this exact construction.`;
     byId('entry-facts').innerHTML = `<div><strong>${n}</strong><span>object${n === 1 ? '' : 's'}</span></div><div><strong>${minimum}</strong><span>minimum unary rule${minimum === 1 ? '' : 's'}</span></div><div><strong>${entry.partitions.length}</strong><span>valid grouping${entry.partitions.length === 1 ? '' : 's'}</span></div>`;
     byId('entry-objects').innerHTML = Array.from({ length: n }, (_, i) => `<span class="object">${LETTERS[i]}</span>`).join('');
     byId('entry-operations').innerHTML = entry.operations.length ? entry.operations.map(operationHtml).join('') : '<p class="small">This system has no rules. Every partition of its objects is therefore a valid grouping. Allowing zero operations is part of this atlas’s stated convention.</p>';
@@ -165,7 +211,7 @@
     byId('entry-failure').innerHTML = rejected ? `<div class="grouping-result is-fail">${groupingHtml(rejected, entry.operations)}</div>` : '<p>Every possible grouping works for this entry. There is no failing grouping to display.</p>';
     byId('failure-details').open = false;
     byId('entry-takeaway').textContent = minimum === 0 ? `Takeaway: the objects alone already give this shape. Adding a rule is unnecessary for this grouping family.` : `Takeaway: ${minimum === 1 ? 'this one rule allows' : `these ${minimum} rules allow`} every displayed grouping and ${minimum === 1 ? 'excludes' : 'exclude'} every other partition. Exhaustive checking shows that fewer unary rules cannot produce this exact family on these ${n} objects.`;
-    byId('entry-provenance').innerHTML = `<dl><dt>Entry</dt><dd>${escapeHtml(entry.id)}</dd><dt>Abstract shape</dt><dd>${escapeHtml(entry.abstract_type)}</dd><dt>Labeled families represented</dt><dd>${entry.orbit_size} under object renaming</dd><dt>Stored object indices</dt><dd>${Array.from({ length: n }, (_, i) => `${LETTERS[i]} = ${i}`).join(', ')}</dd><dt>Evidence type</dt><dd>Exhaustive finite computation and independent verification</dd></dl><p><a href="${GITHUB}/blob/main/evidence/atlas-review.json">Inspect the independent verification record ↗</a></p>`;
+    byId('entry-provenance').innerHTML = `<dl><dt>Entry</dt><dd>${escapeHtml(entry.id)}</dd><dt>Abstract shape</dt><dd>${escapeHtml(entry.abstract_type)}</dd><dt>Labeled families represented</dt><dd>${entry.orbit_size} under object renaming</dd><dt>Stored object indices</dt><dd>${Array.from({ length: n }, (_, i) => `${LETTERS[i]} = ${i}`).join(', ')}</dd><dt>Evidence type</dt><dd>Saved exhaustive finite computation and independent verification; not rerun here</dd></dl><p><a href="${GITHUB}/blob/${BUILD_INPUT.base_revision}/evidence/atlas-review.json">Inspect the independent verification record ↗</a></p>`;
     byId('entry-claims').innerHTML = claimsHtml(registry, entry);
     byId('entry-context').hidden = entry.id !== 'n4-E16709';
     byId('entry-json').textContent = JSON.stringify(certificate(data, entry, registry), null, 2);
@@ -174,15 +220,17 @@
     renderGrouping(firstNontrivial >= 0 ? firstNontrivial : 0);
   }
   function renderCatalog() {
-    const visible = filterEntries(data.entries, byId('carrier-filter').value, byId('shape-filter').value);
+    const { carrier, shape, entry: selectedEntry } = selection.snapshot();
+    byId('carrier-filter').value = carrier;
+    byId('shape-filter').value = shape;
+    const visible = filterEntries(data.entries, carrier, shape);
     byId('entry-count').textContent = `${visible.length} ${visible.length === 1 ? 'entry' : 'entries'} shown`;
-    byId('entry-list').innerHTML = visible.length ? visible.map(entry => `<button type="button" data-entry="${escapeHtml(entry.id)}" aria-pressed="${entry.id === selectedEntry.id}"><strong>${escapeHtml(entry.name)} · ${entry.carrier_size} object${entry.carrier_size === 1 ? '' : 's'}</strong><span>${entry.partitions.length} grouping${entry.partitions.length === 1 ? '' : 's'} · ${entry.minimum_unary_operations} rule${entry.minimum_unary_operations === 1 ? '' : 's'}</span><span>${escapeHtml(entry.id)}</span></button>`).join('') : '<p class="small">No entries match both filters. Try a different object count or shape.</p>';
-    byId('entry-list').querySelectorAll('button').forEach(button => button.addEventListener('click', () => renderEntry(data.entries.find(entry => entry.id === button.dataset.entry))));
-    if (visible.length && !visible.some(entry => entry.id === selectedEntry.id)) renderEntry(visible[0]);
-    byId('entry-title').closest('.entry-detail').hidden = !visible.length;
+    byId('entry-list').innerHTML = visible.length ? visible.map(entry => `<button type="button" data-entry="${escapeHtml(entry.id)}" aria-pressed="${entry.id === selectedEntry?.id}"><strong>${escapeHtml(entry.name)} · ${entry.carrier_size} object${entry.carrier_size === 1 ? '' : 's'}</strong><span>${entry.partitions.length} grouping${entry.partitions.length === 1 ? '' : 's'} · ${entry.minimum_unary_operations} rule${entry.minimum_unary_operations === 1 ? '' : 's'}</span><span>${escapeHtml(entry.id)}</span></button>`).join('') : '<p class="small">No entries match both filters. Try a different object count or shape.</p>';
+    byId('entry-list').querySelectorAll('button').forEach(button => button.addEventListener('click', () => selection.select(button.dataset.entry)));
   }
-  byId('carrier-filter').addEventListener('change', renderCatalog);
-  byId('shape-filter').addEventListener('change', renderCatalog);
+  const changeFilters = () => selection.setFilters(byId('carrier-filter').value, byId('shape-filter').value);
+  byId('carrier-filter').addEventListener('change', changeFilters);
+  byId('shape-filter').addEventListener('change', changeFilters);
   byId('shape-filter').insertAdjacentHTML('beforeend', data.abstract_types.map(shape => `<option value="${escapeHtml(shape.id)}">${escapeHtml(shape.name)} (${shape.lattice_elements} grouping${shape.lattice_elements === 1 ? '' : 's'})</option>`).join(''));
   const totalFamilies = data.carrier_summary.reduce((sum, row) => sum + row.labeled_relation_families, 0);
   byId('atlas-totals').innerHTML = `<div><strong>${totalFamilies}</strong><span>labeled grouping families</span></div><div><strong>${data.entries.length}</strong><span>entries after renaming</span></div><div><strong>${data.abstract_types.length}</strong><span>distinct abstract shapes</span></div>`;
@@ -190,15 +238,14 @@
   const comparisons = [1, 2].map(minimum => data.entries.find(entry => entry.name === 'C4' && entry.carrier_size === 4 && entry.minimum_unary_operations === minimum)).filter(Boolean);
   byId('comparison-cards').innerHTML = comparisons.map(entry => `<article class="comparison-card"><p class="eyebrow">FOUR OBJECTS / FOUR GROUPINGS</p><h3>${entry.minimum_unary_operations === 1 ? 'One rule is enough.' : 'Two rules are necessary.'}</h3><p class="comparison-caption">Read the groups inside each node: they distinguish this construction.</p><div class="mini-chain">${latticeSvg(entry, -1, true)}</div>${entry.operations.map(operationHtml).join('')}<button class="button secondary" type="button" data-compare="${escapeHtml(entry.id)}">Explore this entry ↗</button></article>`).join('');
   byId('comparison-cards').querySelectorAll('button').forEach(button => button.addEventListener('click', () => {
-    byId('carrier-filter').value = '4';
-    byId('shape-filter').value = comparisons[0].abstract_type;
-    renderCatalog();
-    renderEntry(data.entries.find(entry => entry.id === button.dataset.compare));
+    selection.select(button.dataset.compare);
     byId('entry-title').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
     byId('entry-title').setAttribute('tabindex', '-1');
     byId('entry-title').focus({ preventScroll: true });
   }));
   byId('download-entry').addEventListener('click', () => {
+    const selectedEntry = selection.snapshot().entry;
+    if (!selectedEntry) return;
     if (lastDownloadUrl) URL.revokeObjectURL(lastDownloadUrl);
     lastDownloadUrl = URL.createObjectURL(new Blob([JSON.stringify(certificate(data, selectedEntry, registry), null, 2) + '\n'], { type: 'application/json' }));
     const link = document.createElement('a');
@@ -206,7 +253,7 @@
     link.download = `atlas-${selectedEntry.id}.json`;
     document.body.append(link); link.click(); link.remove();
   });
-  byId('reproduce-commands').textContent = 'python scripts/build_atlas_data.py --check\npython scripts/check_atlas.py --check-receipt evidence/atlas-review.json\npython scripts/check_atlas.py --out runs/atlas-review.json\npython scripts/query_atlas.py build-claims --check\npython -m unittest discover -s scripts -p "test_atlas*.py" -v\nnode scripts/check_atlas_ui.cjs\nnode scripts/check_atlas_map.cjs';
+  byId('reproduce-commands').textContent = 'python scripts/build_atlas_data.py --check\npython scripts/check_atlas.py --check-receipt evidence/atlas-review.json\npython scripts/check_atlas.py --out runs/atlas-review.json\npython scripts/query_atlas.py build-claims --check\npython -m unittest discover -s scripts -p "test_atlas*.py" -v\nnode scripts/check_atlas_ui.cjs\nnode scripts/check_atlas_map.cjs\nnode scripts/check_atlas_selection.cjs';
   byId('copy-commands').addEventListener('click', async () => {
     try {
       await navigator.clipboard.writeText(byId('reproduce-commands').textContent);
@@ -218,18 +265,21 @@
   byId('source-record').textContent = JSON.stringify({ scope: data.scope, evidence_status: data.evidence_status, minimum_scope: data.minimum_scope, hash_encoding: data.hash_encoding, generator_sha256: data.generator_sha256, source_sha256: data.source_sha256 }, null, 2);
   byId('atlas-loading').hidden = true;
   byId('atlas-app').hidden = false;
-  renderCatalog();
-  const requestedEntry = data.entries.find(entry => entry.id === new URLSearchParams(window.location.search).get('entry'));
-  if (requestedEntry) selectedEntry = requestedEntry;
-  renderEntry(selectedEntry);
-  if (window.AtlasMap) window.AtlasMap.mount(data, registry, entry => {
-    byId('carrier-filter').value = String(entry.carrier_size);
-    byId('shape-filter').value = entry.abstract_type;
-    renderCatalog();
-    renderEntry(entry);
+  let renderedFilters = '', renderedEntry = null;
+  selection.subscribe(state => {
+    const filters = `${state.carrier}/${state.shape}`;
+    if (filters !== renderedFilters) { renderCatalog(); renderedFilters = filters; }
+    byId('entry-title').closest('.entry-detail').hidden = !state.entry;
+    byId('download-entry').disabled = !state.entry;
+    if (state.entry && state.entry !== renderedEntry) renderEntry(state.entry);
+    if (!state.entry) { byId('entry-json').textContent = ''; byId('entry-claims').innerHTML = ''; }
+    renderedEntry = state.entry;
+    byId('entry-list').querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.entry === state.entry?.id)));
+  });
+  if (window.AtlasMap) window.AtlasMap.mount(data, registry, () => {
     const title = byId('entry-title');
     title.setAttribute('tabindex', '-1');
     title.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
     title.focus({ preventScroll: true });
-  });
+  }, selection);
 }());

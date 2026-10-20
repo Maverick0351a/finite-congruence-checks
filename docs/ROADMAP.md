@@ -1,6 +1,6 @@
 # Research and engineering roadmap
 
-## Current milestone: Snaky on finite boards
+## Current delivery: publish the reviewed research atlas
 
 [PR #11](https://github.com/Maverick0351a/finite-congruence-checks/pull/11) and
 [PR #12](https://github.com/Maverick0351a/finite-congruence-checks/pull/12) are merged.
@@ -13,10 +13,9 @@ and transported groupings, follow the applicable theorem, and distinguish a
 failed grouping from a failed correspondence or an unsupported proof reference.
 It reuses the existing generic theorem and retains the first example's evidence.
 
-The proof-reuse milestone was merged in PR #15. The user has now selected this
-mathematical order: first formalize the [saved five-object example](FIVE_OBJECT_MINIMUM.md),
-then investigate one exact Snaky certificate and its board assumptions, then
-consider a directed-graph example. The first task compares two exact families
+The proof-reuse milestone was merged in PR #15. The subsequent delivery track
+formalized the [saved five-object example](FIVE_OBJECT_MINIMUM.md), then one exact
+Snaky certificate and its board assumptions. The five-object task compares two exact families
 with the same eight-element order but different minimum unary rule counts.
 The five-object proof now supplies complete classifications, arbitrary-unary-map
 lower bounds, exact theorem bindings, and a separate exhaustive Python audit.
@@ -33,15 +32,35 @@ different result. The [branch walkthrough](SNAKY_PLAY.md) shows one complete
 independently replayed example, including each Maker move, chosen Breaker reply,
 remaining budget and supporting certificate step. It distinguishes that chosen
 eight-claim play from the theorem covering every legal reply within 21 claims.
-Complete hosted reproduction and publication review before closing this milestone.
-Then inspect one directed-graph example's exact source statement and
-assumptions before selecting its proof target.
+[PR #18](https://github.com/Maverick0351a/finite-congruence-checks/pull/18) merged as
+`0102845fc6a91c46e4b2def7455b6d418e671c01`. Its
+[main CI run](https://github.com/Maverick0351a/finite-congruence-checks/actions/runs/39385592591)
+completed all nine jobs successfully on 20 October 2026, including hosted Snaky
+reproduction. This source milestone is complete. Publishing the current website
+is a separate delivery: the [last recorded Space publication](HUGGING_FACE_DEMO.md#publish)
+predates Snaky.
+
+The current Atlas change synchronizes selection across the map, catalog, detail
+and export, exposes exact claim records, and adopts the yellow/black research
+presentation. Finish independent review, required CI and permitted browser
+acceptance before publishing the exact merged website bytes. Source/fixture
+checks do not establish rendered, responsive or assistive-technology behavior.
+
+## Mathematical research direction
+
+Sustain broad work across OpenAI Math, with deep investigations chosen from
+precise questions and current related research. Capture methods, counterexamples,
+failures and possible connections to useful technical capabilities. Foundational
+technology is the ambition; AI architectures are one possible outcome, and no
+single direction is predetermined. A directed-graph example remains a candidate,
+not a committed next theorem. Select its target only after inspecting the exact
+source statement, assumptions, prior art and a discriminating test.
 
 Before any resumed model evaluation, resolve the dummy runner's
 [isolation and usage gates](NATIVE_PREFLIGHT_STATUS.md). Report actual preflight
 usage and a revised estimate before seeking approval for the original four
 direct-answer sessions. The matched benchmark packets and four reserved task
-families remain frozen. Model benchmarks, handoffs, repeated trials, and training
+families remain frozen. Model benchmarks, model handoff experiments, repeated trials, and training
 remain paused. The larger atlas and harder repair domain below are later work.
 
 ## The first release
