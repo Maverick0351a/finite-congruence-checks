@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#162442">
+  <meta name="description" content="Follow one checked Snaky game, move by move, from a finite strategy certificate. Inspect the board, legal replies, remaining budget, and exact evidence.">
+  <title>A strategy that keeps a way forward · The small systems atlas</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="atlas.css"><link rel="stylesheet" href="snaky-play.css">
+  <script src="snaky-play-data.js" defer></script>
+  <script src="snaky-play.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#play">Skip to the example game</a>
+  <header class="topbar"><a class="brand" href="atlas.html"><img src="icon.svg" width="28" height="28" alt="">The small systems atlas</a><nav aria-label="Main navigation"><a href="#play">Follow the moves</a><a href="#reason">Why a plan survives</a><a href="#evidence">Evidence</a><a href="atlas.html">Back to atlas</a></nav></header>
+  <main>
+    <section class="snaky-hero" aria-labelledby="title"><p class="eyebrow">SOURCE CONTEXT / FAMILY 187 · OPENAI MATH</p><h1 id="title">A strategy that keeps<br><em>a way forward.</em></h1><p class="lead">Maker tries to claim a six-square Snaky. Breaker claims squares to get in the way. Follow one example of how a strategy keeps a continuation available after each reply.</p><p class="small">One recorded play on the exact 251-cell board. The proof's guarantee covers every legal reply within 21 Maker claims; this example illustrates one route.</p></section>
+    <div id="snaky-error" class="notice" role="status" hidden></div>
+    <section id="play" aria-labelledby="play-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / One complete branch</p><h2 id="play-title">Watch the plan unfold.</h2></div><a class="button secondary" href="snaky-play.json" download>Download the recorded play ↓</a></div>
+      <div id="snaky-content" hidden>
+        <div class="snaky-controls paper"><button type="button" id="snaky-prev" class="button secondary" aria-label="Previous Maker move">← Previous</button><div><label for="snaky-step">Maker move</label><select id="snaky-step"></select></div><button type="button" id="snaky-next" class="button secondary" aria-label="Next Maker move">Next →</button></div>
+        <div class="snaky-layout">
+          <figure class="paper snaky-board-wrap"><div id="snaky-board" tabindex="0" role="region" aria-label="Scrollable Snaky board. Use the left and right arrow keys to inspect the full board on a narrow screen."></div><figcaption><span class="legend-maker">● M: Maker</span><span class="legend-breaker">× B: Breaker</span><span>Outlined cells: surviving plan's envelope</span><span>Muted cells: outside this board</span></figcaption><p class="caption">Coordinates label individual squares. Numbers inside occupied squares give the round they were claimed. Each displayed state is after the selected round, or immediately after the winning Maker claim. On a narrow screen, scroll the board sideways; keyboard users can focus it and use the arrow keys.</p></figure>
+          <article class="paper snaky-explanation" aria-live="polite" aria-atomic="true"><p id="snaky-card-label" class="eyebrow"></p><h3 id="snaky-move-title"></h3><div id="snaky-move-text"></div><dl id="snaky-budget" class="snaky-budget"></dl><div id="snaky-continuation"></div><a id="snaky-card-source" href="#evidence">Inspect this certificate card ↗</a></article>
+        </div>
+        <details class="terms"><summary>Read the complete move list without the diagram</summary><div class="table-scroll" id="snaky-move-table"></div></details>
+      </div>
+      <noscript><p class="notice">The move viewer needs JavaScript. The <a href="snaky-play.json">downloadable play record</a> contains every move, board state and certificate reference.</p></noscript>
+    </section>
+    <section id="reason" aria-labelledby="reason-title"><div class="section-heading"><div><p class="eyebrow">02 / The local reason</p><h2 id="reason-title">One reply cannot block every route.</h2></div></div><div class="snaky-reason-grid"><article class="paper"><h3>Start from a certificate card</h3><p>A card lists cells Maker must already own, an envelope free of Breaker cells, and a bound on the additional Maker claims needed.</p></article><article class="paper"><h3>Make a fresh claim</h3><p>Maker claims the card's pivot. If Maker already owns it, a fresh replacement still costs one move. The finite-board argument ensures such a square is available.</p></article><article class="paper"><h3>Keep a surviving continuation</h3><p>Every cell shared by all child envelopes is already owned by Maker. Breaker must claim a fresh cell, so its reply cannot spoil every child. Maker follows one that remains available.</p></article></div><div class="takeaway"><span>TWO DIFFERENT COUNTS</span><p>The chosen child may have a much smaller bound. That does not mean Maker played several moves at once. The viewer keeps <strong>actual claims</strong>, the <strong>21-claim allowance</strong>, and each <strong>card's remaining bound</strong> separate.</p></div></section>
+    <section id="evidence" aria-labelledby="evidence-title"><p class="eyebrow">03 / Follow the exact evidence</p><h2 id="evidence-title">What supports this explanation?</h2><div id="snaky-evidence" class="evidence-grid"></div><p>The browser displays saved states; it does not run Lean. A separate checker replays this particular execution. The Lean theorem establishes the strategy guarantee under its formal game rules. The displayed execution is not a formally verified extraction of that strategy.</p><p class="small">The paper already supplies the finite-board result. This project checks the certificate and formalizes the finite-board guarantee. The example does not establish a better move bound, optimality, or improved AI reasoning.</p><pre id="snaky-query"></pre></section>
+  </main>
+  <footer><span>Finite Congruence Checks · Exact objects, explicit evidence.</span><a href="https://github.com/Maverick0351a/finite-congruence-checks">Source repository ↗</a></footer>
+</body>
+</html>

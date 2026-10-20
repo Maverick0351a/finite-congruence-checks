@@ -33,6 +33,7 @@ classifies all representable grouping families through four objects, yielding
 **[Agent repair experiment](docs/REPAIR_BENCHMARK.md)** ·
 **[TM translation checks](docs/TM_TRANSLATION_CHECKS.md)** ·
 **[Compare Turing examples](docs/TM_ATLAS.md)** ·
+**[Snaky on finite boards](docs/SNAKY_FINITE_BOARD.md)** ·
 **[Changelog](CHANGELOG.md)** · **[Support](SUPPORT.md)**
 
 | Candidate colorings | Full witnesses | Vertex classes | Saved examples |
@@ -120,10 +121,18 @@ python scripts/five_object_proof.py run --out runs/five-object-fresh
 python scripts/query_context.py explain context:family-206:five-object:operation-minima:v1
 ```
 
+The [Snaky walkthrough](docs/SNAKY_FINITE_BOARD.md) formalizes the paper's
+21-Maker-claim guarantee on its exact 251-cell envelope and containing 17 by 17
+square. The Lean proof, kernel replay, axiom audit and seven changed-claim
+rejections pass, alongside an independent certificate audit. Follow
+[one complete example play](docs/SNAKY_PLAY.md) to see each move, a surviving
+continuation, the remaining bound and its evidence. The example's eight-claim
+win is distinct from the theorem's guarantee against every legal reply.
+
 Read the [query contract](docs/ATLAS_QUERY.md),
 [agent retrieval evaluation](docs/ATLAS_QUERY_EVALUATION.md), and
 [infrastructure direction](docs/INFRASTRUCTURE.md). These interfaces are an
-early foundation for reliable evidence retrieval in a bounded mathematical domain.
+early foundation for reliable evidence retrieval across these selected mathematical examples.
 
 ## Propose a grouping, get a checked counterexample
 

@@ -60,6 +60,14 @@ halting step, complete final tape, and head position independently, then inspect
 the cited trace and applicable source lemma. These are bounded observations on
 blank input. [Turing evidence guide](https://github.com/Maverick0351a/finite-congruence-checks/blob/main/docs/TM_ATLAS.md).
 
+The Snaky walkthrough at `snaky-play.html` follows one checked execution on the
+exact 251-cell board. It shows fresh Maker claims, legal Breaker replies,
+surviving continuation envelopes, and the complete six-cell winning witness.
+Its eight-claim example is separate from the formal guarantee within 21 claims
+against every legal reply. It links the finite-board theorem, saved verification
+receipt, and independently replayed play record. The paper already states the
+finite-board result; this is a checked formalization and explanation of it.
+
 The original graph explorer remains available at `index.html`.
 Choose one of eight lattices, inspect colored graphs and equivalence classes,
 compare passing and failing examples, and download the exact certificates.
@@ -108,6 +116,12 @@ For the saved N5 context, run `python scripts/build_n5_context.py --check`,
 against its pinned revision before regenerating the sidecar record.
 The downloadable `data.json` lists source hashes
 and the pinned upstream revision. Publish only the contents of `space/`.
+For Snaky, run `python scripts/build_snaky_play.py --check`,
+`python scripts/check_snaky_play.py`,
+`python scripts/build_snaky_presentation.py --check`, and
+`node scripts/check_snaky_play_ui.cjs`. The presentation exporter replays the
+saved formal receipt and checks its linked inputs against an immutable Git
+revision. These commands do not start a new Lean proof execution.
 
 The app uses native HTML, CSS, JavaScript, SVG, and a local pinned Cytoscape.js
 build with its MIT license. It needs no package install, CDN, external font,

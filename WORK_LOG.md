@@ -1,5 +1,285 @@
 # Finite graph search work log
 
+## 2026-10-19 — Fix a Linux process-disappearance race in the cleanup test
+
+The push run for `4102fc1ec98a8516182270765e730a04ec626295` failed its
+Python 3.10 job while the corresponding PR job passed. The
+[job log](https://github.com/Maverick0351a/finite-congruence-checks/actions/runs/39316093274/job/118277828681)
+records `ProcessLookupError: [Errno 3] No such process` during a read of the
+terminated child's `/proc` status. The test already handled a missing file;
+it now also handles the process disappearing after the file was opened.
+Other read errors still propagate, and a live child still fails the deadline.
+
+Two deterministic regression tests cover both disappearance errors and retain
+the permission-error/live-process failures. All 14 runner tests passed on
+WSL/Linux in 10.751 seconds; Windows passed its 11 applicable tests with three
+existing platform skips. Independent review approved the narrow test-only
+repair and ran the two added controls. The test file is outside the proof's
+194-source manifest and presentation's 219-input anchor; the actual proof,
+runner and saved receipt are unchanged. All 13 immutable presentation links
+also resolved and matched their anchored files after push. Fresh CI and
+deployment remain pending. Benchmarks and training remain paused.
+
+## 2026-10-19 — Revised Snaky replay completes with exact module inventory
+
+Committed source `c3af350005f413554aea03db8cbf2c4c2d09e31b` completed all 12
+proof stages from 19:34:58 to 19:59:10 UTC, using the existing WSL dependency
+and build cache. Kernel replay took 1,303.713 seconds and exited zero. The 179
+verbose module names match the independently reconstructed import closure
+exactly, with no missing, duplicate or extra modules. All 19 declaration axiom
+reports pass the existing policy. All seven altered bindings exited 1 with
+the expected mathematical rejection diagnostics. No timeout or setup failure
+is counted as a rejection.
+
+Independent review matched all 194 source hashes to both the frozen commit and
+the executing native checkout, verified all 20 artifact hashes, and replayed
+the completed receipt. The 21 receipt files were copied without rewriting
+their contents into the evidence directory, where saved replay also passes.
+The full run took 1,451.334 seconds; its cached build took 11.8 seconds. These
+measurements do not establish fresh hosted performance or isolate a speedup
+from the discovery change. The receipt is committed at
+`3bd96caa445c459371128e882fe420479084924e`; the renewed presentation binds all
+219 inputs to that commit. Independent review passed all 88 focused Linux
+tests in 105.372 seconds without skips and approved the receipt and anchor.
+Presentation freshness and full renderer checks pass; the refreshed browser
+page displays the new receipt hash and immutable references. Fresh hosted CI,
+HTTP link checks and deployment remain release gates. Earlier runs retain
+their original outcomes. Benchmarks and training remain paused.
+
+## 2026-10-19 — Hosted Snaky kernel replay exceeds its stage allowance
+
+The [PR run](https://github.com/Maverick0351a/finite-congruence-checks/actions/runs/39280967879)
+and [push run](https://github.com/Maverick0351a/finite-congruence-checks/actions/runs/39280963678)
+of PR #18 head `22fdfd061fc69c29553297ecb073c7200d3b8912`
+completed compilation and the axiom-report command. The PR run's build took
+1,980.924 seconds; the push run took 2,147.996 seconds. Independent inspection
+of each downloaded axiom log passes all 19 declaration reports. Both kernel
+stages then reached the 2,400-second limit. Their receipts correctly record
+`failure_kind=timeout`; exit -9 resulted from the runner's cleanup. No negative
+controls ran, and neither receipt is accepted as a completed verification.
+
+The repair assigns kernel replay a 7,200-second bound, keeps compilation at
+3,600 seconds and the remaining stages at 2,400 seconds, and gives the job
+210 minutes for both long stages plus other proofs, setup, controls and uploads.
+Host capacity and GNU time measurements will be retained separately from proof
+artifacts. The complete module list, mathematical sources, axiom policy and
+negative controls remain required. This is not evidence of an out-of-memory
+failure or a mathematical counterexample. The modified runner requires a new
+actual receipt and reviewed presentation anchor; those gates are pending.
+Inspection of the pinned Lean checker also found a full search-path scan per
+selector. Nine selectors match exactly the same 179 modules in both the source
+tree and local compiled cache, avoiding 170 redundant scans. The runner now
+requests verbose output and validates its complete module inventory alongside
+exit zero in both actual execution and saved replay. An announced module is
+not reported as complete before the process succeeds. The speed effect remains
+unmeasured; the older empty kernel logs cannot attribute the timeout's cost.
+Model benchmarks, reserved tasks and training remain paused.
+
+## 2026-10-19 — Renewed Snaky verification passes with complete stage records
+
+The revised runner completed all 12 actual proof stages from committed source
+`5fa1b81550a1841a3b2b91a0c48a7cc5b4380448`, using the existing WSL build cache.
+The run lasted from 15:14:11 to 15:45:45 UTC. Kernel replay passed in 1,733.691
+seconds; the 179 local modules, 19 allowed-axiom reports and seven deliberately
+changed claims remain covered. Each rejection completed with exit code 1.
+The receipt replays successfully and is committed at
+`f516abb4e98696cc61003de55518961245416a40`. Presentation generation now binds
+its 219 inputs to that commit. The earlier successful receipt is preserved in
+Git history. Independent review checked all 194 source hashes against the source
+commit, passed all 84 focused tests on Linux without skips, and approved the
+renewed receipt and presentation. Generation freshness and the full renderer
+check pass. Hosted reproduction and HTTP checks for the new evidence anchor
+remain pending before merge and deployment.
+
+## 2026-10-19 — Fresh hosted Snaky compilation exceeded its stage allowance
+
+PR #18 run `39267847727` passed eight of nine required jobs. The Concrete Lean
+certificates job reproduced the five-object proof, then the Snaky compilation
+hit its 2,400-second stage limit. The failed Snaky step ran from 14:26:00 to
+15:07:55 UTC; version and dependency setup succeeded before compilation began
+at 14:27:55. The initial disk check reported 83 GB free. This is a compilation
+timeout, not a mathematical counterexample or a completed hosted proof run.
+
+The downloaded failure receipt contains only version/dependency stages because
+the original runner buffered compiler output and did not save a timed-out
+stage. The repair extends compilation to 3,600 seconds, retains 2,400 seconds
+for other stages, and gives the CI job 120 minutes. It will preserve stage logs
+and checkpoint running/failed stage information. All 179 kernel modules, 19
+axiom reports and seven mathematical rejection controls remain required.
+The changed runner requires a new actual proof receipt and updated source
+anchor before publication. The earlier successful local receipt remains in
+Git history; it is not relabeled as a fresh hosted run. Benchmark/model work
+remains paused.
+
+## 2026-10-19 — Snaky proof and complete branch viewer pass local review
+
+The committed-source proof run completed all 12 stages. Lean built both finite
+board theorems, audited 19 declarations against the allowed-axiom policy,
+replayed 179 local modules, and rejected all seven deliberately changed claims.
+The 194 proof input hashes still match. The actual receipt is saved under
+`evidence/snaky-finite-v1/proof/`; this run reused the dependency/build cache.
+Kernel replay took 1,631.946 seconds; the full run took about 30 minutes.
+
+All 73 focused tests pass with the real proof receipt and generated presentation.
+The exporter binds 219 inputs to source commit
+`767294d63b5cf0c3a4c664aa62c46d8dcbe3b65a`. Its JSON download, offline browser
+script, query record and evidence references agree. The renderer check initially
+compared separately decoded objects by identity; it now checks object identity
+within the packet and normalized content across the JSON/JS boundary. The full
+renderer check passes all eight states and the complete six-cell winning target.
+
+Actual browser review caught and fixed a mobile grid overflow. The board now
+scrolls within a focusable panel; the page and expanded eight-row move table fit
+375/390-pixel layouts without horizontal page overflow. Enter, Space and End
+operate the controls, and ArrowRight scrolls the board. Desktop and mobile
+screenshots are retained in `runs/snaky-ui-review/`; no browser warning or error
+was observed. Independent review covers the mathematical explanation, generated
+records, rejection controls and final presentation changes.
+
+An isolated replay of the highest card module passed in 168.195 seconds with
+13.82 GiB peak RSS, close to the bulk run's observed 14.30 GiB peak. Splitting the
+replay into single modules would not remove this dominant memory requirement.
+The existing runner and successful receipt remain unchanged. Hosted CI has a
+90-minute limit and is the remaining fresh-checkout resource/reproduction gate.
+No model benchmark, reserved task or training run was started.
+
+## 2026-10-19 — Snaky presentation prepared behind the proof gate
+
+The page, offline-script exporter and download share one generated packet.
+Export requires the actual proof receipt, supported exact claim, independently
+replayed example and immutable Git bytes for every linked input. Five anchor
+controls pass, including a rehashed local mutation that disagrees with Git.
+The explicit development renderer check passes all eight ownership states,
+continuation outlines, counters, links and the final six-cell target. Browser
+layout and keyboard review still await the real exported packet.
+
+The ongoing bulk kernel replay has reached more than 25 minutes and observed
+roughly 14.3 GiB peak RSS. This is a measurement of this local run, not a hosted
+resource guarantee. The required Concrete Lean certificates job now allows
+90 minutes; its job name and branch-protection requirement are unchanged.
+The saved source runner and its current replay have not been changed.
+
+## 2026-10-19 — OpenAI corpus highlight published
+
+PR #17 adds a prominent source-and-scope banner above the atlas introduction,
+with links to OpenAI's math corpus and this project's exact claims. Independent
+review found no issues; all nine required checks passed before protected merge
+`3632a58d80320e56a7a44c017a74746008b920d8`. The public static Hugging Face Space
+now serves commit `63a85954e68f4e0202db2382c875267f9ae03f40`, containing the 44
+tracked Space files from that GitHub revision. All remote file hashes match.
+The public Space page visibly shows the banner and reports Running.
+
+The first publishing attempt failed during local Windows-to-WSL path conversion,
+before an HTTP commit. The corrected attempt rechecked the unchanged remote
+parent and exact payload. No credentials were written to the payload or logs.
+The publication receipt and live screenshot are retained under
+`runs/hf-corpus-banner-3632a58d8032/`. This delivery is independent of the ongoing
+Snaky proof replay and makes no new verification claim.
+
+## 2026-10-19 — Checked illustrative Snaky play
+
+The new adapter records eight fresh Maker claims and seven legal Breaker replies,
+with the first complete Snaky on Maker's eighth move. An independent validator
+reconstructs placements, ownership, surviving continuations and move budgets.
+All 23 focused tests pass, including incorrect transforms, stale envelopes,
+incomplete winning targets, post-win moves, and counted replacement moves.
+A separate reviewer reconstructed the ownership and all target placements
+without importing either implementation and found the same first win.
+
+This is one chosen execution on the exact 251-cell board. It establishes no
+eight-move guarantee or formally verified policy extraction. The forthcoming
+viewer distinguishes actual moves, the remaining 21-claim allowance, and each
+selected card's bound; its exporter requires the separate formal proof receipt.
+
+## 2026-10-19 — Complete finite Snaky build and committed-source replay
+
+The full native `SnakyBinding` build passed, including the 728-card strategy,
+the new finite semantics, both concrete board theorems and the literal atlas
+binding. The development log spans about 20 minutes 12 seconds with the warmed
+dependency cache. This is a development measurement, not a clean-checkout timing.
+
+Candidate source commit `f205fe504af726f57a3fc52e84c0b7fa962137f6` was exported
+with `git archive` into a new native directory. The verification runner is now
+checking that committed source while reusing the development `.lake` cache.
+It hashes 194 source files, audits 19 declarations, and explicitly supplies 179
+local modules for kernel replay. Its seven altered-claim checks remain a
+separate gate. Hosted CI will supply the independent fresh-checkout run.
+
+The next presentation step is one checked example play with a per-move
+certificate explanation. A read-only feasibility probe found an eight-Maker-move
+branch. That example would not strengthen the universal 21-move guarantee; its
+chosen Breaker replies and complete winning placement must be recorded.
+
+## 2026-10-19 — Finite Snaky core compiles
+
+The native Lean 4.34.1 build now accepts `SnakySemantics`, including the
+finite-cell budget, composition, coordinate transport, impossible-target and
+zero-budget lemmas. The initial build caught two proof-script errors: the
+composition proof supplied obligations in the wrong order, and a transport
+induction case referred to outer sets instead of its case-local sets. Both were
+repaired and independently reviewed. The statements and game rules were not
+weakened to make them compile.
+
+The pinned Mathlib cache is complete; compilation of the individual strategy
+cards is still running. Full theorem verification, kernel replay, axiom audit
+and the seven deliberate claim changes remain pending at this stage. Hosted CI
+uses one heavy Lean compilation at a time, with a 60-minute job limit. The
+planned local receipt will reuse the development dependency/build cache and
+will be identified accordingly; hosted CI supplies a separate checkout run.
+
+A `leanchecker --help` probe unexpectedly began checking all modules on its
+search path. The exact probe process was stopped; it produced no proof receipt.
+Inspection of the pinned checker source showed that unknown flags are ignored
+and an empty module list selects a default prefix. The runner already passes
+the explicit 179-module local closure. It now also sets and records
+`LEAN_NUM_THREADS=1` and `MATHLIB_NO_CACHE_ON_UPDATE=1`, validates those settings
+on receipt replay, and includes a changed-environment rejection test.
+
+## 2026-10-19 — Snaky audit and exact-binding preparation
+
+The independent Python checker reconstructs all 728 cards from the pinned
+38,367-byte certificate, with 24 focused tests passing. A separate review parser
+compared all 728 required sets, envelopes and heights with the upstream Lean
+literals: 2,184 exact comparisons and zero discrepancies. The chart shows the
+251-cell support, the 17 by 17 square, a labeled illustrative target and the
+replacement-cell bound. It is not a play trace.
+
+The new finite strategy-tree semantics includes fresh board-contained moves,
+explicit availability of a legal Breaker response, immediate victory, and lemmas
+excluding success for an impossible target or an unwon zero-budget position.
+These are written proof obligations pending the Lean build. The exact claim
+binding includes the complete board sets, six-cell target, empty starting sets,
+card identity and move bound. Four runner-input tests pass. The independent
+reviewer is withholding final approval until the actual proof receipt and seven
+rejected-binding logs are inspected.
+
+The existing 11 context-query tests and 13 five-object proof tests pass. Saved
+five-object, both N5 transfer, and Turing pair receipts still replay successfully.
+The first Snaky Lean build is preparing its pinned Mathlib dependency cache in
+WSL; native Git was installed there as an ordinary build dependency. No benchmark
+answering sessions, new credentials or security-setting changes were made.
+
+## 2026-10-19 — Snaky finite-board extension started
+
+PR #16 merged through protected main at `557a718`; both nine-job pre-merge
+CI runs and the subsequent main run passed. Started `codex/snaky-finite-board`
+from that clean revision, following the user's selected mathematical order.
+
+The target is the paper's existing 21-Maker-move corollary on the final
+251-cell envelope and the containing 17 by 17 square. The selected upstream
+Lean theorem at `1581d4cbdd69a0faf34b2089614fe2a814316a6a` concerns the infinite
+grid. Its replacement-move lemma uses infinitude. The finite extension must
+justify spare cells with a move-count invariant and keep all moves on the
+board; it cannot assert fresh moves on arbitrary exhausted finite states.
+
+The 728-card certificate, including six bases, is separate from the older
+616-card reconstruction. Independent certificate reconstruction, Lean proof,
+and independent implementation review are assigned separately. The intended
+claim has stable ID `context:family-187:snaky:finite-board-21:v1`. Until its
+proof and checks complete, this is a development target rather than verified
+atlas evidence. No smaller move bound, smaller board, novelty, or agent
+performance gain is claimed. Model benchmarks and training remain paused.
+
 ## 2026-10-19 — Make the source mathematics visible in the public demo
 
 Added a prominent source-and-scope banner above the atlas introduction, with

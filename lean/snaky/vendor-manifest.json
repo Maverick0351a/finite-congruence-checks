@@ -1,0 +1,476 @@
+{
+  "repository": "https://github.com/openai/math",
+  "commit": "1581d4cbdd69a0faf34b2089614fe2a814316a6a",
+  "files": [
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height01Part01.lean",
+      "sha256": "b721851d44936e696a7ca108bc258a9cff38340751b3d779e2cbbf8d8b5b5036",
+      "bytes": 6498
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height02Part01.lean",
+      "sha256": "59d96363dfcfba2711d08567a0f536af7f4ec54cc777c823c78d4b5f6b905aa4",
+      "bytes": 64348
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height02Part02.lean",
+      "sha256": "0d57456db981f46183771645e5176837cf7d22bfddbb1a9ee2651bc0cfe900e4",
+      "bytes": 49722
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height03Part01.lean",
+      "sha256": "09869ff7e389b199966af69e5e2b1b8c4a617656d6277698a8c96aa4b021a4b9",
+      "bytes": 64534
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height03Part02.lean",
+      "sha256": "f229e04ff8b7d9176d39b26b24bfaa88b3f26d2710340db46e5b1b1d22144fc6",
+      "bytes": 66354
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height03Part03.lean",
+      "sha256": "1b9ddf7e48a2d55d51fc18ddc0f93bcb7b4dc048bd648d2d4e5a72d8bbdf17a3",
+      "bytes": 61734
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height04Part01.lean",
+      "sha256": "f9e2556bf69c4f88311787cf0d663f0a24d2bfdd43762a6774f9133241b82b5b",
+      "bytes": 66124
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height04Part02.lean",
+      "sha256": "b7371990d1a053b8dad99d5e3d0bdbfb4be5fc147d8ee5c7d886d89d4bc584e0",
+      "bytes": 66420
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height04Part03.lean",
+      "sha256": "e80807a7f939ffebcdc234e68c234a3ac1c77e0571ee72c6aac569ff9f3e7b7d",
+      "bytes": 67434
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height04Part04.lean",
+      "sha256": "93a6c395d391c2f2d73c0a6d6274c53904ed6a6b3e1f88a73781388ffdff6e34",
+      "bytes": 62808
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height04Part05.lean",
+      "sha256": "878e72c12b9e84fef33a3ea7d649574d08e19565c5560441d7d863117b89e8c3",
+      "bytes": 31977
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height05Part01.lean",
+      "sha256": "e8bbd9bc6e87400a19e7a80e23eb2a0d3424199590ca3803befc6ecd6ee5a25a",
+      "bytes": 68339
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height05Part02.lean",
+      "sha256": "dd932253e77d2f7292d44782e4b6e37a8ff93c2df170a1340f27834c37894cc3",
+      "bytes": 68684
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height05Part03.lean",
+      "sha256": "53b601dc52ccff754ccf70084ef44d606d93b41beaf2f7dd61cca127fa799933",
+      "bytes": 70003
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height05Part04.lean",
+      "sha256": "dd7bf148b9ad98c1430be052ef1f6e9e437ee111a32166443790f15175506777",
+      "bytes": 64468
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height05Part05.lean",
+      "sha256": "aea13ebf283c4d058d25ada4ed15cec3c3b0ce062b05769aecbac509d309dda5",
+      "bytes": 67226
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height05Part06.lean",
+      "sha256": "649732e2efb25248b34b40715c91d769d5074fc03c89ba0a43065aa09ebf93f7",
+      "bytes": 68261
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height05Part07.lean",
+      "sha256": "ba0397ab80d2c5744520d4ea44eb6f857aabe35c7d1bfd787bbdd22f06269397",
+      "bytes": 6193
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height06Part01.lean",
+      "sha256": "25631c997e43e5d2b93a65de3fa7b445be17232674796aba2572e7fea6f15852",
+      "bytes": 69070
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height06Part02.lean",
+      "sha256": "c9676996ed11ffa3e24f78308318b2cd9100f36edca21633434ba629198ec813",
+      "bytes": 68568
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height06Part03.lean",
+      "sha256": "9a6db2aec95eced43911499fbc2841ab1f831885bc087882be027b41b303a046",
+      "bytes": 68690
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height06Part04.lean",
+      "sha256": "edb074c085baafc8a5dd469ff28d1650d0f51b99a0e46455f30a36a7996dbd7c",
+      "bytes": 59602
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height06Part05.lean",
+      "sha256": "fb883f0172b0d7195cbc41290c6c2de9879221913ee699494f7179ed9fa5d162",
+      "bytes": 65932
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height06Part06.lean",
+      "sha256": "d16fbbc1233561d5fa5295174fce0c97805b32c8351374413c7038982392ea33",
+      "bytes": 66245
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height07Part01.lean",
+      "sha256": "25cd3b6dfb5d18f99a0a9a3a50a5b54f0bf2bf600c942b1fc17cefb7fef79b12",
+      "bytes": 69667
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height07Part02.lean",
+      "sha256": "11eb252c6d440ed9f51bb56e78af089e155bbe71c9a560a69fc12c331695b1bd",
+      "bytes": 69700
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height07Part03.lean",
+      "sha256": "706d293c21868a010c5b8eda2cd1cfdbfdf9378e60e8053c190e15f29b8d034f",
+      "bytes": 66656
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height07Part04.lean",
+      "sha256": "b6ada6198549c57e2c1780de45025ea71667386a45e1a7e551b437ed5fda6a47",
+      "bytes": 72465
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height07Part05.lean",
+      "sha256": "8f0684cca8d7bc6258c368e7ad5d14f55972a411f64f26e7ccc6f3258a673acc",
+      "bytes": 72488
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height07Part06.lean",
+      "sha256": "243c2861da61125a2ae538143bd1016c70d888c90030174a43ba55f95f62e919",
+      "bytes": 12836
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height08Part01.lean",
+      "sha256": "82c6d8311c44ad8d40aea9f0237156dad735197c0ae7986fd5c9169cd76eaf3b",
+      "bytes": 69336
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height08Part02.lean",
+      "sha256": "78a39d42a9ce6b5ba0450598209571689a8ffd3ddecdf788c9080d2964b08694",
+      "bytes": 64539
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height08Part03.lean",
+      "sha256": "a502d65803e3611d7df6e7933edb50a86a0f5d74ebfb134203864996c9a6efca",
+      "bytes": 69482
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height08Part04.lean",
+      "sha256": "d383e19ead30aa84f8dfc1d91cba6bc899aea830b1bd8e75a71d535d8ac72753",
+      "bytes": 72682
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height08Part05.lean",
+      "sha256": "aac655834b86fccaf58a123116ef69a4503d0254e74bf3a5313e87169b7e03d7",
+      "bytes": 66645
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height09Part01.lean",
+      "sha256": "eb041abc50134f6a894027720e1f5a72d210885e27e798fa25ecbd40cfcc7b8e",
+      "bytes": 68779
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height09Part02.lean",
+      "sha256": "d70ef317bc9b10e88176c5299878b37fea8ff32ef13d2705dc5f2e11fe6cd744",
+      "bytes": 55059
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height09Part03.lean",
+      "sha256": "51e58151811ea564c431a3354866283620e588e911873f91232e57dff26f5d2d",
+      "bytes": 66161
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height09Part04.lean",
+      "sha256": "c67800b85780fbc0a017ac90bb69aa43474735fbcd36eae20230cb56bacdd792",
+      "bytes": 69160
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height09Part05.lean",
+      "sha256": "a96acbd788ebbc4414d0e61a7d06e3a65d860c83f1db354511eda3543d4e9076",
+      "bytes": 43746
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height09Part06.lean",
+      "sha256": "e483d02b0f566c62b17bd12614bce69f9589b9de4d93000c9305bc645c84dc82",
+      "bytes": 58830
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height09Part07.lean",
+      "sha256": "c64b6fc7441de2c2d3b92daf23c7fdba4448d42589bc46f79ebfb7dae00209a8",
+      "bytes": 67163
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height09Part08.lean",
+      "sha256": "0d711b1ba2d8f0caf5e6188100216e78d3fb76ebfd63d7e8935d70a4f779681e",
+      "bytes": 55565
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height10Part01.lean",
+      "sha256": "d8a501150730c5868dc1e87fa4e8f691df984e817b9b87fb454e9b86d12ebaf6",
+      "bytes": 77714
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height10Part02.lean",
+      "sha256": "47128473825a65bb8a7c6edf869345edb33197e1b08b64452f7413b0b258ca5a",
+      "bytes": 74217
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height10Part03.lean",
+      "sha256": "90591ceddfdfb8a7109f4ec3ba1feac0c777d4aa8f98ef448a2081be2907c335",
+      "bytes": 74070
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height10Part04.lean",
+      "sha256": "995aeb639e7a2ea3fc12b19382d26465d447e8fbfd12bfa275931f3dd05b3416",
+      "bytes": 63172
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height10Part05.lean",
+      "sha256": "adbd7834740f2e09d435c743cb00ad078165321a388e86d7f0e4a07593e22846",
+      "bytes": 67601
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height10Part06.lean",
+      "sha256": "941557ad54a116a5c5353f3abb2d347e995a301ed6d3fb9dd482ddae01c73a7d",
+      "bytes": 69473
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height10Part07.lean",
+      "sha256": "16bb244088a706cb45bba2c479a60c1ee525d46ab52069c5e27018251c199c6a",
+      "bytes": 19625
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height11Part01.lean",
+      "sha256": "2afe7b6b6d805fec07aef8b1560f7c7c10f5ee1ea2e60131cd2991c132a14425",
+      "bytes": 61334
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height11Part02.lean",
+      "sha256": "6052574dc2afcc7933532c978ae9f50104b000d3f9e7d23bde74c7a984aafd33",
+      "bytes": 72515
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height11Part03.lean",
+      "sha256": "c955d181f3d7e17739df4ce36a8e306f067e7ecd47dad1e301a603fbaeccbd24",
+      "bytes": 57110
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height11Part04.lean",
+      "sha256": "3e15ffd5811c739975a3cccd95bd44abe635f97b9baaed944841b751365afd22",
+      "bytes": 66597
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height11Part05.lean",
+      "sha256": "75f02f38d91fec7e334a0aa89450a0c27b728be98221d7559964ae0eb0e811e0",
+      "bytes": 77995
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height11Part06.lean",
+      "sha256": "744342de6ed465e062d443e918dcbf298636856e35958cc7afa32f827dde6da1",
+      "bytes": 49737
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height12Part01.lean",
+      "sha256": "98ada75cffa280d9bfe02e5510507cdb7a425d326652119fd676e2a612b7de98",
+      "bytes": 73924
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height12Part02.lean",
+      "sha256": "92978a0d11d3c74f49f2fed81eb75f7296610af3a4c4cd890f0b695009d9bb63",
+      "bytes": 74230
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height12Part03.lean",
+      "sha256": "9caf9a13e979d827a4c0d74deca5f32c54f4b85c2e7d87ffde7015f02e82e0fb",
+      "bytes": 73308
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height12Part04.lean",
+      "sha256": "45ab2b20c2db4517ef9db6d8c10849f623b78b4e0e90ed33532f2c456c47646a",
+      "bytes": 66987
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height12Part05.lean",
+      "sha256": "844faee78ca99c9bf2644389ae17459584ed4bd76b1183b44407ea336a001e00",
+      "bytes": 61987
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height13Part01.lean",
+      "sha256": "c7d05c2ae8c69a2b0d985c2e18edeab63af7e03276ecf47ed80768f730f43cec",
+      "bytes": 64984
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height13Part02.lean",
+      "sha256": "98283cc58c87f7dbd87cb88ff0ba4b897e7683cafee56c1341610fc81f9a4c55",
+      "bytes": 73324
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height13Part03.lean",
+      "sha256": "4e604e82c10e2d76f1b2c9a39d96f2f7472c0a8d3fc5f3c109668ba193d1bfa5",
+      "bytes": 78951
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height13Part04.lean",
+      "sha256": "c6eb8cd09091be55e2bd853d8d0a02c6f3b01e56cf187831d866fe7c72481d16",
+      "bytes": 55050
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height13Part05.lean",
+      "sha256": "f13ea4353c6cda2dbf684a2734e92f5064822170665155699c5113771be3f3a3",
+      "bytes": 65234
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height13Part06.lean",
+      "sha256": "b4eb63c7fefeb0a5da6d8a047be13a9bb988a0abc0fa0b2e8e090e7952c2b3a4",
+      "bytes": 62882
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height13Part07.lean",
+      "sha256": "608570161b4a67b15a575d09664f5032ae854a881950cf6a98e9cf7c972138ca",
+      "bytes": 23996
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height14Part01.lean",
+      "sha256": "cdcae9363b98149cce6a8a6d95b255bbb928b19226ad53a0efbe0283de9a2f68",
+      "bytes": 74722
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height14Part02.lean",
+      "sha256": "536089a57e85902db6c1d5b125a4346fc8669ae9aba55099faba30ed1bbbc78a",
+      "bytes": 75908
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height14Part03.lean",
+      "sha256": "78867488bf9599a41719f74e42c34d5bd21047308382079ba3b59b408d5120a3",
+      "bytes": 68216
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height14Part04.lean",
+      "sha256": "ce1b0fa24cc8ed5050692cc200401c05f27c80ec295e2337cf687055efe7a751",
+      "bytes": 51167
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height15Part01.lean",
+      "sha256": "95030470ead192c47b9115eed23c003978646393f5ca4f6257a0a1dde0ba7195",
+      "bytes": 78755
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height15Part02.lean",
+      "sha256": "8d849760c2d74d70cf77c7ccbceca941ebe3fdf867f86afd13911f8e5b194ca2",
+      "bytes": 81934
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height15Part03.lean",
+      "sha256": "d859675955b216884012b25c82b2c86f0ee159ed7d8fd51320fac584339946ac",
+      "bytes": 80615
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height15Part04.lean",
+      "sha256": "03498c2351fbd34ae0d95e0e971856f79593df844fc0190a7a0c921cd951da52",
+      "bytes": 30128
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height16Part01.lean",
+      "sha256": "486549710154751edc1a3b719d1780e0b7bf0aa2955b7d3961e7f4a251ed7248",
+      "bytes": 72771
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height16Part02.lean",
+      "sha256": "03dfedd9067aaf0644c6d76d75b470141dfd6eb48495eed2c9d3b7bc0a49aed7",
+      "bytes": 48651
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height16Part03.lean",
+      "sha256": "a9b209921b6691c59d893c8d58eaab64f359707778b8785da65959491164610c",
+      "bytes": 37527
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height17Part01.lean",
+      "sha256": "060e3a5d9d3b5123433eb50d186c38679892e6663a7c1405ae21c77bc001e862",
+      "bytes": 58108
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height17Part02.lean",
+      "sha256": "4bd93d460827cf7c577fa113136abd40a53f5a8da1c6cd31f945ddd38d7c24ea",
+      "bytes": 40234
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height18Part01.lean",
+      "sha256": "154698a2eafd7ab3118236a2f7c772c1b2057846780457f55f074703c267765b",
+      "bytes": 73483
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height18Part02.lean",
+      "sha256": "fc1ea2edfb94e051c937f84b1add1adc18fd106fcc5e2bf8a60ba5b26328acc9",
+      "bytes": 31641
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height19Part01.lean",
+      "sha256": "59c407a3ab501823540cf7732c8a9589ecb1a87a73af2776abdfa06c6da30bbb",
+      "bytes": 13196
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height20Part01.lean",
+      "sha256": "579f5ac435486638f55cba08fe32d2762291d7d3eecd2f54056f491e396fb6c1",
+      "bytes": 51003
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Cards/Height21Part01.lean",
+      "sha256": "4f89721d3d39ac9e4e253edc1cbe367f5a4b7db7a15d6241e28951899fa32845",
+      "bytes": 10088
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Certificate/Operations.lean",
+      "sha256": "e69c168bfdf68f10052ceb9963a4013ddf536bd15ac79f5522fe932e82364a03",
+      "bytes": 4003
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Certificate/Summary.lean",
+      "sha256": "93ec0b599d3ed2628af92fe631dcf1c185fa0a44c3a532cf3c9179edfe1c9f87",
+      "bytes": 18019
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Main.lean",
+      "sha256": "a62fa55a65fd74a1bb9a06509a668feba17a0ce589586e72ffee0c6d83134e28",
+      "bytes": 2191
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Model.lean",
+      "sha256": "e2b6365603299d20d407519c365561f330d03af3e579c0042f19cdc2657df8b0",
+      "bytes": 1546
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Semantics/Game.lean",
+      "sha256": "1d20aa7e7c30c525e6daf2a0145668bbd50b42386e2f4523a96fa982b295730a",
+      "bytes": 8245
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Semantics/Geometry.lean",
+      "sha256": "0d07595a7c774d1a7c6954f2241d32635457f84500ab32016f55a48e563655db",
+      "bytes": 3954
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Semantics/Policy.lean",
+      "sha256": "c5feb030221603a62c91caaff754700b20da2c519a5bc05cf797f2dcd79598e5",
+      "bytes": 7983
+    },
+    {
+      "path": "OAI/GameTheory/SnakyTwentyOne/Semantics/Replies.lean",
+      "sha256": "b7571f5cce7fa672f93e00a74b2cd5d5a1f8d694f4ba791a9d421e27bf3c56b2",
+      "bytes": 1710
+    }
+  ]
+}

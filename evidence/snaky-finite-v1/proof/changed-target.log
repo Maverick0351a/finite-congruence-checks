@@ -1,0 +1,3 @@
+/tmp/snaky-recovery-c3af350005f413554aea03db8cbf2c4c2d09e31b/runs/snaky-proof/changed-target.lean:11:44: error: Tactic `decide` proved that the proposition
+  snaky = target
+is false

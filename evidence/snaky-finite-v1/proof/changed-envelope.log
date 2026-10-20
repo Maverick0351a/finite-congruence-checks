@@ -1,0 +1,6 @@
+/tmp/snaky-recovery-c3af350005f413554aea03db8cbf2c4c2d09e31b/runs/snaky-proof/changed-envelope.lean:12:55: error: (kernel) application type mismatch
+  id (Eq.refl true)
+argument has type
+  true = true
+but function has type
+  decide (envelope_727 = envelope) = true → decide (envelope_727 = envelope) = true

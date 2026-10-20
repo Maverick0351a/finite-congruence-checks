@@ -1,6 +1,6 @@
 # Research and engineering roadmap
 
-## Current milestone: five-object minima; next, Snaky
+## Current milestone: Snaky on finite boards
 
 [PR #11](https://github.com/Maverick0351a/finite-congruence-checks/pull/11) and
 [PR #12](https://github.com/Maverick0351a/finite-congruence-checks/pull/12) are merged.
@@ -21,9 +21,21 @@ with the same eight-element order but different minimum unary rule counts.
 The five-object proof now supplies complete classifications, arbitrary-unary-map
 lower bounds, exact theorem bindings, and a separate exhaustive Python audit.
 It adds formal coverage to a saved finding; it does not assert novelty or a
-complete five-object classification. Once this delivery passes protected-branch
-review and CI, the next task is a narrowly scoped Snaky source-and-certificate
-review, keeping the 616-row comparator and 728-card theorem data separate.
+complete five-object classification. PR #16 merged through protected main and
+its main CI run passed.
+
+The [Snaky finite-board extension](SNAKY_FINITE_BOARD.md) now formalizes the paper's
+existing 21-Maker-claim guarantee on its exact 251-cell envelope and containing
+17 by 17 square. Independent reconstruction of the 728-card certificate passes;
+the finite-board Lean proof, full local kernel replay, axiom audit and seven
+changed-claim checks pass. The 616-card comparator reconstruction remains a
+different result. The [branch walkthrough](SNAKY_PLAY.md) shows one complete
+independently replayed example, including each Maker move, chosen Breaker reply,
+remaining budget and supporting certificate step. It distinguishes that chosen
+eight-claim play from the theorem covering every legal reply within 21 claims.
+Complete hosted reproduction and publication review before closing this milestone.
+Then inspect one directed-graph example's exact source statement and
+assumptions before selecting its proof target.
 
 Before any resumed model evaluation, resolve the dummy runner's
 [isolation and usage gates](NATIVE_PREFLIGHT_STATUS.md). Report actual preflight

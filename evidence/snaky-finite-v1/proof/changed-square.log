@@ -1,0 +1,13 @@
+/tmp/snaky-recovery-c3af350005f413554aea03db8cbf2c4c2d09e31b/runs/snaky-proof/changed-square.lean:13:47: error: (kernel) application type mismatch
+  id (Eq.refl true)
+argument has type
+  true = true
+but function has type
+  decide (square17 = square) = true → decide (square17 = square) = true
+/tmp/snaky-recovery-c3af350005f413554aea03db8cbf2c4c2d09e31b/runs/snaky-proof/changed-square.lean:15:69: error: (kernel) application type mismatch
+  id (Eq.refl true)
+argument has type
+  true = true
+but function has type
+  decide (Finset.card envelope = 251 ∧ Finset.card square = 289) = true →
+    decide (Finset.card envelope = 251 ∧ Finset.card square = 289) = true

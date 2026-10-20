@@ -2,7 +2,8 @@
 
 The context interface supports two exact N5 construction claims, their
 comparison, two proved N5 renamings, a pair of exact five-object operation
-minima, and one existing Turing-machine tape claim.
+minima, one existing Turing-machine tape claim, and the exact finite-board Snaky
+guarantee. Each query fails closed if its required evidence is missing or invalid.
 It reads the website's records and separately identified proof supplements,
 validates the relevant saved evidence, and returns JSON.
 It runs locally using the Python standard library. No model, credentials,
@@ -36,6 +37,34 @@ receipt and a separate exhaustive Python audit. Its `explain` call replays the
 saved receipt and recomputes the 52-partition/3,125-map audit. The correspondence
 is between grouping indices, with no asserted carrier relabeling. The command
 format and evidence schema are unchanged.
+
+## Finite-board Snaky registration
+
+The [Snaky walkthrough](SNAKY_FINITE_BOARD.md) describes the exact 728-card
+certificate, six-cell target, 251-cell envelope and containing 17 by 17 square.
+The registered ID is `context:family-187:snaky:finite-board-21:v1`.
+Its conclusion is a strategy guarantee within 21 actual fresh Maker claims
+from an empty board, covering every legal on-board Breaker reply.
+
+The claim binds the literal target and both boards, the empty initial Maker
+and Breaker sets, the move bound and the applicable theorem. The independent
+Python reconstruction checks the concrete certificate arithmetic separately.
+Receipt replay checks these records without executing Lean; it cannot certify
+an arbitrary changed board or strategy. The older 616-card comparator record
+is not evidence for this claim.
+
+Use the existing commands:
+
+```sh
+python scripts/query_context.py explain context:family-187:snaky:finite-board-21:v1 --out snaky.json
+python scripts/query_context.py check snaky.json
+```
+
+The original command formats and schema remain unchanged. In particular,
+`compare` continues to compare the two original N5 records; it does not compare
+unrelated claims from different mathematical domains.
+
+## Reading an N5 result
 
 An N5 `explain` result includes:
 

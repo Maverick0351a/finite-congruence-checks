@@ -1,0 +1,20 @@
+import SnakyBinding
+#print axioms FiniteCongruenceChecks.SnakyFinite.FiniteWins.false_impossible
+#print axioms FiniteCongruenceChecks.SnakyFinite.FiniteWins.zero_iff
+#print axioms FiniteCongruenceChecks.SnakyFinite.fresh_cell
+#print axioms FiniteCongruenceChecks.SnakyFinite.finite_immediate
+#print axioms FiniteCongruenceChecks.SnakyFinite.finite_compose
+#print axioms FiniteCongruenceChecks.SnakyFinite.envelope_card
+#print axioms FiniteCongruenceChecks.SnakyFinite.square_card
+#print axioms FiniteCongruenceChecks.SnakyFinite.envelope_subset_square
+#print axioms FiniteCongruenceChecks.SnakyFinite.square_membership
+#print axioms FiniteCongruenceChecks.SnakyFinite.board_wins
+#print axioms FiniteCongruenceChecks.SnakyFinite.envelope_wins
+#print axioms FiniteCongruenceChecks.SnakyFinite.square_wins
+#print axioms FiniteCongruenceChecks.SnakyFinite.Binding.target_exact
+#print axioms FiniteCongruenceChecks.SnakyFinite.Binding.envelope_exact
+#print axioms FiniteCongruenceChecks.SnakyFinite.Binding.square_exact
+#print axioms FiniteCongruenceChecks.SnakyFinite.Binding.inputs_exact
+#print axioms FiniteCongruenceChecks.SnakyFinite.Binding.counts_exact
+#print axioms FiniteCongruenceChecks.SnakyFinite.Binding.checked_envelope
+#print axioms FiniteCongruenceChecks.SnakyFinite.Binding.checked_square
