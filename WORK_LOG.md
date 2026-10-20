@@ -1,5 +1,58 @@
 # Finite graph search work log
 
+## 2026-10-20 - Repair contrast-checker false passes after independent review
+
+Independent controls exposed CR-R1 (first declaration incorrectly winning an
+equal-priority tie inside one rule) and CR-R2 (an unsupported `:not` color
+selector silently treated as inactive). Both failures were reproduced before
+repair. Cascade priority now includes declaration position after rule order.
+Selectors for modeled color/custom-property rules are validated before component
+matching, so unsupported syntax fails explicitly even without a matching fixture.
+Only the existing metrics separator pseudo-element is explicitly excluded.
+
+The original reviewer controls now pass. The CI selection checker retains all
+282 assertions and runs 224 color pairings, eight contrast regressions, four
+unsupported-selector rejection controls and two valid cascade controls, including
+earlier `!important`. Presentation CSS and selection code are unchanged from the
+first contrast handoff. The checker remains a bounded source fixture; its explicit
+subset and exclusions are documented in the repair handoff, with no browser or
+full CSS/accessibility acceptance claim.
+
+The original 87-file evidence manifest and every frozen artifact are preserved;
+four reviewed source snapshots and before/after control logs are retained in
+`runs/atlas-contrast-20261020/repairs/CR-v2/`. Focused syntax, source/selection checks
+and the reviewer's controls pass. No unchanged mathematical suite was repeated,
+and no proof/model, browser or remote action occurred. Independent repair review
+remains separate.
+
+## 2026-10-20 - Verify the full Atlas cascade and repair keyboard-link contrast
+
+The PR19 review named six pale surfaces, but later unconditional rules in
+`atlas.css` already replace those fills with theme tokens. Reading only the
+earlier minified rules reproduced neither their final colors nor the reported
+general failure. A source-level cascade audit instead found a real residual
+problem: the keyboard skip link inherited yellow text over a literal white
+background (1.293946:1). It now uses the dark surface and text tokens. SVG order
+edges also receive an explicit system-color fallback under forced colors.
+
+Added `check_atlas_contrast.cjs`, invoked by the existing CI selection checker.
+It resolves the checked stylesheet subset in actual load order against static
+HTML and generated claim/operation/SVG markup, including normal, hover, selected
+and keyboard-focus states at two widths and both color-scheme preferences.
+It retains the separate system-color checks and seven deliberately injected
+regressions. This closes the gap in the earlier token-only contrast checks.
+Unsupported solid-color values fail; this is a bounded source fixture, not a
+complete CSS engine, browser rendering, native-widget or accessibility audit.
+
+Author validation: 224 component pairings pass (minimum text 6.73:1 and checked
+SVG/focus 7.83:1), as do all 282 existing selection assertions and the other two
+Atlas checkers. All 33 root tests pass; the required finite reproduction and
+evidence comparison agree with the recorded results. Original sources, failing
+skip-link control, cascade diagnosis, commands, logs and exact handoff hashes are
+retained under `runs/atlas-contrast-20261020/`. No proof/data, remote publication,
+model execution or denied browser-preview workaround occurred. Independent
+review of these exact bytes remains a separate gate.
+
 ## 2026-10-20 - Repair runtime reproduction commands after independent review
 
 Independent review found OR-R1: Atlas initialization replaced the corrected

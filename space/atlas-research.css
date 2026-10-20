@@ -11,6 +11,7 @@
   --graph-shape:#6c5500; --graph-edge:#a1a9b2; --graph-selected:#ffe24a;
   --shadow:none; --serif:var(--sans);
 }
+.skip{background:var(--paper);color:var(--ink);border:1px solid var(--control-border)}
 .corpus-banner{border-left-color:var(--accent);border-radius:4px;box-shadow:none;padding:18px 22px}
 .corpus-statement{font-size:1rem}
 .hero{padding-bottom:20px;gap:36px;align-items:center}
@@ -49,4 +50,5 @@ button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible{
   :root{--ink:CanvasText;--body:CanvasText;--muted:CanvasText;--paper:Canvas;--ground:Canvas;--line:CanvasText;--teal:LinkText;--wash:Canvas;--accent:Highlight;--accent-wash:Canvas;--surface-soft:Canvas;--surface-code:Canvas;--control-border:ButtonText}
   .primary,.primary:hover{color:ButtonText;background:ButtonFace;border-color:ButtonText}
   .claim-record{border:1px solid CanvasText}.metrics strong{color:CanvasText}
+  .lattice-edge{stroke:CanvasText}
 }

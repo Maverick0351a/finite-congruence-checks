@@ -4,6 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
+const {checkAtlasContrast} = require('./check_atlas_contrast.cjs');
 const root = path.resolve(process.argv[2] || path.join(__dirname, '..'));
 const read = name => fs.readFileSync(path.join(root, name), 'utf8');
 const data = JSON.parse(read('space/atlas-data.json'));
@@ -167,5 +168,6 @@ try {
   ok(read('space/atlas.css').includes('prefers-reduced-motion:reduce'),'Reduced-motion source rule');
   const claimsHtml=app.claimsHtml(registry,data.entries[0]);
   ok(claimsHtml.includes('<caption>')&&claimsHtml.includes('scope="col"')&&claimsHtml.includes('scope="row"'),'Evidence table semantics');
+  checkAtlasContrast(root);
   console.log(`Selection/inspector checks passed: ${checks} assertions; real headless Cytoscape + explicit DOM fixture; 39 exact entry IDs; native fallback and renderer-error paths; text contrast >= ${minText.toFixed(2)}:1, boundary contrast >= ${minBoundary.toFixed(2)}:1. Browser layout, assistive technology and canvas rendering NOT tested.`);
 } finally { charts.forEach(chart=>chart.destroy()); }
