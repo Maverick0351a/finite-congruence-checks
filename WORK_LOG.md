@@ -1,5 +1,39 @@
 # Finite graph search work log
 
+## 2026-10-20 - Wrap long claim labels in the narrow Atlas inspector
+
+Post-deployment public-page inspection found horizontal page scrolling at a
+390px viewport for C4 entry `n4-E16457`: the Atlas document measured 376px client
+width and 534px scroll width with disclosures both closed and expanded. The
+comparison claim's long identifier overflowed its summary/caption, while the
+lattice diagram remained contained in its intentional horizontal scroller.
+
+Allow complete claim summary and caption labels to wrap with `overflow-wrap:
+anywhere`, including their intrinsic minimum width. No content is hidden or
+truncated; data, selection, export and the diagram scroller are unchanged. A
+focused source contract now runs inside the existing CI selection checker. The
+unmodified stylesheet fails it; repaired source passes 39 entries / 234 complete
+labels and ten rejection controls plus two property-case positive controls.
+Independent review MC-R1 reproduced three false passes for mixed-case ordinary
+CSS property names; the checker now normalizes ASCII case while preserving
+case-sensitive custom-property names. Original author and reviewer snapshots,
+the false passes and repaired controls remain preserved in the versioned handoff.
+This contract requires unconditional rules for both labels; it is not a general
+CSS cascade or layout engine.
+
+Existing Atlas UI, map and selection checks pass (518 grouping cases, 304
+rejection witnesses, 115 filter combinations, 282 selection assertions, and 224
+color pairings). No workflow, proof or model execution changed. Exact source
+snapshots, baseline failure and logs are retained in Direction's owned
+`atlas-mobile-followup-2026-10-20/author` handoff and additive `author-repair-v2`.
+Contributor steps 2-5 also passed: 33 root tests, the bounded 143,685-candidate
+experiment, evidence validation and comparison with no mathematical differences
+from the recorded release. Their unchanged-source evidence is frozen separately
+in `contributor-validation` and `runs/atlas-mobile-validation-20261020T223143Z`.
+Independent review and the same
+closed/expanded public-browser reproduction remain required; these source tests
+do not establish rendered mobile acceptance. Substantial AI assistance: Codex.
+
 ## 2026-10-20 - Repair contrast-checker false passes after independent review
 
 Independent controls exposed CR-R1 (first declaration incorrectly winning an
