@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "description": "Same format in both conditions. Original answer bytes must be retained before parsing. Format validity is not semantic credit.",
+  "required_fields": {
+    "task_id": "The assigned task ID",
+    "answers": "One or more entries for each named question, in its original order; use separate entries for propositions requiring different verdicts"
+  },
+  "answer_fields": {
+    "question_id": "Name from the assigned questions object",
+    "verdict": "supported, contradicted, or insufficient_evidence for the proposition explicitly stated in this entry",
+    "proposition": "Precisely identify what this verdict assesses; mixed questions may have multiple entries",
+    "objects_and_input": "Exact construction IDs, tables/maps or machine/input/step as relevant",
+    "property": "Property being assessed",
+    "assumptions": "Required hypotheses and conventions",
+    "scope": "Bounds and quantifiers",
+    "conclusion": "Values and conclusion, including any explicitly identified deduction",
+    "evidence_status": "source proof, recorded execution, independent computation, deduction, or absent evidence, as applicable",
+    "citations": "List of {reference, locator, supports}; locator is a declaration, JSON pointer, or original line number",
+    "explanation": "Plain-language justification, including why cited hypotheses apply"
+  },
+  "scoring": "Missing fields stay missing. Parsing or valid JSON does not establish correctness; the eight-dimension rubric and blind applicability review decide semantic scores."
+}

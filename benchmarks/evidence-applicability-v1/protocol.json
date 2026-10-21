@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "suite_id": "evidence-applicability-development-v1",
+  "source_commit": "5a6e46de73ed045e72149f4f912e2bbee0463086",
+  "execution_status": "paused_requires_new_user_approval",
+  "scheduled_answering_sessions": 0,
+  "distinct_development_tasks": 8,
+  "conditions": [
+    "documentation",
+    "atlas"
+  ],
+  "design": "direct_answers_only_one_fresh_context_per_task_condition_if_later_approved",
+  "prospective_answering_sessions": 16,
+  "prospective_blind_reviews": 16,
+  "handoffs": false,
+  "repetitions": 0,
+  "reserved_pilot": "PR10 original two-task/four-answer pilot and its four reserved families are unchanged; this public development suite is separate and not held out.",
+  "reference_interface": "Copied unchanged search(query) / read(reference,page) broker. Same inventory, neutral titles, ranking and IDs in both conditions. Only read rendering differs.",
+  "candidate_limits_per_answer": {
+    "tool_calls": 16,
+    "returned_utf8_bytes": 64000,
+    "seconds": 300,
+    "soft_total_tokens": 30000
+  },
+  "candidate_limits_per_review": {
+    "tool_calls": 8,
+    "returned_utf8_bytes": 64000,
+    "seconds": 180,
+    "soft_total_tokens": 30000
+  },
+  "limits_status": "Proposed ceilings only; source path and per-task retrieval checks do not demonstrate live runtime enforcement.",
+  "gates": [
+    "Equivalent facts and hint audit reviewed",
+    "Private answer key and scorer hash frozen outside answering capabilities",
+    "Dummy-only preflight demonstrates fresh context and search/read-only enforcement",
+    "Actual input/cached/output/reasoning/total token telemetry, calls, bytes, failures and time recorded",
+    "Watchdog interruption and failed/partial telemetry handling verified",
+    "Per-task retrieval paths fit both conditions without privileged hints",
+    "Updated usage estimate shown and explicit execution approval received"
+  ],
+  "usage": {
+    "preflight_runs_this_preparation": 0,
+    "benchmark_runs": 0,
+    "actual_model_tokens": null,
+    "calibration": "unavailable; prior transport failed before inference",
+    "planning_per_answer_tokens": [
+      11000,
+      34000
+    ],
+    "planning_per_review_tokens": [
+      5500,
+      13500
+    ],
+    "prospective_16_answers_plus_16_reviews_tokens": [
+      264000,
+      760000
+    ],
+    "note": "Arithmetic planning range, not measured usage, a bill, or authorization. Previous four-answer/four-review estimate remains 66000-190000. Choose a smaller subset and revise estimate before any execution."
+  },
+  "blind_review": {
+    "reviewer_sees": [
+      "assigned task",
+      "private task-specific key",
+      "unaltered original answer",
+      "canonical sources"
+    ],
+    "reviewer_does_not_see": [
+      "condition label",
+      "model identity",
+      "execution order",
+      "usage",
+      "other answers"
+    ],
+    "masking": "Random response IDs and review order, separate citation normalization map, no rewriting. Record reviewer arm guess only after locking scores; style may reveal presentation.",
+    "scope": "AI preparation review is not blind outcome review or external peer review."
+  },
+  "reporting": "Report exact-object, property, assumptions, scope, conclusion, evidence-status, citation and sufficiency scores separately, with improvements/ties/regressions and both-correct/both-wrong ties. Keep supported-transfer errors and unsupported-claim acceptance separate. Preserve original answers and all failures. Public development tasks cannot establish contamination-free held-out performance."
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "source_commit": "5a6e46de73ed045e72149f4f912e2bbee0463086",
+  "preparer_sha256": "ead276e77c507aa8399b439e8ff603b2d6cf2868289cad60ad691dbe004848ea",
+  "status": "preparation_only_not_authorized_for_model_execution",
+  "hash_encoding": "SHA-256 of exact Git or generated UTF-8 bytes, no normalization",
+  "source_files": {
+    "space/n5-context.json": "1b77319b643f9da00a81f16cf7aef29cb769a8141bf567f0ed168a7cb2af7b6d",
+    "evidence/n5-renaming-v1/claim.json": "5f0b37d4605e7541aaa8ff4e9c8c443e7f1919be83fc12c048e9369bd6218313",
+    "evidence/tm-pair-proof-v1/claim.json": "0b699f0a70f8d275640b4c3f329d9463ff799926b4ca0f930820df5195b8df2a",
+    "evidence/atlas.json": "9bd8976488b269a86468dfcdb9f9ebbf246cfe8e0ffe4960f86941369919c82a",
+    "evidence/atlas-claims.json": "8095af25879e84e4fec119300ae7ff309cfd4888332c028c11b5635c77aaac76",
+    "evidence/tm-atlas-traces-v1.json": "ec4b15716288151f29aa25e879381db69cff8420f4fdc41961639975bcc45d55",
+    "lean/CertificateData.lean": "1db35c8b640f0ea0d73ea12cd14e5e1b4b3eef588d3eb5ed66fbec0be37258f3",
+    "lean/FiniteCongruenceChecks.lean": "845615fe7be190dc733762a1b95828cffb4e09b6d3b6b0e334211000d93422e8",
+    "lean/renaming/Renaming.lean": "ca69ad8d431eb1855eb83d20f523f6148e61216bfec5008aa3af336aba85a200",
+    "lean/renaming/N5Renaming.lean": "3b3142ec9d9d9147b797449dc1fcaa4a74ebd2372b97c26d4f770474259378e7",
+    "lean/renaming/N5RenamingBinding.lean": "fef7fff2f619d90b1a5cd13ecfda5a8ab020141ffee147f293c9c0f831e61c61",
+    "lean/tm-pair/TinyPair.lean": "e36d6a20900bb2cd05dd9e9b9368568c2cc6b804a87ea3b4cd536059f4cc4d86",
+    "lean/tm-pair/TinyPairBinding.lean": "f7c453e7589ee9978d4b333ec29a4e1f7c67cc7cc93e17576327859293ac6450",
+    "lean/tm/MachineExtract.lean": "d841b79735f7aef28dbf95e771f9b7931c918067cb48ad1e8da57513cd8e6de9",
+    "lean/tm/MachineChecks.lean": "e4e3e86fad42f0dedc1f6017795e406094f7190641ea4ebd1b9329e61da1e43c",
+    "lean/tm/source/Machine.definitions.txt": "d7dc1d5a9525847e379c7951a885b7f929409d2215e5197c7eb8780adce8225f",
+    "lean/tm/source/manifest.json": "c5900aa1e3ab59a745ca2f68e1b749897d7de26a9de70b0fb0b7ecd55a397973",
+    "evidence/n5-renaming-v1/summary.json": "e3b5327d0a3005a9927e6f2d87dc8c5e27d8b46727577b66d6dfab68c7365df1",
+    "evidence/tm-pair-proof-v1/summary.json": "f12be3e984db49240c65a5430e8a05df5a8ecaca0402124e419934d3a053a0ad",
+    "evidence/tm-port-v1/summary.json": "f298f712377d3a1123f709ac26891bc9376262ce9c93aa80c6adfb235cfac8a8",
+    "lean/lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "lean/tm/lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "evidence/tm-port-v1/inputs.jsonl": "3a9c31df1b264250126a40067f6e3db49d06be11b4ef52617bdacfaf4fee2891",
+    "evidence/tm-port-v1/lean.jsonl": "f009d43cf40e26af81d62ab20b238bac60ffff2c1f98e71b3e1176372396d9be"
+  },
+  "broker_origin": {
+    "commit": "a16a9da5cd84c7c4b87326badeff7750a53f56f2",
+    "path": "scripts/semantic_broker.py",
+    "sha256": "38b1e2ffbc7a6bc84f82fa91897b2c20812f7b2d36d7ef174d9466a1863f5823"
+  },
+  "prepared_files": {
+    "documentation/inventory.json": "a6cc4b74c68545f6264849e13a440eee323ff0e07b3afa1af7f309b505ffcd67",
+    "documentation/texts.json": "daa9849273a337a91dc29f8c871c2874a5cf0ef5798076f2edb7e1a38678bd0c",
+    "atlas/inventory.json": "a6cc4b74c68545f6264849e13a440eee323ff0e07b3afa1af7f309b505ffcd67",
+    "atlas/texts.json": "241feb2fd8641ec630d5861b1c6da1eb1b63e3df274c33f4846cd76fd0a507d3",
+    "prompts/EA01.json": "eb272581cdae8d5ce8e90ae98e8528403b6c6aa25df8551645320d068dc68c70",
+    "prompts/EA02.json": "5997dac3be64b8002fd866a13231ffc3670eacdb87cc54306387388339b4eeea",
+    "prompts/EA03.json": "5ce2f3c7fa615d026da78c462f7e667773aa0982914619a811ddca70ead967c2",
+    "prompts/EA04.json": "01ddc7b16395bb1fa9fa66eca5e772a1931fb6bef2efb9b6720807cd95aed815",
+    "prompts/EA05.json": "9ddfbadf778e39b2b7089a782fa9ae5e6c5d501b8f3d507eb3b417cd7642fc1d",
+    "prompts/EA06.json": "99c463c3cc95d113b9ec7a015268d42fbe3789daf43ae6ab8655dabd9dc17752",
+    "prompts/EA07.json": "5b88b6f98d9dfc1a2fb5390065b41a39be5ad8b66c77b7e42b3dd81cfabfe5ac",
+    "prompts/EA08.json": "736f91255fc69f3f2cd671aaa234f0af675135378360f84dee535dd5e221df90"
+  },
+  "reference_count": 26,
+  "formatted_records": 8,
+  "shared_raw_references": 18,
+  "text_bytes": {
+    "documentation": 116459,
+    "atlas": 118356
+  },
+  "fact_map_sha256": "c5c862ca6ab10b677423f71a9a0665e712cc827411b6f6c190e1990826c3aead",
+  "protocol_files": {
+    "tasks.json": "6269158cb8f6dba56153b2e8ef17e757897b3313e48bc2b2ec0331fdf9514a78",
+    "rubric.json": "d9235986f801610be4a08e1bb9aa7dae7cf2c001bce1d4469b62f4843d9a1772",
+    "protocol.json": "3b05a65f8998a9b4e1eb12c578513dff3e595ffb6aeec21f703a58769668b1d8",
+    "answer-format.json": "9f47c4f7bcb6e3b23dbabafb79db285ab585782fa32a8d144b3868eed8cbfbea",
+    "key-commitment.json": "7915fc3c19655f4a30fadc95119ec9377ae55fb17241397a8c7435b074f08053",
+    "reviewer-prompt.txt": "b53919244a35a562a56641e1e5faf5de35be15209fff7064e79078f529b620b2"
+  }
+}

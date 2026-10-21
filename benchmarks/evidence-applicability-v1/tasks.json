@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "suite_id": "evidence-applicability-development-v1",
+  "status": "public_development_fixtures_not_held_out",
+  "instructions": "Assess each named subclaim using only the supplied reference collection. Distinguish truth, theorem applicability, and exact record coverage. Cite reference IDs and declarations or JSON pointers. A new deduction is allowed if explicitly identified and justified. Return the common answer format. Do not treat absent evidence as falsity.",
+  "tasks": [
+    {
+      "id": "EA01",
+      "domain": "grouping",
+      "questions": {
+        "classification": "For saved:family-206:n5:v1 with f=[1,0,3,2] and g=[0,1,0,1], give the complete valid groupings and explain what establishes completeness.",
+        "proof_scope": "Does the cited completeness theorem also establish that two rules are minimal for this family? Identify the evidence boundary."
+      }
+    },
+    {
+      "id": "EA02",
+      "domain": "grouping",
+      "questions": {
+        "classification": "Source rules are [[1,0,3,2],[0,1,0,1]]. Target rules are [[2,1,2,1],[3,2,1,0]]. With object map [1,2,3,0] and target-to-source rule map [1,0], can the saved N5 classification be transported? Give the complete target groupings and what happens to inclusion order.",
+        "correspondence": "State the rule-correspondence equation with its indexing direction, identify the applicable theorem, and say whether original rule names are individually preserved."
+      }
+    },
+    {
+      "id": "EA03",
+      "domain": "grouping",
+      "questions": {
+        "correspondence": "A proposed transfer uses source [[1,0,3,2],[0,1,0,1]], target [[2,1,2,1],[3,2,1,0]], object map [1,2,3,0], and target-to-source rule map [0,1]. Does that claimed rule correspondence hold? Give a concrete check.",
+        "classification": "Does your answer imply that the displayed target fails to have the five N5 groupings? Explain which result covers the target, if any."
+      }
+    },
+    {
+      "id": "EA04",
+      "domain": "grouping",
+      "questions": {
+        "minimum": "A note assigns a minimum of one unary rule to both n4-E16403 and n4-E16457 because both have shape C4. Assess the note using their actual tables and minima.",
+        "scope": "What is fixed in these minima, and what evidence supports them? Does either recorded minimum cover all embeddings of C4?"
+      }
+    },
+    {
+      "id": "EA05",
+      "domain": "turing",
+      "questions": {
+        "result": "For the exact tm-pair:tiny-stay:v1 machines on input [], state the first halting step, final head positions and complete final tapes, including every unlisted integer position. Identify the theorem that supports those statements.",
+        "implementation": "Does that theorem establish the correctness of the Python simulator or compiled executable on arbitrary well-typed machines and inputs? Explain the evidence boundary."
+      }
+    },
+    {
+      "id": "EA06",
+      "domain": "turing",
+      "questions": {
+        "binding": "Take the right machine of tm-pair:tiny-stay:v1 and change only table[1] from [1,1,1] to [1,0,2]. Keep input []. Does TMOracle.TinyPair.exact_result directly certify this changed machine under the original exact record?",
+        "behavior": "Does failure of that record binding itself show that the final tape changed? Assess this input by identifying the rule actually reached. Distinguish a deduction from a saved proof or execution of the changed machine."
+      }
+    },
+    {
+      "id": "EA07",
+      "domain": "turing",
+      "questions": {
+        "initial_step": "A note invokes TMOracle.Checks.halted_fixed at step 0 of each tiny-stay machine on [] to conclude step 0 to 1 leaves the entire configuration unchanged. Is the invocation justified? State the required hypothesis.",
+        "next_step": "Can the same lemma justify the configurations staying fixed from step 1 to 2? Cite the evidence needed to discharge its hypothesis for each machine."
+      }
+    },
+    {
+      "id": "EA08",
+      "domain": "turing",
+      "questions": {
+        "bounded": "What agreement does the saved evidence/tm-port-v1/summary.json establish, including its configuration count and disagreement count?",
+        "universal": "Does this receipt plus the generic step lemmas prove that the Python implementation and compiled Lean program agree for every well-typed finite machine, input and execution length? Identify any missing proof obligation."
+      }
+    }
+  ]
+}

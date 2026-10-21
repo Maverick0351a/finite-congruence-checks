@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "suite_id": "evidence-applicability-development-v1",
+  "sha256": "6c2a0298f25ea44c227428555ef77a963ce7ae6e5f2d4343936f9e3066ea67ba",
+  "bytes": 18932,
+  "tasks": [
+    "EA01",
+    "EA02",
+    "EA03",
+    "EA04",
+    "EA05",
+    "EA06",
+    "EA07",
+    "EA08"
+  ],
+  "storage": "Private controller artifact; absent from Git-tracked files and reference packets. Keep separately for later review.",
+  "privacy_limit": "File separation is verified offline. Answering-agent host isolation is not yet enforced or verified."
+}
