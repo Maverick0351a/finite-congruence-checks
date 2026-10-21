@@ -1,5 +1,27 @@
 # Finite graph search work log
 
+## 2026-10-21 - Explain the public work, methods and bounded results directly
+
+Replace vague headings and introductory copy in the Atlas, graph explorer,
+Space summary, saved N5 construction and Snaky play pages. The Atlas now states
+its unary-operation question on 1–4 objects, exhaustive enumeration and separate
+checker, and the 313 labeled families / 39 relabeling classes / 22 order shapes.
+Graph-search counts remain separate: 143,685 candidates, 217 witnesses and 22
+vertex-relabeling classes. Minimum operation counts still fix an exact family
+and carrier; the exact N5/B3 Lean results do not cover every Atlas entry.
+The N5 page names its classification and two proved renamings. Snaky separates
+the 251-cell / 21-claim formal guarantee from the illustrative eight-claim play.
+OpenAI Math attribution and the existing assumptions/limits remain visible.
+
+Existing explorer, Atlas UI/map/selection, N5 context/reuse and Snaky UI checks
+pass. No new wording tests, JS/CSS/data/proof edits, local proof replay or search
+were added. These source/event checks do not establish rendered acceptance.
+Exact copy references, before/after snapshots, diff, unchanged-file hashes and
+logs are retained in Direction's `atlas-plain-copy-2026-10-21/author` package.
+An initial literal-match error stopped before source writes and is preserved;
+the corrected edit matches the source's typographic apostrophe. Independent
+wording/source review and normal release gates remain separate. AI assistance: Codex.
+
 ## 2026-10-20 - Wrap long claim labels in the narrow Atlas inspector
 
 Post-deployment public-page inspection found horizontal page scrolling at a

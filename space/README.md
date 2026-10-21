@@ -7,7 +7,7 @@ sdk: static
 app_file: atlas.html
 pinned: true
 license: apache-2.0
-short_description: Inspect exact mathematical claims and their evidence
+short_description: Finite congruence enumeration, graph witnesses and Lean checks
 tags:
   - openai-math
   - openai
@@ -24,16 +24,24 @@ tags:
 
 # Finite Congruence Checks
 
-**Inspect exact claims and their evidence.**
+**Finite congruence constructions and verification.**
 
-Compare finite constructions and inspect their assumptions, sources and recorded
-checks. This independent research interface builds on selected mathematics from
+**Work:** enumerate the complete families of valid groupings produced by unary
+operations on sets of 1–4 objects. A unary operation maps each object to one
+object. A grouping is valid when inputs in the same group have outputs in the
+same group under every operation.
+
+**Method:** exhaustive finite enumeration and a separate checker for the grouping
+families, relabeling classes, order shapes and minimum operation counts.
+
+**Results:** 313 labeled grouping families, 39 classes after renaming objects,
+and 22 abstract order shapes. Each operation minimum fixes the exact grouping
+family and carrier. These computational results are separate from the Lean
+proofs for the exact saved N5/B3 graphs; those proofs do not cover every Atlas entry.
+
+This independent work builds on selected mathematics from
 [OpenAI Math](https://github.com/openai/math), including the finite congruence
 graph criterion in family 206. See the [exact claim ledger](https://github.com/Maverick0351a/finite-congruence-checks/blob/main/docs/CLAIMS.md).
-
-The broader research goal is to discover useful technical capabilities and
-foundational technology through mathematical work. No single application is
-predetermined; novelty and performance gains remain goals.
 
 The [research repository](https://github.com/Maverick0351a/finite-congruence-checks)
 is the canonical source. Maintained by
