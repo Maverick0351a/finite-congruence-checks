@@ -7,7 +7,7 @@ sdk: static
 app_file: atlas.html
 pinned: true
 license: apache-2.0
-short_description: Finite congruence enumeration, graph witnesses and Lean checks
+short_description: Finite congruence enumeration, graph witnesses, Lean checks
 tags:
   - openai-math
   - openai

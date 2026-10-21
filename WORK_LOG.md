@@ -1,5 +1,28 @@
 # Finite graph search work log
 
+## 2026-10-21 - Keep the Space card description within the Hub limit
+
+The committed Space card's 62-character `short_description` exceeded the Hub's
+60-character limit. A credential-free Hub card-validation request rejected the
+committed card and accepted the proposed 59-character replacement. Shorten only
+that description to "Finite congruence enumeration, graph witnesses, Lean checks".
+Add a narrow plain-single-line card guard to the existing `check_space.cjs`,
+already run by CI; the original 62-character card fails, the replacement passes,
+and boundary controls accept 60 characters and reject 61.
+Independent review CARD-R1 found that an indented plain-scalar continuation
+could hide additional characters. Reject continuation lines, including after
+blank/comment lines; retain the exact false pass and additive repair evidence in
+`author/repair-v2`. The 59-character card remains byte-identical.
+
+Existing explorer and Atlas UI checks pass. CONTRIBUTING steps 2-5 pass: 33 root
+tests, the bounded experiment and evidence validation/comparison with no
+mathematical differences. Retain logs and exact source identities in Direction's
+`atlas-card-limit-2026-10-21/author` package and the ignored run directory
+`runs/atlas-card-validation-20261021T090100Z`. No proof, data, workflow or runtime
+UI logic changed; no Lean/model job or deployment was run. Prior publication
+attempts remain preserved. Independent review and release checks remain separate.
+Substantial AI assistance: Codex.
+
 ## 2026-10-21 - Explain the public work, methods and bounded results directly
 
 Replace vague headings and introductory copy in the Atlas, graph explorer,
