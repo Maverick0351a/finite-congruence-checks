@@ -17,7 +17,7 @@ for one row does not establish a stronger claim from another row.
 | An independent checker reconstructs the 728-card Snaky certificate | [Computational record](../evidence/snaky-finite-v1/computational.json) | Exact pinned certificate, required sets, envelopes, placements and heights; separate from the older 616-card comparator and from a formal correctness proof of Python |
 | One recorded Snaky play reaches a complete target after eight Maker claims | [Example and adapter](SNAKY_PLAY.md), [complete execution](../evidence/snaky-play-v1/example.json) | One chosen sequence of seven Breaker replies on the exact 251-cell board; independently replayed ownership and target; no eight-move guarantee or verified policy extraction |
 | The atlas groups all small representable relation families | [Atlas method](ATLAS.md), `evidence/atlas.json`, `evidence/atlas-review.json` | Carriers 1–4; 313 labeled families, 39 classes under object relabeling, 22 abstract lattice types across the range; finite computational evidence |
-| M4 has no graph witness in the searched range | Search and replay records | At most four carrier vertices; larger carriers are outside this claim |
+| M4 has no graph witness in the searched range | Search and replay records | At most four carrier vertices; larger carriers are outside this claim. M4 has a known finite representation on a larger carrier, so this bounds the search only and is not evidence against representability |
 | Saved N5/B3 graphs satisfy the exact upstream predicate in Lean | [Bridge proof and reproduction record](LEAN_VERIFICATION.md) | Exact generated color tables; all five `IsGraphWitness` conditions, including every nonempty finite ordered seed set |
 | The pinned upstream theorem passes its official comparator | [Comparator logs and controls](../lean/comparator/README.md) | Original `graph_criterion` challenge/solution; placeholder proof and altered statement both rejected |
 | A generic grouping checker implements preservation in Lean | [Checker proofs](../lean/GroupingChecker.lean), [reproduction](GROUPING_CHECKER.md) | All four-object unary operations and four group labels; exact decoding, both round trips, integer bounds, acceptance iff preservation, and returned-pair soundness |
@@ -33,7 +33,8 @@ for one row does not establish a stronger claim from another row.
 | One fresh-context agent selected the required evidence in six guided questions | [First answers and score](../evidence/tm-retrieval-v1/summary.json), [protocol and limits](TM_ATLAS_EVALUATION.md) | Six first responses pass structured pair/property/value/citation checks; prose receives separate same-session AI review; no control arm, feedback advantage, or general capability claim |
 
 No claim of a new mathematical theorem or classification is made. These small
-lattices are control examples. The negative M4 result is bounded. The project
+lattices are control examples with known finite representations. The negative
+M4 result is bounded by carrier size; M4 itself is representable. The project
 does not verify all of OpenAI's math corpus, nor the undecidability or subgroup
 interval conclusions explicitly outside family 206's selected formalization.
 
