@@ -109,7 +109,8 @@ direct congruence recovery — agree on every result, and an independent audit
 cross-checks the operation minimizer. Lean 4.34.1 proves that the saved N5 and
 B3 constructions satisfy the exact upstream predicate, with kernel replay and an
 axiom check, and the original upstream theorem passes its official comparator.
-CI reruns all of this on Linux and Windows.
+CI reruns the Python checks on Linux and Windows and the Lean proofs on Linux;
+the comparator run is recorded separately in [lean/comparator](lean/comparator/README.md).
 
 These checks were developed with AI assistance. Independent algorithms
 strengthen them, but they are not outside peer review, and the Python code is
